@@ -10,25 +10,18 @@ using System.Windows.Forms;
 
 namespace HappyTech
 {
-    public partial class Form2 : Form
+    public partial class Form3 : Form
     {
-        public Form2()
+        public Form3()
         {
             InitializeComponent();
-        }
-
-        private void backBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form1 f1 = new Form1();
-            f1.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form3 f3 = new Form3();
-            f3.Show();
+            Form1 f1 = new Form1();
+            f1.Show();
         }
     }
 }

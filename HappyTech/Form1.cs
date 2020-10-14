@@ -29,5 +29,10 @@ namespace HappyTech
             Form2 f2 = new Form2();
             f2.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
