@@ -23,5 +23,10 @@ namespace HappyTech
             Form1 f1 = new Form1();
             f1.Show();
         }
+
+        private void checkedListBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
