@@ -66,7 +66,9 @@ namespace HappyTech
             //string query = "SELECT * FROM Recruiter WHERE email = {0}", email;
             //string query = "SELECT* FROM Recruiter WHERE email = @email";
             email = "'" + email + "'";
-            string loginEmail = $"SELECT * FROM Recruiter WHERE email = {email}";
+            pass = "'" + pass + "'";
+            string login = $"SELECT * FROM Recruiter WHERE email = {email} AND password = {pass}";
+            
             
             //var command = new SqlCommand("SELECT * FROM Recruiter WHERE email = @email");
            // command.Parameters.AddWithValue("@email", "'" + email + "'");
@@ -75,16 +77,21 @@ namespace HappyTech
             //string test = command.ToString();
             //Console.WriteLine(test);
             //Console.WriteLine(command);
-            Console.WriteLine(loginEmail);
+            Console.WriteLine(login);
             
             //command.Parameters.Add("@Title", SqlDbType.VarChar).Value = someone;
-            DataSet ds = Connection.GetDbConn().getDataSet(loginEmail);
+            DataSet ds = Connection.GetDbConn().getDataSet(login);
+            Console.WriteLine(ds.ToString());
             
-            if (ds.Tables[0] != null)
+            if (ds.Tables[0].Rows.Count != 0)
             {
                 this.Hide();
                 Form2 f2 = new Form2();
                 f2.Show();
+            }
+            else
+            {
+
             }
            
         }
