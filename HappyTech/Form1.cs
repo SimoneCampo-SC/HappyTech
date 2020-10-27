@@ -63,11 +63,22 @@ namespace HappyTech
             //exists with those values
             string email = username.Text;
             string pass = password.Text;
-            string query = "SELECT * FROM Recruiter WHERE email = {0}", email;
+            //string query = "SELECT * FROM Recruiter WHERE email = {0}", email;
             //string query = "SELECT* FROM Recruiter WHERE email = @email";
+            email = "'" + email + "'";
+            string loginEmail = $"SELECT * FROM Recruiter WHERE email = {email}";
+            
+            //var command = new SqlCommand("SELECT * FROM Recruiter WHERE email = @email");
+           // command.Parameters.AddWithValue("@email", "'" + email + "'");
+           // var command = new SqlCommand("SELECT * FROM Recruiter WHERE email = @email");
+            // "select * from Recruiter WHERE email = 'bobjones@email.com'"
+            //string test = command.ToString();
+            //Console.WriteLine(test);
+            //Console.WriteLine(command);
+            Console.WriteLine(loginEmail);
             
             //command.Parameters.Add("@Title", SqlDbType.VarChar).Value = someone;
-            DataSet ds = Connection.GetDbConn().getDataSet();
+            DataSet ds = Connection.GetDbConn().getDataSet(loginEmail);
             
             if (ds.Tables[0] != null)
             {
