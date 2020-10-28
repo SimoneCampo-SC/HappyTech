@@ -1,0 +1,1 @@
+﻿SELECT * FROM Recruiter WHERE email = bob

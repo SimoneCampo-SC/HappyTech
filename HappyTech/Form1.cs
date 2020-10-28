@@ -95,5 +95,12 @@ namespace HappyTech
             }
            
         }
+
+        private void registerButt_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Registration reg = new Registration();
+            reg.Show();
+        }
     }
 }

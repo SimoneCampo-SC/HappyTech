@@ -35,6 +35,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataViewRecruiter = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.registerButt = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewRecruiter)).BeginInit();
             this.SuspendLayout();
@@ -109,11 +110,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // registerButt
+            // 
+            this.registerButt.Location = new System.Drawing.Point(315, 352);
+            this.registerButt.Name = "registerButt";
+            this.registerButt.Size = new System.Drawing.Size(75, 23);
+            this.registerButt.TabIndex = 8;
+            this.registerButt.Text = "register";
+            this.registerButt.UseVisualStyleBackColor = true;
+            this.registerButt.Click += new System.EventHandler(this.registerButt_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.registerButt);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataViewRecruiter);
             this.Controls.Add(this.groupBox1);
@@ -137,6 +149,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataViewRecruiter;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button registerButt;
     }
 }
 

@@ -44,6 +44,17 @@ namespace HappyTech
 
             return dataSet;
             }
+        public void CreateCommand( string queryString)
+        {
+            
+            using (connToDb = new SqlConnection(connStr))
+            {
+                SqlCommand command = new SqlCommand(queryString, connToDb);
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+            }
+           
+        }
             
         
     }
