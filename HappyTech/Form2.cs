@@ -23,5 +23,12 @@ namespace HappyTech
             Form1 f1 = new Form1();
             f1.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form3 f3 = new Form3();
+            f3.Show();
+        }
     }
 }
