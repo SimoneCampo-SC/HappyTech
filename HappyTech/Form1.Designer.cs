@@ -28,69 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.username = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.TextBox();
+            this.userEmail = new System.Windows.Forms.TextBox();
+            this.userPassword = new System.Windows.Forms.TextBox();
             this.loginButt = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataViewRecruiter = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.registerButt = new System.Windows.Forms.Button();
+            this.btRegister = new System.Windows.Forms.Button();
+            this.error = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbPass = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewRecruiter)).BeginInit();
             this.SuspendLayout();
             // 
             // username
             // 
-            this.username.Location = new System.Drawing.Point(21, 33);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(103, 20);
-            this.username.TabIndex = 0;
-            this.username.Text = "Username";
-            this.username.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.userEmail.Location = new System.Drawing.Point(84, 35);
+            this.userEmail.Name = "username";
+            this.userEmail.Size = new System.Drawing.Size(176, 20);
+            this.userEmail.TabIndex = 0;
+            this.userEmail.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(21, 73);
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(110, 20);
-            this.password.TabIndex = 1;
-            this.password.Text = "Password";
-            this.password.TextChanged += new System.EventHandler(this.password_TextChanged);
+            this.userPassword.Location = new System.Drawing.Point(84, 73);
+            this.userPassword.Name = "password";
+            this.userPassword.Size = new System.Drawing.Size(176, 20);
+            this.userPassword.TabIndex = 1;
+            this.userPassword.TextChanged += new System.EventHandler(this.password_TextChanged);
             // 
             // loginButt
             // 
             this.loginButt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginButt.AutoSize = true;
-            this.loginButt.Location = new System.Drawing.Point(35, 111);
+            this.loginButt.Location = new System.Drawing.Point(122, 111);
             this.loginButt.Name = "loginButt";
-            this.loginButt.Size = new System.Drawing.Size(75, 23);
+            this.loginButt.Size = new System.Drawing.Size(99, 23);
             this.loginButt.TabIndex = 2;
-            this.loginButt.Text = "start";
+            this.loginButt.Text = "Login";
             this.loginButt.UseVisualStyleBackColor = true;
             this.loginButt.Click += new System.EventHandler(this.loginButt_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(332, 52);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(395, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.Size = new System.Drawing.Size(141, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "HAPPYTECH";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.password);
-            this.groupBox1.Controls.Add(this.username);
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Controls.Add(this.lbPass);
+            this.groupBox1.Controls.Add(this.lbEmail);
+            this.groupBox1.Controls.Add(this.userPassword);
+            this.groupBox1.Controls.Add(this.userEmail);
             this.groupBox1.Controls.Add(this.loginButt);
             this.groupBox1.Location = new System.Drawing.Point(294, 142);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(149, 140);
+            this.groupBox1.Size = new System.Drawing.Size(342, 140);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "login info";
+            this.groupBox1.Text = "Login Page";
             // 
             // dataViewRecruiter
             // 
@@ -102,36 +108,78 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(578, 352);
+            this.button1.Location = new System.Drawing.Point(646, 61);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
+            this.button1.Text = "Test";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // registerButt
+            // btRegister
             // 
-            this.registerButt.Location = new System.Drawing.Point(315, 352);
-            this.registerButt.Name = "registerButt";
-            this.registerButt.Size = new System.Drawing.Size(75, 23);
-            this.registerButt.TabIndex = 8;
-            this.registerButt.Text = "register";
-            this.registerButt.UseVisualStyleBackColor = true;
-            this.registerButt.Click += new System.EventHandler(this.registerButt_Click);
+            this.btRegister.Location = new System.Drawing.Point(431, 341);
+            this.btRegister.Name = "btRegister";
+            this.btRegister.Size = new System.Drawing.Size(75, 23);
+            this.btRegister.TabIndex = 8;
+            this.btRegister.Text = "Register";
+            this.btRegister.UseVisualStyleBackColor = true;
+            this.btRegister.Click += new System.EventHandler(this.registerButt_Click);
+            // 
+            // error
+            // 
+            this.error.AutoSize = true;
+            this.error.ForeColor = System.Drawing.Color.Maroon;
+            this.error.Location = new System.Drawing.Point(375, 117);
+            this.error.Name = "error";
+            this.error.Size = new System.Drawing.Size(75, 13);
+            this.error.TabIndex = 9;
+            this.error.Text = "Error Message";
+            this.error.Visible = false;
+            this.error.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Location = new System.Drawing.Point(25, 38);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(32, 13);
+            this.lbEmail.TabIndex = 3;
+            this.lbEmail.Text = "Email";
+            // 
+            // lbPass
+            // 
+            this.lbPass.AutoSize = true;
+            this.lbPass.Location = new System.Drawing.Point(25, 76);
+            this.lbPass.Name = "lbPass";
+            this.lbPass.Size = new System.Drawing.Size(53, 13);
+            this.lbPass.TabIndex = 4;
+            this.lbPass.Text = "Password";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(413, 313);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Not already registered?";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.registerButt);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.error);
+            this.Controls.Add(this.btRegister);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataViewRecruiter);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "HappyTech";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewRecruiter)).EndInit();
@@ -142,14 +190,18 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox username;
-        private System.Windows.Forms.TextBox password;
+        private System.Windows.Forms.TextBox userEmail;
+        private System.Windows.Forms.TextBox userPassword;
         private System.Windows.Forms.Button loginButt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataViewRecruiter;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button registerButt;
+        private System.Windows.Forms.Button btRegister;
+        private System.Windows.Forms.Label error;
+        private System.Windows.Forms.Label lbPass;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Label label2;
     }
 }
 

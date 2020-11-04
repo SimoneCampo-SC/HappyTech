@@ -25,24 +25,24 @@ namespace HappyTech
         private void registerButton_Click(object sender, EventArgs e)
         {
             bool stringOk = true;
+            /*
             string email = emailBox.Text;
-            email = "'" + email + "'";
             string firstName = nameBox.Text;
-            firstName = "'" + firstName + "'";
             string surname = surnameBox.Text;
-            surname = "'" + surname + "'";
             string password = passBox.Text;
-            password = "'" + password + "'";
+            */
 
-            if (  (email.Length == 0) || ( firstName.Length == 0) || (surname.Length == 0)  || password.Length == 0)
+            if ((emailBox.Text.Length == 0) || (nameBox.Text.Length == 0) || (surnameBox.Text.Length == 0) || (passBox.Text.Length == 0))
             {
                 stringOk = false;
+                errorMessage.Visible = true;
+                errorMessage.Text = "All the fields must be filled.";
             }
-
             if (stringOk == true)
             {
+                // Need to check whether the fields have already been inserted
 
-                string queryString = $"INSERT INTO Recruiter  (email, name, surname, password) VALUES ({email}, {firstName}, {surname}, {password} )";
+                string queryString = $"INSERT INTO Recruiter  (email, name, surname, password) VALUES ('{emailBox.Text}', '{nameBox.Text}', '{surnameBox.Text}', '{passBox.Text}' )";
                 Connection.GetDbConn().CreateCommand(queryString);
                 //conn.CreateCommand(queryString);
                // DataSet ds = Connection.GetDbConn().getDataSet(login);
@@ -63,6 +63,16 @@ namespace HappyTech
             this.Hide();
             Form1 f1 = new Form1();
             f1.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
