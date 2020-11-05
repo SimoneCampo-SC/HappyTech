@@ -52,7 +52,7 @@ namespace HappyTech
         private void loginButt_Click(object sender, EventArgs e)
         {
             // create a string query to ask the database for
-            string login = $"SELECT * FROM Recruiter WHERE email = '{userEmail.Text}' AND password = '{userPassword.Text}'";
+            string login = Constants.selectRecruiter(userEmail.Text, userPassword.Text);
 
             // open the connection and ask the query to the database
             DataSet ds = Connection.GetDbConn().getDataSet(login);
@@ -61,13 +61,14 @@ namespace HappyTech
             // check whether the credentials are connect
             if (ds.Tables[0].Rows.Count != 0)
             {
+                DataRow dRow = ds.Tables[0].Rows[0];
                 // we need to insert rows dimension
                 Recruiter.createInstance
                     (
-                    ds.Tables[0].Columns[1].ToString(),
-                    ds.Tables[0].Columns[2].ToString(),
-                    ds.Tables[0].Columns[3].ToString(),
-                    ds.Tables[0].Columns[4].ToString()
+                    dRow.ItemArray.GetValue(1).ToString(),
+                    dRow.ItemArray.GetValue(2).ToString(),
+                    dRow.ItemArray.GetValue(3).ToString(),
+                    dRow.ItemArray.GetValue(4).ToString()
                     );
                 this.Hide();
                 Form2 f2 = new Form2();

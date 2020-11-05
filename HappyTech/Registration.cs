@@ -35,7 +35,7 @@ namespace HappyTech
             {
                 // Need to check whether the fields have already been inserted
 
-                string queryString = $"INSERT INTO Recruiter  (email, name, surname, password) VALUES ('{emailBox.Text}', '{nameBox.Text}', '{surnameBox.Text}', '{passBox.Text}' )";
+                string queryString = Constants.insertQuery(emailBox.Text, nameBox.Text, emailBox.Text, passBox.Text);
                 Connection.GetDbConn().CreateCommand(queryString);
                 //conn.CreateCommand(queryString);
                // DataSet ds = Connection.GetDbConn().getDataSet(login);
