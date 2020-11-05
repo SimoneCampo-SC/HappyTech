@@ -19,26 +19,12 @@ namespace HappyTech
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             //display table data
           
             DataSet ds = Connection.GetDbConn().getDataSet("SELECT * FROM Recruiter");
             dataViewRecruiter.DataSource = ds.Tables[0]; //shows first table
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            //username box
-
-            //string username = Console.ReadLine();
-            //Console.WriteLine(username);
-
         }
 
         private void password_TextChanged(object sender, EventArgs e)
@@ -62,7 +48,7 @@ namespace HappyTech
             if (ds.Tables[0].Rows.Count != 0)
             {
                 DataRow dRow = ds.Tables[0].Rows[0];
-                // we need to insert rows dimension
+
                 Recruiter.createInstance
                     (
                     dRow.ItemArray.GetValue(1).ToString(),

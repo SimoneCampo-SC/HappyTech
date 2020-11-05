@@ -21,6 +21,7 @@ namespace HappyTech
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
+            Recruiter.DestroyRecruiInstance();
             Form1 f1 = new Form1();
             f1.Show();
         }

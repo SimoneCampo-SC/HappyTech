@@ -50,7 +50,6 @@
             this.userEmail.Name = "username";
             this.userEmail.Size = new System.Drawing.Size(176, 20);
             this.userEmail.TabIndex = 0;
-            this.userEmail.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // password
             // 
@@ -81,7 +80,6 @@
             this.label1.Size = new System.Drawing.Size(141, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "HAPPYTECH";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox1
             // 

@@ -52,5 +52,10 @@ namespace HappyTech
         {
             return _instance.email;
         }
+
+        public static void DestroyRecruiInstance()
+        {
+            _instance = null;
+        }
     }
 }
