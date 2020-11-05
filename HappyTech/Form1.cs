@@ -61,13 +61,14 @@ namespace HappyTech
             // check whether the credentials are connect
             if (ds.Tables[0].Rows.Count != 0)
             {
+                DataRow dRow = ds.Tables[0].Rows[0];
                 // we need to insert rows dimension
                 Recruiter.createInstance
                     (
-                    ds.Tables[0].Columns[1].ToString(),
-                    ds.Tables[0].Columns[2].ToString(),
-                    ds.Tables[0].Columns[3].ToString(),
-                    ds.Tables[0].Columns[4].ToString()
+                    dRow.ItemArray.GetValue(1).ToString(),
+                    dRow.ItemArray.GetValue(2).ToString(),
+                    dRow.ItemArray.GetValue(3).ToString(),
+                    dRow.ItemArray.GetValue(4).ToString()
                     );
                 this.Hide();
                 Form2 f2 = new Form2();
