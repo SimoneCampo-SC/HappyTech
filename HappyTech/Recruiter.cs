@@ -6,18 +6,51 @@ using System.Threading.Tasks;
 
 namespace HappyTech
 {
-    static class Recruiter
+    class Recruiter
     {
-        private static string email;
-        
-        public static void SetEmail (string value)
+        private static Recruiter _instance;
+        private string email;
+        private string name;
+        private string surname;
+        private string password;
+        private Recruiter (string name, string surname, string email, string password)
         {
-            email = value;
+            this.name = name;
+            this.surname = surname;
+            this.email = email;
+            this.password = password;
+        }
+        public static Recruiter createInstance(string name, string surname, string email, string password)
+        {
+            if (_instance == null)
+            {
+                _instance = new Recruiter(name, surname, email, password);
+            }
+            return _instance;
+        }
+        public static Recruiter GetInstance()
+        {
+            if (_instance != null)
+            {
+                return _instance;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public string GetName()
+        {
+            return _instance.name;
+        }
+        public string GetSurname()
+        {
+            return _instance.surname;
         }
 
-        public static string GetEmail ()
+        public string GetEmail()
         {
-            return email;
+            return _instance.email;
         }
     }
 }

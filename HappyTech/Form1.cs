@@ -19,10 +19,6 @@ namespace HappyTech
             InitializeComponent();
         }
 
-     
-
-      
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -34,10 +30,6 @@ namespace HappyTech
           
             DataSet ds = Connection.GetDbConn().getDataSet("SELECT * FROM Recruiter");
             dataViewRecruiter.DataSource = ds.Tables[0]; //shows first table
-            //login would be ds = SELECT * WHERE username AND password EQUALS inputuser AND inputpass
-            //if ds.Tables[0] == NULL
-            //dont log in
-            //else go to next form and use logged in user as a user
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -59,29 +51,24 @@ namespace HappyTech
         }
         private void loginButt_Click(object sender, EventArgs e)
         {
-            //string query = "SELECT * FROM Recruiter WHERE email = {0}", email;
-            //string query = "SELECT* FROM Recruiter WHERE email = @email";
-            //email = "'" + email + "'";
-           // pass = "'" + pass + "'";
+            // create a string query to ask the database for
             string login = $"SELECT * FROM Recruiter WHERE email = '{userEmail.Text}' AND password = '{userPassword.Text}'";
-            
-            
-            //var command = new SqlCommand("SELECT * FROM Recruiter WHERE email = @email");
-           // command.Parameters.AddWithValue("@email", "'" + email + "'");
-           // var command = new SqlCommand("SELECT * FROM Recruiter WHERE email = @email");
-            // "select * from Recruiter WHERE email = 'bobjones@email.com'"
-            //string test = command.ToString();
-            //Console.WriteLine(test);
-            //Console.WriteLine(command);
-            Console.WriteLine(login);
-            
-            //command.Parameters.Add("@Title", SqlDbType.VarChar).Value = someone;
+
+            // open the connection and ask the query to the database
             DataSet ds = Connection.GetDbConn().getDataSet(login);
             Console.WriteLine(ds.ToString());
             
+            // check whether the credentials are connect
             if (ds.Tables[0].Rows.Count != 0)
             {
-                Recruiter.SetEmail(userEmail.Text);
+                // we need to insert rows dimension
+                Recruiter.createInstance
+                    (
+                    ds.Tables[0].Columns[1].ToString(),
+                    ds.Tables[0].Columns[2].ToString(),
+                    ds.Tables[0].Columns[3].ToString(),
+                    ds.Tables[0].Columns[4].ToString()
+                    );
                 this.Hide();
                 Form2 f2 = new Form2();
                 f2.Show();

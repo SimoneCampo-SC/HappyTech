@@ -36,7 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbHello = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +70,6 @@
             this.checkBox1.TabIndex = 2;
             this.checkBox1.Text = "CV";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -81,7 +80,6 @@
             this.checkBox2.TabIndex = 3;
             this.checkBox2.Text = "Cover Letter";
             this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -92,7 +90,6 @@
             this.checkBox3.TabIndex = 4;
             this.checkBox3.Text = "Interview";
             this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // label1
             // 
@@ -113,7 +110,6 @@
             this.lbHello.Size = new System.Drawing.Size(53, 20);
             this.lbHello.TabIndex = 6;
             this.lbHello.Text = "Hello, ";
-            this.lbHello.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel1
             // 
@@ -124,18 +120,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(340, 137);
             this.panel1.TabIndex = 7;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // lbEmail
+            // lbName
             // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(393, 52);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(88, 20);
-            this.lbEmail.TabIndex = 8;
-            this.lbEmail.Text = "[username]";
-            this.lbEmail.Click += new System.EventHandler(this.label3_Click);
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(393, 52);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(88, 20);
+            this.lbName.TabIndex = 8;
+            this.lbName.Text = "[username]";
             // 
             // label2
             // 
@@ -144,7 +138,6 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 9;
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // Form2
             // 
@@ -153,7 +146,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbEmail);
+            this.Controls.Add(this.lbName);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbHello);
             this.Controls.Add(this.button1);
@@ -177,7 +170,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbHello;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label label2;
     }
 }

@@ -25,13 +25,6 @@ namespace HappyTech
         private void registerButton_Click(object sender, EventArgs e)
         {
             bool stringOk = true;
-            /*
-            string email = emailBox.Text;
-            string firstName = nameBox.Text;
-            string surname = surnameBox.Text;
-            string password = passBox.Text;
-            */
-
             if ((emailBox.Text.Length == 0) || (nameBox.Text.Length == 0) || (surnameBox.Text.Length == 0) || (passBox.Text.Length == 0))
             {
                 stringOk = false;
@@ -53,26 +46,12 @@ namespace HappyTech
                 Form1 f1 = new Form1();
                 f1.Show();
             }
-
-
-           
         }
-
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form1 f1 = new Form1();
             f1.Show();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
