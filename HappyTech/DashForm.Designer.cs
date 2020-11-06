@@ -50,6 +50,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbError = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbJobPos = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btLogout
@@ -164,7 +166,7 @@
             // 
             // tbAName
             // 
-            this.tbAName.Location = new System.Drawing.Point(130, 220);
+            this.tbAName.Location = new System.Drawing.Point(130, 228);
             this.tbAName.Name = "tbAName";
             this.tbAName.Size = new System.Drawing.Size(145, 20);
             this.tbAName.TabIndex = 16;
@@ -172,7 +174,7 @@
             // lbAName
             // 
             this.lbAName.AutoSize = true;
-            this.lbAName.Location = new System.Drawing.Point(54, 227);
+            this.lbAName.Location = new System.Drawing.Point(52, 228);
             this.lbAName.Name = "lbAName";
             this.lbAName.Size = new System.Drawing.Size(58, 13);
             this.lbAName.TabIndex = 17;
@@ -181,7 +183,7 @@
             // lbACode
             // 
             this.lbACode.AutoSize = true;
-            this.lbACode.Location = new System.Drawing.Point(63, 272);
+            this.lbACode.Location = new System.Drawing.Point(52, 269);
             this.lbACode.Name = "lbACode";
             this.lbACode.Size = new System.Drawing.Size(36, 13);
             this.lbACode.TabIndex = 18;
@@ -190,7 +192,7 @@
             // lbAEmail
             // 
             this.lbAEmail.AutoSize = true;
-            this.lbAEmail.Location = new System.Drawing.Point(63, 323);
+            this.lbAEmail.Location = new System.Drawing.Point(52, 323);
             this.lbAEmail.Name = "lbAEmail";
             this.lbAEmail.Size = new System.Drawing.Size(36, 13);
             this.lbAEmail.TabIndex = 19;
@@ -263,11 +265,36 @@
             this.lbError.Text = "Error Message";
             this.lbError.Visible = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Job 1",
+            "Job 2",
+            "Job 3"});
+            this.comboBox1.Location = new System.Drawing.Point(130, 362);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(145, 21);
+            this.comboBox1.Sorted = true;
+            this.comboBox1.TabIndex = 27;
+            // 
+            // lbJobPos
+            // 
+            this.lbJobPos.AutoSize = true;
+            this.lbJobPos.Location = new System.Drawing.Point(52, 365);
+            this.lbJobPos.Name = "lbJobPos";
+            this.lbJobPos.Size = new System.Drawing.Size(68, 13);
+            this.lbJobPos.TabIndex = 28;
+            this.lbJobPos.Text = "Job Position*";
+            // 
             // DashForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbJobPos);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lbError);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -321,5 +348,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbError;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lbJobPos;
     }
 }
