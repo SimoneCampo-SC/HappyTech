@@ -29,9 +29,10 @@ namespace HappyTech
         private void button1_Click(object sender, EventArgs e)
         {
             if (((rbCV.Checked == true) || (rbInterview.Checked == true) ||
-                (rbTinterview.Checked == true) || (rbAC.Checked == true)) &&
-                ((lbAName.Text.Length != 0) && (lbACode.Text.Length != 0) && (lbAEmail.Text.Length != 0)))
-            {
+               (rbTinterview.Checked == true) || (rbAC.Checked == true)) && 
+               ((tbAName.Text.Length > 0) && (tbACode.Text.Length > 0) && 
+               (tbAEmail.Text.Length > 0)))
+            { 
                 this.Hide();
                 Form3 f3 = new Form3();
                 f3.Show();

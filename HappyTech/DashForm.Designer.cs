@@ -39,12 +39,12 @@
             this.rbTinterview = new System.Windows.Forms.RadioButton();
             this.rbInterview = new System.Windows.Forms.RadioButton();
             this.lbDocType = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbAName = new System.Windows.Forms.TextBox();
             this.lbAName = new System.Windows.Forms.Label();
             this.lbACode = new System.Windows.Forms.Label();
             this.lbAEmail = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbACode = new System.Windows.Forms.TextBox();
+            this.tbAEmail = new System.Windows.Forms.TextBox();
             this.rbAC = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -162,12 +162,12 @@
             this.lbDocType.TabIndex = 15;
             this.lbDocType.Text = "Feedback Type";
             // 
-            // textBox1
+            // tbAName
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 220);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 20);
-            this.textBox1.TabIndex = 16;
+            this.tbAName.Location = new System.Drawing.Point(130, 220);
+            this.tbAName.Name = "tbAName";
+            this.tbAName.Size = new System.Drawing.Size(145, 20);
+            this.tbAName.TabIndex = 16;
             // 
             // lbAName
             // 
@@ -196,19 +196,19 @@
             this.lbAEmail.TabIndex = 19;
             this.lbAEmail.Text = "Email*";
             // 
-            // textBox2
+            // tbACode
             // 
-            this.textBox2.Location = new System.Drawing.Point(130, 269);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(145, 20);
-            this.textBox2.TabIndex = 20;
+            this.tbACode.Location = new System.Drawing.Point(130, 269);
+            this.tbACode.Name = "tbACode";
+            this.tbACode.Size = new System.Drawing.Size(145, 20);
+            this.tbACode.TabIndex = 20;
             // 
-            // textBox3
+            // tbAEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(130, 316);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(145, 20);
-            this.textBox3.TabIndex = 21;
+            this.tbAEmail.Location = new System.Drawing.Point(130, 316);
+            this.tbAEmail.Name = "tbAEmail";
+            this.tbAEmail.Size = new System.Drawing.Size(145, 20);
+            this.tbAEmail.TabIndex = 21;
             // 
             // rbAC
             // 
@@ -263,7 +263,7 @@
             this.lbError.Text = "Error Message";
             this.lbError.Visible = false;
             // 
-            // Form2
+            // DashForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -273,12 +273,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rbAC);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbAEmail);
+            this.Controls.Add(this.tbACode);
             this.Controls.Add(this.lbAEmail);
             this.Controls.Add(this.lbACode);
             this.Controls.Add(this.lbAName);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbAName);
             this.Controls.Add(this.lbDocType);
             this.Controls.Add(this.rbInterview);
             this.Controls.Add(this.rbTinterview);
@@ -290,7 +290,7 @@
             this.Controls.Add(this.lbHello);
             this.Controls.Add(this.next);
             this.Controls.Add(this.btLogout);
-            this.Name = "Form2";
+            this.Name = "DashForm";
             this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -310,12 +310,12 @@
         private System.Windows.Forms.RadioButton rbTinterview;
         private System.Windows.Forms.RadioButton rbInterview;
         private System.Windows.Forms.Label lbDocType;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbAName;
         private System.Windows.Forms.Label lbAName;
         private System.Windows.Forms.Label lbACode;
         private System.Windows.Forms.Label lbAEmail;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbACode;
+        private System.Windows.Forms.TextBox tbAEmail;
         private System.Windows.Forms.RadioButton rbAC;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
