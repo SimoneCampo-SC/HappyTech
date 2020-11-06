@@ -20,8 +20,8 @@ namespace HappyTech
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 f1 = new Form1();
-            f1.Show();
+            DashForm df = new DashForm();
+            df.Show();
         }
 
         private void checkedListBox2_SelectedIndexChanged(object sender, EventArgs e)
