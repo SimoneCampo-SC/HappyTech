@@ -52,6 +52,7 @@
             this.lbError = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lbJobPos = new System.Windows.Forms.Label();
+            this.codesViewBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btLogout
@@ -117,7 +118,7 @@
             this.lbUploadDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUploadDoc.Location = new System.Drawing.Point(143, 178);
             this.lbUploadDoc.Name = "lbUploadDoc";
-            this.lbUploadDoc.Size = new System.Drawing.Size(126, 16);
+            this.lbUploadDoc.Size = new System.Drawing.Size(129, 16);
             this.lbUploadDoc.TabIndex = 11;
             this.lbUploadDoc.Text = "Applicant Details";
             // 
@@ -160,7 +161,7 @@
             this.lbDocType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDocType.Location = new System.Drawing.Point(507, 178);
             this.lbDocType.Name = "lbDocType";
-            this.lbDocType.Size = new System.Drawing.Size(118, 16);
+            this.lbDocType.Size = new System.Drawing.Size(120, 16);
             this.lbDocType.TabIndex = 15;
             this.lbDocType.Text = "Feedback Type";
             // 
@@ -288,11 +289,22 @@
             this.lbJobPos.TabIndex = 28;
             this.lbJobPos.Text = "Job Position*";
             // 
+            // codesViewBtn
+            // 
+            this.codesViewBtn.Location = new System.Drawing.Point(547, 117);
+            this.codesViewBtn.Name = "codesViewBtn";
+            this.codesViewBtn.Size = new System.Drawing.Size(183, 23);
+            this.codesViewBtn.TabIndex = 29;
+            this.codesViewBtn.Text = "View, add or edit tags and codes";
+            this.codesViewBtn.UseVisualStyleBackColor = true;
+            this.codesViewBtn.Click += new System.EventHandler(this.codesViewBtn_Click);
+            // 
             // DashForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.codesViewBtn);
             this.Controls.Add(this.lbJobPos);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lbError);
@@ -350,5 +362,6 @@
         private System.Windows.Forms.Label lbError;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lbJobPos;
+        private System.Windows.Forms.Button codesViewBtn;
     }
 }

@@ -53,5 +53,12 @@ namespace HappyTech
         {
 
         }
+
+        private void codesViewBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            codeViewForm cf = new codeViewForm();
+            cf.Show();
+        }
     }
 }
