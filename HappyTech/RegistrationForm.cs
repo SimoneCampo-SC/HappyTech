@@ -40,11 +40,9 @@ namespace HappyTech
                 //conn.CreateCommand(queryString);
                // DataSet ds = Connection.GetDbConn().getDataSet(login);
                 //Console.WriteLine(ds.ToString());
-
-
                 this.Hide();
-                LoginForm f1 = new LoginForm();
-                f1.Show();
+                ConfRegistrForm crf = new ConfRegistrForm();
+                crf.Show();
             }
         }
         private void backBtn_Click(object sender, EventArgs e)

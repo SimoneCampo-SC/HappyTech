@@ -53,12 +53,5 @@ namespace HappyTech
         {
 
         }
-
-        private void templateBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            codeGeneration f3 = new codeGeneration();
-            f3.Show();
-        }
     }
 }
