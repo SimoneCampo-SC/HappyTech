@@ -24,7 +24,7 @@ namespace HappyTech
             df.Show();
         }
 
-        private void checkedListBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

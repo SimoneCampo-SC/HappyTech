@@ -8,19 +8,23 @@ namespace HappyTech
 {
     class Constants
     {
-        static public string insertQuery(string email, string name, string surname, string password)
+        public static string insertRecruiter(string email, string name, string surname, string password)
         {
 
-            string query = $"INSERT INTO Recruiter  (email, name, surname, password) VALUES ('{email}', '{name}', '{surname}', '{password}' )";
-
+            string query = $"INSERT INTO Recruiter (email, name, surname, password) VALUES ('{email}', '{name}', '{surname}', '{password}' )";
             return query;
         }
 
-        static public string selectRecruiter (string userEmail, string userPass)
+        public static string insertApplicant(string name, string email, string job)
+        {
+            string query = $"INSERT INTO Applicant (Applicant_Name, Applicant_Email, job_Position) VALUES ('{name}', '{email}', '{job}')";
+            return query;
+        }
+
+        public static string selectRecruiter (string userEmail, string userPass)
         {
            string query = $"SELECT * FROM Recruiter WHERE email = '{userEmail}' AND password = '{userPass}'";
-
-            return query;
+           return query;
         }
     }
             

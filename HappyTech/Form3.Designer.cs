@@ -67,6 +67,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // checkedListBox2
             // 
@@ -80,9 +81,8 @@
             "Etc"});
             this.checkedListBox2.Location = new System.Drawing.Point(393, 39);
             this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(243, 334);
+            this.checkedListBox2.Size = new System.Drawing.Size(243, 139);
             this.checkedListBox2.TabIndex = 3;
-            this.checkedListBox2.SelectedIndexChanged += new System.EventHandler(this.checkedListBox2_SelectedIndexChanged);
             // 
             // Form3
             // 

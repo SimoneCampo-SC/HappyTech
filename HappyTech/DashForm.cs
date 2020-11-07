@@ -30,11 +30,15 @@ namespace HappyTech
         {
             if (((rbCV.Checked == true) || (rbInterview.Checked == true) ||
                (rbTinterview.Checked == true) || (rbAC.Checked == true)) && 
-               ((tbAName.Text.Length > 0) && (tbACode.Text.Length > 0) && 
+               ((tbAName.Text.Length > 0) && (tbAJob.Text.Length > 0) && 
                (tbAEmail.Text.Length > 0)))
-            { 
+            {
+                string queryString = Constants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text);
+                Connection.GetDbConn().CreateCommand(queryString);
+                Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text);
+                Applicant.applicants.Add(applicant);
                 this.Hide();
-                Form3 f3 = new Form3();
+                ConfApplDetailsForm f3 = new ConfApplDetailsForm();
                 f3.Show();
             }
             else

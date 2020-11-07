@@ -41,17 +41,15 @@
             this.lbDocType = new System.Windows.Forms.Label();
             this.tbAName = new System.Windows.Forms.TextBox();
             this.lbAName = new System.Windows.Forms.Label();
-            this.lbACode = new System.Windows.Forms.Label();
+            this.lbAJob = new System.Windows.Forms.Label();
             this.lbAEmail = new System.Windows.Forms.Label();
-            this.tbACode = new System.Windows.Forms.TextBox();
+            this.tbAJob = new System.Windows.Forms.TextBox();
             this.tbAEmail = new System.Windows.Forms.TextBox();
             this.rbAC = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbError = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lbJobPos = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btLogout
@@ -160,9 +158,9 @@
             this.lbDocType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDocType.Location = new System.Drawing.Point(507, 178);
             this.lbDocType.Name = "lbDocType";
-            this.lbDocType.Size = new System.Drawing.Size(118, 16);
+            this.lbDocType.Size = new System.Drawing.Size(114, 16);
             this.lbDocType.TabIndex = 15;
-            this.lbDocType.Text = "Feedback Type";
+            this.lbDocType.Text = "Template Type";
             // 
             // tbAName
             // 
@@ -180,34 +178,35 @@
             this.lbAName.TabIndex = 17;
             this.lbAName.Text = "Full Name*";
             // 
-            // lbACode
+            // lbAJob
             // 
-            this.lbACode.AutoSize = true;
-            this.lbACode.Location = new System.Drawing.Point(52, 269);
-            this.lbACode.Name = "lbACode";
-            this.lbACode.Size = new System.Drawing.Size(36, 13);
-            this.lbACode.TabIndex = 18;
-            this.lbACode.Text = "Code*";
+            this.lbAJob.AutoSize = true;
+            this.lbAJob.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbAJob.Location = new System.Drawing.Point(52, 319);
+            this.lbAJob.Name = "lbAJob";
+            this.lbAJob.Size = new System.Drawing.Size(68, 13);
+            this.lbAJob.TabIndex = 18;
+            this.lbAJob.Text = "Job Position*";
             // 
             // lbAEmail
             // 
             this.lbAEmail.AutoSize = true;
-            this.lbAEmail.Location = new System.Drawing.Point(52, 323);
+            this.lbAEmail.Location = new System.Drawing.Point(52, 276);
             this.lbAEmail.Name = "lbAEmail";
             this.lbAEmail.Size = new System.Drawing.Size(36, 13);
             this.lbAEmail.TabIndex = 19;
             this.lbAEmail.Text = "Email*";
             // 
-            // tbACode
+            // tbAJob
             // 
-            this.tbACode.Location = new System.Drawing.Point(130, 269);
-            this.tbACode.Name = "tbACode";
-            this.tbACode.Size = new System.Drawing.Size(145, 20);
-            this.tbACode.TabIndex = 20;
+            this.tbAJob.Location = new System.Drawing.Point(130, 316);
+            this.tbAJob.Name = "tbAJob";
+            this.tbAJob.Size = new System.Drawing.Size(145, 20);
+            this.tbAJob.TabIndex = 20;
             // 
             // tbAEmail
             // 
-            this.tbAEmail.Location = new System.Drawing.Point(130, 316);
+            this.tbAEmail.Location = new System.Drawing.Point(130, 273);
             this.tbAEmail.Name = "tbAEmail";
             this.tbAEmail.Size = new System.Drawing.Size(145, 20);
             this.tbAEmail.TabIndex = 21;
@@ -265,45 +264,20 @@
             this.lbError.Text = "Error Message";
             this.lbError.Visible = false;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Job 1",
-            "Job 2",
-            "Job 3"});
-            this.comboBox1.Location = new System.Drawing.Point(130, 362);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(145, 21);
-            this.comboBox1.Sorted = true;
-            this.comboBox1.TabIndex = 27;
-            // 
-            // lbJobPos
-            // 
-            this.lbJobPos.AutoSize = true;
-            this.lbJobPos.Location = new System.Drawing.Point(52, 365);
-            this.lbJobPos.Name = "lbJobPos";
-            this.lbJobPos.Size = new System.Drawing.Size(68, 13);
-            this.lbJobPos.TabIndex = 28;
-            this.lbJobPos.Text = "Job Position*";
-            // 
             // DashForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lbJobPos);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lbError);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rbAC);
             this.Controls.Add(this.tbAEmail);
-            this.Controls.Add(this.tbACode);
+            this.Controls.Add(this.tbAJob);
             this.Controls.Add(this.lbAEmail);
-            this.Controls.Add(this.lbACode);
+            this.Controls.Add(this.lbAJob);
             this.Controls.Add(this.lbAName);
             this.Controls.Add(this.tbAName);
             this.Controls.Add(this.lbDocType);
@@ -339,16 +313,14 @@
         private System.Windows.Forms.Label lbDocType;
         private System.Windows.Forms.TextBox tbAName;
         private System.Windows.Forms.Label lbAName;
-        private System.Windows.Forms.Label lbACode;
+        private System.Windows.Forms.Label lbAJob;
         private System.Windows.Forms.Label lbAEmail;
-        private System.Windows.Forms.TextBox tbACode;
+        private System.Windows.Forms.TextBox tbAJob;
         private System.Windows.Forms.TextBox tbAEmail;
         private System.Windows.Forms.RadioButton rbAC;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbError;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label lbJobPos;
     }
 }
