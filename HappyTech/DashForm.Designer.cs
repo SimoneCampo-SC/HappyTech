@@ -50,6 +50,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbError = new System.Windows.Forms.Label();
+            this.templateBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btLogout
@@ -263,11 +264,22 @@
             this.lbError.Text = "Error Message";
             this.lbError.Visible = false;
             // 
+            // templateBtn
+            // 
+            this.templateBtn.Location = new System.Drawing.Point(614, 129);
+            this.templateBtn.Name = "templateBtn";
+            this.templateBtn.Size = new System.Drawing.Size(116, 23);
+            this.templateBtn.TabIndex = 27;
+            this.templateBtn.Text = "Generate Codes";
+            this.templateBtn.UseVisualStyleBackColor = true;
+            this.templateBtn.Click += new System.EventHandler(this.templateBtn_Click);
+            // 
             // DashForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.templateBtn);
             this.Controls.Add(this.lbError);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -321,5 +333,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbError;
+        private System.Windows.Forms.Button templateBtn;
     }
 }

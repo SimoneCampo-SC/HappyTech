@@ -22,6 +22,14 @@ namespace HappyTech
 
             return query;
         }
+
+       
+
+        static public string insertCode (string shortCode, string description, int tagId)
+        {
+            string query = $"INSERT INTO Codes (codeShort, codeParagraph, tag) VALUES ('{shortCode}', '{description}', '{tagId}'";
+            return query;
+        }
     }
             
            
