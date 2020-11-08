@@ -16,12 +16,18 @@ namespace HappyTech
         {
             InitializeComponent();
             lbName.Text = Recruiter.GetInstance().GetName();
+            if (Applicant.applicants.Count > 0)
+            {
+                btBack.Visible = true;
+            }
         }
 
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             Recruiter.DestroyRecruiInstance();
+            Applicant.applicants.Clear();
+            Connection.GetDbConn().CreateCommand(Constants.deleteApplicant());
             LoginForm f1 = new LoginForm();
             f1.Show();
         }
@@ -33,12 +39,11 @@ namespace HappyTech
                ((tbAName.Text.Length > 0) && (tbAJob.Text.Length > 0) && 
                (tbAEmail.Text.Length > 0)))
             {
-                string queryString = Constants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text);
-                Connection.GetDbConn().CreateCommand(queryString);
+                Connection.GetDbConn().CreateCommand(Constants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text));
                 Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text);
                 Applicant.applicants.Add(applicant);
                 this.Hide();
-                ConfApplDetailsForm f3 = new ConfApplDetailsForm();
+                ConfApplDetailsForm f3 = new ConfApplDetailsForm(false);
                 f3.Show();
             }
             else
@@ -56,6 +61,13 @@ namespace HappyTech
         private void rbAC_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConfApplDetailsForm f3 = new ConfApplDetailsForm(true);
+            f3.Show();
         }
     }
 }

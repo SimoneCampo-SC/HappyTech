@@ -21,6 +21,12 @@ namespace HappyTech
             return query;
         }
 
+        public static string deleteApplicant()
+        {
+            string query = $"DELETE FROM Applicant";
+            return query;
+        }
+
         public static string selectRecruiter (string userEmail, string userPass)
         {
            string query = $"SELECT * FROM Recruiter WHERE email = '{userEmail}' AND password = '{userPass}'";

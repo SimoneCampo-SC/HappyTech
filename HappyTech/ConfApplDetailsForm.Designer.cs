@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbSuccess = new System.Windows.Forms.Label();
             this.lbApplicantNo = new System.Windows.Forms.Label();
             this.btNewApp = new System.Windows.Forms.Button();
             this.btStartFeed = new System.Windows.Forms.Button();
@@ -37,21 +37,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lbSuccess
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(293, 198);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Applicant details successfully added.";
+            this.lbSuccess.AutoSize = true;
+            this.lbSuccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSuccess.Location = new System.Drawing.Point(293, 198);
+            this.lbSuccess.Name = "lbSuccess";
+            this.lbSuccess.Size = new System.Drawing.Size(229, 16);
+            this.lbSuccess.TabIndex = 0;
+            this.lbSuccess.Text = "Applicant details successfully added.";
             // 
             // lbApplicantNo
             // 
             this.lbApplicantNo.AutoSize = true;
             this.lbApplicantNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbApplicantNo.Location = new System.Drawing.Point(389, 234);
+            this.lbApplicantNo.Location = new System.Drawing.Point(351, 233);
             this.lbApplicantNo.Name = "lbApplicantNo";
             this.lbApplicantNo.Size = new System.Drawing.Size(45, 16);
             this.lbApplicantNo.TabIndex = 1;
@@ -105,7 +105,7 @@
             this.Controls.Add(this.btStartFeed);
             this.Controls.Add(this.btNewApp);
             this.Controls.Add(this.lbApplicantNo);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbSuccess);
             this.Name = "ConfApplDetailsForm";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -116,7 +116,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbSuccess;
         private System.Windows.Forms.Label lbApplicantNo;
         private System.Windows.Forms.Button btNewApp;
         private System.Windows.Forms.Button btStartFeed;

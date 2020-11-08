@@ -12,9 +12,13 @@ namespace HappyTech
 {
     public partial class ConfApplDetailsForm : Form
     {
-        public ConfApplDetailsForm()
+        public ConfApplDetailsForm(bool value)
         {
             InitializeComponent();
+            if (value == true)
+            {
+                lbSuccess.Visible = false;
+            }
             lbApplicantNo.Text = Applicant.applicants.Count.ToString() + " applicants added.";
         }
 

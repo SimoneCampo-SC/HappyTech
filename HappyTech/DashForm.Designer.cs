@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btLogout = new System.Windows.Forms.Button();
-            this.next = new System.Windows.Forms.Button();
+            this.btConfirm = new System.Windows.Forms.Button();
             this.lbHello = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +50,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbError = new System.Windows.Forms.Label();
+            this.btBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btLogout
@@ -62,15 +63,15 @@
             this.btLogout.UseVisualStyleBackColor = true;
             this.btLogout.Click += new System.EventHandler(this.backBtn_Click);
             // 
-            // next
+            // btConfirm
             // 
-            this.next.Location = new System.Drawing.Point(614, 349);
-            this.next.Name = "next";
-            this.next.Size = new System.Drawing.Size(75, 23);
-            this.next.TabIndex = 1;
-            this.next.Text = "next";
-            this.next.UseVisualStyleBackColor = true;
-            this.next.Click += new System.EventHandler(this.button1_Click);
+            this.btConfirm.Location = new System.Drawing.Point(546, 365);
+            this.btConfirm.Name = "btConfirm";
+            this.btConfirm.Size = new System.Drawing.Size(75, 23);
+            this.btConfirm.TabIndex = 1;
+            this.btConfirm.Text = "Confirm";
+            this.btConfirm.UseVisualStyleBackColor = true;
+            this.btConfirm.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbHello
             // 
@@ -264,11 +265,23 @@
             this.lbError.Text = "Error Message";
             this.lbError.Visible = false;
             // 
+            // btBack
+            // 
+            this.btBack.Location = new System.Drawing.Point(162, 365);
+            this.btBack.Name = "btBack";
+            this.btBack.Size = new System.Drawing.Size(75, 23);
+            this.btBack.TabIndex = 27;
+            this.btBack.Text = "Back";
+            this.btBack.UseVisualStyleBackColor = true;
+            this.btBack.Visible = false;
+            this.btBack.Click += new System.EventHandler(this.btBack_Click);
+            // 
             // DashForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btBack);
             this.Controls.Add(this.lbError);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -289,7 +302,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbHello);
-            this.Controls.Add(this.next);
+            this.Controls.Add(this.btConfirm);
             this.Controls.Add(this.btLogout);
             this.Name = "DashForm";
             this.Text = "Form2";
@@ -301,7 +314,7 @@
         #endregion
 
         private System.Windows.Forms.Button btLogout;
-        private System.Windows.Forms.Button next;
+        private System.Windows.Forms.Button btConfirm;
         private System.Windows.Forms.Label lbHello;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label label2;
@@ -322,5 +335,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbError;
+        private System.Windows.Forms.Button btBack;
     }
 }
