@@ -16,11 +16,9 @@ namespace HappyTech
         public codeViewForm()
         {
             InitializeComponent();
-            shortCodeLabel.Hide();
-            shortCodeBox.Hide();
-            codeParaLabel.Hide();
-            codeParaBox.Hide();
-            submitCodeBtn.Hide();
+            tagBox.Hide();
+            tagSubmit.Hide();
+           
         }
 
         private void tagSelectBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -69,46 +67,46 @@ namespace HappyTech
 
         private void addTagBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            addTag at = new addTag();
-            at.Show();
+            tagBox.Show();
+            tagSubmit.Show();
         }
 
         private void addCodeBtn_Click(object sender, EventArgs e)
         {
-            shortCodeLabel.Show();
-            shortCodeBox.Show();
-            codeParaLabel.Show();
-            codeParaBox.Show();
-            submitCodeBtn.Show();
+            this.Hide();
+            addCode at = new addCode();
+            at.Show();
+
+
         }
 
         private void submitCodeBtn_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void tagSubmit_Click(object sender, EventArgs e)
+        {
             bool stringOk = true;
-            if ((shortCodeBox.Text.Length == 0) || (codeParaBox.Text.Length == 0))
+            if (tagBox.Text.Length == 0)
             {
                 stringOk = false;
-                // errorMessage.Visible = true;
-                // errorMessage.Text = "All the fields must be filled.";
+                //errorMessage.Visible = true;
+                //errorMessage.Text = "All the fields must be filled.";
             }
             if (stringOk == true)
             {
                 // Need to check whether the fields have already been inserted
-                //first need to translate the currently selected tag into its id# for a code to be added into the table
-                string query = $"SELECT Id FROM Tag WHERE name = '{tagSelectBox.Text}'";
-                DataSet ds = Connection.GetDbConn().getDataSet(query);
-                DataRow dRow = ds.Tables[0].Rows[0];
-                var tagId = dRow.ItemArray.GetValue(0);
-                
 
-                string queryString = $"INSERT INTO Codes (codeShort, codeParagraph , tag_id) VALUES ('{shortCodeBox.Text}', '{codeParaBox.Text}', {tagId})";
+                string queryString = $"INSERT INTO Tag (name) VALUES ('{tagBox.Text}')";
                 Connection.GetDbConn().CreateCommand(queryString);
+                //conn.CreateCommand(queryString);
+                // DataSet ds = Connection.GetDbConn().getDataSet(login);
+                //Console.WriteLine(ds.ToString());
+                tagBox.Hide();
+                tagSubmit.Hide();
             }
-            shortCodeBox.Clear();
-            codeParaBox.Clear();
         }
-
     }
 
      
