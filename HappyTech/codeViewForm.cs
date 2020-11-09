@@ -22,34 +22,32 @@ namespace HappyTech
             codeParaBox.Hide();
             submitCodeBtn.Hide();
         }
-        private void codeViewForm_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'database1DataSet1.Codes' table. You can move, or remove it, as needed.
-           
-            // TODO: This line of code loads data into the 'database1DataSet.Tag' table. You can move, or remove it, as needed.
-            this.tagTableAdapter.Fill(this.database1DataSet.Tag); //populates drop down menu with tags
-
-        }
 
         private void tagSelectBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             //when drop down menu has a value selected, fill the dataGridView with the contents of the Codes table where tag = selected value
-            try
-            {
-                codeDisplay.DataSource = null;
-                this.codeDisplay.Rows.Clear();
-                string selectedTag = tagSelectBox.Text;
-                DataSet ds = Connection.GetDbConn().getDataSet($"SELECT Codes.codeShort, Codes.codeParagraph FROM Codes INNER JOIN Tag ON Codes.tag_ID = Tag.id WHERE Tag.name = '{selectedTag}'");
-                codeDisplay.DataSource = ds.Tables[0];
-            }
 
-            catch
-            {
-                //needs this or else an exception will throw when the form is generated
-            }
+            string query = $"SELECT Id FROM Tag WHERE name = '{tagSelectBox.Text}'";
+            DataSet ds = Connection.GetDbConn().getDataSet(query);
+            DataRow dRow = ds.Tables[0].Rows[0];
+            var tagId = dRow.ItemArray.GetValue(0);
 
+            DataSet ds2 = Connection.GetDbConn().getDataSet($"SELECT codeShort, codeParagraph FROM Codes WHERE tag_ID = {tagId}");
+            codeDisplay.DataSource = ds2.Tables[0]; //shows first table
 
         }
+        private void codeViewForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'database1DataSet1.Codes' table. You can move, or remove it, as needed.
+
+            // TODO: This line of code loads data into the 'database1DataSet.Tag' table. You can move, or remove it, as needed.
+            DataSet ds = Connection.GetDbConn().getDataSet("SELECT name FROM Tag");
+            tagSelectBox.DataSource = ds.Tables[0]; //shows first table
+            //this.tagTableAdapter.Fill(); //populates drop down menu with tags
+
+        }
+
+    
 
         void fillCombo()
         {
@@ -111,23 +109,6 @@ namespace HappyTech
             codeParaBox.Clear();
         }
 
-        private void tagSelectBox_SelectedValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                codeDisplay.DataSource = null;
-                this.codeDisplay.Rows.Clear();
-                string selectedTag = tagSelectBox.Text;
-                DataSet ds = Connection.GetDbConn().getDataSet($"SELECT Codes.codeShort, Codes.codeParagraph FROM Codes INNER JOIN Tag ON Codes.tag_ID = Tag.id WHERE Tag.name = '{selectedTag}'");
-                codeDisplay.DataSource = ds.Tables[0];
-                this.codesTableAdapter.Fill(this.database1DataSet1.Codes); //populates the dataGrid with codes
-            }
-
-            catch
-            {
-                //needs this or else an exception will throw when the form is generated
-            }
-        }
     }
 
      

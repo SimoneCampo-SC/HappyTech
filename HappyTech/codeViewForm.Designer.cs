@@ -33,12 +33,12 @@
             this.tagBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new HappyTech.Database1DataSet();
             this.codeDisplay = new System.Windows.Forms.DataGridView();
-            this.tagTableAdapter = new HappyTech.Database1DataSetTableAdapters.TagTableAdapter();
-            this.database1DataSet1 = new HappyTech.Database1DataSet1();
-            this.codesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.codesTableAdapter = new HappyTech.Database1DataSet1TableAdapters.CodesTableAdapter();
             this.codeShortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeParagraphDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet1 = new HappyTech.Database1DataSet1();
+            this.tagTableAdapter = new HappyTech.Database1DataSetTableAdapters.TagTableAdapter();
+            this.codesTableAdapter = new HappyTech.Database1DataSet1TableAdapters.CodesTableAdapter();
             this.addTagBtn = new System.Windows.Forms.Button();
             this.addCodeBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
@@ -50,8 +50,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codeDisplay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // tagSelectBox
@@ -65,8 +65,7 @@
             this.tagSelectBox.Size = new System.Drawing.Size(133, 21);
             this.tagSelectBox.TabIndex = 0;
             this.tagSelectBox.ValueMember = "name";
-            this.tagSelectBox.SelectedIndexChanged += new System.EventHandler(this.codeViewForm_Load);
-            this.tagSelectBox.SelectedValueChanged += new System.EventHandler(this.tagSelectBox_SelectedValueChanged);
+            this.tagSelectBox.TextChanged += new System.EventHandler(this.tagSelectBox_SelectedIndexChanged);
             // 
             // tagBindingSource
             // 
@@ -92,24 +91,6 @@
             this.codeDisplay.TabIndex = 1;
             this.codeDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.codeDisplay_CellContentClick);
             // 
-            // tagTableAdapter
-            // 
-            this.tagTableAdapter.ClearBeforeFill = true;
-            // 
-            // database1DataSet1
-            // 
-            this.database1DataSet1.DataSetName = "Database1DataSet1";
-            this.database1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // codesBindingSource
-            // 
-            this.codesBindingSource.DataMember = "Codes";
-            this.codesBindingSource.DataSource = this.database1DataSet1;
-            // 
-            // codesTableAdapter
-            // 
-            this.codesTableAdapter.ClearBeforeFill = true;
-            // 
             // codeShortDataGridViewTextBoxColumn
             // 
             this.codeShortDataGridViewTextBoxColumn.DataPropertyName = "codeShort";
@@ -121,6 +102,24 @@
             this.codeParagraphDataGridViewTextBoxColumn.DataPropertyName = "codeParagraph";
             this.codeParagraphDataGridViewTextBoxColumn.HeaderText = "codeParagraph";
             this.codeParagraphDataGridViewTextBoxColumn.Name = "codeParagraphDataGridViewTextBoxColumn";
+            // 
+            // codesBindingSource
+            // 
+            this.codesBindingSource.DataMember = "Codes";
+            this.codesBindingSource.DataSource = this.database1DataSet1;
+            // 
+            // database1DataSet1
+            // 
+            this.database1DataSet1.DataSetName = "Database1DataSet1";
+            this.database1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tagTableAdapter
+            // 
+            this.tagTableAdapter.ClearBeforeFill = true;
+            // 
+            // codesTableAdapter
+            // 
+            this.codesTableAdapter.ClearBeforeFill = true;
             // 
             // addTagBtn
             // 
@@ -215,8 +214,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.codeDisplay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.codesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
