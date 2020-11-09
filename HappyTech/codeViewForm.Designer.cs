@@ -42,6 +42,11 @@
             this.addTagBtn = new System.Windows.Forms.Button();
             this.addCodeBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
+            this.shortCodeBox = new System.Windows.Forms.TextBox();
+            this.codeParaBox = new System.Windows.Forms.TextBox();
+            this.submitCodeBtn = new System.Windows.Forms.Button();
+            this.shortCodeLabel = new System.Windows.Forms.Label();
+            this.codeParaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codeDisplay)).BeginInit();
@@ -61,6 +66,7 @@
             this.tagSelectBox.TabIndex = 0;
             this.tagSelectBox.ValueMember = "name";
             this.tagSelectBox.SelectedIndexChanged += new System.EventHandler(this.codeViewForm_Load);
+            this.tagSelectBox.SelectedValueChanged += new System.EventHandler(this.tagSelectBox_SelectedValueChanged);
             // 
             // tagBindingSource
             // 
@@ -80,9 +86,9 @@
             this.codeShortDataGridViewTextBoxColumn,
             this.codeParagraphDataGridViewTextBoxColumn});
             this.codeDisplay.DataSource = this.codesBindingSource;
-            this.codeDisplay.Location = new System.Drawing.Point(53, 88);
+            this.codeDisplay.Location = new System.Drawing.Point(12, 87);
             this.codeDisplay.Name = "codeDisplay";
-            this.codeDisplay.Size = new System.Drawing.Size(645, 219);
+            this.codeDisplay.Size = new System.Drawing.Size(383, 219);
             this.codeDisplay.TabIndex = 1;
             this.codeDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.codeDisplay_CellContentClick);
             // 
@@ -118,7 +124,7 @@
             // 
             // addTagBtn
             // 
-            this.addTagBtn.Location = new System.Drawing.Point(166, 400);
+            this.addTagBtn.Location = new System.Drawing.Point(401, 247);
             this.addTagBtn.Name = "addTagBtn";
             this.addTagBtn.Size = new System.Drawing.Size(75, 23);
             this.addTagBtn.TabIndex = 2;
@@ -128,12 +134,13 @@
             // 
             // addCodeBtn
             // 
-            this.addCodeBtn.Location = new System.Drawing.Point(167, 351);
+            this.addCodeBtn.Location = new System.Drawing.Point(401, 101);
             this.addCodeBtn.Name = "addCodeBtn";
             this.addCodeBtn.Size = new System.Drawing.Size(75, 23);
             this.addCodeBtn.TabIndex = 3;
             this.addCodeBtn.Text = "Add Codes";
             this.addCodeBtn.UseVisualStyleBackColor = true;
+            this.addCodeBtn.Click += new System.EventHandler(this.addCodeBtn_Click);
             // 
             // backBtn
             // 
@@ -145,11 +152,58 @@
             this.backBtn.UseVisualStyleBackColor = true;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
+            // shortCodeBox
+            // 
+            this.shortCodeBox.Location = new System.Drawing.Point(522, 104);
+            this.shortCodeBox.Name = "shortCodeBox";
+            this.shortCodeBox.Size = new System.Drawing.Size(141, 20);
+            this.shortCodeBox.TabIndex = 5;
+            // 
+            // codeParaBox
+            // 
+            this.codeParaBox.Location = new System.Drawing.Point(401, 168);
+            this.codeParaBox.Name = "codeParaBox";
+            this.codeParaBox.Size = new System.Drawing.Size(389, 20);
+            this.codeParaBox.TabIndex = 6;
+            // 
+            // submitCodeBtn
+            // 
+            this.submitCodeBtn.Location = new System.Drawing.Point(522, 204);
+            this.submitCodeBtn.Name = "submitCodeBtn";
+            this.submitCodeBtn.Size = new System.Drawing.Size(122, 23);
+            this.submitCodeBtn.TabIndex = 7;
+            this.submitCodeBtn.Text = "submit new code";
+            this.submitCodeBtn.UseVisualStyleBackColor = true;
+            this.submitCodeBtn.Click += new System.EventHandler(this.submitCodeBtn_Click);
+            // 
+            // shortCodeLabel
+            // 
+            this.shortCodeLabel.AutoSize = true;
+            this.shortCodeLabel.Location = new System.Drawing.Point(519, 74);
+            this.shortCodeLabel.Name = "shortCodeLabel";
+            this.shortCodeLabel.Size = new System.Drawing.Size(133, 13);
+            this.shortCodeLabel.TabIndex = 8;
+            this.shortCodeLabel.Text = "Short code (10 characters)";
+            // 
+            // codeParaLabel
+            // 
+            this.codeParaLabel.AutoSize = true;
+            this.codeParaLabel.Location = new System.Drawing.Point(411, 149);
+            this.codeParaLabel.Name = "codeParaLabel";
+            this.codeParaLabel.Size = new System.Drawing.Size(206, 13);
+            this.codeParaLabel.TabIndex = 9;
+            this.codeParaLabel.Text = "Write the feedback this code will generate";
+            // 
             // codeViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.codeParaLabel);
+            this.Controls.Add(this.shortCodeLabel);
+            this.Controls.Add(this.submitCodeBtn);
+            this.Controls.Add(this.codeParaBox);
+            this.Controls.Add(this.shortCodeBox);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.addCodeBtn);
             this.Controls.Add(this.addTagBtn);
@@ -164,6 +218,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.codesBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -182,5 +237,10 @@
         private System.Windows.Forms.Button addTagBtn;
         private System.Windows.Forms.Button addCodeBtn;
         private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.TextBox shortCodeBox;
+        private System.Windows.Forms.TextBox codeParaBox;
+        private System.Windows.Forms.Button submitCodeBtn;
+        private System.Windows.Forms.Label shortCodeLabel;
+        private System.Windows.Forms.Label codeParaLabel;
     }
 }

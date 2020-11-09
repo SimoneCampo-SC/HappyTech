@@ -57,7 +57,7 @@ namespace HappyTech
             {
                 // Need to check whether the fields have already been inserted
 
-                string queryString = $"INSERT INTO Tag (name) VALUES (' { nameBox.Text}')";
+                string queryString = $"INSERT INTO Tag (name) VALUES ('{nameBox.Text}')";
                 Connection.GetDbConn().CreateCommand(queryString);
                 //conn.CreateCommand(queryString);
                 // DataSet ds = Connection.GetDbConn().getDataSet(login);
