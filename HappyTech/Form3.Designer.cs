@@ -39,10 +39,10 @@
             this.lbTemplate = new System.Windows.Forms.Label();
             this.lbCodeList = new System.Windows.Forms.Label();
             this.lbComBox = new System.Windows.Forms.Label();
-            this.listSelectedCodes = new System.Windows.Forms.ListBox();
-            this.listAllCodes = new System.Windows.Forms.ListBox();
             this.labelType = new System.Windows.Forms.Label();
             this.labelTypeVal = new System.Windows.Forms.Label();
+            this.checklistSelectedCodes = new System.Windows.Forms.CheckedListBox();
+            this.checklistAllCodes = new System.Windows.Forms.CheckedListBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -69,10 +69,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checklistAllCodes);
+            this.panel1.Controls.Add(this.checklistSelectedCodes);
             this.panel1.Controls.Add(this.labelTypeVal);
             this.panel1.Controls.Add(this.labelType);
-            this.panel1.Controls.Add(this.listAllCodes);
-            this.panel1.Controls.Add(this.listSelectedCodes);
             this.panel1.Location = new System.Drawing.Point(26, 37);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(203, 361);
@@ -152,24 +152,6 @@
             this.lbComBox.TabIndex = 8;
             this.lbComBox.Text = "Comment Box";
             // 
-            // listSelectedCodes
-            // 
-            this.listSelectedCodes.FormattingEnabled = true;
-            this.listSelectedCodes.Location = new System.Drawing.Point(3, 23);
-            this.listSelectedCodes.Name = "listSelectedCodes";
-            this.listSelectedCodes.Size = new System.Drawing.Size(197, 160);
-            this.listSelectedCodes.TabIndex = 0;
-            this.listSelectedCodes.SelectedIndexChanged += new System.EventHandler(this.listSelectedCodes_SelectedIndexChanged);
-            // 
-            // listAllCodes
-            // 
-            this.listAllCodes.FormattingEnabled = true;
-            this.listAllCodes.Location = new System.Drawing.Point(3, 198);
-            this.listAllCodes.Name = "listAllCodes";
-            this.listAllCodes.Size = new System.Drawing.Size(197, 160);
-            this.listAllCodes.TabIndex = 1;
-            this.listAllCodes.SelectedIndexChanged += new System.EventHandler(this.listAllCodes_SelectedIndexChanged);
-            // 
             // labelType
             // 
             this.labelType.AutoSize = true;
@@ -189,6 +171,22 @@
             this.labelTypeVal.Size = new System.Drawing.Size(47, 20);
             this.labelTypeVal.TabIndex = 3;
             this.labelTypeVal.Text = "[type]";
+            // 
+            // checklistSelectedCodes
+            // 
+            this.checklistSelectedCodes.FormattingEnabled = true;
+            this.checklistSelectedCodes.Location = new System.Drawing.Point(3, 23);
+            this.checklistSelectedCodes.Name = "checklistSelectedCodes";
+            this.checklistSelectedCodes.Size = new System.Drawing.Size(197, 169);
+            this.checklistSelectedCodes.TabIndex = 2;
+            // 
+            // checklistAllCodes
+            // 
+            this.checklistAllCodes.FormattingEnabled = true;
+            this.checklistAllCodes.Location = new System.Drawing.Point(3, 204);
+            this.checklistAllCodes.Name = "checklistAllCodes";
+            this.checklistAllCodes.Size = new System.Drawing.Size(197, 154);
+            this.checklistAllCodes.TabIndex = 4;
             // 
             // Form3
             // 
@@ -230,7 +228,7 @@
         private System.Windows.Forms.Label lbComBox;
         private System.Windows.Forms.Label labelTypeVal;
         private System.Windows.Forms.Label labelType;
-        private System.Windows.Forms.ListBox listAllCodes;
-        private System.Windows.Forms.ListBox listSelectedCodes;
+        private System.Windows.Forms.CheckedListBox checklistAllCodes;
+        private System.Windows.Forms.CheckedListBox checklistSelectedCodes;
     }
 }

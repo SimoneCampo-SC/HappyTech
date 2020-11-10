@@ -30,25 +30,16 @@ namespace HappyTech
 
         }
 
-        private void listSelectedCodes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form3_Load(object sender, EventArgs e)
         {
-            listSelectedCodes.Items.Add(String.Format(codeDisplay, "G-EXP", "You have shown a good level of experience."));
-            listAllCodes.Items.Add(String.Format(codeDisplay, "B-EXP", "You have shown a poor level of experience."));
-            listSelectedCodes.Items.Add(String.Format(codeDisplay, "T-EST", "This is a test code. Paragraph to follow."));
-            listAllCodes.Items.Add(String.Format(codeDisplay, "T-EST", "This is a test code. Paragraph to follow."));
-            listAllCodes.Items.Add(String.Format(codeDisplay, "T-EST", "This is a test code. Paragraph to follow."));
-            listAllCodes.Items.Add(String.Format(codeDisplay, "T-EST", "This is a test code. Paragraph to follow."));
-            listAllCodes.Items.Add(String.Format(codeDisplay, "T-EST", "This is a test code. Paragraph to follow."));
+            checklistSelectedCodes.Items.Add(String.Format(codeDisplay, "G-EXP", "You have shown a good level of experience."));
+            checklistAllCodes.Items.Add(String.Format(codeDisplay, "B-EXP", "You have shown a poor level of experience."));
+            checklistSelectedCodes.Items.Add(String.Format(codeDisplay, "T-EST", "This is a test code. Paragraph to follow."));
+            checklistAllCodes.Items.Add(String.Format(codeDisplay, "T-EST", "This is a test code. Paragraph to follow."));
+            checklistAllCodes.Items.Add(String.Format(codeDisplay, "T-EST", "This is a test code. Paragraph to follow."));
+            checklistAllCodes.Items.Add(String.Format(codeDisplay, "T-EST", "This is a test code. Paragraph to follow."));
+            checklistAllCodes.Items.Add(String.Format(codeDisplay, "T-EST", "This is a test code. Paragraph to follow."));
         }
 
-        private void listAllCodes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
