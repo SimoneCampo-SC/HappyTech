@@ -12,9 +12,17 @@ namespace HappyTech
 {
     public partial class ConfRegistrForm : Form
     {
-        public ConfRegistrForm()
+        public ConfRegistrForm(bool successful)
         {
             InitializeComponent();
+            if (successful == true)
+            {
+                lbSuccessful.Text = "You have successfully registered!";
+            }
+            else
+            {
+                lbSuccessful.Text = "The user already exists";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

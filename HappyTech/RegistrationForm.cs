@@ -31,17 +31,19 @@ namespace HappyTech
                 errorMessage.Visible = true;
                 errorMessage.Text = "All the fields must be filled.";
             }
-            if (stringOk == true)
+            if ((stringOk == true) && (Constants.checkRecruiter(emailBox.Text, nameBox.Text, surnameBox.Text, passBox.Text) == false))
             {
-                // Need to check whether the fields have already been inserted
-
-                string queryString = Constants.insertRecruiter(emailBox.Text, nameBox.Text, emailBox.Text, passBox.Text);
+                string queryString = Constants.insertRecruiter(emailBox.Text, nameBox.Text, surnameBox.Text, passBox.Text);
                 Connection.GetDbConn().CreateCommand(queryString);
-                //conn.CreateCommand(queryString);
-               // DataSet ds = Connection.GetDbConn().getDataSet(login);
-                //Console.WriteLine(ds.ToString());
+
                 this.Hide();
-                ConfRegistrForm crf = new ConfRegistrForm();
+                ConfRegistrForm crf = new ConfRegistrForm(true);
+                crf.Show();
+            }
+            else
+            {
+                this.Hide();
+                ConfRegistrForm crf = new ConfRegistrForm(false);
                 crf.Show();
             }
         }
