@@ -179,6 +179,8 @@
             this.checklistSelectedCodes.Name = "checklistSelectedCodes";
             this.checklistSelectedCodes.Size = new System.Drawing.Size(197, 169);
             this.checklistSelectedCodes.TabIndex = 2;
+            this.checklistSelectedCodes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checklistSelectedCodes_ItemCheck);
+            this.checklistSelectedCodes.SelectedIndexChanged += new System.EventHandler(this.checklistSelectedCodes_SelectedIndexChanged);
             // 
             // checklistAllCodes
             // 
@@ -187,6 +189,7 @@
             this.checklistAllCodes.Name = "checklistAllCodes";
             this.checklistAllCodes.Size = new System.Drawing.Size(197, 154);
             this.checklistAllCodes.TabIndex = 4;
+            this.checklistAllCodes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checklistAllCodes_ItemCheck);
             // 
             // Form3
             // 
