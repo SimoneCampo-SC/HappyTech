@@ -9,19 +9,19 @@ namespace HappyTech
     static class EditorClass
     {
         
-        public static Form3 NextForm (int direction, int currentPosition)
+        public static EditorForm NextForm (int direction, int currentPosition)
         {
-            Form3 f;
+            EditorForm f;
             switch (direction)
             {
                 case 1:
-                    f = new Form3((currentPosition + 1));
+                    f = new EditorForm((currentPosition + 1));
                     break;
                 case 0:
-                    f = new Form3((currentPosition - 1));
+                    f = new EditorForm((currentPosition - 1));
                     break;
                 default:
-                    f = new Form3((currentPosition)); 
+                    f = new EditorForm((currentPosition)); 
                     break;
             }
             return f;

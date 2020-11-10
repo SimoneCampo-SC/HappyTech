@@ -1,6 +1,6 @@
 ﻿namespace HappyTech
 {
-    partial class Form3
+    partial class EditorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -83,10 +83,10 @@
             // lbHeader
             // 
             this.lbHeader.AutoSize = true;
-            this.lbHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHeader.Location = new System.Drawing.Point(0, 0);
             this.lbHeader.Name = "lbHeader";
-            this.lbHeader.Size = new System.Drawing.Size(54, 16);
+            this.lbHeader.Size = new System.Drawing.Size(48, 15);
             this.lbHeader.TabIndex = 1;
             this.lbHeader.Text = "Header";
             // 
@@ -113,7 +113,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(200, 338);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "Enter your comment here...";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // lbTemplate
             // 
@@ -155,7 +154,7 @@
             this.lbApplicants.TabIndex = 9;
             this.lbApplicants.Text = "Applicant x out of y";
             // 
-            // Form3
+            // EditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -169,8 +168,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btNext);
             this.Controls.Add(this.btBack);
-            this.Name = "Form3";
-            this.Text = "Form3";
+            this.Name = "EditorForm";
+            this.Text = "EditorForm";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);

@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace HappyTech
 {
-    public partial class Form3 : Form
+    public partial class EditorForm : Form
     {
         int currentPosition;
-        public Form3(int position)
+        public EditorForm(int position)
         {
             currentPosition = position;
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace HappyTech
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form3 f;
+            EditorForm f;
             if (currentPosition > 0)
             {
                 f = EditorClass.NextForm(0, currentPosition);
@@ -34,19 +34,18 @@ namespace HappyTech
             }
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            Form3 f;
+            EditorForm f;
             if (currentPosition < Template.templates.Count - 1)
             {
                 f = EditorClass.NextForm(1, currentPosition);
                 this.Hide();
                 f.Show();
+            }
+            else
+            {
+
             }
         }
     }

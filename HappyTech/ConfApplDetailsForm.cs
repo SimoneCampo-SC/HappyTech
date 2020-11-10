@@ -33,7 +33,7 @@ namespace HappyTech
         {
             this.Hide();
             Template.generateTemplates();
-            Form3 f = EditorClass.NextForm(2, 0);
+            EditorForm f = EditorClass.NextForm(2, 0);
             f.Show();
         }
 

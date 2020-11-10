@@ -24,11 +24,22 @@ namespace HappyTech
             }
         }
 
+        public static string insertTemplate(string recruitId, string header) // tag
+        {
+            string query = $"INSERT INTO Template (Recruiter_ID, tempHeader) VALUES ('{recruitId}', '{header}')";
+            return query;
+        }
 
         public static string insertRecruiter(string email, string name, string surname, string password)
         {
 
-            string query = $"INSERT INTO Recruiter (email, name, surname, password) VALUES ('{email}', '{name}', '{surname}', '{password}' )";
+            string query = $"INSERT INTO Recruiter (email, name, surname, password) VALUES ('{email}', '{name}', '{surname}', '{password}')";
+            return query;
+        }
+
+        public static string selectRecruiterID(string email)
+        {
+            string query = $"SELECT Id FROM Recruiter WHERE email = '{email}'";
             return query;
         }
 

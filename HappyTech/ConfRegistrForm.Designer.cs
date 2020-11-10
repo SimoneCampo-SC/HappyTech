@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lbSuccessful = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbSuccessful
@@ -42,22 +42,22 @@
             this.lbSuccessful.TabIndex = 0;
             this.lbSuccessful.Text = "Message";
             // 
-            // button1
+            // btLogin
             // 
-            this.button1.Location = new System.Drawing.Point(369, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Login Page";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btLogin.Location = new System.Drawing.Point(369, 210);
+            this.btLogin.Name = "btLogin";
+            this.btLogin.Size = new System.Drawing.Size(75, 23);
+            this.btLogin.TabIndex = 1;
+            this.btLogin.Text = "Login Page";
+            this.btLogin.UseVisualStyleBackColor = true;
+            this.btLogin.Click += new System.EventHandler(this.button1_Click);
             // 
             // ConfRegistrForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btLogin);
             this.Controls.Add(this.lbSuccessful);
             this.Name = "ConfRegistrForm";
             this.Text = "ConfRegistrForm";
@@ -69,6 +69,6 @@
         #endregion
 
         private System.Windows.Forms.Label lbSuccessful;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btLogin;
     }
 }
