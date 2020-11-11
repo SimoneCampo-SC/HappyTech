@@ -70,12 +70,6 @@
     <Compile Include="addCode.Designer.cs">
       <DependentUpon>addCode.cs</DependentUpon>
     </Compile>
-    <Compile Include="addTag.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="addTag.Designer.cs">
-      <DependentUpon>addTag.cs</DependentUpon>
-    </Compile>
     <Compile Include="codeViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,9 +129,6 @@
     <Compile Include="Settings.cs" />
     <EmbeddedResource Include="addCode.resx">
       <DependentUpon>addCode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="addTag.resx">
-      <DependentUpon>addTag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="codeViewForm.resx">
       <DependentUpon>codeViewForm.cs</DependentUpon>

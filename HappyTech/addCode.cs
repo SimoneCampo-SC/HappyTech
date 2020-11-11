@@ -15,11 +15,11 @@ namespace HappyTech
         public addCode()
         {
             InitializeComponent();
-            DataSet ds = Connection.GetDbConn().getDataSet("SELECT name FROM Tag");
+            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagNames());
             tagBox.DataSource = ds.Tables[0]; //shows first table
         }
 
-        private void addCode_Load(object sender, EventArgs e)
+        /* private void addCode_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'database1DataSet1.Codes' table. You can move, or remove it, as needed.
 
@@ -28,7 +28,7 @@ namespace HappyTech
             tagBox.DataSource = ds.Tables[0]; //shows first table
             //this.tagTableAdapter.Fill(); //populates drop down menu with tags
 
-        }
+        } */
 
         private void selectTag(object sender, EventArgs e)
         {
@@ -55,14 +55,14 @@ namespace HappyTech
             {
                 // Need to check whether the fields have already been inserted
                 //first need to translate the currently selected tag into its id# for a code to be added into the table
-                string query = $"SELECT Id FROM Tag WHERE name = '{tagBox.Text}'"; //gets value in tagBox
-                DataSet ds = Connection.GetDbConn().getDataSet(query);
+               // string query = $"SELECT Id FROM Tag WHERE name = '{tagBox.Text}'"; //gets value in tagBox
+                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagIdFromName(tagBox.Text));
                 DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
                 var tagId = dRow.ItemArray.GetValue(0); //stroes the tag id in tagId
 
 
-                string queryString = $"INSERT INTO Codes (codeShort, codeParagraph , tag_id) VALUES ('{codeShortBox.Text}', '{codeParaBox.Text}', {tagId})";
-                Connection.GetDbConn().CreateCommand(queryString);
+               // string queryString = $"INSERT INTO Codes (codeShort, codeParagraph , tag_id) VALUES ('{codeShortBox.Text}', '{codeParaBox.Text}', {tagId})";
+                Connection.GetDbConn().CreateCommand(Constants.insertNewCode(codeShortBox.Text, codeParaBox.Text, tagId));
             }
             codeShortBox.Clear();
             codeParaBox.Clear();

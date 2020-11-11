@@ -87,7 +87,7 @@
             this.codeDisplay.Name = "codeDisplay";
             this.codeDisplay.Size = new System.Drawing.Size(712, 219);
             this.codeDisplay.TabIndex = 1;
-            this.codeDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.codeDisplay_CellContentClick);
+           // this.codeDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.codeDisplay_CellContentClick);
             // 
             // codeShortDataGridViewTextBoxColumn
             // 
@@ -190,7 +190,8 @@
             this.Controls.Add(this.tagSelectBox);
             this.Name = "codeViewForm";
             this.Text = "codeViewForm";
-            this.Load += new System.EventHandler(this.codeViewForm_Load);
+            //this.Load += new System.EventHandler(this.codeViewForm_Load);
+            
             ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.codeDisplay)).EndInit();

@@ -108,7 +108,7 @@
             this.tagBox.TabIndex = 6;
             this.tagBox.ValueMember = "name";
             this.tagBox.TextChanged += new System.EventHandler(this.selectTag);
-            this.tagBox.Click += new System.EventHandler(this.addCode_Load);
+            //this.tagBox.Click += new System.EventHandler(this.addCode_Load);
             // 
             // tagLbl
             // 
