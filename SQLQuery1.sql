@@ -1,1 +1,2 @@
-﻿INSERT INTO Tag (name) VALUES ('cv')
+﻿
+select * from Recruiter WHERE email = 'bobjones@email.com' AND password = 'password'

@@ -64,22 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="addCode.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="addCode.Designer.cs">
-      <DependentUpon>addCode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="codeViewForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="codeViewForm.Designer.cs">
-      <DependentUpon>codeViewForm.cs</DependentUpon>
-    </Compile>
-=======
     <Compile Include="Applicant.cs" />
->>>>>>> main
     <Compile Include="ConfRegistrForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,23 +73,6 @@
     </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Constants.cs" />
-<<<<<<< HEAD
-    <Compile Include="Database1DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Database1DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Database1DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Database1DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Database1DataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Database1DataSet2.xsd</DependentUpon>
-    </Compile>
-=======
     <Compile Include="ConfApplDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,7 +80,6 @@
       <DependentUpon>ConfApplDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditorClass.cs" />
->>>>>>> main
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,17 +109,9 @@
     </Compile>
     <Compile Include="Section.cs" />
     <Compile Include="Settings.cs" />
-<<<<<<< HEAD
-    <EmbeddedResource Include="addCode.resx">
-      <DependentUpon>addCode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="codeViewForm.resx">
-      <DependentUpon>codeViewForm.cs</DependentUpon>
-=======
     <Compile Include="Template.cs" />
     <EmbeddedResource Include="ConfApplDetailsForm.resx">
       <DependentUpon>ConfApplDetailsForm.cs</DependentUpon>
->>>>>>> main
     </EmbeddedResource>
     <EmbeddedResource Include="ConfRegistrForm.resx">
       <DependentUpon>ConfRegistrForm.cs</DependentUpon>
@@ -178,39 +137,6 @@
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Database1DataSet.xsc">
-      <DependentUpon>Database1DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Database1DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Database1DataSet.xss">
-      <DependentUpon>Database1DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet1.xsc">
-      <DependentUpon>Database1DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Database1DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Database1DataSet1.xss">
-      <DependentUpon>Database1DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet2.xsc">
-      <DependentUpon>Database1DataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Database1DataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Database1DataSet2.xss">
-      <DependentUpon>Database1DataSet2.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
