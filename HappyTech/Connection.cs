@@ -18,7 +18,8 @@ namespace HappyTech
 
         private Connection()
         {
-            connStr = Properties.Settings.Default.database; //assigned in properties, points to db location
+            //assigned in properties, points to db location
+            connStr = Properties.Settings.Default.database; 
         }
 
         //use this method whenever a connection to the db is required
@@ -44,18 +45,14 @@ namespace HappyTech
 
             return dataSet;
             }
-        public void CreateCommand( string queryString)
-        {
-            
+        public void CreateCommand(string queryString)
+        { 
             using (connToDb = new SqlConnection(connStr))
             {
                 SqlCommand command = new SqlCommand(queryString, connToDb);
                 command.Connection.Open();
                 command.ExecuteNonQuery();
             }
-           
-        }
-            
-        
+        }   
     }
 }
