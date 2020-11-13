@@ -63,11 +63,14 @@ namespace HappyTech
 
         }
 
+<<<<<<< HEAD
         private void codesViewBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             codeViewForm cf = new codeViewForm();
             cf.Show();
+=======
+>>>>>>> parent of 5144c56... Merge pull request #4 from BlackSun93/tagCodes-PROTOTYPE
         private void btBack_Click(object sender, EventArgs e)
         {
             this.Hide();

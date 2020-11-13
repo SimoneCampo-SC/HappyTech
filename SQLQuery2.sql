@@ -1,1 +1,1 @@
-﻿INSERT INTO Codes (codeShort, codeParagraph , tag_ID) VALUES ('N-XP', 'Not enough experience' , 1)
+﻿SELECT * FROM Recruiter WHERE email = bob
