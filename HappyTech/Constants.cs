@@ -10,9 +10,9 @@ namespace HappyTech
     class Constants
     {
 
-        public static bool checkRecruiter(string email, string name, string surname, string password)
+        public static bool checkRecruiter(string email)
         {
-            string query = $"SELECT * FROM Recruiter WHERE email = '{email}' AND name = '{name}' AND surname = '{surname}' AND password = '{password}'";
+            string query = $"SELECT * FROM Recruiter WHERE email = '{email}'";
             DataSet ds = Connection.GetDbConn().getDataSet(query);
             if (ds.Tables[0].Rows.Count != 0)
             {

@@ -41,6 +41,7 @@
             this.lbSuccessful.Size = new System.Drawing.Size(65, 16);
             this.lbSuccessful.TabIndex = 0;
             this.lbSuccessful.Text = "Message";
+            this.lbSuccessful.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btLogin
             // 
@@ -50,7 +51,7 @@
             this.btLogin.TabIndex = 1;
             this.btLogin.Text = "Login Page";
             this.btLogin.UseVisualStyleBackColor = true;
-            this.btLogin.Click += new System.EventHandler(this.button1_Click);
+            this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
             // 
             // ConfRegistrForm
             // 

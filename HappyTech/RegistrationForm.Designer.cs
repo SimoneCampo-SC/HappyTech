@@ -134,7 +134,6 @@
             this.passBox.Name = "passBox";
             this.passBox.Size = new System.Drawing.Size(140, 20);
             this.passBox.TabIndex = 3;
-            this.passBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // surnameBox
             // 
