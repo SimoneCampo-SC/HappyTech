@@ -30,7 +30,7 @@
         {
             this.btnPreview = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checklistAppPreview = new System.Windows.Forms.CheckedListBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -47,19 +47,20 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.checkedListBox1);
+            this.panel1.Controls.Add(this.checklistAppPreview);
             this.panel1.Location = new System.Drawing.Point(37, 33);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 390);
             this.panel1.TabIndex = 1;
             // 
-            // checkedListBox1
+            // checklistAppPreview
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(3, 4);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(594, 379);
-            this.checkedListBox1.TabIndex = 0;
+            this.checklistAppPreview.FormattingEnabled = true;
+            this.checklistAppPreview.Location = new System.Drawing.Point(3, 4);
+            this.checklistAppPreview.Name = "checklistAppPreview";
+            this.checklistAppPreview.Size = new System.Drawing.Size(594, 379);
+            this.checklistAppPreview.TabIndex = 0;
+            this.checklistAppPreview.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checklistAppPreview_ItemCheck);
             // 
             // btnBack
             // 
@@ -100,7 +101,7 @@
 
         private System.Windows.Forms.Button btnPreview;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checklistAppPreview;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnSend;
     }
