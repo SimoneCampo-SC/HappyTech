@@ -17,7 +17,9 @@ namespace HappyTech
 
         public Form3()
         {
-            InitializeComponent();
+
+            InitializeComponentNew();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -86,5 +88,19 @@ namespace HappyTech
                 checklistSelectedCodes.SetItemChecked(checklistSelectedCodes.Items.Count - 1, true);                
             }
         }
+
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // Form3
+            // 
+            this.ClientSize = new System.Drawing.Size(585, 445);
+            this.Name = "Form3";
+            this.ResumeLayout(false);
+
+        }
+
     }
 }
