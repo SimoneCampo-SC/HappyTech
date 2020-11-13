@@ -4,57 +4,36 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HappyTech
 {
-    public partial class EditorForm : Form
+    public partial class Form3 : Form
     {
-        int currentPosition;
         string codeDisplay = "{0, -10}{1,-20}";
 
-
-        public EditorForm(int position)
+        public Form3()
         {
-            currentPosition = position;
-            InitializeComponent();
-            lbApplicants.Text = "Applicant " + (position + 1).ToString() +
-                                " out of " + Applicant.applicants.Count;
-            lbHeader.Text = Template.templates[position].GetHeader();
+            InitializeComponentNew();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EditorForm f;
-            if (currentPosition > 0)
-            {
-                f = EditorClass.NextForm(0, currentPosition);
-                this.Hide();
-                f.Show();
-            }
+            this.Hide();
+            DashForm df = new DashForm();
+            df.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            EditorForm f;
-            if (currentPosition < Template.templates.Count - 1)
-            {
-                f = EditorClass.NextForm(1, currentPosition);
-                this.Hide();
-                f.Show();
-            }
-            else
-            {
 
-            }
         }
 
-        private void EditorForm_Load(object sender, EventArgs e)
+        private void Form3_Load(object sender, EventArgs e)
         {
-
             checklistAllCodes.Items.Add(String.Format(codeDisplay, "G-EXP", "You have shown a good level of experience."));
             checklistAllCodes.Items.Add(String.Format(codeDisplay, "B-EXP", "You have shown a poor level of experience."));
             checklistAllCodes.Items.Add(String.Format(codeDisplay, "T-EST", "This is a test code. Paragraph to follow."));
@@ -80,6 +59,12 @@ namespace HappyTech
             checklistAllCodes.CheckOnClick = true;
             checklistSelectedCodes.CheckOnClick = true;
         }
+
+        private void checklistSelectedCodes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
         private void checklistSelectedCodes_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             if (e.NewValue == CheckState.Unchecked)
@@ -98,8 +83,20 @@ namespace HappyTech
                 e.NewValue = CheckState.Unchecked;
                 checklistSelectedCodes.Items.Add(checklistAllCodes.Items[e.Index].ToString());
                 checklistAllCodes.Items.Remove(checklistAllCodes.Items[e.Index]);
-                checklistSelectedCodes.SetItemChecked(checklistSelectedCodes.Items.Count - 1, true);
+                checklistSelectedCodes.SetItemChecked(checklistSelectedCodes.Items.Count - 1, true);                
             }
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // Form3
+            // 
+            this.ClientSize = new System.Drawing.Size(585, 445);
+            this.Name = "Form3";
+            this.ResumeLayout(false);
+
         }
     }
 }
