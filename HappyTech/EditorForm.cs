@@ -43,9 +43,11 @@ namespace HappyTech
                 this.Hide();
                 f.Show();
             }
-            else
+            else if (currentPosition >= Template.templates.Count - 1)
             {
-
+                this.Hide();
+                PreviewForm pf = new PreviewForm();
+                pf.Show();
             }
         }
     }
