@@ -63,19 +63,16 @@ namespace HappyTech
 
         }
 
-<<<<<<< HEAD
         private void codesViewBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             codeViewForm cf = new codeViewForm();
             cf.Show();
-=======
         private void btBack_Click(object sender, EventArgs e)
         {
             this.Hide();
             ConfApplDetailsForm f3 = new ConfApplDetailsForm(true);
             f3.Show();
->>>>>>> main
         }
     }
 }
