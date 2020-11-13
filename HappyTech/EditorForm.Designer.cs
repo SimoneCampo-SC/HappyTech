@@ -180,8 +180,10 @@
             this.checklistSelectedCodes.Name = "checklistSelectedCodes";
             this.checklistSelectedCodes.Size = new System.Drawing.Size(197, 169);
             this.checklistSelectedCodes.TabIndex = 2;
+
            // this.checklistSelectedCodes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checklistSelectedCodes_ItemCheck);
            // this.checklistSelectedCodes.SelectedIndexChanged += new System.EventHandler(this.checklistSelectedCodes_SelectedIndexChanged);
+
             // 
             // checklistAllCodes
             // 
@@ -190,7 +192,10 @@
             this.checklistAllCodes.Name = "checklistAllCodes";
             this.checklistAllCodes.Size = new System.Drawing.Size(197, 154);
             this.checklistAllCodes.TabIndex = 4;
+
           //  this.checklistAllCodes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checklistAllCodes_ItemCheck);
+
+           
             // 
             // Form3
             // lbApplicants
@@ -215,11 +220,13 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+
            // this.Controls.Add(this.button2);
            // this.Controls.Add(this.button1);
             this.Name = "Form3";
             this.Text = "Form3";
            // this.Load += new System.EventHandler(this.Form3_Load);
+
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.Controls.Add(this.btNext);
