@@ -1,0 +1,1 @@
+﻿INSERT INTO Tag (name) VALUES ('tech int')

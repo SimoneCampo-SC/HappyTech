@@ -32,7 +32,8 @@ namespace HappyTech
         private void btStartFeed_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form3 f = new Form3();
+            Template.generateTemplates();
+            EditorForm f = EditorClass.NextForm(2, 0);
             f.Show();
         }
 

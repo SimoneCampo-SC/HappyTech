@@ -50,7 +50,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbError = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbJobPos = new System.Windows.Forms.Label();
+            this.codesViewBtn = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+=======
             this.btBack = new System.Windows.Forms.Button();
+>>>>>>> main
             this.SuspendLayout();
             // 
             // btLogout
@@ -65,13 +72,13 @@
             // 
             // btConfirm
             // 
-            this.btConfirm.Location = new System.Drawing.Point(546, 365);
-            this.btConfirm.Name = "btConfirm";
-            this.btConfirm.Size = new System.Drawing.Size(75, 23);
-            this.btConfirm.TabIndex = 1;
-            this.btConfirm.Text = "Confirm";
-            this.btConfirm.UseVisualStyleBackColor = true;
-            this.btConfirm.Click += new System.EventHandler(this.button1_Click);
+            this.next.Location = new System.Drawing.Point(614, 349);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(75, 23);
+            this.next.TabIndex = 1;
+            this.next.Text = "next";
+            this.next.UseVisualStyleBackColor = true;
+            this.next.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbHello
             // 
@@ -116,7 +123,7 @@
             this.lbUploadDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUploadDoc.Location = new System.Drawing.Point(143, 178);
             this.lbUploadDoc.Name = "lbUploadDoc";
-            this.lbUploadDoc.Size = new System.Drawing.Size(126, 16);
+            this.lbUploadDoc.Size = new System.Drawing.Size(129, 16);
             this.lbUploadDoc.TabIndex = 11;
             this.lbUploadDoc.Text = "Applicant Details";
             // 
@@ -159,7 +166,11 @@
             this.lbDocType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDocType.Location = new System.Drawing.Point(507, 178);
             this.lbDocType.Name = "lbDocType";
+<<<<<<< HEAD
+            this.lbDocType.Size = new System.Drawing.Size(120, 16);
+=======
             this.lbDocType.Size = new System.Drawing.Size(114, 16);
+>>>>>>> main
             this.lbDocType.TabIndex = 15;
             this.lbDocType.Text = "Template Type";
             // 
@@ -276,12 +287,36 @@
             this.btBack.Visible = false;
             this.btBack.Click += new System.EventHandler(this.btBack_Click);
             // 
+            // codesViewBtn
+            // 
+            this.codesViewBtn.Location = new System.Drawing.Point(547, 117);
+            this.codesViewBtn.Name = "codesViewBtn";
+            this.codesViewBtn.Size = new System.Drawing.Size(183, 23);
+            this.codesViewBtn.TabIndex = 29;
+            this.codesViewBtn.Text = "View, add or edit tags and codes";
+            this.codesViewBtn.UseVisualStyleBackColor = true;
+            this.codesViewBtn.Click += new System.EventHandler(this.codesViewBtn_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 30;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // DashForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+<<<<<<< HEAD
+            this.Controls.Add(this.codesViewBtn);
+            this.Controls.Add(this.lbJobPos);
+            this.Controls.Add(this.comboBox1);
+=======
             this.Controls.Add(this.btBack);
+>>>>>>> main
             this.Controls.Add(this.lbError);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -304,6 +339,8 @@
             this.Controls.Add(this.lbHello);
             this.Controls.Add(this.btConfirm);
             this.Controls.Add(this.btLogout);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "DashForm";
             this.Text = "Form2";
             this.ResumeLayout(false);
@@ -335,6 +372,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbError;
+<<<<<<< HEAD
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lbJobPos;
+        private System.Windows.Forms.Button codesViewBtn;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+=======
         private System.Windows.Forms.Button btBack;
+>>>>>>> main
     }
 }
