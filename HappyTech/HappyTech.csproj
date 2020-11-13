@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="addCode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +77,9 @@
     <Compile Include="codeViewForm.Designer.cs">
       <DependentUpon>codeViewForm.cs</DependentUpon>
     </Compile>
+=======
+    <Compile Include="Applicant.cs" />
+>>>>>>> main
     <Compile Include="ConfRegistrForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +88,7 @@
     </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Constants.cs" />
+<<<<<<< HEAD
     <Compile Include="Database1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,6 +104,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet2.xsd</DependentUpon>
     </Compile>
+=======
+    <Compile Include="ConfApplDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfApplDetailsForm.Designer.cs">
+      <DependentUpon>ConfApplDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorClass.cs" />
+>>>>>>> main
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,11 +125,11 @@
     <Compile Include="DashForm.Designer.cs">
       <DependentUpon>DashForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="EditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="EditorForm.Designer.cs">
+      <DependentUpon>EditorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,12 +140,19 @@
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Section.cs" />
     <Compile Include="Settings.cs" />
+<<<<<<< HEAD
     <EmbeddedResource Include="addCode.resx">
       <DependentUpon>addCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="codeViewForm.resx">
       <DependentUpon>codeViewForm.cs</DependentUpon>
+=======
+    <Compile Include="Template.cs" />
+    <EmbeddedResource Include="ConfApplDetailsForm.resx">
+      <DependentUpon>ConfApplDetailsForm.cs</DependentUpon>
+>>>>>>> main
     </EmbeddedResource>
     <EmbeddedResource Include="ConfRegistrForm.resx">
       <DependentUpon>ConfRegistrForm.cs</DependentUpon>
@@ -142,8 +163,8 @@
     <EmbeddedResource Include="DashForm.resx">
       <DependentUpon>DashForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="EditorForm.resx">
+      <DependentUpon>EditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
