@@ -17,9 +17,7 @@ namespace HappyTech
 
         public Form3()
         {
-
             InitializeComponentNew();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -89,7 +87,6 @@ namespace HappyTech
             }
         }
 
-
         private void InitializeComponent()
         {
             this.SuspendLayout();
@@ -101,6 +98,5 @@ namespace HappyTech
             this.ResumeLayout(false);
 
         }
-
     }
 }

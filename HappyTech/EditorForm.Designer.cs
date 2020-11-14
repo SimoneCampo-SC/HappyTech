@@ -31,10 +31,6 @@
             this.btBack = new System.Windows.Forms.Button();
             this.btNext = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checklistAllCodes = new System.Windows.Forms.CheckedListBox();
-            this.checklistSelectedCodes = new System.Windows.Forms.CheckedListBox();
-            this.labelTypeVal = new System.Windows.Forms.Label();
-            this.labelType = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbHeader = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -43,8 +39,12 @@
             this.lbTemplate = new System.Windows.Forms.Label();
             this.lbCodeList = new System.Windows.Forms.Label();
             this.lbComBox = new System.Windows.Forms.Label();
-            this.lbApplicants = new System.Windows.Forms.Label();
+            this.labelType = new System.Windows.Forms.Label();
+            this.labelTypeVal = new System.Windows.Forms.Label();
+            this.checklistSelectedCodes = new System.Windows.Forms.CheckedListBox();
+            this.checklistAllCodes = new System.Windows.Forms.CheckedListBox();
             this.panel1.SuspendLayout();
+            this.lbApplicants = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -79,42 +79,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(203, 361);
             this.panel1.TabIndex = 3;
-            // 
-            // checklistAllCodes
-            // 
-            this.checklistAllCodes.FormattingEnabled = true;
-            this.checklistAllCodes.Location = new System.Drawing.Point(3, 204);
-            this.checklistAllCodes.Name = "checklistAllCodes";
-            this.checklistAllCodes.Size = new System.Drawing.Size(197, 154);
-            this.checklistAllCodes.TabIndex = 4;
-            // 
-            // checklistSelectedCodes
-            // 
-            this.checklistSelectedCodes.FormattingEnabled = true;
-            this.checklistSelectedCodes.Location = new System.Drawing.Point(3, 23);
-            this.checklistSelectedCodes.Name = "checklistSelectedCodes";
-            this.checklistSelectedCodes.Size = new System.Drawing.Size(197, 169);
-            this.checklistSelectedCodes.TabIndex = 2;
-            // 
-            // labelTypeVal
-            // 
-            this.labelTypeVal.AutoSize = true;
-            this.labelTypeVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTypeVal.Location = new System.Drawing.Point(118, 0);
-            this.labelTypeVal.Name = "labelTypeVal";
-            this.labelTypeVal.Size = new System.Drawing.Size(47, 20);
-            this.labelTypeVal.TabIndex = 3;
-            this.labelTypeVal.Text = "[type]";
-            // 
-            // labelType
-            // 
-            this.labelType.AutoSize = true;
-            this.labelType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelType.Location = new System.Drawing.Point(3, 0);
-            this.labelType.Name = "labelType";
-            this.labelType.Size = new System.Drawing.Size(109, 20);
-            this.labelType.TabIndex = 2;
-            this.labelType.Text = "Feeback type:";
             // 
             // panel2
             // 
@@ -189,6 +153,46 @@
             this.lbComBox.TabIndex = 8;
             this.lbComBox.Text = "Comment Box";
             // 
+            // labelType
+            // 
+            this.labelType.AutoSize = true;
+            this.labelType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelType.Location = new System.Drawing.Point(3, 0);
+            this.labelType.Name = "labelType";
+            this.labelType.Size = new System.Drawing.Size(109, 20);
+            this.labelType.TabIndex = 2;
+            this.labelType.Text = "Feeback type:";
+            // 
+            // labelTypeVal
+            // 
+            this.labelTypeVal.AutoSize = true;
+            this.labelTypeVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTypeVal.Location = new System.Drawing.Point(118, 0);
+            this.labelTypeVal.Name = "labelTypeVal";
+            this.labelTypeVal.Size = new System.Drawing.Size(47, 20);
+            this.labelTypeVal.TabIndex = 3;
+            this.labelTypeVal.Text = "[type]";
+            // 
+            // checklistSelectedCodes
+            // 
+            this.checklistSelectedCodes.FormattingEnabled = true;
+            this.checklistSelectedCodes.Location = new System.Drawing.Point(3, 23);
+            this.checklistSelectedCodes.Name = "checklistSelectedCodes";
+            this.checklistSelectedCodes.Size = new System.Drawing.Size(197, 169);
+            this.checklistSelectedCodes.TabIndex = 2;
+           // this.checklistSelectedCodes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checklistSelectedCodes_ItemCheck);
+           // this.checklistSelectedCodes.SelectedIndexChanged += new System.EventHandler(this.checklistSelectedCodes_SelectedIndexChanged);
+            // 
+            // checklistAllCodes
+            // 
+            this.checklistAllCodes.FormattingEnabled = true;
+            this.checklistAllCodes.Location = new System.Drawing.Point(3, 204);
+            this.checklistAllCodes.Name = "checklistAllCodes";
+            this.checklistAllCodes.Size = new System.Drawing.Size(197, 154);
+            this.checklistAllCodes.TabIndex = 4;
+          //  this.checklistAllCodes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checklistAllCodes_ItemCheck);
+            // 
+            // Form3
             // lbApplicants
             // 
             this.lbApplicants.AutoSize = true;
@@ -211,13 +215,17 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+           // this.Controls.Add(this.button2);
+           // this.Controls.Add(this.button1);
+            this.Name = "Form3";
+            this.Text = "Form3";
+           // this.Load += new System.EventHandler(this.Form3_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.Controls.Add(this.btNext);
             this.Controls.Add(this.btBack);
             this.Name = "EditorForm";
             this.Text = "EditorForm";
-            this.Load += new System.EventHandler(this.EditorForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
