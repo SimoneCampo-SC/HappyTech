@@ -12,6 +12,7 @@ namespace HappyTech
 {
     public partial class DashForm : Form
     {
+        public static string docType;
         public DashForm()
         {
             InitializeComponent();
@@ -38,9 +39,9 @@ namespace HappyTech
                (rbTinterview.Checked == true) || (rbAC.Checked == true)) && 
                ((tbAName.Text.Length > 0) && (tbAJob.Text.Length > 0) && 
                (tbAEmail.Text.Length > 0)))
-            {
-                Connection.GetDbConn().CreateCommand(Constants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text));
-                Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text);
+            { 
+                Connection.GetDbConn().CreateCommand(Constants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, docType));
+                Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, docType);
                 Applicant.applicants.Add(applicant);
                 this.Hide();
                 ConfApplDetailsForm f3 = new ConfApplDetailsForm(false);
@@ -53,21 +54,31 @@ namespace HappyTech
             }
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbAC_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btBack_Click(object sender, EventArgs e)
         {
             this.Hide();
             ConfApplDetailsForm f3 = new ConfApplDetailsForm(true);
             f3.Show();
+        }
+
+        private void rbCV_CheckedChanged(object sender, EventArgs e)
+        {
+            docType = rbCV.Text;
+        }
+
+        private void rbAC_CheckedChanged(object sender, EventArgs e)
+        {
+            docType = rbAC.Text;
+        }
+
+        private void rbInterview_CheckedChanged(object sender, EventArgs e)
+        {
+            docType = rbInterview.Text;
+        }
+
+        private void rbTinterview_CheckedChanged(object sender, EventArgs e)
+        {
+            docType = rbTinterview.Text;
         }
     }
 }

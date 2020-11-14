@@ -31,6 +31,7 @@
             this.btBack = new System.Windows.Forms.Button();
             this.btNext = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listBox = new System.Windows.Forms.CheckedListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbHeader = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -40,77 +41,91 @@
             this.lbCodeList = new System.Windows.Forms.Label();
             this.lbComBox = new System.Windows.Forms.Label();
             this.lbApplicants = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btBack
             // 
-            this.btBack.Location = new System.Drawing.Point(293, 415);
+            this.btBack.Location = new System.Drawing.Point(381, 491);
             this.btBack.Name = "btBack";
             this.btBack.Size = new System.Drawing.Size(75, 23);
             this.btBack.TabIndex = 1;
             this.btBack.Text = "Back";
             this.btBack.UseVisualStyleBackColor = true;
-            this.btBack.Click += new System.EventHandler(this.button1_Click);
+            this.btBack.Click += new System.EventHandler(this.btBack_Click);
             // 
             // btNext
             // 
-            this.btNext.Location = new System.Drawing.Point(410, 415);
+            this.btNext.Location = new System.Drawing.Point(618, 491);
             this.btNext.Name = "btNext";
             this.btNext.Size = new System.Drawing.Size(75, 23);
             this.btNext.TabIndex = 2;
             this.btNext.Text = "Next";
             this.btNext.UseVisualStyleBackColor = true;
-            this.btNext.Click += new System.EventHandler(this.button2_Click);
+            this.btNext.Click += new System.EventHandler(this.btNext2_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.listBox);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(26, 37);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(203, 361);
+            this.panel1.Size = new System.Drawing.Size(264, 448);
             this.panel1.TabIndex = 3;
+            // 
+            // listBox
+            // 
+            this.listBox.FormattingEnabled = true;
+            this.listBox.Location = new System.Drawing.Point(3, 0);
+            this.listBox.Name = "listBox";
+            this.listBox.Size = new System.Drawing.Size(259, 441);
+            this.listBox.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.lbHeader);
             this.panel2.Controls.Add(this.richTextBox2);
-            this.panel2.Location = new System.Drawing.Point(235, 37);
+            this.panel2.Location = new System.Drawing.Point(316, 37);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(326, 361);
+            this.panel2.Size = new System.Drawing.Size(423, 448);
             this.panel2.TabIndex = 4;
             // 
             // lbHeader
             // 
             this.lbHeader.AutoSize = true;
             this.lbHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHeader.Location = new System.Drawing.Point(0, 0);
+            this.lbHeader.Location = new System.Drawing.Point(3, 1);
+            this.lbHeader.MaximumSize = new System.Drawing.Size(278, 0);
+            this.lbHeader.MinimumSize = new System.Drawing.Size(278, 0);
             this.lbHeader.Name = "lbHeader";
-            this.lbHeader.Size = new System.Drawing.Size(48, 15);
+            this.lbHeader.Size = new System.Drawing.Size(278, 15);
             this.lbHeader.TabIndex = 1;
             this.lbHeader.Text = "Header";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(0, 23);
+            this.richTextBox2.Location = new System.Drawing.Point(0, 28);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(326, 338);
+            this.richTextBox2.Size = new System.Drawing.Size(423, 420);
             this.richTextBox2.TabIndex = 0;
             this.richTextBox2.Text = "";
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.richTextBox1);
-            this.panel3.Location = new System.Drawing.Point(567, 37);
+            this.panel3.Location = new System.Drawing.Point(742, 37);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 361);
+            this.panel3.Size = new System.Drawing.Size(203, 448);
             this.panel3.TabIndex = 5;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(0, 23);
+            this.richTextBox1.Location = new System.Drawing.Point(3, 0);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(200, 338);
+            this.richTextBox1.Size = new System.Drawing.Size(200, 448);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "Enter your comment here...";
             // 
@@ -118,7 +133,7 @@
             // 
             this.lbTemplate.AutoSize = true;
             this.lbTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTemplate.Location = new System.Drawing.Point(363, 9);
+            this.lbTemplate.Location = new System.Drawing.Point(459, 9);
             this.lbTemplate.Name = "lbTemplate";
             this.lbTemplate.Size = new System.Drawing.Size(74, 16);
             this.lbTemplate.TabIndex = 6;
@@ -128,7 +143,7 @@
             // 
             this.lbCodeList.AutoSize = true;
             this.lbCodeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodeList.Location = new System.Drawing.Point(90, 9);
+            this.lbCodeList.Location = new System.Drawing.Point(121, 9);
             this.lbCodeList.Name = "lbCodeList";
             this.lbCodeList.Size = new System.Drawing.Size(73, 16);
             this.lbCodeList.TabIndex = 7;
@@ -138,7 +153,7 @@
             // 
             this.lbComBox.AutoSize = true;
             this.lbComBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbComBox.Location = new System.Drawing.Point(609, 9);
+            this.lbComBox.Location = new System.Drawing.Point(768, 9);
             this.lbComBox.Name = "lbComBox";
             this.lbComBox.Size = new System.Drawing.Size(102, 16);
             this.lbComBox.TabIndex = 8;
@@ -148,7 +163,7 @@
             // 
             this.lbApplicants.AutoSize = true;
             this.lbApplicants.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbApplicants.Location = new System.Drawing.Point(66, 422);
+            this.lbApplicants.Location = new System.Drawing.Point(59, 491);
             this.lbApplicants.Name = "lbApplicants";
             this.lbApplicants.Size = new System.Drawing.Size(118, 16);
             this.lbApplicants.TabIndex = 9;
@@ -158,7 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.lbApplicants);
             this.Controls.Add(this.lbComBox);
             this.Controls.Add(this.lbCodeList);
@@ -170,6 +185,8 @@
             this.Controls.Add(this.btBack);
             this.Name = "EditorForm";
             this.Text = "EditorForm";
+            this.Load += new System.EventHandler(this.EditorForm_Load);
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -191,5 +208,7 @@
         private System.Windows.Forms.Label lbCodeList;
         private System.Windows.Forms.Label lbComBox;
         private System.Windows.Forms.Label lbApplicants;
+        private System.Windows.Forms.CheckedListBox listBox;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

@@ -8,8 +8,8 @@ namespace HappyTech
 {
     static class EditorClass
     {
-        
-        public static EditorForm NextForm (int direction, int currentPosition)
+
+        public static EditorForm NextForm(int direction, int currentPosition)
         {
             EditorForm f;
             switch (direction)
@@ -21,7 +21,7 @@ namespace HappyTech
                     f = new EditorForm((currentPosition - 1));
                     break;
                 default:
-                    f = new EditorForm((currentPosition)); 
+                    f = new EditorForm((currentPosition));
                     break;
             }
             return f;

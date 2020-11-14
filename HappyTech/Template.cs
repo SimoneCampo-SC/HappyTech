@@ -13,15 +13,15 @@ namespace HappyTech
     {
         private string recruiterID;
         private string header;
-        private int tagID;
+        private string tempType;
         public static List<Template> templates = new List<Template>();
         private Template (int applicantNo)
         {
-            int i = 0;
             this.recruiterID = Recruiter.GetInstance().GetID();
-            // this.tag = "tag"; // there must be a way to get the tagName.
+            this.tempType = Applicant.applicants[applicantNo].GetDocType();
             this.header = $"Recruiter: {Recruiter.GetInstance().GetName()} {Recruiter.GetInstance().GetSurname()}, " +
-                          $"Applicant: {Applicant.applicants[applicantNo].GetName()} for Tag"; //tagName
+                          $"Applicant: {Applicant.applicants[applicantNo].GetName()} " +
+                          $"for {tempType}";
         }
         public static void generateTemplates()
         {
@@ -29,7 +29,6 @@ namespace HappyTech
             {
                 Template template = new Template(i);
                 Template.templates.Add(template);
-               // template.FillTemplateIntoDb(); fix Tag before
             }
         }
 

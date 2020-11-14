@@ -130,6 +130,7 @@
             this.rbCV.TabStop = true;
             this.rbCV.Text = "CV";
             this.rbCV.UseVisualStyleBackColor = true;
+            this.rbCV.CheckedChanged += new System.EventHandler(this.rbCV_CheckedChanged);
             // 
             // rbTinterview
             // 
@@ -141,6 +142,7 @@
             this.rbTinterview.TabStop = true;
             this.rbTinterview.Text = "Technical Interview";
             this.rbTinterview.UseVisualStyleBackColor = true;
+            this.rbTinterview.CheckedChanged += new System.EventHandler(this.rbTinterview_CheckedChanged);
             // 
             // rbInterview
             // 
@@ -152,6 +154,7 @@
             this.rbInterview.TabStop = true;
             this.rbInterview.Text = "Interview";
             this.rbInterview.UseVisualStyleBackColor = true;
+            this.rbInterview.CheckedChanged += new System.EventHandler(this.rbInterview_CheckedChanged);
             // 
             // lbDocType
             // 
