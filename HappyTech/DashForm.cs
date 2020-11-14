@@ -69,5 +69,12 @@ namespace HappyTech
             ConfApplDetailsForm f3 = new ConfApplDetailsForm(true);
             f3.Show();
         }
+
+        private void showCodeBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            codeViewForm f3 = new codeViewForm();
+            f3.Show();
+        }
     }
 }
