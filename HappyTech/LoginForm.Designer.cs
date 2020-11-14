@@ -57,6 +57,7 @@
             this.userPassword.Name = "userPassword";
             this.userPassword.Size = new System.Drawing.Size(176, 20);
             this.userPassword.TabIndex = 1;
+            this.userPassword.TextChanged += new System.EventHandler(this.password_TextChanged);
             // 
             // loginButt
             // 
@@ -151,6 +152,7 @@
             this.error.TabIndex = 9;
             this.error.Text = "Error Message";
             this.error.Visible = false;
+            this.error.Click += new System.EventHandler(this.label2_Click);
             // 
             // label2
             // 
@@ -175,6 +177,7 @@
             this.Controls.Add(this.label1);
             this.Name = "LoginForm";
             this.Text = "HappyTech";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewRecruiter)).EndInit();

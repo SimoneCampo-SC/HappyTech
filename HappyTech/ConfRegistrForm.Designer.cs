@@ -28,38 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbSuccessful = new System.Windows.Forms.Label();
-            this.btLogin = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lbSuccessful
+            // label1
             // 
-            this.lbSuccessful.AutoSize = true;
-            this.lbSuccessful.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSuccessful.Location = new System.Drawing.Point(305, 177);
-            this.lbSuccessful.Name = "lbSuccessful";
-            this.lbSuccessful.Size = new System.Drawing.Size(65, 16);
-            this.lbSuccessful.TabIndex = 0;
-            this.lbSuccessful.Text = "Message";
-            this.lbSuccessful.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(305, 177);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(208, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "You have successfully registered!";
             // 
-            // btLogin
+            // button1
             // 
-            this.btLogin.Location = new System.Drawing.Point(369, 210);
-            this.btLogin.Name = "btLogin";
-            this.btLogin.Size = new System.Drawing.Size(75, 23);
-            this.btLogin.TabIndex = 1;
-            this.btLogin.Text = "Login Page";
-            this.btLogin.UseVisualStyleBackColor = true;
-            this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
+            this.button1.Location = new System.Drawing.Point(369, 210);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Login Page";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ConfRegistrForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btLogin);
-            this.Controls.Add(this.lbSuccessful);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Name = "ConfRegistrForm";
             this.Text = "ConfRegistrForm";
             this.ResumeLayout(false);
@@ -69,7 +68,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbSuccessful;
-        private System.Windows.Forms.Button btLogin;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -3,31 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Runtime.InteropServices;
 
 namespace HappyTech
 {
     class Recruiter
     {
         private static Recruiter _instance;
-        private string id;
         private string email;
         private string name;
         private string surname;
         private string password;
-        private Recruiter (string id, string name, string surname, string email, string password)
+        private Recruiter (string name, string surname, string email, string password)
         {
-            this.id = id;
             this.name = name;
             this.surname = surname;
             this.email = email;
             this.password = password;
         }
-        public static Recruiter createInstance(string id, string name, string surname, string email, string password)
+        public static Recruiter createInstance(string name, string surname, string email, string password)
         {
             if (_instance == null)
             {
-                _instance = new Recruiter(id, name, surname, email, password);
+                _instance = new Recruiter(name, surname, email, password);
             }
             return _instance;
         }
@@ -42,7 +39,6 @@ namespace HappyTech
                 return null;
             }
         }
-
         public string GetName()
         {
             return _instance.name;
@@ -60,11 +56,6 @@ namespace HappyTech
         public static void DestroyRecruiInstance()
         {
             _instance = null;
-        }
-
-        public string GetID()
-        {
-            return _instance.id;
         }
     }
 }
