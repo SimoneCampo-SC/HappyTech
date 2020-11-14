@@ -121,13 +121,13 @@
             // 
             // database1DataSet2
             // 
-            this.database1DataSet2.DataSetName = "Database1DataSet2";
-            this.database1DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+           // this.database1DataSet2.DataSetName = "Database1DataSet2";
+           // this.database1DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tagBindingSource
             // 
-            this.tagBindingSource.DataMember = "Tag";
-            this.tagBindingSource.DataSource = this.database1DataSet2;
+           // this.tagBindingSource.DataMember = "Tag";
+           // this.tagBindingSource.DataSource = this.database1DataSet2;
             // 
             // tagTableAdapter
             // 

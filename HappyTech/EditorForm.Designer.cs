@@ -1,6 +1,6 @@
 ﻿namespace HappyTech
 {
-    partial class Form3
+    partial class EditorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -26,13 +26,13 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponentNew()
+        private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btBack = new System.Windows.Forms.Button();
+            this.btNext = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbHeader = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -44,28 +44,30 @@
             this.checklistSelectedCodes = new System.Windows.Forms.CheckedListBox();
             this.checklistAllCodes = new System.Windows.Forms.CheckedListBox();
             this.panel1.SuspendLayout();
+            this.lbApplicants = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btBack
             // 
-            this.button1.Location = new System.Drawing.Point(301, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btBack.Location = new System.Drawing.Point(293, 415);
+            this.btBack.Name = "btBack";
+            this.btBack.Size = new System.Drawing.Size(75, 23);
+            this.btBack.TabIndex = 1;
+            this.btBack.Text = "Back";
+            this.btBack.UseVisualStyleBackColor = true;
+            this.btBack.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btNext
             // 
-            this.button2.Location = new System.Drawing.Point(421, 415);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btNext.Location = new System.Drawing.Point(410, 415);
+            this.btNext.Name = "btNext";
+            this.btNext.Size = new System.Drawing.Size(75, 23);
+            this.btNext.TabIndex = 2;
+            this.btNext.Text = "Next";
+            this.btNext.UseVisualStyleBackColor = true;
+            this.btNext.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel1
             // 
@@ -80,22 +82,22 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lbHeader);
             this.panel2.Controls.Add(this.richTextBox2);
             this.panel2.Location = new System.Drawing.Point(235, 37);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(326, 361);
             this.panel2.TabIndex = 4;
             // 
-            // label1
+            // lbHeader
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(136, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Header";
+            this.lbHeader.AutoSize = true;
+            this.lbHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHeader.Location = new System.Drawing.Point(0, 0);
+            this.lbHeader.Name = "lbHeader";
+            this.lbHeader.Size = new System.Drawing.Size(48, 15);
+            this.lbHeader.TabIndex = 1;
+            this.lbHeader.Text = "Header";
             // 
             // richTextBox2
             // 
@@ -120,7 +122,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(200, 338);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "Enter your comment here...";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // lbTemplate
             // 
@@ -179,8 +180,8 @@
             this.checklistSelectedCodes.Name = "checklistSelectedCodes";
             this.checklistSelectedCodes.Size = new System.Drawing.Size(197, 169);
             this.checklistSelectedCodes.TabIndex = 2;
-            this.checklistSelectedCodes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checklistSelectedCodes_ItemCheck);
-            this.checklistSelectedCodes.SelectedIndexChanged += new System.EventHandler(this.checklistSelectedCodes_SelectedIndexChanged);
+           // this.checklistSelectedCodes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checklistSelectedCodes_ItemCheck);
+           // this.checklistSelectedCodes.SelectedIndexChanged += new System.EventHandler(this.checklistSelectedCodes_SelectedIndexChanged);
             // 
             // checklistAllCodes
             // 
@@ -189,26 +190,42 @@
             this.checklistAllCodes.Name = "checklistAllCodes";
             this.checklistAllCodes.Size = new System.Drawing.Size(197, 154);
             this.checklistAllCodes.TabIndex = 4;
-            this.checklistAllCodes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checklistAllCodes_ItemCheck);
+          //  this.checklistAllCodes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checklistAllCodes_ItemCheck);
             // 
             // Form3
+            // lbApplicants
+            // 
+            this.lbApplicants.AutoSize = true;
+            this.lbApplicants.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbApplicants.Location = new System.Drawing.Point(66, 422);
+            this.lbApplicants.Name = "lbApplicants";
+            this.lbApplicants.Size = new System.Drawing.Size(118, 16);
+            this.lbApplicants.TabIndex = 9;
+            this.lbApplicants.Text = "Applicant x out of y";
+            // 
+            // EditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbApplicants);
             this.Controls.Add(this.lbComBox);
             this.Controls.Add(this.lbCodeList);
             this.Controls.Add(this.lbTemplate);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+           // this.Controls.Add(this.button2);
+           // this.Controls.Add(this.button1);
             this.Name = "Form3";
             this.Text = "Form3";
-            this.Load += new System.EventHandler(this.Form3_Load);
+           // this.Load += new System.EventHandler(this.Form3_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.Controls.Add(this.btNext);
+            this.Controls.Add(this.btBack);
+            this.Name = "EditorForm";
+            this.Text = "EditorForm";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -218,12 +235,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btBack;
+        private System.Windows.Forms.Button btNext;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbHeader;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label lbTemplate;
@@ -233,5 +250,6 @@
         private System.Windows.Forms.Label labelType;
         private System.Windows.Forms.CheckedListBox checklistAllCodes;
         private System.Windows.Forms.CheckedListBox checklistSelectedCodes;
+        private System.Windows.Forms.Label lbApplicants;
     }
 }
