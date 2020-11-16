@@ -71,6 +71,7 @@
       <DependentUpon>addCode.cs</DependentUpon>
     </Compile>
     <Compile Include="Applicant.cs" />
+    <Compile Include="Code.cs" />
     <Compile Include="codeViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,7 +129,6 @@
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Section.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Template.cs" />
     <EmbeddedResource Include="addCode.resx">

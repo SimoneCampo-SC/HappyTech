@@ -30,8 +30,8 @@ namespace HappyTech
             return _instance;
 
         }
-            public DataSet getDataSet(string sqlQuery)
-            {
+        public DataSet getDataSet(string sqlQuery)
+        {
             DataSet dataSet = new DataSet(); //create empty dataset
             using (connToDb = new SqlConnection(connStr))
             {
@@ -42,9 +42,8 @@ namespace HappyTech
                 adapter.Fill(dataSet);
                 
             }
-
             return dataSet;
-            }
+        }
         public void CreateCommand(string queryString)
         { 
             using (connToDb = new SqlConnection(connStr))

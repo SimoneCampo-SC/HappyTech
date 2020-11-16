@@ -9,6 +9,17 @@ namespace HappyTech
 {
     class Constants
     {
+        public static string selectSectionName(int secID)
+        {
+            string query = $"SELECT (name) FROM Section WHERE Id = {secID}";
+            return query;
+        }
+
+        public static string selectCodes()
+        {
+            string query = "SELECT * FROM Codes";
+            return query;
+        }
 
         public static bool checkRecruiter(string email)
         {
@@ -24,7 +35,7 @@ namespace HappyTech
             }
         }
 
-        public static string insertTemplate(string recruitId, string header) // tag
+        public static string insertTemplate(string recruitId, string header) 
         {
             string query = $"INSERT INTO Template (Recruiter_ID, tempHeader) VALUES ('{recruitId}', '{header}')";
             return query;
@@ -43,9 +54,9 @@ namespace HappyTech
             return query;
         }
 
-        public static string insertApplicant(string name, string email, string job)
+        public static string insertApplicant(string name, string email, string job, string docType)
         {
-            string query = $"INSERT INTO Applicant (Applicant_Name, Applicant_Email, job_Position) VALUES ('{name}', '{email}', '{job}')";
+            string query = $"INSERT INTO Applicant (Applicant_Name, Applicant_Email, job_Position, Doc_Type) VALUES ('{name}', '{email}', '{job}', '{docType}')";
             return query;
         }
 
