@@ -8,14 +8,20 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace HappyTech
 {
     public partial class EditorForm : Form
     {
         int currentPosition;
+        string mode; //this tracks how the editor was generated, either feedback - if form created from dashform
+        //or wasn't the last applicant
+        //mode is "preview" if a document has been selected to edit from the previewForm
+        //used to determine function of back button and is set in the constructors
         public EditorForm(int position)
         {
+            mode = "feedback";
             currentPosition = position;
             InitializeComponent();
             lbApplicants.Text = $"Applicant {position + 1} out of  {Applicant.applicants.Count}"; 
@@ -23,22 +29,59 @@ namespace HappyTech
             lbHeader.Text = Template.templates[position].GetHeader();
         }
 
+        public EditorForm(string applicantName, string appType) // takes applicant name + type from previewForm
+        { //As editorForm usually takes an arguement of the applicant's position in the application list
+            //this wont work if you are editing one applicant's feedback from the previewForm screen
+            //so overloaded constructor is making a specific type of editorform for this purpose
+            mode = "preview";
+            currentPosition = Template.templates.Count - 1; //so that next button will always go to prevForm
+            InitializeComponent();
+            lbApplicants.Text = $"You are Previewing a feedback for {applicantName}";
+
+            lbHeader.Text = Recruiter.GetInstance().GetName() + Recruiter.GetInstance().GetSurname() +
+                applicantName + appType;
+            //makes header from recruiter instsnce and passed in applicant details
+                //recruiter, app, type
+                //Template.templates[position].GetHeader();
+               // richTextBox2.Text = read in the text in the saved .rtf filename "recruitername applicantname".rtf
+
+            using (StreamReader sr = new StreamReader(Recruiter.GetInstance().GetName() + applicantName + ".txt"))
+            {
+                //this is supposed to find the saved feedback file and prefill richTextBox2 with the feedback
+                //however, this shows formatting code which is not ideal. formatting does not show if file opened in 
+                //word
+               Console.WriteLine(sr);
+               richTextBox2.Text = sr.ReadToEnd();
+            }
+
+        }
+
         private void btBack_Click(object sender, EventArgs e)
         {
             EditorForm f;
-            if (currentPosition > 0)
+            if (mode == "feedback")
             {
-                // save template - should be in Editor Class
-                f = EditorClass.NextForm(0, currentPosition);
-                this.Hide();
-                f.Show();
+                if (currentPosition > 0)
+                {
+                    // save template - should be in Editor Class
+                    f = EditorClass.NextForm(0, currentPosition);
+                    this.Hide();
+                    f.Show();
+                }
             }
+            else if (mode == "preview")
+            {
+                this.Hide();
+                previewForm pf = new previewForm();
+                pf.Show();
+            }
+          
         }
 
         private void btNext2_Click(object sender, EventArgs e)
         {
-            
-            richTextBox2.SaveFile(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".rtf");
+            //saves the feedback doc to debug folder when next button is clicked
+            richTextBox2.SaveFile(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".txt");
 
             EditorForm f;
             if (currentPosition < Template.templates.Count - 1)
@@ -79,19 +122,13 @@ namespace HappyTech
             //goes to the db, returns the first row (the codeparagraph) stores in variable
             string paragraphToAdd = dRow.ItemArray.GetValue(0).ToString();
             richTextBox2.AppendText(paragraphToAdd + '\n');
-            //appends var to rich text
+            //appends var to rich text with a newline separator
 
 
             //use DB to get code paragraph related to this short code
 
             //make a feedback object , create section objects then when code box checked, add that code to the section
-            //if unchecked, remove code from section
-
-
-
-            //add code paragraph to feedback form, maybe with
-            //append db.rows value of paragraph, maube end with newline
-
+            //if unchecked, remove code from section - didn't use because complex
 
 
             List<string> checkedItems = new List<string>();
