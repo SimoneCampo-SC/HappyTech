@@ -81,7 +81,7 @@ namespace HappyTech
             docType = rbTinterview.Text;
         }
 
-        private void showCodeBtn_Click(object sender, EventArgs e)
+        private void codeViewBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             codeViewForm f3 = new codeViewForm();

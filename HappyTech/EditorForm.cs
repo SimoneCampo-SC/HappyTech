@@ -37,6 +37,9 @@ namespace HappyTech
 
         private void btNext2_Click(object sender, EventArgs e)
         {
+            
+            richTextBox2.SaveFile(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".rtf");
+
             EditorForm f;
             if (currentPosition < Template.templates.Count - 1)
             {
@@ -45,20 +48,62 @@ namespace HappyTech
                 this.Hide();
                 f.Show();
             }
-            else
+            else if (currentPosition >= Template.templates.Count - 1)
             {
-
+                this.Hide();
+                previewForm pf = new previewForm();
+                pf.Show();
             }
         }
         private void EditorForm_Load(object sender, EventArgs e)
         {
-            string item;
+            // string item;
+            listBox.CheckOnClick = true;
             Code.codeList.Clear();
             Code.fillCodeList();
             for (int i = 0; i < Code.codeList.Count(); i++)
             {
-                listBox.Items.Add($"{Code.codeList[i].GetSectionName().Trim()}: {Code.codeList[i].GetCodeName()}");
+                //Code.codeList[i].GetSectionName().Trim()}:
+                listBox.Items.Add($"{Code.codeList[i].GetCodeName()}");
             }
+        }
+
+        private void listBox_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            //get the code short of the selected list item
+            string codeShortLookup;
+            codeShortLookup = listBox.Items[e.Index].ToString();
+            string query = $"SELECT codeParagraph FROM Codes WHERE codeShort = '{codeShortLookup}'";
+            DataSet ds = Connection.GetDbConn().getDataSet(query);
+            DataRow dRow = ds.Tables[0].Rows[0];
+            //goes to the db, returns the first row (the codeparagraph) stores in variable
+            string paragraphToAdd = dRow.ItemArray.GetValue(0).ToString();
+            richTextBox2.AppendText(paragraphToAdd + '\n');
+            //appends var to rich text
+
+
+            //use DB to get code paragraph related to this short code
+
+            //make a feedback object , create section objects then when code box checked, add that code to the section
+            //if unchecked, remove code from section
+
+
+
+            //add code paragraph to feedback form, maybe with
+            //append db.rows value of paragraph, maube end with newline
+
+
+
+            List<string> checkedItems = new List<string>();
+            foreach (var item in listBox.CheckedItems)
+                checkedItems.Add(item.ToString());
+
+            if (e.NewValue == CheckState.Checked)
+                checkedItems.Add(listBox.Items[e.Index].ToString());
+            else
+                checkedItems.Remove(listBox.Items[e.Index].ToString());
+
+           
         }
     }
 }

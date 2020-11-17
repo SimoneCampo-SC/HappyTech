@@ -51,7 +51,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbError = new System.Windows.Forms.Label();
             this.btBack = new System.Windows.Forms.Button();
-            this.showCodeBtn = new System.Windows.Forms.Button();
+            this.codeViewBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btLogout
@@ -280,22 +280,22 @@
             this.btBack.Visible = false;
             this.btBack.Click += new System.EventHandler(this.btBack_Click);
             // 
-            // showCodeBtn
+            // codeViewBtn
             // 
-            this.showCodeBtn.Location = new System.Drawing.Point(578, 91);
-            this.showCodeBtn.Name = "showCodeBtn";
-            this.showCodeBtn.Size = new System.Drawing.Size(152, 23);
-            this.showCodeBtn.TabIndex = 28;
-            this.showCodeBtn.Text = "Add or view codes";
-            this.showCodeBtn.UseVisualStyleBackColor = true;
-            this.showCodeBtn.Click += new System.EventHandler(this.showCodeBtn_Click);
+            this.codeViewBtn.Location = new System.Drawing.Point(579, 121);
+            this.codeViewBtn.Name = "codeViewBtn";
+            this.codeViewBtn.Size = new System.Drawing.Size(172, 23);
+            this.codeViewBtn.TabIndex = 28;
+            this.codeViewBtn.Text = "View, add or edit codes";
+            this.codeViewBtn.UseVisualStyleBackColor = true;
+            this.codeViewBtn.Click += new System.EventHandler(this.codeViewBtn_Click);
             // 
             // DashForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.showCodeBtn);
+            this.Controls.Add(this.codeViewBtn);
             this.Controls.Add(this.btBack);
             this.Controls.Add(this.lbError);
             this.Controls.Add(this.label4);
@@ -351,6 +351,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbError;
         private System.Windows.Forms.Button btBack;
-        private System.Windows.Forms.Button showCodeBtn;
+        private System.Windows.Forms.Button codeViewBtn;
     }
 }

@@ -29,128 +29,124 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.codeParaBox = new System.Windows.Forms.RichTextBox();
-            this.codeShortBox = new System.Windows.Forms.TextBox();
-            this.codeShortLbl = new System.Windows.Forms.Label();
-            this.codeParaLbl = new System.Windows.Forms.Label();
-            this.backBtn = new System.Windows.Forms.Button();
-            this.submitBtn = new System.Windows.Forms.Button();
-            this.tagBox = new System.Windows.Forms.ComboBox();
-            this.tagLbl = new System.Windows.Forms.Label();
-            this.database1DataSet2 = new HappyTech.Database1DataSet2();
-            this.tagBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tagTableAdapter = new HappyTech.Database1DataSet2TableAdapters.TagTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).BeginInit();
+            this.sectionBox = new System.Windows.Forms.ComboBox();
+            this.sectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet3 = new HappyTech.Database1DataSet3();
+            this.sectionTableAdapter = new HappyTech.Database1DataSet3TableAdapters.SectionTableAdapter();
+            this.sectionLbl = new System.Windows.Forms.Label();
+            this.codeShortBx = new System.Windows.Forms.TextBox();
+            this.codeShortLb = new System.Windows.Forms.Label();
+            this.codeParaBx = new System.Windows.Forms.RichTextBox();
+            this.codeParaLb = new System.Windows.Forms.Label();
+            this.buttonSub = new System.Windows.Forms.Button();
+            this.buttonback = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.sectionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet3)).BeginInit();
             this.SuspendLayout();
             // 
-            // codeParaBox
+            // sectionBox
             // 
-            this.codeParaBox.Location = new System.Drawing.Point(23, 215);
-            this.codeParaBox.Name = "codeParaBox";
-            this.codeParaBox.Size = new System.Drawing.Size(468, 96);
-            this.codeParaBox.TabIndex = 0;
-            this.codeParaBox.Text = "";
+            this.sectionBox.DataSource = this.sectionBindingSource;
+            this.sectionBox.DisplayMember = "name";
+            this.sectionBox.FormattingEnabled = true;
+            this.sectionBox.Location = new System.Drawing.Point(121, 89);
+            this.sectionBox.Name = "sectionBox";
+            this.sectionBox.Size = new System.Drawing.Size(154, 21);
+            this.sectionBox.TabIndex = 0;
+            this.sectionBox.ValueMember = "name";
             // 
-            // codeShortBox
+            // sectionBindingSource
             // 
-            this.codeShortBox.Location = new System.Drawing.Point(23, 128);
-            this.codeShortBox.Name = "codeShortBox";
-            this.codeShortBox.Size = new System.Drawing.Size(237, 20);
-            this.codeShortBox.TabIndex = 1;
+            this.sectionBindingSource.DataMember = "Section";
+            this.sectionBindingSource.DataSource = this.database1DataSet3;
             // 
-            // codeShortLbl
+            // database1DataSet3
             // 
-            this.codeShortLbl.AutoSize = true;
-            this.codeShortLbl.Location = new System.Drawing.Point(23, 109);
-            this.codeShortLbl.Name = "codeShortLbl";
-            this.codeShortLbl.Size = new System.Drawing.Size(88, 13);
-            this.codeShortLbl.TabIndex = 2;
-            this.codeShortLbl.Text = "Enter Short Code";
+            this.database1DataSet3.DataSetName = "Database1DataSet3";
+            this.database1DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // codeParaLbl
+            // sectionTableAdapter
             // 
-            this.codeParaLbl.AutoSize = true;
-            this.codeParaLbl.Location = new System.Drawing.Point(23, 187);
-            this.codeParaLbl.Name = "codeParaLbl";
-            this.codeParaLbl.Size = new System.Drawing.Size(144, 13);
-            this.codeParaLbl.TabIndex = 3;
-            this.codeParaLbl.Text = "Enter Paragraph of feedback";
+            this.sectionTableAdapter.ClearBeforeFill = true;
             // 
-            // backBtn
+            // sectionLbl
             // 
-            this.backBtn.Location = new System.Drawing.Point(304, 396);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(75, 23);
-            this.backBtn.TabIndex = 4;
-            this.backBtn.Text = "back";
-            this.backBtn.UseVisualStyleBackColor = true;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            this.sectionLbl.AutoSize = true;
+            this.sectionLbl.Location = new System.Drawing.Point(118, 59);
+            this.sectionLbl.Name = "sectionLbl";
+            this.sectionLbl.Size = new System.Drawing.Size(179, 13);
+            this.sectionLbl.TabIndex = 1;
+            this.sectionLbl.Text = "select section to attach new code to";
             // 
-            // submitBtn
+            // codeShortBx
             // 
-            this.submitBtn.Location = new System.Drawing.Point(26, 342);
-            this.submitBtn.Name = "submitBtn";
-            this.submitBtn.Size = new System.Drawing.Size(75, 23);
-            this.submitBtn.TabIndex = 5;
-            this.submitBtn.Text = "submit";
-            this.submitBtn.UseVisualStyleBackColor = true;
-            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
+            this.codeShortBx.Location = new System.Drawing.Point(121, 148);
+            this.codeShortBx.Name = "codeShortBx";
+            this.codeShortBx.Size = new System.Drawing.Size(100, 20);
+            this.codeShortBx.TabIndex = 2;
             // 
-            // tagBox
+            // codeShortLb
             // 
-            this.tagBox.DataSource = this.tagBindingSource;
-            this.tagBox.DisplayMember = "name";
-            this.tagBox.FormattingEnabled = true;
-            this.tagBox.Location = new System.Drawing.Point(26, 51);
-            this.tagBox.Name = "tagBox";
-            this.tagBox.Size = new System.Drawing.Size(121, 21);
-            this.tagBox.TabIndex = 6;
-            this.tagBox.ValueMember = "name";
-            this.tagBox.TextChanged += new System.EventHandler(this.selectTag);
-            //this.tagBox.Click += new System.EventHandler(this.addCode_Load);
+            this.codeShortLb.AutoSize = true;
+            this.codeShortLb.Location = new System.Drawing.Point(121, 129);
+            this.codeShortLb.Name = "codeShortLb";
+            this.codeShortLb.Size = new System.Drawing.Size(103, 13);
+            this.codeShortLb.TabIndex = 3;
+            this.codeShortLb.Text = "Enter the short code";
+            this.codeShortLb.Click += new System.EventHandler(this.label1_Click);
             // 
-            // tagLbl
+            // codeParaBx
             // 
-            this.tagLbl.AutoSize = true;
-            this.tagLbl.Location = new System.Drawing.Point(26, 32);
-            this.tagLbl.Name = "tagLbl";
-            this.tagLbl.Size = new System.Drawing.Size(170, 13);
-            this.tagLbl.TabIndex = 7;
-            this.tagLbl.Text = "select the tag to enter the code for";
+            this.codeParaBx.Location = new System.Drawing.Point(121, 221);
+            this.codeParaBx.Name = "codeParaBx";
+            this.codeParaBx.Size = new System.Drawing.Size(367, 96);
+            this.codeParaBx.TabIndex = 4;
+            this.codeParaBx.Text = "";
             // 
-            // database1DataSet2
+            // codeParaLb
             // 
-           // this.database1DataSet2.DataSetName = "Database1DataSet2";
-           // this.database1DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.codeParaLb.AutoSize = true;
+            this.codeParaLb.Location = new System.Drawing.Point(124, 202);
+            this.codeParaLb.Name = "codeParaLb";
+            this.codeParaLb.Size = new System.Drawing.Size(364, 13);
+            this.codeParaLb.TabIndex = 5;
+            this.codeParaLb.Text = "Enter the paragraph of feedback to be produced when this code is selected";
             // 
-            // tagBindingSource
+            // buttonSub
             // 
-           // this.tagBindingSource.DataMember = "Tag";
-           // this.tagBindingSource.DataSource = this.database1DataSet2;
+            this.buttonSub.Location = new System.Drawing.Point(300, 342);
+            this.buttonSub.Name = "buttonSub";
+            this.buttonSub.Size = new System.Drawing.Size(75, 23);
+            this.buttonSub.TabIndex = 6;
+            this.buttonSub.Text = "submit";
+            this.buttonSub.UseVisualStyleBackColor = true;
+            this.buttonSub.Click += new System.EventHandler(this.buttonSub_Click);
             // 
-            // tagTableAdapter
+            // buttonback
             // 
-            this.tagTableAdapter.ClearBeforeFill = true;
+            this.buttonback.Location = new System.Drawing.Point(300, 389);
+            this.buttonback.Name = "buttonback";
+            this.buttonback.Size = new System.Drawing.Size(75, 23);
+            this.buttonback.TabIndex = 7;
+            this.buttonback.Text = "back";
+            this.buttonback.UseVisualStyleBackColor = true;
+            this.buttonback.Click += new System.EventHandler(this.buttonback_Click);
             // 
             // addCode
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tagLbl);
-            this.Controls.Add(this.tagBox);
-            this.Controls.Add(this.submitBtn);
-            this.Controls.Add(this.backBtn);
-            this.Controls.Add(this.codeParaLbl);
-            this.Controls.Add(this.codeShortLbl);
-            this.Controls.Add(this.codeShortBox);
-            this.Controls.Add(this.codeParaBox);
+            this.ClientSize = new System.Drawing.Size(604, 433);
+            this.Controls.Add(this.buttonback);
+            this.Controls.Add(this.buttonSub);
+            this.Controls.Add(this.codeParaLb);
+            this.Controls.Add(this.codeParaBx);
+            this.Controls.Add(this.codeShortLb);
+            this.Controls.Add(this.codeShortBx);
+            this.Controls.Add(this.sectionLbl);
+            this.Controls.Add(this.sectionBox);
             this.Name = "addCode";
-            this.Text = "addCode";
-            this.Load += new System.EventHandler(this.addCode_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.addCode_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.sectionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +165,16 @@
         private Database1DataSet2 database1DataSet2;
         private System.Windows.Forms.BindingSource tagBindingSource;
         private Database1DataSet2TableAdapters.TagTableAdapter tagTableAdapter;
+        private System.Windows.Forms.ComboBox sectionBox;
+        private Database1DataSet3 database1DataSet3;
+        private System.Windows.Forms.BindingSource sectionBindingSource;
+        private Database1DataSet3TableAdapters.SectionTableAdapter sectionTableAdapter;
+        private System.Windows.Forms.Label sectionLbl;
+        private System.Windows.Forms.TextBox codeShortBx;
+        private System.Windows.Forms.Label codeShortLb;
+        private System.Windows.Forms.RichTextBox codeParaBx;
+        private System.Windows.Forms.Label codeParaLb;
+        private System.Windows.Forms.Button buttonSub;
+        private System.Windows.Forms.Button buttonback;
     }
 }
