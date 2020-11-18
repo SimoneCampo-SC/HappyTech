@@ -49,13 +49,14 @@ namespace HappyTech
                 string applicantLookup = checklistAppPreview.Items[curApp].ToString();
                 appDetails = applicantLookup.Split(new[] { "  " }, StringSplitOptions.None);
             }
+
+            // stop preview if no applicants have been selected
+            if (appDetails == null) return;
+
             //make a new applicant object with old applicant details
             //this is because applicants are stored in a list and we no longer want to use
             //that list to track the applicant position in a list of applicants
-            //codeShortLookup = listBox.Items[e.Index].ToString();
-            // Connection.GetDbConn().CreateCommand(Constants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, docType));
-            // Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, docType);
-            //Applicant.applicants.Add(applicant);
+            
             Applicant applicant = new Applicant(appDetails[2], appDetails[3], appDetails[1], appDetails[0]); //name email, job, doctype
             this.Hide();
             EditorForm f3 = new EditorForm(appDetails[2], appDetails[0]);
