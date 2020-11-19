@@ -19,6 +19,7 @@ namespace HappyTech
         //or wasn't the last applicant
         //mode is "preview" if a document has been selected to edit from the previewForm
         //used to determine function of back button and is set in the constructors
+        string previewAppName;
 
         /// <summary>
         ///  Constructor of the current form
@@ -44,6 +45,7 @@ namespace HappyTech
             //so overloaded constructor is making a specific type of editorform for this purpose
             mode = "preview";
             currentPosition = Template.templates.Count - 1; //so that next button will always go to prevForm
+            previewAppName = applicantName;
             InitializeComponent();
             lbApplicants.Text = $"You are Previewing a feedback for {applicantName}";
 
@@ -55,7 +57,7 @@ namespace HappyTech
                // richTextBox2.Text = read in the text in the saved .rtf filename "recruitername applicantname".rtf
 
 
-            using (StreamReader sr = new StreamReader(Recruiter.GetInstance().GetName() + applicantName + ".rtf"))
+            using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + applicantName + ".rtf"))
 
             {
                 //this is supposed to find the saved feedback file and prefill richTextBox2 with the feedback
@@ -90,18 +92,34 @@ namespace HappyTech
 
         private void btNext2_Click(object sender, EventArgs e)
         {
-            using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".rtf"))
+            if (mode == "feedback")
             {
-               
-                
-                sw.WriteLine(richTextBox2.Text);
-                if (richTextBox1.Text != "Enter your comment here..." || richTextBox1.Text != "")
+                using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + ".rtf"))
                 {
-                    sw.WriteLine("\r\nComments:\r\n");
-                    sw.WriteLine(richTextBox1.Text);
-                }
 
+
+                    sw.WriteLine(richTextBox2.Text);
+                    if (richTextBox1.Text != "Enter your comment here..." || richTextBox1.Text != "")
+                    {
+                        sw.WriteLine("\r\nComments:\r\n");
+                        sw.WriteLine(richTextBox1.Text);
+                    }
+
+                }
             }
+            else if (mode == "preview")
+            {
+                using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + previewAppName + ".rtf"))
+                {
+
+                    sw.WriteLine(richTextBox2.Text);
+
+                }
+            }
+            
+
+            
+
             //saves the feedback doc to debug folder when next button is clicked
 
            // richTextBox2.SaveFile(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + ".txt");
