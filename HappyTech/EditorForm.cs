@@ -97,9 +97,8 @@ namespace HappyTech
                 using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + ".rtf"))
                 {
 
-
                     sw.WriteLine(richTextBox2.Text);
-                    if (richTextBox1.Text != "Enter your comment here..." || richTextBox1.Text != "")
+                    if (!(richTextBox1.Text == "Enter your comment here..." || richTextBox1.Text == ""))
                     {
                         sw.WriteLine("\r\nComments:\r\n");
                         sw.WriteLine(richTextBox1.Text);
