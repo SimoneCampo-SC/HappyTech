@@ -75,12 +75,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.sendBtn);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.previewBtn);
             this.Controls.Add(this.checklistAppPreview);
             this.Name = "previewForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "previewForm";
             this.Load += new System.EventHandler(this.previewForm_Load);
             this.ResumeLayout(false);

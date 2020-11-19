@@ -185,6 +185,7 @@
             this.Controls.Add(this.btNext);
             this.Controls.Add(this.btBack);
             this.Name = "EditorForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditorForm";
             this.Load += new System.EventHandler(this.EditorForm_Load);
             this.panel1.ResumeLayout(false);

@@ -144,6 +144,7 @@
             this.Controls.Add(this.sectionLbl);
             this.Controls.Add(this.sectionBox);
             this.Name = "addCode";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.addCode_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sectionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet3)).EndInit();

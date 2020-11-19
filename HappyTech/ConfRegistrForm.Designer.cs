@@ -57,10 +57,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.btLogin);
             this.Controls.Add(this.lbSuccessful);
             this.Name = "ConfRegistrForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConfRegistrForm";
             this.ResumeLayout(false);
             this.PerformLayout();

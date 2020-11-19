@@ -294,7 +294,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.codeViewBtn);
             this.Controls.Add(this.btBack);
             this.Controls.Add(this.lbError);
@@ -320,6 +320,7 @@
             this.Controls.Add(this.btConfirm);
             this.Controls.Add(this.btLogout);
             this.Name = "DashForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();
