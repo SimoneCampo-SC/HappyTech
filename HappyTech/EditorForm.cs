@@ -44,7 +44,7 @@ namespace HappyTech
             //this wont work if you are editing one applicant's feedback from the previewForm screen
             //so overloaded constructor is making a specific type of editorform for this purpose
             mode = "preview";
-            currentPosition = Template.templates.Count - 1; //so that next button will always go to prevForm
+            //currentPosition = Template.templates.Count - 1; //so that next button will always go to prevForm
             previewAppName = applicantName;
             InitializeComponent();
             lbApplicants.Text = $"You are Previewing a feedback for {applicantName}";
@@ -105,6 +105,21 @@ namespace HappyTech
                     }
 
                 }
+
+                EditorForm f;
+                if (currentPosition < Template.templates.Count - 1)
+                {
+                    // save template - should be into the Editor Class
+                    f = EditorClass.NextForm(1, currentPosition);
+                    this.Hide();
+                    f.Show();
+                }
+                else if (currentPosition >= Template.templates.Count - 1)
+                {
+                    this.Hide();
+                    previewForm pf = new previewForm();
+                    pf.Show();
+                }
             }
             else if (mode == "preview")
             {
@@ -114,6 +129,10 @@ namespace HappyTech
                     sw.WriteLine(richTextBox2.Text);
 
                 }
+
+                this.Hide();
+                previewForm pf = new previewForm();
+                pf.Show();
             }
             
 
@@ -124,20 +143,7 @@ namespace HappyTech
            // richTextBox2.SaveFile(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + ".txt");
 
 
-            EditorForm f;
-            if (currentPosition < Template.templates.Count - 1)
-            {
-                // save template - should be into the Editor Class
-                f = EditorClass.NextForm(1, currentPosition);
-                this.Hide();
-                f.Show();
-            }
-            else if (currentPosition >= Template.templates.Count - 1)
-            {
-                this.Hide();
-                previewForm pf = new previewForm();
-                pf.Show();
-            }
+            
         }
         private void EditorForm_Load(object sender, EventArgs e)
         {
@@ -149,6 +155,15 @@ namespace HappyTech
             {
                 //Code.codeList[i].GetSectionName().Trim()}:
                 listBox.Items.Add($"{Code.codeList[i].CodeName}");
+            }
+
+            if (mode == "preview")
+            {
+                richTextBox1.Hide();
+                lbComBox.Hide();
+                panel3.Hide();
+                panel2.Width = 623;
+                richTextBox2.Width = 623;
             }
         }
 
