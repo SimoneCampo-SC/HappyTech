@@ -15,7 +15,7 @@ namespace HappyTech
     {
         public codeViewForm()
         {
-            InitializeComponentNew();
+            InitializeComponent();
             tagBox.Hide();
             tagSubmit.Hide();
             load_dropdown(); //load tags from the db into the drop-down menu
@@ -120,19 +120,6 @@ namespace HappyTech
             // DataSet ds = Connection.GetDbConn().getDataSet("SELECT name FROM Tag");
             //tagSelectBox.DataSource = ds.Tables[0];
             //this.Load += this.codeViewForm_Load; doesnt refresh items in drop down
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // codeViewForm
-            // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "codeViewForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.ResumeLayout(false);
-
         }
     }
 
