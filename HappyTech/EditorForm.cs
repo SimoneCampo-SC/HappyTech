@@ -14,19 +14,28 @@ namespace HappyTech
 {
     public partial class EditorForm : Form
     {
-        int currentPosition;
+        int currentPosition; // holds the position of the templates in the list
         string mode; //this tracks how the editor was generated, either feedback - if form created from dashform
         //or wasn't the last applicant
         //mode is "preview" if a document has been selected to edit from the previewForm
         //used to determine function of back button and is set in the constructors
+
+        /// <summary>
+        ///  Constructor of the current form
+        /// </summary>
+        /// <param name="position">holds the current position of the template being showed</param>
         public EditorForm(int position)
         {
             mode = "feedback";
-            currentPosition = position;
+            currentPosition = position; // update the currentPosition
             InitializeComponent();
+
+            /* Displays the applicant selected out of all the applicants
+             * position + 1 as the iterator starts from 0 to n-1 */
             lbApplicants.Text = $"Applicant {position + 1} out of  {Applicant.applicants.Count}"; 
-                
-            lbHeader.Text = Template.templates[position].GetHeader();
+            
+            // Takes the header of the template in the assigned position in the list
+            lbHeader.Text = Template.templates[position].Header;
         }
 
         public EditorForm(string applicantName, string appType) // takes applicant name + type from previewForm
@@ -38,19 +47,46 @@ namespace HappyTech
             InitializeComponent();
             lbApplicants.Text = $"You are Previewing a feedback for {applicantName}";
 
-            lbHeader.Text = Recruiter.GetInstance().GetName() + Recruiter.GetInstance().GetSurname() +
+            lbHeader.Text = Recruiter.GetInstance().Name + Recruiter.GetInstance().Surname +
                 applicantName + appType;
             //makes header from recruiter instsnce and passed in applicant details
                 //recruiter, app, type
                 //Template.templates[position].GetHeader();
                // richTextBox2.Text = read in the text in the saved .rtf filename "recruitername applicantname".rtf
 
-            using (StreamReader sr = new StreamReader(Recruiter.GetInstance().GetName() + applicantName + ".txt"))
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + applicantName + ".txt"))
+=======
+            using (StreamReader sr = new StreamReader(Recruiter.GetInstance().GetName() + applicantName + ".rtf"))
+>>>>>>> 6d5850201845c26be35e7bc5d0483ad2d84454c2
+=======
+            using (StreamReader sr = new StreamReader(Recruiter.GetInstance().GetName() + applicantName + ".rtf"))
+>>>>>>> 6d5850201845c26be35e7bc5d0483ad2d84454c2
+=======
+            using (StreamReader sr = new StreamReader(Recruiter.GetInstance().GetName() + applicantName + ".rtf"))
+>>>>>>> 6d5850201845c26be35e7bc5d0483ad2d84454c2
+=======
+            using (StreamReader sr = new StreamReader(Recruiter.GetInstance().GetName() + applicantName + ".rtf"))
+>>>>>>> 6d5850201845c26be35e7bc5d0483ad2d84454c2
+=======
+            using (StreamReader sr = new StreamReader(Recruiter.GetInstance().GetName() + applicantName + ".rtf"))
+>>>>>>> 6d5850201845c26be35e7bc5d0483ad2d84454c2
+=======
+            using (StreamReader sr = new StreamReader(Recruiter.GetInstance().GetName() + applicantName + ".rtf"))
+>>>>>>> 6d5850201845c26be35e7bc5d0483ad2d84454c2
+=======
+            using (StreamReader sr = new StreamReader(Recruiter.GetInstance().GetName() + applicantName + ".rtf"))
+>>>>>>> 6d5850201845c26be35e7bc5d0483ad2d84454c2
             {
                 //this is supposed to find the saved feedback file and prefill richTextBox2 with the feedback
                 //however, this shows formatting code which is not ideal. formatting does not show if file opened in 
                 //word
-               Console.WriteLine(sr);
                richTextBox2.Text = sr.ReadToEnd();
             }
 
@@ -80,8 +116,48 @@ namespace HappyTech
 
         private void btNext2_Click(object sender, EventArgs e)
         {
+            using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".rtf"))
+            {
+               
+                
+                sw.WriteLine(richTextBox2.Text);
+                if (richTextBox1.Text != "Enter your comment here..." || richTextBox1.Text != "")
+                {
+                    sw.WriteLine("\r\nComments:\r\n");
+                    sw.WriteLine(richTextBox1.Text);
+                }
+
+            }
             //saves the feedback doc to debug folder when next button is clicked
-            richTextBox2.SaveFile(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".txt");
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            richTextBox2.SaveFile(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + ".txt");
+=======
+            //richTextBox2.SaveFile(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".rtf");
+>>>>>>> 6d5850201845c26be35e7bc5d0483ad2d84454c2
+=======
+            //richTextBox2.SaveFile(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".rtf");
+>>>>>>> 6d5850201845c26be35e7bc5d0483ad2d84454c2
+=======
+            //richTextBox2.SaveFile(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".rtf");
+>>>>>>> 6d5850201845c26be35e7bc5d0483ad2d84454c2
+=======
+            //richTextBox2.SaveFile(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".rtf");
+>>>>>>> 6d5850201845c26be35e7bc5d0483ad2d84454c2
+=======
+            //richTextBox2.SaveFile(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".rtf");
+>>>>>>> 6d5850201845c26be35e7bc5d0483ad2d84454c2
+=======
+            //richTextBox2.SaveFile(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".rtf");
+>>>>>>> 6d5850201845c26be35e7bc5d0483ad2d84454c2
+=======
+            //richTextBox2.SaveFile(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".rtf");
+>>>>>>> 6d5850201845c26be35e7bc5d0483ad2d84454c2
 
             EditorForm f;
             if (currentPosition < Template.templates.Count - 1)
@@ -107,7 +183,7 @@ namespace HappyTech
             for (int i = 0; i < Code.codeList.Count(); i++)
             {
                 //Code.codeList[i].GetSectionName().Trim()}:
-                listBox.Items.Add($"{Code.codeList[i].GetCodeName()}");
+                listBox.Items.Add($"{Code.codeList[i].CodeName}");
             }
         }
 

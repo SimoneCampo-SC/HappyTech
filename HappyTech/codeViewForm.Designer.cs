@@ -26,15 +26,13 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponentNew()
+        private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             this.tagSelectBox = new System.Windows.Forms.ComboBox();
             this.tagBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new HappyTech.Database1DataSet();
             this.codeDisplay = new System.Windows.Forms.DataGridView();
-            this.codeShortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeParagraphDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet1 = new HappyTech.Database1DataSet1();
             this.tagTableAdapter = new HappyTech.Database1DataSetTableAdapters.TagTableAdapter();
@@ -45,6 +43,8 @@
             this.selectTagLbl = new System.Windows.Forms.Label();
             this.tagBox = new System.Windows.Forms.TextBox();
             this.tagSubmit = new System.Windows.Forms.Button();
+            this.codeShortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeParagraphDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codeDisplay)).BeginInit();
@@ -87,19 +87,6 @@
             this.codeDisplay.Name = "codeDisplay";
             this.codeDisplay.Size = new System.Drawing.Size(712, 219);
             this.codeDisplay.TabIndex = 1;
-           // this.codeDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.codeDisplay_CellContentClick);
-            // 
-            // codeShortDataGridViewTextBoxColumn
-            // 
-            this.codeShortDataGridViewTextBoxColumn.DataPropertyName = "codeShort";
-            this.codeShortDataGridViewTextBoxColumn.HeaderText = "codeShort";
-            this.codeShortDataGridViewTextBoxColumn.Name = "codeShortDataGridViewTextBoxColumn";
-            // 
-            // codeParagraphDataGridViewTextBoxColumn
-            // 
-            this.codeParagraphDataGridViewTextBoxColumn.DataPropertyName = "codeParagraph";
-            this.codeParagraphDataGridViewTextBoxColumn.HeaderText = "codeParagraph";
-            this.codeParagraphDataGridViewTextBoxColumn.Name = "codeParagraphDataGridViewTextBoxColumn";
             // 
             // codesBindingSource
             // 
@@ -175,6 +162,19 @@
             this.tagSubmit.UseVisualStyleBackColor = true;
             this.tagSubmit.Click += new System.EventHandler(this.tagSubmit_Click);
             // 
+            // codeShortDataGridViewTextBoxColumn
+            // 
+            this.codeShortDataGridViewTextBoxColumn.DataPropertyName = "codeShort";
+            this.codeShortDataGridViewTextBoxColumn.HeaderText = "codeShort";
+            this.codeShortDataGridViewTextBoxColumn.Name = "codeShortDataGridViewTextBoxColumn";
+            // 
+            // codeParagraphDataGridViewTextBoxColumn
+            // 
+            this.codeParagraphDataGridViewTextBoxColumn.DataPropertyName = "codeParagraph";
+            this.codeParagraphDataGridViewTextBoxColumn.HeaderText = "codeParagraph";
+            this.codeParagraphDataGridViewTextBoxColumn.Name = "codeParagraphDataGridViewTextBoxColumn";
+            this.codeParagraphDataGridViewTextBoxColumn.Width = 569;
+            // 
             // codeViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,8 +190,6 @@
             this.Controls.Add(this.tagSelectBox);
             this.Name = "codeViewForm";
             this.Text = "codeViewForm";
-            //this.Load += new System.EventHandler(this.codeViewForm_Load);
-            
             ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.codeDisplay)).EndInit();
@@ -212,13 +210,13 @@
         private Database1DataSet1 database1DataSet1;
         private System.Windows.Forms.BindingSource codesBindingSource;
         private Database1DataSet1TableAdapters.CodesTableAdapter codesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeShortDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeParagraphDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button addTagBtn;
         private System.Windows.Forms.Button addCodeBtn;
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Label selectTagLbl;
         private System.Windows.Forms.TextBox tagBox;
         private System.Windows.Forms.Button tagSubmit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeShortDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeParagraphDataGridViewTextBoxColumn;
     }
 }

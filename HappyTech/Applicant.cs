@@ -8,36 +8,28 @@ namespace HappyTech
 {
     class Applicant
     {
+        // list of Applicant has been created
         public static List <Applicant> applicants = new List<Applicant>();
-        public string AfullName { get; }
-        private string Aemail { get; }
-        private string AJob { get; }
-        private string docType { get; }
 
+        // List of all the read-only properties 
+        public string AfullName { get; }
+        public string Aemail { get; }
+        public string AJob { get; }
+        public string DocType { get; }
+
+        /// <summary>
+        /// Constructor of Applicant class
+        /// </summary>
+        /// <param name="name">holds recruiter name</param>
+        /// <param name="email">holds recruiter email</param>
+        /// <param name="job">holds recruiter job</param>
+        /// <param name="dType">holds recruiter type</param>
         public Applicant (string name, string email, string job, string dType)
         {
             this.AfullName = name;
             this.Aemail = email;
             this.AJob = job;
-            this.docType = dType;
-        }
-
-        public string GetName()
-        {
-            return AfullName;
-        }
-
-        public string GetEmail()
-        {
-            return Aemail;
-        }
-        public string GetJob()
-        {
-            return AJob;
-        }
-        public string GetDocType()
-        {
-            return docType;
+            this.DocType = dType;
         }
     }
 }

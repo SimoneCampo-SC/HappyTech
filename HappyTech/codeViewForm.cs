@@ -121,19 +121,6 @@ namespace HappyTech
             //tagSelectBox.DataSource = ds.Tables[0];
             //this.Load += this.codeViewForm_Load; doesnt refresh items in drop down
         }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // codeViewForm
-            // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "codeViewForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.ResumeLayout(false);
-
-        }
     }
 
      

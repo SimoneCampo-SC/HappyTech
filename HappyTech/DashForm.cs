@@ -12,72 +12,111 @@ namespace HappyTech
 {
     public partial class DashForm : Form
     {
+        // static variable which holds the template type being chosen by the recruiter
         public static string docType;
+        /// <summary>
+        /// Form Constructor
+        /// </summary>
         public DashForm()
         {
             InitializeComponent();
-            lbName.Text = Recruiter.GetInstance().GetName();
+            // lable gets the name of the recruiter
+            lbName.Text = Recruiter.GetInstance().Name;
+
+            // Checks whether the list of the applicants is not empty
             if (Applicant.applicants.Count > 0)
             {
                 btBack.Visible = true;
             }
         }
 
+        /// <summary>
+        /// Occurs when the user wants to log out from the system
+        /// </summary>
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Recruiter.DestroyRecruiInstance();
-            Applicant.applicants.Clear();
-            Connection.GetDbConn().CreateCommand(Constants.deleteApplicant());
-            LoginForm f1 = new LoginForm();
+            Recruiter.DestroyRecruiInstance(); // Recruiter instance is destroied
+            Applicant.applicants.Clear(); // Applicants list is cleared
+            Connection.GetDbConn().CreateCommand(Constants.deleteApplicant()); // Applicants are deleted from the database
+            
+            LoginForm f1 = new LoginForm(); // Returns to the login form
             f1.Show();
         }
-
+        /// <summary>
+        /// Occurs when the recruiter click on the Confirm button
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
+            // Checks whether one of the radio buttons are true
+            // AND whether all the fields have been filled
             if (((rbCV.Checked == true) || (rbInterview.Checked == true) ||
                (rbTinterview.Checked == true) || (rbAC.Checked == true)) && 
                ((tbAName.Text.Length > 0) && (tbAJob.Text.Length > 0) && 
                (tbAEmail.Text.Length > 0)))
             { 
+                // Insert applicant details into the database
                 Connection.GetDbConn().CreateCommand(Constants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, docType));
+                // Crearte a new instanc of the applicant class
                 Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, docType);
+                // Add the instance into the applicant list
                 Applicant.applicants.Add(applicant);
                 this.Hide();
-                ConfApplDetailsForm f3 = new ConfApplDetailsForm(false);
+                // Create a new ConfApplDetails form passing the value false
+                ConfApplDetailsForm f3 = new ConfApplDetailsForm(true);
                 f3.Show();
             }
             else
             {
+                // Displays the error message
                 lbError.Text = "All the fields must be inserted";
                 lbError.Visible = true;
             }
         }
 
+        /// <summary>
+        /// Occurs when the recruiter clicks on the back button
+        /// </summary>
         private void btBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ConfApplDetailsForm f3 = new ConfApplDetailsForm(true);
+            ConfApplDetailsForm f3 = new ConfApplDetailsForm(false);
             f3.Show();
         }
 
+        /// <summary>
+        /// Occurs when the rbCV is selected
+        /// </summary>
         private void rbCV_CheckedChanged(object sender, EventArgs e)
         {
+            // set the value as the name of the variable as the name of the template type chosen
             docType = rbCV.Text;
         }
 
+        /// <summary>
+        /// Occurs when the rbAC is selected
+        /// </summary>
         private void rbAC_CheckedChanged(object sender, EventArgs e)
         {
+            // set the value as the name of the variable as the name of the template type chosen
             docType = rbAC.Text;
         }
 
+        /// <summary>
+        /// Occurs when the rbInterview is selected
+        /// </summary>
         private void rbInterview_CheckedChanged(object sender, EventArgs e)
         {
+            // set the value as the name of the variable as the name of the template type chosen
             docType = rbInterview.Text;
         }
 
+        /// <summary>
+        /// Occurs when the rbTInterview is selected
+        /// </summary>
         private void rbTinterview_CheckedChanged(object sender, EventArgs e)
         {
+            // set the value as the name of the variable as the name of the template type chosen
             docType = rbTinterview.Text;
         }
 
