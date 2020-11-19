@@ -9,28 +9,56 @@ namespace HappyTech
 {
     class Recruiter
     {
-        private static Recruiter _instance;
-        private string id;
-        private string email;
-        private string name;
-        private string surname;
-        private string password;
+        // Declaration of the static instance
+        private static Recruiter _instance; 
+
+        // Creation of all the properties
+        public string Id { get; }
+        public string Email { get; }
+        public string Name { get; }
+        public string Surname { get; }
+        public string Password { get; }
+
+        /// <summary>
+        /// Private constructor of the Recruiter Class
+        /// </summary>
+        /// <param name="id"> holds the Recriter Id</param>
+        /// <param name="name">holds the Recriter Name</param>
+        /// <param name="surname">holds the Recriter Surname</param>
+        /// <param name="email">holds the Recriter Email</param>
+        /// <param name="password">holds the Recriter Password</param>
         private Recruiter (string id, string name, string surname, string email, string password)
         {
-            this.id = id;
-            this.name = name;
-            this.surname = surname;
-            this.email = email;
-            this.password = password;
+            this.Id = id;
+            this.Name = name;
+            this.Surname = surname;
+            this.Email = email;
+            this.Password = password;
         }
+
+        /// <summary>
+        /// Creates the instance for just one time
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="surname"></param>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public static Recruiter createInstance(string id, string name, string surname, string email, string password)
         {
+            // Runs the constructor only if the instance is equal to null
             if (_instance == null)
             {
                 _instance = new Recruiter(id, name, surname, email, password);
             }
             return _instance;
         }
+
+        /// <summary>
+        /// Returns the instance if it is not equal to null
+        /// </summary>
+        /// <returns></returns>
         public static Recruiter GetInstance()
         {
             if (_instance != null)
@@ -42,29 +70,12 @@ namespace HappyTech
                 return null;
             }
         }
-
-        public string GetName()
-        {
-            return _instance.name;
-        }
-        public string GetSurname()
-        {
-            return _instance.surname;
-        }
-
-        public string GetEmail()
-        {
-            return _instance.email;
-        }
-
+        /// <summary>
+        /// Destroys the Instance 
+        /// </summary>
         public static void DestroyRecruiInstance()
         {
             _instance = null;
-        }
-
-        public string GetID()
-        {
-            return _instance.id;
         }
     }
 }

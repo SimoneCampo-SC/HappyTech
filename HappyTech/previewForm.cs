@@ -28,7 +28,7 @@ namespace HappyTech
             for (int i = 0; i < Applicant.applicants.Count(); i++)
             {
                 //Code.codeList[i].GetSectionName().Trim()}:
-                checklistAppPreview.Items.Add($"{Applicant.applicants[i].GetDocType()}  {Applicant.applicants[i].GetJob()}  {Applicant.applicants[i].GetName()}  {Applicant.applicants[i].GetEmail()} ");
+                checklistAppPreview.Items.Add($"{Applicant.applicants[i].DocType}  {Applicant.applicants[i].AJob}  {Applicant.applicants[i].AfullName}  {Applicant.applicants[i].Aemail}");
             }
         }
 
