@@ -319,6 +319,9 @@
             this.Controls.Add(this.lbHello);
             this.Controls.Add(this.btConfirm);
             this.Controls.Add(this.btLogout);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(998, 602);
+            this.MinimumSize = new System.Drawing.Size(998, 602);
             this.Name = "DashForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";

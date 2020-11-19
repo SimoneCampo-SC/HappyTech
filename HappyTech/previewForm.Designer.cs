@@ -80,6 +80,9 @@
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.previewBtn);
             this.Controls.Add(this.checklistAppPreview);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(998, 602);
+            this.MinimumSize = new System.Drawing.Size(998, 602);
             this.Name = "previewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "previewForm";

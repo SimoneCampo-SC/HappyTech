@@ -60,6 +60,9 @@
             this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.btLogin);
             this.Controls.Add(this.lbSuccessful);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(998, 602);
+            this.MinimumSize = new System.Drawing.Size(998, 602);
             this.Name = "ConfRegistrForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConfRegistrForm";

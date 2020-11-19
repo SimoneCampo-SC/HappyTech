@@ -134,7 +134,7 @@
             // 
             // addCode
             // 
-            this.ClientSize = new System.Drawing.Size(604, 433);
+            this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.buttonback);
             this.Controls.Add(this.buttonSub);
             this.Controls.Add(this.codeParaLb);
@@ -143,6 +143,9 @@
             this.Controls.Add(this.codeShortBx);
             this.Controls.Add(this.sectionLbl);
             this.Controls.Add(this.sectionBox);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(998, 602);
+            this.MinimumSize = new System.Drawing.Size(998, 602);
             this.Name = "addCode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.addCode_Load);

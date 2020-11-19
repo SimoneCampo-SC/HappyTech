@@ -33,6 +33,8 @@
             this.tagBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new HappyTech.Database1DataSet();
             this.codeDisplay = new System.Windows.Forms.DataGridView();
+            this.codeShortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeParagraphDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet1 = new HappyTech.Database1DataSet1();
             this.tagTableAdapter = new HappyTech.Database1DataSetTableAdapters.TagTableAdapter();
@@ -43,8 +45,6 @@
             this.selectTagLbl = new System.Windows.Forms.Label();
             this.tagBox = new System.Windows.Forms.TextBox();
             this.tagSubmit = new System.Windows.Forms.Button();
-            this.codeShortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeParagraphDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codeDisplay)).BeginInit();
@@ -87,6 +87,19 @@
             this.codeDisplay.Name = "codeDisplay";
             this.codeDisplay.Size = new System.Drawing.Size(712, 219);
             this.codeDisplay.TabIndex = 1;
+            // 
+            // codeShortDataGridViewTextBoxColumn
+            // 
+            this.codeShortDataGridViewTextBoxColumn.DataPropertyName = "codeShort";
+            this.codeShortDataGridViewTextBoxColumn.HeaderText = "codeShort";
+            this.codeShortDataGridViewTextBoxColumn.Name = "codeShortDataGridViewTextBoxColumn";
+            // 
+            // codeParagraphDataGridViewTextBoxColumn
+            // 
+            this.codeParagraphDataGridViewTextBoxColumn.DataPropertyName = "codeParagraph";
+            this.codeParagraphDataGridViewTextBoxColumn.HeaderText = "codeParagraph";
+            this.codeParagraphDataGridViewTextBoxColumn.Name = "codeParagraphDataGridViewTextBoxColumn";
+            this.codeParagraphDataGridViewTextBoxColumn.Width = 569;
             // 
             // codesBindingSource
             // 
@@ -162,24 +175,11 @@
             this.tagSubmit.UseVisualStyleBackColor = true;
             this.tagSubmit.Click += new System.EventHandler(this.tagSubmit_Click);
             // 
-            // codeShortDataGridViewTextBoxColumn
-            // 
-            this.codeShortDataGridViewTextBoxColumn.DataPropertyName = "codeShort";
-            this.codeShortDataGridViewTextBoxColumn.HeaderText = "codeShort";
-            this.codeShortDataGridViewTextBoxColumn.Name = "codeShortDataGridViewTextBoxColumn";
-            // 
-            // codeParagraphDataGridViewTextBoxColumn
-            // 
-            this.codeParagraphDataGridViewTextBoxColumn.DataPropertyName = "codeParagraph";
-            this.codeParagraphDataGridViewTextBoxColumn.HeaderText = "codeParagraph";
-            this.codeParagraphDataGridViewTextBoxColumn.Name = "codeParagraphDataGridViewTextBoxColumn";
-            this.codeParagraphDataGridViewTextBoxColumn.Width = 569;
-            // 
             // codeViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.tagSubmit);
             this.Controls.Add(this.tagBox);
             this.Controls.Add(this.selectTagLbl);
@@ -188,7 +188,11 @@
             this.Controls.Add(this.addTagBtn);
             this.Controls.Add(this.codeDisplay);
             this.Controls.Add(this.tagSelectBox);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(998, 602);
+            this.MinimumSize = new System.Drawing.Size(998, 602);
             this.Name = "codeViewForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "codeViewForm";
             ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();

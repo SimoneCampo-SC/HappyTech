@@ -184,6 +184,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btNext);
             this.Controls.Add(this.btBack);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(998, 602);
+            this.MinimumSize = new System.Drawing.Size(998, 602);
             this.Name = "EditorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditorForm";

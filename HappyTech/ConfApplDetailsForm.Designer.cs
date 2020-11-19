@@ -106,6 +106,9 @@
             this.Controls.Add(this.btNewApp);
             this.Controls.Add(this.lbApplicantNo);
             this.Controls.Add(this.lbSuccess);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(998, 602);
+            this.MinimumSize = new System.Drawing.Size(998, 602);
             this.Name = "ConfApplDetailsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
