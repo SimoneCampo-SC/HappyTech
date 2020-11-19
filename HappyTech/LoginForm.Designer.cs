@@ -32,7 +32,6 @@
             this.userPassword = new System.Windows.Forms.TextBox();
             this.loginButt = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbPass = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
             this.dataViewRecruiter = new System.Windows.Forms.DataGridView();
@@ -40,90 +39,86 @@
             this.btRegister = new System.Windows.Forms.Button();
             this.error = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.panelLogin = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewRecruiter)).BeginInit();
+            this.panelLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // userEmail
             // 
-            this.userEmail.Location = new System.Drawing.Point(84, 35);
+            this.userEmail.Location = new System.Drawing.Point(88, 157);
             this.userEmail.Name = "userEmail";
-            this.userEmail.Size = new System.Drawing.Size(176, 20);
+            this.userEmail.Size = new System.Drawing.Size(303, 20);
             this.userEmail.TabIndex = 0;
             // 
             // userPassword
             // 
-            this.userPassword.Location = new System.Drawing.Point(84, 73);
+            this.userPassword.Location = new System.Drawing.Point(88, 223);
             this.userPassword.Name = "userPassword";
-            this.userPassword.Size = new System.Drawing.Size(176, 20);
+            this.userPassword.PasswordChar = '•';
+            this.userPassword.Size = new System.Drawing.Size(303, 20);
             this.userPassword.TabIndex = 1;
             // 
             // loginButt
             // 
             this.loginButt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginButt.AutoSize = true;
-            this.loginButt.Location = new System.Drawing.Point(122, 111);
+            this.loginButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.loginButt.FlatAppearance.BorderSize = 0;
+            this.loginButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginButt.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginButt.ForeColor = System.Drawing.Color.White;
+            this.loginButt.Location = new System.Drawing.Point(88, 294);
             this.loginButt.Name = "loginButt";
-            this.loginButt.Size = new System.Drawing.Size(99, 23);
+            this.loginButt.Size = new System.Drawing.Size(303, 26);
             this.loginButt.TabIndex = 2;
             this.loginButt.Text = "Login";
-            this.loginButt.UseVisualStyleBackColor = true;
+            this.loginButt.UseVisualStyleBackColor = false;
             this.loginButt.Click += new System.EventHandler(this.loginButt_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(642, 114);
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(85, 96);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 25);
+            this.label1.Size = new System.Drawing.Size(165, 24);
             this.label1.TabIndex = 4;
-            this.label1.Text = "HAPPY-TECH";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.Controls.Add(this.lbPass);
-            this.groupBox1.Controls.Add(this.lbEmail);
-            this.groupBox1.Controls.Add(this.userPassword);
-            this.groupBox1.Controls.Add(this.userEmail);
-            this.groupBox1.Controls.Add(this.loginButt);
-            this.groupBox1.Location = new System.Drawing.Point(550, 174);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(342, 140);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Login Page";
+            this.label1.Text = "Welcome back.";
             // 
             // lbPass
             // 
             this.lbPass.AutoSize = true;
-            this.lbPass.Location = new System.Drawing.Point(25, 76);
+            this.lbPass.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPass.Location = new System.Drawing.Point(87, 207);
             this.lbPass.Name = "lbPass";
-            this.lbPass.Size = new System.Drawing.Size(53, 13);
+            this.lbPass.Size = new System.Drawing.Size(63, 14);
             this.lbPass.TabIndex = 4;
             this.lbPass.Text = "Password";
             // 
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(25, 38);
+            this.lbEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmail.Location = new System.Drawing.Point(87, 141);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(32, 13);
+            this.lbEmail.Size = new System.Drawing.Size(36, 14);
             this.lbEmail.TabIndex = 3;
             this.lbEmail.Text = "Email";
             // 
             // dataViewRecruiter
             // 
             this.dataViewRecruiter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewRecruiter.Location = new System.Drawing.Point(445, 441);
+            this.dataViewRecruiter.Location = new System.Drawing.Point(88, 477);
             this.dataViewRecruiter.Name = "dataViewRecruiter";
-            this.dataViewRecruiter.Size = new System.Drawing.Size(444, 110);
+            this.dataViewRecruiter.Size = new System.Drawing.Size(303, 74);
             this.dataViewRecruiter.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(895, 528);
+            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(397, 528);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -133,21 +128,28 @@
             // 
             // btRegister
             // 
-            this.btRegister.Location = new System.Drawing.Point(681, 333);
+            this.btRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btRegister.FlatAppearance.BorderSize = 0;
+            this.btRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRegister.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.btRegister.Location = new System.Drawing.Point(150, 341);
+            this.btRegister.Margin = new System.Windows.Forms.Padding(0);
             this.btRegister.Name = "btRegister";
-            this.btRegister.Size = new System.Drawing.Size(75, 23);
+            this.btRegister.Size = new System.Drawing.Size(98, 23);
             this.btRegister.TabIndex = 8;
-            this.btRegister.Text = "Register";
+            this.btRegister.Text = "Create account";
             this.btRegister.UseVisualStyleBackColor = true;
             this.btRegister.Click += new System.EventHandler(this.registerButt_Click);
             // 
             // error
             // 
             this.error.AutoSize = true;
-            this.error.ForeColor = System.Drawing.Color.Maroon;
-            this.error.Location = new System.Drawing.Point(678, 158);
+            this.error.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.error.Location = new System.Drawing.Point(87, 262);
             this.error.Name = "error";
-            this.error.Size = new System.Drawing.Size(75, 13);
+            this.error.Size = new System.Drawing.Size(89, 14);
             this.error.TabIndex = 9;
             this.error.Text = "Error Message";
             this.error.Visible = false;
@@ -155,32 +157,54 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(669, 317);
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(87, 345);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 13);
+            this.label2.Size = new System.Drawing.Size(67, 14);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Not already registered?";
+            this.label2.Text = "First time?";
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(499, 565);
+            this.panelLogo.TabIndex = 11;
+            // 
+            // panelLogin
+            // 
+            this.panelLogin.Controls.Add(this.loginButt);
+            this.panelLogin.Controls.Add(this.userPassword);
+            this.panelLogin.Controls.Add(this.button1);
+            this.panelLogin.Controls.Add(this.btRegister);
+            this.panelLogin.Controls.Add(this.dataViewRecruiter);
+            this.panelLogin.Controls.Add(this.label2);
+            this.panelLogin.Controls.Add(this.lbPass);
+            this.panelLogin.Controls.Add(this.error);
+            this.panelLogin.Controls.Add(this.lbEmail);
+            this.panelLogin.Controls.Add(this.userEmail);
+            this.panelLogin.Controls.Add(this.label1);
+            this.panelLogin.Location = new System.Drawing.Point(498, 0);
+            this.panelLogin.Name = "panelLogin";
+            this.panelLogin.Size = new System.Drawing.Size(485, 565);
+            this.panelLogin.TabIndex = 12;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(982, 563);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.error);
-            this.Controls.Add(this.btRegister);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataViewRecruiter);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panelLogin);
+            this.Controls.Add(this.panelLogo);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewRecruiter)).EndInit();
+            this.panelLogin.ResumeLayout(false);
+            this.panelLogin.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -190,7 +214,6 @@
         private System.Windows.Forms.TextBox userPassword;
         private System.Windows.Forms.Button loginButt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataViewRecruiter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btRegister;
@@ -198,6 +221,8 @@
         private System.Windows.Forms.Label lbPass;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.Panel panelLogin;
     }
 }
 
