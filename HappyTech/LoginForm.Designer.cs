@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.userEmail = new System.Windows.Forms.TextBox();
             this.userPassword = new System.Windows.Forms.TextBox();
             this.loginButt = new System.Windows.Forms.Button();
@@ -47,14 +48,18 @@
             // 
             // userEmail
             // 
-            this.userEmail.Location = new System.Drawing.Point(88, 157);
+            this.userEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userEmail.ForeColor = System.Drawing.Color.Black;
+            this.userEmail.Location = new System.Drawing.Point(88, 196);
             this.userEmail.Name = "userEmail";
             this.userEmail.Size = new System.Drawing.Size(303, 20);
             this.userEmail.TabIndex = 0;
             // 
             // userPassword
             // 
-            this.userPassword.Location = new System.Drawing.Point(88, 223);
+            this.userPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userPassword.ForeColor = System.Drawing.Color.Black;
+            this.userPassword.Location = new System.Drawing.Point(88, 257);
             this.userPassword.Name = "userPassword";
             this.userPassword.PasswordChar = '•';
             this.userPassword.Size = new System.Drawing.Size(303, 20);
@@ -69,7 +74,7 @@
             this.loginButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButt.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButt.ForeColor = System.Drawing.Color.White;
-            this.loginButt.Location = new System.Drawing.Point(88, 294);
+            this.loginButt.Location = new System.Drawing.Point(88, 328);
             this.loginButt.Name = "loginButt";
             this.loginButt.Size = new System.Drawing.Size(303, 26);
             this.loginButt.TabIndex = 2;
@@ -81,7 +86,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(85, 96);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(85, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 24);
             this.label1.TabIndex = 4;
@@ -91,7 +97,8 @@
             // 
             this.lbPass.AutoSize = true;
             this.lbPass.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPass.Location = new System.Drawing.Point(87, 207);
+            this.lbPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lbPass.Location = new System.Drawing.Point(87, 236);
             this.lbPass.Name = "lbPass";
             this.lbPass.Size = new System.Drawing.Size(63, 14);
             this.lbPass.TabIndex = 4;
@@ -101,7 +108,8 @@
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(87, 141);
+            this.lbEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lbEmail.Location = new System.Drawing.Point(87, 175);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(36, 14);
             this.lbEmail.TabIndex = 3;
@@ -133,7 +141,7 @@
             this.btRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btRegister.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.btRegister.Location = new System.Drawing.Point(150, 341);
+            this.btRegister.Location = new System.Drawing.Point(150, 375);
             this.btRegister.Margin = new System.Windows.Forms.Padding(0);
             this.btRegister.Name = "btRegister";
             this.btRegister.Size = new System.Drawing.Size(98, 23);
@@ -147,7 +155,7 @@
             this.error.AutoSize = true;
             this.error.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.error.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.error.Location = new System.Drawing.Point(87, 262);
+            this.error.Location = new System.Drawing.Point(87, 296);
             this.error.Name = "error";
             this.error.Size = new System.Drawing.Size(89, 14);
             this.error.TabIndex = 9;
@@ -158,7 +166,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(87, 345);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.label2.Location = new System.Drawing.Point(87, 379);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 14);
             this.label2.TabIndex = 10;
@@ -167,6 +176,7 @@
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.panelLogo.BackgroundImage = global::HappyTech.Properties.Resources.happytech_bg;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(499, 565);
@@ -198,6 +208,7 @@
             this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelLogo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";

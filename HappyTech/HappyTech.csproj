@@ -76,6 +76,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="codeViewForm.Designer.cs" />
+    <Compile Include="codeViewForm1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>codeViewForm.resx</DependentUpon>
+    </Compile>
     <Compile Include="ConfRegistrForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,7 +142,10 @@
     <EmbeddedResource Include="addCode.resx">
       <DependentUpon>addCode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="codeViewForm.resx" />
+    <EmbeddedResource Include="codeViewForm.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>codeViewForm1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConfApplDetailsForm.resx">
       <DependentUpon>ConfApplDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +172,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
@@ -233,6 +242,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\happytech_bg.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
