@@ -45,12 +45,11 @@ namespace HappyTech
                 //Template.templates[position].GetHeader();
                // richTextBox2.Text = read in the text in the saved .rtf filename "recruitername applicantname".rtf
 
-            using (StreamReader sr = new StreamReader(Recruiter.GetInstance().GetName() + applicantName + ".txt"))
+            using (StreamReader sr = new StreamReader(Recruiter.GetInstance().GetName() + applicantName + ".rtf"))
             {
                 //this is supposed to find the saved feedback file and prefill richTextBox2 with the feedback
                 //however, this shows formatting code which is not ideal. formatting does not show if file opened in 
                 //word
-               Console.WriteLine(sr);
                richTextBox2.Text = sr.ReadToEnd();
             }
 
@@ -80,8 +79,20 @@ namespace HappyTech
 
         private void btNext2_Click(object sender, EventArgs e)
         {
+            using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".rtf"))
+            {
+               
+                
+                sw.WriteLine(richTextBox2.Text);
+                if (richTextBox1.Text != "Enter your comment here..." || richTextBox1.Text != "")
+                {
+                    sw.WriteLine("\r\nComments:\r\n");
+                    sw.WriteLine(richTextBox1.Text);
+                }
+
+            }
             //saves the feedback doc to debug folder when next button is clicked
-            richTextBox2.SaveFile(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".txt");
+            //richTextBox2.SaveFile(Recruiter.GetInstance().GetName() + Applicant.applicants[currentPosition].GetName() + ".rtf");
 
             EditorForm f;
             if (currentPosition < Template.templates.Count - 1)
