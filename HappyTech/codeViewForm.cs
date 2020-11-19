@@ -16,8 +16,8 @@ namespace HappyTech
         public codeViewForm()
         {
             InitializeComponentNew();
-            //tagBox.Hide();
-            //tagSubmit.Hide();
+            tagBox.Hide();
+            tagSubmit.Hide();
             load_dropdown(); //load tags from the db into the drop-down menu
            
         }
@@ -44,7 +44,7 @@ namespace HappyTech
 
             //DataSet ds = Connection.GetDbConn().getDataSet("SELECT name FROM Tag");
             DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagNames());
-            //tagSelectBox.DataSource = ds.Tables[0]; //shows first table
+            tagSelectBox.DataSource = ds.Tables[0]; //shows first table
             //this.tagTableAdapter.Fill(); //populates drop down menu with tags
 
         }
