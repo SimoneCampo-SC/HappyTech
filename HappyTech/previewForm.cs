@@ -14,6 +14,7 @@ namespace HappyTech
     {
         int curApp = 0;
         string[] appDetails;
+        string cancelStage;
         public previewForm()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace HappyTech
             //Code.codeList.Clear();
             //Code.fillCodeList(); //fills a list inside code class with items from DB
             checklistAppPreview.CheckOnClick = true;
+            cancelStage = "notClicked";
 
             for (int i = 0; i < Applicant.applicants.Count(); i++)
             {
@@ -74,9 +76,17 @@ namespace HappyTech
 
         private void backBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            DashForm f2 = new DashForm("default");
-            f2.Show();
+            if (cancelStage == "notClicked")
+            {
+                backBtn.Text = "Are you sure?";
+                cancelStage = "clicked";
+            }
+            else if (cancelStage == "clicked")
+            {
+                this.Hide();
+                DashForm f2 = new DashForm("default");
+                f2.Show();
+            }
         }
     }
 }

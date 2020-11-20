@@ -27,7 +27,7 @@ namespace HappyTech
                 lbSuccess.Visible = false;
             }
             // displays how many applicants have been added so far
-            lbApplicantNo.Text = Applicant.applicants.Count.ToString() + " applicants added.";
+            lbApplicantNo.Text = Applicant.applicants.Count.ToString() + " applicant(s) added.";
         }
 
         /// <summary>
