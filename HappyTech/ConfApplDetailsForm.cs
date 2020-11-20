@@ -38,7 +38,7 @@ namespace HappyTech
             this.Hide();
 
             // Dashform displayed again
-            DashForm f2 = new DashForm();
+            DashForm f2 = new DashForm("addApp");
             f2.Show();
         }
 
@@ -58,6 +58,13 @@ namespace HappyTech
         {
             DataSet ds = Connection.GetDbConn().getDataSet("SELECT * FROM Applicant");
             dataGridView1.DataSource = ds.Tables[0]; //shows first table
+        }
+
+        private void btCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DashForm f2 = new DashForm("default");
+            f2.Show();
         }
     }
 }

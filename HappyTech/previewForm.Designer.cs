@@ -55,21 +55,23 @@
             // 
             // backBtn
             // 
-            this.backBtn.Location = new System.Drawing.Point(676, 313);
+            this.backBtn.Location = new System.Drawing.Point(676, 342);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(87, 42);
+            this.backBtn.Size = new System.Drawing.Size(87, 34);
             this.backBtn.TabIndex = 2;
-            this.backBtn.Text = "back";
+            this.backBtn.Text = "Cancel";
             this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // sendBtn
             // 
-            this.sendBtn.Location = new System.Drawing.Point(676, 381);
+            this.sendBtn.Location = new System.Drawing.Point(676, 382);
             this.sendBtn.Name = "sendBtn";
             this.sendBtn.Size = new System.Drawing.Size(87, 34);
             this.sendBtn.TabIndex = 3;
             this.sendBtn.Text = "Send All";
             this.sendBtn.UseVisualStyleBackColor = true;
+            this.sendBtn.Click += new System.EventHandler(this.sendBtn_Click);
             // 
             // previewForm
             // 

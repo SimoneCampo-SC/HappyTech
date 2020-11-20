@@ -62,5 +62,21 @@ namespace HappyTech
             EditorForm f3 = new EditorForm(appDetails[2], appDetails[0]);
             f3.Show();
         }
+
+        private void sendBtn_Click(object sender, EventArgs e)
+        {
+            // Turn rtf files into pdf files here
+
+            this.Hide();
+            DashForm f2 = new DashForm("default");
+            f2.Show();
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DashForm f2 = new DashForm("default");
+            f2.Show();
+        }
     }
 }

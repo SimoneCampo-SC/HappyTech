@@ -14,20 +14,30 @@ namespace HappyTech
     {
         // static variable which holds the template type being chosen by the recruiter
         public static string docType;
+        public string mode;
         /// <summary>
         /// Form Constructor
         /// </summary>
-        public DashForm()
+        public DashForm(string mode)
         {
+            this.mode = mode;
             InitializeComponent();
             // lable gets the name of the recruiter
             lbName.Text = Recruiter.GetInstance().Name;
-
-            // Checks whether the list of the applicants is not empty
-            if (Applicant.applicants.Count > 0)
+            if (mode == "newApp")
             {
-                btBack.Visible = true;
+                // Checks whether the list of the applicants is not empty
+                if (Applicant.applicants.Count > 0)
+                {
+                    btBack.Visible = true;
+                }
             }
+            else if (mode == "default")
+            {
+                Applicant.applicants.Clear();
+                Connection.GetDbConn().CreateCommand(Constants.deleteApplicant());
+            }
+            
         }
 
         /// <summary>

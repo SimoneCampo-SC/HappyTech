@@ -64,7 +64,7 @@ namespace HappyTech
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            DashForm df = new DashForm();
+            DashForm df = new DashForm("newApp");
             df.Show();
         }
 

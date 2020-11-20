@@ -65,7 +65,7 @@ namespace HappyTech
 
                 // Current form is hidden, and the DashForm is created and showed
                 this.Hide(); 
-                DashForm f2 = new DashForm();  
+                DashForm f2 = new DashForm("default");  
                 f2.Show();
             }
             else
