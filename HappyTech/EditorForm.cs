@@ -20,6 +20,7 @@ namespace HappyTech
         //mode is "preview" if a document has been selected to edit from the previewForm
         //used to determine function of back button and is set in the constructors
         string previewAppName;
+        
 
         /// <summary>
         ///  Constructor of the current form
@@ -176,15 +177,15 @@ namespace HappyTech
 
         private void listBox_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            //get the code short of the selected list item
-            string codeShortLookup;
-            codeShortLookup = listBox.Items[e.Index].ToString();
-            string query = $"SELECT codeParagraph FROM Codes WHERE codeShort = '{codeShortLookup}'";
-            DataSet ds = Connection.GetDbConn().getDataSet(query);
-            DataRow dRow = ds.Tables[0].Rows[0];
-            //goes to the db, returns the first row (the codeparagraph) stores in variable
-            string paragraphToAdd = dRow.ItemArray.GetValue(0).ToString();
-            richTextBox2.AppendText(paragraphToAdd + '\n');
+            //if (e.NewValue == CheckState.Checked)
+            //{
+            
+
+
+            //}
+
+
+            //richTextBox2.AppendText(paragraphToAdd + '\n');
             //appends var to rich text with a newline separator
 
 
@@ -194,16 +195,40 @@ namespace HappyTech
             //if unchecked, remove code from section - didn't use because complex
 
 
-            List<string> checkedItems = new List<string>();
-            foreach (var item in listBox.CheckedItems)
-                checkedItems.Add(item.ToString());
+            //List<string> checkedItems = new List<string>();
+            //foreach (var item in listBox.CheckedItems)
+            //    checkedItems.Add(item.ToString());
 
-            if (e.NewValue == CheckState.Checked)
-                checkedItems.Add(listBox.Items[e.Index].ToString());
-            else
-                checkedItems.Remove(listBox.Items[e.Index].ToString());
+            //if (e.NewValue == CheckState.Checked)
+            //    checkedItems.Add(listBox.Items[e.Index].ToString());
+            //else
+            //    checkedItems.Remove(listBox.Items[e.Index].ToString());
 
-           
+
+        }
+
+        private void listBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            Code.selectedCodes.Clear();
+            richTextBox2.Text = "";
+            foreach (string code in listBox.CheckedItems)
+            {
+                //get the code short of the selected list item
+                string codeShortLookup = code;
+                string query = $"SELECT codeParagraph FROM Codes WHERE codeShort = '{codeShortLookup}'";
+                DataSet ds = Connection.GetDbConn().getDataSet(query);
+                DataRow dRow = ds.Tables[0].Rows[0];
+                //goes to the db, returns the first row (the codeparagraph) stores in variable
+                string paragraphToAdd = dRow.ItemArray.GetValue(0).ToString();
+                Code.selectedCodes.Add(paragraphToAdd);
+
+            }
+
+            foreach (string code in Code.selectedCodes)
+            {
+                richTextBox2.AppendText(code + "\n\n");
+
+            }
         }
     }
 }

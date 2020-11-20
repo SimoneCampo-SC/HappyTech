@@ -9,6 +9,9 @@ namespace HappyTech
         // List of codes has been created
         public static List<Code> codeList = new List<Code>();
 
+        // List of codes selected in the editor
+        public static List<string> selectedCodes = new List<string>();
+
         // List of current properties
         public int Id { get; }
         public string CodeName { get; set; }
