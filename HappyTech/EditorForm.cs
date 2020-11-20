@@ -169,7 +169,6 @@ namespace HappyTech
             {
                 richTextBox1.Hide();
                 lbComBox.Hide();
-                panel3.Hide();
                 panel2.Width = 623;
                 richTextBox2.Width = 623;
             }
