@@ -45,6 +45,10 @@
             this.passBox = new System.Windows.Forms.TextBox();
             this.registerButton = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
+            this.lbFirstNameReq = new System.Windows.Forms.Label();
+            this.lbLastNameReq = new System.Windows.Forms.Label();
+            this.lbEmailReq = new System.Windows.Forms.Label();
+            this.lbPassReq = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +66,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.lbPassReq);
+            this.panel2.Controls.Add(this.lbEmailReq);
+            this.panel2.Controls.Add(this.lbLastNameReq);
+            this.panel2.Controls.Add(this.lbFirstNameReq);
             this.panel2.Controls.Add(this.btnPassVis);
             this.panel2.Controls.Add(this.lbHaveAcc);
             this.panel2.Controls.Add(this.lbCreate);
@@ -237,6 +245,46 @@
             this.backBtn.UseVisualStyleBackColor = true;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
+            // lbFirstNameReq
+            // 
+            this.lbFirstNameReq.AutoSize = true;
+            this.lbFirstNameReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.lbFirstNameReq.Location = new System.Drawing.Point(96, 90);
+            this.lbFirstNameReq.Name = "lbFirstNameReq";
+            this.lbFirstNameReq.Size = new System.Drawing.Size(11, 14);
+            this.lbFirstNameReq.TabIndex = 0;
+            this.lbFirstNameReq.Text = "*";
+            // 
+            // lbLastNameReq
+            // 
+            this.lbLastNameReq.AutoSize = true;
+            this.lbLastNameReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.lbLastNameReq.Location = new System.Drawing.Point(95, 160);
+            this.lbLastNameReq.Name = "lbLastNameReq";
+            this.lbLastNameReq.Size = new System.Drawing.Size(11, 14);
+            this.lbLastNameReq.TabIndex = 0;
+            this.lbLastNameReq.Text = "*";
+            // 
+            // lbEmailReq
+            // 
+            this.lbEmailReq.AutoSize = true;
+            this.lbEmailReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.lbEmailReq.Location = new System.Drawing.Point(66, 229);
+            this.lbEmailReq.Name = "lbEmailReq";
+            this.lbEmailReq.Size = new System.Drawing.Size(11, 14);
+            this.lbEmailReq.TabIndex = 0;
+            this.lbEmailReq.Text = "*";
+            // 
+            // lbPassReq
+            // 
+            this.lbPassReq.AutoSize = true;
+            this.lbPassReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.lbPassReq.Location = new System.Drawing.Point(93, 297);
+            this.lbPassReq.Name = "lbPassReq";
+            this.lbPassReq.Size = new System.Drawing.Size(11, 14);
+            this.lbPassReq.TabIndex = 0;
+            this.lbPassReq.Text = "*";
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,5 +323,9 @@
         private System.Windows.Forms.Label lbCreate;
         private System.Windows.Forms.Label lbHaveAcc;
         private System.Windows.Forms.Button btnPassVis;
+        private System.Windows.Forms.Label lbFirstNameReq;
+        private System.Windows.Forms.Label lbPassReq;
+        private System.Windows.Forms.Label lbEmailReq;
+        private System.Windows.Forms.Label lbLastNameReq;
     }
 }

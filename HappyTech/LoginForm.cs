@@ -35,6 +35,7 @@ namespace HappyTech
             {
                 debugVis = true;
                 dataViewRecruiter.Show();
+                btAutofill.Show();
                 //display table data
                 DataSet ds = Connection.GetDbConn().getDataSet("SELECT * FROM Recruiter");
                 dataViewRecruiter.DataSource = ds.Tables[0]; //shows first table
@@ -43,6 +44,7 @@ namespace HappyTech
             {
                 debugVis = false;
                 dataViewRecruiter.Hide();
+                btAutofill.Hide();
                 dataViewRecruiter.DataSource = null;
             }
             
@@ -131,6 +133,18 @@ namespace HappyTech
                 userPassword.UseSystemPasswordChar = true;
             }
             
+        }
+
+        // Debug autofill details, for testing purposes
+        private void btAutofill_Click(object sender, EventArgs e)
+        {
+            DataSet dsEmail = Connection.GetDbConn().getDataSet("SELECT email FROM Recruiter");
+            DataRow dsEmailRow = dsEmail.Tables[0].Rows[0];
+            userEmail.Text = dsEmailRow.ItemArray.GetValue(0).ToString();
+
+            DataSet dsPass = Connection.GetDbConn().getDataSet("SELECT password FROM Recruiter");
+            DataRow dsPassRow = dsPass.Tables[0].Rows[0];
+            userPassword.Text = dsPassRow.ItemArray.GetValue(0).ToString();
         }
     }
 }

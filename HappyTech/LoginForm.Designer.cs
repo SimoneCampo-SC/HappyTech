@@ -41,6 +41,7 @@
             this.error = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelLogin = new System.Windows.Forms.Panel();
+            this.btAutofill = new System.Windows.Forms.Button();
             this.btnPassVis = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewRecruiter)).BeginInit();
@@ -91,9 +92,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(85, 135);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 24);
+            this.label1.Size = new System.Drawing.Size(110, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome back.";
+            this.label1.Text = "Welcome.";
             // 
             // lbPass
             // 
@@ -178,6 +179,7 @@
             // 
             // panelLogin
             // 
+            this.panelLogin.Controls.Add(this.btAutofill);
             this.panelLogin.Controls.Add(this.dataViewRecruiter);
             this.panelLogin.Controls.Add(this.btnPassVis);
             this.panelLogin.Controls.Add(this.loginButt);
@@ -194,6 +196,18 @@
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(485, 565);
             this.panelLogin.TabIndex = 0;
+            // 
+            // btAutofill
+            // 
+            this.btAutofill.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAutofill.Location = new System.Drawing.Point(397, 499);
+            this.btAutofill.Name = "btAutofill";
+            this.btAutofill.Size = new System.Drawing.Size(75, 23);
+            this.btAutofill.TabIndex = 7;
+            this.btAutofill.Text = "Autofill";
+            this.btAutofill.UseVisualStyleBackColor = true;
+            this.btAutofill.Visible = false;
+            this.btAutofill.Click += new System.EventHandler(this.btAutofill_Click);
             // 
             // btnPassVis
             // 
@@ -256,6 +270,7 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelLogin;
         private System.Windows.Forms.Button btnPassVis;
+        private System.Windows.Forms.Button btAutofill;
     }
 }
 
