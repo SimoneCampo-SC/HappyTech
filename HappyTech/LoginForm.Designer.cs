@@ -60,7 +60,7 @@
             // 
             this.userPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userPassword.ForeColor = System.Drawing.Color.Black;
-            this.userPassword.Location = new System.Drawing.Point(88, 257);
+            this.userPassword.Location = new System.Drawing.Point(90, 257);
             this.userPassword.Name = "userPassword";
             this.userPassword.Size = new System.Drawing.Size(303, 20);
             this.userPassword.TabIndex = 1;
@@ -76,10 +76,10 @@
             this.loginButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButt.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButt.ForeColor = System.Drawing.Color.White;
-            this.loginButt.Location = new System.Drawing.Point(88, 328);
+            this.loginButt.Location = new System.Drawing.Point(90, 328);
             this.loginButt.Name = "loginButt";
             this.loginButt.Size = new System.Drawing.Size(303, 26);
-            this.loginButt.TabIndex = 2;
+            this.loginButt.TabIndex = 3;
             this.loginButt.Text = "Login";
             this.loginButt.UseVisualStyleBackColor = false;
             this.loginButt.Click += new System.EventHandler(this.loginButt_Click);
@@ -92,7 +92,7 @@
             this.label1.Location = new System.Drawing.Point(85, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 24);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Welcome back.";
             // 
             // lbPass
@@ -103,7 +103,7 @@
             this.lbPass.Location = new System.Drawing.Point(87, 236);
             this.lbPass.Name = "lbPass";
             this.lbPass.Size = new System.Drawing.Size(63, 14);
-            this.lbPass.TabIndex = 4;
+            this.lbPass.TabIndex = 0;
             this.lbPass.Text = "Password";
             // 
             // lbEmail
@@ -114,7 +114,7 @@
             this.lbEmail.Location = new System.Drawing.Point(87, 175);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(36, 14);
-            this.lbEmail.TabIndex = 3;
+            this.lbEmail.TabIndex = 0;
             this.lbEmail.Text = "Email";
             // 
             // dataViewRecruiter
@@ -123,7 +123,7 @@
             this.dataViewRecruiter.Location = new System.Drawing.Point(88, 477);
             this.dataViewRecruiter.Name = "dataViewRecruiter";
             this.dataViewRecruiter.Size = new System.Drawing.Size(303, 74);
-            this.dataViewRecruiter.TabIndex = 6;
+            this.dataViewRecruiter.TabIndex = 5;
             // 
             // button1
             // 
@@ -131,7 +131,7 @@
             this.button1.Location = new System.Drawing.Point(397, 528);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
+            this.button1.TabIndex = 6;
             this.button1.Text = "Test";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -147,7 +147,7 @@
             this.btRegister.Margin = new System.Windows.Forms.Padding(0);
             this.btRegister.Name = "btRegister";
             this.btRegister.Size = new System.Drawing.Size(98, 23);
-            this.btRegister.TabIndex = 8;
+            this.btRegister.TabIndex = 4;
             this.btRegister.Text = "Create account";
             this.btRegister.UseVisualStyleBackColor = true;
             this.btRegister.Click += new System.EventHandler(this.registerButt_Click);
@@ -160,7 +160,7 @@
             this.error.Location = new System.Drawing.Point(87, 296);
             this.error.Name = "error";
             this.error.Size = new System.Drawing.Size(89, 14);
-            this.error.TabIndex = 9;
+            this.error.TabIndex = 0;
             this.error.Text = "Error Message";
             this.error.Visible = false;
             // 
@@ -172,7 +172,7 @@
             this.label2.Location = new System.Drawing.Point(87, 379);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 14);
-            this.label2.TabIndex = 10;
+            this.label2.TabIndex = 0;
             this.label2.Text = "First time?";
             // 
             // panelLogin
@@ -192,7 +192,7 @@
             this.panelLogin.Location = new System.Drawing.Point(498, 0);
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(485, 565);
-            this.panelLogin.TabIndex = 12;
+            this.panelLogin.TabIndex = 0;
             // 
             // btnPassVis
             // 
@@ -200,10 +200,10 @@
             this.btnPassVis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPassVis.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPassVis.Image = global::HappyTech.Properties.Resources.showPass;
-            this.btnPassVis.Location = new System.Drawing.Point(362, 258);
+            this.btnPassVis.Location = new System.Drawing.Point(364, 258);
             this.btnPassVis.Name = "btnPassVis";
             this.btnPassVis.Size = new System.Drawing.Size(26, 17);
-            this.btnPassVis.TabIndex = 11;
+            this.btnPassVis.TabIndex = 2;
             this.btnPassVis.UseVisualStyleBackColor = false;
             this.btnPassVis.Click += new System.EventHandler(this.btnPassVis_Click);
             // 
@@ -214,7 +214,7 @@
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(499, 565);
-            this.panelLogo.TabIndex = 11;
+            this.panelLogo.TabIndex = 0;
             // 
             // LoginForm
             // 
