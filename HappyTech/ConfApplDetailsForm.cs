@@ -27,7 +27,7 @@ namespace HappyTech
                 lbSuccess.Visible = false;
             }
             // displays how many applicants have been added so far
-            lbApplicantNo.Text = Applicant.applicants.Count.ToString() + " applicant(s) added.";
+            lbApplicantNo.Text = Applicant.applicants.Count.ToString() + " applicant(s).";
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace HappyTech
         {
             this.Hide();
             Template.generateTemplates(); // Templates are generated
-            EditorForm f = EditorClass.NextForm(2, 0); // New EditorForm is created passing by values 2 (Default value) and 0
+            EditorForm f = EditorClass.NextForm("default", 0); // New EditorForm is created passing by values 2 (Default value) and 0
             f.Show();
         }
 
@@ -65,6 +65,11 @@ namespace HappyTech
             this.Hide();
             DashForm f2 = new DashForm("default");
             f2.Show();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

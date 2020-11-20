@@ -98,9 +98,9 @@ namespace HappyTech
             return query;
         }
 
-        public static string insertApplicant(string name, string email, string job, string docType)
+        public static string insertApplicant(string name, string email, string job, string docType, string id)
         {
-            string query = $"INSERT INTO Applicant (Applicant_Name, Applicant_Email, job_Position, Doc_Type) VALUES ('{name}', '{email}', '{job}', '{docType}')";
+            string query = $"INSERT INTO Applicant (Applicant_Name, Applicant_Email, job_Position, Doc_Type, Recruiter_ID) VALUES ('{name}', '{email}', '{job}', '{docType}', '{id}')";
             return query;
         }
 

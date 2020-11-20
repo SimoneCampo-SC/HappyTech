@@ -39,7 +39,12 @@ namespace HappyTech
                 Template.templates.Clear();
                 Connection.GetDbConn().CreateCommand(Constants.deleteTemplate());
             }
-            
+
+            // Checks whether there are applicants inserted so that the back button is displayed
+            if (Applicant.applicants.Count > 0)
+            {
+                btBack.Visible = true;
+            }
         }
 
         /// <summary>
@@ -68,9 +73,9 @@ namespace HappyTech
                (tbAEmail.Text.Length > 0)))
             { 
                 // Insert applicant details into the database
-                Connection.GetDbConn().CreateCommand(Constants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, docType));
+                Connection.GetDbConn().CreateCommand(Constants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, docType, Recruiter.GetInstance().Id));
                 // Crearte a new instanc of the applicant class
-                Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, docType);
+                Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, docType, Recruiter.GetInstance().Id);
                 // Add the instance into the applicant list
                 Applicant.applicants.Add(applicant);
                 this.Hide();

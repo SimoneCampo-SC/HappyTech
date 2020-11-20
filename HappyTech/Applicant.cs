@@ -16,6 +16,7 @@ namespace HappyTech
         public string Aemail { get; }
         public string AJob { get; }
         public string DocType { get; }
+        public string RecruiterId { get; }
 
         /// <summary>
         /// Constructor of Applicant class
@@ -24,12 +25,13 @@ namespace HappyTech
         /// <param name="email">holds recruiter email</param>
         /// <param name="job">holds recruiter job</param>
         /// <param name="dType">holds recruiter type</param>
-        public Applicant (string name, string email, string job, string dType)
+        public Applicant (string name, string email, string job, string dType, string recruitID)
         {
             this.AfullName = name;
             this.Aemail = email;
             this.AJob = job;
             this.DocType = dType;
+            this.RecruiterId = recruitID;
         }
     }
 }

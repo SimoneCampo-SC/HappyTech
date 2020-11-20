@@ -76,7 +76,7 @@ namespace HappyTech
                 if (currentPosition > 0)
                 {
                     this.Hide();
-                    EditorForm f = EditorClass.NextForm(0, currentPosition);
+                    EditorForm f = EditorClass.NextForm("backward", currentPosition);
                     f.Show();
                 }
                 else if (currentPosition == 0)
@@ -118,7 +118,7 @@ namespace HappyTech
                 if (currentPosition < Template.templates.Count - 1)
                 {
                     this.Hide();
-                    EditorForm f = EditorClass.NextForm(1, currentPosition);
+                    EditorForm f = EditorClass.NextForm("forward", currentPosition);
                     f.Show();
                 }
                 else if (currentPosition >= Template.templates.Count - 1)

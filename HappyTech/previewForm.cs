@@ -59,7 +59,7 @@ namespace HappyTech
             //this is because applicants are stored in a list and we no longer want to use
             //that list to track the applicant position in a list of applicants
             
-            Applicant applicant = new Applicant(appDetails[2], appDetails[3], appDetails[1], appDetails[0]); //name email, job, doctype
+            Applicant applicant = new Applicant(appDetails[2], appDetails[3], appDetails[1], appDetails[0], Recruiter.GetInstance().Id); // name, email, job, doctype, recruiter id
             this.Hide();
             EditorForm f3 = new EditorForm(appDetails[2], appDetails[0]);
             f3.Show();
