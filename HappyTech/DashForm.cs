@@ -36,6 +36,8 @@ namespace HappyTech
             {
                 Applicant.applicants.Clear();
                 Connection.GetDbConn().CreateCommand(Constants.deleteApplicant());
+                Template.templates.Clear();
+                Connection.GetDbConn().CreateCommand(Constants.deleteTemplate());
             }
             
         }

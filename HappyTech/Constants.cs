@@ -110,7 +110,13 @@ namespace HappyTech
             return query;
         }
 
-       
+        public static string deleteTemplate()
+        {
+            string query = $"DELETE FROM Template";
+            return query;
+        }
+
+
     }
             
            

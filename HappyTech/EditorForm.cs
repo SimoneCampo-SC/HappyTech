@@ -70,15 +70,20 @@ namespace HappyTech
 
         private void btBack_Click(object sender, EventArgs e)
         {
-            EditorForm f;
+            
             if (mode == "feedback")
             {
                 if (currentPosition > 0)
                 {
-                    // save template - should be in Editor Class
-                    f = EditorClass.NextForm(0, currentPosition);
                     this.Hide();
+                    EditorForm f = EditorClass.NextForm(0, currentPosition);
                     f.Show();
+                }
+                else if (currentPosition == 0)
+                {
+                    this.Hide();
+                    ConfApplDetailsForm cadf = new ConfApplDetailsForm(false);
+                    cadf.Show();
                 }
             }
             else if (mode == "preview")
@@ -94,6 +99,7 @@ namespace HappyTech
         {
             if (mode == "feedback")
             {
+                // save template - should be into the Editor Class
                 using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + ".rtf"))
                 {
 
@@ -106,12 +112,11 @@ namespace HappyTech
 
                 }
 
-                EditorForm f;
+                
                 if (currentPosition < Template.templates.Count - 1)
                 {
-                    // save template - should be into the Editor Class
-                    f = EditorClass.NextForm(1, currentPosition);
                     this.Hide();
+                    EditorForm f = EditorClass.NextForm(1, currentPosition);
                     f.Show();
                 }
                 else if (currentPosition >= Template.templates.Count - 1)
