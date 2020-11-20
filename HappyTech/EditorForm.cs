@@ -81,6 +81,8 @@ namespace HappyTech
                 }
                 else if (currentPosition == 0)
                 {
+                    Template.templates.Clear();
+                    Connection.GetDbConn().CreateCommand(Constants.deleteTemplate());
                     this.Hide();
                     ConfApplDetailsForm cadf = new ConfApplDetailsForm(false);
                     cadf.Show();
