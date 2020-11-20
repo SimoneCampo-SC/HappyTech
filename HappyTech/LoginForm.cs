@@ -14,6 +14,7 @@ namespace HappyTech
 {
     public partial class LoginForm : Form
     {
+        private bool passVis = false;
         /// <summary>
         /// Constructor LoginForm
         /// </summary>
@@ -84,6 +85,40 @@ namespace HappyTech
             this.Hide();
             RegistrationForm reg = new RegistrationForm();
             reg.Show();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            btnPassVis.Hide();
+        }
+
+        private void userPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (!(userPassword.Text == ""))
+            {
+                btnPassVis.Show();
+            }
+            else
+            {
+                btnPassVis.Hide();
+            }
+        }
+
+        private void btnPassVis_Click(object sender, EventArgs e)
+        {
+            if (passVis == false)
+            {
+                passVis = true;
+                btnPassVis.Image = HappyTech.Properties.Resources.hidePass;
+                userPassword.UseSystemPasswordChar = false;
+            }
+            else if (passVis == true)
+            {
+                passVis = false;
+                btnPassVis.Image = HappyTech.Properties.Resources.showPass;
+                userPassword.UseSystemPasswordChar = true;
+            }
+            
         }
     }
 }

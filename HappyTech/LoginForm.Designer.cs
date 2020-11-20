@@ -40,8 +40,9 @@
             this.btRegister = new System.Windows.Forms.Button();
             this.error = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panelLogo = new System.Windows.Forms.Panel();
             this.panelLogin = new System.Windows.Forms.Panel();
+            this.btnPassVis = new System.Windows.Forms.Button();
+            this.panelLogo = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewRecruiter)).BeginInit();
             this.panelLogin.SuspendLayout();
             this.SuspendLayout();
@@ -61,9 +62,10 @@
             this.userPassword.ForeColor = System.Drawing.Color.Black;
             this.userPassword.Location = new System.Drawing.Point(88, 257);
             this.userPassword.Name = "userPassword";
-            this.userPassword.PasswordChar = '•';
             this.userPassword.Size = new System.Drawing.Size(303, 20);
             this.userPassword.TabIndex = 1;
+            this.userPassword.UseSystemPasswordChar = true;
+            this.userPassword.TextChanged += new System.EventHandler(this.userPassword_TextChanged);
             // 
             // loginButt
             // 
@@ -173,17 +175,9 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "First time?";
             // 
-            // panelLogo
-            // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.panelLogo.BackgroundImage = global::HappyTech.Properties.Resources.happytech_bg;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(499, 565);
-            this.panelLogo.TabIndex = 11;
-            // 
             // panelLogin
             // 
+            this.panelLogin.Controls.Add(this.btnPassVis);
             this.panelLogin.Controls.Add(this.loginButt);
             this.panelLogin.Controls.Add(this.userPassword);
             this.panelLogin.Controls.Add(this.button1);
@@ -200,6 +194,28 @@
             this.panelLogin.Size = new System.Drawing.Size(485, 565);
             this.panelLogin.TabIndex = 12;
             // 
+            // btnPassVis
+            // 
+            this.btnPassVis.FlatAppearance.BorderSize = 0;
+            this.btnPassVis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPassVis.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPassVis.Image = global::HappyTech.Properties.Resources.showPass;
+            this.btnPassVis.Location = new System.Drawing.Point(362, 258);
+            this.btnPassVis.Name = "btnPassVis";
+            this.btnPassVis.Size = new System.Drawing.Size(26, 17);
+            this.btnPassVis.TabIndex = 11;
+            this.btnPassVis.UseVisualStyleBackColor = false;
+            this.btnPassVis.Click += new System.EventHandler(this.btnPassVis_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.panelLogo.BackgroundImage = global::HappyTech.Properties.Resources.happytech_bg;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(499, 565);
+            this.panelLogo.TabIndex = 11;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +231,7 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataViewRecruiter)).EndInit();
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
@@ -237,6 +254,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelLogin;
+        private System.Windows.Forms.Button btnPassVis;
     }
 }
 

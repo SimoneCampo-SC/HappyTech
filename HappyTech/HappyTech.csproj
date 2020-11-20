@@ -239,6 +239,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\hidePass.png" />
+    <None Include="Resources\showPass.png" />
     <None Include="Resources\happytech_bg.png" />
   </ItemGroup>
   <ItemGroup>
