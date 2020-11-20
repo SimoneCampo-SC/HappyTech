@@ -27,7 +27,7 @@ namespace HappyTech
         private void registerButton_Click(object sender, EventArgs e)
         {
             // Checks whether all the textboxes have been filled 
-            if ((emailBox.Text.Length == 0) || (nameBox.Text.Length == 0) || 
+            if ((emailBox.Text.Length == 0) || (nameBox.Text.Length == 0) ||
                 (surnameBox.Text.Length == 0) || (passBox.Text.Length == 0))
             {
                 errorMessage.Visible = true;
@@ -43,29 +43,21 @@ namespace HappyTech
                 errorMessage.Visible = true;
                 errorMessage.Text = "Password must be at least 8 characters";
             }
+            else if (Constants.checkRecruiter(emailBox.Text) == true) // Checks whether the credentials inserted doesn't not already exist in the DB
+            {
+                errorMessage.Visible = true;
+                errorMessage.Text = "An account with this email already exists";
+            }
             else
             {
-                // Checks whether the credentials inserted doesn't not already exist in the DB
-                if (Constants.checkRecruiter(emailBox.Text) == false)
-                {
-                    // Add the credentials into the Database
-                    string queryString = Constants.insertRecruiter(emailBox.Text, nameBox.Text, surnameBox.Text, passBox.Text);
-                    Connection.GetDbConn().CreateCommand(queryString);
+                // Add the credentials into the Database
+                string queryString = Constants.insertRecruiter(emailBox.Text, nameBox.Text, surnameBox.Text, passBox.Text);
+                Connection.GetDbConn().CreateCommand(queryString);
 
-                    // Current form is hidden, and the ConfRegistrForm is created and showed 
-                    // parameter boolean true means "credential inserted"
-                    this.Hide();
-                    ConfRegistrForm crf = new ConfRegistrForm(true);
-                    crf.Show();
-                }
-                else
-                {
-                    // Current form is hidden, and the ConfRegistrForm is created and showed 
-                    // parameter boolean false means "credentials already exist"
-                    this.Hide();
-                    ConfRegistrForm crf = new ConfRegistrForm(false);
-                    crf.Show();
-                }
+                // Current form is hidden, and the ConfRegistrForm is created and showed 
+                this.Hide();
+                ConfRegistrForm crf = new ConfRegistrForm();
+                crf.Show();
             }
         }
         /// <summary>

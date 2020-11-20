@@ -16,21 +16,9 @@ namespace HappyTech
         /// Constructor ConfRegistrForm
         /// </summary>
         /// <param name="successful">holds the outcome of the operation in the DB</param>
-        public ConfRegistrForm(bool successful)
+        public ConfRegistrForm()
         {
             InitializeComponent();
-
-            // Checks if the parameter is true
-            if (successful == true)
-            {
-                // Display the succesfull outcome 
-                lbSuccessful.Text = "You have successfully registered!";
-            }
-            else
-            {
-                // Display the error
-                lbSuccessful.Text = "The email inserted already exists";
-            }
         }
 
         /// <summary>

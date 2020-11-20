@@ -220,6 +220,7 @@
             this.btnPassVis.Size = new System.Drawing.Size(26, 17);
             this.btnPassVis.TabIndex = 2;
             this.btnPassVis.UseVisualStyleBackColor = false;
+            this.btnPassVis.Visible = false;
             this.btnPassVis.Click += new System.EventHandler(this.btnPassVis_Click);
             // 
             // panelLogo
