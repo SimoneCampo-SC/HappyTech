@@ -51,7 +51,7 @@
             // 
             this.userEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userEmail.ForeColor = System.Drawing.Color.Black;
-            this.userEmail.Location = new System.Drawing.Point(88, 196);
+            this.userEmail.Location = new System.Drawing.Point(90, 192);
             this.userEmail.Name = "userEmail";
             this.userEmail.Size = new System.Drawing.Size(303, 20);
             this.userEmail.TabIndex = 0;

@@ -109,13 +109,13 @@ namespace HappyTech
             if (passVis == false)
             {
                 passVis = true;
-                btnPassVis.Image = HappyTech.Properties.Resources.hidePass;
+                btnPassVis.Image = Properties.Resources.hidePass;
                 userPassword.UseSystemPasswordChar = false;
             }
             else if (passVis == true)
             {
                 passVis = false;
-                btnPassVis.Image = HappyTech.Properties.Resources.showPass;
+                btnPassVis.Image = Properties.Resources.showPass;
                 userPassword.UseSystemPasswordChar = true;
             }
             

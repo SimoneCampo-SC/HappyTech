@@ -73,6 +73,16 @@ namespace HappyTech.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap happytech_bg_reg {
+            get {
+                object obj = ResourceManager.GetObject("happytech_bg-reg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hidePass {
             get {
                 object obj = ResourceManager.GetObject("hidePass", resourceCulture);

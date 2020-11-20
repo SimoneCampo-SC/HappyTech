@@ -12,6 +12,7 @@ namespace HappyTech
 {
     public partial class RegistrationForm : Form
     {
+        private bool passVis = false;
         /// <summary>
         /// Constructor RegistrationForm
         /// </summary>
@@ -30,7 +31,17 @@ namespace HappyTech
                 (surnameBox.Text.Length == 0) || (passBox.Text.Length == 0))
             {
                 errorMessage.Visible = true;
-                errorMessage.Text = "All the fields must be filled.";
+                errorMessage.Text = "Required fields are missing";
+            }
+            else if (!(emailBox.Text.Contains("@happytech.com")))
+            {
+                errorMessage.Visible = true;
+                errorMessage.Text = "Email must use @happytech.com";
+            }
+            else if (passBox.Text.Length < 8)
+            {
+                errorMessage.Visible = true;
+                errorMessage.Text = "Password must be at least 8 characters";
             }
             else
             {
@@ -66,6 +77,74 @@ namespace HappyTech
             this.Hide();
             LoginForm f1 = new LoginForm();
             f1.Show();
+        }
+
+        private void passBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!(passBox.Text == ""))
+            {
+                btnPassVis.Show();
+            }
+            else
+            {
+                btnPassVis.Hide();
+            }
+
+            if (passBox.Text == "")
+            {
+                errorMessage.Visible = false;
+                errorMessage.Text = "";
+            }
+            else if (passBox.Text.Length < 8)
+            {
+                errorMessage.Visible = true;
+                errorMessage.Text = "Password must be at least 8 characters";
+            }
+            else
+            {
+                errorMessage.Visible = false;
+                errorMessage.Text = "";
+            }
+        }
+
+        private void btnPassVis_Click(object sender, EventArgs e)
+        {
+            if (passVis == false)
+            {
+                passVis = true;
+                btnPassVis.Image = Properties.Resources.hidePass;
+                passBox.UseSystemPasswordChar = false;
+            }
+            else if (passVis == true)
+            {
+                passVis = false;
+                btnPassVis.Image = Properties.Resources.showPass;
+                passBox.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void RegistrationForm_Load(object sender, EventArgs e)
+        {
+            btnPassVis.Hide();
+        }
+
+        private void emailBox_TextChanged(object sender, EventArgs e)
+        {
+            if (emailBox.Text == "")
+            {
+                errorMessage.Visible = false;
+                errorMessage.Text = "";
+            }
+            else if (!(emailBox.Text.Contains("@happytech.com")))
+            {
+                errorMessage.Visible = true;
+                errorMessage.Text = "Email must use @happytech.com";
+            }
+            else
+            {
+                errorMessage.Visible = false;
+                errorMessage.Text = "";
+            }
         }
     }
 }
