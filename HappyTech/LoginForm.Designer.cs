@@ -120,10 +120,11 @@
             // dataViewRecruiter
             // 
             this.dataViewRecruiter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewRecruiter.Location = new System.Drawing.Point(88, 477);
+            this.dataViewRecruiter.Location = new System.Drawing.Point(7, 401);
             this.dataViewRecruiter.Name = "dataViewRecruiter";
-            this.dataViewRecruiter.Size = new System.Drawing.Size(303, 74);
+            this.dataViewRecruiter.Size = new System.Drawing.Size(384, 150);
             this.dataViewRecruiter.TabIndex = 5;
+            this.dataViewRecruiter.Visible = false;
             // 
             // button1
             // 
@@ -132,7 +133,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Test";
+            this.button1.Text = "Debug";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -177,12 +178,12 @@
             // 
             // panelLogin
             // 
+            this.panelLogin.Controls.Add(this.dataViewRecruiter);
             this.panelLogin.Controls.Add(this.btnPassVis);
             this.panelLogin.Controls.Add(this.loginButt);
             this.panelLogin.Controls.Add(this.userPassword);
             this.panelLogin.Controls.Add(this.button1);
             this.panelLogin.Controls.Add(this.btRegister);
-            this.panelLogin.Controls.Add(this.dataViewRecruiter);
             this.panelLogin.Controls.Add(this.label2);
             this.panelLogin.Controls.Add(this.lbPass);
             this.panelLogin.Controls.Add(this.error);

@@ -15,6 +15,7 @@ namespace HappyTech
     public partial class LoginForm : Form
     {
         private bool passVis = false;
+        private bool debugVis = false;
         /// <summary>
         /// Constructor LoginForm
         /// </summary>
@@ -30,10 +31,21 @@ namespace HappyTech
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            //display table data
-          
-            DataSet ds = Connection.GetDbConn().getDataSet("SELECT * FROM Recruiter");
-            dataViewRecruiter.DataSource = ds.Tables[0]; //shows first table
+            if (debugVis == false)
+            {
+                debugVis = true;
+                dataViewRecruiter.Show();
+                //display table data
+                DataSet ds = Connection.GetDbConn().getDataSet("SELECT * FROM Recruiter");
+                dataViewRecruiter.DataSource = ds.Tables[0]; //shows first table
+            }
+            else if (debugVis == true)
+            {
+                debugVis = false;
+                dataViewRecruiter.Hide();
+                dataViewRecruiter.DataSource = null;
+            }
+            
         }
 
         /// <summary>
