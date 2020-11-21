@@ -15,7 +15,6 @@ namespace HappyTech
         public static List<Template> templates = new List<Template>();
 
         // List of all the properties 
-        public string RecruiterID { get; }
         public string Header { get; }
         public string TempType { get; }
 
@@ -23,25 +22,20 @@ namespace HappyTech
         /// Constructor of the template class
         /// </summary>
         /// <param name="applicantNo">Holds the number of the applicant related to</param>
-        private Template (int applicantNo)
+        private Template (Applicant applicant, string tempType)
         {
-            this.RecruiterID = Recruiter.GetInstance().Id;
-            this.TempType = Applicant.applicants[applicantNo].DocType;
+            this.TempType = tempType;
             this.Header = $"Recruiter: {Recruiter.GetInstance().Name} {Recruiter.GetInstance().Surname}, " +
-                          $"Applicant: {Applicant.applicants[applicantNo].AfullName}" +
-                          $"for {TempType}";
+                          $"Applicant: {applicant.AfullName} for {tempType}";
         }
 
         /// <summary>
         /// The following method generates template according to the number of applicants into the list.
         /// </summary>
-        public static void generateTemplates()
+        public static void generateTemplate(Applicant Applicant, string tempType)
         {
-            for (int i = 0; i < Applicant.applicants.Count; i++)
-            {
-                Template template = new Template(i);
-                Template.templates.Add(template);
-            }
+            Template template = new Template(Applicant, tempType);
+            Template.templates.Add(template);
         }
 
         /// <summary>
@@ -49,7 +43,7 @@ namespace HappyTech
         /// </summary>
         private void FillTemplateIntoDb ()
         {
-            Connection.GetDbConn().CreateCommand(Constants.insertTemplate(RecruiterID, Header)); //+ tagID
+           //Connection.GetDbConn().CreateCommand(Constants.insertTemplate(Header)); //+ tagID
         }
     }
 }

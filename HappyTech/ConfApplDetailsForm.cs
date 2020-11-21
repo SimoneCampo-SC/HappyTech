@@ -60,7 +60,6 @@ namespace HappyTech
         private void btStartFeed_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Template.generateTemplates(); // Templates are generated
             EditorForm f = EditorClass.NextForm("default", 0); // New EditorForm is created passing by values 2 (Default value) and 0
             f.Show();
         }

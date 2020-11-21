@@ -34,9 +34,6 @@
             this.lbName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbUploadDoc = new System.Windows.Forms.Label();
-            this.rbCV = new System.Windows.Forms.RadioButton();
-            this.rbTinterview = new System.Windows.Forms.RadioButton();
-            this.rbInterview = new System.Windows.Forms.RadioButton();
             this.lbDocType = new System.Windows.Forms.Label();
             this.tbAName = new System.Windows.Forms.TextBox();
             this.lbAName = new System.Windows.Forms.Label();
@@ -44,7 +41,6 @@
             this.lbAEmail = new System.Windows.Forms.Label();
             this.tbAJob = new System.Windows.Forms.TextBox();
             this.tbAEmail = new System.Windows.Forms.TextBox();
-            this.rbAC = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,6 +49,7 @@
             this.codeViewBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tempTypeBox = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
@@ -129,48 +126,6 @@
             this.lbUploadDoc.TabIndex = 11;
             this.lbUploadDoc.Text = "Applicant Details";
             // 
-            // rbCV
-            // 
-            this.rbCV.AutoSize = true;
-            this.rbCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.rbCV.Location = new System.Drawing.Point(55, 94);
-            this.rbCV.Name = "rbCV";
-            this.rbCV.Size = new System.Drawing.Size(46, 22);
-            this.rbCV.TabIndex = 12;
-            this.rbCV.TabStop = true;
-            this.rbCV.Text = "CV";
-            this.rbCV.UseVisualStyleBackColor = true;
-            this.rbCV.CheckedChanged += new System.EventHandler(this.rbCV_CheckedChanged);
-            // 
-            // rbTinterview
-            // 
-            this.rbTinterview.AutoSize = true;
-            this.rbTinterview.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbTinterview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.rbTinterview.Location = new System.Drawing.Point(55, 180);
-            this.rbTinterview.Name = "rbTinterview";
-            this.rbTinterview.Size = new System.Drawing.Size(164, 22);
-            this.rbTinterview.TabIndex = 13;
-            this.rbTinterview.TabStop = true;
-            this.rbTinterview.Text = "Technical Interview";
-            this.rbTinterview.UseVisualStyleBackColor = true;
-            this.rbTinterview.CheckedChanged += new System.EventHandler(this.rbTinterview_CheckedChanged);
-            // 
-            // rbInterview
-            // 
-            this.rbInterview.AutoSize = true;
-            this.rbInterview.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbInterview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.rbInterview.Location = new System.Drawing.Point(55, 133);
-            this.rbInterview.Name = "rbInterview";
-            this.rbInterview.Size = new System.Drawing.Size(92, 22);
-            this.rbInterview.TabIndex = 14;
-            this.rbInterview.TabStop = true;
-            this.rbInterview.Text = "Interview";
-            this.rbInterview.UseVisualStyleBackColor = true;
-            this.rbInterview.CheckedChanged += new System.EventHandler(this.rbInterview_CheckedChanged);
-            // 
             // lbDocType
             // 
             this.lbDocType.AutoSize = true;
@@ -241,20 +196,6 @@
             this.tbAEmail.Name = "tbAEmail";
             this.tbAEmail.Size = new System.Drawing.Size(212, 20);
             this.tbAEmail.TabIndex = 21;
-            // 
-            // rbAC
-            // 
-            this.rbAC.AutoSize = true;
-            this.rbAC.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbAC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.rbAC.Location = new System.Drawing.Point(55, 228);
-            this.rbAC.Name = "rbAC";
-            this.rbAC.Size = new System.Drawing.Size(164, 22);
-            this.rbAC.TabIndex = 22;
-            this.rbAC.TabStop = true;
-            this.rbAC.Text = "Assessment Centre";
-            this.rbAC.UseVisualStyleBackColor = true;
-            this.rbAC.CheckedChanged += new System.EventHandler(this.rbAC_CheckedChanged);
             // 
             // label1
             // 
@@ -350,17 +291,26 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tempTypeBox);
             this.groupBox2.Controls.Add(this.lbDocType);
             this.groupBox2.Controls.Add(this.btConfirm);
-            this.groupBox2.Controls.Add(this.rbCV);
-            this.groupBox2.Controls.Add(this.rbTinterview);
-            this.groupBox2.Controls.Add(this.rbInterview);
-            this.groupBox2.Controls.Add(this.rbAC);
             this.groupBox2.Location = new System.Drawing.Point(577, 101);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(296, 380);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
+            // 
+            // tempTypeBox
+            // 
+            this.tempTypeBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tempTypeBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.tempTypeBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.tempTypeBox.FormattingEnabled = true;
+            this.tempTypeBox.ItemHeight = 16;
+            this.tempTypeBox.Location = new System.Drawing.Point(53, 80);
+            this.tempTypeBox.Name = "tempTypeBox";
+            this.tempTypeBox.Size = new System.Drawing.Size(197, 194);
+            this.tempTypeBox.TabIndex = 23;
             // 
             // groupBox3
             // 
@@ -424,9 +374,6 @@
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbUploadDoc;
-        private System.Windows.Forms.RadioButton rbCV;
-        private System.Windows.Forms.RadioButton rbTinterview;
-        private System.Windows.Forms.RadioButton rbInterview;
         private System.Windows.Forms.Label lbDocType;
         private System.Windows.Forms.TextBox tbAName;
         private System.Windows.Forms.Label lbAName;
@@ -434,7 +381,6 @@
         private System.Windows.Forms.Label lbAEmail;
         private System.Windows.Forms.TextBox tbAJob;
         private System.Windows.Forms.TextBox tbAEmail;
-        private System.Windows.Forms.RadioButton rbAC;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -445,5 +391,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ListBox tempTypeBox;
     }
 }

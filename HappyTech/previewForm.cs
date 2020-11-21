@@ -30,7 +30,7 @@ namespace HappyTech
             for (int i = 0; i < Applicant.applicants.Count(); i++)
             {
                 //Code.codeList[i].GetSectionName().Trim()}:
-                checklistAppPreview.Items.Add($"{Applicant.applicants[i].DocType}  {Applicant.applicants[i].AJob}  {Applicant.applicants[i].AfullName}  {Applicant.applicants[i].Aemail}");
+                checklistAppPreview.Items.Add($"{Template.templates[i].TempType}  {Applicant.applicants[i].AJob}  {Applicant.applicants[i].AfullName}  {Applicant.applicants[i].Aemail}");
             }
         }
 
@@ -59,7 +59,7 @@ namespace HappyTech
             //this is because applicants are stored in a list and we no longer want to use
             //that list to track the applicant position in a list of applicants
             
-            Applicant applicant = new Applicant(appDetails[2], appDetails[3], appDetails[1], appDetails[0], Recruiter.GetInstance().Id); // name, email, job, doctype, recruiter id
+            Applicant applicant = new Applicant(appDetails[2], appDetails[3], appDetails[1], Recruiter.GetInstance().Id); // name, email, job, doctype, recruiter id
             this.Hide();
             EditorForm f3 = new EditorForm(appDetails[2], appDetails[0]);
             f3.Show();

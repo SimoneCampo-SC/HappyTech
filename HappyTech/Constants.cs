@@ -9,6 +9,11 @@ namespace HappyTech
 {
     class Constants
     {
+        public static string selectTemplateType()
+        {
+            string query = $"SELECT tempType FROM Template";
+            return query;
+        }
 
         static public string selectRecruiter(string userEmail, string userPass)
         {
@@ -91,15 +96,15 @@ namespace HappyTech
             return query;
         }
 
-        public static string insertApplicant(string name, string email, string job, string docType, string id)
+        public static string insertApplicant(string name, string email, string job, string id)
         {
-            string query = $"INSERT INTO Applicant (Applicant_Name, Applicant_Email, job_Position, Doc_Type, Recruiter_ID) VALUES ('{name}', '{email}', '{job}', '{docType}', '{id}')";
+            string query = $"INSERT INTO Applicant (Applicant_Name, Applicant_Email, job_Position, Recruiter_ID) VALUES ('{name}', '{email}', '{job}', '{id}')";
             return query;
         }
 
         public static string SelectApplicant()
         {
-            string query = "SELECT Applicant_Name AS 'Name', Job_Position AS 'Job Position', Doc_Type AS 'Feedback Type' FROM Applicant";
+            string query = "SELECT Applicant_Name AS 'Name', Job_Position AS 'Job Position' FROM Applicant";
             return query;
         }
 
