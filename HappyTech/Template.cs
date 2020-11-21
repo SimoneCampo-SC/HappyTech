@@ -21,7 +21,8 @@ namespace HappyTech
         /// <summary>
         /// Constructor of the template class
         /// </summary>
-        /// <param name="applicantNo">Holds the number of the applicant related to</param>
+        /// <param name="applicant">holds the applicant object</param>
+        /// <param name="tempType">holds the type chosen</param>
         private Template (Applicant applicant, string tempType)
         {
             this.TempType = tempType;

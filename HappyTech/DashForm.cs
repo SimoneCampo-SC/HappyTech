@@ -68,7 +68,7 @@ namespace HappyTech
         /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
-            // Checks whether one of the radio buttons are true
+            // Checks whether an item in the tempTypeBox has been selected
             // AND whether all the fields have been filled
             if ((tempTypeBox.SelectedItem != null) && 
                ((tbAName.Text.Length > 0) && (tbAJob.Text.Length > 0) && 
@@ -77,7 +77,7 @@ namespace HappyTech
                 // Insert applicant details into the database
                 Connection.GetDbConn().CreateCommand(Constants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, Recruiter.GetInstance().Id));
                 
-                // Crearte a new instanc of the applicant class
+                // Crearte a new instance of the applicant class
                 Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, Recruiter.GetInstance().Id);
                 // Add the instance into the applicant list
                 Applicant.applicants.Add(applicant);
