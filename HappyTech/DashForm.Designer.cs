@@ -289,13 +289,13 @@
             // lbError
             // 
             this.lbError.AutoSize = true;
-            this.lbError.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbError.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.lbError.Location = new System.Drawing.Point(444, 16);
+            this.lbError.Location = new System.Drawing.Point(401, 16);
             this.lbError.Name = "lbError";
-            this.lbError.Size = new System.Drawing.Size(120, 19);
+            this.lbError.Size = new System.Drawing.Size(196, 16);
             this.lbError.TabIndex = 26;
-            this.lbError.Text = "Error Message";
+            this.lbError.Text = "All the fields must be inserted";
             this.lbError.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lbError.Visible = false;
             // 

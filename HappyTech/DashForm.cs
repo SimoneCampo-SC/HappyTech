@@ -86,7 +86,6 @@ namespace HappyTech
             else
             {
                 // Displays the error message
-                lbError.Text = "All the fields must be inserted";
                 lbError.Visible = true;
             }
         }
