@@ -9,13 +9,6 @@ namespace HappyTech
 {
     class Constants
     {
-        static public string insertQuery(string email, string name, string surname, string password)
-        {
-
-            string query = $"INSERT INTO Recruiter  (email, name, surname, password) VALUES ('{email}', '{name}', '{surname}', '{password}' )";
-
-            return query;
-        }
 
         static public string selectRecruiter(string userEmail, string userPass)
         {
@@ -101,6 +94,12 @@ namespace HappyTech
         public static string insertApplicant(string name, string email, string job, string docType, string id)
         {
             string query = $"INSERT INTO Applicant (Applicant_Name, Applicant_Email, job_Position, Doc_Type, Recruiter_ID) VALUES ('{name}', '{email}', '{job}', '{docType}', '{id}')";
+            return query;
+        }
+
+        public static string SelectApplicant()
+        {
+            string query = "SELECT Applicant_Name AS 'Name', Job_Position AS 'Job Position', Doc_Type AS 'Feedback Type' FROM Applicant";
             return query;
         }
 

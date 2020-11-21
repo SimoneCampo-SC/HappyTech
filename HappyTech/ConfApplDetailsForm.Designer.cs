@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbSuccess = new System.Windows.Forms.Label();
             this.lbApplicantNo = new System.Windows.Forms.Label();
             this.btNewApp = new System.Windows.Forms.Button();
             this.btStartFeed = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dgvApplicant = new System.Windows.Forms.DataGridView();
             this.btCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvApplicant)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +45,7 @@
             this.lbSuccess.AutoSize = true;
             this.lbSuccess.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbSuccess.Location = new System.Drawing.Point(149, 217);
+            this.lbSuccess.Location = new System.Drawing.Point(141, 254);
             this.lbSuccess.Name = "lbSuccess";
             this.lbSuccess.Size = new System.Drawing.Size(267, 18);
             this.lbSuccess.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             this.lbApplicantNo.AutoSize = true;
             this.lbApplicantNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbApplicantNo.Location = new System.Drawing.Point(6, 16);
+            this.lbApplicantNo.Location = new System.Drawing.Point(6, 29);
             this.lbApplicantNo.Name = "lbApplicantNo";
             this.lbApplicantNo.Size = new System.Drawing.Size(172, 19);
             this.lbApplicantNo.TabIndex = 1;
@@ -89,23 +89,25 @@
             this.btStartFeed.UseVisualStyleBackColor = false;
             this.btStartFeed.Click += new System.EventHandler(this.btStartFeed_Click);
             // 
-            // dataGridView1
+            // dgvApplicant
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 41);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(581, 150);
-            this.dataGridView1.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(61, 61);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dgvApplicant.AllowUserToAddRows = false;
+            this.dgvApplicant.AllowUserToDeleteRows = false;
+            this.dgvApplicant.AllowUserToResizeColumns = false;
+            this.dgvApplicant.AllowUserToResizeRows = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvApplicant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvApplicant.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvApplicant.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvApplicant.BackgroundColor = System.Drawing.Color.Plum;
+            this.dgvApplicant.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvApplicant.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvApplicant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvApplicant.Location = new System.Drawing.Point(103, 71);
+            this.dgvApplicant.Name = "dgvApplicant";
+            this.dgvApplicant.ReadOnly = true;
+            this.dgvApplicant.Size = new System.Drawing.Size(358, 150);
+            this.dgvApplicant.TabIndex = 4;
             // 
             // btCancel
             // 
@@ -123,7 +125,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgvApplicant);
             this.groupBox1.Controls.Add(this.btCancel);
             this.groupBox1.Controls.Add(this.btNewApp);
             this.groupBox1.Controls.Add(this.btStartFeed);
@@ -134,7 +136,6 @@
             this.groupBox1.Size = new System.Drawing.Size(581, 415);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // ConfApplDetailsForm
             // 
@@ -144,14 +145,13 @@
             this.BackgroundImage = global::HappyTech.Properties.Resources.happytech_bg_reg;
             this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(998, 602);
             this.MinimumSize = new System.Drawing.Size(998, 602);
             this.Name = "ConfApplDetailsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvApplicant)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -164,8 +164,7 @@
         private System.Windows.Forms.Label lbApplicantNo;
         private System.Windows.Forms.Button btNewApp;
         private System.Windows.Forms.Button btStartFeed;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvApplicant;
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.GroupBox groupBox1;
     }

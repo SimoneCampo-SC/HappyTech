@@ -27,7 +27,19 @@ namespace HappyTech
                 lbSuccess.Visible = false;
             }
             // displays how many applicants have been added so far
-            lbApplicantNo.Text = Applicant.applicants.Count.ToString() + " applicant(s).";
+            if (Applicant.applicants.Count == 1)
+            {
+                lbApplicantNo.Text = Applicant.applicants.Count.ToString() + " applicant.";
+            }
+            else
+            {
+                lbApplicantNo.Text = Applicant.applicants.Count.ToString() + " applicants.";
+            }
+
+            // Load the Applicants added into the Database
+            DataSet ds = Connection.GetDbConn().getDataSet(Constants.SelectApplicant());
+            dgvApplicant.DataSource = ds.Tables[0]; //shows first table
+
         }
 
         /// <summary>
@@ -53,23 +65,11 @@ namespace HappyTech
             f.Show();
         }
 
-        // Testing purposes
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DataSet ds = Connection.GetDbConn().getDataSet("SELECT * FROM Applicant");
-            dataGridView1.DataSource = ds.Tables[0]; //shows first table
-        }
-
         private void btCancel_Click(object sender, EventArgs e)
         {
             this.Hide();
             DashForm f2 = new DashForm("default");
             f2.Show();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
