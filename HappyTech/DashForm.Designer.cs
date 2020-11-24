@@ -311,6 +311,7 @@
             this.tempTypeBox.Name = "tempTypeBox";
             this.tempTypeBox.Size = new System.Drawing.Size(197, 194);
             this.tempTypeBox.TabIndex = 23;
+            
             // 
             // groupBox3
             // 

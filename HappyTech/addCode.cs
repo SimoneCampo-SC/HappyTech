@@ -15,27 +15,15 @@ namespace HappyTech
         public addCode()
         {
             InitializeComponent();
-            // DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagNames());
-            // tagBox.DataSource = ds.Tables[0]; //shows first table
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagNames());
-             sectionBox.DataSource = ds.Tables[0]; //shows first table
+            
         }
 
-        /* private void addCode_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'database1DataSet1.Codes' table. You can move, or remove it, as needed.
 
-            // TODO: This line of code loads data into the 'database1DataSet.Tag' table. You can move, or remove it, as needed.
-            DataSet ds = Connection.GetDbConn().getDataSet("SELECT name FROM Tag");
-            tagBox.DataSource = ds.Tables[0]; //shows first table
-            //this.tagTableAdapter.Fill(); //populates drop down menu with tags
-
-        } */
-
-        private void selectTag(object sender, EventArgs e)
+      /*  private void selectTag(object sender, EventArgs e)
         {
             string selectedTag = tagBox.Text;
         }
+      */
 
         private void backBtn_Click(object sender, EventArgs e)
         {
@@ -81,8 +69,16 @@ namespace HappyTech
 
         private void addCode_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database1DataSet3.Section' table. You can move, or remove it, as needed.
-            this.sectionTableAdapter.Fill(this.database1DataSet3.Section);
+            //needs to populate sections drop down sectionBox
+
+            //Template.templates.Clear();
+            Sections.listSection();
+            for (int i = 0; i < Sections.sectionList.Count(); i++)
+            {
+                //Code.codeList[i].GetSectionName().Trim()}:
+               sectionBox.Items.Add($"{Sections.sectionList[i].name}");
+            }
+
 
         }
 

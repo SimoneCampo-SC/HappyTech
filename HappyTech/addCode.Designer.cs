@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.sectionBox = new System.Windows.Forms.ComboBox();
-            this.sectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.database1DataSet3 = new HappyTech.Database1DataSet3();
-            this.sectionTableAdapter = new HappyTech.Database1DataSet3TableAdapters.SectionTableAdapter();
             this.sectionLbl = new System.Windows.Forms.Label();
             this.codeShortBx = new System.Windows.Forms.TextBox();
             this.codeShortLb = new System.Windows.Forms.Label();
@@ -40,39 +37,22 @@
             this.codeParaLb = new System.Windows.Forms.Label();
             this.buttonSub = new System.Windows.Forms.Button();
             this.buttonback = new System.Windows.Forms.Button();
+            this.sectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.sectionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // sectionBox
             // 
-            this.sectionBox.DataSource = this.sectionBindingSource;
-            this.sectionBox.DisplayMember = "name";
             this.sectionBox.FormattingEnabled = true;
-            this.sectionBox.Location = new System.Drawing.Point(121, 89);
+            this.sectionBox.Location = new System.Drawing.Point(121, 156);
             this.sectionBox.Name = "sectionBox";
             this.sectionBox.Size = new System.Drawing.Size(154, 21);
             this.sectionBox.TabIndex = 0;
-            this.sectionBox.ValueMember = "name";
-            // 
-            // sectionBindingSource
-            // 
-            this.sectionBindingSource.DataMember = "Section";
-            this.sectionBindingSource.DataSource = this.database1DataSet3;
-            // 
-            // database1DataSet3
-            // 
-            this.database1DataSet3.DataSetName = "Database1DataSet3";
-            this.database1DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sectionTableAdapter
-            // 
-            this.sectionTableAdapter.ClearBeforeFill = true;
             // 
             // sectionLbl
             // 
             this.sectionLbl.AutoSize = true;
-            this.sectionLbl.Location = new System.Drawing.Point(118, 59);
+            this.sectionLbl.Location = new System.Drawing.Point(118, 126);
             this.sectionLbl.Name = "sectionLbl";
             this.sectionLbl.Size = new System.Drawing.Size(179, 13);
             this.sectionLbl.TabIndex = 1;
@@ -80,7 +60,7 @@
             // 
             // codeShortBx
             // 
-            this.codeShortBx.Location = new System.Drawing.Point(121, 148);
+            this.codeShortBx.Location = new System.Drawing.Point(118, 80);
             this.codeShortBx.Name = "codeShortBx";
             this.codeShortBx.Size = new System.Drawing.Size(100, 20);
             this.codeShortBx.TabIndex = 2;
@@ -88,7 +68,7 @@
             // codeShortLb
             // 
             this.codeShortLb.AutoSize = true;
-            this.codeShortLb.Location = new System.Drawing.Point(121, 129);
+            this.codeShortLb.Location = new System.Drawing.Point(118, 61);
             this.codeShortLb.Name = "codeShortLb";
             this.codeShortLb.Size = new System.Drawing.Size(103, 13);
             this.codeShortLb.TabIndex = 3;
@@ -132,6 +112,10 @@
             this.buttonback.UseVisualStyleBackColor = true;
             this.buttonback.Click += new System.EventHandler(this.buttonback_Click);
             // 
+            // sectionBindingSource
+            // 
+            this.sectionBindingSource.DataMember = "Section";
+            // 
             // addCode
             // 
             this.ClientSize = new System.Drawing.Size(982, 563);
@@ -150,7 +134,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.addCode_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sectionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,13 +149,13 @@
         private System.Windows.Forms.Button submitBtn;
         private System.Windows.Forms.ComboBox tagBox;
         private System.Windows.Forms.Label tagLbl;
-        private Database1DataSet2 database1DataSet2;
+        //private Database1DataSet2 database1DataSet2;
         private System.Windows.Forms.BindingSource tagBindingSource;
-        private Database1DataSet2TableAdapters.TagTableAdapter tagTableAdapter;
+       // private Database1DataSet2TableAdapters.TagTableAdapter tagTableAdapter;
         private System.Windows.Forms.ComboBox sectionBox;
-        private Database1DataSet3 database1DataSet3;
+        //private Database1DataSet3 database1DataSet3;
         private System.Windows.Forms.BindingSource sectionBindingSource;
-        private Database1DataSet3TableAdapters.SectionTableAdapter sectionTableAdapter;
+       // private Database1DataSet3TableAdapters.SectionTableAdapter sectionTableAdapter;
         private System.Windows.Forms.Label sectionLbl;
         private System.Windows.Forms.TextBox codeShortBx;
         private System.Windows.Forms.Label codeShortLb;

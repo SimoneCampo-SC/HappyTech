@@ -28,18 +28,37 @@ namespace HappyTech
             return query;
         }
 
-        static public string getCodeFromTagId(string tagId)
+        static public string getCodeFromTagId(object tagId)
         {
             string query = $"SELECT codeShort, codeParagraph FROM Codes WHERE SectionNo = {tagId}";
             return query;
         }
 
-        static public string getTagNames()
+        static public string getTagNames(string templateName) //takes template name and displays section names for this template
         {
-            string query = "SELECT name FROM Section";
+            string query = $"select name from Section where Id IN (select section_ID from PersonalSection where template_ID = (select Id from Template where tempType = '{templateName}'))";
             return query;
         }
-
+        static public string getTemplateName()
+        {
+            string query = "SELECT tempType FROM Template";
+            return query;
+        }
+        static public string getTemplateNameId() //gets name NAD id, used in addsection.cs for populating template check box
+        {
+            string query = "SELECT Id, tempType FROM Template";
+            return query;
+        }
+        static public string getTemplateIdFromName(string tempName)
+        {
+            string query = $"SELECT Id FROM Template WHERE tempType = '{tempName}'";
+            return query;
+        }
+        static public string insertNewTemplate(string templateName)
+        {
+            string query = $"INSERT INTO Template (tempType) VALUES ('{templateName}')";
+            return query;
+        }
         public static string createNewTag(string newTagName)
         {
             string query = $"INSERT INTO Section (name) VALUES ('{newTagName}')";
@@ -53,7 +72,17 @@ namespace HappyTech
         }
         public static string selectSectionName(int secID)
         {
-            string query = $"SELECT (name) FROM Section WHERE Id = {secID}";
+            string query = $"SELECT name FROM Section WHERE Id = '{secID}'";
+            return query;
+        }
+        public static string getSectionIdFromName(string name)
+        {
+            string query = $"SELECT Id FROM Section WHERE name = '{name}'";
+            return query;
+        }
+        static public string getSectionNameId() //gets name and id, used in sections for populating sections check box in addcode
+        {
+            string query = "SELECT Id, name FROM Section";
             return query;
         }
 

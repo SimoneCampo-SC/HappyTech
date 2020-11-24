@@ -70,6 +70,18 @@
     <Compile Include="addCode.Designer.cs">
       <DependentUpon>addCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="addSections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addSections.Designer.cs">
+      <DependentUpon>addSections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addTemplate.Designer.cs">
+      <DependentUpon>addTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applicant.cs" />
     <Compile Include="Code.cs" />
     <Compile Include="codeViewForm.cs">
@@ -91,14 +103,6 @@
     </Compile>
     <Compile Include="ConfApplDetailsForm.Designer.cs">
       <DependentUpon>ConfApplDetailsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Database1DataSet.Designer.cs" />
-    <Compile Include="Database1DataSet1.Designer.cs" />
-    <Compile Include="Database1DataSet2.Designer.cs" />
-    <Compile Include="Database1DataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Database1DataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Include="EditorClass.cs" />
     <Compile Include="LoginForm.cs">
@@ -134,10 +138,17 @@
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sections.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Template.cs" />
     <EmbeddedResource Include="addCode.resx">
       <DependentUpon>addCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addSections.resx">
+      <DependentUpon>addSections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addTemplate.resx">
+      <DependentUpon>addTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="codeViewForm.resx">
       <DependentUpon>codeViewForm.cs</DependentUpon>
@@ -174,50 +185,6 @@
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Database1DataSet.xsc">
-      <DependentUpon>Database1DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Database1DataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Database1DataSet.xss">
-      <DependentUpon>Database1DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet1.xsc">
-      <DependentUpon>Database1DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Database1DataSet11.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Database1DataSet1.xss">
-      <DependentUpon>Database1DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet2.xsc">
-      <DependentUpon>Database1DataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Database1DataSet21.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Database1DataSet2.xss">
-      <DependentUpon>Database1DataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet3.xsc">
-      <DependentUpon>Database1DataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Database1DataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Database1DataSet3.xss">
-      <DependentUpon>Database1DataSet3.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
