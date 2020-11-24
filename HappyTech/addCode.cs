@@ -119,6 +119,20 @@ namespace HappyTech
             codeShortBx.Clear();
             codeParaBx.Clear();
         }
+
+        private void goToAddTemplate_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            addTemplate addSec = new addTemplate();
+            addSec.Show();
+        }
+
+        private void goToAddSections_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            addSections addSec = new addSections();
+            addSec.Show();
+        }
     }
 }
 

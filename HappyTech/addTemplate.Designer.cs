@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.templateSubmitBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.templateBox = new System.Windows.Forms.TextBox();
             this.sectionsListBox = new System.Windows.Forms.CheckedListBox();
@@ -38,19 +37,8 @@
             this.preExistLbl = new System.Windows.Forms.Label();
             this.backBtn = new System.Windows.Forms.Button();
             this.updateTemplate = new System.Windows.Forms.Button();
+            this.templateSubmitBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // templateSubmitBtn
-            // 
-            this.templateSubmitBtn.BackgroundImage = global::HappyTech.Properties.Resources.happytech_bg_reg;
-            this.templateSubmitBtn.ForeColor = System.Drawing.Color.White;
-            this.templateSubmitBtn.Location = new System.Drawing.Point(199, 363);
-            this.templateSubmitBtn.Name = "templateSubmitBtn";
-            this.templateSubmitBtn.Size = new System.Drawing.Size(107, 23);
-            this.templateSubmitBtn.TabIndex = 13;
-            this.templateSubmitBtn.Text = "submit template";
-            this.templateSubmitBtn.UseVisualStyleBackColor = true;
-            this.templateSubmitBtn.Click += new System.EventHandler(this.templateSubmitBtn_Click);
             // 
             // label1
             // 
@@ -102,6 +90,7 @@
             this.preExistTempBox.Name = "preExistTempBox";
             this.preExistTempBox.Size = new System.Drawing.Size(161, 21);
             this.preExistTempBox.TabIndex = 17;
+            this.preExistTempBox.SelectedIndexChanged += new System.EventHandler(this.preExistTempBox_SelectedIndexChanged);
             // 
             // preExistLbl
             // 
@@ -120,6 +109,7 @@
             this.backBtn.TabIndex = 19;
             this.backBtn.Text = "back";
             this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // updateTemplate
             // 
@@ -129,6 +119,19 @@
             this.updateTemplate.TabIndex = 20;
             this.updateTemplate.Text = "update template";
             this.updateTemplate.UseVisualStyleBackColor = true;
+            this.updateTemplate.Click += new System.EventHandler(this.updateTemplate_Click);
+            // 
+            // templateSubmitBtn
+            // 
+            this.templateSubmitBtn.BackgroundImage = global::HappyTech.Properties.Resources.happytech_bg_reg;
+            this.templateSubmitBtn.ForeColor = System.Drawing.Color.White;
+            this.templateSubmitBtn.Location = new System.Drawing.Point(199, 363);
+            this.templateSubmitBtn.Name = "templateSubmitBtn";
+            this.templateSubmitBtn.Size = new System.Drawing.Size(107, 23);
+            this.templateSubmitBtn.TabIndex = 13;
+            this.templateSubmitBtn.Text = "submit template";
+            this.templateSubmitBtn.UseVisualStyleBackColor = true;
+            this.templateSubmitBtn.Click += new System.EventHandler(this.templateSubmitBtn_Click);
             // 
             // addTemplate
             // 

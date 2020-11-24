@@ -86,8 +86,11 @@ namespace HappyTech
                 DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeFromTagId(sectionId));
                 codeDisplay.DataSource = ds.Tables[0];
             }
-            catch { }
-           //if no section name selected, don't do anything and leave codeView grid blank
+            catch {
+                DataSet ds2 = Connection.GetDbConn().getDataSet($"SELECT name FROM Section");
+                codeDisplay.DataSource = ds2.Tables[0];
+            }
+           //if no section name selected, show all the sections (remove code in catch if you want nothing to be displayed)
         }
 
 

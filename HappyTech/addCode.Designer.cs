@@ -38,6 +38,8 @@
             this.buttonSub = new System.Windows.Forms.Button();
             this.buttonback = new System.Windows.Forms.Button();
             this.sectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.goToAddTemplate = new System.Windows.Forms.Button();
+            this.goToAddSections = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sectionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,9 +118,31 @@
             // 
             this.sectionBindingSource.DataMember = "Section";
             // 
+            // goToAddTemplate
+            // 
+            this.goToAddTemplate.Location = new System.Drawing.Point(648, 115);
+            this.goToAddTemplate.Name = "goToAddTemplate";
+            this.goToAddTemplate.Size = new System.Drawing.Size(99, 40);
+            this.goToAddTemplate.TabIndex = 8;
+            this.goToAddTemplate.Text = "Add Templates";
+            this.goToAddTemplate.UseVisualStyleBackColor = true;
+            this.goToAddTemplate.Click += new System.EventHandler(this.goToAddTemplate_Click);
+            // 
+            // goToAddSections
+            // 
+            this.goToAddSections.Location = new System.Drawing.Point(648, 219);
+            this.goToAddSections.Name = "goToAddSections";
+            this.goToAddSections.Size = new System.Drawing.Size(99, 38);
+            this.goToAddSections.TabIndex = 9;
+            this.goToAddSections.Text = "Add Sections";
+            this.goToAddSections.UseVisualStyleBackColor = true;
+            this.goToAddSections.Click += new System.EventHandler(this.goToAddSections_Click);
+            // 
             // addCode
             // 
             this.ClientSize = new System.Drawing.Size(982, 563);
+            this.Controls.Add(this.goToAddSections);
+            this.Controls.Add(this.goToAddTemplate);
             this.Controls.Add(this.buttonback);
             this.Controls.Add(this.buttonSub);
             this.Controls.Add(this.codeParaLb);
@@ -163,5 +187,7 @@
         private System.Windows.Forms.Label codeParaLb;
         private System.Windows.Forms.Button buttonSub;
         private System.Windows.Forms.Button buttonback;
+        private System.Windows.Forms.Button goToAddTemplate;
+        private System.Windows.Forms.Button goToAddSections;
     }
 }
