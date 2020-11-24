@@ -157,12 +157,16 @@ namespace HappyTech
         {
             // string item;
             listBox.CheckOnClick = true;
-            Code.codeList.Clear();
-            Code.fillCodeList();
-            for (int i = 0; i < Code.codeList.Count(); i++)
+            // Code.codeList.Clear();
+            // Code.fillCodeList();
+            Sections.listSection();
+            Sections.FillSectionPerTemplate(Template.templates[currentPosition].Id);
+
+            for (int i = 0; i < Sections.sectionPerTemplate.Count; i++)
             {
                 //Code.codeList[i].GetSectionName().Trim()}:
-                listBox.Items.Add($"{Code.codeList[i].CodeName}");
+               //listBox.Items.Add($"{Code.codeList[i].CodeName}");
+                listBox.Items.Add($"{Sections.sectionPerTemplate[i].name}");
             }
 
             if (mode == "preview")

@@ -103,12 +103,13 @@ namespace HappyTech
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            btnPassVis.Hide();
+          //  btnPassVis.Hide();
         }
 
         private void userPassword_TextChanged(object sender, EventArgs e)
         {
-            if (!(userPassword.Text == ""))
+            //if (!(userPassword.Text == ""))
+            if (userPassword.Text.Length > 0)
             {
                 btnPassVis.Show();
             }

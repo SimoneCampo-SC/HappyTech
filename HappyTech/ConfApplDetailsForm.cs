@@ -50,7 +50,7 @@ namespace HappyTech
             this.Hide();
 
             // Dashform displayed again
-            DashForm f2 = new DashForm("addApp");
+            DashForm f2 = new DashForm("newApp");
             f2.Show();
         }
 

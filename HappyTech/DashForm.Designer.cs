@@ -266,7 +266,7 @@
             this.codeViewBtn.Name = "codeViewBtn";
             this.codeViewBtn.Size = new System.Drawing.Size(99, 32);
             this.codeViewBtn.TabIndex = 28;
-            this.codeViewBtn.Text = "Code Editor";
+            this.codeViewBtn.Text = "Editor";
             this.codeViewBtn.UseVisualStyleBackColor = false;
             this.codeViewBtn.Click += new System.EventHandler(this.codeViewBtn_Click);
             // 
@@ -311,7 +311,6 @@
             this.tempTypeBox.Name = "tempTypeBox";
             this.tempTypeBox.Size = new System.Drawing.Size(197, 194);
             this.tempTypeBox.TabIndex = 23;
-            
             // 
             // groupBox3
             // 
