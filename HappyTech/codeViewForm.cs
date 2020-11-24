@@ -16,13 +16,12 @@ namespace HappyTech
         public codeViewForm()
         {
             InitializeComponent();
-            
+
             loadTemplateDropdown();
             //load_dropdown(); //load tags from the db into the drop-down menu needs to run when template dropdown
             //is given a value
             loadGrid();
-            tempGroupBox.Hide();
-            successfulTempLbl.Hide();
+
         }
 
         /* private void tagSelectBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,7 +56,7 @@ namespace HappyTech
         }
         private void loadSectionDropdown(string templateName) //passes in the value contained in the template select dropdown
         {
-            
+
             //this takes the template name from the template box and finds sections that are related to that template
             DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagNames(templateName));
             //populates drop down menu with sections
@@ -77,8 +76,9 @@ namespace HappyTech
             //and the form will crash if it tries to load the grid view with "" as a section name.
             //try catch is prefereable to hardcoding a default value to load and form would 
             //crash when defaulting to the 1st section when the program is first run and there are no sections
-            
-            try {
+
+            try
+            {
                 tagSelectBox.Text.Replace(" ", "");
                 DataSet ds1 = Connection.GetDbConn().getDataSet(Constants.getTagIdFromName(tagSelectBox.Text));
                 DataRow dRow1 = ds1.Tables[0].Rows[0];
@@ -86,24 +86,25 @@ namespace HappyTech
                 DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeFromTagId(sectionId));
                 codeDisplay.DataSource = ds.Tables[0];
             }
-            catch {
+            catch
+            {
                 DataSet ds2 = Connection.GetDbConn().getDataSet($"SELECT name FROM Section");
                 codeDisplay.DataSource = ds2.Tables[0];
             }
-           //if no section name selected, show all the sections (remove code in catch if you want nothing to be displayed)
+            //if no section name selected, show all the sections (remove code in catch if you want nothing to be displayed)
         }
 
 
-       /* void fillCombo()
-        {
-            //DataSet ds = Connection.GetDbConn().getDataSet("SELECT * FROM Tag");
-            //codeDisplay.DataSource = ds.Tables[0];
-        } */
+        /* void fillCombo()
+         {
+             //DataSet ds = Connection.GetDbConn().getDataSet("SELECT * FROM Tag");
+             //codeDisplay.DataSource = ds.Tables[0];
+         } */
 
-       /* private void codeDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        /* private void codeDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
+         {
 
-        } */
+         } */
 
         private void backBtn_Click(object sender, EventArgs e)
         {
@@ -116,11 +117,11 @@ namespace HappyTech
         {
             //When add tag button is clicked, show the text box for typing in a new tag name and show the button required to add the
             //alue of the add tage textbox into the db
-           /* tempGroupBox.Hide();
-            tagBox.Show();
-            tagSubmit.Show();
-            sectionGroupBox.Show();*/
-            this.Hide(); 
+            /* tempGroupBox.Hide();
+             tagBox.Show();
+             tagSubmit.Show();
+             sectionGroupBox.Show();*/
+            this.Hide();
             addSections newForm = new addSections();
             newForm.Show();
         }
@@ -131,7 +132,7 @@ namespace HappyTech
             addCode at = new addCode();
             at.Show();
 
-        } 
+        }
 
         /*
         private void submitCodeBtn_Click(object sender, EventArgs e)
@@ -139,7 +140,7 @@ namespace HappyTech
            
         } */
 
-    
+
 
         private void tagSelectBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -157,16 +158,16 @@ namespace HappyTech
             this.Hide();
             addTemplate addTemp = new addTemplate();
             addTemp.Show();
-           
+
         }
 
         /// <summary>
         /// functionally the same as the code to popluate the templates dropdown at the top of this form
         /// value from this dropdown will be used to determine the template to attach the created section to
         /// </summary>
-      
 
-       
+
+
 
         /// <summary>
         /// when the submit template button is pressed, run the function inside Templates.cs that takes a string and creates a
@@ -174,16 +175,8 @@ namespace HappyTech
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void templateSubmitBtn_Click(object sender, EventArgs e)
-        {
-            Template.createNewTemplate(templateBox.Text);
-            loadTemplateDropdown();
-            tempGroupBox.Hide();
-            successfulTempLbl.Show();
-            //reload the templates dropdown when the new template has been created
-        }
-    }
 
-     
+
+    }
     
 }
