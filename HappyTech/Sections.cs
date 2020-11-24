@@ -15,6 +15,7 @@ namespace HappyTech
     class Sections
     {
         public static List<Sections>sectionList = new List<Sections>();
+        public static List<Sections> sectionPerTemplate = new List<Sections>(); 
         public int id { get; }
         public string name { get; }
         private Sections(int id, string name)
@@ -40,5 +41,23 @@ namespace HappyTech
                Sections.sectionList.Add(_instance); // Add the section into the list
             }
         }
+
+        public static void FillSectionPerTemplate(int tempID)
+        {
+            DataSet ds = Connection.GetDbConn().getDataSet(Constants.SelectSectionPerTemplate(tempID));
+            DataRow dRow;
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                dRow = ds.Tables[0].Rows[i];
+                for (int j = 0; j < sectionList.Count; j++)
+                {
+                    if (dRow.ItemArray.GetValue(0).ToString().Equals(sectionList[j].id))
+                    {
+                        sectionPerTemplate.Add(sectionList[j]);
+                    }
+                }
+            }
+        }
+
     }
 }
