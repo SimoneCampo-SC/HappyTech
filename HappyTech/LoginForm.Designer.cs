@@ -44,8 +44,11 @@
             this.btAutofill = new System.Windows.Forms.Button();
             this.btnPassVis = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewRecruiter)).BeginInit();
             this.panelLogin.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // userEmail
@@ -226,11 +229,20 @@
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.panelLogo.BackgroundImage = global::HappyTech.Properties.Resources.happytech_bg;
+            this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(499, 565);
             this.panelLogo.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HappyTech.Properties.Resources.happytech_login;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(499, 565);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 
@@ -251,6 +263,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataViewRecruiter)).EndInit();
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
+            this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -272,6 +286,7 @@
         private System.Windows.Forms.Panel panelLogin;
         private System.Windows.Forms.Button btnPassVis;
         private System.Windows.Forms.Button btAutofill;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
