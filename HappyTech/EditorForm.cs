@@ -118,7 +118,7 @@ namespace HappyTech
                 {
 
                     sw.WriteLine(richTextBox2.Text);
-                    if (!(richTextBox1.Text == "Enter your comment here..." || richTextBox1.Text == ""))
+                    if (!(richTextBox1.Text == ""))
                     {
                         sw.WriteLine("\r\nComments:\r\n");
                         sw.WriteLine(richTextBox1.Text);
@@ -182,10 +182,10 @@ namespace HappyTech
 
             if (mode == "preview")
             {
-                richTextBox1.Hide();
-                lbComBox.Hide();
+                //richTextBox1.Hide();
+                //lbComBox.Hide();
                 //panel2.Width = 623;
-                richTextBox2.Width = 623;
+                //richTextBox2.Width = 623;
             }
         }
 
