@@ -12,6 +12,7 @@ namespace HappyTech
     class Template
     {
         // Template list has been created
+        public static List<Template> templatesForApplicants = new List<Template>();
         public static List<Template> templates = new List<Template>();
 
         // List of all the properties 
@@ -24,11 +25,12 @@ namespace HappyTech
         /// </summary>
         /// <param name="applicant">holds the applicant object</param>
         /// <param name="tempType">holds the type chosen</param>
-        private Template (Applicant applicant, string tempType)
+        private Template (int id, string name, Applicant applicant)
         {
-            this.TempType = tempType;
+            this.Id = id;
+            this.TempType = name;
             this.Header = $"Recruiter: {Recruiter.GetInstance().Name} {Recruiter.GetInstance().Surname}, " +
-                          $"Applicant: {applicant.AfullName} for {tempType}";
+                          $"Applicant: {applicant.AfullName} for {TempType}";
         }
 
         /// <summary>
@@ -45,23 +47,29 @@ namespace HappyTech
         /// <summary>
         /// The following method generates template according to the number of applicants into the list.
         /// </summary>
-        public static void generateTemplate(Applicant Applicant, string tempType)
+        public static void GenerateTemplateForApplicant(Applicant Applicant, string tempType)
         {
-            Template template = new Template(Applicant, tempType);
-            Template.templates.Add(template);
-        }
+            // retrieves the Id from the database
+            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(tempType));
+            DataRow dRow;
 
-        /// <summary>
-        ///Fills the following template into the database
-        /// </summary>
-        private void FillTemplateIntoDb ()
-        {
-           //Connection.GetDbConn().CreateCommand(Constants.insertTemplate(Header)); //+ tagID
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                dRow = ds.Tables[0].Rows[i];
+
+                // Creates the instance
+                Template _instance = new Template(
+                    Int32.Parse(dRow.ItemArray.GetValue(0).ToString()), // template ID
+                    tempType, // template's tempType
+                    Applicant
+                    );
+                Template.templatesForApplicants.Add(_instance); // Add the code into the list
+            }
         }
 
         public static void listTemplates()
         {
-            // retrieves the codes from the database
+            // retrieves the Id from the database
             DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateNameId());
             DataRow dRow;
 
@@ -76,12 +84,6 @@ namespace HappyTech
                     );
                Template.templates.Add(_instance); // Add the code into the list
             }
-        }
-
-        public static void createNewTemplate(string templateName)
-        {
-            string queryString = Constants.insertNewTemplate(templateName);
-            Connection.GetDbConn().CreateCommand(queryString);
         }
 
         public static void CreateTemplateWithSelectedSections (string input, CheckedListBox selectedSections)
