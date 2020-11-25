@@ -31,6 +31,7 @@ namespace HappyTech
             mode = "feedback";
             currentPosition = position; // update the currentPosition
             InitializeComponent();
+            loadListBox();
 
             /* Displays the applicant selected out of all the applicants
              * position + 1 as the iterator starts from 0 to n-1 */
@@ -164,19 +165,24 @@ namespace HappyTech
 
             
         }
-        private void EditorForm_Load(object sender, EventArgs e)
+        private void loadListBox()
         {
-            // string item;
             listBox.CheckOnClick = true;
             // Code.codeList.Clear();
             // Code.fillCodeList();
             Sections.listSection();
-            Sections.FillSectionPerTemplate(Template.templates[currentPosition].Id);
+            Console.WriteLine(Template.templates[currentPosition].TempType);
+            //go to db with temp name, use resulting id Template.templates[currentPosition].Id = result
+            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(Template.templates[currentPosition].TempType));
+            DataRow dRow = ds.Tables[0].Rows[0];
+            var templateId = dRow.ItemArray.GetValue(0);
+           
+            Sections.FillSectionPerTemplate(templateId);
 
             for (int i = 0; i < Sections.sectionPerTemplate.Count; i++)
             {
                 //Code.codeList[i].GetSectionName().Trim()}:
-               //listBox.Items.Add($"{Code.codeList[i].CodeName}");
+                //listBox.Items.Add($"{Code.codeList[i].CodeName}");
                 listBox.Items.Add($"{Sections.sectionPerTemplate[i].name}");
             }
 
@@ -187,6 +193,7 @@ namespace HappyTech
                 //panel2.Width = 623;
                 //richTextBox2.Width = 623;
             }
+
         }
 
         private void listBox_ItemCheck(object sender, ItemCheckEventArgs e)

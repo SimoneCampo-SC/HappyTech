@@ -464,7 +464,7 @@
             this.Name = "EditorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
-            this.Load += new System.EventHandler(this.EditorForm_Load);
+          
             this.panelManagement.ResumeLayout(false);
             this.panelManagement.PerformLayout();
             this.panelCodes.ResumeLayout(false);

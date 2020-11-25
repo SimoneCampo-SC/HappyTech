@@ -9,7 +9,7 @@ namespace HappyTech
 {
     class Constants
     {
-        public static string SelectSectionPerTemplate(int tempID)
+        public static string SelectSectionPerTemplate(object tempID)
         {
             string query = $"SELECT DISTINCT section_ID FROM PersonalSection WHERE template_ID = '{tempID}'";
             return query;

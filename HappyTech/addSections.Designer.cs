@@ -47,6 +47,8 @@
             this.editSectionCombo = new System.Windows.Forms.ComboBox();
             this.editSectionTextBox = new System.Windows.Forms.TextBox();
             this.submitEditBtn = new System.Windows.Forms.Button();
+            this.errorLabel = new System.Windows.Forms.Label();
+            this.okLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +79,7 @@
             // 
             // backBtn
             // 
-            this.backBtn.Location = new System.Drawing.Point(135, 351);
+            this.backBtn.Location = new System.Drawing.Point(135, 372);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(75, 23);
             this.backBtn.TabIndex = 16;
@@ -136,6 +138,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.okLabel);
+            this.groupBox1.Controls.Add(this.errorLabel);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.backBtn);
             this.groupBox1.Controls.Add(this.templatesListBox);
@@ -220,6 +224,26 @@
             this.submitEditBtn.Text = "Save Changes";
             this.submitEditBtn.UseVisualStyleBackColor = true;
             // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorLabel.Location = new System.Drawing.Point(52, 346);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(256, 13);
+            this.errorLabel.TabIndex = 19;
+            this.errorLabel.Text = "lPlease check the section name you are trying to use";
+            // 
+            // okLabel
+            // 
+            this.okLabel.AutoSize = true;
+            this.okLabel.ForeColor = System.Drawing.Color.DarkGreen;
+            this.okLabel.Location = new System.Drawing.Point(229, 311);
+            this.okLabel.Name = "okLabel";
+            this.okLabel.Size = new System.Drawing.Size(79, 13);
+            this.okLabel.TabIndex = 20;
+            this.okLabel.Text = "Section added!";
+            // 
             // addSections
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,7 +262,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "addSections";
             this.Text = "HappyTech";
-            this.Load += new System.EventHandler(this.addSections_Load);
+            
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -267,5 +291,7 @@
         private System.Windows.Forms.ComboBox editSectionCombo;
         private System.Windows.Forms.TextBox editSectionTextBox;
         private System.Windows.Forms.Button submitEditBtn;
+        private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.Label okLabel;
     }
 }

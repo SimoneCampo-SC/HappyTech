@@ -105,14 +105,14 @@ namespace HappyTech
                 //we will get the id of this new template first instead of getting it in each iteration of the loop
                 DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(input));
                 DataRow dRow = ds.Tables[0].Rows[0];
-                var sectionId = dRow.ItemArray.GetValue(0);
+                var templateId = dRow.ItemArray.GetValue(0);
                 foreach (string section in selectedSections.CheckedItems)
                 {
                     //for each template selected, we have to add a template id and section id to PersonalSection
                     //so we will get the template id from the template name
                     DataSet ds1 = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(section));
                     DataRow dRow1 = ds1.Tables[0].Rows[0];
-                    var templateId = dRow1.ItemArray.GetValue(0);
+                    var sectionId = dRow1.ItemArray.GetValue(0);
                     //now we have the template id and section id
                     string createPersonalSection = $"insert into PersonalSection (template_ID, section_ID) VALUES ('{templateId}', '{sectionId}')";
                     Connection.GetDbConn().CreateCommand(createPersonalSection);

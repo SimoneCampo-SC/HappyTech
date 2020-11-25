@@ -21,13 +21,16 @@ namespace HappyTech
             editSectionCombo.Hide();
             editSectionTextBox.Hide();
             submitEditBtn.Hide();
+            errorLabel.Hide();
+            okLabel.Hide();
+            loadSectionChecklistbox();
            
         }
 
-        private void addSections_Load(object sender, EventArgs e)
+        private void loadSectionChecklistbox()
         {
-            
-            
+
+            templatesListBox.Items.Clear();
             Template.templates.Clear();
             Template.listTemplates();
             for (int i = 0; i < Template.templates.Count(); i++)
@@ -47,7 +50,29 @@ namespace HappyTech
         /// <param name="e"></param>
         private void tagSubmit_Click(object sender, EventArgs e)
         {
-            Sections.InsertSectionWithSelectedTemplates(tagBox.Text, templatesListBox);
+            bool stringOk = false; //stringOk will check the string isn't just spaces or blank
+            //ideally there would be a check to make sure this name asn't already been entered into the database
+            //if SELECT * FROM Section WHERE name = tagBox.Text != null then throw error (because a row exists with this name)
+            string sectionName = tagBox.Text.Replace(" ", "");
+            if (sectionName != "")
+            {
+                stringOk = true;
+            }
+            if (stringOk == true)
+            {
+                Sections.InsertSectionWithSelectedTemplates(sectionName, templatesListBox);
+                tagBox.Clear();
+                
+                loadSectionChecklistbox();
+                errorLabel.Hide();
+                okLabel.Show();
+            }
+            else if (stringOk == false)
+            {
+                //need an error box here to advise user of issue
+                okLabel.Hide();
+                errorLabel.Show();
+            }
         }
 
         private void backBtn_Click(object sender, EventArgs e)
