@@ -34,7 +34,7 @@ namespace HappyTech
 
             /* Displays the applicant selected out of all the applicants
              * position + 1 as the iterator starts from 0 to n-1 */
-            lbApplicants.Text = $"Applicant {position + 1} of  {Applicant.applicants.Count}"; 
+            lbApplicants.Text = $"Applicant {position + 1} of {Applicant.applicants.Count}"; 
             
             // Takes the header of the template in the assigned position in the list
             //lbHeader.Text = Template.templates[position].Header;
