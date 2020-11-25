@@ -133,6 +133,26 @@ namespace HappyTech.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap happytech_empty {
+            get {
+                object obj = ResourceManager.GetObject("happytech_empty", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap happytech_filled {
+            get {
+                object obj = ResourceManager.GetObject("happytech_filled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap happytech_login {
             get {
                 object obj = ResourceManager.GetObject("happytech_login", resourceCulture);

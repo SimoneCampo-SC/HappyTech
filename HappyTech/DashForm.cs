@@ -120,5 +120,67 @@ namespace HappyTech
             e.Graphics.DrawString(tempTypeBox.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 32, e.Bounds.Y + 8);
             e.DrawFocusRectangle();
         }
+
+        private void tbAName_TextChanged(object sender, EventArgs e)
+        {
+            lblAppNameVal.Text = tbAName.Text;
+            if (lblAppNameVal.Text.Length > 0)
+            {
+                imgAppName.Image = Properties.Resources.happytech_filled;
+            }
+            else
+            {
+                imgAppName.Image = Properties.Resources.happytech_empty;
+            }
+        }
+
+        private void DashForm_Load(object sender, EventArgs e)
+        {
+            lblRecruiterVal.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
+            imgRecruiter.Image = Properties.Resources.happytech_filled;
+            lblAppNameVal.Text = "";
+            lblAppEmailVal.Text = "";
+            lblAppJobVal.Text = "";
+            lblAppTempVal.Text = "";
+        }
+
+        private void tbAEmail_TextChanged(object sender, EventArgs e)
+        {
+            lblAppEmailVal.Text = tbAEmail.Text;
+            if (lblAppEmailVal.Text.Length > 0)
+            {
+                imgAppEmail.Image = Properties.Resources.happytech_filled;
+            }
+            else
+            {
+                imgAppEmail.Image = Properties.Resources.happytech_empty;
+            }
+        }
+
+        private void tbAJob_TextChanged(object sender, EventArgs e)
+        {
+            lblAppJobVal.Text = tbAJob.Text;
+            if (lblAppJobVal.Text.Length > 0)
+            {
+                imgAppJob.Image = Properties.Resources.happytech_filled;
+            }
+            else
+            {
+                imgAppJob.Image = Properties.Resources.happytech_empty;
+            }
+        }
+
+        private void tempTypeBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            lblAppTempVal.Text = tempTypeBox.SelectedItem.ToString();
+            if (lblAppTempVal.Text.Length > 0)
+            {
+                imgAppTemp.Image = Properties.Resources.happytech_filled;
+            }
+            else
+            {
+                imgAppTemp.Image = Properties.Resources.happytech_empty;
+            }
+        }
     }
 }
