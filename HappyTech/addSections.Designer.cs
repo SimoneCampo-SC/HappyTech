@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addSections));
             this.tagBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.templatesListBox = new System.Windows.Forms.CheckedListBox();
@@ -161,8 +162,9 @@
             this.ClientSize = new System.Drawing.Size(944, 530);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "addSections";
-            this.Text = "addSections";
+            this.Text = "HappyTech";
             this.Load += new System.EventHandler(this.addSections_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

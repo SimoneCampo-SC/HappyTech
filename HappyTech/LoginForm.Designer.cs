@@ -76,6 +76,7 @@
             this.loginButt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginButt.AutoSize = true;
             this.loginButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.loginButt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginButt.FlatAppearance.BorderSize = 0;
             this.loginButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButt.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,6 +133,7 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(397, 528);
             this.button1.Name = "button1";
@@ -202,6 +204,7 @@
             // 
             // btAutofill
             // 
+            this.btAutofill.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btAutofill.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAutofill.Location = new System.Drawing.Point(397, 499);
             this.btAutofill.Name = "btAutofill";
@@ -214,6 +217,7 @@
             // 
             // btnPassVis
             // 
+            this.btnPassVis.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPassVis.FlatAppearance.BorderSize = 0;
             this.btnPassVis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPassVis.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

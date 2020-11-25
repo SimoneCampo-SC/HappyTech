@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(previewForm));
             this.checklistAppPreview = new System.Windows.Forms.CheckedListBox();
             this.previewBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
@@ -82,12 +83,13 @@
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.previewBtn);
             this.Controls.Add(this.checklistAppPreview);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(998, 602);
             this.MinimumSize = new System.Drawing.Size(998, 602);
             this.Name = "previewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "previewForm";
+            this.Text = "HappyTech";
             this.Load += new System.EventHandler(this.previewForm_Load);
             this.ResumeLayout(false);
 

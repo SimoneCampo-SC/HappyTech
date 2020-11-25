@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorForm));
             this.btBack = new System.Windows.Forms.Button();
             this.btNext = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbHeader = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.lbTemplate = new System.Windows.Forms.Label();
             this.lbCodeList = new System.Windows.Forms.Label();
@@ -40,7 +42,6 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.listBox = new System.Windows.Forms.CheckedListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -95,6 +96,15 @@
             this.lbHeader.Size = new System.Drawing.Size(415, 16);
             this.lbHeader.TabIndex = 1;
             this.lbHeader.Text = "Header";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox2.Location = new System.Drawing.Point(-3, 31);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(426, 440);
+            this.richTextBox2.TabIndex = 0;
+            this.richTextBox2.Text = "";
             // 
             // richTextBox1
             // 
@@ -152,10 +162,11 @@
             // listBox
             // 
             this.listBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox.ForeColor = System.Drawing.Color.Black;
             this.listBox.FormattingEnabled = true;
             this.listBox.Location = new System.Drawing.Point(12, 34);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(272, 469);
+            this.listBox.Size = new System.Drawing.Size(272, 466);
             this.listBox.TabIndex = 0;
             this.listBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listBox_ItemCheck);
             this.listBox.SelectedValueChanged += new System.EventHandler(this.listBox_SelectedValueChanged);
@@ -170,15 +181,6 @@
             this.groupBox1.Size = new System.Drawing.Size(985, 34);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox2.Location = new System.Drawing.Point(-3, 31);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(426, 440);
-            this.richTextBox2.TabIndex = 0;
-            this.richTextBox2.Text = "";
             // 
             // groupBox2
             // 
@@ -202,6 +204,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listBox);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(998, 602);
             this.MinimumSize = new System.Drawing.Size(998, 602);

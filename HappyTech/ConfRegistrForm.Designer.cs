@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfRegistrForm));
             this.lbSuccessful = new System.Windows.Forms.Label();
             this.btLogin = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -90,6 +91,7 @@
             this.BackgroundImage = global::HappyTech.Properties.Resources.happytech_bg_reg;
             this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(998, 602);
             this.MinimumSize = new System.Drawing.Size(998, 602);

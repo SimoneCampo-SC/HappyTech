@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(codeViewForm));
             this.tagSelectBox = new System.Windows.Forms.ComboBox();
             this.tagBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codeDisplay = new System.Windows.Forms.DataGridView();
@@ -173,12 +174,13 @@
             this.BackgroundImage = global::HappyTech.Properties.Resources.happytech_bg_reg;
             this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(998, 602);
             this.MinimumSize = new System.Drawing.Size(998, 602);
             this.Name = "codeViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "codeViewForm";
+            this.Text = "HappyTech";
             ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.codeDisplay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.codesBindingSource)).EndInit();

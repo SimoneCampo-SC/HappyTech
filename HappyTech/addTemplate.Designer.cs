@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addTemplate));
             this.label1 = new System.Windows.Forms.Label();
             this.templateBox = new System.Windows.Forms.TextBox();
             this.sectionsListBox = new System.Windows.Forms.CheckedListBox();
@@ -200,8 +201,9 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "addTemplate";
-            this.Text = "addTemplate";
+            this.Text = "HappyTech";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

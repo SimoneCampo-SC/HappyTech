@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfApplDetailsForm));
             this.lbSuccess = new System.Windows.Forms.Label();
             this.lbApplicantNo = new System.Windows.Forms.Label();
             this.btNewApp = new System.Windows.Forms.Button();
@@ -95,8 +96,8 @@
             this.dgvApplicant.AllowUserToDeleteRows = false;
             this.dgvApplicant.AllowUserToResizeColumns = false;
             this.dgvApplicant.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvApplicant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvApplicant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvApplicant.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvApplicant.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvApplicant.BackgroundColor = System.Drawing.Color.Plum;
@@ -145,6 +146,7 @@
             this.BackgroundImage = global::HappyTech.Properties.Resources.happytech_bg_reg;
             this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(998, 602);
             this.MinimumSize = new System.Drawing.Size(998, 602);

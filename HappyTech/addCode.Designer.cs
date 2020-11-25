@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addCode));
             this.sectionBox = new System.Windows.Forms.ComboBox();
             this.sectionLbl = new System.Windows.Forms.Label();
             this.codeShortBx = new System.Windows.Forms.TextBox();
@@ -164,11 +165,13 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.goToAddSections);
             this.Controls.Add(this.goToAddTemplate);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(998, 602);
             this.MinimumSize = new System.Drawing.Size(998, 602);
             this.Name = "addCode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "HappyTech";
             this.Load += new System.EventHandler(this.addCode_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sectionBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);

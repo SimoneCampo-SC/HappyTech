@@ -21,7 +21,7 @@ namespace HappyTech
             this.mode = mode;
             InitializeComponent();
             // lable gets the name of the recruiter
-            lbName.Text = Recruiter.GetInstance().Name;
+            lbName.Text = Recruiter.GetInstance().Name + ".";
             if (mode == "newApp")
             {
                 // Checks whether the list of the applicants is not empty
@@ -45,6 +45,7 @@ namespace HappyTech
             DataSet ds = Connection.GetDbConn().getDataSet(Constants.selectTemplateType());
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
+
                 tempTypeBox.Items.Add(ds.Tables[0].Rows[i].ItemArray.GetValue(0));
             }
         }
@@ -112,6 +113,12 @@ namespace HappyTech
             f3.Show();
         }
 
-       
+        private void tempTypeBox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+            e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 8, e.Bounds.Y + 8, 16, 16);
+            e.Graphics.DrawString(tempTypeBox.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 32, e.Bounds.Y + 8);
+            e.DrawFocusRectangle();
+        }
     }
 }
