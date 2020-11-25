@@ -34,7 +34,7 @@ namespace HappyTech
             {
                 Applicant.applicants.Clear();
                 Connection.GetDbConn().CreateCommand(Constants.deleteApplicant());
-                Template.templates.Clear();
+                Template.templatesForApplicants.Clear();
             }
 
             // Checks whether there are applicants inserted so that the back button is displayed
@@ -58,7 +58,7 @@ namespace HappyTech
             this.Hide();
             Recruiter.DestroyRecruiInstance(); // Recruiter instance is destroied
             Applicant.applicants.Clear(); // Applicants list is cleared
-            Template.templates.Clear();
+            Template.templatesForApplicants.Clear();
             Connection.GetDbConn().CreateCommand(Constants.deleteApplicant()); // Applicants are deleted from the database
             
             LoginForm f1 = new LoginForm(); // Returns to the login form
@@ -83,7 +83,7 @@ namespace HappyTech
                 // Add the instance into the applicant list
                 Applicant.applicants.Add(applicant);
 
-                Template.generateTemplate(applicant, tempTypeBox.SelectedItem.ToString());
+                Template.GenerateTemplateForApplicant(applicant, tempTypeBox.SelectedItem.ToString());
    
                 this.Hide();
                 // Create a new ConfApplDetails form passing the value false

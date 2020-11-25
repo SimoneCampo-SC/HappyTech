@@ -42,7 +42,7 @@ namespace HappyTech
             lblAppNameVal.Text = Applicant.applicants[position].AfullName;
             lblAppEmailVal.Text = Applicant.applicants[position].Aemail;
             lblAppJobVal.Text = Applicant.applicants[position].AJob;
-            lblAppTempVal.Text = Template.templates[position].TempType;
+            lblAppTempVal.Text = Template.templatesForApplicants[position].TempType;
         }
 
         public EditorForm(string applicantName, string appType, string appEmail, string appJob) // takes applicant name + type + email + job from previewForm
@@ -93,7 +93,7 @@ namespace HappyTech
                 }
                 else if (currentPosition == 0)
                 {
-                    Template.templates.Clear();
+                    Template.templatesForApplicants.Clear();
                     //Connection.GetDbConn().CreateCommand(Constants.deleteTemplate());
                     this.Hide();
                     ConfApplDetailsForm cadf = new ConfApplDetailsForm(false);
@@ -127,13 +127,13 @@ namespace HappyTech
                 }
 
                 
-                if (currentPosition < Template.templates.Count - 1)
+                if (currentPosition < Template.templatesForApplicants.Count - 1)
                 {
                     this.Hide();
                     EditorForm f = EditorClass.NextForm("forward", currentPosition);
                     f.Show();
                 }
-                else if (currentPosition >= Template.templates.Count - 1)
+                else if (currentPosition >= Template.templatesForApplicants.Count - 1)
                 {
                     this.Hide();
                     previewForm pf = new previewForm();
@@ -171,7 +171,7 @@ namespace HappyTech
             // Code.codeList.Clear();
             // Code.fillCodeList();
             Sections.listSection();
-            Sections.FillSectionPerTemplate(Template.templates[currentPosition].Id);
+            Sections.FillSectionPerTemplate(Template.templatesForApplicants[currentPosition].Id);
 
             for (int i = 0; i < Sections.sectionPerTemplate.Count; i++)
             {

@@ -26,14 +26,12 @@ namespace HappyTech
 
         private void addSections_Load(object sender, EventArgs e)
         {
-            
-            
-            Template.templates.Clear();
+            Template.templatesForApplicants.Clear();
             Template.listTemplates();
-            for (int i = 0; i < Template.templates.Count(); i++)
+            for (int i = 0; i < Template.templatesForApplicants.Count(); i++)
             {
                 //Code.codeList[i].GetSectionName().Trim()}:
-                templatesListBox.Items.Add($"{Template.templates[i].TempType}");
+                templatesListBox.Items.Add($"{Template.templatesForApplicants[i].TempType}");
             }
         }
 

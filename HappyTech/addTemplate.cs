@@ -84,12 +84,12 @@ namespace HappyTech
 
         private void loadpreExistTempBox()
         {
-            Template.templates.Clear();
+            Template.templatesForApplicants.Clear();
             Template.listTemplates();
-            for (int i = 0; i < Template.templates.Count(); i++)
+            for (int i = 0; i < Template.templatesForApplicants.Count(); i++)
             {
                 //Code.codeList[i].GetSectionName().Trim()}:
-                preExistTempBox.Items.Add($"{Template.templates[i].TempType}");
+                preExistTempBox.Items.Add($"{Template.templatesForApplicants[i].TempType}");
             }
         }
 
