@@ -123,6 +123,12 @@
     <Compile Include="EditorForm.Designer.cs">
       <DependentUpon>EditorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewEditDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewEditDelete.Designer.cs">
+      <DependentUpon>NewEditDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="previewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditorForm.resx">
       <DependentUpon>EditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEditDelete.resx">
+      <DependentUpon>NewEditDelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="previewForm.resx">
       <DependentUpon>previewForm.cs</DependentUpon>

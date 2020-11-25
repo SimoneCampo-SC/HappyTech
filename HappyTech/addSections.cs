@@ -29,12 +29,12 @@ namespace HappyTech
 
         private void loadSectionChecklistbox()
         {
-            Template.templatesForApplicants.Clear();
+            Template.templates.Clear();
             Template.listTemplates();
-            for (int i = 0; i < Template.templatesForApplicants.Count(); i++)
+            for (int i = 0; i < Template.templates.Count(); i++)
             {
                 //Code.codeList[i].GetSectionName().Trim()}:
-                templatesListBox.Items.Add($"{Template.templatesForApplicants[i].TempType}");
+                templatesListBox.Items.Add($"{Template.templates[i].TempType}");
             }
         }
 

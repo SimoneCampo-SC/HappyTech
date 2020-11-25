@@ -38,6 +38,11 @@ namespace HappyTech
             string query = $"SELECT codeShort, codeParagraph FROM Codes WHERE SectionNo = {tagId}";
             return query;
         }
+        static public string getCodeParaFromShort(string codeShort)
+        {
+            string query = $"SELECT codeParagraph FROM Codes WHERE codeShort = '{codeShort}'";
+            return query;
+        }
 
         static public string getTagNames(string templateName) //takes template name and displays section names for this template
         {
@@ -94,6 +99,28 @@ namespace HappyTech
         public static string selectCodes()
         {
             string query = "SELECT * FROM Codes";
+            return query;
+        }
+
+        public static string editCode (object codeId, string codeName, string codePara)
+        {
+            string query = $"UPDATE Codes SET codeShort = '{codeName}', codeParagraph = '{codePara}' WHERE Id = '{codeId}'";
+            return query;
+        }
+        public static string editSection(object sectionId, string sectionName)
+        {
+            string query = $"UPDATE Section SET name = '{sectionName}' WHERE Id = '{sectionId}'";
+            return query;
+        }
+
+        public static string editTemplate(object tempId, string templateName)
+        {
+            string query = $"UPDATE Template SET tempType = '{templateName}' WHERE Id = '{tempId}'";
+            return query;
+        }
+        public static string getCodeId(string codeName)
+        {
+            string query = $"SELECT Id from Codes WHERE codeShort = '{codeName}'";
             return query;
         }
 

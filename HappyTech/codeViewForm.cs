@@ -121,16 +121,22 @@ namespace HappyTech
              tagBox.Show();
              tagSubmit.Show();
              sectionGroupBox.Show();*/
+            /* this.Hide();
+             addSections newForm = new addSections();
+             newForm.Show(); */
             this.Hide();
-            addSections newForm = new addSections();
-            newForm.Show();
+            NewEditDelete ned = new NewEditDelete("section");
+            ned.Show();
         }
 
         private void addCodeBtn_Click(object sender, EventArgs e) //shows the add code windows form
         {
-            this.Hide();
+            /*this.Hide();
             addCode at = new addCode();
-            at.Show();
+            at.Show(); */
+            this.Hide();
+            NewEditDelete ned = new NewEditDelete("code");
+            ned.Show();
 
         }
 
@@ -155,9 +161,12 @@ namespace HappyTech
 
         private void templateViewBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            /*this.Hide();
             addTemplate addTemp = new addTemplate();
-            addTemp.Show();
+            addTemp.Show(); */
+            this.Hide();
+            NewEditDelete ned = new NewEditDelete("template");
+            ned.Show();
 
         }
 
