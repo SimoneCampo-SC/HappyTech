@@ -34,13 +34,18 @@ namespace HappyTech
 
             /* Displays the applicant selected out of all the applicants
              * position + 1 as the iterator starts from 0 to n-1 */
-            lbApplicants.Text = $"Applicant {position + 1} out of  {Applicant.applicants.Count}"; 
+            lbApplicants.Text = $"Applicant {position + 1} of  {Applicant.applicants.Count}"; 
             
             // Takes the header of the template in the assigned position in the list
-            lbHeader.Text = Template.templates[position].Header;
+            //lbHeader.Text = Template.templates[position].Header;
+            lblRecruiterVal.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
+            lblAppNameVal.Text = Applicant.applicants[position].AfullName;
+            lblAppEmailVal.Text = Applicant.applicants[position].Aemail;
+            lblAppJobVal.Text = Applicant.applicants[position].AJob;
+            lblAppTempVal.Text = Template.templates[position].TempType;
         }
 
-        public EditorForm(string applicantName, string appType) // takes applicant name + type from previewForm
+        public EditorForm(string applicantName, string appType, string appEmail, string appJob) // takes applicant name + type + email + job from previewForm
         { //As editorForm usually takes an arguement of the applicant's position in the application list
             //this wont work if you are editing one applicant's feedback from the previewForm screen
             //so overloaded constructor is making a specific type of editorform for this purpose
@@ -48,14 +53,20 @@ namespace HappyTech
             //currentPosition = Template.templates.Count - 1; //so that next button will always go to prevForm
             previewAppName = applicantName;
             InitializeComponent();
-            lbApplicants.Text = $"You are Previewing a feedback for {applicantName}";
+            lbApplicants.Text = $"Previewing: {applicantName}";
 
-            lbHeader.Text = Recruiter.GetInstance().Name + Recruiter.GetInstance().Surname +
-                applicantName + appType;
+            //lbHeader.Text = Recruiter.GetInstance().Name + Recruiter.GetInstance().Surname +
+            //    applicantName + appType;
+
+            lblRecruiterVal.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
+            lblAppNameVal.Text = applicantName;
+            lblAppEmailVal.Text = appEmail;
+            lblAppJobVal.Text = appJob;
+            lblAppTempVal.Text = appType;
             //makes header from recruiter instsnce and passed in applicant details
-                //recruiter, app, type
-                //Template.templates[position].GetHeader();
-               // richTextBox2.Text = read in the text in the saved .rtf filename "recruitername applicantname".rtf
+            //recruiter, app, type
+            //Template.templates[position].GetHeader();
+            // richTextBox2.Text = read in the text in the saved .rtf filename "recruitername applicantname".rtf
 
 
             using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + applicantName + ".rtf"))
@@ -173,7 +184,7 @@ namespace HappyTech
             {
                 richTextBox1.Hide();
                 lbComBox.Hide();
-                panel2.Width = 623;
+                //panel2.Width = 623;
                 richTextBox2.Width = 623;
             }
         }

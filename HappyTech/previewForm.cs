@@ -61,7 +61,7 @@ namespace HappyTech
             
             Applicant applicant = new Applicant(appDetails[2], appDetails[3], appDetails[1], Recruiter.GetInstance().Id); // name, email, job, doctype, recruiter id
             this.Hide();
-            EditorForm f3 = new EditorForm(appDetails[2], appDetails[0]);
+            EditorForm f3 = new EditorForm(appDetails[2], appDetails[0], appDetails[3], appDetails[1]);
             f3.Show();
         }
 

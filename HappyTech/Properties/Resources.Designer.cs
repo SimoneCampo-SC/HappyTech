@@ -93,6 +93,36 @@ namespace HappyTech.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap happytech_add {
+            get {
+                object obj = ResourceManager.GetObject("happytech_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap happytech_add1 {
+            get {
+                object obj = ResourceManager.GetObject("happytech_add1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap happytech_back {
+            get {
+                object obj = ResourceManager.GetObject("happytech_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap happytech_bg {
             get {
                 object obj = ResourceManager.GetObject("happytech_bg", resourceCulture);
@@ -176,6 +206,16 @@ namespace HappyTech.Properties {
         internal static System.Drawing.Bitmap happytech_logout {
             get {
                 object obj = ResourceManager.GetObject("happytech_logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap happytech_next {
+            get {
+                object obj = ResourceManager.GetObject("happytech_next", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

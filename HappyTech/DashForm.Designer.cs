@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashForm));
-            this.btConfirm = new System.Windows.Forms.Button();
             this.lbHello = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.lbUploadDoc = new System.Windows.Forms.Label();
@@ -56,57 +55,43 @@
             this.lbFullNameReq = new System.Windows.Forms.Label();
             this.panelTemplate = new System.Windows.Forms.Panel();
             this.panelAdd = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblRecruiter = new System.Windows.Forms.Label();
-            this.lblAppName = new System.Windows.Forms.Label();
-            this.lblAppEmail = new System.Windows.Forms.Label();
+            this.lblAppTempVal = new System.Windows.Forms.Label();
+            this.lblAppTemp = new System.Windows.Forms.Label();
+            this.lblAppJobVal = new System.Windows.Forms.Label();
+            this.lblAppEmailVal = new System.Windows.Forms.Label();
+            this.lblAppNameVal = new System.Windows.Forms.Label();
+            this.lblRecruiterVal = new System.Windows.Forms.Label();
             this.lblAppJob = new System.Windows.Forms.Label();
+            this.lblAppEmail = new System.Windows.Forms.Label();
+            this.lblAppName = new System.Windows.Forms.Label();
+            this.lblRecruiter = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.imgAppTemp = new System.Windows.Forms.PictureBox();
+            this.imgAppJob = new System.Windows.Forms.PictureBox();
+            this.imgAppEmail = new System.Windows.Forms.PictureBox();
+            this.imgAppName = new System.Windows.Forms.PictureBox();
             this.imgRecruiter = new System.Windows.Forms.PictureBox();
+            this.btConfirm = new System.Windows.Forms.Button();
             this.imgStage3 = new System.Windows.Forms.PictureBox();
             this.imgStage2 = new System.Windows.Forms.PictureBox();
             this.imgStage1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btLogout = new System.Windows.Forms.Button();
             this.codeViewBtn = new System.Windows.Forms.Button();
-            this.imgAppName = new System.Windows.Forms.PictureBox();
-            this.imgAppEmail = new System.Windows.Forms.PictureBox();
-            this.imgAppJob = new System.Windows.Forms.PictureBox();
-            this.lblRecruiterVal = new System.Windows.Forms.Label();
-            this.lblAppNameVal = new System.Windows.Forms.Label();
-            this.lblAppEmailVal = new System.Windows.Forms.Label();
-            this.lblAppJobVal = new System.Windows.Forms.Label();
-            this.imgAppTemp = new System.Windows.Forms.PictureBox();
-            this.lblAppTemp = new System.Windows.Forms.Label();
-            this.lblAppTempVal = new System.Windows.Forms.Label();
             this.panelManagement.SuspendLayout();
             this.panelDetails.SuspendLayout();
             this.panelTemplate.SuspendLayout();
             this.panelAdd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAppTemp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAppJob)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAppEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAppName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgRecruiter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppEmail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppJob)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppTemp)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btConfirm
-            // 
-            this.btConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.btConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btConfirm.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btConfirm.ForeColor = System.Drawing.Color.White;
-            this.btConfirm.Location = new System.Drawing.Point(26, 371);
-            this.btConfirm.Name = "btConfirm";
-            this.btConfirm.Size = new System.Drawing.Size(206, 26);
-            this.btConfirm.TabIndex = 4;
-            this.btConfirm.Text = "Add";
-            this.btConfirm.UseVisualStyleBackColor = false;
-            this.btConfirm.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbHello
             // 
@@ -242,7 +227,7 @@
             this.lbError.AutoSize = true;
             this.lbError.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.lbError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.lbError.Location = new System.Drawing.Point(23, 322);
+            this.lbError.Location = new System.Drawing.Point(23, 334);
             this.lbError.Name = "lbError";
             this.lbError.Size = new System.Drawing.Size(136, 14);
             this.lbError.TabIndex = 0;
@@ -253,12 +238,13 @@
             // btBack
             // 
             this.btBack.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.btBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.btBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btBack.FlatAppearance.BorderSize = 0;
             this.btBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btBack.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBack.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.btBack.ForeColor = System.Drawing.Color.White;
-            this.btBack.Location = new System.Drawing.Point(26, 339);
+            this.btBack.Location = new System.Drawing.Point(26, 367);
             this.btBack.Name = "btBack";
             this.btBack.Size = new System.Drawing.Size(206, 26);
             this.btBack.TabIndex = 5;
@@ -278,7 +264,7 @@
             this.tempTypeBox.ItemHeight = 32;
             this.tempTypeBox.Location = new System.Drawing.Point(24, 87);
             this.tempTypeBox.Name = "tempTypeBox";
-            this.tempTypeBox.Size = new System.Drawing.Size(214, 298);
+            this.tempTypeBox.Size = new System.Drawing.Size(214, 266);
             this.tempTypeBox.TabIndex = 3;
             this.tempTypeBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tempTypeBox_MouseClick);
             this.tempTypeBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tempTypeBox_DrawItem);
@@ -355,9 +341,9 @@
             this.panelDetails.Controls.Add(this.tbAName);
             this.panelDetails.Controls.Add(this.lbAEmail);
             this.panelDetails.Controls.Add(this.tbAEmail);
-            this.panelDetails.Location = new System.Drawing.Point(120, 98);
+            this.panelDetails.Location = new System.Drawing.Point(120, 78);
             this.panelDetails.Name = "panelDetails";
-            this.panelDetails.Size = new System.Drawing.Size(260, 418);
+            this.panelDetails.Size = new System.Drawing.Size(260, 458);
             this.panelDetails.TabIndex = 0;
             // 
             // lbJobReq
@@ -398,9 +384,9 @@
             this.panelTemplate.BackColor = System.Drawing.Color.White;
             this.panelTemplate.Controls.Add(this.tempTypeBox);
             this.panelTemplate.Controls.Add(this.lbDocType);
-            this.panelTemplate.Location = new System.Drawing.Point(412, 98);
+            this.panelTemplate.Location = new System.Drawing.Point(412, 78);
             this.panelTemplate.Name = "panelTemplate";
-            this.panelTemplate.Size = new System.Drawing.Size(260, 418);
+            this.panelTemplate.Size = new System.Drawing.Size(260, 458);
             this.panelTemplate.TabIndex = 0;
             // 
             // panelAdd
@@ -425,53 +411,76 @@
             this.panelAdd.Controls.Add(this.btConfirm);
             this.panelAdd.Controls.Add(this.btBack);
             this.panelAdd.Controls.Add(this.lbError);
-            this.panelAdd.Location = new System.Drawing.Point(701, 98);
+            this.panelAdd.Location = new System.Drawing.Point(701, 78);
             this.panelAdd.Name = "panelAdd";
-            this.panelAdd.Size = new System.Drawing.Size(260, 418);
+            this.panelAdd.Size = new System.Drawing.Size(260, 458);
             this.panelAdd.TabIndex = 0;
             // 
-            // label2
+            // lblAppTempVal
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Add applicant.";
+            this.lblAppTempVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblAppTempVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblAppTempVal.Location = new System.Drawing.Point(104, 288);
+            this.lblAppTempVal.Name = "lblAppTempVal";
+            this.lblAppTempVal.Size = new System.Drawing.Size(128, 14);
+            this.lblAppTempVal.TabIndex = 53;
+            this.lblAppTempVal.Text = "[applicant_temp]";
+            this.lblAppTempVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblRecruiter
+            // lblAppTemp
             // 
-            this.lblRecruiter.AutoSize = true;
-            this.lblRecruiter.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblRecruiter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblRecruiter.Location = new System.Drawing.Point(37, 90);
-            this.lblRecruiter.Name = "lblRecruiter";
-            this.lblRecruiter.Size = new System.Drawing.Size(61, 14);
-            this.lblRecruiter.TabIndex = 6;
-            this.lblRecruiter.Text = "Recruiter:";
+            this.lblAppTemp.AutoSize = true;
+            this.lblAppTemp.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblAppTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblAppTemp.Location = new System.Drawing.Point(37, 288);
+            this.lblAppTemp.Name = "lblAppTemp";
+            this.lblAppTemp.Size = new System.Drawing.Size(61, 14);
+            this.lblAppTemp.TabIndex = 52;
+            this.lblAppTemp.Text = "Template:";
             // 
-            // lblAppName
+            // lblAppJobVal
             // 
-            this.lblAppName.AutoSize = true;
-            this.lblAppName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppName.Location = new System.Drawing.Point(37, 139);
-            this.lblAppName.Name = "lblAppName";
-            this.lblAppName.Size = new System.Drawing.Size(61, 14);
-            this.lblAppName.TabIndex = 7;
-            this.lblAppName.Text = "Applicant:";
+            this.lblAppJobVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblAppJobVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblAppJobVal.Location = new System.Drawing.Point(104, 239);
+            this.lblAppJobVal.Name = "lblAppJobVal";
+            this.lblAppJobVal.Size = new System.Drawing.Size(128, 14);
+            this.lblAppJobVal.TabIndex = 50;
+            this.lblAppJobVal.Text = "[applicant_job]";
+            this.lblAppJobVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblAppEmail
+            // lblAppEmailVal
             // 
-            this.lblAppEmail.AutoSize = true;
-            this.lblAppEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppEmail.Location = new System.Drawing.Point(37, 188);
-            this.lblAppEmail.Name = "lblAppEmail";
-            this.lblAppEmail.Size = new System.Drawing.Size(39, 14);
-            this.lblAppEmail.TabIndex = 8;
-            this.lblAppEmail.Text = "Email:";
+            this.lblAppEmailVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblAppEmailVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblAppEmailVal.Location = new System.Drawing.Point(104, 188);
+            this.lblAppEmailVal.Name = "lblAppEmailVal";
+            this.lblAppEmailVal.Size = new System.Drawing.Size(128, 14);
+            this.lblAppEmailVal.TabIndex = 49;
+            this.lblAppEmailVal.Text = "[applicant_email]";
+            this.lblAppEmailVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblAppNameVal
+            // 
+            this.lblAppNameVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblAppNameVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblAppNameVal.Location = new System.Drawing.Point(104, 139);
+            this.lblAppNameVal.Name = "lblAppNameVal";
+            this.lblAppNameVal.Size = new System.Drawing.Size(128, 14);
+            this.lblAppNameVal.TabIndex = 48;
+            this.lblAppNameVal.Text = "[applicant_name]";
+            this.lblAppNameVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblRecruiterVal
+            // 
+            this.lblRecruiterVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblRecruiterVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblRecruiterVal.Location = new System.Drawing.Point(104, 90);
+            this.lblRecruiterVal.Name = "lblRecruiterVal";
+            this.lblRecruiterVal.Size = new System.Drawing.Size(128, 14);
+            this.lblRecruiterVal.TabIndex = 47;
+            this.lblRecruiterVal.Text = "[recruiter_name]";
+            this.lblRecruiterVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblAppJob
             // 
@@ -484,6 +493,85 @@
             this.lblAppJob.TabIndex = 9;
             this.lblAppJob.Text = "Position:";
             // 
+            // lblAppEmail
+            // 
+            this.lblAppEmail.AutoSize = true;
+            this.lblAppEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblAppEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblAppEmail.Location = new System.Drawing.Point(37, 188);
+            this.lblAppEmail.Name = "lblAppEmail";
+            this.lblAppEmail.Size = new System.Drawing.Size(39, 14);
+            this.lblAppEmail.TabIndex = 8;
+            this.lblAppEmail.Text = "Email:";
+            // 
+            // lblAppName
+            // 
+            this.lblAppName.AutoSize = true;
+            this.lblAppName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblAppName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblAppName.Location = new System.Drawing.Point(37, 139);
+            this.lblAppName.Name = "lblAppName";
+            this.lblAppName.Size = new System.Drawing.Size(61, 14);
+            this.lblAppName.TabIndex = 7;
+            this.lblAppName.Text = "Applicant:";
+            // 
+            // lblRecruiter
+            // 
+            this.lblRecruiter.AutoSize = true;
+            this.lblRecruiter.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblRecruiter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblRecruiter.Location = new System.Drawing.Point(37, 90);
+            this.lblRecruiter.Name = "lblRecruiter";
+            this.lblRecruiter.Size = new System.Drawing.Size(61, 14);
+            this.lblRecruiter.TabIndex = 6;
+            this.lblRecruiter.Text = "Recruiter:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(22, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 24);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Add applicant.";
+            // 
+            // imgAppTemp
+            // 
+            this.imgAppTemp.Image = global::HappyTech.Properties.Resources.happytech_empty;
+            this.imgAppTemp.Location = new System.Drawing.Point(15, 288);
+            this.imgAppTemp.Name = "imgAppTemp";
+            this.imgAppTemp.Size = new System.Drawing.Size(16, 16);
+            this.imgAppTemp.TabIndex = 51;
+            this.imgAppTemp.TabStop = false;
+            // 
+            // imgAppJob
+            // 
+            this.imgAppJob.Image = global::HappyTech.Properties.Resources.happytech_empty;
+            this.imgAppJob.Location = new System.Drawing.Point(15, 239);
+            this.imgAppJob.Name = "imgAppJob";
+            this.imgAppJob.Size = new System.Drawing.Size(16, 16);
+            this.imgAppJob.TabIndex = 46;
+            this.imgAppJob.TabStop = false;
+            // 
+            // imgAppEmail
+            // 
+            this.imgAppEmail.Image = global::HappyTech.Properties.Resources.happytech_empty;
+            this.imgAppEmail.Location = new System.Drawing.Point(15, 188);
+            this.imgAppEmail.Name = "imgAppEmail";
+            this.imgAppEmail.Size = new System.Drawing.Size(16, 16);
+            this.imgAppEmail.TabIndex = 45;
+            this.imgAppEmail.TabStop = false;
+            // 
+            // imgAppName
+            // 
+            this.imgAppName.Image = global::HappyTech.Properties.Resources.happytech_empty;
+            this.imgAppName.Location = new System.Drawing.Point(15, 139);
+            this.imgAppName.Name = "imgAppName";
+            this.imgAppName.Size = new System.Drawing.Size(16, 16);
+            this.imgAppName.TabIndex = 44;
+            this.imgAppName.TabStop = false;
+            // 
             // imgRecruiter
             // 
             this.imgRecruiter.Image = global::HappyTech.Properties.Resources.happytech_empty;
@@ -492,6 +580,24 @@
             this.imgRecruiter.Size = new System.Drawing.Size(16, 16);
             this.imgRecruiter.TabIndex = 43;
             this.imgRecruiter.TabStop = false;
+            // 
+            // btConfirm
+            // 
+            this.btConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.btConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btConfirm.FlatAppearance.BorderSize = 0;
+            this.btConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btConfirm.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btConfirm.ForeColor = System.Drawing.Color.White;
+            this.btConfirm.Image = global::HappyTech.Properties.Resources.happytech_add1;
+            this.btConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btConfirm.Location = new System.Drawing.Point(26, 410);
+            this.btConfirm.Name = "btConfirm";
+            this.btConfirm.Size = new System.Drawing.Size(206, 26);
+            this.btConfirm.TabIndex = 4;
+            this.btConfirm.Text = "Add";
+            this.btConfirm.UseVisualStyleBackColor = false;
+            this.btConfirm.Click += new System.EventHandler(this.button1_Click);
             // 
             // imgStage3
             // 
@@ -569,113 +675,12 @@
             this.codeViewBtn.UseVisualStyleBackColor = false;
             this.codeViewBtn.Click += new System.EventHandler(this.codeViewBtn_Click);
             // 
-            // imgAppName
-            // 
-            this.imgAppName.Image = global::HappyTech.Properties.Resources.happytech_empty;
-            this.imgAppName.Location = new System.Drawing.Point(15, 139);
-            this.imgAppName.Name = "imgAppName";
-            this.imgAppName.Size = new System.Drawing.Size(16, 16);
-            this.imgAppName.TabIndex = 44;
-            this.imgAppName.TabStop = false;
-            // 
-            // imgAppEmail
-            // 
-            this.imgAppEmail.Image = global::HappyTech.Properties.Resources.happytech_empty;
-            this.imgAppEmail.Location = new System.Drawing.Point(15, 188);
-            this.imgAppEmail.Name = "imgAppEmail";
-            this.imgAppEmail.Size = new System.Drawing.Size(16, 16);
-            this.imgAppEmail.TabIndex = 45;
-            this.imgAppEmail.TabStop = false;
-            // 
-            // imgAppJob
-            // 
-            this.imgAppJob.Image = global::HappyTech.Properties.Resources.happytech_empty;
-            this.imgAppJob.Location = new System.Drawing.Point(15, 239);
-            this.imgAppJob.Name = "imgAppJob";
-            this.imgAppJob.Size = new System.Drawing.Size(16, 16);
-            this.imgAppJob.TabIndex = 46;
-            this.imgAppJob.TabStop = false;
-            // 
-            // lblRecruiterVal
-            // 
-            this.lblRecruiterVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblRecruiterVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblRecruiterVal.Location = new System.Drawing.Point(104, 90);
-            this.lblRecruiterVal.Name = "lblRecruiterVal";
-            this.lblRecruiterVal.Size = new System.Drawing.Size(128, 14);
-            this.lblRecruiterVal.TabIndex = 47;
-            this.lblRecruiterVal.Text = "[recruiter_name]";
-            this.lblRecruiterVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblAppNameVal
-            // 
-            this.lblAppNameVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppNameVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppNameVal.Location = new System.Drawing.Point(104, 139);
-            this.lblAppNameVal.Name = "lblAppNameVal";
-            this.lblAppNameVal.Size = new System.Drawing.Size(128, 14);
-            this.lblAppNameVal.TabIndex = 48;
-            this.lblAppNameVal.Text = "[applicant_name]";
-            this.lblAppNameVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblAppEmailVal
-            // 
-            this.lblAppEmailVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppEmailVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppEmailVal.Location = new System.Drawing.Point(104, 188);
-            this.lblAppEmailVal.Name = "lblAppEmailVal";
-            this.lblAppEmailVal.Size = new System.Drawing.Size(128, 14);
-            this.lblAppEmailVal.TabIndex = 49;
-            this.lblAppEmailVal.Text = "[applicant_email]";
-            this.lblAppEmailVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblAppJobVal
-            // 
-            this.lblAppJobVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppJobVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppJobVal.Location = new System.Drawing.Point(104, 239);
-            this.lblAppJobVal.Name = "lblAppJobVal";
-            this.lblAppJobVal.Size = new System.Drawing.Size(128, 14);
-            this.lblAppJobVal.TabIndex = 50;
-            this.lblAppJobVal.Text = "[applicant_job]";
-            this.lblAppJobVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // imgAppTemp
-            // 
-            this.imgAppTemp.Image = global::HappyTech.Properties.Resources.happytech_empty;
-            this.imgAppTemp.Location = new System.Drawing.Point(15, 288);
-            this.imgAppTemp.Name = "imgAppTemp";
-            this.imgAppTemp.Size = new System.Drawing.Size(16, 16);
-            this.imgAppTemp.TabIndex = 51;
-            this.imgAppTemp.TabStop = false;
-            // 
-            // lblAppTemp
-            // 
-            this.lblAppTemp.AutoSize = true;
-            this.lblAppTemp.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppTemp.Location = new System.Drawing.Point(37, 288);
-            this.lblAppTemp.Name = "lblAppTemp";
-            this.lblAppTemp.Size = new System.Drawing.Size(61, 14);
-            this.lblAppTemp.TabIndex = 52;
-            this.lblAppTemp.Text = "Template:";
-            // 
-            // lblAppTempVal
-            // 
-            this.lblAppTempVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppTempVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppTempVal.Location = new System.Drawing.Point(104, 288);
-            this.lblAppTempVal.Name = "lblAppTempVal";
-            this.lblAppTempVal.Size = new System.Drawing.Size(128, 14);
-            this.lblAppTempVal.TabIndex = 53;
-            this.lblAppTempVal.Text = "[applicant_temp]";
-            this.lblAppTempVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // DashForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.panelAdd);
             this.Controls.Add(this.panelTemplate);
@@ -701,15 +706,15 @@
             this.panelTemplate.PerformLayout();
             this.panelAdd.ResumeLayout(false);
             this.panelAdd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAppTemp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAppJob)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAppEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAppName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgRecruiter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppEmail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppJob)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppTemp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
