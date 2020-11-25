@@ -58,7 +58,7 @@ namespace HappyTech
         {
 
             //this takes the template name from the template box and finds sections that are related to that template
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagNames(templateName));
+            DataSet ds = Connection.GetDbConn().getDataSet(Constants.GetSectionPerTemplate(templateName));
             //populates drop down menu with sections
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
@@ -80,10 +80,10 @@ namespace HappyTech
             try
             {
                 tagSelectBox.Text.Replace(" ", "");
-                DataSet ds1 = Connection.GetDbConn().getDataSet(Constants.getTagIdFromName(tagSelectBox.Text));
+                DataSet ds1 = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(tagSelectBox.Text));
                 DataRow dRow1 = ds1.Tables[0].Rows[0];
                 var sectionId = dRow1.ItemArray.GetValue(0);
-                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeFromTagId(sectionId));
+                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeFromSectionId(sectionId));
                 codeDisplay.DataSource = ds.Tables[0];
             }
             catch
