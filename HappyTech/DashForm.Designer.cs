@@ -611,7 +611,7 @@
             // 
             this.lblAppNameVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblAppNameVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppNameVal.Location = new System.Drawing.Point(104, 137);
+            this.lblAppNameVal.Location = new System.Drawing.Point(104, 139);
             this.lblAppNameVal.Name = "lblAppNameVal";
             this.lblAppNameVal.Size = new System.Drawing.Size(128, 14);
             this.lblAppNameVal.TabIndex = 48;
