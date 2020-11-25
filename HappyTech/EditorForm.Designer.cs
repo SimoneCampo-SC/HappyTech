@@ -144,7 +144,8 @@
             // 
             // listBox
             // 
-            this.listBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.listBox.ForeColor = System.Drawing.Color.Black;
             this.listBox.FormattingEnabled = true;
             this.listBox.Items.AddRange(new object[] {

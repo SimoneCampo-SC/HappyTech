@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="happytech_success" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\happytech_success.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="happytech_tick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\happytech_tick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,11 +148,17 @@
   <data name="happytech_bg-reg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\happytech_bg-reg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="happytech_submit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\happytech_submit.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="happytech_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\happytech_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="happytech_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\happytech_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="happytech_logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\happytech_logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="happytech_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\happytech_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,19 +169,19 @@
   <data name="happytech_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\happytech_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="happytech_logo-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\happytech_logo-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="happytech_add1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\happytech_add1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hidePass" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hidePass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="happytech_logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\happytech_logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="happytech_logo-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\happytech_logo-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="happytech_filled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\happytech_filled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="happytech_add1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\happytech_add1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="happytech_logo-med" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\happytech_logo-med.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -15,6 +15,7 @@ namespace HappyTech
         int curApp = 0;
         string[] appDetails;
         string cancelStage;
+
         public previewForm()
         {
             InitializeComponent();
@@ -53,7 +54,15 @@ namespace HappyTech
             }
 
             // stop preview if no applicants have been selected
-            if (appDetails == null) return;
+            if (appDetails == null)
+            {
+                lbError.Show();
+                return;
+            }
+            else
+            {
+                lbError.Hide();
+            }
 
             //make a new applicant object with old applicant details
             //this is because applicants are stored in a list and we no longer want to use
@@ -69,9 +78,17 @@ namespace HappyTech
         {
             // Turn rtf files into pdf files here
 
-            this.Hide();
-            DashForm f2 = new DashForm("default");
-            f2.Show();
+            sendBtn.Image = Properties.Resources.happytech_submit;
+            sendBtn.Text = "Sending...";
+
+            backBtn.Hide();
+            previewBtn.Hide();
+            sendBtn.Hide();
+            imgSuccess.Show();
+            lblSuccess.Show();
+            btnDash.Show();
+            imgStage3.Image = Properties.Resources.happytech_tick;
+
         }
 
         private void backBtn_Click(object sender, EventArgs e)
@@ -87,6 +104,13 @@ namespace HappyTech
                 DashForm f2 = new DashForm("default");
                 f2.Show();
             }
+        }
+
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DashForm f2 = new DashForm("default");
+            f2.Show();
         }
     }
 }

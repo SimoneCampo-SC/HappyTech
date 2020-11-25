@@ -193,6 +193,16 @@ namespace HappyTech.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap happytech_logo_med {
+            get {
+                object obj = ResourceManager.GetObject("happytech_logo-med", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap happytech_logo_small {
             get {
                 object obj = ResourceManager.GetObject("happytech_logo-small", resourceCulture);
@@ -216,6 +226,26 @@ namespace HappyTech.Properties {
         internal static System.Drawing.Bitmap happytech_next {
             get {
                 object obj = ResourceManager.GetObject("happytech_next", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap happytech_submit {
+            get {
+                object obj = ResourceManager.GetObject("happytech_submit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap happytech_success {
+            get {
+                object obj = ResourceManager.GetObject("happytech_success", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
