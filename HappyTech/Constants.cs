@@ -9,7 +9,7 @@ namespace HappyTech
 {
     class Constants
     {
-        public static string SelectSectionPerTemplate(object tempID)
+        public static string SelectSectionPerTemplate(int tempID)
         {
             string query = $"SELECT DISTINCT section_ID FROM PersonalSection WHERE template_ID = '{tempID}'";
             return query;
@@ -27,13 +27,7 @@ namespace HappyTech
             return query;
         }
 
-        static public string getTagIdFromName(string tagName)
-        {
-            string query = $"SELECT Id FROM Section WHERE name = '{tagName}'";
-            return query;
-        }
-
-        static public string getCodeFromTagId(object tagId)
+        static public string getCodeFromSectionId(object tagId)
         {
             string query = $"SELECT codeShort, codeParagraph FROM Codes WHERE SectionNo = {tagId}";
             return query;
@@ -44,7 +38,7 @@ namespace HappyTech
             return query;
         }
 
-        static public string getTagNames(string templateName) //takes template name and displays section names for this template
+        static public string GetSectionPerTemplate(string templateName) //takes template name and displays section names for this template
         {
             string query = $"select name from Section where Id IN (select section_ID from PersonalSection where template_ID = (select Id from Template where tempType = '{templateName}'))";
             return query;

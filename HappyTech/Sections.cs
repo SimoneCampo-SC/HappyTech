@@ -45,7 +45,7 @@ namespace HappyTech
         /// populates sectionPerTemplate which stores the sections related to a template
         /// </summary>
         /// <param name="tempID"></param>
-        public static void FillSectionPerTemplate(object tempID)
+        public static void FillSectionPerTemplate(int tempID)
         {
             DataSet ds = Connection.GetDbConn().getDataSet(Constants.SelectSectionPerTemplate(tempID));
             DataRow dRow;
@@ -77,7 +77,7 @@ namespace HappyTech
             string queryString = Constants.createNewTag(input);
             Connection.GetDbConn().CreateCommand(queryString); //section object has now been created
             //we will get the id of this new section first instead of getting it in each iteration of the loop
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagIdFromName(input));
+            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(input));
             DataRow dRow = ds.Tables[0].Rows[0];
             var sectionId = dRow.ItemArray.GetValue(0);
              foreach (string template in templateCheckBox.CheckedItems)

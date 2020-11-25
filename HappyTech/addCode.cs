@@ -108,7 +108,7 @@ namespace HappyTech
                 // Need to check whether the fields have already been inserted
                 //first need to translate the currently selected tag into its id# for a code to be added into the table
                 // string query = $"SELECT Id FROM Tag WHERE name = '{tagBox.Text}'"; //gets value in tagBox
-                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagIdFromName(sectionBox.Text));
+                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(sectionBox.Text));
                 DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
                 var tagId = dRow.ItemArray.GetValue(0); //stroes the tag id in tagId
 
