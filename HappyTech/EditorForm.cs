@@ -236,6 +236,7 @@ namespace HappyTech
             {
                 //get the code short of the selected list item
                 string codeShortLookup = code;
+                codeShortLookup = codeShortLookup.Replace(" ", "");
                 string query = $"SELECT codeParagraph FROM Codes WHERE codeShort = '{codeShortLookup}'";
                 DataSet ds = Connection.GetDbConn().getDataSet(query);
                 DataRow dRow = ds.Tables[0].Rows[0];

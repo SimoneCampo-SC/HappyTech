@@ -49,7 +49,7 @@ namespace HappyTech
         {
             DataSet ds = Connection.GetDbConn().getDataSet(Constants.SelectSectionPerTemplate(tempID));
             DataRow dRow;
-            int j = 0;
+            
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 dRow = ds.Tables[0].Rows[i];
@@ -58,8 +58,8 @@ namespace HappyTech
                // {
                     //if (dRow.ItemArray.GetValue(0).ToString().Equals(sectionList[j].id))
                    // {
-                        sectionPerTemplate.Add(sectionList[j]);
-                j++;
+                        sectionPerTemplate.Add(sectionList[i]);
+               
                    // }
                // }
             }
