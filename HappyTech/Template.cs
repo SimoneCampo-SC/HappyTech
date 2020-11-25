@@ -47,7 +47,6 @@ namespace HappyTech
         /// <summary>
         /// The following method generates template according to the number of applicants into the list.
         /// </summary>
-        public static void generateTemplate(Applicant Applicant, string tempType)
         public static void GenerateTemplateForApplicant(Applicant Applicant, string tempType)
         {
             // retrieves the Id from the database
