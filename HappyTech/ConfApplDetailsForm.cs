@@ -26,19 +26,21 @@ namespace HappyTech
                 // successfull message is not displayed
                 lbSuccess.Visible = false;
             }
+
             // displays how many applicants have been added so far
-            if (Applicant.applicants.Count == 1)
-            {
-                lbApplicantNo.Text = Applicant.applicants.Count.ToString() + " applicant.";
-            }
-            else
-            {
-                lbApplicantNo.Text = Applicant.applicants.Count.ToString() + " applicants.";
-            }
+            lbApplicantNo.Text = "Applicants:    " + Applicant.applicants.Count.ToString();
 
             // Load the Applicants added into the Database
             DataSet ds = Connection.GetDbConn().getDataSet(Constants.SelectApplicant());
             dgvApplicant.DataSource = ds.Tables[0]; //shows first table
+            for (int i = 0; i < dgvApplicant.Columns.Count; i++)
+            {
+                dgvApplicant.Columns[i].Width = 181;
+            }
+            
+            //DataGridViewColumn column = dgvApplicant.Columns[0];
+            //column.Width = 60;
+
 
         }
 

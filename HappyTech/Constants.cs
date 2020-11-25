@@ -138,7 +138,8 @@ namespace HappyTech
 
         public static string SelectApplicant()
         {
-            string query = "SELECT Applicant_Name AS 'Name', Job_Position AS 'Job Position' FROM Applicant";
+            //string query = "SELECT Applicant_Name AS 'Name', Job_Position AS 'Job Position' FROM Applicant";
+            string query = "SELECT Applicant_Name AS 'Name', Applicant_Email AS 'Email', Job_Position AS 'Job Position' FROM Applicant";
             return query;
         }
 

@@ -84,6 +84,7 @@ namespace HappyTech
             backBtn.Hide();
             previewBtn.Hide();
             sendBtn.Hide();
+            lbError.Hide();
             imgSuccess.Show();
             lblSuccess.Show();
             btnDash.Show();

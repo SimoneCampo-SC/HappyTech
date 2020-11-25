@@ -52,10 +52,10 @@
             this.lblAppNameVal = new System.Windows.Forms.Label();
             this.lblRecruiterVal = new System.Windows.Forms.Label();
             this.lblAppJob = new System.Windows.Forms.Label();
+            this.lblAppEmail = new System.Windows.Forms.Label();
             this.lblAppName = new System.Windows.Forms.Label();
             this.lblRecruiter = new System.Windows.Forms.Label();
             this.lbDetails = new System.Windows.Forms.Label();
-            this.lblAppEmail = new System.Windows.Forms.Label();
             this.btNext = new System.Windows.Forms.Button();
             this.btBack = new System.Windows.Forms.Button();
             this.imgStage3 = new System.Windows.Forms.PictureBox();
@@ -148,42 +148,9 @@
             this.listBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.listBox.ForeColor = System.Drawing.Color.Black;
             this.listBox.FormattingEnabled = true;
-            this.listBox.Items.AddRange(new object[] {
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST",
-            "T-EST"});
             this.listBox.Location = new System.Drawing.Point(18, 67);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(94, 445);
+            this.listBox.Size = new System.Drawing.Size(94, 439);
             this.listBox.TabIndex = 0;
             this.listBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listBox_ItemCheck);
             this.listBox.SelectedValueChanged += new System.EventHandler(this.listBox_SelectedValueChanged);
@@ -365,6 +332,17 @@
             this.lblAppJob.TabIndex = 9;
             this.lblAppJob.Text = "Position:";
             // 
+            // lblAppEmail
+            // 
+            this.lblAppEmail.AutoSize = true;
+            this.lblAppEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblAppEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblAppEmail.Location = new System.Drawing.Point(15, 253);
+            this.lblAppEmail.Name = "lblAppEmail";
+            this.lblAppEmail.Size = new System.Drawing.Size(39, 14);
+            this.lblAppEmail.TabIndex = 8;
+            this.lblAppEmail.Text = "Email:";
+            // 
             // lblAppName
             // 
             this.lblAppName.AutoSize = true;
@@ -397,17 +375,6 @@
             this.lbDetails.Size = new System.Drawing.Size(84, 24);
             this.lbDetails.TabIndex = 0;
             this.lbDetails.Text = "Details.";
-            // 
-            // lblAppEmail
-            // 
-            this.lblAppEmail.AutoSize = true;
-            this.lblAppEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppEmail.Location = new System.Drawing.Point(15, 253);
-            this.lblAppEmail.Name = "lblAppEmail";
-            this.lblAppEmail.Size = new System.Drawing.Size(39, 14);
-            this.lblAppEmail.TabIndex = 8;
-            this.lblAppEmail.Text = "Email:";
             // 
             // btNext
             // 
