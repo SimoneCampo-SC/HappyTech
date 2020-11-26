@@ -12,6 +12,8 @@ namespace HappyTech
 {
     public partial class ConfApplDetailsForm : Form
     {
+        string cancelStage;
+
         /// <summary>
         /// Constructor of the current Form
         /// </summary>
@@ -19,6 +21,8 @@ namespace HappyTech
         public ConfApplDetailsForm(bool value)
         {
             InitializeComponent();
+
+            cancelStage = "notClicked";
 
             // Checks whether the value is false
             if (value == false)
@@ -68,9 +72,17 @@ namespace HappyTech
 
         private void btCancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            DashForm f2 = new DashForm("default");
-            f2.Show();
+            if (cancelStage == "notClicked")
+            {
+                btCancel.Text = "Are you sure?";
+                cancelStage = "clicked";
+            }
+            else if (cancelStage == "clicked")
+            {
+                this.Hide();
+                DashForm f2 = new DashForm("default");
+                f2.Show();
+            }
         }
     }
 }
