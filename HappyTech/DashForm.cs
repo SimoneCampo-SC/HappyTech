@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace HappyTech
 {
@@ -20,6 +21,7 @@ namespace HappyTech
         {
             this.mode = mode;
             InitializeComponent();
+            clearTempFiles();
             // lable gets the name of the recruiter
             lbName.Text = Recruiter.GetInstance().Name + ".";
             if (mode == "newApp")
@@ -115,10 +117,17 @@ namespace HappyTech
 
         private void tempTypeBox_DrawItem(object sender, DrawItemEventArgs e)
         {
-            e.DrawBackground();
-            e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 8, e.Bounds.Y + 8, 16, 16);
-            e.Graphics.DrawString(tempTypeBox.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 32, e.Bounds.Y + 8);
-            e.DrawFocusRectangle();
+            try
+            {
+                e.DrawBackground();
+                e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 8, e.Bounds.Y + 8, 16, 16);
+                e.Graphics.DrawString(tempTypeBox.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 32, e.Bounds.Y + 8);
+                e.DrawFocusRectangle();
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void tbAName_TextChanged(object sender, EventArgs e)
@@ -172,7 +181,11 @@ namespace HappyTech
 
         private void tempTypeBox_MouseClick(object sender, MouseEventArgs e)
         {
-            lblAppTempVal.Text = tempTypeBox.SelectedItem.ToString();
+            if (tempTypeBox.SelectedItem != null)
+            {
+                lblAppTempVal.Text = tempTypeBox.SelectedItem.ToString();
+            }
+
             if (lblAppTempVal.Text.Length > 0)
             {
                 imgAppTemp.Image = Properties.Resources.happytech_filled;
@@ -180,6 +193,22 @@ namespace HappyTech
             else
             {
                 imgAppTemp.Image = Properties.Resources.happytech_empty;
+            }
+        }
+
+        private void clearTempFiles()
+        {
+            DirectoryInfo di = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
+            FileInfo[] files = di.GetFiles("*.rtf").Where(p => p.Extension == ".rtf").ToArray();
+
+            foreach (FileInfo file in files)
+            {
+                try
+                {
+                    file.Attributes = FileAttributes.Normal;
+                    File.Delete(file.FullName);
+                }
+                catch { }
             }
         }
     }

@@ -44,6 +44,17 @@ namespace HappyTech
             lblAppEmailVal.Text = Applicant.applicants[position].Aemail;
             lblAppJobVal.Text = Applicant.applicants[position].AJob;
             lblAppTempVal.Text = Template.templatesForApplicants[position].TempType;
+
+            if (File.Exists(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + ".rtf"))
+            {
+                using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + ".rtf"))
+                {
+                    //this is supposed to find the saved feedback file and prefill richTextBox2 with the feedback
+                    //however, this shows formatting code which is not ideal. formatting does not show if file opened in 
+                    //word
+                    richTextBox2.Text = sr.ReadToEnd();
+                }
+            }
         }
 
         public EditorForm(string applicantName, string appType, string appEmail, string appJob) // takes applicant name + type + email + job from previewForm
@@ -70,13 +81,21 @@ namespace HappyTech
             // richTextBox2.Text = read in the text in the saved .rtf filename "recruitername applicantname".rtf
 
 
-            using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + applicantName + ".rtf"))
-
+            try
             {
-                //this is supposed to find the saved feedback file and prefill richTextBox2 with the feedback
-                //however, this shows formatting code which is not ideal. formatting does not show if file opened in 
-                //word
-               richTextBox2.Text = sr.ReadToEnd();
+                using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + applicantName + ".rtf"))
+
+                {
+                    //this is supposed to find the saved feedback file and prefill richTextBox2 with the feedback
+                    //however, this shows formatting code which is not ideal. formatting does not show if file opened in 
+                    //word
+                    richTextBox2.Text = sr.ReadToEnd();
+                }
+            }
+            catch (Exception)
+            { 
+                // user has the file open
+
             }
 
         }

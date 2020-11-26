@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace HappyTech
 {
@@ -64,10 +65,22 @@ namespace HappyTech
                 lbError.Hide();
             }
 
+            try
+            {
+                using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + appDetails[2] + ".rtf"))
+                { }
+            }
+            catch (Exception)
+            {
+                lbError.Text = "File already open somewhere";
+                lbError.Show();
+                return;
+            }
+
             //make a new applicant object with old applicant details
             //this is because applicants are stored in a list and we no longer want to use
             //that list to track the applicant position in a list of applicants
-            
+
             Applicant applicant = new Applicant(appDetails[2], appDetails[3], appDetails[1], Recruiter.GetInstance().Id); // name, email, job, doctype, recruiter id
             this.Hide();
             EditorForm f3 = new EditorForm(appDetails[2], appDetails[0], appDetails[3], appDetails[1]);
@@ -76,8 +89,6 @@ namespace HappyTech
 
         private void sendBtn_Click(object sender, EventArgs e)
         {
-            // Turn rtf files into pdf files here
-
             sendBtn.Image = Properties.Resources.happytech_submit;
             sendBtn.Text = "Sending...";
 
@@ -89,6 +100,11 @@ namespace HappyTech
             lblSuccess.Show();
             btnDash.Show();
             imgStage3.Image = Properties.Resources.happytech_tick;
+
+            // Turn rtf files into pdf files here
+            // code here
+
+            clearTempFiles();
 
         }
 
@@ -112,6 +128,22 @@ namespace HappyTech
             this.Hide();
             DashForm f2 = new DashForm("default");
             f2.Show();
+        }
+
+        private void clearTempFiles()
+        {
+            DirectoryInfo di = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
+            FileInfo[] files = di.GetFiles("*.rtf").Where(p => p.Extension == ".rtf").ToArray();
+
+            foreach (FileInfo file in files)
+            {
+                try
+                {
+                    file.Attributes = FileAttributes.Normal;
+                    File.Delete(file.FullName);
+                }
+                catch { }
+            }
         }
     }
 }
