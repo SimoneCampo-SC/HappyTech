@@ -10,6 +10,7 @@ namespace HappyTech
     {
         // list of Applicant has been created
         public static List <Applicant> applicants = new List<Applicant>();
+        public List<String> selectedAppCodes = new List<String>();
 
         // List of all the read-only properties 
         public string AfullName { get; }

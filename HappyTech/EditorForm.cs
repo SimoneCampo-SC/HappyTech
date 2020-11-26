@@ -187,6 +187,7 @@ namespace HappyTech
         }
         private void loadListBox()
         {
+
             listBox.CheckOnClick = true;
             // Code.codeList.Clear();
             // Code.fillCodeList();
@@ -216,6 +217,14 @@ namespace HappyTech
                         dRow2 = ds2.Tables[0].Rows[j];
                         Console.WriteLine(dRow2.ItemArray.GetValue(0).ToString());
                         listBox.Items.Add(dRow2.ItemArray.GetValue(0).ToString());
+                        foreach (string code in Applicant.applicants[currentPosition].selectedAppCodes)
+                        {
+                            if (dRow2.ItemArray.GetValue(0).ToString() == code)
+                            {
+                                listBox.SetItemChecked(listBox.Items.Count - 1, true);
+                            }
+                        }
+                        
                     }
                     catch { }//just in case there is a section that has no codes attached
                     
@@ -246,6 +255,7 @@ namespace HappyTech
         private void listBox_SelectedValueChanged(object sender, EventArgs e)
         {
             Code.selectedCodes.Clear();
+            Applicant.applicants[currentPosition].selectedAppCodes.Clear();
             richTextBox2.Text = "";
             foreach (string code in listBox.CheckedItems)
             {
@@ -258,7 +268,7 @@ namespace HappyTech
                 //goes to the db, returns the first row (the codeparagraph) stores in variable
                 string paragraphToAdd = dRow.ItemArray.GetValue(0).ToString();
                 Code.selectedCodes.Add(paragraphToAdd);
-
+                Applicant.applicants[currentPosition].selectedAppCodes.Add(code);
             }
 
             foreach (string code in Code.selectedCodes)
