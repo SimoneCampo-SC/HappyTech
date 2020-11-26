@@ -48,6 +48,11 @@ namespace HappyTech
                 errorMessage.Visible = true;
                 errorMessage.Text = "An account with this email already exists";
             }
+            else if ((emailBox.Text.Length > 50) || (nameBox.Text.Length > 50) || (surnameBox.Text.Length > 50) || (surnameBox.Text.Length > 50))
+            {
+                errorMessage.Visible = true;
+                errorMessage.Text = "No more than 50 characters";
+            }
             else
             {
                 // Add the credentials into the Database

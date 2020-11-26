@@ -229,9 +229,9 @@
             this.lbError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.lbError.Location = new System.Drawing.Point(23, 334);
             this.lbError.Name = "lbError";
-            this.lbError.Size = new System.Drawing.Size(136, 14);
+            this.lbError.Size = new System.Drawing.Size(89, 14);
             this.lbError.TabIndex = 0;
-            this.lbError.Text = "Missing required fields";
+            this.lbError.Text = "Error Message";
             this.lbError.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lbError.Visible = false;
             // 
