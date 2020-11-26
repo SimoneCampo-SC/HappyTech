@@ -154,13 +154,15 @@ namespace HappyTech
                 Sections.InsertSectionWithSelectedTemplates(sectionName, addToExistBox);
                 inputBox.Clear();
                 fillExistBoxWithTemplates();
+                fillExistingDropDownWithSections();
             }
             else if (type == "template")
             {
                 string templateName = inputBox.Text.Replace(" ", "");
                 Template.CreateTemplateWithSelectedSections(templateName, addToExistBox);
                 inputBox.Clear();
-                fillExistBoxWithTemplates();
+                fillExistBoxWithSections();
+                fillExistingDropDownWithTemplates();
             }
         }
 

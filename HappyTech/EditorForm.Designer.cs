@@ -152,7 +152,6 @@
             this.listBox.Name = "listBox";
             this.listBox.Size = new System.Drawing.Size(94, 439);
             this.listBox.TabIndex = 0;
-            this.listBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listBox_ItemCheck);
             this.listBox.SelectedValueChanged += new System.EventHandler(this.listBox_SelectedValueChanged);
             // 
             // panelManagement

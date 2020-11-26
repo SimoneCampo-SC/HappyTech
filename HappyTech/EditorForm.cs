@@ -65,6 +65,7 @@ namespace HappyTech
             //currentPosition = Template.templates.Count - 1; //so that next button will always go to prevForm
             previewAppName = applicantName;
             InitializeComponent();
+            loadListBox();
             lbApplicants.Text = $"Previewing: {applicantName}";
 
             //lbHeader.Text = Recruiter.GetInstance().Name + Recruiter.GetInstance().Surname +
@@ -239,38 +240,6 @@ namespace HappyTech
                 //panel2.Width = 623;
                 //richTextBox2.Width = 623;
             }
-
-        }
-
-        private void listBox_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            //if (e.NewValue == CheckState.Checked)
-            //{
-            
-
-
-            //}
-
-
-            //richTextBox2.AppendText(paragraphToAdd + '\n');
-            //appends var to rich text with a newline separator
-
-
-            //use DB to get code paragraph related to this short code
-
-            //make a feedback object , create section objects then when code box checked, add that code to the section
-            //if unchecked, remove code from section - didn't use because complex
-
-
-            //List<string> checkedItems = new List<string>();
-            //foreach (var item in listBox.CheckedItems)
-            //    checkedItems.Add(item.ToString());
-
-            //if (e.NewValue == CheckState.Checked)
-            //    checkedItems.Add(listBox.Items[e.Index].ToString());
-            //else
-            //    checkedItems.Remove(listBox.Items[e.Index].ToString());
-
 
         }
 
