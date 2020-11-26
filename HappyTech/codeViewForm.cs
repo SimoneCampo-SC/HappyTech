@@ -170,6 +170,24 @@ namespace HappyTech
 
         }
 
+        private void deleteDbBtn_Click(object sender, EventArgs e)
+        {
+            string delCodes = "DELETE FROM Codes";
+            Connection.GetDbConn().CreateCommand(delCodes);
+
+            string delSect = "DELETE FROM Section";
+            Connection.GetDbConn().CreateCommand(delSect);
+
+            string delTemp = "DELETE FROM Template";
+            Connection.GetDbConn().CreateCommand(delTemp);
+
+            string delPS = "DELETE FROM PersonalSection";
+            Connection.GetDbConn().CreateCommand(delPS);
+
+            
+
+        }
+
         /// <summary>
         /// functionally the same as the code to popluate the templates dropdown at the top of this form
         /// value from this dropdown will be used to determine the template to attach the created section to

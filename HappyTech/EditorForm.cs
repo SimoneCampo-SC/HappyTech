@@ -170,15 +170,48 @@ namespace HappyTech
             listBox.CheckOnClick = true;
             // Code.codeList.Clear();
             // Code.fillCodeList();
+            //only populate listbox with codes where
+            //section id is in personalsection with selected template
             Sections.listSection();
-            Sections.FillSectionPerTemplate(Template.templatesForApplicants[currentPosition].Id);
+            //Sections.FillSectionPerTemplate(Template.templatesForApplicants[currentPosition].Id);
+            int tempId = Template.templatesForApplicants[currentPosition].Id;
+            //have template id so can get personalSection sections
+            string psSections = $"SELECT section_ID FROM PersonalSection Where '{tempId}' IN (template_ID)";
+            DataSet ds1 = Connection.GetDbConn().getDataSet(psSections);
+            DataRow dRow1;
+            for (int i = 0; i < ds1.Tables[0].Rows.Count; i++)
+            {
+               
+                //for each section in personal section, need to add all codes
+                dRow1 = ds1.Tables[0].Rows[i];
+                string sectionId = dRow1.ItemArray.GetValue(0).ToString();
+                
+                string getCodes = $"SELECT codeShort FROM Codes WHERE sectionNo = '{sectionId}'";
+                DataSet ds2 = Connection.GetDbConn().getDataSet(getCodes);
+                DataRow dRow2;
+                for (int j = 0; j <ds2.Tables[0].Rows.Count; j++)
+                {
+                    try
+                    {
+                        dRow2 = ds2.Tables[0].Rows[j];
+                        Console.WriteLine(dRow2.ItemArray.GetValue(0).ToString());
+                        listBox.Items.Add(dRow2.ItemArray.GetValue(0).ToString());
+                    }
+                    catch { }//just in case there is a section that has no codes attached
+                    
+                }
 
+               
+            }
+            
+
+               /* DataSet ds = Connection.GetDbConn().getDataSet()
             for (int i = 0; i < Sections.sectionPerTemplate.Count; i++)
             {
                 //Code.codeList[i].GetSectionName().Trim()}:
                 //listBox.Items.Add($"{Code.codeList[i].CodeName}");
                 listBox.Items.Add($"{Sections.sectionPerTemplate[i].name}");
-            }
+            }*/
 
             if (mode == "preview")
             {

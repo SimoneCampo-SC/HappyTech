@@ -131,8 +131,9 @@ namespace HappyTech
 
         private void submitNewBtn_Click(object sender, EventArgs e)
         {
+           
             //sanitiseInput();
-            if (type == "code")
+           if (type == "code")
             {
                 DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagIdFromName(newCodeSection.Text));
                 DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name

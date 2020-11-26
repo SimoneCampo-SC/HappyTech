@@ -14,6 +14,12 @@ namespace HappyTech
             string query = $"SELECT DISTINCT section_ID FROM PersonalSection WHERE template_ID = '{tempID}'";
             return query;
         }
+
+        public static string getTagIdFromName(string input)
+        {
+            string query = $"SELECT Id from Section where name = '{input}'";
+            return query;
+        }
         public static string selectTemplateType()
         {
             string query = $"SELECT tempType FROM Template";

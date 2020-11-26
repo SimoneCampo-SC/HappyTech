@@ -42,6 +42,7 @@
             this.templateSelectLbl = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.templateViewBtn = new System.Windows.Forms.Button();
+            this.deleteDbBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codeDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codesBindingSource)).BeginInit();
@@ -142,6 +143,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox1.Controls.Add(this.deleteDbBtn);
             this.groupBox1.Controls.Add(this.templateViewBtn);
             this.groupBox1.Controls.Add(this.templateSelectLbl);
             this.groupBox1.Controls.Add(this.addTagBtn);
@@ -166,6 +168,16 @@
             this.templateViewBtn.Text = "Add Templates";
             this.templateViewBtn.UseVisualStyleBackColor = true;
             this.templateViewBtn.Click += new System.EventHandler(this.templateViewBtn_Click);
+            // 
+            // deleteDbBtn
+            // 
+            this.deleteDbBtn.Location = new System.Drawing.Point(666, 30);
+            this.deleteDbBtn.Name = "deleteDbBtn";
+            this.deleteDbBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteDbBtn.TabIndex = 11;
+            this.deleteDbBtn.Text = "Delete DB";
+            this.deleteDbBtn.UseVisualStyleBackColor = true;
+            this.deleteDbBtn.Click += new System.EventHandler(this.deleteDbBtn_Click);
             // 
             // codeViewForm
             // 
@@ -210,5 +222,6 @@
         private System.Windows.Forms.Label templateSelectLbl;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button templateViewBtn;
+        private System.Windows.Forms.Button deleteDbBtn;
     }
 }
