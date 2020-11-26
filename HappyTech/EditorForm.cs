@@ -114,8 +114,7 @@ namespace HappyTech
                 }
                 else if (currentPosition == 0)
                 {
-                    Template.templatesForApplicants.Clear();
-                    //Connection.GetDbConn().CreateCommand(Constants.deleteTemplate());
+                   //  Template.templatesForApplicants.Clear();
                     this.Hide();
                     ConfApplDetailsForm cadf = new ConfApplDetailsForm(false);
                     cadf.Show();

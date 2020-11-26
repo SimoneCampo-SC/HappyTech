@@ -57,14 +57,20 @@ namespace HappyTech
         /// </summary>
         private void backBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Recruiter.DestroyRecruiInstance(); // Recruiter instance is destroied
-            Applicant.applicants.Clear(); // Applicants list is cleared
-            Template.templatesForApplicants.Clear();
-            Connection.GetDbConn().CreateCommand(Constants.deleteApplicant()); // Applicants are deleted from the database
-            
-            LoginForm f1 = new LoginForm(); // Returns to the login form
-            f1.Show();
+            if (btLogout.Text.Equals("Are you sure?"))
+            {
+                this.Hide();
+                Recruiter.DestroyRecruiInstance(); // Recruiter instance is destroied
+                Applicant.applicants.Clear(); // Applicants list is cleared
+                Template.templatesForApplicants.Clear();
+                Connection.GetDbConn().CreateCommand(Constants.deleteApplicant()); // Applicants are deleted from the database
+                LoginForm f1 = new LoginForm(); // Returns to the login form
+                f1.Show();
+            }
+            else
+            {
+                btLogout.Text = "Are you sure?";
+            }
         }
         /// <summary>
         /// Occurs when the recruiter click on the Confirm button

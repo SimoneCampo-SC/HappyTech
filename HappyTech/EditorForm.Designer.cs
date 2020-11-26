@@ -39,8 +39,12 @@
             this.listBox = new System.Windows.Forms.CheckedListBox();
             this.panelManagement = new System.Windows.Forms.Panel();
             this.lblStage3 = new System.Windows.Forms.Label();
+            this.imgStage3 = new System.Windows.Forms.PictureBox();
             this.lblStage2 = new System.Windows.Forms.Label();
+            this.imgStage2 = new System.Windows.Forms.PictureBox();
             this.lblStage1 = new System.Windows.Forms.Label();
+            this.imgStage1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelCodes = new System.Windows.Forms.Panel();
             this.panelTemplate = new System.Windows.Forms.Panel();
             this.panelComments = new System.Windows.Forms.Panel();
@@ -52,39 +56,35 @@
             this.lblAppNameVal = new System.Windows.Forms.Label();
             this.lblRecruiterVal = new System.Windows.Forms.Label();
             this.lblAppJob = new System.Windows.Forms.Label();
+            this.btNext = new System.Windows.Forms.Button();
+            this.btBack = new System.Windows.Forms.Button();
             this.lblAppEmail = new System.Windows.Forms.Label();
             this.lblAppName = new System.Windows.Forms.Label();
             this.lblRecruiter = new System.Windows.Forms.Label();
             this.lbDetails = new System.Windows.Forms.Label();
-            this.btNext = new System.Windows.Forms.Button();
-            this.btBack = new System.Windows.Forms.Button();
-            this.imgStage3 = new System.Windows.Forms.PictureBox();
-            this.imgStage2 = new System.Windows.Forms.PictureBox();
-            this.imgStage1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelManagement.SuspendLayout();
-            this.panelCodes.SuspendLayout();
-            this.panelTemplate.SuspendLayout();
-            this.panelComments.SuspendLayout();
-            this.panelAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelCodes.SuspendLayout();
+            this.panelTemplate.SuspendLayout();
+            this.panelComments.SuspendLayout();
+            this.panelAdd.SuspendLayout();
             this.SuspendLayout();
             // 
             // richTextBox2
             // 
             this.richTextBox2.BackColor = System.Drawing.Color.White;
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox2.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.richTextBox2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox2.Location = new System.Drawing.Point(17, 67);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
             this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.richTextBox2.Size = new System.Drawing.Size(439, 242);
             this.richTextBox2.TabIndex = 0;
-            this.richTextBox2.Text = "";
+            this.richTextBox2.Text = "abv";
             // 
             // richTextBox1
             // 
@@ -180,6 +180,15 @@
             this.lblStage3.TabIndex = 0;
             this.lblStage3.Text = "Preview";
             // 
+            // imgStage3
+            // 
+            this.imgStage3.Image = global::HappyTech.Properties.Resources.happytech_3;
+            this.imgStage3.Location = new System.Drawing.Point(42, 347);
+            this.imgStage3.Name = "imgStage3";
+            this.imgStage3.Size = new System.Drawing.Size(16, 16);
+            this.imgStage3.TabIndex = 42;
+            this.imgStage3.TabStop = false;
+            // 
             // lblStage2
             // 
             this.lblStage2.AutoSize = true;
@@ -191,6 +200,15 @@
             this.lblStage2.TabIndex = 0;
             this.lblStage2.Text = "Feedback";
             // 
+            // imgStage2
+            // 
+            this.imgStage2.Image = global::HappyTech.Properties.Resources.happytech_2;
+            this.imgStage2.Location = new System.Drawing.Point(42, 235);
+            this.imgStage2.Name = "imgStage2";
+            this.imgStage2.Size = new System.Drawing.Size(16, 16);
+            this.imgStage2.TabIndex = 40;
+            this.imgStage2.TabStop = false;
+            // 
             // lblStage1
             // 
             this.lblStage1.AutoSize = true;
@@ -201,6 +219,24 @@
             this.lblStage1.Size = new System.Drawing.Size(65, 14);
             this.lblStage1.TabIndex = 0;
             this.lblStage1.Text = "Applicants";
+            // 
+            // imgStage1
+            // 
+            this.imgStage1.Image = global::HappyTech.Properties.Resources.happytech_tick;
+            this.imgStage1.Location = new System.Drawing.Point(42, 123);
+            this.imgStage1.Name = "imgStage1";
+            this.imgStage1.Size = new System.Drawing.Size(16, 16);
+            this.imgStage1.TabIndex = 37;
+            this.imgStage1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HappyTech.Properties.Resources.happytech_logo_small;
+            this.pictureBox1.Location = new System.Drawing.Point(25, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 38);
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
             // 
             // panelCodes
             // 
@@ -331,6 +367,40 @@
             this.lblAppJob.TabIndex = 9;
             this.lblAppJob.Text = "Position:";
             // 
+            // btNext
+            // 
+            this.btNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.btNext.FlatAppearance.BorderSize = 0;
+            this.btNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btNext.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btNext.ForeColor = System.Drawing.Color.White;
+            this.btNext.Image = global::HappyTech.Properties.Resources.happytech_next;
+            this.btNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btNext.Location = new System.Drawing.Point(18, 501);
+            this.btNext.Name = "btNext";
+            this.btNext.Size = new System.Drawing.Size(183, 26);
+            this.btNext.TabIndex = 2;
+            this.btNext.Text = "Next";
+            this.btNext.UseVisualStyleBackColor = false;
+            this.btNext.Click += new System.EventHandler(this.btNext2_Click);
+            // 
+            // btBack
+            // 
+            this.btBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.btBack.FlatAppearance.BorderSize = 0;
+            this.btBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btBack.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btBack.ForeColor = System.Drawing.Color.White;
+            this.btBack.Image = global::HappyTech.Properties.Resources.happytech_back;
+            this.btBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btBack.Location = new System.Drawing.Point(18, 460);
+            this.btBack.Name = "btBack";
+            this.btBack.Size = new System.Drawing.Size(183, 26);
+            this.btBack.TabIndex = 1;
+            this.btBack.Text = "Back";
+            this.btBack.UseVisualStyleBackColor = false;
+            this.btBack.Click += new System.EventHandler(this.btBack_Click);
+            // 
             // lblAppEmail
             // 
             this.lblAppEmail.AutoSize = true;
@@ -375,76 +445,6 @@
             this.lbDetails.TabIndex = 0;
             this.lbDetails.Text = "Details.";
             // 
-            // btNext
-            // 
-            this.btNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.btNext.FlatAppearance.BorderSize = 0;
-            this.btNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btNext.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btNext.ForeColor = System.Drawing.Color.White;
-            this.btNext.Image = global::HappyTech.Properties.Resources.happytech_next;
-            this.btNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btNext.Location = new System.Drawing.Point(18, 501);
-            this.btNext.Name = "btNext";
-            this.btNext.Size = new System.Drawing.Size(183, 26);
-            this.btNext.TabIndex = 2;
-            this.btNext.Text = "Next";
-            this.btNext.UseVisualStyleBackColor = false;
-            this.btNext.Click += new System.EventHandler(this.btNext2_Click);
-            // 
-            // btBack
-            // 
-            this.btBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.btBack.FlatAppearance.BorderSize = 0;
-            this.btBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btBack.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btBack.ForeColor = System.Drawing.Color.White;
-            this.btBack.Image = global::HappyTech.Properties.Resources.happytech_back;
-            this.btBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btBack.Location = new System.Drawing.Point(18, 460);
-            this.btBack.Name = "btBack";
-            this.btBack.Size = new System.Drawing.Size(183, 26);
-            this.btBack.TabIndex = 1;
-            this.btBack.Text = "Back";
-            this.btBack.UseVisualStyleBackColor = false;
-            this.btBack.Click += new System.EventHandler(this.btBack_Click);
-            // 
-            // imgStage3
-            // 
-            this.imgStage3.Image = global::HappyTech.Properties.Resources.happytech_3;
-            this.imgStage3.Location = new System.Drawing.Point(42, 347);
-            this.imgStage3.Name = "imgStage3";
-            this.imgStage3.Size = new System.Drawing.Size(16, 16);
-            this.imgStage3.TabIndex = 42;
-            this.imgStage3.TabStop = false;
-            // 
-            // imgStage2
-            // 
-            this.imgStage2.Image = global::HappyTech.Properties.Resources.happytech_2;
-            this.imgStage2.Location = new System.Drawing.Point(42, 235);
-            this.imgStage2.Name = "imgStage2";
-            this.imgStage2.Size = new System.Drawing.Size(16, 16);
-            this.imgStage2.TabIndex = 40;
-            this.imgStage2.TabStop = false;
-            // 
-            // imgStage1
-            // 
-            this.imgStage1.Image = global::HappyTech.Properties.Resources.happytech_tick;
-            this.imgStage1.Location = new System.Drawing.Point(42, 123);
-            this.imgStage1.Name = "imgStage1";
-            this.imgStage1.Size = new System.Drawing.Size(16, 16);
-            this.imgStage1.TabIndex = 37;
-            this.imgStage1.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HappyTech.Properties.Resources.happytech_logo_small;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 38);
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
-            // 
             // EditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,9 +463,12 @@
             this.Name = "EditorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
-          
             this.panelManagement.ResumeLayout(false);
             this.panelManagement.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStage1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelCodes.ResumeLayout(false);
             this.panelCodes.PerformLayout();
             this.panelTemplate.ResumeLayout(false);
@@ -474,10 +477,6 @@
             this.panelComments.PerformLayout();
             this.panelAdd.ResumeLayout(false);
             this.panelAdd.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
