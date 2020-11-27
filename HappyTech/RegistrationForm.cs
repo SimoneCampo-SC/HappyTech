@@ -43,15 +43,30 @@ namespace HappyTech
                 errorMessage.Visible = true;
                 errorMessage.Text = "Password must be at least 8 characters";
             }
+            else if (passBox.Text.Length > 50)
+            {
+                errorMessage.Visible = true;
+                errorMessage.Text = "Password must be 50 characters or less";
+            }
+            else if (emailBox.Text.Length > 50)
+            {
+                errorMessage.Visible = true;
+                errorMessage.Text = "Email must be 50 characters or less";
+            }
+            else if (nameBox.Text.Length > 50)
+            {
+                errorMessage.Visible = true;
+                errorMessage.Text = "First name must be 50 characters or less";
+            }
+            else if (surnameBox.Text.Length > 50)
+            {
+                errorMessage.Visible = true;
+                errorMessage.Text = "Surname must be 50 characters or less";
+            }
             else if (Constants.checkRecruiter(emailBox.Text) == true) // Checks whether the credentials inserted doesn't not already exist in the DB
             {
                 errorMessage.Visible = true;
                 errorMessage.Text = "An account with this email already exists";
-            }
-            else if ((emailBox.Text.Length > 50) || (nameBox.Text.Length > 50) || (surnameBox.Text.Length > 50) || (surnameBox.Text.Length > 50))
-            {
-                errorMessage.Visible = true;
-                errorMessage.Text = "No more than 50 characters";
             }
             else
             {
@@ -97,6 +112,11 @@ namespace HappyTech
                 errorMessage.Visible = true;
                 errorMessage.Text = "Password must be at least 8 characters";
             }
+            else if (passBox.Text.Length > 50)
+            {
+                errorMessage.Visible = true;
+                errorMessage.Text = "Password must be 50 characters or less";
+            }
             else
             {
                 errorMessage.Visible = false;
@@ -120,11 +140,6 @@ namespace HappyTech
             }
         }
 
-        private void RegistrationForm_Load(object sender, EventArgs e)
-        {
-            btnPassVis.Hide();
-        }
-
         private void emailBox_TextChanged(object sender, EventArgs e)
         {
             if (emailBox.Text == "")
@@ -136,6 +151,49 @@ namespace HappyTech
             {
                 errorMessage.Visible = true;
                 errorMessage.Text = "Email must use @happytech.com";
+            }
+            else if (emailBox.Text.Length > 50)
+            {
+                errorMessage.Visible = true;
+                errorMessage.Text = "Email must be 50 characters or less";
+            }
+            else
+            {
+                errorMessage.Visible = false;
+                errorMessage.Text = "";
+            }
+        }
+
+        private void nameBox_TextChanged(object sender, EventArgs e)
+        {
+            if (nameBox.Text == "")
+            {
+                errorMessage.Visible = false;
+                errorMessage.Text = "";
+            }
+            else if (nameBox.Text.Length > 50)
+            {
+                errorMessage.Visible = true;
+                errorMessage.Text = "First name must be 50 characters or less";
+            }
+            else
+            {
+                errorMessage.Visible = false;
+                errorMessage.Text = "";
+            }
+        }
+
+        private void surnameBox_TextChanged(object sender, EventArgs e)
+        {
+            if (surnameBox.Text == "")
+            {
+                errorMessage.Visible = false;
+                errorMessage.Text = "";
+            }
+            else if (surnameBox.Text.Length > 50)
+            {
+                errorMessage.Visible = true;
+                errorMessage.Text = "Surname must be 50 characters or less";
             }
             else
             {

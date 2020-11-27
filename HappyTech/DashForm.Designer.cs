@@ -672,7 +672,7 @@
             this.btConfirm.TabIndex = 4;
             this.btConfirm.Text = "Save";
             this.btConfirm.UseVisualStyleBackColor = false;
-            this.btConfirm.Click += new System.EventHandler(this.button1_Click);
+            this.btConfirm.Click += new System.EventHandler(this.btConfirm_Click);
             // 
             // DashForm
             // 

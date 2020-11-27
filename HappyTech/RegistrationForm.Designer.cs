@@ -216,6 +216,7 @@
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(246, 20);
             this.nameBox.TabIndex = 0;
+            this.nameBox.TextChanged += new System.EventHandler(this.nameBox_TextChanged);
             // 
             // surnameBox
             // 
@@ -225,6 +226,7 @@
             this.surnameBox.Name = "surnameBox";
             this.surnameBox.Size = new System.Drawing.Size(246, 20);
             this.surnameBox.TabIndex = 1;
+            this.surnameBox.TextChanged += new System.EventHandler(this.surnameBox_TextChanged);
             // 
             // emailBox
             // 
@@ -301,7 +303,6 @@
             this.Name = "RegistrationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
-            this.Load += new System.EventHandler(this.RegistrationForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

@@ -72,18 +72,19 @@ namespace HappyTech
                 btLogout.Text = "Are you sure?";
             }
         }
+
         /// <summary>
         /// Occurs when the recruiter click on the Confirm button
         /// </summary>
-        private void button1_Click(object sender, EventArgs e)
+        private void btConfirm_Click(object sender, EventArgs e)
         {
             // Checks whether an item in the tempTypeBox has been selected
             // AND whether all the fields have been filled
-            if ((tempTypeBox.SelectedItem != null) && 
-               ((tbAName.Text.Length > 0) && (tbAJob.Text.Length > 0) && 
+            if ((tempTypeBox.SelectedItem != null) &&
+               ((tbAName.Text.Length > 0) && (tbAJob.Text.Length > 0) &&
                (tbAEmail.Text.Length > 0)))
             {
-                if ((tbAName.Text.Length < 51) && (tbAJob.Text.Length < 51) && (tbAEmail.Text.Length < 51))
+                if ((tbAName.Text.Length <= 50) && (tbAJob.Text.Length <= 50) && (tbAEmail.Text.Length <= 50))
                 {
                     // Insert applicant details into the database
                     Connection.GetDbConn().CreateCommand(Constants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, Recruiter.GetInstance().Id));
@@ -103,11 +104,11 @@ namespace HappyTech
                 else
                 {
                     lbError.Visible = true;
-                    lbError.Text = "No more than 50 characters";
+                    lbError.Text = "Fields must be 50 characters or less";
                 }
             }
             else
-            { 
+            {
                 // Displays the error message
                 lbError.Visible = true;
                 lbError.Text = "Missing required fields";
