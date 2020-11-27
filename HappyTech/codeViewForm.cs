@@ -24,6 +24,15 @@ namespace HappyTech
             //is given a value
             loadGrid();
 
+            DataSet dsT = Connection.GetDbConn().getDataSet($"SELECT * FROM Template");
+            lblTempTotalVal.Text = dsT.Tables[0].Rows.Count.ToString();
+
+            DataSet dsS = Connection.GetDbConn().getDataSet($"SELECT * FROM Section");
+            lblSectTotalVal.Text = dsS.Tables[0].Rows.Count.ToString();
+
+            DataSet dsC = Connection.GetDbConn().getDataSet($"SELECT * FROM Codes");
+            lblCodeTotalVal.Text = dsC.Tables[0].Rows.Count.ToString();
+
         }
 
         /* private void tagSelectBox_SelectedIndexChanged(object sender, EventArgs e)
