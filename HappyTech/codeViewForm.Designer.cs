@@ -186,9 +186,9 @@
             this.addTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addTagBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.addTagBtn.ForeColor = System.Drawing.Color.White;
-            this.addTagBtn.Location = new System.Drawing.Point(170, 35);
+            this.addTagBtn.Location = new System.Drawing.Point(170, 34);
             this.addTagBtn.Name = "addTagBtn";
-            this.addTagBtn.Size = new System.Drawing.Size(25, 24);
+            this.addTagBtn.Size = new System.Drawing.Size(25, 25);
             this.addTagBtn.TabIndex = 2;
             this.addTagBtn.Text = "S";
             this.addTagBtn.UseVisualStyleBackColor = false;
@@ -201,7 +201,7 @@
             this.addCodeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addCodeBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.addCodeBtn.ForeColor = System.Drawing.Color.White;
-            this.addCodeBtn.Location = new System.Drawing.Point(170, 5);
+            this.addCodeBtn.Location = new System.Drawing.Point(139, 34);
             this.addCodeBtn.Name = "addCodeBtn";
             this.addCodeBtn.Size = new System.Drawing.Size(25, 25);
             this.addCodeBtn.TabIndex = 3;

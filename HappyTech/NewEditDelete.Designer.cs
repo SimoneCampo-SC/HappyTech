@@ -48,11 +48,24 @@
             this.newCodeSection = new System.Windows.Forms.ComboBox();
             this.checkBoxForEdit = new System.Windows.Forms.CheckedListBox();
             this.dropDownForEdit = new System.Windows.Forms.ComboBox();
+            this.panelManagement = new System.Windows.Forms.Panel();
+            this.lblStage3 = new System.Windows.Forms.Label();
+            this.imgStage3 = new System.Windows.Forms.PictureBox();
+            this.lblStage2 = new System.Windows.Forms.Label();
+            this.imgStage2 = new System.Windows.Forms.PictureBox();
+            this.lblStage1 = new System.Windows.Forms.Label();
+            this.imgStage1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelManagement.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStage1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // inputBox
             // 
-            this.inputBox.Location = new System.Drawing.Point(15, 68);
+            this.inputBox.Location = new System.Drawing.Point(161, 71);
             this.inputBox.Name = "inputBox";
             this.inputBox.Size = new System.Drawing.Size(173, 20);
             this.inputBox.TabIndex = 0;
@@ -60,14 +73,14 @@
             // addToExistBox
             // 
             this.addToExistBox.FormattingEnabled = true;
-            this.addToExistBox.Location = new System.Drawing.Point(12, 227);
+            this.addToExistBox.Location = new System.Drawing.Point(158, 230);
             this.addToExistBox.Name = "addToExistBox";
             this.addToExistBox.Size = new System.Drawing.Size(176, 94);
             this.addToExistBox.TabIndex = 1;
             // 
             // submitNewBtn
             // 
-            this.submitNewBtn.Location = new System.Drawing.Point(58, 342);
+            this.submitNewBtn.Location = new System.Drawing.Point(204, 345);
             this.submitNewBtn.Name = "submitNewBtn";
             this.submitNewBtn.Size = new System.Drawing.Size(75, 23);
             this.submitNewBtn.TabIndex = 2;
@@ -77,7 +90,7 @@
             // 
             // backBtn
             // 
-            this.backBtn.Location = new System.Drawing.Point(54, 407);
+            this.backBtn.Location = new System.Drawing.Point(200, 410);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(75, 23);
             this.backBtn.TabIndex = 3;
@@ -88,7 +101,7 @@
             // existingDropDown
             // 
             this.existingDropDown.FormattingEnabled = true;
-            this.existingDropDown.Location = new System.Drawing.Point(499, 80);
+            this.existingDropDown.Location = new System.Drawing.Point(645, 83);
             this.existingDropDown.Name = "existingDropDown";
             this.existingDropDown.Size = new System.Drawing.Size(121, 21);
             this.existingDropDown.TabIndex = 4;
@@ -96,14 +109,14 @@
             // 
             // editBox
             // 
-            this.editBox.Location = new System.Drawing.Point(499, 107);
+            this.editBox.Location = new System.Drawing.Point(645, 110);
             this.editBox.Name = "editBox";
             this.editBox.Size = new System.Drawing.Size(100, 20);
             this.editBox.TabIndex = 5;
             // 
             // codeParaEditBox
             // 
-            this.codeParaEditBox.Location = new System.Drawing.Point(499, 148);
+            this.codeParaEditBox.Location = new System.Drawing.Point(645, 151);
             this.codeParaEditBox.Name = "codeParaEditBox";
             this.codeParaEditBox.Size = new System.Drawing.Size(288, 71);
             this.codeParaEditBox.TabIndex = 6;
@@ -111,7 +124,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(547, 407);
+            this.cancelBtn.Location = new System.Drawing.Point(693, 410);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 7;
@@ -121,7 +134,7 @@
             // 
             // saveChangeBtn
             // 
-            this.saveChangeBtn.Location = new System.Drawing.Point(691, 407);
+            this.saveChangeBtn.Location = new System.Drawing.Point(837, 410);
             this.saveChangeBtn.Name = "saveChangeBtn";
             this.saveChangeBtn.Size = new System.Drawing.Size(75, 23);
             this.saveChangeBtn.TabIndex = 8;
@@ -131,7 +144,7 @@
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(449, 407);
+            this.deleteBtn.Location = new System.Drawing.Point(595, 410);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(75, 23);
             this.deleteBtn.TabIndex = 9;
@@ -142,7 +155,7 @@
             // enterInfoLabel
             // 
             this.enterInfoLabel.AutoSize = true;
-            this.enterInfoLabel.Location = new System.Drawing.Point(12, 38);
+            this.enterInfoLabel.Location = new System.Drawing.Point(158, 41);
             this.enterInfoLabel.Name = "enterInfoLabel";
             this.enterInfoLabel.Size = new System.Drawing.Size(58, 13);
             this.enterInfoLabel.TabIndex = 10;
@@ -151,7 +164,7 @@
             // addToExistingLabel
             // 
             this.addToExistingLabel.AutoSize = true;
-            this.addToExistingLabel.Location = new System.Drawing.Point(12, 206);
+            this.addToExistingLabel.Location = new System.Drawing.Point(158, 209);
             this.addToExistingLabel.Name = "addToExistingLabel";
             this.addToExistingLabel.Size = new System.Drawing.Size(204, 13);
             this.addToExistingLabel.TabIndex = 11;
@@ -160,7 +173,7 @@
             // editExistingLbl
             // 
             this.editExistingLbl.AutoSize = true;
-            this.editExistingLbl.Location = new System.Drawing.Point(496, 48);
+            this.editExistingLbl.Location = new System.Drawing.Point(642, 51);
             this.editExistingLbl.Name = "editExistingLbl";
             this.editExistingLbl.Size = new System.Drawing.Size(90, 13);
             this.editExistingLbl.TabIndex = 12;
@@ -169,7 +182,7 @@
             // selectExisitingLabel
             // 
             this.selectExisitingLabel.AutoSize = true;
-            this.selectExisitingLabel.Location = new System.Drawing.Point(640, 87);
+            this.selectExisitingLabel.Location = new System.Drawing.Point(786, 90);
             this.selectExisitingLabel.Name = "selectExisitingLabel";
             this.selectExisitingLabel.Size = new System.Drawing.Size(147, 13);
             this.selectExisitingLabel.TabIndex = 13;
@@ -177,7 +190,7 @@
             // 
             // newCodeParaBox
             // 
-            this.newCodeParaBox.Location = new System.Drawing.Point(15, 125);
+            this.newCodeParaBox.Location = new System.Drawing.Point(161, 128);
             this.newCodeParaBox.Name = "newCodeParaBox";
             this.newCodeParaBox.Size = new System.Drawing.Size(307, 56);
             this.newCodeParaBox.TabIndex = 14;
@@ -186,7 +199,7 @@
             // codeParaLbl
             // 
             this.codeParaLbl.AutoSize = true;
-            this.codeParaLbl.Location = new System.Drawing.Point(161, 100);
+            this.codeParaLbl.Location = new System.Drawing.Point(307, 103);
             this.codeParaLbl.Name = "codeParaLbl";
             this.codeParaLbl.Size = new System.Drawing.Size(161, 13);
             this.codeParaLbl.TabIndex = 15;
@@ -195,7 +208,7 @@
             // newCodeSection
             // 
             this.newCodeSection.FormattingEnabled = true;
-            this.newCodeSection.Location = new System.Drawing.Point(201, 241);
+            this.newCodeSection.Location = new System.Drawing.Point(347, 244);
             this.newCodeSection.Name = "newCodeSection";
             this.newCodeSection.Size = new System.Drawing.Size(121, 21);
             this.newCodeSection.TabIndex = 16;
@@ -203,7 +216,7 @@
             // checkBoxForEdit
             // 
             this.checkBoxForEdit.FormattingEnabled = true;
-            this.checkBoxForEdit.Location = new System.Drawing.Point(499, 258);
+            this.checkBoxForEdit.Location = new System.Drawing.Point(645, 261);
             this.checkBoxForEdit.Name = "checkBoxForEdit";
             this.checkBoxForEdit.Size = new System.Drawing.Size(288, 94);
             this.checkBoxForEdit.TabIndex = 17;
@@ -211,16 +224,102 @@
             // dropDownForEdit
             // 
             this.dropDownForEdit.FormattingEnabled = true;
-            this.dropDownForEdit.Location = new System.Drawing.Point(499, 231);
+            this.dropDownForEdit.Location = new System.Drawing.Point(645, 234);
             this.dropDownForEdit.Name = "dropDownForEdit";
             this.dropDownForEdit.Size = new System.Drawing.Size(121, 21);
             this.dropDownForEdit.TabIndex = 18;
+            // 
+            // panelManagement
+            // 
+            this.panelManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(57)))));
+            this.panelManagement.Controls.Add(this.lblStage3);
+            this.panelManagement.Controls.Add(this.imgStage3);
+            this.panelManagement.Controls.Add(this.lblStage2);
+            this.panelManagement.Controls.Add(this.imgStage2);
+            this.panelManagement.Controls.Add(this.lblStage1);
+            this.panelManagement.Controls.Add(this.imgStage1);
+            this.panelManagement.Controls.Add(this.pictureBox1);
+            this.panelManagement.Location = new System.Drawing.Point(0, 0);
+            this.panelManagement.Name = "panelManagement";
+            this.panelManagement.Size = new System.Drawing.Size(100, 564);
+            this.panelManagement.TabIndex = 19;
+            // 
+            // lblStage3
+            // 
+            this.lblStage3.AutoSize = true;
+            this.lblStage3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblStage3.ForeColor = System.Drawing.Color.White;
+            this.lblStage3.Location = new System.Drawing.Point(24, 370);
+            this.lblStage3.Name = "lblStage3";
+            this.lblStage3.Size = new System.Drawing.Size(52, 14);
+            this.lblStage3.TabIndex = 0;
+            this.lblStage3.Text = "Preview";
+            // 
+            // imgStage3
+            // 
+            this.imgStage3.Image = global::HappyTech.Properties.Resources.happytech_3;
+            this.imgStage3.Location = new System.Drawing.Point(42, 347);
+            this.imgStage3.Name = "imgStage3";
+            this.imgStage3.Size = new System.Drawing.Size(16, 16);
+            this.imgStage3.TabIndex = 42;
+            this.imgStage3.TabStop = false;
+            // 
+            // lblStage2
+            // 
+            this.lblStage2.AutoSize = true;
+            this.lblStage2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblStage2.ForeColor = System.Drawing.Color.White;
+            this.lblStage2.Location = new System.Drawing.Point(19, 258);
+            this.lblStage2.Name = "lblStage2";
+            this.lblStage2.Size = new System.Drawing.Size(60, 14);
+            this.lblStage2.TabIndex = 0;
+            this.lblStage2.Text = "Feedback";
+            // 
+            // imgStage2
+            // 
+            this.imgStage2.Image = global::HappyTech.Properties.Resources.happytech_2;
+            this.imgStage2.Location = new System.Drawing.Point(42, 235);
+            this.imgStage2.Name = "imgStage2";
+            this.imgStage2.Size = new System.Drawing.Size(16, 16);
+            this.imgStage2.TabIndex = 40;
+            this.imgStage2.TabStop = false;
+            // 
+            // lblStage1
+            // 
+            this.lblStage1.AutoSize = true;
+            this.lblStage1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblStage1.ForeColor = System.Drawing.Color.White;
+            this.lblStage1.Location = new System.Drawing.Point(17, 146);
+            this.lblStage1.Name = "lblStage1";
+            this.lblStage1.Size = new System.Drawing.Size(65, 14);
+            this.lblStage1.TabIndex = 0;
+            this.lblStage1.Text = "Applicants";
+            // 
+            // imgStage1
+            // 
+            this.imgStage1.Image = global::HappyTech.Properties.Resources.happytech_1;
+            this.imgStage1.Location = new System.Drawing.Point(42, 123);
+            this.imgStage1.Name = "imgStage1";
+            this.imgStage1.Size = new System.Drawing.Size(16, 16);
+            this.imgStage1.TabIndex = 37;
+            this.imgStage1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HappyTech.Properties.Resources.happytech_logo_small;
+            this.pictureBox1.Location = new System.Drawing.Point(25, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 38);
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
             // 
             // NewEditDelete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(982, 563);
+            this.Controls.Add(this.panelManagement);
             this.Controls.Add(this.dropDownForEdit);
             this.Controls.Add(this.checkBoxForEdit);
             this.Controls.Add(this.newCodeSection);
@@ -248,6 +347,12 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
+            this.panelManagement.ResumeLayout(false);
+            this.panelManagement.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStage1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,5 +379,13 @@
         private System.Windows.Forms.ComboBox newCodeSection;
         private System.Windows.Forms.CheckedListBox checkBoxForEdit;
         private System.Windows.Forms.ComboBox dropDownForEdit;
+        private System.Windows.Forms.Panel panelManagement;
+        private System.Windows.Forms.Label lblStage3;
+        private System.Windows.Forms.PictureBox imgStage3;
+        private System.Windows.Forms.Label lblStage2;
+        private System.Windows.Forms.PictureBox imgStage2;
+        private System.Windows.Forms.Label lblStage1;
+        private System.Windows.Forms.PictureBox imgStage1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

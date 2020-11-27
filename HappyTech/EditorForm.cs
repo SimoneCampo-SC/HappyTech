@@ -49,24 +49,30 @@ namespace HappyTech
             {
                 using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + ".rtf"))
                 {
-                    //this is supposed to find the saved feedback file and prefill richTextBox2 with the feedback
-                    //however, this shows formatting code which is not ideal. formatting does not show if file opened in 
-                    //word
                     richTextBox2.Text = sr.ReadToEnd();
                 }
             }
+            if (File.Exists(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + "-comments.rtf"))
+            {
+                using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + "-comments.rtf"))
+                {
+                    richTextBox1.Text = sr.ReadToEnd();
+                }
+            }
+
         }
 
-        public EditorForm(string applicantName, string appType, string appEmail, string appJob) // takes applicant name + type + email + job from previewForm
+        public EditorForm(string applicantName, string appType, string appEmail, string appJob, int curApp) // takes applicant name + type + email + job from previewForm
         { //As editorForm usually takes an arguement of the applicant's position in the application list
             //this wont work if you are editing one applicant's feedback from the previewForm screen
             //so overloaded constructor is making a specific type of editorform for this purpose
             mode = "preview";
             //currentPosition = Template.templates.Count - 1; //so that next button will always go to prevForm
             previewAppName = applicantName;
+            currentPosition = curApp;
             InitializeComponent();
             loadListBox();
-            lbApplicants.Text = $"Previewing: {applicantName}";
+            lbApplicants.Text = $"You are in PREVIEW mode";
 
             //lbHeader.Text = Recruiter.GetInstance().Name + Recruiter.GetInstance().Surname +
             //    applicantName + appType;
@@ -85,12 +91,16 @@ namespace HappyTech
             try
             {
                 using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + applicantName + ".rtf"))
-
                 {
                     //this is supposed to find the saved feedback file and prefill richTextBox2 with the feedback
                     //however, this shows formatting code which is not ideal. formatting does not show if file opened in 
                     //word
                     richTextBox2.Text = sr.ReadToEnd();
+                }
+
+                using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + applicantName + "-comments.rtf"))
+                {
+                    richTextBox1.Text = sr.ReadToEnd();
                 }
             }
             catch (Exception)
@@ -133,20 +143,29 @@ namespace HappyTech
         {
             if (mode == "feedback")
             {
-                // save template - should be into the Editor Class
+                // save template
                 using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + ".rtf"))
                 {
 
-                    sw.WriteLine(richTextBox2.Text);
+                    if (!(richTextBox2.Text == ""))
+                    {
+                        sw.WriteLine(richTextBox2.Text);
+                    }
+
+                }
+
+                // save comments
+                using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + "-comments.rtf"))
+                {
+
                     if (!(richTextBox1.Text == ""))
                     {
-                        sw.WriteLine("\r\nComments:\r\n");
                         sw.WriteLine(richTextBox1.Text);
                     }
 
                 }
 
-                
+
                 if (currentPosition < Template.templatesForApplicants.Count - 1)
                 {
                     this.Hide();
@@ -164,8 +183,17 @@ namespace HappyTech
             {
                 using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + previewAppName + ".rtf"))
                 {
-
                     sw.WriteLine(richTextBox2.Text);
+
+                }
+
+                using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + previewAppName + "-comments.rtf"))
+                {
+
+                    if (!(richTextBox1.Text == ""))
+                    {
+                        sw.WriteLine(richTextBox1.Text);
+                    }
 
                 }
 
@@ -186,19 +214,17 @@ namespace HappyTech
         }
         private void loadListBox()
         {
-
-            listBox.CheckOnClick = true;
-            // Code.codeList.Clear();
-            // Code.fillCodeList();
             //only populate listbox with codes where
             //section id is in personalsection with selected template
             Sections.listSection();
-            //Sections.FillSectionPerTemplate(Template.templatesForApplicants[currentPosition].Id);
-            int tempId = Template.templatesForApplicants[currentPosition].Id;
+
             //have template id so can get personalSection sections
+            int tempId = Template.templatesForApplicants[currentPosition].Id;
             string psSections = $"SELECT section_ID FROM PersonalSection Where '{tempId}' IN (template_ID)";
+
             DataSet ds1 = Connection.GetDbConn().getDataSet(psSections);
             DataRow dRow1;
+
             for (int i = 0; i < ds1.Tables[0].Rows.Count; i++)
             {
                
@@ -230,23 +256,6 @@ namespace HappyTech
                 }
 
                
-            }
-            
-
-               /* DataSet ds = Connection.GetDbConn().getDataSet()
-            for (int i = 0; i < Sections.sectionPerTemplate.Count; i++)
-            {
-                //Code.codeList[i].GetSectionName().Trim()}:
-                //listBox.Items.Add($"{Code.codeList[i].CodeName}");
-                listBox.Items.Add($"{Sections.sectionPerTemplate[i].name}");
-            }*/
-
-            if (mode == "preview")
-            {
-                //richTextBox1.Hide();
-                //lbComBox.Hide();
-                //panel2.Width = 623;
-                //richTextBox2.Width = 623;
             }
 
         }

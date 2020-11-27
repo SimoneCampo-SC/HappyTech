@@ -144,6 +144,7 @@
             // 
             // listBox
             // 
+            this.listBox.CheckOnClick = true;
             this.listBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.listBox.ForeColor = System.Drawing.Color.Black;

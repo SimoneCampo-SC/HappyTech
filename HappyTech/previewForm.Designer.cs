@@ -74,6 +74,7 @@
             this.checklistAppPreview.Size = new System.Drawing.Size(553, 424);
             this.checklistAppPreview.TabIndex = 0;
             this.checklistAppPreview.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checklistAppPreview_ItemCheck);
+            this.checklistAppPreview.SelectedValueChanged += new System.EventHandler(this.checklistAppPreview_SelectedValueChanged);
             // 
             // previewBtn
             // 
@@ -239,9 +240,9 @@
             this.lbError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.lbError.Location = new System.Drawing.Point(18, 70);
             this.lbError.Name = "lbError";
-            this.lbError.Size = new System.Drawing.Size(171, 14);
+            this.lbError.Size = new System.Drawing.Size(90, 14);
             this.lbError.TabIndex = 46;
-            this.lbError.Text = "Select an applicant to preview";
+            this.lbError.Text = "Error message";
             this.lbError.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lbError.Visible = false;
             // 

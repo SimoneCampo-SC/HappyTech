@@ -13,7 +13,7 @@ namespace HappyTech
 {
     public partial class previewForm : Form
     {
-        int curApp = 0;
+        int curApp;
         string[] appDetails;
         string cancelStage;
 
@@ -35,10 +35,12 @@ namespace HappyTech
         private void checklistAppPreview_ItemCheck(object sender, ItemCheckEventArgs e)
         {
 
-            curApp = e.Index; //index of checked item
-                for (int ix = 0; ix < checklistAppPreview.Items.Count; ++ix)
-                    if (ix != e.Index) checklistAppPreview.SetItemChecked(ix, false);
-            
+            //curApp = e.Index; //index of checked item
+            //for (int i = 0; i < checklistAppPreview.Items.Count; ++i)
+            //{
+            //    if (i != e.Index) checklistAppPreview.SetItemChecked(i, false);
+            //}
+
         }
 
         private void previewBtn_Click(object sender, EventArgs e)
@@ -53,6 +55,7 @@ namespace HappyTech
             // stop preview if no applicants have been selected
             if (appDetails == null)
             {
+                lbError.Text = "Select an applicant to preview";
                 lbError.Show();
                 return;
             }
@@ -65,10 +68,12 @@ namespace HappyTech
             {
                 using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + appDetails[2] + ".rtf"))
                 { }
+                using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + appDetails[2] + "-comments.rtf"))
+                { }
             }
             catch (Exception)
             {
-                lbError.Text = "File already open somewhere";
+                lbError.Text = "File already in use";
                 lbError.Show();
                 return;
             }
@@ -79,7 +84,7 @@ namespace HappyTech
 
             Applicant applicant = new Applicant(appDetails[2], appDetails[3], appDetails[1], Recruiter.GetInstance().Id); // name, email, job, doctype, recruiter id
             this.Hide();
-            EditorForm f3 = new EditorForm(appDetails[2], appDetails[0], appDetails[3], appDetails[1]);
+            EditorForm f3 = new EditorForm(appDetails[2], appDetails[0], appDetails[3], appDetails[1], curApp);
             f3.Show();
         }
 
@@ -150,6 +155,16 @@ namespace HappyTech
                     File.Delete(file.FullName);
                 }
                 catch { }
+            }
+        }
+
+        private void checklistAppPreview_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //curApp = e.Index; //index of checked item
+            curApp = checklistAppPreview.SelectedIndex;
+            for (int i = 0; i < checklistAppPreview.Items.Count; ++i)
+            {
+                if (i != curApp) checklistAppPreview.SetItemChecked(i, false);
             }
         }
     }
