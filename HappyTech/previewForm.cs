@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using PdfSharp.Pdf;
+using Spire.Pdf.Graphics;
+using PdfSharp.Drawing;
 
 namespace HappyTech
 {
@@ -94,7 +97,7 @@ namespace HappyTech
             sendBtn.Text = "Sending...";
 
             // Turn rtf files into pdf files here
-            // code here
+            convertToPDF();
 
             clearTempFiles();
 
@@ -118,6 +121,49 @@ namespace HappyTech
 
             imgStage3.Image = Properties.Resources.happytech_tick;
 
+        }
+
+        private void convertToPDF()
+        {
+            for (int i = 0; i < Applicant.applicants.Count; i++)
+            {
+                string feedbackText = "";
+                string commentText = "";
+
+                using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".rtf"))
+                {
+                    feedbackText = sr.ReadToEnd();
+                }
+
+                if (File.Exists(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + "-comments.rtf"))
+                {
+                    using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + "-comments.rtf"))
+                    {
+                        commentText = sr.ReadToEnd();
+                    }
+                }
+
+                //PdfDocument doc = new PdfDocument();
+                //PdfPage page = doc.Pages.Add();
+                //SizeF bounds = page.Size;
+                //PdfMetafile imageMetafile = (PdfMetafile)PdfImage.FromRtf(feedbackText,bounds)
+
+                PdfDocument pdf = new PdfDocument();
+                PdfPage pdfPage = pdf.AddPage();
+                XGraphics graph = XGraphics.FromPdfPage(pdfPage);
+                XFont font = new XFont("Arial", 8.25, XFontStyle.Bold);
+                Image img = Properties.Resources.happytech_logo_med;
+                MemoryStream strm = new MemoryStream();
+                img.Save(strm, System.Drawing.Imaging.ImageFormat.Png);
+                XImage xfoto = XImage.FromStream(strm);
+                XRect rec = new XRect(pdfPage.Width/2, pdfPage.Height/16, img.Width, img.Height);
+                graph.DrawImage(xfoto,rec);
+                graph.DrawString(feedbackText, font, XBrushes.Black, new XRect(pdfPage.Width / 4, pdfPage.Height / 12, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+                graph.DrawString("Further comments:", font, XBrushes.Black, new XRect(pdfPage.Width / 4, (pdfPage.Height / 12) + 30, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+                graph.DrawString(commentText, font, XBrushes.Black, new XRect(0, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+                pdf.Save(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".pdf");
+
+            }
         }
 
         private void backBtn_Click(object sender, EventArgs e)

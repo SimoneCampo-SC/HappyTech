@@ -86,6 +86,7 @@
             this.lblEditExistingSection = new System.Windows.Forms.Label();
             this.lblChooseSection = new System.Windows.Forms.Label();
             this.dropdownExistingSection = new System.Windows.Forms.ComboBox();
+            this.checkboxEditExistTemps = new System.Windows.Forms.CheckedListBox();
             this.txtEditSectionName = new System.Windows.Forms.TextBox();
             this.panelAddCode = new System.Windows.Forms.Panel();
             this.lblAddNewCode = new System.Windows.Forms.Label();
@@ -93,14 +94,13 @@
             this.txtNewCodeName = new System.Windows.Forms.TextBox();
             this.lblNewAddSectionsCode = new System.Windows.Forms.Label();
             this.panelEditCode = new System.Windows.Forms.Panel();
+            this.lblCodeParagraphEdit = new System.Windows.Forms.Label();
             this.lblEditAddSectionsCode = new System.Windows.Forms.Label();
             this.lblEditCodeName = new System.Windows.Forms.Label();
             this.lblEditExistingCode = new System.Windows.Forms.Label();
             this.lblChooseCode = new System.Windows.Forms.Label();
             this.dropdownExistingCode = new System.Windows.Forms.ComboBox();
             this.txtEditCodeName = new System.Windows.Forms.TextBox();
-            this.checkboxEditExistTemps = new System.Windows.Forms.CheckedListBox();
-            this.lblCodeParagraphEdit = new System.Windows.Forms.Label();
             this.panelManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).BeginInit();
@@ -732,9 +732,9 @@
             this.lblNewAddTemplates.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
             this.lblNewAddTemplates.Location = new System.Drawing.Point(18, 124);
             this.lblNewAddTemplates.Name = "lblNewAddTemplates";
-            this.lblNewAddTemplates.Size = new System.Drawing.Size(148, 14);
+            this.lblNewAddTemplates.Size = new System.Drawing.Size(146, 14);
             this.lblNewAddTemplates.TabIndex = 11;
-            this.lblNewAddTemplates.Text = "Add Templates (optional):";
+            this.lblNewAddTemplates.Text = "Add templates (optional):";
             // 
             // checkboxAddExistTemps
             // 
@@ -823,6 +823,17 @@
             this.dropdownExistingSection.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.dropdownExistingSection_DrawItem);
             this.dropdownExistingSection.SelectedIndexChanged += new System.EventHandler(this.dropdownExistingSection_SelectedIndexChanged);
             // 
+            // checkboxEditExistTemps
+            // 
+            this.checkboxEditExistTemps.CheckOnClick = true;
+            this.checkboxEditExistTemps.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.checkboxEditExistTemps.ForeColor = System.Drawing.Color.Black;
+            this.checkboxEditExistTemps.FormattingEnabled = true;
+            this.checkboxEditExistTemps.Location = new System.Drawing.Point(21, 207);
+            this.checkboxEditExistTemps.Name = "checkboxEditExistTemps";
+            this.checkboxEditExistTemps.Size = new System.Drawing.Size(373, 139);
+            this.checkboxEditExistTemps.TabIndex = 17;
+            // 
             // txtEditSectionName
             // 
             this.txtEditSectionName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
@@ -909,6 +920,17 @@
             this.panelEditCode.TabIndex = 24;
             this.panelEditCode.Visible = false;
             // 
+            // lblCodeParagraphEdit
+            // 
+            this.lblCodeParagraphEdit.AutoSize = true;
+            this.lblCodeParagraphEdit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblCodeParagraphEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblCodeParagraphEdit.Location = new System.Drawing.Point(18, 182);
+            this.lblCodeParagraphEdit.Name = "lblCodeParagraphEdit";
+            this.lblCodeParagraphEdit.Size = new System.Drawing.Size(98, 14);
+            this.lblCodeParagraphEdit.TabIndex = 17;
+            this.lblCodeParagraphEdit.Text = "Code paragraph:";
+            // 
             // lblEditAddSectionsCode
             // 
             this.lblEditAddSectionsCode.AutoSize = true;
@@ -977,28 +999,6 @@
             this.txtEditCodeName.Name = "txtEditCodeName";
             this.txtEditCodeName.Size = new System.Drawing.Size(373, 20);
             this.txtEditCodeName.TabIndex = 5;
-            // 
-            // checkboxEditExistTemps
-            // 
-            this.checkboxEditExistTemps.CheckOnClick = true;
-            this.checkboxEditExistTemps.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.checkboxEditExistTemps.ForeColor = System.Drawing.Color.Black;
-            this.checkboxEditExistTemps.FormattingEnabled = true;
-            this.checkboxEditExistTemps.Location = new System.Drawing.Point(21, 207);
-            this.checkboxEditExistTemps.Name = "checkboxEditExistTemps";
-            this.checkboxEditExistTemps.Size = new System.Drawing.Size(373, 139);
-            this.checkboxEditExistTemps.TabIndex = 17;
-            // 
-            // lblCodeParagraphEdit
-            // 
-            this.lblCodeParagraphEdit.AutoSize = true;
-            this.lblCodeParagraphEdit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCodeParagraphEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblCodeParagraphEdit.Location = new System.Drawing.Point(18, 182);
-            this.lblCodeParagraphEdit.Name = "lblCodeParagraphEdit";
-            this.lblCodeParagraphEdit.Size = new System.Drawing.Size(98, 14);
-            this.lblCodeParagraphEdit.TabIndex = 17;
-            this.lblCodeParagraphEdit.Text = "Code paragraph:";
             // 
             // NewEditDelete
             // 
