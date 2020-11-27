@@ -12,45 +12,31 @@ namespace HappyTech
 {
     public partial class NewEditDelete : Form
     {
-        string type; //used to determine between code, section and template
+        string mode = "template"; //used to determine between code, section and template
         public NewEditDelete(string type)
         {
             InitializeComponent();
-            codeParaLbl.Hide();
-            newCodeParaBox.Hide();
-            codeParaEditBox.Hide();
-            newCodeSection.Hide();
-            dropDownForEdit.Hide();
-            addToExistBox.CheckOnClick = true;
-            this.type = type;
+
+            mode = type;
             
 
             if (type == "code")
             {
-                codeParaLbl.Show();
-                addToExistBox.Hide();
                 fillNewCodeTagDrop();
-                newCodeSection.Show();
-                newCodeParaBox.Show();
-                codeParaEditBox.Show();
                 fillExistBoxWithSections();
                 fillExistingDropDownWithCodes();
-                dropDownForEdit.Show();
-                checkBoxForEdit.Hide();
 
 
             }
 
             else if (type == "section")
             {
-                fillExistBoxWithTemplates();
-                fillExistingDropDownWithSections();
+                LoadSectionMode();
             }
 
             else if (type == "template")
             {
-                fillExistingDropDownWithTemplates();
-                fillExistBoxWithSections();
+                LoadTempMode();
             }
         }
         private void fillNewCodeTagDrop()
@@ -83,7 +69,7 @@ namespace HappyTech
 
         private void fillExistingDropDownWithSections()
         {
-            existingDropDown.Items.Clear();
+            dropdownExistingSection.Items.Clear();
             Sections.sectionList.Clear();
             //by default, loads all the sections into the sectionsListBox
             Sections.listSection();
@@ -91,41 +77,41 @@ namespace HappyTech
             {
                 //Code.codeList[i].GetSectionName().Trim()}:
 
-                existingDropDown.Items.Add($"{Sections.sectionList[i].name.Replace(" ", "")}");
+                dropdownExistingSection.Items.Add($"{Sections.sectionList[i].name}");
             }
         }
 
         private void fillExistBoxWithTemplates()
         {
-            addToExistBox.Items.Clear();
+            checkboxAddExistTemps.Items.Clear();
             Template.templates.Clear();
             Template.listTemplates();
             for (int i = 0; i < Template.templates.Count(); i++)
             {
                 //Code.codeList[i].GetSectionName().Trim()}:
-                addToExistBox.Items.Add($"{Template.templates[i].TempType}");
+                checkboxAddExistTemps.Items.Add($"{Template.templates[i].TempType}");
             }
         }
 
         private void fillExistingDropDownWithTemplates()
         {
-            existingDropDown.Items.Clear();
+            dropdownExistingTemplate.Items.Clear();
             Template.templates.Clear();
             Template.listTemplates();
             for (int i = 0; i < Template.templates.Count(); i++)
             {
                 //Code.codeList[i].GetSectionName().Trim()}:
-                existingDropDown.Items.Add($"{Template.templates[i].TempType}");
+                dropdownExistingTemplate.Items.Add($"{Template.templates[i].TempType}");
             }
         }
         private void fillExistingDropDownWithCodes()
         {
-            existingDropDown.Items.Clear();
+            dropdownExistingTemplate.Items.Clear();
             Code.codeList.Clear();
             Code.fillCodeList();
             for (int i = 0; i < Code.codeList.Count(); i++)
             {
-                existingDropDown.Items.Add($"{Code.codeList[i].CodeName}");
+                dropdownExistingTemplate.Items.Add($"{Code.codeList[i].CodeName}");
             }
         }
 
@@ -133,44 +119,84 @@ namespace HappyTech
         {
            
             //sanitiseInput();
-           if (type == "code")
+           if (mode == "code")
             {
                 DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagIdFromName(newCodeSection.Text));
                 DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
                 var tagId = dRow.ItemArray.GetValue(0);
-                string toUse = inputBox.Text.Replace(" ", "");
+                string toUse = txtNewTemplateName.Text.Replace(" ", "");
                 string codeParaToUse = newCodeParaBox.Text;
 
                 Connection.GetDbConn().CreateCommand(Constants.insertNewCode(toUse, codeParaToUse, tagId));
                 
-                inputBox.Clear();
+                txtNewTemplateName.Clear();
                 newCodeParaBox.Text = "";
                 newCodeSection.Text = "";
 
             }
-            else if (type == "section")
+            else if (mode == "section")
             {
-                string sectionName = inputBox.Text.Replace(" ", "");
-                Sections.InsertSectionWithSelectedTemplates(sectionName, addToExistBox);
-                inputBox.Clear();
-                fillExistBoxWithTemplates();
-                fillExistingDropDownWithSections();
+                if (txtNewSectionName.Text.Length <= 0)
+                {
+                    lblAddError.Text = "Enter a section name";
+                    lblAddError.Show();
+                }
+                else if (txtNewSectionName.Text.Contains(" "))
+                {
+                    lblAddError.Text = "Remove spaces from section name";
+                    lblAddError.Show();
+                }
+                else if (Constants.checkSection(txtNewSectionName.Text))
+                {
+                    lblAddError.Text = "A section with this name already exists";
+                    lblAddError.Show();
+                }
+                else
+                {
+                    string sectionName = txtNewSectionName.Text.Replace(" ", "");
+                    Sections.InsertSectionWithSelectedTemplates(sectionName, checkboxAddExistTemps);
+                    ClearSectionModeFields();
+                    lblAddSuccess.Text = "New section saved";
+                    lblAddSuccess.Show();
+
+                }
+                
             }
-            else if (type == "template")
+            else if (mode == "template")
             {
-                string templateName = inputBox.Text.Replace(" ", "");
-                Template.CreateTemplateWithSelectedSections(templateName, addToExistBox);
-                inputBox.Clear();
-                fillExistBoxWithSections();
-                fillExistingDropDownWithTemplates();
+                if (txtNewTemplateName.Text.Length <= 0)
+                {
+                    lblAddError.Text = "Enter a template name";
+                    lblAddError.Show();
+                }
+                else if (txtNewTemplateName.Text.Contains(" "))
+                {
+                    lblAddError.Text = "Remove spaces from template name";
+                    lblAddError.Show();
+                }
+                else if (Constants.checkTemplate(txtNewTemplateName.Text))
+                {
+                    lblAddError.Text = "A template with this name already exists";
+                    lblAddError.Show();
+                }
+                else
+                {
+                    string templateName = txtNewTemplateName.Text.Replace(" ", "");
+                    Template.CreateTemplateWithSelectedSections(templateName, addToExistBox);
+                    ClearTemplateModeFields();
+                    lblAddSuccess.Text = "New template saved";
+                    lblAddSuccess.Show();
+                }
+
+                
             }
         }
 
-        private void existingDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        private void dropdownExistingTemplate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            editBox.Text = existingDropDown.Text.Replace(" ", "");
+            txtEditTemplateName.Text = dropdownExistingTemplate.Text.Replace(" ", "");
 
-            if (type == "code")
+            if (mode == "code")
             {
                dropDownForEdit.Items.Clear();
                 Sections.sectionList.Clear();
@@ -182,51 +208,22 @@ namespace HappyTech
 
                     dropDownForEdit.Items.Add($"{Sections.sectionList[i].name.Replace(" ", "")}");
                 }
-                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeParaFromShort(existingDropDown.Text.Replace(" ", "")));
+                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeParaFromShort(dropdownExistingTemplate.Text.Replace(" ", "")));
                 DataRow dRow = ds.Tables[0].Rows[0];
                 codeParaEditBox.Text = dRow.ItemArray.GetValue(0).ToString();
 
             }
-            if (type == "section") //if we're editing sections, we need the checkbox to be populated with templates
+            if (mode == "template") //if we're editing a template, we want to see the sections we can add it to
             {
-                //change check list to display templates checkBoxForEdit needs to change if the existingDropDown changes
-
-                checkBoxForEdit.Items.Clear(); // clear out old info (if any)
-                Template.templates.Clear();
-                // we will use the selected section name to get the selected section's's ID
-                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(existingDropDown.Text.Replace(" ", "")));
-                DataRow dRow = ds.Tables[0].Rows[0];
-                var sectionId = dRow.ItemArray.GetValue(0);
-                // we need to populate the sectionsListBox 
-                Template.listTemplates();
-                for (int i = 0; i < Template.templates.Count(); i++)
-                {
-                    string tempNameToAdd = Template.templates[i].TempType.Replace(" ", "");
-                    int tempId = Template.templates[i].Id;
-                    checkBoxForEdit.Items.Add($"{tempNameToAdd}");
-                    //if there is a PersonalSection object with this template id and this section id, set checked to true
-                    DataSet ds1 = Connection.GetDbConn().getDataSet($"SELECT * FROM PersonalSection WHERE template_ID = '{tempId}' and section_ID = '{sectionId}'");
-                    try
-                    {
-                        DataRow dRow1 = ds1.Tables[0].Rows[0];
-
-                        if (dRow1 != null)
-                        {
-                            checkBoxForEdit.SetItemChecked(i, true);
-                        }
-                    }
-                    catch { } //crashes if dRow1 IS null, so wrapped it in a try/ catch
-
-                }
-            }
-            if (type == "template") //if we're editing a template, we want to see the sections we can add it to
-            {
+                lblEditSuccess.Hide();
+                lblEditError.Hide();
+                
                 //change check list to display templates
                 checkBoxForEdit.Items.Clear(); // clear out old sections
                 Sections.sectionList.Clear();
                 // we will use the selected template name to get the selected template's ID
-                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(editBox.Text.Replace(" ", "")));
-                Console.WriteLine(Constants.getTemplateIdFromName(editBox.Text.Replace(" ", "")));
+                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(txtEditTemplateName.Text.Replace(" ", "")));
+                Console.WriteLine(Constants.getTemplateIdFromName(txtEditTemplateName.Text.Replace(" ", "")));
                 DataRow dRow = ds.Tables[0].Rows[0];
                 var templateId = dRow.ItemArray.GetValue(0);
                 // we need to populate the sectionsListBox 
@@ -257,43 +254,110 @@ namespace HappyTech
 
         private void saveChangeBtn_Click(object sender, EventArgs e)
         {
-            if (type == "code")
+            if (mode == "code")
             {
                 //get the id of the old code and update the code short with the new one
                 //update codepara with the new one
-                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeId(existingDropDown.Text));
+                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeId(dropdownExistingTemplate.Text));
                 DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
                 var codeId = dRow.ItemArray.GetValue(0);
-                Connection.GetDbConn().CreateCommand(Constants.editCode(codeId, editBox.Text.Replace(" ",""), codeParaEditBox.Text));
+                Connection.GetDbConn().CreateCommand(Constants.editCode(codeId, txtEditTemplateName.Text.Replace(" ",""), codeParaEditBox.Text));
                 codeParaEditBox.Clear();
                 fillExistingDropDownWithCodes();
                 dropDownForEdit.Items.Clear();
             }
 
-            if (type == "section")
+            if (mode == "section")
             {
-                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(existingDropDown.Text));
-                DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
-                var sectionId = dRow.ItemArray.GetValue(0);
-                Connection.GetDbConn().CreateCommand(Constants.editSection(sectionId, editBox.Text.Replace(" ","")));
-                //now we need to update the personalsection part
-                //for every template in case a template was deselected
-                UpdatePersonalSectionsForSection(sectionId);
-                editBox.Clear();
+                if (dropdownExistingSection.SelectedItem == null)
+                {
+                    lblEditError.Text = "Select a section to edit";
+                    lblEditError.Show();
+                }
+                else if (txtEditSectionName.Text.Length <= 0)
+                {
+                    lblEditError.Text = "Enter a section name";
+                    lblEditError.Show();
+                }
+                else if (txtEditSectionName.Text.Contains(" "))
+                {
+                    lblEditError.Text = "Remove spaces from section name";
+                    lblEditError.Show();
+                }
+                else if (Constants.checkSection(txtEditSectionName.Text))
+                {
+                    lblEditError.Text = "A section with this name already exists";
+                    lblEditError.Show();
+                }
+                else
+                {
+                    DataSet ds = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(dropdownExistingSection.Text));
+                    DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
+                    var sectionId = dRow.ItemArray.GetValue(0);
+                    Connection.GetDbConn().CreateCommand(Constants.editSection(sectionId, txtEditSectionName.Text.Replace(" ", "")));
+                    //now we need to update the personalsection part
+                    //for every template in case a template was deselected
+                    UpdatePersonalSectionsForSection(sectionId);
+                    ClearSectionModeFields();
+                    lblEditSuccess.Text = "Section edit saved";
+                    lblEditSuccess.Show();
+                }
+                
             }
 
-            if (type == "template")
+            if (mode == "template")
             {
-                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(existingDropDown.Text.Replace(" ","")));
-                DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
-                var templateId = dRow.ItemArray.GetValue(0);
-                Connection.GetDbConn().CreateCommand(Constants.editTemplate(templateId, editBox.Text));
-                UpdatePersonalSectionsForTemplate(templateId);
-                editBox.Clear();
-               
+                if (dropdownExistingTemplate.SelectedItem == null)
+                {
+                    lblEditError.Text = "Select a template to edit";
+                    lblEditError.Show();
+                }
+                else if (txtEditTemplateName.Text.Length <= 0)
+                {
+                    lblEditError.Text = "Enter a section name";
+                    lblEditError.Show();
+                }
+                else if (txtEditTemplateName.Text.Contains(" "))
+                {
+                    lblEditError.Text = "Remove spaces from template name";
+                    lblEditError.Show();
+                }
+                else if (Constants.checkTemplate(txtEditTemplateName.Text))
+                {
+                    lblEditError.Text = "A template with this name already exists";
+                    lblEditError.Show();
+                }
+                else
+                {
+                    DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(dropdownExistingTemplate.Text.Replace(" ", "")));
+                    DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
+                    var templateId = dRow.ItemArray.GetValue(0);
+                    Connection.GetDbConn().CreateCommand(Constants.editTemplate(templateId, txtEditTemplateName.Text));
+                    UpdatePersonalSectionsForTemplate(templateId);
+                    ClearTemplateModeFields();
+                    lblEditSuccess.Text = "Template edit saved";
+                    lblEditSuccess.Show();
+                }
+                
             }
-            editBox.Clear();
             
+            
+        }
+
+        private void ClearTempEditSectionCheckboxlist()
+        {
+            for (int i = 0; i < checkBoxForEdit.Items.Count; i++)
+            {
+                checkBoxForEdit.SetItemChecked(i, false);
+            }
+        }
+
+        private void ClearSectionEditTempsCheckboxlist()
+        {
+            for (int i = 0; i < checkboxEditExistTemps.Items.Count; i++)
+            {
+                checkboxEditExistTemps.SetItemChecked(i, false);
+            }
         }
 
         private void UpdatePersonalSectionsForTemplate(object tempId)
@@ -347,14 +411,14 @@ namespace HappyTech
         {
 
 
-            for (int i = 0; i < checkBoxForEdit.Items.Count; i++) //for every item in check box, get its id. check if that checkbox is marked
+            for (int i = 0; i < checkboxEditExistTemps.Items.Count; i++) //for every item in check box, get its id. check if that checkbox is marked
             {
               
-                string templateName = checkBoxForEdit.Items[i].ToString();
+                string templateName = checkboxEditExistTemps.Items[i].ToString();
                 DataSet ds1 = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(templateName));
                 DataRow dRow1 = ds1.Tables[0].Rows[0];
                 var templateId = dRow1.ItemArray.GetValue(0);
-                if (checkBoxForEdit.GetItemCheckState(i) == CheckState.Checked)
+                if (checkboxEditExistTemps.GetItemCheckState(i) == CheckState.Checked)
                 {
                     
 
@@ -372,7 +436,7 @@ namespace HappyTech
                         //now a PersonalSection object has been made
                     }
                 }
-                else if (checkBoxForEdit.GetItemCheckState(i) != CheckState.Checked) //if checkbox not checked
+                else if (checkboxEditExistTemps.GetItemCheckState(i) != CheckState.Checked) //if checkbox not checked
                 {
                     //need to check if there is a Personalsection object
                     DataSet ds3 = Connection.GetDbConn().getDataSet($"SELECT * FROM PersonalSection WHERE template_ID = '{templateId}' and section_ID = '{sectId}'");
@@ -400,18 +464,263 @@ namespace HappyTech
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            editBox.Clear();
-            existingDropDown.Text = "";
-            dropDownForEdit.Text = "";
-            try {
-                codeParaEditBox.Clear(); //only shows if type is code
+            if (mode == "template")
+            {
+                ClearTemplateModeFields();
+                dropdownExistingTemplate.Text = "";
+                
             }
-            catch { }
+            else if (mode == "section")
+            {
+                ClearSectionModeFields();
+                dropdownExistingSection.Text = "";
+            }
+            else if (mode == "code")
+            {
+                codeParaEditBox.Clear();
+                dropDownForEdit.Text = "";
+            }
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
+            if (mode == "template")
+            {
+                // delete template
 
+            }
+            else if (mode == "section")
+            {
+                // delete section
+
+            }
+            else if (mode == "code")
+            {
+                // delete code
+
+            }
+        }
+
+        private void btnModeTemplate_Click(object sender, EventArgs e)
+        {
+            mode = "template";
+            LoadTempMode();
+            SetModeButton(mode);
+            SetModePanel(mode);
+            ClearTemplateModeFields();
+            
+        }
+
+        private void btnModeSection_Click(object sender, EventArgs e)
+        {
+            mode = "section";
+            LoadSectionMode();
+            SetModeButton(mode);
+            SetModePanel(mode);
+            ClearSectionModeFields();
+        }
+
+        private void btnModeCode_Click(object sender, EventArgs e)
+        {
+            mode = "code";
+            LoadCodeMode();
+            SetModeButton(mode);
+            SetModePanel(mode);
+        }
+
+        private void backBtnEdit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            codeViewForm cv = new codeViewForm();
+            cv.Show();
+        }
+
+        private void dropdownExistingTemplate_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            try
+            {
+                e.DrawBackground();
+                e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 6, e.Bounds.Y + 6, 8, 8);
+                e.Graphics.DrawString(dropdownExistingTemplate.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
+                e.DrawFocusRectangle();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void txtNewTemplateName_TextChanged(object sender, EventArgs e)
+        {
+            lblAddSuccess.Hide();
+            lblAddError.Hide();
+        }
+
+        private void SetModeButton(string type)
+        {
+            if (type == "template")
+            {
+                btnModeTemplate.BackColor = Color.FromArgb(83, 60, 182);
+                btnModeTemplate.ForeColor = Color.White;
+
+                btnModeSection.BackColor = Color.White;
+                btnModeSection.ForeColor = Color.FromArgb(83, 60, 182);
+
+                btnModeCode.BackColor = Color.White;
+                btnModeCode.ForeColor = Color.FromArgb(83, 60, 182);
+            }
+            else if (type == "section")
+            {
+                btnModeSection.BackColor = Color.FromArgb(83, 60, 182);
+                btnModeSection.ForeColor = Color.White;
+
+                btnModeTemplate.BackColor = Color.White;
+                btnModeTemplate.ForeColor = Color.FromArgb(83, 60, 182);
+
+                btnModeCode.BackColor = Color.White;
+                btnModeCode.ForeColor = Color.FromArgb(83, 60, 182);
+            }
+            else if (type == "code")
+            {
+                btnModeCode.BackColor = Color.FromArgb(83, 60, 182);
+                btnModeCode.ForeColor = Color.White;
+
+                btnModeSection.BackColor = Color.White;
+                btnModeSection.ForeColor = Color.FromArgb(83, 60, 182);
+
+                btnModeTemplate.BackColor = Color.White;
+                btnModeTemplate.ForeColor = Color.FromArgb(83, 60, 182);
+            }
+
+
+        }
+
+        private void SetModePanel(string type)
+        {
+            if (type == "template")
+            {
+                panelAddTemplate.Show();
+                panelEditTemplate.Show();
+                panelAddSection.Hide();
+                panelEditSection.Hide();
+                //panelAddCode.Hide();
+                //panelEditCode.Hide();
+            }
+            else if (type == "section")
+            {
+                panelAddTemplate.Hide();
+                panelEditTemplate.Hide();
+                panelAddSection.Show();
+                panelEditSection.Show();
+                //panelAddCode.Hide();
+                //panelEditCode.Hide();
+
+            }
+            else if (type == "code")
+            {
+                panelAddTemplate.Hide();
+                panelEditTemplate.Hide();
+                panelAddSection.Hide();
+                panelEditSection.Hide();
+                //panelAddCode.Show();
+                //panelEditCode.Show();
+            }
+        }
+
+        private void ClearTemplateModeFields()
+        {
+            lblAddError.Hide();
+            txtNewTemplateName.Clear();
+            fillExistBoxWithSections();
+            fillExistingDropDownWithTemplates();
+            txtEditTemplateName.Clear();
+            ClearTempEditSectionCheckboxlist();
+        }
+
+        private void ClearSectionModeFields()
+        {
+            lblAddError.Hide();
+            txtNewSectionName.Clear();
+            fillExistBoxWithTemplates();
+            fillExistingDropDownWithSections();
+            txtEditSectionName.Clear();
+            ClearSectionEditTempsCheckboxlist();
+        }
+
+        private void LoadSectionMode()
+        {
+            fillExistBoxWithTemplates();
+            fillExistingDropDownWithSections();
+        }
+
+        private void LoadTempMode()
+        {
+            fillExistingDropDownWithTemplates();
+            fillExistBoxWithSections();
+        }
+
+        private void LoadCodeMode()
+        {
+            //
+        }
+
+        private void txtNewSectionName_TextChanged(object sender, EventArgs e)
+        {
+            lblAddSuccess.Hide();
+            lblAddError.Hide();
+        }
+
+        private void dropdownExistingSection_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            try
+            {
+                e.DrawBackground();
+                e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 6, e.Bounds.Y + 6, 8, 8);
+                e.Graphics.DrawString(dropdownExistingSection.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
+                e.DrawFocusRectangle();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void dropdownExistingSection_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtEditSectionName.Text = dropdownExistingSection.Text.Replace(" ", "");
+            //if we're editing sections, we need the checkbox to be populated with templates
+            //change check list to display templates checkboxEditExistTemps needs to change if the existingDropDown changes
+
+            lblEditSuccess.Hide();
+            lblEditError.Hide();
+
+            checkboxEditExistTemps.Items.Clear(); // clear out old info (if any)
+            Template.templates.Clear();
+            // we will use the selected section name to get the selected section's's ID
+            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(dropdownExistingSection.Text.Replace(" ", "")));
+            DataRow dRow = ds.Tables[0].Rows[0];
+            var sectionId = dRow.ItemArray.GetValue(0);
+            // we need to populate the sectionsListBox 
+            Template.listTemplates();
+            for (int i = 0; i < Template.templates.Count(); i++)
+            {
+                string tempNameToAdd = Template.templates[i].TempType.Replace(" ", "");
+                int tempId = Template.templates[i].Id;
+                checkboxEditExistTemps.Items.Add($"{tempNameToAdd}");
+                //if there is a PersonalSection object with this template id and this section id, set checked to true
+                DataSet ds1 = Connection.GetDbConn().getDataSet($"SELECT * FROM PersonalSection WHERE template_ID = '{tempId}' and section_ID = '{sectionId}'");
+                try
+                {
+                    DataRow dRow1 = ds1.Tables[0].Rows[0];
+
+                    if (dRow1 != null)
+                    {
+                        checkboxEditExistTemps.SetItemChecked(i, true);
+                    }
+                }
+                catch { } //crashes if dRow1 IS null, so wrapped it in a try/ catch
+
+            }
         }
     }
 }

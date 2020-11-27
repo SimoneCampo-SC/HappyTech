@@ -138,6 +138,48 @@ namespace HappyTech
             }
         }
 
+        public static bool checkTemplate(string template)
+        {
+            string query = $"SELECT * FROM Template WHERE tempType = '{template}'";
+            DataSet ds = Connection.GetDbConn().getDataSet(query);
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool checkSection(string section)
+        {
+            string query = $"SELECT * FROM Section WHERE name = '{section}'";
+            DataSet ds = Connection.GetDbConn().getDataSet(query);
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool checkCode(string code)
+        {
+            string query = $"SELECT * FROM Codes WHERE codeShort = '{code}'";
+            DataSet ds = Connection.GetDbConn().getDataSet(query);
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public static string insertTemplate(string recruitId, string header) 
         {
             string query = $"INSERT INTO Template (Recruiter_ID, tempHeader) VALUES ('{recruitId}', '{header}')";

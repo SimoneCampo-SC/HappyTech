@@ -264,7 +264,7 @@
             this.tempTypeBox.ItemHeight = 32;
             this.tempTypeBox.Location = new System.Drawing.Point(24, 87);
             this.tempTypeBox.Name = "tempTypeBox";
-            this.tempTypeBox.Size = new System.Drawing.Size(214, 266);
+            this.tempTypeBox.Size = new System.Drawing.Size(214, 330);
             this.tempTypeBox.TabIndex = 3;
             this.tempTypeBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tempTypeBox_MouseClick);
             this.tempTypeBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tempTypeBox_DrawItem);

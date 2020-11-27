@@ -59,7 +59,7 @@
             this.lblCodeList = new System.Windows.Forms.Label();
             this.panelActions = new System.Windows.Forms.Panel();
             this.lblEditTemplates = new System.Windows.Forms.Label();
-            this.panelSubmit = new System.Windows.Forms.Panel();
+            this.panelDetails = new System.Windows.Forms.Panel();
             this.lblTempTotalVal = new System.Windows.Forms.Label();
             this.lblTempTotal = new System.Windows.Forms.Label();
             this.lblDetails = new System.Windows.Forms.Label();
@@ -79,7 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelApplicants.SuspendLayout();
             this.panelActions.SuspendLayout();
-            this.panelSubmit.SuspendLayout();
+            this.panelDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // tagSelectBox
@@ -192,6 +192,7 @@
             this.addTagBtn.TabIndex = 2;
             this.addTagBtn.Text = "S";
             this.addTagBtn.UseVisualStyleBackColor = false;
+            this.addTagBtn.Visible = false;
             this.addTagBtn.Click += new System.EventHandler(this.addTagBtn_Click);
             // 
             // addCodeBtn
@@ -207,6 +208,7 @@
             this.addCodeBtn.TabIndex = 3;
             this.addCodeBtn.Text = "C";
             this.addCodeBtn.UseVisualStyleBackColor = false;
+            this.addCodeBtn.Visible = false;
             this.addCodeBtn.Click += new System.EventHandler(this.addCodeBtn_Click);
             // 
             // backBtn
@@ -427,25 +429,25 @@
             this.lblEditTemplates.TabIndex = 1;
             this.lblEditTemplates.Text = "Edit.";
             // 
-            // panelSubmit
+            // panelDetails
             // 
-            this.panelSubmit.BackColor = System.Drawing.Color.White;
-            this.panelSubmit.Controls.Add(this.lblCodeTotalVal);
-            this.panelSubmit.Controls.Add(this.lblCodeTotal);
-            this.panelSubmit.Controls.Add(this.selectTagLbl);
-            this.panelSubmit.Controls.Add(this.tagSelectBox);
-            this.panelSubmit.Controls.Add(this.templateSelectLbl);
-            this.panelSubmit.Controls.Add(this.lblSectTotalVal);
-            this.panelSubmit.Controls.Add(this.lblSectTotal);
-            this.panelSubmit.Controls.Add(this.templateSelectBox);
-            this.panelSubmit.Controls.Add(this.lblTempTotalVal);
-            this.panelSubmit.Controls.Add(this.backBtn);
-            this.panelSubmit.Controls.Add(this.lblTempTotal);
-            this.panelSubmit.Controls.Add(this.lblDetails);
-            this.panelSubmit.Location = new System.Drawing.Point(747, 153);
-            this.panelSubmit.Name = "panelSubmit";
-            this.panelSubmit.Size = new System.Drawing.Size(211, 387);
-            this.panelSubmit.TabIndex = 49;
+            this.panelDetails.BackColor = System.Drawing.Color.White;
+            this.panelDetails.Controls.Add(this.lblCodeTotalVal);
+            this.panelDetails.Controls.Add(this.lblCodeTotal);
+            this.panelDetails.Controls.Add(this.selectTagLbl);
+            this.panelDetails.Controls.Add(this.tagSelectBox);
+            this.panelDetails.Controls.Add(this.templateSelectLbl);
+            this.panelDetails.Controls.Add(this.lblSectTotalVal);
+            this.panelDetails.Controls.Add(this.lblSectTotal);
+            this.panelDetails.Controls.Add(this.templateSelectBox);
+            this.panelDetails.Controls.Add(this.lblTempTotalVal);
+            this.panelDetails.Controls.Add(this.backBtn);
+            this.panelDetails.Controls.Add(this.lblTempTotal);
+            this.panelDetails.Controls.Add(this.lblDetails);
+            this.panelDetails.Location = new System.Drawing.Point(747, 153);
+            this.panelDetails.Name = "panelDetails";
+            this.panelDetails.Size = new System.Drawing.Size(211, 387);
+            this.panelDetails.TabIndex = 49;
             // 
             // lblTempTotalVal
             // 
@@ -564,7 +566,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(982, 563);
-            this.Controls.Add(this.panelSubmit);
+            this.Controls.Add(this.panelDetails);
             this.Controls.Add(this.panelActions);
             this.Controls.Add(this.panelApplicants);
             this.Controls.Add(this.panelManagement);
@@ -573,6 +575,7 @@
             this.MaximumSize = new System.Drawing.Size(998, 602);
             this.MinimumSize = new System.Drawing.Size(998, 602);
             this.Name = "codeViewForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
             ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).EndInit();
@@ -588,8 +591,8 @@
             this.panelApplicants.PerformLayout();
             this.panelActions.ResumeLayout(false);
             this.panelActions.PerformLayout();
-            this.panelSubmit.ResumeLayout(false);
-            this.panelSubmit.PerformLayout();
+            this.panelDetails.ResumeLayout(false);
+            this.panelDetails.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -626,7 +629,7 @@
         private System.Windows.Forms.Label lblCodeList;
         private System.Windows.Forms.Panel panelActions;
         private System.Windows.Forms.Label lblEditTemplates;
-        private System.Windows.Forms.Panel panelSubmit;
+        private System.Windows.Forms.Panel panelDetails;
         private System.Windows.Forms.Label lblTempTotalVal;
         private System.Windows.Forms.Label lblTempTotal;
         private System.Windows.Forms.Label lblDetails;
