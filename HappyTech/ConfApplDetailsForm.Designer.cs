@@ -49,7 +49,12 @@
             this.panelApplicants = new System.Windows.Forms.Panel();
             this.lblApplicants = new System.Windows.Forms.Label();
             this.panelActions = new System.Windows.Forms.Panel();
-            this.imgLogoMed = new System.Windows.Forms.PictureBox();
+            this.panelSubmit = new System.Windows.Forms.Panel();
+            this.lblAppTotalVal = new System.Windows.Forms.Label();
+            this.lblAppTotal = new System.Windows.Forms.Label();
+            this.lblRecruiterVal = new System.Windows.Forms.Label();
+            this.lblRecruiter = new System.Windows.Forms.Label();
+            this.lblBeginFeedback = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApplicant)).BeginInit();
             this.panelManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).BeginInit();
@@ -58,14 +63,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelApplicants.SuspendLayout();
             this.panelActions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogoMed)).BeginInit();
+            this.panelSubmit.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbSuccess
             // 
             this.lbSuccess.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.lbSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbSuccess.Location = new System.Drawing.Point(22, 118);
+            this.lbSuccess.Location = new System.Drawing.Point(18, 65);
             this.lbSuccess.Name = "lbSuccess";
             this.lbSuccess.Size = new System.Drawing.Size(170, 17);
             this.lbSuccess.TabIndex = 0;
@@ -75,11 +80,11 @@
             // 
             this.lbApplicantNo.AutoSize = true;
             this.lbApplicantNo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lbApplicantNo.Location = new System.Drawing.Point(21, 210);
+            this.lbApplicantNo.Location = new System.Drawing.Point(17, 14);
             this.lbApplicantNo.Name = "lbApplicantNo";
-            this.lbApplicantNo.Size = new System.Drawing.Size(160, 24);
+            this.lbApplicantNo.Size = new System.Drawing.Size(167, 24);
             this.lbApplicantNo.TabIndex = 1;
-            this.lbApplicantNo.Text = "Applicants:    #";
+            this.lbApplicantNo.Text = "Add applicants.";
             // 
             // btNewApp
             // 
@@ -88,9 +93,11 @@
             this.btNewApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btNewApp.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.btNewApp.ForeColor = System.Drawing.Color.White;
-            this.btNewApp.Location = new System.Drawing.Point(22, 250);
+            this.btNewApp.Image = global::HappyTech.Properties.Resources.happytech_add1;
+            this.btNewApp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btNewApp.Location = new System.Drawing.Point(18, 115);
             this.btNewApp.Name = "btNewApp";
-            this.btNewApp.Size = new System.Drawing.Size(170, 26);
+            this.btNewApp.Size = new System.Drawing.Size(174, 26);
             this.btNewApp.TabIndex = 2;
             this.btNewApp.Text = "Add";
             this.btNewApp.UseVisualStyleBackColor = false;
@@ -98,14 +105,14 @@
             // 
             // btStartFeed
             // 
-            this.btStartFeed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.btStartFeed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
             this.btStartFeed.FlatAppearance.BorderSize = 0;
             this.btStartFeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btStartFeed.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.btStartFeed.ForeColor = System.Drawing.Color.White;
-            this.btStartFeed.Location = new System.Drawing.Point(22, 460);
+            this.btStartFeed.Location = new System.Drawing.Point(18, 293);
             this.btStartFeed.Name = "btStartFeed";
-            this.btStartFeed.Size = new System.Drawing.Size(171, 26);
+            this.btStartFeed.Size = new System.Drawing.Size(174, 26);
             this.btStartFeed.TabIndex = 3;
             this.btStartFeed.Text = "Begin";
             this.btStartFeed.UseVisualStyleBackColor = false;
@@ -173,9 +180,9 @@
             this.btCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.btCancel.ForeColor = System.Drawing.Color.White;
-            this.btCancel.Location = new System.Drawing.Point(22, 428);
+            this.btCancel.Location = new System.Drawing.Point(18, 252);
             this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(170, 26);
+            this.btCancel.Size = new System.Drawing.Size(174, 26);
             this.btCancel.TabIndex = 6;
             this.btCancel.Text = "Abort";
             this.btCancel.UseVisualStyleBackColor = false;
@@ -282,32 +289,90 @@
             this.lblApplicants.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblApplicants.Location = new System.Drawing.Point(22, 14);
             this.lblApplicants.Name = "lblApplicants";
-            this.lblApplicants.Size = new System.Drawing.Size(123, 24);
+            this.lblApplicants.Size = new System.Drawing.Size(154, 24);
             this.lblApplicants.TabIndex = 6;
-            this.lblApplicants.Text = "Applicants.";
+            this.lblApplicants.Text = "Applicant List.";
             // 
             // panelActions
             // 
             this.panelActions.BackColor = System.Drawing.Color.White;
             this.panelActions.Controls.Add(this.lbApplicantNo);
-            this.panelActions.Controls.Add(this.btStartFeed);
             this.panelActions.Controls.Add(this.btNewApp);
-            this.panelActions.Controls.Add(this.btCancel);
             this.panelActions.Controls.Add(this.lbSuccess);
-            this.panelActions.Controls.Add(this.imgLogoMed);
-            this.panelActions.Location = new System.Drawing.Point(753, 25);
+            this.panelActions.Location = new System.Drawing.Point(750, 25);
             this.panelActions.Name = "panelActions";
-            this.panelActions.Size = new System.Drawing.Size(208, 515);
+            this.panelActions.Size = new System.Drawing.Size(211, 159);
             this.panelActions.TabIndex = 15;
             // 
-            // imgLogoMed
+            // panelSubmit
             // 
-            this.imgLogoMed.Image = global::HappyTech.Properties.Resources.happytech_logo_med;
-            this.imgLogoMed.Location = new System.Drawing.Point(60, 14);
-            this.imgLogoMed.Name = "imgLogoMed";
-            this.imgLogoMed.Size = new System.Drawing.Size(90, 75);
-            this.imgLogoMed.TabIndex = 43;
-            this.imgLogoMed.TabStop = false;
+            this.panelSubmit.BackColor = System.Drawing.Color.White;
+            this.panelSubmit.Controls.Add(this.lblAppTotalVal);
+            this.panelSubmit.Controls.Add(this.btStartFeed);
+            this.panelSubmit.Controls.Add(this.btCancel);
+            this.panelSubmit.Controls.Add(this.lblAppTotal);
+            this.panelSubmit.Controls.Add(this.lblRecruiterVal);
+            this.panelSubmit.Controls.Add(this.lblRecruiter);
+            this.panelSubmit.Controls.Add(this.lblBeginFeedback);
+            this.panelSubmit.Location = new System.Drawing.Point(750, 200);
+            this.panelSubmit.Name = "panelSubmit";
+            this.panelSubmit.Size = new System.Drawing.Size(211, 340);
+            this.panelSubmit.TabIndex = 48;
+            // 
+            // lblAppTotalVal
+            // 
+            this.lblAppTotalVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblAppTotalVal.ForeColor = System.Drawing.Color.Black;
+            this.lblAppTotalVal.Location = new System.Drawing.Point(15, 144);
+            this.lblAppTotalVal.Name = "lblAppTotalVal";
+            this.lblAppTotalVal.Size = new System.Drawing.Size(177, 14);
+            this.lblAppTotalVal.TabIndex = 51;
+            this.lblAppTotalVal.Text = "[applicant_total]";
+            this.lblAppTotalVal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAppTotal
+            // 
+            this.lblAppTotal.AutoSize = true;
+            this.lblAppTotal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblAppTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblAppTotal.Location = new System.Drawing.Point(15, 120);
+            this.lblAppTotal.Name = "lblAppTotal";
+            this.lblAppTotal.Size = new System.Drawing.Size(68, 14);
+            this.lblAppTotal.TabIndex = 50;
+            this.lblAppTotal.Text = "Applicants:";
+            // 
+            // lblRecruiterVal
+            // 
+            this.lblRecruiterVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblRecruiterVal.ForeColor = System.Drawing.Color.Black;
+            this.lblRecruiterVal.Location = new System.Drawing.Point(15, 84);
+            this.lblRecruiterVal.Name = "lblRecruiterVal";
+            this.lblRecruiterVal.Size = new System.Drawing.Size(177, 14);
+            this.lblRecruiterVal.TabIndex = 49;
+            this.lblRecruiterVal.Text = "[recruiter_name]";
+            this.lblRecruiterVal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblRecruiter
+            // 
+            this.lblRecruiter.AutoSize = true;
+            this.lblRecruiter.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblRecruiter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblRecruiter.Location = new System.Drawing.Point(15, 60);
+            this.lblRecruiter.Name = "lblRecruiter";
+            this.lblRecruiter.Size = new System.Drawing.Size(61, 14);
+            this.lblRecruiter.TabIndex = 48;
+            this.lblRecruiter.Text = "Recruiter:";
+            // 
+            // lblBeginFeedback
+            // 
+            this.lblBeginFeedback.AutoSize = true;
+            this.lblBeginFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblBeginFeedback.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblBeginFeedback.Location = new System.Drawing.Point(17, 14);
+            this.lblBeginFeedback.Name = "lblBeginFeedback";
+            this.lblBeginFeedback.Size = new System.Drawing.Size(173, 24);
+            this.lblBeginFeedback.TabIndex = 6;
+            this.lblBeginFeedback.Text = "Begin feedback.";
             // 
             // ConfApplDetailsForm
             // 
@@ -316,6 +381,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(982, 563);
+            this.Controls.Add(this.panelSubmit);
             this.Controls.Add(this.panelActions);
             this.Controls.Add(this.panelApplicants);
             this.Controls.Add(this.panelManagement);
@@ -337,7 +403,8 @@
             this.panelApplicants.PerformLayout();
             this.panelActions.ResumeLayout(false);
             this.panelActions.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogoMed)).EndInit();
+            this.panelSubmit.ResumeLayout(false);
+            this.panelSubmit.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -361,6 +428,11 @@
         private System.Windows.Forms.Panel panelApplicants;
         private System.Windows.Forms.Label lblApplicants;
         private System.Windows.Forms.Panel panelActions;
-        private System.Windows.Forms.PictureBox imgLogoMed;
+        private System.Windows.Forms.Panel panelSubmit;
+        private System.Windows.Forms.Label lblAppTotalVal;
+        private System.Windows.Forms.Label lblAppTotal;
+        private System.Windows.Forms.Label lblRecruiterVal;
+        private System.Windows.Forms.Label lblRecruiter;
+        private System.Windows.Forms.Label lblBeginFeedback;
     }
 }

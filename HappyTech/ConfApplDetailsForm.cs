@@ -31,9 +31,6 @@ namespace HappyTech
                 lbSuccess.Visible = false;
             }
 
-            // displays how many applicants have been added so far
-            lbApplicantNo.Text = "Applicants:    " + Applicant.applicants.Count.ToString();
-
             // Load the Applicants added into the Database
             DataSet ds = Connection.GetDbConn().getDataSet(Constants.SelectApplicant());
             dgvApplicant.DataSource = ds.Tables[0]; //shows first table
@@ -41,7 +38,11 @@ namespace HappyTech
             {
                 dgvApplicant.Columns[i].Width = 181;
             }
-            
+
+            // displays how many applicants have been added so far
+            lblRecruiterVal.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
+            lblAppTotalVal.Text = Applicant.applicants.Count.ToString();
+
             //DataGridViewColumn column = dgvApplicant.Columns[0];
             //column.Width = 60;
 

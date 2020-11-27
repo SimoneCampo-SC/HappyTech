@@ -34,34 +34,38 @@
             this.backBtn = new System.Windows.Forms.Button();
             this.panelManagement = new System.Windows.Forms.Panel();
             this.lblStage3 = new System.Windows.Forms.Label();
-            this.lblStage2 = new System.Windows.Forms.Label();
-            this.lblStage1 = new System.Windows.Forms.Label();
-            this.panelPreviewList = new System.Windows.Forms.Panel();
-            this.lblPreview = new System.Windows.Forms.Label();
-            this.panelActions = new System.Windows.Forms.Panel();
-            this.sendBtn = new System.Windows.Forms.Button();
-            this.lblSuccess = new System.Windows.Forms.Label();
-            this.imgLogoMed = new System.Windows.Forms.PictureBox();
-            this.imgSuccess = new System.Windows.Forms.PictureBox();
             this.imgStage3 = new System.Windows.Forms.PictureBox();
+            this.lblStage2 = new System.Windows.Forms.Label();
             this.imgStage2 = new System.Windows.Forms.PictureBox();
+            this.lblStage1 = new System.Windows.Forms.Label();
             this.imgStage1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnDash = new System.Windows.Forms.Button();
+            this.panelPreviewList = new System.Windows.Forms.Panel();
+            this.lblFeedbackList = new System.Windows.Forms.Label();
+            this.lblPreview = new System.Windows.Forms.Label();
+            this.panelPreviewAction = new System.Windows.Forms.Panel();
             this.lbError = new System.Windows.Forms.Label();
+            this.btnDash = new System.Windows.Forms.Button();
+            this.sendBtn = new System.Windows.Forms.Button();
+            this.panelSubmit = new System.Windows.Forms.Panel();
+            this.lblAppTotalVal = new System.Windows.Forms.Label();
+            this.lblAppTotal = new System.Windows.Forms.Label();
+            this.lblRecruiterVal = new System.Windows.Forms.Label();
+            this.lblRecruiter = new System.Windows.Forms.Label();
+            this.lblSubmit = new System.Windows.Forms.Label();
             this.panelManagement.SuspendLayout();
-            this.panelPreviewList.SuspendLayout();
-            this.panelActions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogoMed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSuccess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelPreviewList.SuspendLayout();
+            this.panelPreviewAction.SuspendLayout();
+            this.panelSubmit.SuspendLayout();
             this.SuspendLayout();
             // 
             // checklistAppPreview
             // 
+            this.checklistAppPreview.CheckOnClick = true;
             this.checklistAppPreview.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checklistAppPreview.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.checklistAppPreview.FormattingEnabled = true;
@@ -93,7 +97,7 @@
             this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.backBtn.ForeColor = System.Drawing.Color.White;
-            this.backBtn.Location = new System.Drawing.Point(21, 418);
+            this.backBtn.Location = new System.Drawing.Point(18, 252);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(171, 26);
             this.backBtn.TabIndex = 2;
@@ -127,6 +131,15 @@
             this.lblStage3.TabIndex = 0;
             this.lblStage3.Text = "Preview";
             // 
+            // imgStage3
+            // 
+            this.imgStage3.Image = global::HappyTech.Properties.Resources.happytech_3;
+            this.imgStage3.Location = new System.Drawing.Point(42, 347);
+            this.imgStage3.Name = "imgStage3";
+            this.imgStage3.Size = new System.Drawing.Size(16, 16);
+            this.imgStage3.TabIndex = 42;
+            this.imgStage3.TabStop = false;
+            // 
             // lblStage2
             // 
             this.lblStage2.AutoSize = true;
@@ -138,6 +151,15 @@
             this.lblStage2.TabIndex = 0;
             this.lblStage2.Text = "Feedback";
             // 
+            // imgStage2
+            // 
+            this.imgStage2.Image = global::HappyTech.Properties.Resources.happytech_tick;
+            this.imgStage2.Location = new System.Drawing.Point(42, 235);
+            this.imgStage2.Name = "imgStage2";
+            this.imgStage2.Size = new System.Drawing.Size(16, 16);
+            this.imgStage2.TabIndex = 40;
+            this.imgStage2.TabStop = false;
+            // 
             // lblStage1
             // 
             this.lblStage1.AutoSize = true;
@@ -148,109 +170,6 @@
             this.lblStage1.Size = new System.Drawing.Size(65, 14);
             this.lblStage1.TabIndex = 0;
             this.lblStage1.Text = "Applicants";
-            // 
-            // panelPreviewList
-            // 
-            this.panelPreviewList.BackColor = System.Drawing.Color.White;
-            this.panelPreviewList.Controls.Add(this.lblPreview);
-            this.panelPreviewList.Controls.Add(this.checklistAppPreview);
-            this.panelPreviewList.Location = new System.Drawing.Point(123, 25);
-            this.panelPreviewList.Name = "panelPreviewList";
-            this.panelPreviewList.Size = new System.Drawing.Size(601, 515);
-            this.panelPreviewList.TabIndex = 13;
-            // 
-            // lblPreview
-            // 
-            this.lblPreview.AutoSize = true;
-            this.lblPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPreview.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblPreview.Location = new System.Drawing.Point(22, 14);
-            this.lblPreview.Name = "lblPreview";
-            this.lblPreview.Size = new System.Drawing.Size(94, 24);
-            this.lblPreview.TabIndex = 6;
-            this.lblPreview.Text = "Preview.";
-            // 
-            // panelActions
-            // 
-            this.panelActions.BackColor = System.Drawing.Color.White;
-            this.panelActions.Controls.Add(this.lbError);
-            this.panelActions.Controls.Add(this.btnDash);
-            this.panelActions.Controls.Add(this.imgLogoMed);
-            this.panelActions.Controls.Add(this.lblSuccess);
-            this.panelActions.Controls.Add(this.imgSuccess);
-            this.panelActions.Controls.Add(this.previewBtn);
-            this.panelActions.Controls.Add(this.backBtn);
-            this.panelActions.Controls.Add(this.sendBtn);
-            this.panelActions.Location = new System.Drawing.Point(749, 25);
-            this.panelActions.Name = "panelActions";
-            this.panelActions.Size = new System.Drawing.Size(208, 515);
-            this.panelActions.TabIndex = 14;
-            // 
-            // sendBtn
-            // 
-            this.sendBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
-            this.sendBtn.FlatAppearance.BorderSize = 0;
-            this.sendBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sendBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.sendBtn.ForeColor = System.Drawing.Color.White;
-            this.sendBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.sendBtn.Location = new System.Drawing.Point(21, 460);
-            this.sendBtn.Name = "sendBtn";
-            this.sendBtn.Size = new System.Drawing.Size(171, 26);
-            this.sendBtn.TabIndex = 3;
-            this.sendBtn.Text = "Send All";
-            this.sendBtn.UseVisualStyleBackColor = false;
-            this.sendBtn.Click += new System.EventHandler(this.sendBtn_Click);
-            // 
-            // lblSuccess
-            // 
-            this.lblSuccess.AutoSize = true;
-            this.lblSuccess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblSuccess.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblSuccess.ForeColor = System.Drawing.Color.Black;
-            this.lblSuccess.Location = new System.Drawing.Point(53, 276);
-            this.lblSuccess.Name = "lblSuccess";
-            this.lblSuccess.Size = new System.Drawing.Size(104, 24);
-            this.lblSuccess.TabIndex = 44;
-            this.lblSuccess.Text = "Success!";
-            this.lblSuccess.Visible = false;
-            // 
-            // imgLogoMed
-            // 
-            this.imgLogoMed.Image = global::HappyTech.Properties.Resources.happytech_logo_med;
-            this.imgLogoMed.Location = new System.Drawing.Point(60, 14);
-            this.imgLogoMed.Name = "imgLogoMed";
-            this.imgLogoMed.Size = new System.Drawing.Size(90, 75);
-            this.imgLogoMed.TabIndex = 43;
-            this.imgLogoMed.TabStop = false;
-            // 
-            // imgSuccess
-            // 
-            this.imgSuccess.Image = global::HappyTech.Properties.Resources.happytech_filled;
-            this.imgSuccess.Location = new System.Drawing.Point(95, 257);
-            this.imgSuccess.Name = "imgSuccess";
-            this.imgSuccess.Size = new System.Drawing.Size(16, 16);
-            this.imgSuccess.TabIndex = 43;
-            this.imgSuccess.TabStop = false;
-            this.imgSuccess.Visible = false;
-            // 
-            // imgStage3
-            // 
-            this.imgStage3.Image = global::HappyTech.Properties.Resources.happytech_3;
-            this.imgStage3.Location = new System.Drawing.Point(42, 347);
-            this.imgStage3.Name = "imgStage3";
-            this.imgStage3.Size = new System.Drawing.Size(16, 16);
-            this.imgStage3.TabIndex = 42;
-            this.imgStage3.TabStop = false;
-            // 
-            // imgStage2
-            // 
-            this.imgStage2.Image = global::HappyTech.Properties.Resources.happytech_tick;
-            this.imgStage2.Location = new System.Drawing.Point(42, 235);
-            this.imgStage2.Name = "imgStage2";
-            this.imgStage2.Size = new System.Drawing.Size(16, 16);
-            this.imgStage2.TabIndex = 40;
-            this.imgStage2.TabStop = false;
             // 
             // imgStage1
             // 
@@ -270,6 +189,62 @@
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
             // 
+            // panelPreviewList
+            // 
+            this.panelPreviewList.BackColor = System.Drawing.Color.White;
+            this.panelPreviewList.Controls.Add(this.lblFeedbackList);
+            this.panelPreviewList.Controls.Add(this.checklistAppPreview);
+            this.panelPreviewList.Location = new System.Drawing.Point(123, 25);
+            this.panelPreviewList.Name = "panelPreviewList";
+            this.panelPreviewList.Size = new System.Drawing.Size(601, 515);
+            this.panelPreviewList.TabIndex = 13;
+            // 
+            // lblFeedbackList
+            // 
+            this.lblFeedbackList.AutoSize = true;
+            this.lblFeedbackList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblFeedbackList.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblFeedbackList.Location = new System.Drawing.Point(22, 14);
+            this.lblFeedbackList.Name = "lblFeedbackList";
+            this.lblFeedbackList.Size = new System.Drawing.Size(158, 24);
+            this.lblFeedbackList.TabIndex = 47;
+            this.lblFeedbackList.Text = "Feedback List.";
+            // 
+            // lblPreview
+            // 
+            this.lblPreview.AutoSize = true;
+            this.lblPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblPreview.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblPreview.Location = new System.Drawing.Point(17, 14);
+            this.lblPreview.Name = "lblPreview";
+            this.lblPreview.Size = new System.Drawing.Size(94, 24);
+            this.lblPreview.TabIndex = 6;
+            this.lblPreview.Text = "Preview.";
+            // 
+            // panelPreviewAction
+            // 
+            this.panelPreviewAction.BackColor = System.Drawing.Color.White;
+            this.panelPreviewAction.Controls.Add(this.lblPreview);
+            this.panelPreviewAction.Controls.Add(this.lbError);
+            this.panelPreviewAction.Controls.Add(this.previewBtn);
+            this.panelPreviewAction.Location = new System.Drawing.Point(749, 25);
+            this.panelPreviewAction.Name = "panelPreviewAction";
+            this.panelPreviewAction.Size = new System.Drawing.Size(208, 154);
+            this.panelPreviewAction.TabIndex = 14;
+            // 
+            // lbError
+            // 
+            this.lbError.AutoSize = true;
+            this.lbError.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lbError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.lbError.Location = new System.Drawing.Point(18, 70);
+            this.lbError.Name = "lbError";
+            this.lbError.Size = new System.Drawing.Size(171, 14);
+            this.lbError.TabIndex = 46;
+            this.lbError.Text = "Select an applicant to preview";
+            this.lbError.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lbError.Visible = false;
+            // 
             // btnDash
             // 
             this.btnDash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
@@ -278,7 +253,7 @@
             this.btnDash.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnDash.ForeColor = System.Drawing.Color.White;
             this.btnDash.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDash.Location = new System.Drawing.Point(21, 460);
+            this.btnDash.Location = new System.Drawing.Point(18, 293);
             this.btnDash.Name = "btnDash";
             this.btnDash.Size = new System.Drawing.Size(171, 26);
             this.btnDash.TabIndex = 45;
@@ -287,18 +262,92 @@
             this.btnDash.Visible = false;
             this.btnDash.Click += new System.EventHandler(this.btnDash_Click);
             // 
-            // lbError
+            // sendBtn
             // 
-            this.lbError.AutoSize = true;
-            this.lbError.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lbError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.lbError.Location = new System.Drawing.Point(21, 150);
-            this.lbError.Name = "lbError";
-            this.lbError.Size = new System.Drawing.Size(171, 14);
-            this.lbError.TabIndex = 46;
-            this.lbError.Text = "Select an applicant to preview";
-            this.lbError.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbError.Visible = false;
+            this.sendBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
+            this.sendBtn.FlatAppearance.BorderSize = 0;
+            this.sendBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sendBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.sendBtn.ForeColor = System.Drawing.Color.White;
+            this.sendBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sendBtn.Location = new System.Drawing.Point(18, 293);
+            this.sendBtn.Name = "sendBtn";
+            this.sendBtn.Size = new System.Drawing.Size(171, 26);
+            this.sendBtn.TabIndex = 3;
+            this.sendBtn.Text = "Send All";
+            this.sendBtn.UseVisualStyleBackColor = false;
+            this.sendBtn.Click += new System.EventHandler(this.sendBtn_Click);
+            // 
+            // panelSubmit
+            // 
+            this.panelSubmit.BackColor = System.Drawing.Color.White;
+            this.panelSubmit.Controls.Add(this.lblAppTotalVal);
+            this.panelSubmit.Controls.Add(this.lblAppTotal);
+            this.panelSubmit.Controls.Add(this.lblRecruiterVal);
+            this.panelSubmit.Controls.Add(this.lblRecruiter);
+            this.panelSubmit.Controls.Add(this.lblSubmit);
+            this.panelSubmit.Controls.Add(this.btnDash);
+            this.panelSubmit.Controls.Add(this.backBtn);
+            this.panelSubmit.Controls.Add(this.sendBtn);
+            this.panelSubmit.Location = new System.Drawing.Point(749, 200);
+            this.panelSubmit.Name = "panelSubmit";
+            this.panelSubmit.Size = new System.Drawing.Size(208, 340);
+            this.panelSubmit.TabIndex = 47;
+            // 
+            // lblAppTotalVal
+            // 
+            this.lblAppTotalVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblAppTotalVal.ForeColor = System.Drawing.Color.Black;
+            this.lblAppTotalVal.Location = new System.Drawing.Point(15, 144);
+            this.lblAppTotalVal.Name = "lblAppTotalVal";
+            this.lblAppTotalVal.Size = new System.Drawing.Size(177, 14);
+            this.lblAppTotalVal.TabIndex = 51;
+            this.lblAppTotalVal.Text = "[applicant_total]";
+            this.lblAppTotalVal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAppTotal
+            // 
+            this.lblAppTotal.AutoSize = true;
+            this.lblAppTotal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblAppTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblAppTotal.Location = new System.Drawing.Point(15, 120);
+            this.lblAppTotal.Name = "lblAppTotal";
+            this.lblAppTotal.Size = new System.Drawing.Size(68, 14);
+            this.lblAppTotal.TabIndex = 50;
+            this.lblAppTotal.Text = "Applicants:";
+            // 
+            // lblRecruiterVal
+            // 
+            this.lblRecruiterVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblRecruiterVal.ForeColor = System.Drawing.Color.Black;
+            this.lblRecruiterVal.Location = new System.Drawing.Point(15, 84);
+            this.lblRecruiterVal.Name = "lblRecruiterVal";
+            this.lblRecruiterVal.Size = new System.Drawing.Size(177, 14);
+            this.lblRecruiterVal.TabIndex = 49;
+            this.lblRecruiterVal.Text = "[recruiter_name]";
+            this.lblRecruiterVal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblRecruiter
+            // 
+            this.lblRecruiter.AutoSize = true;
+            this.lblRecruiter.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblRecruiter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblRecruiter.Location = new System.Drawing.Point(15, 60);
+            this.lblRecruiter.Name = "lblRecruiter";
+            this.lblRecruiter.Size = new System.Drawing.Size(61, 14);
+            this.lblRecruiter.TabIndex = 48;
+            this.lblRecruiter.Text = "Recruiter:";
+            // 
+            // lblSubmit
+            // 
+            this.lblSubmit.AutoSize = true;
+            this.lblSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSubmit.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblSubmit.Location = new System.Drawing.Point(17, 14);
+            this.lblSubmit.Name = "lblSubmit";
+            this.lblSubmit.Size = new System.Drawing.Size(87, 24);
+            this.lblSubmit.TabIndex = 6;
+            this.lblSubmit.Text = "Submit.";
             // 
             // previewForm
             // 
@@ -306,7 +355,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(982, 563);
-            this.Controls.Add(this.panelActions);
+            this.Controls.Add(this.panelSubmit);
+            this.Controls.Add(this.panelPreviewAction);
             this.Controls.Add(this.panelPreviewList);
             this.Controls.Add(this.panelManagement);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -316,19 +366,18 @@
             this.Name = "previewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
-            this.Load += new System.EventHandler(this.previewForm_Load);
             this.panelManagement.ResumeLayout(false);
             this.panelManagement.PerformLayout();
-            this.panelPreviewList.ResumeLayout(false);
-            this.panelPreviewList.PerformLayout();
-            this.panelActions.ResumeLayout(false);
-            this.panelActions.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogoMed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSuccess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelPreviewList.ResumeLayout(false);
+            this.panelPreviewList.PerformLayout();
+            this.panelPreviewAction.ResumeLayout(false);
+            this.panelPreviewAction.PerformLayout();
+            this.panelSubmit.ResumeLayout(false);
+            this.panelSubmit.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -349,11 +398,15 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelPreviewList;
         private System.Windows.Forms.Label lblPreview;
-        private System.Windows.Forms.Panel panelActions;
-        private System.Windows.Forms.Label lblSuccess;
-        private System.Windows.Forms.PictureBox imgSuccess;
-        private System.Windows.Forms.PictureBox imgLogoMed;
+        private System.Windows.Forms.Panel panelPreviewAction;
         private System.Windows.Forms.Button btnDash;
         private System.Windows.Forms.Label lbError;
+        private System.Windows.Forms.Label lblFeedbackList;
+        private System.Windows.Forms.Panel panelSubmit;
+        private System.Windows.Forms.Label lblSubmit;
+        private System.Windows.Forms.Label lblRecruiterVal;
+        private System.Windows.Forms.Label lblRecruiter;
+        private System.Windows.Forms.Label lblAppTotalVal;
+        private System.Windows.Forms.Label lblAppTotal;
     }
 }

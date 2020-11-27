@@ -20,20 +20,16 @@ namespace HappyTech
         public previewForm()
         {
             InitializeComponent();
-        }
 
-        private void previewForm_Load(object sender, EventArgs e)
-        {
-            //Code.codeList.Clear();
-            //Code.fillCodeList(); //fills a list inside code class with items from DB
-            checklistAppPreview.CheckOnClick = true;
             cancelStage = "notClicked";
 
             for (int i = 0; i < Applicant.applicants.Count(); i++)
             {
-                //Code.codeList[i].GetSectionName().Trim()}:
                 checklistAppPreview.Items.Add($"{Template.templatesForApplicants[i].TempType}  {Applicant.applicants[i].AJob}  {Applicant.applicants[i].AfullName}  {Applicant.applicants[i].Aemail}");
             }
+
+            lblRecruiterVal.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
+            lblAppTotalVal.Text = Applicant.applicants.Count.ToString();
         }
 
         private void checklistAppPreview_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -92,19 +88,30 @@ namespace HappyTech
             sendBtn.Image = Properties.Resources.happytech_submit;
             sendBtn.Text = "Sending...";
 
-            backBtn.Hide();
-            previewBtn.Hide();
-            sendBtn.Hide();
-            lbError.Hide();
-            imgSuccess.Show();
-            lblSuccess.Show();
-            btnDash.Show();
-            imgStage3.Image = Properties.Resources.happytech_tick;
-
             // Turn rtf files into pdf files here
             // code here
 
             clearTempFiles();
+
+            backBtn.Hide();
+            previewBtn.Hide();
+            sendBtn.Hide();
+            lbError.Hide();
+
+            btnDash.BackColor = Color.FromArgb(19,174,71);
+            btnDash.ForeColor = Color.White;
+            btnDash.Show();
+
+            lblSubmit.ForeColor = Color.White;
+            lblSubmit.Text = "Success.";
+
+            panelSubmit.BackColor = Color.FromArgb(19, 174, 71);
+            lblRecruiter.ForeColor = Color.White;
+            lblRecruiterVal.ForeColor = Color.White;
+            lblAppTotal.ForeColor = Color.White;
+            lblAppTotalVal.ForeColor = Color.White;
+
+            imgStage3.Image = Properties.Resources.happytech_tick;
 
         }
 

@@ -659,19 +659,18 @@
             // 
             // btConfirm
             // 
-            this.btConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.btConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
             this.btConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btConfirm.FlatAppearance.BorderSize = 0;
             this.btConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btConfirm.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.btConfirm.ForeColor = System.Drawing.Color.White;
-            this.btConfirm.Image = global::HappyTech.Properties.Resources.happytech_add1;
             this.btConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btConfirm.Location = new System.Drawing.Point(26, 410);
             this.btConfirm.Name = "btConfirm";
             this.btConfirm.Size = new System.Drawing.Size(206, 26);
             this.btConfirm.TabIndex = 4;
-            this.btConfirm.Text = "Add";
+            this.btConfirm.Text = "Save";
             this.btConfirm.UseVisualStyleBackColor = false;
             this.btConfirm.Click += new System.EventHandler(this.button1_Click);
             // 
