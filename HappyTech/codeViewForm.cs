@@ -13,6 +13,8 @@ namespace HappyTech
 {
     public partial class codeViewForm : Form
     {
+        private bool debugVis = false;
+
         public codeViewForm()
         {
             InitializeComponent();
@@ -88,10 +90,18 @@ namespace HappyTech
             }
             catch
             {
-                DataSet ds2 = Connection.GetDbConn().getDataSet($"SELECT name FROM Section");
-                codeDisplay.DataSource = ds2.Tables[0];
+                //DataSet ds2 = Connection.GetDbConn().getDataSet($"SELECT name FROM Section");
+                //codeDisplay.DataSource = ds2.Tables[0];
             }
             //if no section name selected, show all the sections (remove code in catch if you want nothing to be displayed)
+
+            if (codeDisplay.Columns.Count > 0)
+            {
+                codeDisplay.Columns[0].Width = 90;
+                codeDisplay.Columns[1].Width = 457;
+                codeDisplay.Columns[0].HeaderText = "Code";
+                codeDisplay.Columns[1].HeaderText = "Paragraph";
+            }
         }
 
 
@@ -186,6 +196,58 @@ namespace HappyTech
 
             
 
+        }
+
+        private void btnAutofill_Click(object sender, EventArgs e)
+        {
+            // autofill database with some test values
+        }
+
+        private void btnDebug_Click(object sender, EventArgs e)
+        {
+            if (debugVis == false)
+            {
+                debugVis = true;
+                deleteDbBtn.Show();
+                btnAutofill.Show();
+
+            }
+            else if (debugVis == true)
+            {
+                debugVis = false;
+                deleteDbBtn.Hide();
+                btnAutofill.Hide();
+            }
+        }
+
+        private void templateSelectBox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            try
+            {
+                e.DrawBackground();
+                e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 6, e.Bounds.Y + 6, 8, 8);
+                e.Graphics.DrawString(templateSelectBox.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
+                e.DrawFocusRectangle();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void tagSelectBox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            try
+            {
+                e.DrawBackground();
+                e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 6, e.Bounds.Y + 6, 8, 8);
+                e.Graphics.DrawString(tagSelectBox.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
+                e.DrawFocusRectangle();
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         /// <summary>

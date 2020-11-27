@@ -34,18 +34,17 @@ namespace HappyTech
             if (debugVis == false)
             {
                 debugVis = true;
-                dataViewRecruiter.Show();
                 btAutofill.Show();
-                //display table data
-                DataSet ds = Connection.GetDbConn().getDataSet("SELECT * FROM Recruiter");
-                dataViewRecruiter.DataSource = ds.Tables[0]; //shows first table
+                btnUsers.Show();
+                
             }
             else if (debugVis == true)
             {
                 debugVis = false;
                 dataViewRecruiter.Hide();
-                btAutofill.Hide();
                 dataViewRecruiter.DataSource = null;
+                btAutofill.Hide();
+                btnUsers.Hide();
             }
             
         }
@@ -146,6 +145,24 @@ namespace HappyTech
             DataSet dsPass = Connection.GetDbConn().getDataSet("SELECT password FROM Recruiter");
             DataRow dsPassRow = dsPass.Tables[0].Rows[0];
             userPassword.Text = dsPassRow.ItemArray.GetValue(0).ToString();
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            //display table data
+            DataSet ds = Connection.GetDbConn().getDataSet("SELECT * FROM Recruiter");
+            dataViewRecruiter.DataSource = ds.Tables[0]; //shows first table
+            dataViewRecruiter.Columns[0].Width = 30;
+            dataViewRecruiter.Columns[1].Width = 75;
+            dataViewRecruiter.Columns[2].Width = 75;
+            dataViewRecruiter.Columns[3].Width = 158;
+            dataViewRecruiter.Columns[4].Width = 118;
+            dataViewRecruiter.Columns[0].HeaderText = "ID";
+            dataViewRecruiter.Columns[1].HeaderText = "Name";
+            dataViewRecruiter.Columns[2].HeaderText = "Surname";
+            dataViewRecruiter.Columns[3].HeaderText = "Email";
+            dataViewRecruiter.Columns[4].HeaderText = "Password";
+            dataViewRecruiter.Show();
         }
     }
 }

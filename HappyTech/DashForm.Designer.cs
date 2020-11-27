@@ -107,7 +107,7 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lbName.Location = new System.Drawing.Point(220, 25);
+            this.lbName.Location = new System.Drawing.Point(221, 25);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(125, 24);
             this.lbName.TabIndex = 0;

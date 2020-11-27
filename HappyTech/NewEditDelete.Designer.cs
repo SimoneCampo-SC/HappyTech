@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewEditDelete));
             this.inputBox = new System.Windows.Forms.TextBox();
             this.addToExistBox = new System.Windows.Forms.CheckedListBox();
             this.submitNewBtn = new System.Windows.Forms.Button();
@@ -219,7 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.dropDownForEdit);
             this.Controls.Add(this.checkBoxForEdit);
             this.Controls.Add(this.newCodeSection);
@@ -239,8 +240,14 @@
             this.Controls.Add(this.submitNewBtn);
             this.Controls.Add(this.addToExistBox);
             this.Controls.Add(this.inputBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(998, 602);
+            this.MinimumSize = new System.Drawing.Size(998, 602);
             this.Name = "NewEditDelete";
-            this.Text = "NewEditDelete";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "HappyTech";
             this.ResumeLayout(false);
             this.PerformLayout();
 
