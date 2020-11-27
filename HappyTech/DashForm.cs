@@ -82,26 +82,35 @@ namespace HappyTech
             if ((tempTypeBox.SelectedItem != null) && 
                ((tbAName.Text.Length > 0) && (tbAJob.Text.Length > 0) && 
                (tbAEmail.Text.Length > 0)))
-            { 
-                // Insert applicant details into the database
-                Connection.GetDbConn().CreateCommand(Constants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, Recruiter.GetInstance().Id));
-                
-                // Crearte a new instance of the applicant class
-                Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, Recruiter.GetInstance().Id);
-                // Add the instance into the applicant list
-                Applicant.applicants.Add(applicant);
+            {
+                if ((tbAName.Text.Length < 51) && (tbAJob.Text.Length < 51) && (tbAEmail.Text.Length < 51))
+                {
+                    // Insert applicant details into the database
+                    Connection.GetDbConn().CreateCommand(Constants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, Recruiter.GetInstance().Id));
 
-                Template.GenerateTemplateForApplicant(applicant, tempTypeBox.SelectedItem.ToString());
-   
-                this.Hide();
-                // Create a new ConfApplDetails form passing the value false
-                ConfApplDetailsForm f3 = new ConfApplDetailsForm(true);
-                f3.Show();
+                    // Crearte a new instance of the applicant class
+                    Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, Recruiter.GetInstance().Id);
+                    // Add the instance into the applicant list
+                    Applicant.applicants.Add(applicant);
+
+                    Template.GenerateTemplateForApplicant(applicant, tempTypeBox.SelectedItem.ToString());
+
+                    this.Hide();
+                    // Create a new ConfApplDetails form passing the value false
+                    ConfApplDetailsForm f3 = new ConfApplDetailsForm(true);
+                    f3.Show();
+                }
+                else
+                {
+                    lbError.Visible = true;
+                    lbError.Text = "No more than 50 characters";
+                }
             }
             else
-            {
+            { 
                 // Displays the error message
                 lbError.Visible = true;
+                lbError.Text = "Missing required fields";
             }
         }
 
