@@ -35,8 +35,10 @@ namespace HappyTech
 
             /* Displays the applicant selected out of all the applicants
              * position + 1 as the iterator starts from 0 to n-1 */
-            lbApplicants.Text = $"Applicant {position + 1} of {Applicant.applicants.Count}"; 
-            
+            lbApplicants.Text = $"Applicant {position + 1} of {Applicant.applicants.Count}";
+            richTextBox2.Text = "";
+            richTextBox1.Text = "";
+
             // Takes the header of the template in the assigned position in the list
             //lbHeader.Text = Template.templates[position].Header;
             lblRecruiterVal.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
@@ -49,14 +51,18 @@ namespace HappyTech
             {
                 using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + ".rtf"))
                 {
-                    richTextBox2.Text = sr.ReadToEnd();
+
+                        richTextBox2.Text = sr.ReadToEnd();
+                    
                 }
             }
             if (File.Exists(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + "-comments.rtf"))
             {
                 using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + "-comments.rtf"))
                 {
-                    richTextBox1.Text = sr.ReadToEnd();
+
+                        richTextBox1.Text = sr.ReadToEnd();
+
                 }
             }
 
@@ -73,7 +79,8 @@ namespace HappyTech
             InitializeComponent();
             loadListBox();
             lbApplicants.Text = $"You are in PREVIEW mode";
-
+            richTextBox2.Text = "";
+            richTextBox1.Text = "";
             //lbHeader.Text = Recruiter.GetInstance().Name + Recruiter.GetInstance().Surname +
             //    applicantName + appType;
 
@@ -95,12 +102,14 @@ namespace HappyTech
                     //this is supposed to find the saved feedback file and prefill richTextBox2 with the feedback
                     //however, this shows formatting code which is not ideal. formatting does not show if file opened in 
                     //word
-                    richTextBox2.Text = sr.ReadToEnd();
+
+                        richTextBox2.Text = sr.ReadToEnd();
+
                 }
 
                 using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + applicantName + "-comments.rtf"))
                 {
-                    richTextBox1.Text = sr.ReadToEnd();
+                        richTextBox1.Text = sr.ReadToEnd();
                 }
             }
             catch (Exception)
@@ -147,10 +156,10 @@ namespace HappyTech
                 using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + ".rtf"))
                 {
 
-                    if (!(richTextBox2.Text == ""))
-                    {
+                    //if (richTextBox2.Text != "")
+                    //{
                         sw.WriteLine(richTextBox2.Text);
-                    }
+                    //}
 
                 }
 
@@ -158,10 +167,10 @@ namespace HappyTech
                 using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + "-comments.rtf"))
                 {
 
-                    if (!(richTextBox1.Text == ""))
-                    {
+                    //if (richTextBox1.Text != "")
+                    //{
                         sw.WriteLine(richTextBox1.Text);
-                    }
+                    //}
 
                 }
 
@@ -183,17 +192,20 @@ namespace HappyTech
             {
                 using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + previewAppName + ".rtf"))
                 {
-                    sw.WriteLine(richTextBox2.Text);
+                    //if (richTextBox2.Text != "")
+                    //{
+                        sw.WriteLine(richTextBox2.Text);
+                    //}
 
                 }
 
                 using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + previewAppName + "-comments.rtf"))
                 {
 
-                    if (!(richTextBox1.Text == ""))
-                    {
+                    //if (!(richTextBox1.Text == ""))
+                    //{
                         sw.WriteLine(richTextBox1.Text);
-                    }
+                    //}
 
                 }
 

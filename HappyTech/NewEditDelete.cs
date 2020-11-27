@@ -22,11 +22,7 @@ namespace HappyTech
 
             if (type == "code")
             {
-                fillNewCodeTagDrop();
-                fillExistBoxWithSections();
-                fillExistingDropDownWithCodes();
-
-
+                LoadCodeMode();
             }
 
             else if (type == "section")
@@ -106,12 +102,12 @@ namespace HappyTech
         }
         private void fillExistingDropDownWithCodes()
         {
-            dropdownExistingTemplate.Items.Clear();
+            dropdownExistingCode.Items.Clear();
             Code.codeList.Clear();
             Code.fillCodeList();
             for (int i = 0; i < Code.codeList.Count(); i++)
             {
-                dropdownExistingTemplate.Items.Add($"{Code.codeList[i].CodeName}");
+                dropdownExistingCode.Items.Add($"{Code.codeList[i].CodeName}");
             }
         }
 
@@ -119,20 +115,56 @@ namespace HappyTech
         {
            
             //sanitiseInput();
-           if (mode == "code")
+            if (mode == "code")
             {
-                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagIdFromName(newCodeSection.Text));
-                DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
-                var tagId = dRow.ItemArray.GetValue(0);
-                string toUse = txtNewTemplateName.Text.Replace(" ", "");
-                string codeParaToUse = newCodeParaBox.Text;
+                if (txtNewCodeName.Text.Length <= 0)
+                {
+                    lblAddError.Text = "Enter a code name";
+                    lblAddError.Show();
+                }
+                else if (txtNewCodeName.Text.Length > 5)
+                {
+                    lblAddError.Text = "Code name must be 5 characters or less";
+                    lblAddError.Show();
+                }
+                else if (newCodeParaBox.Text.Length <= 0)
+                {
+                    lblAddError.Text = "Enter a code paragraph";
+                    lblAddError.Show();
+                }
+                else if (txtNewCodeName.Text.Contains(" "))
+                {
+                    lblAddError.Text = "Remove spaces from code name";
+                    lblAddError.Show();
+                }
+                else if (newCodeSection.SelectedItem == null)
+                {
+                    lblAddError.Text = "Select a section to add to";
+                    lblAddError.Show();
+                }
+                else if (Constants.checkCode(txtNewCodeName.Text))
+                {
+                    lblAddError.Text = "A code with this name already exists";
+                    lblAddError.Show();
+                }
+                else
+                {
+                    lblAddError.Hide();
+                    DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagIdFromName(newCodeSection.Text));
+                    DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
+                    var tagId = dRow.ItemArray.GetValue(0);
+                    string toUse = txtNewCodeName.Text.Replace(" ", "");
+                    string codeParaToUse = newCodeParaBox.Text;
 
-                Connection.GetDbConn().CreateCommand(Constants.insertNewCode(toUse, codeParaToUse, tagId));
-                
-                txtNewTemplateName.Clear();
-                newCodeParaBox.Text = "";
-                newCodeSection.Text = "";
+                    Connection.GetDbConn().CreateCommand(Constants.insertNewCode(toUse, codeParaToUse, tagId));
 
+                    txtNewCodeName.Clear();
+                    newCodeParaBox.Text = "";
+                    newCodeSection.Text = "";
+
+                    lblAddSuccess.Text = "New code saved";
+                    lblAddSuccess.Show();
+                }
             }
             else if (mode == "section")
             {
@@ -153,6 +185,7 @@ namespace HappyTech
                 }
                 else
                 {
+                    lblAddError.Hide();
                     string sectionName = txtNewSectionName.Text.Replace(" ", "");
                     Sections.InsertSectionWithSelectedTemplates(sectionName, checkboxAddExistTemps);
                     ClearSectionModeFields();
@@ -181,6 +214,7 @@ namespace HappyTech
                 }
                 else
                 {
+                    lblAddError.Hide();
                     string templateName = txtNewTemplateName.Text.Replace(" ", "");
                     Template.CreateTemplateWithSelectedSections(templateName, addToExistBox);
                     ClearTemplateModeFields();
@@ -196,57 +230,37 @@ namespace HappyTech
         {
             txtEditTemplateName.Text = dropdownExistingTemplate.Text.Replace(" ", "");
 
-            if (mode == "code")
-            {
-               dropDownForEdit.Items.Clear();
-                Sections.sectionList.Clear();
-                //by default, loads all the sections into the sectionsListBox
-                Sections.listSection();
-                for (int i = 0; i < Sections.sectionList.Count(); i++)
-                {
-                    //Code.codeList[i].GetSectionName().Trim()}:
-
-                    dropDownForEdit.Items.Add($"{Sections.sectionList[i].name.Replace(" ", "")}");
-                }
-                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeParaFromShort(dropdownExistingTemplate.Text.Replace(" ", "")));
-                DataRow dRow = ds.Tables[0].Rows[0];
-                codeParaEditBox.Text = dRow.ItemArray.GetValue(0).ToString();
-
-            }
-            if (mode == "template") //if we're editing a template, we want to see the sections we can add it to
-            {
-                lblEditSuccess.Hide();
-                lblEditError.Hide();
+            lblEditSuccess.Hide();
+            lblEditError.Hide();
                 
-                //change check list to display templates
-                checkBoxForEdit.Items.Clear(); // clear out old sections
-                Sections.sectionList.Clear();
-                // we will use the selected template name to get the selected template's ID
-                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(txtEditTemplateName.Text.Replace(" ", "")));
-                Console.WriteLine(Constants.getTemplateIdFromName(txtEditTemplateName.Text.Replace(" ", "")));
-                DataRow dRow = ds.Tables[0].Rows[0];
-                var templateId = dRow.ItemArray.GetValue(0);
-                // we need to populate the sectionsListBox 
-                Sections.listSection();
-                for (int i = 0; i < Sections.sectionList.Count(); i++)
+            //change check list to display templates
+            checkBoxForEdit.Items.Clear(); // clear out old sections
+            Sections.sectionList.Clear();
+            // we will use the selected template name to get the selected template's ID
+            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(txtEditTemplateName.Text.Replace(" ", "")));
+            Console.WriteLine(Constants.getTemplateIdFromName(txtEditTemplateName.Text.Replace(" ", "")));
+            DataRow dRow = ds.Tables[0].Rows[0];
+            var templateId = dRow.ItemArray.GetValue(0);
+            // we need to populate the sectionsListBox 
+            Sections.listSection();
+            for (int i = 0; i < Sections.sectionList.Count(); i++)
+            {
+                string sectionNameToAdd = Sections.sectionList[i].name.Replace(" ", "");
+                int sectionId = Sections.sectionList[i].id;
+                checkBoxForEdit.Items.Add($"{sectionNameToAdd}");
+                //if there is a PersonalSection object with this template id and this section id, set checked to true
+                DataSet ds1 = Connection.GetDbConn().getDataSet($"SELECT * FROM PersonalSection WHERE template_ID = '{templateId}' and section_ID = '{sectionId}'");
+                try
                 {
-                    string sectionNameToAdd = Sections.sectionList[i].name.Replace(" ", "");
-                    int sectionId = Sections.sectionList[i].id;
-                    checkBoxForEdit.Items.Add($"{sectionNameToAdd}");
-                    //if there is a PersonalSection object with this template id and this section id, set checked to true
-                    DataSet ds1 = Connection.GetDbConn().getDataSet($"SELECT * FROM PersonalSection WHERE template_ID = '{templateId}' and section_ID = '{sectionId}'");
-                    try
+                    DataRow dRow1 = ds1.Tables[0].Rows[0];
+
+                    if (dRow1 != null)
                     {
-                        DataRow dRow1 = ds1.Tables[0].Rows[0];
-
-                        if (dRow1 != null)
-                        {
-                            checkBoxForEdit.SetItemChecked(i, true);
-                        }
+                        checkBoxForEdit.SetItemChecked(i, true);
                     }
-                    catch { } //crashes if dRow1 IS null, so wrapped it in a try/ catch
-
                 }
+                catch { } //crashes if dRow1 IS null, so wrapped it in a try/ catch
+
             }
         }
 
@@ -256,15 +270,49 @@ namespace HappyTech
         {
             if (mode == "code")
             {
-                //get the id of the old code and update the code short with the new one
-                //update codepara with the new one
-                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeId(dropdownExistingTemplate.Text));
-                DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
-                var codeId = dRow.ItemArray.GetValue(0);
-                Connection.GetDbConn().CreateCommand(Constants.editCode(codeId, txtEditTemplateName.Text.Replace(" ",""), codeParaEditBox.Text));
-                codeParaEditBox.Clear();
-                fillExistingDropDownWithCodes();
-                dropDownForEdit.Items.Clear();
+                if (dropdownExistingCode.SelectedItem == null)
+                {
+                    lblEditError.Text = "Select a code to edit";
+                    lblEditError.Show();
+                }
+                else if (txtEditCodeName.Text.Length <= 0)
+                {
+                    lblEditError.Text = "Enter a code name";
+                    lblEditError.Show();
+                }
+                else if (txtEditCodeName.Text.Length > 5)
+                {
+                    lblEditError.Text = "Code name must be 5 characters or less";
+                    lblEditError.Show();
+                }
+                else if (txtEditCodeName.Text.Contains(" "))
+                {
+                    lblEditError.Text = "Remove spaces from code name";
+                    lblEditError.Show();
+                }
+                else if (codeParaEditBox.Text.Length <= 0)
+                {
+                    lblEditError.Text = "Enter a code paragraph";
+                    lblEditError.Show();
+                }
+                else if (Constants.checkCode(txtEditCodeName.Text))
+                {
+                    if (txtEditCodeName.Text == dropdownExistingCode.SelectedItem.ToString())
+                    {
+                        SaveCodeChange();
+                    }
+                    else
+                    {
+                        lblEditError.Text = "A code with this name already exists";
+                        lblEditError.Show();
+                    }
+                    
+                }
+                else
+                {
+                    SaveCodeChange();
+                }
+                
             }
 
             if (mode == "section")
@@ -291,6 +339,7 @@ namespace HappyTech
                 }
                 else
                 {
+                    lblEditError.Hide();
                     DataSet ds = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(dropdownExistingSection.Text));
                     DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
                     var sectionId = dRow.ItemArray.GetValue(0);
@@ -329,6 +378,7 @@ namespace HappyTech
                 }
                 else
                 {
+                    lblEditError.Hide();
                     DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(dropdownExistingTemplate.Text.Replace(" ", "")));
                     DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
                     var templateId = dRow.ItemArray.GetValue(0);
@@ -342,6 +392,24 @@ namespace HappyTech
             }
             
             
+        }
+
+        private void SaveCodeChange()
+        {
+            lblEditError.Hide();
+            //get the id of the old code and update the code short with the new one
+            //update codepara with the new one
+            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeId(dropdownExistingCode.Text));
+            DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
+            var codeId = dRow.ItemArray.GetValue(0);
+            Connection.GetDbConn().CreateCommand(Constants.editCode(codeId, txtEditCodeName.Text.Replace(" ", ""), codeParaEditBox.Text));
+            codeParaEditBox.Clear();
+            fillExistingDropDownWithCodes();
+            dropDownForEdit.Items.Clear();
+            txtEditCodeName.Text = "";
+
+            lblEditSuccess.Text = "code edit saved";
+            lblEditSuccess.Show();
         }
 
         private void ClearTempEditSectionCheckboxlist()
@@ -477,7 +545,7 @@ namespace HappyTech
             }
             else if (mode == "code")
             {
-                codeParaEditBox.Clear();
+                ClearCodeModeFields();
                 dropDownForEdit.Text = "";
             }
         }
@@ -526,6 +594,7 @@ namespace HappyTech
             LoadCodeMode();
             SetModeButton(mode);
             SetModePanel(mode);
+            ClearCodeModeFields();
         }
 
         private void backBtnEdit_Click(object sender, EventArgs e)
@@ -603,8 +672,8 @@ namespace HappyTech
                 panelEditTemplate.Show();
                 panelAddSection.Hide();
                 panelEditSection.Hide();
-                //panelAddCode.Hide();
-                //panelEditCode.Hide();
+                panelAddCode.Hide();
+                panelEditCode.Hide();
             }
             else if (type == "section")
             {
@@ -612,8 +681,8 @@ namespace HappyTech
                 panelEditTemplate.Hide();
                 panelAddSection.Show();
                 panelEditSection.Show();
-                //panelAddCode.Hide();
-                //panelEditCode.Hide();
+                panelAddCode.Hide();
+                panelEditCode.Hide();
 
             }
             else if (type == "code")
@@ -622,8 +691,8 @@ namespace HappyTech
                 panelEditTemplate.Hide();
                 panelAddSection.Hide();
                 panelEditSection.Hide();
-                //panelAddCode.Show();
-                //panelEditCode.Show();
+                panelAddCode.Show();
+                panelEditCode.Show();
             }
         }
 
@@ -647,6 +716,16 @@ namespace HappyTech
             ClearSectionEditTempsCheckboxlist();
         }
 
+        private void ClearCodeModeFields()
+        {
+            lblAddError.Hide();
+            txtNewCodeName.Clear();
+            codeParaEditBox.Clear();
+            fillExistingDropDownWithCodes();
+            txtEditCodeName.Clear();
+            dropDownForEdit.Items.Clear();
+        }
+
         private void LoadSectionMode()
         {
             fillExistBoxWithTemplates();
@@ -661,7 +740,9 @@ namespace HappyTech
 
         private void LoadCodeMode()
         {
-            //
+            fillNewCodeTagDrop();
+            fillExistBoxWithSections();
+            fillExistingDropDownWithCodes();
         }
 
         private void txtNewSectionName_TextChanged(object sender, EventArgs e)
@@ -719,6 +800,74 @@ namespace HappyTech
                     }
                 }
                 catch { } //crashes if dRow1 IS null, so wrapped it in a try/ catch
+
+            }
+        }
+
+        private void dropdownExistingCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtEditCodeName.Text = dropdownExistingCode.Text.Replace(" ", "");
+
+            lblEditSuccess.Hide();
+            lblEditError.Hide();
+
+            dropDownForEdit.Items.Clear();
+            Sections.sectionList.Clear();
+            //by default, loads all the sections into the sectionsListBox
+            Sections.listSection();
+            for (int i = 0; i < Sections.sectionList.Count(); i++)
+            {
+                //Code.codeList[i].GetSectionName().Trim()}:
+
+                dropDownForEdit.Items.Add($"{Sections.sectionList[i].name.Replace(" ", "")}");
+            }
+            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeParaFromShort(dropdownExistingCode.Text.Replace(" ", "")));
+            DataRow dRow = ds.Tables[0].Rows[0];
+            txtEditCodeName.Text = dropdownExistingCode.Text.Replace(" ", "");
+            codeParaEditBox.Text = dRow.ItemArray.GetValue(0).ToString();
+        }
+
+        private void dropdownExistingCode_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            try
+            {
+                e.DrawBackground();
+                e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 6, e.Bounds.Y + 6, 8, 8);
+                e.Graphics.DrawString(dropdownExistingCode.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
+                e.DrawFocusRectangle();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void dropDownForEdit_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            try
+            {
+                e.DrawBackground();
+                e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 6, e.Bounds.Y + 6, 8, 8);
+                e.Graphics.DrawString(dropDownForEdit.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
+                e.DrawFocusRectangle();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void newCodeSection_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            try
+            {
+                e.DrawBackground();
+                e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 6, e.Bounds.Y + 6, 8, 8);
+                e.Graphics.DrawString(newCodeSection.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
+                e.DrawFocusRectangle();
+            }
+            catch (Exception)
+            {
 
             }
         }
