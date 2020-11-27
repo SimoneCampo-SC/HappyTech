@@ -123,41 +123,6 @@ namespace HappyTech
             df.Show();
         }
 
-        private void addTagBtn_Click(object sender, EventArgs e)
-        {
-            //When add tag button is clicked, show the text box for typing in a new tag name and show the button required to add the
-            //alue of the add tage textbox into the db
-            /* tempGroupBox.Hide();
-             tagBox.Show();
-             tagSubmit.Show();
-             sectionGroupBox.Show();*/
-            /* this.Hide();
-             addSections newForm = new addSections();
-             newForm.Show(); */
-            this.Hide();
-            NewEditDelete ned = new NewEditDelete("section");
-            ned.Show();
-        }
-
-        private void addCodeBtn_Click(object sender, EventArgs e) //shows the add code windows form
-        {
-            /*this.Hide();
-            addCode at = new addCode();
-            at.Show(); */
-            this.Hide();
-            NewEditDelete ned = new NewEditDelete("code");
-            ned.Show();
-
-        }
-
-        /*
-        private void submitCodeBtn_Click(object sender, EventArgs e)
-        {
-           
-        } */
-
-
-
         private void tagSelectBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadGrid();
@@ -175,7 +140,7 @@ namespace HappyTech
             addTemplate addTemp = new addTemplate();
             addTemp.Show(); */
             this.Hide();
-            NewEditDelete ned = new NewEditDelete("template");
+            NewEditDelete ned = new NewEditDelete();
             ned.Show();
 
         }

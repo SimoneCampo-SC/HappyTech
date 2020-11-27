@@ -39,8 +39,6 @@
             this.tagBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codeDisplay = new System.Windows.Forms.DataGridView();
             this.codesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.addTagBtn = new System.Windows.Forms.Button();
-            this.addCodeBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
             this.selectTagLbl = new System.Windows.Forms.Label();
             this.templateSelectBox = new System.Windows.Forms.ComboBox();
@@ -178,38 +176,6 @@
             // codesBindingSource
             // 
             this.codesBindingSource.DataMember = "Codes";
-            // 
-            // addTagBtn
-            // 
-            this.addTagBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.addTagBtn.FlatAppearance.BorderSize = 0;
-            this.addTagBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addTagBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.addTagBtn.ForeColor = System.Drawing.Color.White;
-            this.addTagBtn.Location = new System.Drawing.Point(170, 34);
-            this.addTagBtn.Name = "addTagBtn";
-            this.addTagBtn.Size = new System.Drawing.Size(25, 25);
-            this.addTagBtn.TabIndex = 2;
-            this.addTagBtn.Text = "S";
-            this.addTagBtn.UseVisualStyleBackColor = false;
-            this.addTagBtn.Visible = false;
-            this.addTagBtn.Click += new System.EventHandler(this.addTagBtn_Click);
-            // 
-            // addCodeBtn
-            // 
-            this.addCodeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.addCodeBtn.FlatAppearance.BorderSize = 0;
-            this.addCodeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addCodeBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.addCodeBtn.ForeColor = System.Drawing.Color.White;
-            this.addCodeBtn.Location = new System.Drawing.Point(139, 34);
-            this.addCodeBtn.Name = "addCodeBtn";
-            this.addCodeBtn.Size = new System.Drawing.Size(25, 25);
-            this.addCodeBtn.TabIndex = 3;
-            this.addCodeBtn.Text = "C";
-            this.addCodeBtn.UseVisualStyleBackColor = false;
-            this.addCodeBtn.Visible = false;
-            this.addCodeBtn.Click += new System.EventHandler(this.addCodeBtn_Click);
             // 
             // backBtn
             // 
@@ -412,8 +378,6 @@
             this.panelActions.BackColor = System.Drawing.Color.White;
             this.panelActions.Controls.Add(this.lblEditTemplates);
             this.panelActions.Controls.Add(this.templateViewBtn);
-            this.panelActions.Controls.Add(this.addCodeBtn);
-            this.panelActions.Controls.Add(this.addTagBtn);
             this.panelActions.Location = new System.Drawing.Point(747, 25);
             this.panelActions.Name = "panelActions";
             this.panelActions.Size = new System.Drawing.Size(211, 109);
@@ -606,9 +570,6 @@
        // private Database1DataSetTableAdapters.TagTableAdapter tagTableAdapter;
        // private Database1DataSet1 database1DataSet1;
         private System.Windows.Forms.BindingSource codesBindingSource;
-       // private Database1DataSet1TableAdapters.CodesTableAdapter codesTableAdapter;
-        private System.Windows.Forms.Button addTagBtn;
-        private System.Windows.Forms.Button addCodeBtn;
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Label selectTagLbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeShortDataGridViewTextBoxColumn;

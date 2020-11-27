@@ -831,6 +831,7 @@
             this.txtEditSectionName.Name = "txtEditSectionName";
             this.txtEditSectionName.Size = new System.Drawing.Size(373, 20);
             this.txtEditSectionName.TabIndex = 5;
+            this.txtEditSectionName.TextChanged += new System.EventHandler(this.txtEditSectionName_TextChanged);
             // 
             // panelAddCode
             // 
@@ -877,6 +878,7 @@
             this.txtNewCodeName.Name = "txtNewCodeName";
             this.txtNewCodeName.Size = new System.Drawing.Size(371, 20);
             this.txtNewCodeName.TabIndex = 0;
+            this.txtNewCodeName.TextChanged += new System.EventHandler(this.txtNewCodeName_TextChanged);
             // 
             // lblNewAddSectionsCode
             // 

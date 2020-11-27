@@ -13,27 +13,11 @@ namespace HappyTech
     public partial class NewEditDelete : Form
     {
         string mode = "template"; //used to determine between code, section and template
-        public NewEditDelete(string type)
+        public NewEditDelete()
         {
             InitializeComponent();
+            LoadTempMode();
 
-            mode = type;
-            
-
-            if (type == "code")
-            {
-                LoadCodeMode();
-            }
-
-            else if (type == "section")
-            {
-                LoadSectionMode();
-            }
-
-            else if (type == "template")
-            {
-                LoadTempMode();
-            }
         }
         private void fillNewCodeTagDrop()
         {
@@ -153,7 +137,7 @@ namespace HappyTech
                     DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagIdFromName(newCodeSection.Text));
                     DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
                     var tagId = dRow.ItemArray.GetValue(0);
-                    string toUse = txtNewCodeName.Text.Replace(" ", "");
+                    string toUse = txtNewCodeName.Text.ToUpper().Replace(" ", "");
                     string codeParaToUse = newCodeParaBox.Text;
 
                     Connection.GetDbConn().CreateCommand(Constants.insertNewCode(toUse, codeParaToUse, tagId));
@@ -161,6 +145,7 @@ namespace HappyTech
                     txtNewCodeName.Clear();
                     newCodeParaBox.Text = "";
                     newCodeSection.Text = "";
+                    fillExistingDropDownWithCodes();
 
                     lblAddSuccess.Text = "New code saved";
                     lblAddSuccess.Show();
@@ -402,7 +387,7 @@ namespace HappyTech
             DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeId(dropdownExistingCode.Text));
             DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
             var codeId = dRow.ItemArray.GetValue(0);
-            Connection.GetDbConn().CreateCommand(Constants.editCode(codeId, txtEditCodeName.Text.Replace(" ", ""), codeParaEditBox.Text));
+            Connection.GetDbConn().CreateCommand(Constants.editCode(codeId, txtEditCodeName.Text.ToUpper().Replace(" ", ""), codeParaEditBox.Text));
             codeParaEditBox.Clear();
             fillExistingDropDownWithCodes();
             dropDownForEdit.Items.Clear();
@@ -870,6 +855,18 @@ namespace HappyTech
             {
 
             }
+        }
+
+        private void txtNewCodeName_TextChanged(object sender, EventArgs e)
+        {
+            lblAddSuccess.Hide();
+            lblAddError.Hide();
+        }
+
+        private void txtEditSectionName_TextChanged(object sender, EventArgs e)
+        {
+            lblEditSuccess.Hide();
+            lblEditError.Hide();
         }
     }
 }
