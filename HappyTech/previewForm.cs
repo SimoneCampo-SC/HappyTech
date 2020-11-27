@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using PdfSharp.Pdf;
-using Spire.Pdf.Graphics;
 using PdfSharp.Drawing;
+using System.Diagnostics;
+using PdfSharp.Drawing.Layout;
 
 namespace HappyTech
 {
@@ -129,6 +130,7 @@ namespace HappyTech
             {
                 string feedbackText = "";
                 string commentText = "";
+                //string complete = "";
 
                 using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".rtf"))
                 {
@@ -143,25 +145,46 @@ namespace HappyTech
                     }
                 }
 
-                //PdfDocument doc = new PdfDocument();
-                //PdfPage page = doc.Pages.Add();
-                //SizeF bounds = page.Size;
-                //PdfMetafile imageMetafile = (PdfMetafile)PdfImage.FromRtf(feedbackText,bounds)
+                //complete = feedbackText + commentText;
 
-                PdfDocument pdf = new PdfDocument();
+                ///// Spire PDF version
+
+                //Spire.Pdf.PdfDocument doc = new Spire.Pdf.PdfDocument();
+                //Spire.Pdf.PdfPageBase page = doc.Pages.Add();
+                //SizeF bounds = page.GetClientSize();
+                //StreamReader reader = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".rtf", Encoding.ASCII);
+                //string text = reader.ReadToEnd();
+                //reader.Close();
+                //PdfMetafile imageMetafile = (PdfMetafile)PdfImage.FromRtf(text, bounds.Width, PdfImageType.Metafile);
+                //PdfMetafileLayoutFormat format = new PdfMetafileLayoutFormat();
+                //format.SplitTextLines = true;
+                //imageMetafile.Draw(page, 0, 0, format);
+                //doc.SaveToFile("TEST.pdf");
+                //doc.Close();
+                //Process.Start("TEST.pdf");
+
+
+                ///// PdfSharp PDF version
+
+                PdfSharp.Pdf.PdfDocument pdf = new PdfSharp.Pdf.PdfDocument();
                 PdfPage pdfPage = pdf.AddPage();
                 XGraphics graph = XGraphics.FromPdfPage(pdfPage);
+                XTextFormatter tf = new XTextFormatter(graph);
+                
                 XFont font = new XFont("Arial", 8.25, XFontStyle.Bold);
                 Image img = Properties.Resources.happytech_logo_med;
                 MemoryStream strm = new MemoryStream();
                 img.Save(strm, System.Drawing.Imaging.ImageFormat.Png);
-                XImage xfoto = XImage.FromStream(strm);
-                XRect rec = new XRect(pdfPage.Width/2, pdfPage.Height/16, img.Width, img.Height);
-                graph.DrawImage(xfoto,rec);
-                graph.DrawString(feedbackText, font, XBrushes.Black, new XRect(pdfPage.Width / 4, pdfPage.Height / 12, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
-                graph.DrawString("Further comments:", font, XBrushes.Black, new XRect(pdfPage.Width / 4, (pdfPage.Height / 12) + 30, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
-                graph.DrawString(commentText, font, XBrushes.Black, new XRect(0, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+                XImage logo = XImage.FromStream(strm);
+                XRect rec = new XRect((pdfPage.Width/2) - (logo.Width/2), pdfPage.Height/16, img.Width, img.Height);
+                graph.DrawImage(logo, rec);
+                
+                                                                                                 //Error here---V
+                tf.DrawString($"Dear {Applicant.applicants[i].AfullName},\n\nRegarding your {Template.templates[i].TempType} for the {Applicant.applicants[i].AJob} role at HappyTech.\n\n" + feedbackText + "\n\nFurther comments:\n\n" + commentText + $"\n\nKind Regards,\n{Recruiter.GetInstance().Name}\nHappyTech Recruiter", font, XBrushes.Black, new XRect(pdfPage.Width / 8, ((pdfPage.Height / 12) + img.Height) + 60, (pdfPage.Width / 8) + (pdfPage.Width / 1.5), pdfPage.Height - (pdfPage.Height / 4)), XStringFormats.TopLeft);
+                
+                
                 pdf.Save(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".pdf");
+                Process.Start(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".pdf");
 
             }
         }
