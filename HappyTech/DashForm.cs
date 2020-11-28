@@ -90,7 +90,7 @@ namespace HappyTech
                     Connection.GetDbConn().CreateCommand(Constants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, Recruiter.GetInstance().Id));
 
                     // Crearte a new instance of the applicant class
-                    Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, Recruiter.GetInstance().Id);
+                    Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, Recruiter.GetInstance().Id, tempTypeBox.SelectedItem.ToString()); ;
                     // Add the instance into the applicant list
                     Applicant.applicants.Add(applicant);
 

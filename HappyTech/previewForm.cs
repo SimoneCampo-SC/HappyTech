@@ -86,7 +86,7 @@ namespace HappyTech
             //this is because applicants are stored in a list and we no longer want to use
             //that list to track the applicant position in a list of applicants
 
-            Applicant applicant = new Applicant(appDetails[2], appDetails[3], appDetails[1], Recruiter.GetInstance().Id); // name, email, job, doctype, recruiter id
+            Applicant applicant = new Applicant(appDetails[2], appDetails[3], appDetails[1], Recruiter.GetInstance().Id, appDetails[4]); // name, email, job, doctype, recruiter id
             this.Hide();
             EditorForm f3 = new EditorForm(appDetails[2], appDetails[0], appDetails[3], appDetails[1], curApp);
             f3.Show();
@@ -180,7 +180,7 @@ namespace HappyTech
                 graph.DrawImage(logo, rec);
                 
                                                                                                  //Error here---V
-                tf.DrawString($"Dear {Applicant.applicants[i].AfullName},\n\nRegarding your {Template.templates[i].TempType} for the {Applicant.applicants[i].AJob} role at HappyTech.\n\n" + feedbackText + "\n\nFurther comments:\n\n" + commentText + $"\n\nKind Regards,\n{Recruiter.GetInstance().Name}\nHappyTech Recruiter", font, XBrushes.Black, new XRect(pdfPage.Width / 8, ((pdfPage.Height / 12) + img.Height) + 60, (pdfPage.Width / 8) + (pdfPage.Width / 1.5), pdfPage.Height - (pdfPage.Height / 4)), XStringFormats.TopLeft);
+                tf.DrawString($"Dear {Applicant.applicants[i].AfullName},\n\nRegarding your {Applicant.applicants[i].Atype} for the {Applicant.applicants[i].AJob} role at HappyTech.\n\n" + feedbackText + "\n\nFurther comments:\n\n" + commentText + $"\n\nKind Regards,\n{Recruiter.GetInstance().Name}\nHappyTech Recruiter", font, XBrushes.Black, new XRect(pdfPage.Width / 8, ((pdfPage.Height / 12) + img.Height) + 60, (pdfPage.Width / 8) + (pdfPage.Width / 1.5), pdfPage.Height - (pdfPage.Height / 4)), XStringFormats.TopLeft);
                 
                 
                 pdf.Save(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".pdf");

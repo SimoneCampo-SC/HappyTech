@@ -89,11 +89,13 @@
             this.checkboxEditExistTemps = new System.Windows.Forms.CheckedListBox();
             this.txtEditSectionName = new System.Windows.Forms.TextBox();
             this.panelAddCode = new System.Windows.Forms.Panel();
+            this.lblCodeParaLimit = new System.Windows.Forms.Label();
             this.lblAddNewCode = new System.Windows.Forms.Label();
             this.lblNewCodeName = new System.Windows.Forms.Label();
             this.txtNewCodeName = new System.Windows.Forms.TextBox();
             this.lblNewAddSectionsCode = new System.Windows.Forms.Label();
             this.panelEditCode = new System.Windows.Forms.Panel();
+            this.lblEditCodeParaLimit = new System.Windows.Forms.Label();
             this.lblCodeParagraphEdit = new System.Windows.Forms.Label();
             this.lblEditAddSectionsCode = new System.Windows.Forms.Label();
             this.lblEditCodeName = new System.Windows.Forms.Label();
@@ -101,6 +103,8 @@
             this.lblChooseCode = new System.Windows.Forms.Label();
             this.dropdownExistingCode = new System.Windows.Forms.ComboBox();
             this.txtEditCodeName = new System.Windows.Forms.TextBox();
+            this.lblCodeNameLimit = new System.Windows.Forms.Label();
+            this.lblEditCodeNameLimit = new System.Windows.Forms.Label();
             this.panelManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).BeginInit();
@@ -204,6 +208,7 @@
             this.codeParaEditBox.Size = new System.Drawing.Size(373, 89);
             this.codeParaEditBox.TabIndex = 6;
             this.codeParaEditBox.Text = "";
+            this.codeParaEditBox.TextChanged += new System.EventHandler(this.codeParaEditBox_TextChanged);
             // 
             // cancelBtn
             // 
@@ -294,6 +299,7 @@
             this.newCodeParaBox.Size = new System.Drawing.Size(371, 138);
             this.newCodeParaBox.TabIndex = 14;
             this.newCodeParaBox.Text = "";
+            this.newCodeParaBox.TextChanged += new System.EventHandler(this.newCodeParaBox_TextChanged);
             // 
             // lblCodeParagraph
             // 
@@ -847,6 +853,8 @@
             // panelAddCode
             // 
             this.panelAddCode.BackColor = System.Drawing.Color.White;
+            this.panelAddCode.Controls.Add(this.lblCodeNameLimit);
+            this.panelAddCode.Controls.Add(this.lblCodeParaLimit);
             this.panelAddCode.Controls.Add(this.lblAddNewCode);
             this.panelAddCode.Controls.Add(this.lblNewCodeName);
             this.panelAddCode.Controls.Add(this.txtNewCodeName);
@@ -859,6 +867,17 @@
             this.panelAddCode.Size = new System.Drawing.Size(411, 359);
             this.panelAddCode.TabIndex = 23;
             this.panelAddCode.Visible = false;
+            // 
+            // lblCodeParaLimit
+            // 
+            this.lblCodeParaLimit.AutoSize = true;
+            this.lblCodeParaLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblCodeParaLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblCodeParaLimit.Location = new System.Drawing.Point(122, 122);
+            this.lblCodeParaLimit.Name = "lblCodeParaLimit";
+            this.lblCodeParaLimit.Size = new System.Drawing.Size(48, 14);
+            this.lblCodeParaLimit.TabIndex = 17;
+            this.lblCodeParaLimit.Text = "(0 / 300)";
             // 
             // lblAddNewCode
             // 
@@ -877,9 +896,9 @@
             this.lblNewCodeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
             this.lblNewCodeName.Location = new System.Drawing.Point(18, 64);
             this.lblNewCodeName.Name = "lblNewCodeName";
-            this.lblNewCodeName.Size = new System.Drawing.Size(154, 14);
+            this.lblNewCodeName.Size = new System.Drawing.Size(73, 14);
             this.lblNewCodeName.TabIndex = 10;
-            this.lblNewCodeName.Text = "Code name (5 max length):";
+            this.lblNewCodeName.Text = "Code name:";
             // 
             // txtNewCodeName
             // 
@@ -905,6 +924,8 @@
             // panelEditCode
             // 
             this.panelEditCode.BackColor = System.Drawing.Color.White;
+            this.panelEditCode.Controls.Add(this.lblEditCodeNameLimit);
+            this.panelEditCode.Controls.Add(this.lblEditCodeParaLimit);
             this.panelEditCode.Controls.Add(this.lblCodeParagraphEdit);
             this.panelEditCode.Controls.Add(this.lblEditAddSectionsCode);
             this.panelEditCode.Controls.Add(this.lblEditCodeName);
@@ -919,6 +940,17 @@
             this.panelEditCode.Size = new System.Drawing.Size(411, 359);
             this.panelEditCode.TabIndex = 24;
             this.panelEditCode.Visible = false;
+            // 
+            // lblEditCodeParaLimit
+            // 
+            this.lblEditCodeParaLimit.AutoSize = true;
+            this.lblEditCodeParaLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblEditCodeParaLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblEditCodeParaLimit.Location = new System.Drawing.Point(122, 182);
+            this.lblEditCodeParaLimit.Name = "lblEditCodeParaLimit";
+            this.lblEditCodeParaLimit.Size = new System.Drawing.Size(48, 14);
+            this.lblEditCodeParaLimit.TabIndex = 19;
+            this.lblEditCodeParaLimit.Text = "(0 / 300)";
             // 
             // lblCodeParagraphEdit
             // 
@@ -999,6 +1031,29 @@
             this.txtEditCodeName.Name = "txtEditCodeName";
             this.txtEditCodeName.Size = new System.Drawing.Size(373, 20);
             this.txtEditCodeName.TabIndex = 5;
+            this.txtEditCodeName.TextChanged += new System.EventHandler(this.txtEditCodeName_TextChanged);
+            // 
+            // lblCodeNameLimit
+            // 
+            this.lblCodeNameLimit.AutoSize = true;
+            this.lblCodeNameLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblCodeNameLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblCodeNameLimit.Location = new System.Drawing.Point(97, 64);
+            this.lblCodeNameLimit.Name = "lblCodeNameLimit";
+            this.lblCodeNameLimit.Size = new System.Drawing.Size(36, 14);
+            this.lblCodeNameLimit.TabIndex = 18;
+            this.lblCodeNameLimit.Text = "(0 / 5)";
+            // 
+            // lblEditCodeNameLimit
+            // 
+            this.lblEditCodeNameLimit.AutoSize = true;
+            this.lblEditCodeNameLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblEditCodeNameLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblEditCodeNameLimit.Location = new System.Drawing.Point(97, 124);
+            this.lblEditCodeNameLimit.Name = "lblEditCodeNameLimit";
+            this.lblEditCodeNameLimit.Size = new System.Drawing.Size(36, 14);
+            this.lblEditCodeNameLimit.TabIndex = 19;
+            this.lblEditCodeNameLimit.Text = "(0 / 5)";
             // 
             // NewEditDelete
             // 
@@ -1125,5 +1180,9 @@
         private System.Windows.Forms.TextBox txtEditCodeName;
         private System.Windows.Forms.CheckedListBox checkboxEditExistTemps;
         private System.Windows.Forms.Label lblCodeParagraphEdit;
+        private System.Windows.Forms.Label lblCodeParaLimit;
+        private System.Windows.Forms.Label lblEditCodeParaLimit;
+        private System.Windows.Forms.Label lblCodeNameLimit;
+        private System.Windows.Forms.Label lblEditCodeNameLimit;
     }
 }

@@ -108,12 +108,17 @@ namespace HappyTech
                 }
                 else if (txtNewCodeName.Text.Length > 5)
                 {
-                    lblAddError.Text = "Code name must be 5 characters or less";
+                    lblAddError.Text = "Code name limit exceeded";
                     lblAddError.Show();
                 }
                 else if (newCodeParaBox.Text.Length <= 0)
                 {
                     lblAddError.Text = "Enter a code paragraph";
+                    lblAddError.Show();
+                }
+                else if (newCodeParaBox.Text.Length > 300)
+                {
+                    lblAddError.Text = "Code paragraph limit exceeded";
                     lblAddError.Show();
                 }
                 else if (txtNewCodeName.Text.Contains(" "))
@@ -158,9 +163,9 @@ namespace HappyTech
                     lblAddError.Text = "Enter a section name";
                     lblAddError.Show();
                 }
-                else if (txtNewSectionName.Text.Contains(" "))
+                else if (txtNewSectionName.Text.Length > 25)
                 {
-                    lblAddError.Text = "Remove spaces from section name";
+                    lblAddError.Text = "Section name must be 25 characters or less";
                     lblAddError.Show();
                 }
                 else if (Constants.checkSection(txtNewSectionName.Text))
@@ -187,9 +192,9 @@ namespace HappyTech
                     lblAddError.Text = "Enter a template name";
                     lblAddError.Show();
                 }
-                else if (txtNewTemplateName.Text.Contains(" "))
+                else if (txtNewTemplateName.Text.Length > 25)
                 {
-                    lblAddError.Text = "Remove spaces from template name";
+                    lblAddError.Text = "Template name must be 25 characters or less";
                     lblAddError.Show();
                 }
                 else if (Constants.checkTemplate(txtNewTemplateName.Text))
@@ -267,7 +272,7 @@ namespace HappyTech
                 }
                 else if (txtEditCodeName.Text.Length > 5)
                 {
-                    lblEditError.Text = "Code name must be 5 characters or less";
+                    lblEditError.Text = "Code name limit exceeded";
                     lblEditError.Show();
                 }
                 else if (txtEditCodeName.Text.Contains(" "))
@@ -278,6 +283,11 @@ namespace HappyTech
                 else if (codeParaEditBox.Text.Length <= 0)
                 {
                     lblEditError.Text = "Enter a code paragraph";
+                    lblEditError.Show();
+                }
+                else if (codeParaEditBox.Text.Length > 300)
+                {
+                    lblEditError.Text = "Code paragraph limit exceeded";
                     lblEditError.Show();
                 }
                 else if (Constants.checkCode(txtEditCodeName.Text))
@@ -312,10 +322,10 @@ namespace HappyTech
                     lblEditError.Text = "Enter a section name";
                     lblEditError.Show();
                 }
-                else if (txtEditSectionName.Text.Contains(" "))
+                else if (txtEditSectionName.Text.Length > 25)
                 {
-                    lblEditError.Text = "Remove spaces from section name";
-                    lblEditError.Show();
+                    lblAddError.Text = "Section name must be 25 characters or less";
+                    lblAddError.Show();
                 }
                 else if (Constants.checkSection(txtEditSectionName.Text))
                 {
@@ -351,10 +361,10 @@ namespace HappyTech
                     lblEditError.Text = "Enter a section name";
                     lblEditError.Show();
                 }
-                else if (txtEditTemplateName.Text.Contains(" "))
+                else if (txtEditTemplateName.Text.Length > 25)
                 {
-                    lblEditError.Text = "Remove spaces from template name";
-                    lblEditError.Show();
+                    lblAddError.Text = "Template name must be 25 characters or less";
+                    lblAddError.Show();
                 }
                 else if (Constants.checkTemplate(txtEditTemplateName.Text))
                 {
@@ -861,12 +871,61 @@ namespace HappyTech
         {
             lblAddSuccess.Hide();
             lblAddError.Hide();
+
+            lblCodeNameLimit.Text = $"({txtNewCodeName.Text.Length} / 5)";
+            if (txtNewCodeName.Text.Length > 5)
+            {
+                lblCodeNameLimit.ForeColor = Color.FromArgb(255, 85, 85);
+            }
+            else
+            {
+                lblCodeNameLimit.ForeColor = Color.FromArgb(119, 119, 136);
+            }
         }
 
         private void txtEditSectionName_TextChanged(object sender, EventArgs e)
         {
             lblEditSuccess.Hide();
             lblEditError.Hide();
+        }
+
+        private void codeParaEditBox_TextChanged(object sender, EventArgs e)
+        {
+            lblEditCodeParaLimit.Text = $"({codeParaEditBox.Text.Length} / 300)";
+            if (codeParaEditBox.Text.Length > 300)
+            {
+                lblEditCodeParaLimit.ForeColor = Color.FromArgb(255, 85, 85);
+            }
+            else
+            {
+                lblEditCodeParaLimit.ForeColor = Color.FromArgb(119, 119, 136);
+            }
+        }
+
+        private void newCodeParaBox_TextChanged(object sender, EventArgs e)
+        {
+            lblCodeParaLimit.Text = $"({newCodeParaBox.Text.Length} / 300)";
+            if (newCodeParaBox.Text.Length > 300)
+            {
+                lblCodeParaLimit.ForeColor = Color.FromArgb(255, 85, 85);
+            }
+            else
+            {
+                lblCodeParaLimit.ForeColor = Color.FromArgb(119, 119, 136);
+            }
+        }
+
+        private void txtEditCodeName_TextChanged(object sender, EventArgs e)
+        {
+            lblEditCodeNameLimit.Text = $"({txtEditCodeName.Text.Length} / 5)";
+            if (txtEditCodeName.Text.Length > 5)
+            {
+                lblEditCodeNameLimit.ForeColor = Color.FromArgb(255, 85, 85);
+            }
+            else
+            {
+                lblEditCodeNameLimit.ForeColor = Color.FromArgb(119, 119, 136);
+            }
         }
     }
 }
