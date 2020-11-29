@@ -182,21 +182,8 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox codeParaBox;
-        private System.Windows.Forms.TextBox codeShortBox;
-        private System.Windows.Forms.Label codeShortLbl;
-        private System.Windows.Forms.Label codeParaLbl;
-        private System.Windows.Forms.Button backBtn;
-        private System.Windows.Forms.Button submitBtn;
-        private System.Windows.Forms.ComboBox tagBox;
-        private System.Windows.Forms.Label tagLbl;
-        //private Database1DataSet2 database1DataSet2;
-        private System.Windows.Forms.BindingSource tagBindingSource;
-       // private Database1DataSet2TableAdapters.TagTableAdapter tagTableAdapter;
         private System.Windows.Forms.ComboBox sectionBox;
-        //private Database1DataSet3 database1DataSet3;
         private System.Windows.Forms.BindingSource sectionBindingSource;
-       // private Database1DataSet3TableAdapters.SectionTableAdapter sectionTableAdapter;
         private System.Windows.Forms.Label sectionLbl;
         private System.Windows.Forms.TextBox codeShortBx;
         private System.Windows.Forms.Label codeShortLb;

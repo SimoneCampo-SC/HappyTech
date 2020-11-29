@@ -29,107 +29,107 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewEditDelete));
-            this.txtNewTemplateName = new System.Windows.Forms.TextBox();
+            this.TextBox_NewTemplateName = new System.Windows.Forms.TextBox();
             this.CheckedListBox_NewTemplateExistingSection = new System.Windows.Forms.CheckedListBox();
-            this.Button_SaveNew = new System.Windows.Forms.Button();
-            this.backBtn = new System.Windows.Forms.Button();
-            this.ComboBox_EditExistingTemplate = new System.Windows.Forms.ComboBox();
-            this.txtEditTemplateName = new System.Windows.Forms.TextBox();
-            this.codeParaEditBox = new System.Windows.Forms.RichTextBox();
-            this.cancelBtn = new System.Windows.Forms.Button();
-            this.saveChangeBtn = new System.Windows.Forms.Button();
-            this.deleteBtn = new System.Windows.Forms.Button();
-            this.lblNewTemplateName = new System.Windows.Forms.Label();
-            this.lblNewAddSections = new System.Windows.Forms.Label();
-            this.lblChooseTemplate = new System.Windows.Forms.Label();
-            this.newCodeParaBox = new System.Windows.Forms.RichTextBox();
-            this.lblCodeParagraph = new System.Windows.Forms.Label();
+            this.Button_NewSave = new System.Windows.Forms.Button();
+            this.Button_NewBack = new System.Windows.Forms.Button();
+            this.ComboBox_EditTemplateChooseExisting = new System.Windows.Forms.ComboBox();
+            this.TextBox_EditTemplateName = new System.Windows.Forms.TextBox();
+            this.RichTextBox_EditCodeParagraph = new System.Windows.Forms.RichTextBox();
+            this.Button_EditCancel = new System.Windows.Forms.Button();
+            this.Button_EditSave = new System.Windows.Forms.Button();
+            this.Button_EditDelete = new System.Windows.Forms.Button();
+            this.Label_NewTemplateName = new System.Windows.Forms.Label();
+            this.Label_NewTemplateSection = new System.Windows.Forms.Label();
+            this.Label_EditTemplateChooseExisting = new System.Windows.Forms.Label();
+            this.RichTextBox_NewCodeParagraph = new System.Windows.Forms.RichTextBox();
+            this.Label_NewCodeParagraph = new System.Windows.Forms.Label();
             this.ComboBox_NewCodeSection = new System.Windows.Forms.ComboBox();
-            this.checkBoxForEdit = new System.Windows.Forms.CheckedListBox();
-            this.dropDownForEdit = new System.Windows.Forms.ComboBox();
-            this.panelManagement = new System.Windows.Forms.Panel();
-            this.lblStage3 = new System.Windows.Forms.Label();
-            this.imgStage3 = new System.Windows.Forms.PictureBox();
-            this.lblStage2 = new System.Windows.Forms.Label();
-            this.imgStage2 = new System.Windows.Forms.PictureBox();
-            this.lblStage1 = new System.Windows.Forms.Label();
-            this.imgStage1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelMode = new System.Windows.Forms.Panel();
-            this.btnModeCode = new System.Windows.Forms.Button();
-            this.btnModeSection = new System.Windows.Forms.Button();
-            this.btnModeTemplate = new System.Windows.Forms.Button();
-            this.panelAddTemplate = new System.Windows.Forms.Panel();
-            this.lblAddNewTemplate = new System.Windows.Forms.Label();
-            this.panelEditTemplate = new System.Windows.Forms.Panel();
-            this.lblEditAddSections = new System.Windows.Forms.Label();
-            this.lblEditTemplateName = new System.Windows.Forms.Label();
-            this.lblEditExistingTemplate = new System.Windows.Forms.Label();
-            this.panelSaveNew = new System.Windows.Forms.Panel();
-            this.lblAddSuccess = new System.Windows.Forms.Label();
-            this.lblAddError = new System.Windows.Forms.Label();
-            this.lblAddActions = new System.Windows.Forms.Label();
-            this.panelSaveEdit = new System.Windows.Forms.Panel();
-            this.lblEditSuccess = new System.Windows.Forms.Label();
-            this.lblEditError = new System.Windows.Forms.Label();
-            this.lblEditActions = new System.Windows.Forms.Label();
-            this.backBtnEdit = new System.Windows.Forms.Button();
-            this.panelAddSection = new System.Windows.Forms.Panel();
-            this.lblAddNewSection = new System.Windows.Forms.Label();
-            this.lblNewSectionName = new System.Windows.Forms.Label();
-            this.txtNewSectionName = new System.Windows.Forms.TextBox();
-            this.lblNewAddTemplates = new System.Windows.Forms.Label();
-            this.CheckedListBox_NewSectionExistingTemplates = new System.Windows.Forms.CheckedListBox();
-            this.panelEditSection = new System.Windows.Forms.Panel();
-            this.lblEditAddTemps = new System.Windows.Forms.Label();
-            this.lblEditSectionName = new System.Windows.Forms.Label();
-            this.lblEditExistingSection = new System.Windows.Forms.Label();
-            this.lblChooseSection = new System.Windows.Forms.Label();
-            this.ComboBox_EditExistingSections = new System.Windows.Forms.ComboBox();
-            this.checkboxEditExistTemps = new System.Windows.Forms.CheckedListBox();
-            this.txtEditSectionName = new System.Windows.Forms.TextBox();
-            this.panelAddCode = new System.Windows.Forms.Panel();
-            this.lblCodeNameLimit = new System.Windows.Forms.Label();
-            this.lblCodeParaLimit = new System.Windows.Forms.Label();
-            this.lblAddNewCode = new System.Windows.Forms.Label();
-            this.lblNewCodeName = new System.Windows.Forms.Label();
-            this.txtNewCodeName = new System.Windows.Forms.TextBox();
-            this.lblNewAddSectionsCode = new System.Windows.Forms.Label();
-            this.panelEditCode = new System.Windows.Forms.Panel();
-            this.lblEditCodeNameLimit = new System.Windows.Forms.Label();
-            this.lblEditCodeParaLimit = new System.Windows.Forms.Label();
-            this.lblCodeParagraphEdit = new System.Windows.Forms.Label();
-            this.lblEditAddSectionsCode = new System.Windows.Forms.Label();
-            this.lblEditCodeName = new System.Windows.Forms.Label();
-            this.lblEditExistingCode = new System.Windows.Forms.Label();
-            this.lblChooseCode = new System.Windows.Forms.Label();
-            this.ComboBox_EditExistingCode = new System.Windows.Forms.ComboBox();
-            this.txtEditCodeName = new System.Windows.Forms.TextBox();
-            this.panelManagement.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelMode.SuspendLayout();
-            this.panelAddTemplate.SuspendLayout();
-            this.panelEditTemplate.SuspendLayout();
-            this.panelSaveNew.SuspendLayout();
-            this.panelSaveEdit.SuspendLayout();
-            this.panelAddSection.SuspendLayout();
-            this.panelEditSection.SuspendLayout();
-            this.panelAddCode.SuspendLayout();
-            this.panelEditCode.SuspendLayout();
+            this.CheckedListBox_EditTemplateSection = new System.Windows.Forms.CheckedListBox();
+            this.ComboBox_EditCodeSection = new System.Windows.Forms.ComboBox();
+            this.Panel_Management = new System.Windows.Forms.Panel();
+            this.Label_ManagementStage3 = new System.Windows.Forms.Label();
+            this.PictureBox_ManagementStage3 = new System.Windows.Forms.PictureBox();
+            this.Label_ManagementStage2 = new System.Windows.Forms.Label();
+            this.PictureBox_ManagementStage2 = new System.Windows.Forms.PictureBox();
+            this.Label_ManagementStage1 = new System.Windows.Forms.Label();
+            this.PictureBox_ManagementStage1 = new System.Windows.Forms.PictureBox();
+            this.PictureBox_ManagementLogo = new System.Windows.Forms.PictureBox();
+            this.Panel_Mode = new System.Windows.Forms.Panel();
+            this.Button_ModeCode = new System.Windows.Forms.Button();
+            this.Button_ModeSection = new System.Windows.Forms.Button();
+            this.Button_ModeTemplate = new System.Windows.Forms.Button();
+            this.Panel_NewTemplate = new System.Windows.Forms.Panel();
+            this.Label_NewTemplateTitle = new System.Windows.Forms.Label();
+            this.Panel_EditTemplate = new System.Windows.Forms.Panel();
+            this.Label_EditTemplateSection = new System.Windows.Forms.Label();
+            this.Label_EditTemplateName = new System.Windows.Forms.Label();
+            this.Label_EditTemplateTitle = new System.Windows.Forms.Label();
+            this.Panel_NewActions = new System.Windows.Forms.Panel();
+            this.Label_NewSuccess = new System.Windows.Forms.Label();
+            this.Label_NewError = new System.Windows.Forms.Label();
+            this.Label_NewActionsTitle = new System.Windows.Forms.Label();
+            this.Panel_EditActions = new System.Windows.Forms.Panel();
+            this.Label_EditSuccess = new System.Windows.Forms.Label();
+            this.Label_EditError = new System.Windows.Forms.Label();
+            this.Label_EditActionsTitle = new System.Windows.Forms.Label();
+            this.Button_EditBack = new System.Windows.Forms.Button();
+            this.Panel_NewSection = new System.Windows.Forms.Panel();
+            this.Label_NewSectionTitle = new System.Windows.Forms.Label();
+            this.Label_NewSectionName = new System.Windows.Forms.Label();
+            this.TextBox_NewSectionName = new System.Windows.Forms.TextBox();
+            this.Label_NewSectionTemplate = new System.Windows.Forms.Label();
+            this.CheckedListBox_NewSectionExistingTemplate = new System.Windows.Forms.CheckedListBox();
+            this.Panel_EditSection = new System.Windows.Forms.Panel();
+            this.Label_EditSectionTemplate = new System.Windows.Forms.Label();
+            this.Label_EditSectionName = new System.Windows.Forms.Label();
+            this.Label_EditSectionTitle = new System.Windows.Forms.Label();
+            this.Label_EditSectionChooseExisting = new System.Windows.Forms.Label();
+            this.ComboBox_EditSectionChooseExisting = new System.Windows.Forms.ComboBox();
+            this.CheckedListBox_EditSectionTemplate = new System.Windows.Forms.CheckedListBox();
+            this.TextBox_EditSectionName = new System.Windows.Forms.TextBox();
+            this.Panel_NewCode = new System.Windows.Forms.Panel();
+            this.Label_NewCodeNameLimit = new System.Windows.Forms.Label();
+            this.Label_NewCodeParagraphLimit = new System.Windows.Forms.Label();
+            this.Label_NewCodeTitle = new System.Windows.Forms.Label();
+            this.Label_NewCodeName = new System.Windows.Forms.Label();
+            this.TextBox_NewCodeName = new System.Windows.Forms.TextBox();
+            this.Label_NewCodeSection = new System.Windows.Forms.Label();
+            this.Panel_EditCode = new System.Windows.Forms.Panel();
+            this.Label_EditCodeNameLimit = new System.Windows.Forms.Label();
+            this.Label_EditCodeParagraphLimit = new System.Windows.Forms.Label();
+            this.Label_EditCodeParagraph = new System.Windows.Forms.Label();
+            this.Label_EditCodeSection = new System.Windows.Forms.Label();
+            this.Label_EditCodeName = new System.Windows.Forms.Label();
+            this.Label_EditCodeTitle = new System.Windows.Forms.Label();
+            this.Label_EditCodeChooseExisting = new System.Windows.Forms.Label();
+            this.ComboBox_EditCodeChooseExisting = new System.Windows.Forms.ComboBox();
+            this.TextBox_EditCodeName = new System.Windows.Forms.TextBox();
+            this.Panel_Management.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementLogo)).BeginInit();
+            this.Panel_Mode.SuspendLayout();
+            this.Panel_NewTemplate.SuspendLayout();
+            this.Panel_EditTemplate.SuspendLayout();
+            this.Panel_NewActions.SuspendLayout();
+            this.Panel_EditActions.SuspendLayout();
+            this.Panel_NewSection.SuspendLayout();
+            this.Panel_EditSection.SuspendLayout();
+            this.Panel_NewCode.SuspendLayout();
+            this.Panel_EditCode.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtNewTemplateName
+            // TextBox_NewTemplateName
             // 
-            this.txtNewTemplateName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtNewTemplateName.ForeColor = System.Drawing.Color.Black;
-            this.txtNewTemplateName.Location = new System.Drawing.Point(21, 86);
-            this.txtNewTemplateName.Name = "txtNewTemplateName";
-            this.txtNewTemplateName.Size = new System.Drawing.Size(371, 20);
-            this.txtNewTemplateName.TabIndex = 0;
-            this.txtNewTemplateName.TextChanged += new System.EventHandler(this.txtNewTemplateName_TextChanged);
+            this.TextBox_NewTemplateName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.TextBox_NewTemplateName.ForeColor = System.Drawing.Color.Black;
+            this.TextBox_NewTemplateName.Location = new System.Drawing.Point(21, 86);
+            this.TextBox_NewTemplateName.Name = "TextBox_NewTemplateName";
+            this.TextBox_NewTemplateName.Size = new System.Drawing.Size(371, 20);
+            this.TextBox_NewTemplateName.TabIndex = 0;
+            this.TextBox_NewTemplateName.TextChanged += new System.EventHandler(this.TextBox_NewTemplateName_TextChanged);
             // 
             // CheckedListBox_NewTemplateExistingSection
             // 
@@ -142,175 +142,175 @@
             this.CheckedListBox_NewTemplateExistingSection.Size = new System.Drawing.Size(371, 199);
             this.CheckedListBox_NewTemplateExistingSection.TabIndex = 1;
             // 
-            // Button_SaveNew
+            // Button_NewSave
             // 
-            this.Button_SaveNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
-            this.Button_SaveNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button_SaveNew.FlatAppearance.BorderSize = 0;
-            this.Button_SaveNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_SaveNew.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.Button_SaveNew.ForeColor = System.Drawing.Color.White;
-            this.Button_SaveNew.Location = new System.Drawing.Point(315, 55);
-            this.Button_SaveNew.Name = "Button_SaveNew";
-            this.Button_SaveNew.Size = new System.Drawing.Size(77, 23);
-            this.Button_SaveNew.TabIndex = 2;
-            this.Button_SaveNew.Text = "Save";
-            this.Button_SaveNew.UseVisualStyleBackColor = false;
-            this.Button_SaveNew.Click += new System.EventHandler(this.Button_SaveNew_Click);
+            this.Button_NewSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
+            this.Button_NewSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_NewSave.FlatAppearance.BorderSize = 0;
+            this.Button_NewSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_NewSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_NewSave.ForeColor = System.Drawing.Color.White;
+            this.Button_NewSave.Location = new System.Drawing.Point(315, 55);
+            this.Button_NewSave.Name = "Button_NewSave";
+            this.Button_NewSave.Size = new System.Drawing.Size(77, 23);
+            this.Button_NewSave.TabIndex = 2;
+            this.Button_NewSave.Text = "Save";
+            this.Button_NewSave.UseVisualStyleBackColor = false;
+            this.Button_NewSave.Click += new System.EventHandler(this.Button_NewSave_Click);
             // 
-            // backBtn
+            // Button_NewBack
             // 
-            this.backBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.backBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.backBtn.FlatAppearance.BorderSize = 0;
-            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.backBtn.ForeColor = System.Drawing.Color.White;
-            this.backBtn.Location = new System.Drawing.Point(232, 55);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(77, 23);
-            this.backBtn.TabIndex = 3;
-            this.backBtn.Text = "Back";
-            this.backBtn.UseVisualStyleBackColor = false;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            this.Button_NewBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.Button_NewBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_NewBack.FlatAppearance.BorderSize = 0;
+            this.Button_NewBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_NewBack.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_NewBack.ForeColor = System.Drawing.Color.White;
+            this.Button_NewBack.Location = new System.Drawing.Point(232, 55);
+            this.Button_NewBack.Name = "Button_NewBack";
+            this.Button_NewBack.Size = new System.Drawing.Size(77, 23);
+            this.Button_NewBack.TabIndex = 3;
+            this.Button_NewBack.Text = "Back";
+            this.Button_NewBack.UseVisualStyleBackColor = false;
+            this.Button_NewBack.Click += new System.EventHandler(this.Button_NewBack_Click);
             // 
-            // ComboBox_EditExistingTemplate
+            // ComboBox_EditTemplateChooseExisting
             // 
-            this.ComboBox_EditExistingTemplate.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.ComboBox_EditExistingTemplate.DropDownHeight = 200;
-            this.ComboBox_EditExistingTemplate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBox_EditExistingTemplate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.ComboBox_EditExistingTemplate.ForeColor = System.Drawing.Color.Black;
-            this.ComboBox_EditExistingTemplate.FormattingEnabled = true;
-            this.ComboBox_EditExistingTemplate.IntegralHeight = false;
-            this.ComboBox_EditExistingTemplate.ItemHeight = 20;
-            this.ComboBox_EditExistingTemplate.Location = new System.Drawing.Point(21, 84);
-            this.ComboBox_EditExistingTemplate.Name = "ComboBox_EditExistingTemplate";
-            this.ComboBox_EditExistingTemplate.Size = new System.Drawing.Size(373, 26);
-            this.ComboBox_EditExistingTemplate.TabIndex = 4;
-            this.ComboBox_EditExistingTemplate.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBox_EditExistingTemplate_DrawItem);
-            this.ComboBox_EditExistingTemplate.SelectedIndexChanged += new System.EventHandler(this.ComboBox_EditExistingTemplate_SelectedIndexChanged);
+            this.ComboBox_EditTemplateChooseExisting.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.ComboBox_EditTemplateChooseExisting.DropDownHeight = 200;
+            this.ComboBox_EditTemplateChooseExisting.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_EditTemplateChooseExisting.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ComboBox_EditTemplateChooseExisting.ForeColor = System.Drawing.Color.Black;
+            this.ComboBox_EditTemplateChooseExisting.FormattingEnabled = true;
+            this.ComboBox_EditTemplateChooseExisting.IntegralHeight = false;
+            this.ComboBox_EditTemplateChooseExisting.ItemHeight = 20;
+            this.ComboBox_EditTemplateChooseExisting.Location = new System.Drawing.Point(21, 84);
+            this.ComboBox_EditTemplateChooseExisting.Name = "ComboBox_EditTemplateChooseExisting";
+            this.ComboBox_EditTemplateChooseExisting.Size = new System.Drawing.Size(373, 26);
+            this.ComboBox_EditTemplateChooseExisting.TabIndex = 4;
+            this.ComboBox_EditTemplateChooseExisting.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBox_EditTemplateChooseExisting_DrawItem);
+            this.ComboBox_EditTemplateChooseExisting.SelectedIndexChanged += new System.EventHandler(this.ComboBox_EditTemplateChooseExisting_SelectedIndexChanged);
             // 
-            // txtEditTemplateName
+            // TextBox_EditTemplateName
             // 
-            this.txtEditTemplateName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtEditTemplateName.ForeColor = System.Drawing.Color.Black;
-            this.txtEditTemplateName.Location = new System.Drawing.Point(21, 147);
-            this.txtEditTemplateName.Name = "txtEditTemplateName";
-            this.txtEditTemplateName.Size = new System.Drawing.Size(373, 20);
-            this.txtEditTemplateName.TabIndex = 5;
+            this.TextBox_EditTemplateName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.TextBox_EditTemplateName.ForeColor = System.Drawing.Color.Black;
+            this.TextBox_EditTemplateName.Location = new System.Drawing.Point(21, 147);
+            this.TextBox_EditTemplateName.Name = "TextBox_EditTemplateName";
+            this.TextBox_EditTemplateName.Size = new System.Drawing.Size(373, 20);
+            this.TextBox_EditTemplateName.TabIndex = 5;
             // 
-            // codeParaEditBox
+            // RichTextBox_EditCodeParagraph
             // 
-            this.codeParaEditBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.codeParaEditBox.Location = new System.Drawing.Point(21, 204);
-            this.codeParaEditBox.Name = "codeParaEditBox";
-            this.codeParaEditBox.Size = new System.Drawing.Size(373, 89);
-            this.codeParaEditBox.TabIndex = 6;
-            this.codeParaEditBox.Text = "";
-            this.codeParaEditBox.TextChanged += new System.EventHandler(this.codeParaEditBox_TextChanged);
+            this.RichTextBox_EditCodeParagraph.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.RichTextBox_EditCodeParagraph.Location = new System.Drawing.Point(21, 204);
+            this.RichTextBox_EditCodeParagraph.Name = "RichTextBox_EditCodeParagraph";
+            this.RichTextBox_EditCodeParagraph.Size = new System.Drawing.Size(373, 89);
+            this.RichTextBox_EditCodeParagraph.TabIndex = 6;
+            this.RichTextBox_EditCodeParagraph.Text = "";
+            this.RichTextBox_EditCodeParagraph.TextChanged += new System.EventHandler(this.RichTextBox_EditCodeParagraph_TextChanged);
             // 
-            // cancelBtn
+            // Button_EditCancel
             // 
-            this.cancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancelBtn.FlatAppearance.BorderSize = 0;
-            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.cancelBtn.ForeColor = System.Drawing.Color.White;
-            this.cancelBtn.Location = new System.Drawing.Point(153, 55);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(77, 23);
-            this.cancelBtn.TabIndex = 7;
-            this.cancelBtn.Text = "Cancel";
-            this.cancelBtn.UseVisualStyleBackColor = false;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            this.Button_EditCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.Button_EditCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_EditCancel.FlatAppearance.BorderSize = 0;
+            this.Button_EditCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_EditCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_EditCancel.ForeColor = System.Drawing.Color.White;
+            this.Button_EditCancel.Location = new System.Drawing.Point(153, 55);
+            this.Button_EditCancel.Name = "Button_EditCancel";
+            this.Button_EditCancel.Size = new System.Drawing.Size(77, 23);
+            this.Button_EditCancel.TabIndex = 7;
+            this.Button_EditCancel.Text = "Cancel";
+            this.Button_EditCancel.UseVisualStyleBackColor = false;
+            this.Button_EditCancel.Click += new System.EventHandler(this.Button_EditCancel_Click);
             // 
-            // saveChangeBtn
+            // Button_EditSave
             // 
-            this.saveChangeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
-            this.saveChangeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveChangeBtn.FlatAppearance.BorderSize = 0;
-            this.saveChangeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveChangeBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.saveChangeBtn.ForeColor = System.Drawing.Color.White;
-            this.saveChangeBtn.Location = new System.Drawing.Point(317, 55);
-            this.saveChangeBtn.Name = "saveChangeBtn";
-            this.saveChangeBtn.Size = new System.Drawing.Size(77, 23);
-            this.saveChangeBtn.TabIndex = 8;
-            this.saveChangeBtn.Text = "Save";
-            this.saveChangeBtn.UseVisualStyleBackColor = false;
-            this.saveChangeBtn.Click += new System.EventHandler(this.saveChangeBtn_Click);
+            this.Button_EditSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
+            this.Button_EditSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_EditSave.FlatAppearance.BorderSize = 0;
+            this.Button_EditSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_EditSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_EditSave.ForeColor = System.Drawing.Color.White;
+            this.Button_EditSave.Location = new System.Drawing.Point(317, 55);
+            this.Button_EditSave.Name = "Button_EditSave";
+            this.Button_EditSave.Size = new System.Drawing.Size(77, 23);
+            this.Button_EditSave.TabIndex = 8;
+            this.Button_EditSave.Text = "Save";
+            this.Button_EditSave.UseVisualStyleBackColor = false;
+            this.Button_EditSave.Click += new System.EventHandler(this.Button_EditSave_Click);
             // 
-            // deleteBtn
+            // Button_EditDelete
             // 
-            this.deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.deleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteBtn.FlatAppearance.BorderSize = 0;
-            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteBtn.Location = new System.Drawing.Point(236, 55);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(77, 23);
-            this.deleteBtn.TabIndex = 9;
-            this.deleteBtn.Text = "Delete";
-            this.deleteBtn.UseVisualStyleBackColor = false;
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            this.Button_EditDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.Button_EditDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_EditDelete.FlatAppearance.BorderSize = 0;
+            this.Button_EditDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_EditDelete.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_EditDelete.ForeColor = System.Drawing.Color.White;
+            this.Button_EditDelete.Location = new System.Drawing.Point(236, 55);
+            this.Button_EditDelete.Name = "Button_EditDelete";
+            this.Button_EditDelete.Size = new System.Drawing.Size(77, 23);
+            this.Button_EditDelete.TabIndex = 9;
+            this.Button_EditDelete.Text = "Delete";
+            this.Button_EditDelete.UseVisualStyleBackColor = false;
+            this.Button_EditDelete.Click += new System.EventHandler(this.Button_EditDelete_Click);
             // 
-            // lblNewTemplateName
+            // Label_NewTemplateName
             // 
-            this.lblNewTemplateName.AutoSize = true;
-            this.lblNewTemplateName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblNewTemplateName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblNewTemplateName.Location = new System.Drawing.Point(18, 64);
-            this.lblNewTemplateName.Name = "lblNewTemplateName";
-            this.lblNewTemplateName.Size = new System.Drawing.Size(95, 14);
-            this.lblNewTemplateName.TabIndex = 10;
-            this.lblNewTemplateName.Text = "Template name:";
+            this.Label_NewTemplateName.AutoSize = true;
+            this.Label_NewTemplateName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_NewTemplateName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_NewTemplateName.Location = new System.Drawing.Point(18, 64);
+            this.Label_NewTemplateName.Name = "Label_NewTemplateName";
+            this.Label_NewTemplateName.Size = new System.Drawing.Size(95, 14);
+            this.Label_NewTemplateName.TabIndex = 10;
+            this.Label_NewTemplateName.Text = "Template name:";
             // 
-            // lblNewAddSections
+            // Label_NewTemplateSection
             // 
-            this.lblNewAddSections.AutoSize = true;
-            this.lblNewAddSections.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblNewAddSections.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblNewAddSections.Location = new System.Drawing.Point(18, 124);
-            this.lblNewAddSections.Name = "lblNewAddSections";
-            this.lblNewAddSections.Size = new System.Drawing.Size(138, 14);
-            this.lblNewAddSections.TabIndex = 11;
-            this.lblNewAddSections.Text = "Add sections (optional):";
+            this.Label_NewTemplateSection.AutoSize = true;
+            this.Label_NewTemplateSection.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_NewTemplateSection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_NewTemplateSection.Location = new System.Drawing.Point(18, 124);
+            this.Label_NewTemplateSection.Name = "Label_NewTemplateSection";
+            this.Label_NewTemplateSection.Size = new System.Drawing.Size(138, 14);
+            this.Label_NewTemplateSection.TabIndex = 11;
+            this.Label_NewTemplateSection.Text = "Add sections (optional):";
             // 
-            // lblChooseTemplate
+            // Label_EditTemplateChooseExisting
             // 
-            this.lblChooseTemplate.AutoSize = true;
-            this.lblChooseTemplate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblChooseTemplate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblChooseTemplate.Location = new System.Drawing.Point(18, 64);
-            this.lblChooseTemplate.Name = "lblChooseTemplate";
-            this.lblChooseTemplate.Size = new System.Drawing.Size(105, 14);
-            this.lblChooseTemplate.TabIndex = 12;
-            this.lblChooseTemplate.Text = "Choose template:";
+            this.Label_EditTemplateChooseExisting.AutoSize = true;
+            this.Label_EditTemplateChooseExisting.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_EditTemplateChooseExisting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_EditTemplateChooseExisting.Location = new System.Drawing.Point(18, 64);
+            this.Label_EditTemplateChooseExisting.Name = "Label_EditTemplateChooseExisting";
+            this.Label_EditTemplateChooseExisting.Size = new System.Drawing.Size(105, 14);
+            this.Label_EditTemplateChooseExisting.TabIndex = 12;
+            this.Label_EditTemplateChooseExisting.Text = "Choose template:";
             // 
-            // newCodeParaBox
+            // RichTextBox_NewCodeParagraph
             // 
-            this.newCodeParaBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.newCodeParaBox.Location = new System.Drawing.Point(21, 144);
-            this.newCodeParaBox.Name = "newCodeParaBox";
-            this.newCodeParaBox.Size = new System.Drawing.Size(371, 138);
-            this.newCodeParaBox.TabIndex = 14;
-            this.newCodeParaBox.Text = "";
-            this.newCodeParaBox.TextChanged += new System.EventHandler(this.newCodeParaBox_TextChanged);
+            this.RichTextBox_NewCodeParagraph.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.RichTextBox_NewCodeParagraph.Location = new System.Drawing.Point(21, 144);
+            this.RichTextBox_NewCodeParagraph.Name = "RichTextBox_NewCodeParagraph";
+            this.RichTextBox_NewCodeParagraph.Size = new System.Drawing.Size(371, 138);
+            this.RichTextBox_NewCodeParagraph.TabIndex = 14;
+            this.RichTextBox_NewCodeParagraph.Text = "";
+            this.RichTextBox_NewCodeParagraph.TextChanged += new System.EventHandler(this.RichTextBox_NewCodeParagraph_TextChanged);
             // 
-            // lblCodeParagraph
+            // Label_NewCodeParagraph
             // 
-            this.lblCodeParagraph.AutoSize = true;
-            this.lblCodeParagraph.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCodeParagraph.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblCodeParagraph.Location = new System.Drawing.Point(18, 122);
-            this.lblCodeParagraph.Name = "lblCodeParagraph";
-            this.lblCodeParagraph.Size = new System.Drawing.Size(98, 14);
-            this.lblCodeParagraph.TabIndex = 15;
-            this.lblCodeParagraph.Text = "Code paragraph:";
+            this.Label_NewCodeParagraph.AutoSize = true;
+            this.Label_NewCodeParagraph.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_NewCodeParagraph.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_NewCodeParagraph.Location = new System.Drawing.Point(18, 122);
+            this.Label_NewCodeParagraph.Name = "Label_NewCodeParagraph";
+            this.Label_NewCodeParagraph.Size = new System.Drawing.Size(98, 14);
+            this.Label_NewCodeParagraph.TabIndex = 15;
+            this.Label_NewCodeParagraph.Text = "Code paragraph:";
             // 
             // ComboBox_NewCodeSection
             // 
@@ -327,733 +327,733 @@
             this.ComboBox_NewCodeSection.TabIndex = 16;
             this.ComboBox_NewCodeSection.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBox_NewCodeSection_DrawItem);
             // 
-            // checkBoxForEdit
-            // 
-            this.checkBoxForEdit.CheckOnClick = true;
-            this.checkBoxForEdit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.checkBoxForEdit.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxForEdit.FormattingEnabled = true;
-            this.checkBoxForEdit.Location = new System.Drawing.Point(21, 207);
-            this.checkBoxForEdit.Name = "checkBoxForEdit";
-            this.checkBoxForEdit.Size = new System.Drawing.Size(373, 139);
-            this.checkBoxForEdit.TabIndex = 17;
-            // 
-            // dropDownForEdit
-            // 
-            this.dropDownForEdit.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.dropDownForEdit.DropDownHeight = 200;
-            this.dropDownForEdit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropDownForEdit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.dropDownForEdit.FormattingEnabled = true;
-            this.dropDownForEdit.IntegralHeight = false;
-            this.dropDownForEdit.ItemHeight = 20;
-            this.dropDownForEdit.Location = new System.Drawing.Point(21, 322);
-            this.dropDownForEdit.Name = "dropDownForEdit";
-            this.dropDownForEdit.Size = new System.Drawing.Size(373, 26);
-            this.dropDownForEdit.TabIndex = 18;
-            this.dropDownForEdit.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.dropDownForEdit_DrawItem);
-            // 
-            // panelManagement
-            // 
-            this.panelManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(57)))));
-            this.panelManagement.Controls.Add(this.lblStage3);
-            this.panelManagement.Controls.Add(this.imgStage3);
-            this.panelManagement.Controls.Add(this.lblStage2);
-            this.panelManagement.Controls.Add(this.imgStage2);
-            this.panelManagement.Controls.Add(this.lblStage1);
-            this.panelManagement.Controls.Add(this.imgStage1);
-            this.panelManagement.Controls.Add(this.pictureBox1);
-            this.panelManagement.Location = new System.Drawing.Point(0, 0);
-            this.panelManagement.Name = "panelManagement";
-            this.panelManagement.Size = new System.Drawing.Size(100, 564);
-            this.panelManagement.TabIndex = 19;
-            // 
-            // lblStage3
-            // 
-            this.lblStage3.AutoSize = true;
-            this.lblStage3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblStage3.ForeColor = System.Drawing.Color.White;
-            this.lblStage3.Location = new System.Drawing.Point(24, 370);
-            this.lblStage3.Name = "lblStage3";
-            this.lblStage3.Size = new System.Drawing.Size(52, 14);
-            this.lblStage3.TabIndex = 0;
-            this.lblStage3.Text = "Preview";
-            // 
-            // imgStage3
-            // 
-            this.imgStage3.Image = global::HappyTech.Properties.Resources.happytech_3;
-            this.imgStage3.Location = new System.Drawing.Point(42, 347);
-            this.imgStage3.Name = "imgStage3";
-            this.imgStage3.Size = new System.Drawing.Size(16, 16);
-            this.imgStage3.TabIndex = 42;
-            this.imgStage3.TabStop = false;
-            // 
-            // lblStage2
-            // 
-            this.lblStage2.AutoSize = true;
-            this.lblStage2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblStage2.ForeColor = System.Drawing.Color.White;
-            this.lblStage2.Location = new System.Drawing.Point(19, 258);
-            this.lblStage2.Name = "lblStage2";
-            this.lblStage2.Size = new System.Drawing.Size(60, 14);
-            this.lblStage2.TabIndex = 0;
-            this.lblStage2.Text = "Feedback";
-            // 
-            // imgStage2
-            // 
-            this.imgStage2.Image = global::HappyTech.Properties.Resources.happytech_2;
-            this.imgStage2.Location = new System.Drawing.Point(42, 235);
-            this.imgStage2.Name = "imgStage2";
-            this.imgStage2.Size = new System.Drawing.Size(16, 16);
-            this.imgStage2.TabIndex = 40;
-            this.imgStage2.TabStop = false;
-            // 
-            // lblStage1
-            // 
-            this.lblStage1.AutoSize = true;
-            this.lblStage1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblStage1.ForeColor = System.Drawing.Color.White;
-            this.lblStage1.Location = new System.Drawing.Point(17, 146);
-            this.lblStage1.Name = "lblStage1";
-            this.lblStage1.Size = new System.Drawing.Size(65, 14);
-            this.lblStage1.TabIndex = 0;
-            this.lblStage1.Text = "Applicants";
-            // 
-            // imgStage1
-            // 
-            this.imgStage1.Image = global::HappyTech.Properties.Resources.happytech_1;
-            this.imgStage1.Location = new System.Drawing.Point(42, 123);
-            this.imgStage1.Name = "imgStage1";
-            this.imgStage1.Size = new System.Drawing.Size(16, 16);
-            this.imgStage1.TabIndex = 37;
-            this.imgStage1.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HappyTech.Properties.Resources.happytech_logo_small;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 38);
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panelMode
-            // 
-            this.panelMode.BackColor = System.Drawing.Color.White;
-            this.panelMode.Controls.Add(this.btnModeCode);
-            this.panelMode.Controls.Add(this.btnModeSection);
-            this.panelMode.Controls.Add(this.btnModeTemplate);
-            this.panelMode.Location = new System.Drawing.Point(118, 25);
-            this.panelMode.Name = "panelMode";
-            this.panelMode.Size = new System.Drawing.Size(249, 32);
-            this.panelMode.TabIndex = 20;
-            // 
-            // btnModeCode
-            // 
-            this.btnModeCode.BackColor = System.Drawing.Color.White;
-            this.btnModeCode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModeCode.FlatAppearance.BorderSize = 0;
-            this.btnModeCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModeCode.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnModeCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.btnModeCode.Location = new System.Drawing.Point(169, 3);
-            this.btnModeCode.Name = "btnModeCode";
-            this.btnModeCode.Size = new System.Drawing.Size(77, 26);
-            this.btnModeCode.TabIndex = 23;
-            this.btnModeCode.Text = "Codes";
-            this.btnModeCode.UseVisualStyleBackColor = false;
-            this.btnModeCode.Click += new System.EventHandler(this.btnModeCode_Click);
-            // 
-            // btnModeSection
-            // 
-            this.btnModeSection.BackColor = System.Drawing.Color.White;
-            this.btnModeSection.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModeSection.FlatAppearance.BorderSize = 0;
-            this.btnModeSection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModeSection.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnModeSection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.btnModeSection.Location = new System.Drawing.Point(86, 3);
-            this.btnModeSection.Name = "btnModeSection";
-            this.btnModeSection.Size = new System.Drawing.Size(77, 26);
-            this.btnModeSection.TabIndex = 22;
-            this.btnModeSection.Text = "Sections";
-            this.btnModeSection.UseVisualStyleBackColor = false;
-            this.btnModeSection.Click += new System.EventHandler(this.btnModeSection_Click);
-            // 
-            // btnModeTemplate
-            // 
-            this.btnModeTemplate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.btnModeTemplate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModeTemplate.FlatAppearance.BorderSize = 0;
-            this.btnModeTemplate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModeTemplate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnModeTemplate.ForeColor = System.Drawing.Color.White;
-            this.btnModeTemplate.Location = new System.Drawing.Point(3, 3);
-            this.btnModeTemplate.Name = "btnModeTemplate";
-            this.btnModeTemplate.Size = new System.Drawing.Size(77, 26);
-            this.btnModeTemplate.TabIndex = 21;
-            this.btnModeTemplate.Text = "Templates";
-            this.btnModeTemplate.UseVisualStyleBackColor = false;
-            this.btnModeTemplate.Click += new System.EventHandler(this.btnModeTemplate_Click);
-            // 
-            // panelAddTemplate
-            // 
-            this.panelAddTemplate.BackColor = System.Drawing.Color.White;
-            this.panelAddTemplate.Controls.Add(this.lblAddNewTemplate);
-            this.panelAddTemplate.Controls.Add(this.lblNewTemplateName);
-            this.panelAddTemplate.Controls.Add(this.txtNewTemplateName);
-            this.panelAddTemplate.Controls.Add(this.lblNewAddSections);
-            this.panelAddTemplate.Controls.Add(this.CheckedListBox_NewTemplateExistingSection);
-            this.panelAddTemplate.Location = new System.Drawing.Point(118, 75);
-            this.panelAddTemplate.Name = "panelAddTemplate";
-            this.panelAddTemplate.Size = new System.Drawing.Size(411, 359);
-            this.panelAddTemplate.TabIndex = 21;
-            // 
-            // lblAddNewTemplate
-            // 
-            this.lblAddNewTemplate.AutoSize = true;
-            this.lblAddNewTemplate.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblAddNewTemplate.Location = new System.Drawing.Point(17, 14);
-            this.lblAddNewTemplate.Name = "lblAddNewTemplate";
-            this.lblAddNewTemplate.Size = new System.Drawing.Size(196, 24);
-            this.lblAddNewTemplate.TabIndex = 1;
-            this.lblAddNewTemplate.Text = "Add new template.";
-            // 
-            // panelEditTemplate
-            // 
-            this.panelEditTemplate.BackColor = System.Drawing.Color.White;
-            this.panelEditTemplate.Controls.Add(this.lblEditAddSections);
-            this.panelEditTemplate.Controls.Add(this.lblEditTemplateName);
-            this.panelEditTemplate.Controls.Add(this.lblEditExistingTemplate);
-            this.panelEditTemplate.Controls.Add(this.lblChooseTemplate);
-            this.panelEditTemplate.Controls.Add(this.ComboBox_EditExistingTemplate);
-            this.panelEditTemplate.Controls.Add(this.checkBoxForEdit);
-            this.panelEditTemplate.Controls.Add(this.txtEditTemplateName);
-            this.panelEditTemplate.Location = new System.Drawing.Point(549, 75);
-            this.panelEditTemplate.Name = "panelEditTemplate";
-            this.panelEditTemplate.Size = new System.Drawing.Size(411, 359);
-            this.panelEditTemplate.TabIndex = 22;
-            // 
-            // lblEditAddSections
-            // 
-            this.lblEditAddSections.AutoSize = true;
-            this.lblEditAddSections.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblEditAddSections.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblEditAddSections.Location = new System.Drawing.Point(18, 183);
-            this.lblEditAddSections.Name = "lblEditAddSections";
-            this.lblEditAddSections.Size = new System.Drawing.Size(152, 14);
-            this.lblEditAddSections.TabIndex = 12;
-            this.lblEditAddSections.Text = "Add to sections (optional):";
-            // 
-            // lblEditTemplateName
-            // 
-            this.lblEditTemplateName.AutoSize = true;
-            this.lblEditTemplateName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblEditTemplateName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblEditTemplateName.Location = new System.Drawing.Point(18, 124);
-            this.lblEditTemplateName.Name = "lblEditTemplateName";
-            this.lblEditTemplateName.Size = new System.Drawing.Size(95, 14);
-            this.lblEditTemplateName.TabIndex = 12;
-            this.lblEditTemplateName.Text = "Template name:";
-            // 
-            // lblEditExistingTemplate
-            // 
-            this.lblEditExistingTemplate.AutoSize = true;
-            this.lblEditExistingTemplate.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblEditExistingTemplate.Location = new System.Drawing.Point(17, 14);
-            this.lblEditExistingTemplate.Name = "lblEditExistingTemplate";
-            this.lblEditExistingTemplate.Size = new System.Drawing.Size(233, 24);
-            this.lblEditExistingTemplate.TabIndex = 1;
-            this.lblEditExistingTemplate.Text = "Edit existing template.";
-            // 
-            // panelSaveNew
-            // 
-            this.panelSaveNew.BackColor = System.Drawing.Color.White;
-            this.panelSaveNew.Controls.Add(this.lblAddSuccess);
-            this.panelSaveNew.Controls.Add(this.lblAddError);
-            this.panelSaveNew.Controls.Add(this.lblAddActions);
-            this.panelSaveNew.Controls.Add(this.backBtn);
-            this.panelSaveNew.Controls.Add(this.Button_SaveNew);
-            this.panelSaveNew.Location = new System.Drawing.Point(118, 450);
-            this.panelSaveNew.Name = "panelSaveNew";
-            this.panelSaveNew.Size = new System.Drawing.Size(411, 91);
-            this.panelSaveNew.TabIndex = 22;
-            // 
-            // lblAddSuccess
-            // 
-            this.lblAddSuccess.AutoSize = true;
-            this.lblAddSuccess.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAddSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
-            this.lblAddSuccess.Location = new System.Drawing.Point(160, 34);
-            this.lblAddSuccess.Name = "lblAddSuccess";
-            this.lblAddSuccess.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblAddSuccess.Size = new System.Drawing.Size(109, 14);
-            this.lblAddSuccess.TabIndex = 11;
-            this.lblAddSuccess.Text = "Success message";
-            this.lblAddSuccess.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblAddSuccess.Visible = false;
-            // 
-            // lblAddError
-            // 
-            this.lblAddError.AutoSize = true;
-            this.lblAddError.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAddError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.lblAddError.Location = new System.Drawing.Point(160, 14);
-            this.lblAddError.Name = "lblAddError";
-            this.lblAddError.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblAddError.Size = new System.Drawing.Size(89, 14);
-            this.lblAddError.TabIndex = 4;
-            this.lblAddError.Text = "Error Message";
-            this.lblAddError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblAddError.Visible = false;
-            // 
-            // lblAddActions
-            // 
-            this.lblAddActions.AutoSize = true;
-            this.lblAddActions.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblAddActions.Location = new System.Drawing.Point(17, 14);
-            this.lblAddActions.Name = "lblAddActions";
-            this.lblAddActions.Size = new System.Drawing.Size(137, 24);
-            this.lblAddActions.TabIndex = 1;
-            this.lblAddActions.Text = "Add actions.";
-            // 
-            // panelSaveEdit
-            // 
-            this.panelSaveEdit.BackColor = System.Drawing.Color.White;
-            this.panelSaveEdit.Controls.Add(this.lblEditSuccess);
-            this.panelSaveEdit.Controls.Add(this.lblEditError);
-            this.panelSaveEdit.Controls.Add(this.lblEditActions);
-            this.panelSaveEdit.Controls.Add(this.backBtnEdit);
-            this.panelSaveEdit.Controls.Add(this.saveChangeBtn);
-            this.panelSaveEdit.Controls.Add(this.cancelBtn);
-            this.panelSaveEdit.Controls.Add(this.deleteBtn);
-            this.panelSaveEdit.Location = new System.Drawing.Point(549, 450);
-            this.panelSaveEdit.Name = "panelSaveEdit";
-            this.panelSaveEdit.Size = new System.Drawing.Size(411, 91);
-            this.panelSaveEdit.TabIndex = 23;
-            // 
-            // lblEditSuccess
-            // 
-            this.lblEditSuccess.AutoSize = true;
-            this.lblEditSuccess.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblEditSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
-            this.lblEditSuccess.Location = new System.Drawing.Point(158, 34);
-            this.lblEditSuccess.Name = "lblEditSuccess";
-            this.lblEditSuccess.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblEditSuccess.Size = new System.Drawing.Size(109, 14);
-            this.lblEditSuccess.TabIndex = 10;
-            this.lblEditSuccess.Text = "Success message";
-            this.lblEditSuccess.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblEditSuccess.Visible = false;
-            // 
-            // lblEditError
-            // 
-            this.lblEditError.AutoSize = true;
-            this.lblEditError.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblEditError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.lblEditError.Location = new System.Drawing.Point(158, 14);
-            this.lblEditError.Name = "lblEditError";
-            this.lblEditError.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblEditError.Size = new System.Drawing.Size(89, 14);
-            this.lblEditError.TabIndex = 5;
-            this.lblEditError.Text = "Error Message";
-            this.lblEditError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblEditError.Visible = false;
-            // 
-            // lblEditActions
-            // 
-            this.lblEditActions.AutoSize = true;
-            this.lblEditActions.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblEditActions.Location = new System.Drawing.Point(17, 14);
-            this.lblEditActions.Name = "lblEditActions";
-            this.lblEditActions.Size = new System.Drawing.Size(135, 24);
-            this.lblEditActions.TabIndex = 1;
-            this.lblEditActions.Text = "Edit actions.";
-            // 
-            // backBtnEdit
-            // 
-            this.backBtnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.backBtnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.backBtnEdit.FlatAppearance.BorderSize = 0;
-            this.backBtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backBtnEdit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.backBtnEdit.ForeColor = System.Drawing.Color.White;
-            this.backBtnEdit.Location = new System.Drawing.Point(70, 55);
-            this.backBtnEdit.Name = "backBtnEdit";
-            this.backBtnEdit.Size = new System.Drawing.Size(77, 23);
-            this.backBtnEdit.TabIndex = 3;
-            this.backBtnEdit.Text = "Back";
-            this.backBtnEdit.UseVisualStyleBackColor = false;
-            this.backBtnEdit.Click += new System.EventHandler(this.backBtnEdit_Click);
-            // 
-            // panelAddSection
-            // 
-            this.panelAddSection.BackColor = System.Drawing.Color.White;
-            this.panelAddSection.Controls.Add(this.lblAddNewSection);
-            this.panelAddSection.Controls.Add(this.lblNewSectionName);
-            this.panelAddSection.Controls.Add(this.txtNewSectionName);
-            this.panelAddSection.Controls.Add(this.lblNewAddTemplates);
-            this.panelAddSection.Controls.Add(this.CheckedListBox_NewSectionExistingTemplates);
-            this.panelAddSection.Location = new System.Drawing.Point(118, 75);
-            this.panelAddSection.Name = "panelAddSection";
-            this.panelAddSection.Size = new System.Drawing.Size(411, 359);
-            this.panelAddSection.TabIndex = 22;
-            this.panelAddSection.Visible = false;
-            // 
-            // lblAddNewSection
-            // 
-            this.lblAddNewSection.AutoSize = true;
-            this.lblAddNewSection.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblAddNewSection.Location = new System.Drawing.Point(17, 14);
-            this.lblAddNewSection.Name = "lblAddNewSection";
-            this.lblAddNewSection.Size = new System.Drawing.Size(183, 24);
-            this.lblAddNewSection.TabIndex = 1;
-            this.lblAddNewSection.Text = "Add new section.";
-            // 
-            // lblNewSectionName
-            // 
-            this.lblNewSectionName.AutoSize = true;
-            this.lblNewSectionName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblNewSectionName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblNewSectionName.Location = new System.Drawing.Point(18, 64);
-            this.lblNewSectionName.Name = "lblNewSectionName";
-            this.lblNewSectionName.Size = new System.Drawing.Size(85, 14);
-            this.lblNewSectionName.TabIndex = 10;
-            this.lblNewSectionName.Text = "Section name:";
-            // 
-            // txtNewSectionName
-            // 
-            this.txtNewSectionName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtNewSectionName.ForeColor = System.Drawing.Color.Black;
-            this.txtNewSectionName.Location = new System.Drawing.Point(21, 86);
-            this.txtNewSectionName.Name = "txtNewSectionName";
-            this.txtNewSectionName.Size = new System.Drawing.Size(371, 20);
-            this.txtNewSectionName.TabIndex = 0;
-            this.txtNewSectionName.TextChanged += new System.EventHandler(this.txtNewSectionName_TextChanged);
-            // 
-            // lblNewAddTemplates
-            // 
-            this.lblNewAddTemplates.AutoSize = true;
-            this.lblNewAddTemplates.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblNewAddTemplates.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblNewAddTemplates.Location = new System.Drawing.Point(18, 124);
-            this.lblNewAddTemplates.Name = "lblNewAddTemplates";
-            this.lblNewAddTemplates.Size = new System.Drawing.Size(146, 14);
-            this.lblNewAddTemplates.TabIndex = 11;
-            this.lblNewAddTemplates.Text = "Add templates (optional):";
-            // 
-            // CheckedListBox_NewSectionExistingTemplates
-            // 
-            this.CheckedListBox_NewSectionExistingTemplates.CheckOnClick = true;
-            this.CheckedListBox_NewSectionExistingTemplates.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.CheckedListBox_NewSectionExistingTemplates.ForeColor = System.Drawing.Color.Black;
-            this.CheckedListBox_NewSectionExistingTemplates.FormattingEnabled = true;
-            this.CheckedListBox_NewSectionExistingTemplates.Location = new System.Drawing.Point(21, 147);
-            this.CheckedListBox_NewSectionExistingTemplates.Name = "CheckedListBox_NewSectionExistingTemplates";
-            this.CheckedListBox_NewSectionExistingTemplates.Size = new System.Drawing.Size(371, 199);
-            this.CheckedListBox_NewSectionExistingTemplates.TabIndex = 1;
-            // 
-            // panelEditSection
-            // 
-            this.panelEditSection.BackColor = System.Drawing.Color.White;
-            this.panelEditSection.Controls.Add(this.lblEditAddTemps);
-            this.panelEditSection.Controls.Add(this.lblEditSectionName);
-            this.panelEditSection.Controls.Add(this.lblEditExistingSection);
-            this.panelEditSection.Controls.Add(this.lblChooseSection);
-            this.panelEditSection.Controls.Add(this.ComboBox_EditExistingSections);
-            this.panelEditSection.Controls.Add(this.checkboxEditExistTemps);
-            this.panelEditSection.Controls.Add(this.txtEditSectionName);
-            this.panelEditSection.Location = new System.Drawing.Point(549, 75);
-            this.panelEditSection.Name = "panelEditSection";
-            this.panelEditSection.Size = new System.Drawing.Size(411, 359);
-            this.panelEditSection.TabIndex = 23;
-            this.panelEditSection.Visible = false;
-            // 
-            // lblEditAddTemps
-            // 
-            this.lblEditAddTemps.AutoSize = true;
-            this.lblEditAddTemps.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblEditAddTemps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblEditAddTemps.Location = new System.Drawing.Point(18, 183);
-            this.lblEditAddTemps.Name = "lblEditAddTemps";
-            this.lblEditAddTemps.Size = new System.Drawing.Size(160, 14);
-            this.lblEditAddTemps.TabIndex = 12;
-            this.lblEditAddTemps.Text = "Add to templates (optional):";
-            // 
-            // lblEditSectionName
-            // 
-            this.lblEditSectionName.AutoSize = true;
-            this.lblEditSectionName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblEditSectionName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblEditSectionName.Location = new System.Drawing.Point(18, 124);
-            this.lblEditSectionName.Name = "lblEditSectionName";
-            this.lblEditSectionName.Size = new System.Drawing.Size(85, 14);
-            this.lblEditSectionName.TabIndex = 12;
-            this.lblEditSectionName.Text = "Section name:";
-            // 
-            // lblEditExistingSection
-            // 
-            this.lblEditExistingSection.AutoSize = true;
-            this.lblEditExistingSection.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblEditExistingSection.Location = new System.Drawing.Point(17, 14);
-            this.lblEditExistingSection.Name = "lblEditExistingSection";
-            this.lblEditExistingSection.Size = new System.Drawing.Size(220, 24);
-            this.lblEditExistingSection.TabIndex = 1;
-            this.lblEditExistingSection.Text = "Edit existing section.";
-            // 
-            // lblChooseSection
-            // 
-            this.lblChooseSection.AutoSize = true;
-            this.lblChooseSection.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblChooseSection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblChooseSection.Location = new System.Drawing.Point(18, 64);
-            this.lblChooseSection.Name = "lblChooseSection";
-            this.lblChooseSection.Size = new System.Drawing.Size(97, 14);
-            this.lblChooseSection.TabIndex = 12;
-            this.lblChooseSection.Text = "Choose section:";
-            // 
-            // ComboBox_EditExistingSections
-            // 
-            this.ComboBox_EditExistingSections.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.ComboBox_EditExistingSections.DropDownHeight = 200;
-            this.ComboBox_EditExistingSections.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBox_EditExistingSections.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.ComboBox_EditExistingSections.ForeColor = System.Drawing.Color.Black;
-            this.ComboBox_EditExistingSections.FormattingEnabled = true;
-            this.ComboBox_EditExistingSections.IntegralHeight = false;
-            this.ComboBox_EditExistingSections.ItemHeight = 20;
-            this.ComboBox_EditExistingSections.Location = new System.Drawing.Point(21, 84);
-            this.ComboBox_EditExistingSections.Name = "ComboBox_EditExistingSections";
-            this.ComboBox_EditExistingSections.Size = new System.Drawing.Size(373, 26);
-            this.ComboBox_EditExistingSections.TabIndex = 4;
-            this.ComboBox_EditExistingSections.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBox_EditExistingSections_DrawItem);
-            this.ComboBox_EditExistingSections.SelectedIndexChanged += new System.EventHandler(this.ComboBox_EditExistingSections_SelectedIndexChanged);
-            // 
-            // checkboxEditExistTemps
-            // 
-            this.checkboxEditExistTemps.CheckOnClick = true;
-            this.checkboxEditExistTemps.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.checkboxEditExistTemps.ForeColor = System.Drawing.Color.Black;
-            this.checkboxEditExistTemps.FormattingEnabled = true;
-            this.checkboxEditExistTemps.Location = new System.Drawing.Point(21, 207);
-            this.checkboxEditExistTemps.Name = "checkboxEditExistTemps";
-            this.checkboxEditExistTemps.Size = new System.Drawing.Size(373, 139);
-            this.checkboxEditExistTemps.TabIndex = 17;
-            // 
-            // txtEditSectionName
-            // 
-            this.txtEditSectionName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtEditSectionName.ForeColor = System.Drawing.Color.Black;
-            this.txtEditSectionName.Location = new System.Drawing.Point(21, 147);
-            this.txtEditSectionName.Name = "txtEditSectionName";
-            this.txtEditSectionName.Size = new System.Drawing.Size(373, 20);
-            this.txtEditSectionName.TabIndex = 5;
-            this.txtEditSectionName.TextChanged += new System.EventHandler(this.txtEditSectionName_TextChanged);
-            // 
-            // panelAddCode
-            // 
-            this.panelAddCode.BackColor = System.Drawing.Color.White;
-            this.panelAddCode.Controls.Add(this.lblCodeNameLimit);
-            this.panelAddCode.Controls.Add(this.lblCodeParaLimit);
-            this.panelAddCode.Controls.Add(this.lblAddNewCode);
-            this.panelAddCode.Controls.Add(this.lblNewCodeName);
-            this.panelAddCode.Controls.Add(this.txtNewCodeName);
-            this.panelAddCode.Controls.Add(this.lblNewAddSectionsCode);
-            this.panelAddCode.Controls.Add(this.ComboBox_NewCodeSection);
-            this.panelAddCode.Controls.Add(this.lblCodeParagraph);
-            this.panelAddCode.Controls.Add(this.newCodeParaBox);
-            this.panelAddCode.Location = new System.Drawing.Point(118, 75);
-            this.panelAddCode.Name = "panelAddCode";
-            this.panelAddCode.Size = new System.Drawing.Size(411, 359);
-            this.panelAddCode.TabIndex = 23;
-            this.panelAddCode.Visible = false;
-            // 
-            // lblCodeNameLimit
-            // 
-            this.lblCodeNameLimit.AutoSize = true;
-            this.lblCodeNameLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCodeNameLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblCodeNameLimit.Location = new System.Drawing.Point(97, 64);
-            this.lblCodeNameLimit.Name = "lblCodeNameLimit";
-            this.lblCodeNameLimit.Size = new System.Drawing.Size(36, 14);
-            this.lblCodeNameLimit.TabIndex = 18;
-            this.lblCodeNameLimit.Text = "(0 / 5)";
-            // 
-            // lblCodeParaLimit
-            // 
-            this.lblCodeParaLimit.AutoSize = true;
-            this.lblCodeParaLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCodeParaLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblCodeParaLimit.Location = new System.Drawing.Point(122, 122);
-            this.lblCodeParaLimit.Name = "lblCodeParaLimit";
-            this.lblCodeParaLimit.Size = new System.Drawing.Size(48, 14);
-            this.lblCodeParaLimit.TabIndex = 17;
-            this.lblCodeParaLimit.Text = "(0 / 300)";
-            // 
-            // lblAddNewCode
-            // 
-            this.lblAddNewCode.AutoSize = true;
-            this.lblAddNewCode.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblAddNewCode.Location = new System.Drawing.Point(17, 14);
-            this.lblAddNewCode.Name = "lblAddNewCode";
-            this.lblAddNewCode.Size = new System.Drawing.Size(159, 24);
-            this.lblAddNewCode.TabIndex = 1;
-            this.lblAddNewCode.Text = "Add new code.";
-            // 
-            // lblNewCodeName
-            // 
-            this.lblNewCodeName.AutoSize = true;
-            this.lblNewCodeName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblNewCodeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblNewCodeName.Location = new System.Drawing.Point(18, 64);
-            this.lblNewCodeName.Name = "lblNewCodeName";
-            this.lblNewCodeName.Size = new System.Drawing.Size(73, 14);
-            this.lblNewCodeName.TabIndex = 10;
-            this.lblNewCodeName.Text = "Code name:";
-            // 
-            // txtNewCodeName
-            // 
-            this.txtNewCodeName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtNewCodeName.ForeColor = System.Drawing.Color.Black;
-            this.txtNewCodeName.Location = new System.Drawing.Point(21, 86);
-            this.txtNewCodeName.Name = "txtNewCodeName";
-            this.txtNewCodeName.Size = new System.Drawing.Size(371, 20);
-            this.txtNewCodeName.TabIndex = 0;
-            this.txtNewCodeName.TextChanged += new System.EventHandler(this.txtNewCodeName_TextChanged);
-            // 
-            // lblNewAddSectionsCode
-            // 
-            this.lblNewAddSectionsCode.AutoSize = true;
-            this.lblNewAddSectionsCode.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblNewAddSectionsCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblNewAddSectionsCode.Location = new System.Drawing.Point(18, 294);
-            this.lblNewAddSectionsCode.Name = "lblNewAddSectionsCode";
-            this.lblNewAddSectionsCode.Size = new System.Drawing.Size(76, 14);
-            this.lblNewAddSectionsCode.TabIndex = 11;
-            this.lblNewAddSectionsCode.Text = "Add Section:";
-            // 
-            // panelEditCode
-            // 
-            this.panelEditCode.BackColor = System.Drawing.Color.White;
-            this.panelEditCode.Controls.Add(this.lblEditCodeNameLimit);
-            this.panelEditCode.Controls.Add(this.lblEditCodeParaLimit);
-            this.panelEditCode.Controls.Add(this.lblCodeParagraphEdit);
-            this.panelEditCode.Controls.Add(this.lblEditAddSectionsCode);
-            this.panelEditCode.Controls.Add(this.lblEditCodeName);
-            this.panelEditCode.Controls.Add(this.lblEditExistingCode);
-            this.panelEditCode.Controls.Add(this.lblChooseCode);
-            this.panelEditCode.Controls.Add(this.ComboBox_EditExistingCode);
-            this.panelEditCode.Controls.Add(this.txtEditCodeName);
-            this.panelEditCode.Controls.Add(this.dropDownForEdit);
-            this.panelEditCode.Controls.Add(this.codeParaEditBox);
-            this.panelEditCode.Location = new System.Drawing.Point(549, 75);
-            this.panelEditCode.Name = "panelEditCode";
-            this.panelEditCode.Size = new System.Drawing.Size(411, 359);
-            this.panelEditCode.TabIndex = 24;
-            this.panelEditCode.Visible = false;
-            // 
-            // lblEditCodeNameLimit
-            // 
-            this.lblEditCodeNameLimit.AutoSize = true;
-            this.lblEditCodeNameLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblEditCodeNameLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblEditCodeNameLimit.Location = new System.Drawing.Point(97, 124);
-            this.lblEditCodeNameLimit.Name = "lblEditCodeNameLimit";
-            this.lblEditCodeNameLimit.Size = new System.Drawing.Size(36, 14);
-            this.lblEditCodeNameLimit.TabIndex = 19;
-            this.lblEditCodeNameLimit.Text = "(0 / 5)";
-            // 
-            // lblEditCodeParaLimit
-            // 
-            this.lblEditCodeParaLimit.AutoSize = true;
-            this.lblEditCodeParaLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblEditCodeParaLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblEditCodeParaLimit.Location = new System.Drawing.Point(122, 182);
-            this.lblEditCodeParaLimit.Name = "lblEditCodeParaLimit";
-            this.lblEditCodeParaLimit.Size = new System.Drawing.Size(48, 14);
-            this.lblEditCodeParaLimit.TabIndex = 19;
-            this.lblEditCodeParaLimit.Text = "(0 / 300)";
-            // 
-            // lblCodeParagraphEdit
-            // 
-            this.lblCodeParagraphEdit.AutoSize = true;
-            this.lblCodeParagraphEdit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCodeParagraphEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblCodeParagraphEdit.Location = new System.Drawing.Point(18, 182);
-            this.lblCodeParagraphEdit.Name = "lblCodeParagraphEdit";
-            this.lblCodeParagraphEdit.Size = new System.Drawing.Size(98, 14);
-            this.lblCodeParagraphEdit.TabIndex = 17;
-            this.lblCodeParagraphEdit.Text = "Code paragraph:";
-            // 
-            // lblEditAddSectionsCode
-            // 
-            this.lblEditAddSectionsCode.AutoSize = true;
-            this.lblEditAddSectionsCode.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblEditAddSectionsCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblEditAddSectionsCode.Location = new System.Drawing.Point(18, 303);
-            this.lblEditAddSectionsCode.Name = "lblEditAddSectionsCode";
-            this.lblEditAddSectionsCode.Size = new System.Drawing.Size(151, 14);
-            this.lblEditAddSectionsCode.TabIndex = 12;
-            this.lblEditAddSectionsCode.Text = "Change section (optional):";
-            // 
-            // lblEditCodeName
-            // 
-            this.lblEditCodeName.AutoSize = true;
-            this.lblEditCodeName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblEditCodeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblEditCodeName.Location = new System.Drawing.Point(18, 124);
-            this.lblEditCodeName.Name = "lblEditCodeName";
-            this.lblEditCodeName.Size = new System.Drawing.Size(73, 14);
-            this.lblEditCodeName.TabIndex = 12;
-            this.lblEditCodeName.Text = "Code name:";
-            // 
-            // lblEditExistingCode
-            // 
-            this.lblEditExistingCode.AutoSize = true;
-            this.lblEditExistingCode.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblEditExistingCode.Location = new System.Drawing.Point(17, 14);
-            this.lblEditExistingCode.Name = "lblEditExistingCode";
-            this.lblEditExistingCode.Size = new System.Drawing.Size(196, 24);
-            this.lblEditExistingCode.TabIndex = 1;
-            this.lblEditExistingCode.Text = "Edit existing code.";
-            // 
-            // lblChooseCode
-            // 
-            this.lblChooseCode.AutoSize = true;
-            this.lblChooseCode.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblChooseCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblChooseCode.Location = new System.Drawing.Point(18, 64);
-            this.lblChooseCode.Name = "lblChooseCode";
-            this.lblChooseCode.Size = new System.Drawing.Size(83, 14);
-            this.lblChooseCode.TabIndex = 12;
-            this.lblChooseCode.Text = "Choose code:";
-            // 
-            // ComboBox_EditExistingCode
-            // 
-            this.ComboBox_EditExistingCode.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.ComboBox_EditExistingCode.DropDownHeight = 200;
-            this.ComboBox_EditExistingCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBox_EditExistingCode.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.ComboBox_EditExistingCode.ForeColor = System.Drawing.Color.Black;
-            this.ComboBox_EditExistingCode.FormattingEnabled = true;
-            this.ComboBox_EditExistingCode.IntegralHeight = false;
-            this.ComboBox_EditExistingCode.ItemHeight = 20;
-            this.ComboBox_EditExistingCode.Location = new System.Drawing.Point(21, 84);
-            this.ComboBox_EditExistingCode.Name = "ComboBox_EditExistingCode";
-            this.ComboBox_EditExistingCode.Size = new System.Drawing.Size(373, 26);
-            this.ComboBox_EditExistingCode.TabIndex = 4;
-            this.ComboBox_EditExistingCode.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBox_EditExistingCode_DrawItem);
-            this.ComboBox_EditExistingCode.SelectedIndexChanged += new System.EventHandler(this.ComboBox_EditExistingCode_SelectedIndexChanged);
-            // 
-            // txtEditCodeName
-            // 
-            this.txtEditCodeName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtEditCodeName.ForeColor = System.Drawing.Color.Black;
-            this.txtEditCodeName.Location = new System.Drawing.Point(21, 147);
-            this.txtEditCodeName.Name = "txtEditCodeName";
-            this.txtEditCodeName.Size = new System.Drawing.Size(373, 20);
-            this.txtEditCodeName.TabIndex = 5;
-            this.txtEditCodeName.TextChanged += new System.EventHandler(this.txtEditCodeName_TextChanged);
+            // CheckedListBox_EditTemplateSection
+            // 
+            this.CheckedListBox_EditTemplateSection.CheckOnClick = true;
+            this.CheckedListBox_EditTemplateSection.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.CheckedListBox_EditTemplateSection.ForeColor = System.Drawing.Color.Black;
+            this.CheckedListBox_EditTemplateSection.FormattingEnabled = true;
+            this.CheckedListBox_EditTemplateSection.Location = new System.Drawing.Point(21, 207);
+            this.CheckedListBox_EditTemplateSection.Name = "CheckedListBox_EditTemplateSection";
+            this.CheckedListBox_EditTemplateSection.Size = new System.Drawing.Size(373, 139);
+            this.CheckedListBox_EditTemplateSection.TabIndex = 17;
+            // 
+            // ComboBox_EditCodeSection
+            // 
+            this.ComboBox_EditCodeSection.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.ComboBox_EditCodeSection.DropDownHeight = 200;
+            this.ComboBox_EditCodeSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_EditCodeSection.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ComboBox_EditCodeSection.FormattingEnabled = true;
+            this.ComboBox_EditCodeSection.IntegralHeight = false;
+            this.ComboBox_EditCodeSection.ItemHeight = 20;
+            this.ComboBox_EditCodeSection.Location = new System.Drawing.Point(21, 322);
+            this.ComboBox_EditCodeSection.Name = "ComboBox_EditCodeSection";
+            this.ComboBox_EditCodeSection.Size = new System.Drawing.Size(373, 26);
+            this.ComboBox_EditCodeSection.TabIndex = 18;
+            this.ComboBox_EditCodeSection.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBox_EditCodeSection_DrawItem);
+            // 
+            // Panel_Management
+            // 
+            this.Panel_Management.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(57)))));
+            this.Panel_Management.Controls.Add(this.Label_ManagementStage3);
+            this.Panel_Management.Controls.Add(this.PictureBox_ManagementStage3);
+            this.Panel_Management.Controls.Add(this.Label_ManagementStage2);
+            this.Panel_Management.Controls.Add(this.PictureBox_ManagementStage2);
+            this.Panel_Management.Controls.Add(this.Label_ManagementStage1);
+            this.Panel_Management.Controls.Add(this.PictureBox_ManagementStage1);
+            this.Panel_Management.Controls.Add(this.PictureBox_ManagementLogo);
+            this.Panel_Management.Location = new System.Drawing.Point(0, 0);
+            this.Panel_Management.Name = "Panel_Management";
+            this.Panel_Management.Size = new System.Drawing.Size(100, 564);
+            this.Panel_Management.TabIndex = 19;
+            // 
+            // Label_ManagementStage3
+            // 
+            this.Label_ManagementStage3.AutoSize = true;
+            this.Label_ManagementStage3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_ManagementStage3.ForeColor = System.Drawing.Color.White;
+            this.Label_ManagementStage3.Location = new System.Drawing.Point(24, 370);
+            this.Label_ManagementStage3.Name = "Label_ManagementStage3";
+            this.Label_ManagementStage3.Size = new System.Drawing.Size(52, 14);
+            this.Label_ManagementStage3.TabIndex = 0;
+            this.Label_ManagementStage3.Text = "Preview";
+            // 
+            // PictureBox_ManagementStage3
+            // 
+            this.PictureBox_ManagementStage3.Image = global::HappyTech.Properties.Resources.happytech_3;
+            this.PictureBox_ManagementStage3.Location = new System.Drawing.Point(42, 347);
+            this.PictureBox_ManagementStage3.Name = "PictureBox_ManagementStage3";
+            this.PictureBox_ManagementStage3.Size = new System.Drawing.Size(16, 16);
+            this.PictureBox_ManagementStage3.TabIndex = 42;
+            this.PictureBox_ManagementStage3.TabStop = false;
+            // 
+            // Label_ManagementStage2
+            // 
+            this.Label_ManagementStage2.AutoSize = true;
+            this.Label_ManagementStage2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_ManagementStage2.ForeColor = System.Drawing.Color.White;
+            this.Label_ManagementStage2.Location = new System.Drawing.Point(19, 258);
+            this.Label_ManagementStage2.Name = "Label_ManagementStage2";
+            this.Label_ManagementStage2.Size = new System.Drawing.Size(60, 14);
+            this.Label_ManagementStage2.TabIndex = 0;
+            this.Label_ManagementStage2.Text = "Feedback";
+            // 
+            // PictureBox_ManagementStage2
+            // 
+            this.PictureBox_ManagementStage2.Image = global::HappyTech.Properties.Resources.happytech_2;
+            this.PictureBox_ManagementStage2.Location = new System.Drawing.Point(42, 235);
+            this.PictureBox_ManagementStage2.Name = "PictureBox_ManagementStage2";
+            this.PictureBox_ManagementStage2.Size = new System.Drawing.Size(16, 16);
+            this.PictureBox_ManagementStage2.TabIndex = 40;
+            this.PictureBox_ManagementStage2.TabStop = false;
+            // 
+            // Label_ManagementStage1
+            // 
+            this.Label_ManagementStage1.AutoSize = true;
+            this.Label_ManagementStage1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_ManagementStage1.ForeColor = System.Drawing.Color.White;
+            this.Label_ManagementStage1.Location = new System.Drawing.Point(17, 146);
+            this.Label_ManagementStage1.Name = "Label_ManagementStage1";
+            this.Label_ManagementStage1.Size = new System.Drawing.Size(65, 14);
+            this.Label_ManagementStage1.TabIndex = 0;
+            this.Label_ManagementStage1.Text = "Applicants";
+            // 
+            // PictureBox_ManagementStage1
+            // 
+            this.PictureBox_ManagementStage1.Image = global::HappyTech.Properties.Resources.happytech_1;
+            this.PictureBox_ManagementStage1.Location = new System.Drawing.Point(42, 123);
+            this.PictureBox_ManagementStage1.Name = "PictureBox_ManagementStage1";
+            this.PictureBox_ManagementStage1.Size = new System.Drawing.Size(16, 16);
+            this.PictureBox_ManagementStage1.TabIndex = 37;
+            this.PictureBox_ManagementStage1.TabStop = false;
+            // 
+            // PictureBox_ManagementLogo
+            // 
+            this.PictureBox_ManagementLogo.Image = global::HappyTech.Properties.Resources.happytech_logo_small;
+            this.PictureBox_ManagementLogo.Location = new System.Drawing.Point(25, 25);
+            this.PictureBox_ManagementLogo.Name = "PictureBox_ManagementLogo";
+            this.PictureBox_ManagementLogo.Size = new System.Drawing.Size(45, 38);
+            this.PictureBox_ManagementLogo.TabIndex = 34;
+            this.PictureBox_ManagementLogo.TabStop = false;
+            // 
+            // Panel_Mode
+            // 
+            this.Panel_Mode.BackColor = System.Drawing.Color.White;
+            this.Panel_Mode.Controls.Add(this.Button_ModeCode);
+            this.Panel_Mode.Controls.Add(this.Button_ModeSection);
+            this.Panel_Mode.Controls.Add(this.Button_ModeTemplate);
+            this.Panel_Mode.Location = new System.Drawing.Point(118, 25);
+            this.Panel_Mode.Name = "Panel_Mode";
+            this.Panel_Mode.Size = new System.Drawing.Size(249, 32);
+            this.Panel_Mode.TabIndex = 20;
+            // 
+            // Button_ModeCode
+            // 
+            this.Button_ModeCode.BackColor = System.Drawing.Color.White;
+            this.Button_ModeCode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_ModeCode.FlatAppearance.BorderSize = 0;
+            this.Button_ModeCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_ModeCode.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_ModeCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.Button_ModeCode.Location = new System.Drawing.Point(169, 3);
+            this.Button_ModeCode.Name = "Button_ModeCode";
+            this.Button_ModeCode.Size = new System.Drawing.Size(77, 26);
+            this.Button_ModeCode.TabIndex = 23;
+            this.Button_ModeCode.Text = "Codes";
+            this.Button_ModeCode.UseVisualStyleBackColor = false;
+            this.Button_ModeCode.Click += new System.EventHandler(this.Button_ModeCode_Click);
+            // 
+            // Button_ModeSection
+            // 
+            this.Button_ModeSection.BackColor = System.Drawing.Color.White;
+            this.Button_ModeSection.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_ModeSection.FlatAppearance.BorderSize = 0;
+            this.Button_ModeSection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_ModeSection.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_ModeSection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.Button_ModeSection.Location = new System.Drawing.Point(86, 3);
+            this.Button_ModeSection.Name = "Button_ModeSection";
+            this.Button_ModeSection.Size = new System.Drawing.Size(77, 26);
+            this.Button_ModeSection.TabIndex = 22;
+            this.Button_ModeSection.Text = "Sections";
+            this.Button_ModeSection.UseVisualStyleBackColor = false;
+            this.Button_ModeSection.Click += new System.EventHandler(this.Button_ModeSection_Click);
+            // 
+            // Button_ModeTemplate
+            // 
+            this.Button_ModeTemplate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.Button_ModeTemplate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_ModeTemplate.FlatAppearance.BorderSize = 0;
+            this.Button_ModeTemplate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_ModeTemplate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_ModeTemplate.ForeColor = System.Drawing.Color.White;
+            this.Button_ModeTemplate.Location = new System.Drawing.Point(3, 3);
+            this.Button_ModeTemplate.Name = "Button_ModeTemplate";
+            this.Button_ModeTemplate.Size = new System.Drawing.Size(77, 26);
+            this.Button_ModeTemplate.TabIndex = 21;
+            this.Button_ModeTemplate.Text = "Templates";
+            this.Button_ModeTemplate.UseVisualStyleBackColor = false;
+            this.Button_ModeTemplate.Click += new System.EventHandler(this.Button_ModeTemplate_Click);
+            // 
+            // Panel_NewTemplate
+            // 
+            this.Panel_NewTemplate.BackColor = System.Drawing.Color.White;
+            this.Panel_NewTemplate.Controls.Add(this.Label_NewTemplateTitle);
+            this.Panel_NewTemplate.Controls.Add(this.Label_NewTemplateName);
+            this.Panel_NewTemplate.Controls.Add(this.TextBox_NewTemplateName);
+            this.Panel_NewTemplate.Controls.Add(this.Label_NewTemplateSection);
+            this.Panel_NewTemplate.Controls.Add(this.CheckedListBox_NewTemplateExistingSection);
+            this.Panel_NewTemplate.Location = new System.Drawing.Point(118, 75);
+            this.Panel_NewTemplate.Name = "Panel_NewTemplate";
+            this.Panel_NewTemplate.Size = new System.Drawing.Size(411, 359);
+            this.Panel_NewTemplate.TabIndex = 21;
+            // 
+            // Label_NewTemplateTitle
+            // 
+            this.Label_NewTemplateTitle.AutoSize = true;
+            this.Label_NewTemplateTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Label_NewTemplateTitle.Location = new System.Drawing.Point(17, 14);
+            this.Label_NewTemplateTitle.Name = "Label_NewTemplateTitle";
+            this.Label_NewTemplateTitle.Size = new System.Drawing.Size(196, 24);
+            this.Label_NewTemplateTitle.TabIndex = 1;
+            this.Label_NewTemplateTitle.Text = "Add new template.";
+            // 
+            // Panel_EditTemplate
+            // 
+            this.Panel_EditTemplate.BackColor = System.Drawing.Color.White;
+            this.Panel_EditTemplate.Controls.Add(this.Label_EditTemplateSection);
+            this.Panel_EditTemplate.Controls.Add(this.Label_EditTemplateName);
+            this.Panel_EditTemplate.Controls.Add(this.Label_EditTemplateTitle);
+            this.Panel_EditTemplate.Controls.Add(this.Label_EditTemplateChooseExisting);
+            this.Panel_EditTemplate.Controls.Add(this.ComboBox_EditTemplateChooseExisting);
+            this.Panel_EditTemplate.Controls.Add(this.CheckedListBox_EditTemplateSection);
+            this.Panel_EditTemplate.Controls.Add(this.TextBox_EditTemplateName);
+            this.Panel_EditTemplate.Location = new System.Drawing.Point(549, 75);
+            this.Panel_EditTemplate.Name = "Panel_EditTemplate";
+            this.Panel_EditTemplate.Size = new System.Drawing.Size(411, 359);
+            this.Panel_EditTemplate.TabIndex = 22;
+            // 
+            // Label_EditTemplateSection
+            // 
+            this.Label_EditTemplateSection.AutoSize = true;
+            this.Label_EditTemplateSection.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_EditTemplateSection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_EditTemplateSection.Location = new System.Drawing.Point(18, 183);
+            this.Label_EditTemplateSection.Name = "Label_EditTemplateSection";
+            this.Label_EditTemplateSection.Size = new System.Drawing.Size(152, 14);
+            this.Label_EditTemplateSection.TabIndex = 12;
+            this.Label_EditTemplateSection.Text = "Add to sections (optional):";
+            // 
+            // Label_EditTemplateName
+            // 
+            this.Label_EditTemplateName.AutoSize = true;
+            this.Label_EditTemplateName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_EditTemplateName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_EditTemplateName.Location = new System.Drawing.Point(18, 124);
+            this.Label_EditTemplateName.Name = "Label_EditTemplateName";
+            this.Label_EditTemplateName.Size = new System.Drawing.Size(95, 14);
+            this.Label_EditTemplateName.TabIndex = 12;
+            this.Label_EditTemplateName.Text = "Template name:";
+            // 
+            // Label_EditTemplateTitle
+            // 
+            this.Label_EditTemplateTitle.AutoSize = true;
+            this.Label_EditTemplateTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Label_EditTemplateTitle.Location = new System.Drawing.Point(17, 14);
+            this.Label_EditTemplateTitle.Name = "Label_EditTemplateTitle";
+            this.Label_EditTemplateTitle.Size = new System.Drawing.Size(233, 24);
+            this.Label_EditTemplateTitle.TabIndex = 1;
+            this.Label_EditTemplateTitle.Text = "Edit existing template.";
+            // 
+            // Panel_NewActions
+            // 
+            this.Panel_NewActions.BackColor = System.Drawing.Color.White;
+            this.Panel_NewActions.Controls.Add(this.Label_NewSuccess);
+            this.Panel_NewActions.Controls.Add(this.Label_NewError);
+            this.Panel_NewActions.Controls.Add(this.Label_NewActionsTitle);
+            this.Panel_NewActions.Controls.Add(this.Button_NewBack);
+            this.Panel_NewActions.Controls.Add(this.Button_NewSave);
+            this.Panel_NewActions.Location = new System.Drawing.Point(118, 450);
+            this.Panel_NewActions.Name = "Panel_NewActions";
+            this.Panel_NewActions.Size = new System.Drawing.Size(411, 91);
+            this.Panel_NewActions.TabIndex = 22;
+            // 
+            // Label_NewSuccess
+            // 
+            this.Label_NewSuccess.AutoSize = true;
+            this.Label_NewSuccess.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_NewSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
+            this.Label_NewSuccess.Location = new System.Drawing.Point(160, 34);
+            this.Label_NewSuccess.Name = "Label_NewSuccess";
+            this.Label_NewSuccess.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Label_NewSuccess.Size = new System.Drawing.Size(109, 14);
+            this.Label_NewSuccess.TabIndex = 11;
+            this.Label_NewSuccess.Text = "Success message";
+            this.Label_NewSuccess.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_NewSuccess.Visible = false;
+            // 
+            // Label_NewError
+            // 
+            this.Label_NewError.AutoSize = true;
+            this.Label_NewError.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_NewError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.Label_NewError.Location = new System.Drawing.Point(160, 14);
+            this.Label_NewError.Name = "Label_NewError";
+            this.Label_NewError.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Label_NewError.Size = new System.Drawing.Size(89, 14);
+            this.Label_NewError.TabIndex = 4;
+            this.Label_NewError.Text = "Error Message";
+            this.Label_NewError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_NewError.Visible = false;
+            // 
+            // Label_NewActionsTitle
+            // 
+            this.Label_NewActionsTitle.AutoSize = true;
+            this.Label_NewActionsTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Label_NewActionsTitle.Location = new System.Drawing.Point(17, 14);
+            this.Label_NewActionsTitle.Name = "Label_NewActionsTitle";
+            this.Label_NewActionsTitle.Size = new System.Drawing.Size(137, 24);
+            this.Label_NewActionsTitle.TabIndex = 1;
+            this.Label_NewActionsTitle.Text = "Add actions.";
+            // 
+            // Panel_EditActions
+            // 
+            this.Panel_EditActions.BackColor = System.Drawing.Color.White;
+            this.Panel_EditActions.Controls.Add(this.Label_EditSuccess);
+            this.Panel_EditActions.Controls.Add(this.Label_EditError);
+            this.Panel_EditActions.Controls.Add(this.Label_EditActionsTitle);
+            this.Panel_EditActions.Controls.Add(this.Button_EditBack);
+            this.Panel_EditActions.Controls.Add(this.Button_EditSave);
+            this.Panel_EditActions.Controls.Add(this.Button_EditCancel);
+            this.Panel_EditActions.Controls.Add(this.Button_EditDelete);
+            this.Panel_EditActions.Location = new System.Drawing.Point(549, 450);
+            this.Panel_EditActions.Name = "Panel_EditActions";
+            this.Panel_EditActions.Size = new System.Drawing.Size(411, 91);
+            this.Panel_EditActions.TabIndex = 23;
+            // 
+            // Label_EditSuccess
+            // 
+            this.Label_EditSuccess.AutoSize = true;
+            this.Label_EditSuccess.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_EditSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
+            this.Label_EditSuccess.Location = new System.Drawing.Point(158, 34);
+            this.Label_EditSuccess.Name = "Label_EditSuccess";
+            this.Label_EditSuccess.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Label_EditSuccess.Size = new System.Drawing.Size(109, 14);
+            this.Label_EditSuccess.TabIndex = 10;
+            this.Label_EditSuccess.Text = "Success message";
+            this.Label_EditSuccess.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_EditSuccess.Visible = false;
+            // 
+            // Label_EditError
+            // 
+            this.Label_EditError.AutoSize = true;
+            this.Label_EditError.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_EditError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.Label_EditError.Location = new System.Drawing.Point(158, 14);
+            this.Label_EditError.Name = "Label_EditError";
+            this.Label_EditError.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Label_EditError.Size = new System.Drawing.Size(89, 14);
+            this.Label_EditError.TabIndex = 5;
+            this.Label_EditError.Text = "Error Message";
+            this.Label_EditError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_EditError.Visible = false;
+            // 
+            // Label_EditActionsTitle
+            // 
+            this.Label_EditActionsTitle.AutoSize = true;
+            this.Label_EditActionsTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Label_EditActionsTitle.Location = new System.Drawing.Point(17, 14);
+            this.Label_EditActionsTitle.Name = "Label_EditActionsTitle";
+            this.Label_EditActionsTitle.Size = new System.Drawing.Size(135, 24);
+            this.Label_EditActionsTitle.TabIndex = 1;
+            this.Label_EditActionsTitle.Text = "Edit actions.";
+            // 
+            // Button_EditBack
+            // 
+            this.Button_EditBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.Button_EditBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_EditBack.FlatAppearance.BorderSize = 0;
+            this.Button_EditBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_EditBack.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_EditBack.ForeColor = System.Drawing.Color.White;
+            this.Button_EditBack.Location = new System.Drawing.Point(70, 55);
+            this.Button_EditBack.Name = "Button_EditBack";
+            this.Button_EditBack.Size = new System.Drawing.Size(77, 23);
+            this.Button_EditBack.TabIndex = 3;
+            this.Button_EditBack.Text = "Back";
+            this.Button_EditBack.UseVisualStyleBackColor = false;
+            this.Button_EditBack.Click += new System.EventHandler(this.Button_EditBack_Click);
+            // 
+            // Panel_NewSection
+            // 
+            this.Panel_NewSection.BackColor = System.Drawing.Color.White;
+            this.Panel_NewSection.Controls.Add(this.Label_NewSectionTitle);
+            this.Panel_NewSection.Controls.Add(this.Label_NewSectionName);
+            this.Panel_NewSection.Controls.Add(this.TextBox_NewSectionName);
+            this.Panel_NewSection.Controls.Add(this.Label_NewSectionTemplate);
+            this.Panel_NewSection.Controls.Add(this.CheckedListBox_NewSectionExistingTemplate);
+            this.Panel_NewSection.Location = new System.Drawing.Point(118, 75);
+            this.Panel_NewSection.Name = "Panel_NewSection";
+            this.Panel_NewSection.Size = new System.Drawing.Size(411, 359);
+            this.Panel_NewSection.TabIndex = 22;
+            this.Panel_NewSection.Visible = false;
+            // 
+            // Label_NewSectionTitle
+            // 
+            this.Label_NewSectionTitle.AutoSize = true;
+            this.Label_NewSectionTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Label_NewSectionTitle.Location = new System.Drawing.Point(17, 14);
+            this.Label_NewSectionTitle.Name = "Label_NewSectionTitle";
+            this.Label_NewSectionTitle.Size = new System.Drawing.Size(183, 24);
+            this.Label_NewSectionTitle.TabIndex = 1;
+            this.Label_NewSectionTitle.Text = "Add new section.";
+            // 
+            // Label_NewSectionName
+            // 
+            this.Label_NewSectionName.AutoSize = true;
+            this.Label_NewSectionName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_NewSectionName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_NewSectionName.Location = new System.Drawing.Point(18, 64);
+            this.Label_NewSectionName.Name = "Label_NewSectionName";
+            this.Label_NewSectionName.Size = new System.Drawing.Size(85, 14);
+            this.Label_NewSectionName.TabIndex = 10;
+            this.Label_NewSectionName.Text = "Section name:";
+            // 
+            // TextBox_NewSectionName
+            // 
+            this.TextBox_NewSectionName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.TextBox_NewSectionName.ForeColor = System.Drawing.Color.Black;
+            this.TextBox_NewSectionName.Location = new System.Drawing.Point(21, 86);
+            this.TextBox_NewSectionName.Name = "TextBox_NewSectionName";
+            this.TextBox_NewSectionName.Size = new System.Drawing.Size(371, 20);
+            this.TextBox_NewSectionName.TabIndex = 0;
+            this.TextBox_NewSectionName.TextChanged += new System.EventHandler(this.TextBox_NewSectionName_TextChanged);
+            // 
+            // Label_NewSectionTemplate
+            // 
+            this.Label_NewSectionTemplate.AutoSize = true;
+            this.Label_NewSectionTemplate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_NewSectionTemplate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_NewSectionTemplate.Location = new System.Drawing.Point(18, 124);
+            this.Label_NewSectionTemplate.Name = "Label_NewSectionTemplate";
+            this.Label_NewSectionTemplate.Size = new System.Drawing.Size(146, 14);
+            this.Label_NewSectionTemplate.TabIndex = 11;
+            this.Label_NewSectionTemplate.Text = "Add templates (optional):";
+            // 
+            // CheckedListBox_NewSectionExistingTemplate
+            // 
+            this.CheckedListBox_NewSectionExistingTemplate.CheckOnClick = true;
+            this.CheckedListBox_NewSectionExistingTemplate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.CheckedListBox_NewSectionExistingTemplate.ForeColor = System.Drawing.Color.Black;
+            this.CheckedListBox_NewSectionExistingTemplate.FormattingEnabled = true;
+            this.CheckedListBox_NewSectionExistingTemplate.Location = new System.Drawing.Point(21, 147);
+            this.CheckedListBox_NewSectionExistingTemplate.Name = "CheckedListBox_NewSectionExistingTemplate";
+            this.CheckedListBox_NewSectionExistingTemplate.Size = new System.Drawing.Size(371, 199);
+            this.CheckedListBox_NewSectionExistingTemplate.TabIndex = 1;
+            // 
+            // Panel_EditSection
+            // 
+            this.Panel_EditSection.BackColor = System.Drawing.Color.White;
+            this.Panel_EditSection.Controls.Add(this.Label_EditSectionTemplate);
+            this.Panel_EditSection.Controls.Add(this.Label_EditSectionName);
+            this.Panel_EditSection.Controls.Add(this.Label_EditSectionTitle);
+            this.Panel_EditSection.Controls.Add(this.Label_EditSectionChooseExisting);
+            this.Panel_EditSection.Controls.Add(this.ComboBox_EditSectionChooseExisting);
+            this.Panel_EditSection.Controls.Add(this.CheckedListBox_EditSectionTemplate);
+            this.Panel_EditSection.Controls.Add(this.TextBox_EditSectionName);
+            this.Panel_EditSection.Location = new System.Drawing.Point(549, 75);
+            this.Panel_EditSection.Name = "Panel_EditSection";
+            this.Panel_EditSection.Size = new System.Drawing.Size(411, 359);
+            this.Panel_EditSection.TabIndex = 23;
+            this.Panel_EditSection.Visible = false;
+            // 
+            // Label_EditSectionTemplate
+            // 
+            this.Label_EditSectionTemplate.AutoSize = true;
+            this.Label_EditSectionTemplate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_EditSectionTemplate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_EditSectionTemplate.Location = new System.Drawing.Point(18, 183);
+            this.Label_EditSectionTemplate.Name = "Label_EditSectionTemplate";
+            this.Label_EditSectionTemplate.Size = new System.Drawing.Size(160, 14);
+            this.Label_EditSectionTemplate.TabIndex = 12;
+            this.Label_EditSectionTemplate.Text = "Add to templates (optional):";
+            // 
+            // Label_EditSectionName
+            // 
+            this.Label_EditSectionName.AutoSize = true;
+            this.Label_EditSectionName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_EditSectionName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_EditSectionName.Location = new System.Drawing.Point(18, 124);
+            this.Label_EditSectionName.Name = "Label_EditSectionName";
+            this.Label_EditSectionName.Size = new System.Drawing.Size(85, 14);
+            this.Label_EditSectionName.TabIndex = 12;
+            this.Label_EditSectionName.Text = "Section name:";
+            // 
+            // Label_EditSectionTitle
+            // 
+            this.Label_EditSectionTitle.AutoSize = true;
+            this.Label_EditSectionTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Label_EditSectionTitle.Location = new System.Drawing.Point(17, 14);
+            this.Label_EditSectionTitle.Name = "Label_EditSectionTitle";
+            this.Label_EditSectionTitle.Size = new System.Drawing.Size(220, 24);
+            this.Label_EditSectionTitle.TabIndex = 1;
+            this.Label_EditSectionTitle.Text = "Edit existing section.";
+            // 
+            // Label_EditSectionChooseExisting
+            // 
+            this.Label_EditSectionChooseExisting.AutoSize = true;
+            this.Label_EditSectionChooseExisting.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_EditSectionChooseExisting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_EditSectionChooseExisting.Location = new System.Drawing.Point(18, 64);
+            this.Label_EditSectionChooseExisting.Name = "Label_EditSectionChooseExisting";
+            this.Label_EditSectionChooseExisting.Size = new System.Drawing.Size(97, 14);
+            this.Label_EditSectionChooseExisting.TabIndex = 12;
+            this.Label_EditSectionChooseExisting.Text = "Choose section:";
+            // 
+            // ComboBox_EditSectionChooseExisting
+            // 
+            this.ComboBox_EditSectionChooseExisting.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.ComboBox_EditSectionChooseExisting.DropDownHeight = 200;
+            this.ComboBox_EditSectionChooseExisting.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_EditSectionChooseExisting.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ComboBox_EditSectionChooseExisting.ForeColor = System.Drawing.Color.Black;
+            this.ComboBox_EditSectionChooseExisting.FormattingEnabled = true;
+            this.ComboBox_EditSectionChooseExisting.IntegralHeight = false;
+            this.ComboBox_EditSectionChooseExisting.ItemHeight = 20;
+            this.ComboBox_EditSectionChooseExisting.Location = new System.Drawing.Point(21, 84);
+            this.ComboBox_EditSectionChooseExisting.Name = "ComboBox_EditSectionChooseExisting";
+            this.ComboBox_EditSectionChooseExisting.Size = new System.Drawing.Size(373, 26);
+            this.ComboBox_EditSectionChooseExisting.TabIndex = 4;
+            this.ComboBox_EditSectionChooseExisting.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBox_EditSectionChooseExisting_DrawItem);
+            this.ComboBox_EditSectionChooseExisting.SelectedIndexChanged += new System.EventHandler(this.ComboBox_EditSectionChooseExisting_SelectedIndexChanged);
+            // 
+            // CheckedListBox_EditSectionTemplate
+            // 
+            this.CheckedListBox_EditSectionTemplate.CheckOnClick = true;
+            this.CheckedListBox_EditSectionTemplate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.CheckedListBox_EditSectionTemplate.ForeColor = System.Drawing.Color.Black;
+            this.CheckedListBox_EditSectionTemplate.FormattingEnabled = true;
+            this.CheckedListBox_EditSectionTemplate.Location = new System.Drawing.Point(21, 207);
+            this.CheckedListBox_EditSectionTemplate.Name = "CheckedListBox_EditSectionTemplate";
+            this.CheckedListBox_EditSectionTemplate.Size = new System.Drawing.Size(373, 139);
+            this.CheckedListBox_EditSectionTemplate.TabIndex = 17;
+            // 
+            // TextBox_EditSectionName
+            // 
+            this.TextBox_EditSectionName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.TextBox_EditSectionName.ForeColor = System.Drawing.Color.Black;
+            this.TextBox_EditSectionName.Location = new System.Drawing.Point(21, 147);
+            this.TextBox_EditSectionName.Name = "TextBox_EditSectionName";
+            this.TextBox_EditSectionName.Size = new System.Drawing.Size(373, 20);
+            this.TextBox_EditSectionName.TabIndex = 5;
+            this.TextBox_EditSectionName.TextChanged += new System.EventHandler(this.TextBox_EditSectionName_TextChanged);
+            // 
+            // Panel_NewCode
+            // 
+            this.Panel_NewCode.BackColor = System.Drawing.Color.White;
+            this.Panel_NewCode.Controls.Add(this.Label_NewCodeNameLimit);
+            this.Panel_NewCode.Controls.Add(this.Label_NewCodeParagraphLimit);
+            this.Panel_NewCode.Controls.Add(this.Label_NewCodeTitle);
+            this.Panel_NewCode.Controls.Add(this.Label_NewCodeName);
+            this.Panel_NewCode.Controls.Add(this.TextBox_NewCodeName);
+            this.Panel_NewCode.Controls.Add(this.Label_NewCodeSection);
+            this.Panel_NewCode.Controls.Add(this.ComboBox_NewCodeSection);
+            this.Panel_NewCode.Controls.Add(this.Label_NewCodeParagraph);
+            this.Panel_NewCode.Controls.Add(this.RichTextBox_NewCodeParagraph);
+            this.Panel_NewCode.Location = new System.Drawing.Point(118, 75);
+            this.Panel_NewCode.Name = "Panel_NewCode";
+            this.Panel_NewCode.Size = new System.Drawing.Size(411, 359);
+            this.Panel_NewCode.TabIndex = 23;
+            this.Panel_NewCode.Visible = false;
+            // 
+            // Label_NewCodeNameLimit
+            // 
+            this.Label_NewCodeNameLimit.AutoSize = true;
+            this.Label_NewCodeNameLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_NewCodeNameLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_NewCodeNameLimit.Location = new System.Drawing.Point(97, 64);
+            this.Label_NewCodeNameLimit.Name = "Label_NewCodeNameLimit";
+            this.Label_NewCodeNameLimit.Size = new System.Drawing.Size(36, 14);
+            this.Label_NewCodeNameLimit.TabIndex = 18;
+            this.Label_NewCodeNameLimit.Text = "(0 / 5)";
+            // 
+            // Label_NewCodeParagraphLimit
+            // 
+            this.Label_NewCodeParagraphLimit.AutoSize = true;
+            this.Label_NewCodeParagraphLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_NewCodeParagraphLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_NewCodeParagraphLimit.Location = new System.Drawing.Point(122, 122);
+            this.Label_NewCodeParagraphLimit.Name = "Label_NewCodeParagraphLimit";
+            this.Label_NewCodeParagraphLimit.Size = new System.Drawing.Size(48, 14);
+            this.Label_NewCodeParagraphLimit.TabIndex = 17;
+            this.Label_NewCodeParagraphLimit.Text = "(0 / 300)";
+            // 
+            // Label_NewCodeTitle
+            // 
+            this.Label_NewCodeTitle.AutoSize = true;
+            this.Label_NewCodeTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Label_NewCodeTitle.Location = new System.Drawing.Point(17, 14);
+            this.Label_NewCodeTitle.Name = "Label_NewCodeTitle";
+            this.Label_NewCodeTitle.Size = new System.Drawing.Size(159, 24);
+            this.Label_NewCodeTitle.TabIndex = 1;
+            this.Label_NewCodeTitle.Text = "Add new code.";
+            // 
+            // Label_NewCodeName
+            // 
+            this.Label_NewCodeName.AutoSize = true;
+            this.Label_NewCodeName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_NewCodeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_NewCodeName.Location = new System.Drawing.Point(18, 64);
+            this.Label_NewCodeName.Name = "Label_NewCodeName";
+            this.Label_NewCodeName.Size = new System.Drawing.Size(73, 14);
+            this.Label_NewCodeName.TabIndex = 10;
+            this.Label_NewCodeName.Text = "Code name:";
+            // 
+            // TextBox_NewCodeName
+            // 
+            this.TextBox_NewCodeName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.TextBox_NewCodeName.ForeColor = System.Drawing.Color.Black;
+            this.TextBox_NewCodeName.Location = new System.Drawing.Point(21, 86);
+            this.TextBox_NewCodeName.Name = "TextBox_NewCodeName";
+            this.TextBox_NewCodeName.Size = new System.Drawing.Size(371, 20);
+            this.TextBox_NewCodeName.TabIndex = 0;
+            this.TextBox_NewCodeName.TextChanged += new System.EventHandler(this.TextBox_NewCodeName_TextChanged);
+            // 
+            // Label_NewCodeSection
+            // 
+            this.Label_NewCodeSection.AutoSize = true;
+            this.Label_NewCodeSection.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_NewCodeSection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_NewCodeSection.Location = new System.Drawing.Point(18, 294);
+            this.Label_NewCodeSection.Name = "Label_NewCodeSection";
+            this.Label_NewCodeSection.Size = new System.Drawing.Size(76, 14);
+            this.Label_NewCodeSection.TabIndex = 11;
+            this.Label_NewCodeSection.Text = "Add Section:";
+            // 
+            // Panel_EditCode
+            // 
+            this.Panel_EditCode.BackColor = System.Drawing.Color.White;
+            this.Panel_EditCode.Controls.Add(this.Label_EditCodeNameLimit);
+            this.Panel_EditCode.Controls.Add(this.Label_EditCodeParagraphLimit);
+            this.Panel_EditCode.Controls.Add(this.Label_EditCodeParagraph);
+            this.Panel_EditCode.Controls.Add(this.Label_EditCodeSection);
+            this.Panel_EditCode.Controls.Add(this.Label_EditCodeName);
+            this.Panel_EditCode.Controls.Add(this.Label_EditCodeTitle);
+            this.Panel_EditCode.Controls.Add(this.Label_EditCodeChooseExisting);
+            this.Panel_EditCode.Controls.Add(this.ComboBox_EditCodeChooseExisting);
+            this.Panel_EditCode.Controls.Add(this.TextBox_EditCodeName);
+            this.Panel_EditCode.Controls.Add(this.ComboBox_EditCodeSection);
+            this.Panel_EditCode.Controls.Add(this.RichTextBox_EditCodeParagraph);
+            this.Panel_EditCode.Location = new System.Drawing.Point(549, 75);
+            this.Panel_EditCode.Name = "Panel_EditCode";
+            this.Panel_EditCode.Size = new System.Drawing.Size(411, 359);
+            this.Panel_EditCode.TabIndex = 24;
+            this.Panel_EditCode.Visible = false;
+            // 
+            // Label_EditCodeNameLimit
+            // 
+            this.Label_EditCodeNameLimit.AutoSize = true;
+            this.Label_EditCodeNameLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_EditCodeNameLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_EditCodeNameLimit.Location = new System.Drawing.Point(97, 124);
+            this.Label_EditCodeNameLimit.Name = "Label_EditCodeNameLimit";
+            this.Label_EditCodeNameLimit.Size = new System.Drawing.Size(36, 14);
+            this.Label_EditCodeNameLimit.TabIndex = 19;
+            this.Label_EditCodeNameLimit.Text = "(0 / 5)";
+            // 
+            // Label_EditCodeParagraphLimit
+            // 
+            this.Label_EditCodeParagraphLimit.AutoSize = true;
+            this.Label_EditCodeParagraphLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_EditCodeParagraphLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_EditCodeParagraphLimit.Location = new System.Drawing.Point(122, 182);
+            this.Label_EditCodeParagraphLimit.Name = "Label_EditCodeParagraphLimit";
+            this.Label_EditCodeParagraphLimit.Size = new System.Drawing.Size(48, 14);
+            this.Label_EditCodeParagraphLimit.TabIndex = 19;
+            this.Label_EditCodeParagraphLimit.Text = "(0 / 300)";
+            // 
+            // Label_EditCodeParagraph
+            // 
+            this.Label_EditCodeParagraph.AutoSize = true;
+            this.Label_EditCodeParagraph.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_EditCodeParagraph.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_EditCodeParagraph.Location = new System.Drawing.Point(18, 182);
+            this.Label_EditCodeParagraph.Name = "Label_EditCodeParagraph";
+            this.Label_EditCodeParagraph.Size = new System.Drawing.Size(98, 14);
+            this.Label_EditCodeParagraph.TabIndex = 17;
+            this.Label_EditCodeParagraph.Text = "Code paragraph:";
+            // 
+            // Label_EditCodeSection
+            // 
+            this.Label_EditCodeSection.AutoSize = true;
+            this.Label_EditCodeSection.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_EditCodeSection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_EditCodeSection.Location = new System.Drawing.Point(18, 303);
+            this.Label_EditCodeSection.Name = "Label_EditCodeSection";
+            this.Label_EditCodeSection.Size = new System.Drawing.Size(151, 14);
+            this.Label_EditCodeSection.TabIndex = 12;
+            this.Label_EditCodeSection.Text = "Change section (optional):";
+            // 
+            // Label_EditCodeName
+            // 
+            this.Label_EditCodeName.AutoSize = true;
+            this.Label_EditCodeName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_EditCodeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_EditCodeName.Location = new System.Drawing.Point(18, 124);
+            this.Label_EditCodeName.Name = "Label_EditCodeName";
+            this.Label_EditCodeName.Size = new System.Drawing.Size(73, 14);
+            this.Label_EditCodeName.TabIndex = 12;
+            this.Label_EditCodeName.Text = "Code name:";
+            // 
+            // Label_EditCodeTitle
+            // 
+            this.Label_EditCodeTitle.AutoSize = true;
+            this.Label_EditCodeTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Label_EditCodeTitle.Location = new System.Drawing.Point(17, 14);
+            this.Label_EditCodeTitle.Name = "Label_EditCodeTitle";
+            this.Label_EditCodeTitle.Size = new System.Drawing.Size(196, 24);
+            this.Label_EditCodeTitle.TabIndex = 1;
+            this.Label_EditCodeTitle.Text = "Edit existing code.";
+            // 
+            // Label_EditCodeChooseExisting
+            // 
+            this.Label_EditCodeChooseExisting.AutoSize = true;
+            this.Label_EditCodeChooseExisting.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_EditCodeChooseExisting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_EditCodeChooseExisting.Location = new System.Drawing.Point(18, 64);
+            this.Label_EditCodeChooseExisting.Name = "Label_EditCodeChooseExisting";
+            this.Label_EditCodeChooseExisting.Size = new System.Drawing.Size(83, 14);
+            this.Label_EditCodeChooseExisting.TabIndex = 12;
+            this.Label_EditCodeChooseExisting.Text = "Choose code:";
+            // 
+            // ComboBox_EditCodeChooseExisting
+            // 
+            this.ComboBox_EditCodeChooseExisting.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.ComboBox_EditCodeChooseExisting.DropDownHeight = 200;
+            this.ComboBox_EditCodeChooseExisting.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_EditCodeChooseExisting.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ComboBox_EditCodeChooseExisting.ForeColor = System.Drawing.Color.Black;
+            this.ComboBox_EditCodeChooseExisting.FormattingEnabled = true;
+            this.ComboBox_EditCodeChooseExisting.IntegralHeight = false;
+            this.ComboBox_EditCodeChooseExisting.ItemHeight = 20;
+            this.ComboBox_EditCodeChooseExisting.Location = new System.Drawing.Point(21, 84);
+            this.ComboBox_EditCodeChooseExisting.Name = "ComboBox_EditCodeChooseExisting";
+            this.ComboBox_EditCodeChooseExisting.Size = new System.Drawing.Size(373, 26);
+            this.ComboBox_EditCodeChooseExisting.TabIndex = 4;
+            this.ComboBox_EditCodeChooseExisting.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBox_EditCodeChooseExisting_DrawItem);
+            this.ComboBox_EditCodeChooseExisting.SelectedIndexChanged += new System.EventHandler(this.ComboBox_EditCodeChooseExisting_SelectedIndexChanged);
+            // 
+            // TextBox_EditCodeName
+            // 
+            this.TextBox_EditCodeName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.TextBox_EditCodeName.ForeColor = System.Drawing.Color.Black;
+            this.TextBox_EditCodeName.Location = new System.Drawing.Point(21, 147);
+            this.TextBox_EditCodeName.Name = "TextBox_EditCodeName";
+            this.TextBox_EditCodeName.Size = new System.Drawing.Size(373, 20);
+            this.TextBox_EditCodeName.TabIndex = 5;
+            this.TextBox_EditCodeName.TextChanged += new System.EventHandler(this.TextBox_EditCodeName_TextChanged);
             // 
             // NewEditDelete
             // 
@@ -1061,16 +1061,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(982, 563);
-            this.Controls.Add(this.panelEditCode);
-            this.Controls.Add(this.panelEditSection);
-            this.Controls.Add(this.panelAddSection);
-            this.Controls.Add(this.panelAddCode);
-            this.Controls.Add(this.panelSaveEdit);
-            this.Controls.Add(this.panelSaveNew);
-            this.Controls.Add(this.panelEditTemplate);
-            this.Controls.Add(this.panelAddTemplate);
-            this.Controls.Add(this.panelMode);
-            this.Controls.Add(this.panelManagement);
+            this.Controls.Add(this.Panel_EditCode);
+            this.Controls.Add(this.Panel_EditSection);
+            this.Controls.Add(this.Panel_NewSection);
+            this.Controls.Add(this.Panel_NewCode);
+            this.Controls.Add(this.Panel_EditActions);
+            this.Controls.Add(this.Panel_NewActions);
+            this.Controls.Add(this.Panel_EditTemplate);
+            this.Controls.Add(this.Panel_NewTemplate);
+            this.Controls.Add(this.Panel_Mode);
+            this.Controls.Add(this.Panel_Management);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(998, 602);
@@ -1079,110 +1079,110 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
-            this.panelManagement.ResumeLayout(false);
-            this.panelManagement.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelMode.ResumeLayout(false);
-            this.panelAddTemplate.ResumeLayout(false);
-            this.panelAddTemplate.PerformLayout();
-            this.panelEditTemplate.ResumeLayout(false);
-            this.panelEditTemplate.PerformLayout();
-            this.panelSaveNew.ResumeLayout(false);
-            this.panelSaveNew.PerformLayout();
-            this.panelSaveEdit.ResumeLayout(false);
-            this.panelSaveEdit.PerformLayout();
-            this.panelAddSection.ResumeLayout(false);
-            this.panelAddSection.PerformLayout();
-            this.panelEditSection.ResumeLayout(false);
-            this.panelEditSection.PerformLayout();
-            this.panelAddCode.ResumeLayout(false);
-            this.panelAddCode.PerformLayout();
-            this.panelEditCode.ResumeLayout(false);
-            this.panelEditCode.PerformLayout();
+            this.Panel_Management.ResumeLayout(false);
+            this.Panel_Management.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementLogo)).EndInit();
+            this.Panel_Mode.ResumeLayout(false);
+            this.Panel_NewTemplate.ResumeLayout(false);
+            this.Panel_NewTemplate.PerformLayout();
+            this.Panel_EditTemplate.ResumeLayout(false);
+            this.Panel_EditTemplate.PerformLayout();
+            this.Panel_NewActions.ResumeLayout(false);
+            this.Panel_NewActions.PerformLayout();
+            this.Panel_EditActions.ResumeLayout(false);
+            this.Panel_EditActions.PerformLayout();
+            this.Panel_NewSection.ResumeLayout(false);
+            this.Panel_NewSection.PerformLayout();
+            this.Panel_EditSection.ResumeLayout(false);
+            this.Panel_EditSection.PerformLayout();
+            this.Panel_NewCode.ResumeLayout(false);
+            this.Panel_NewCode.PerformLayout();
+            this.Panel_EditCode.ResumeLayout(false);
+            this.Panel_EditCode.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtNewTemplateName;
+        private System.Windows.Forms.TextBox TextBox_NewTemplateName;
         private System.Windows.Forms.CheckedListBox CheckedListBox_NewTemplateExistingSection;
-        private System.Windows.Forms.Button Button_SaveNew;
-        private System.Windows.Forms.Button backBtn;
-        private System.Windows.Forms.ComboBox ComboBox_EditExistingTemplate;
-        private System.Windows.Forms.TextBox txtEditTemplateName;
-        private System.Windows.Forms.RichTextBox codeParaEditBox;
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Button saveChangeBtn;
-        private System.Windows.Forms.Button deleteBtn;
-        private System.Windows.Forms.Label lblNewTemplateName;
-        private System.Windows.Forms.Label lblNewAddSections;
-        private System.Windows.Forms.Label lblChooseTemplate;
-        private System.Windows.Forms.RichTextBox newCodeParaBox;
-        private System.Windows.Forms.Label lblCodeParagraph;
+        private System.Windows.Forms.Button Button_NewSave;
+        private System.Windows.Forms.Button Button_NewBack;
+        private System.Windows.Forms.ComboBox ComboBox_EditTemplateChooseExisting;
+        private System.Windows.Forms.TextBox TextBox_EditTemplateName;
+        private System.Windows.Forms.RichTextBox RichTextBox_EditCodeParagraph;
+        private System.Windows.Forms.Button Button_EditCancel;
+        private System.Windows.Forms.Button Button_EditSave;
+        private System.Windows.Forms.Button Button_EditDelete;
+        private System.Windows.Forms.Label Label_NewTemplateName;
+        private System.Windows.Forms.Label Label_NewTemplateSection;
+        private System.Windows.Forms.Label Label_EditTemplateChooseExisting;
+        private System.Windows.Forms.RichTextBox RichTextBox_NewCodeParagraph;
+        private System.Windows.Forms.Label Label_NewCodeParagraph;
         private System.Windows.Forms.ComboBox ComboBox_NewCodeSection;
-        private System.Windows.Forms.CheckedListBox checkBoxForEdit;
-        private System.Windows.Forms.ComboBox dropDownForEdit;
-        private System.Windows.Forms.Panel panelManagement;
-        private System.Windows.Forms.Label lblStage3;
-        private System.Windows.Forms.PictureBox imgStage3;
-        private System.Windows.Forms.Label lblStage2;
-        private System.Windows.Forms.PictureBox imgStage2;
-        private System.Windows.Forms.Label lblStage1;
-        private System.Windows.Forms.PictureBox imgStage1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panelMode;
-        private System.Windows.Forms.Button btnModeCode;
-        private System.Windows.Forms.Button btnModeSection;
-        private System.Windows.Forms.Button btnModeTemplate;
-        private System.Windows.Forms.Panel panelAddTemplate;
-        private System.Windows.Forms.Label lblAddNewTemplate;
-        private System.Windows.Forms.Panel panelEditTemplate;
-        private System.Windows.Forms.Label lblEditExistingTemplate;
-        private System.Windows.Forms.Panel panelSaveNew;
-        private System.Windows.Forms.Label lblAddActions;
-        private System.Windows.Forms.Panel panelSaveEdit;
-        private System.Windows.Forms.Label lblEditActions;
-        private System.Windows.Forms.Button backBtnEdit;
-        private System.Windows.Forms.Label lblAddError;
-        private System.Windows.Forms.Label lblEditTemplateName;
-        private System.Windows.Forms.Label lblEditAddSections;
-        private System.Windows.Forms.Label lblEditError;
-        private System.Windows.Forms.Label lblAddSuccess;
-        private System.Windows.Forms.Label lblEditSuccess;
-        private System.Windows.Forms.Panel panelAddSection;
-        private System.Windows.Forms.Label lblAddNewSection;
-        private System.Windows.Forms.Label lblNewSectionName;
-        private System.Windows.Forms.TextBox txtNewSectionName;
-        private System.Windows.Forms.Label lblNewAddTemplates;
-        private System.Windows.Forms.CheckedListBox CheckedListBox_NewSectionExistingTemplates;
-        private System.Windows.Forms.Panel panelEditSection;
-        private System.Windows.Forms.Label lblEditAddTemps;
-        private System.Windows.Forms.Label lblEditSectionName;
-        private System.Windows.Forms.Label lblEditExistingSection;
-        private System.Windows.Forms.Label lblChooseSection;
-        private System.Windows.Forms.ComboBox ComboBox_EditExistingSections;
-        private System.Windows.Forms.TextBox txtEditSectionName;
-        private System.Windows.Forms.Panel panelAddCode;
-        private System.Windows.Forms.Label lblAddNewCode;
-        private System.Windows.Forms.Label lblNewCodeName;
-        private System.Windows.Forms.TextBox txtNewCodeName;
-        private System.Windows.Forms.Label lblNewAddSectionsCode;
-        private System.Windows.Forms.Panel panelEditCode;
-        private System.Windows.Forms.Label lblEditAddSectionsCode;
-        private System.Windows.Forms.Label lblEditCodeName;
-        private System.Windows.Forms.Label lblEditExistingCode;
-        private System.Windows.Forms.Label lblChooseCode;
-        private System.Windows.Forms.ComboBox ComboBox_EditExistingCode;
-        private System.Windows.Forms.TextBox txtEditCodeName;
-        private System.Windows.Forms.CheckedListBox checkboxEditExistTemps;
-        private System.Windows.Forms.Label lblCodeParagraphEdit;
-        private System.Windows.Forms.Label lblCodeParaLimit;
-        private System.Windows.Forms.Label lblEditCodeParaLimit;
-        private System.Windows.Forms.Label lblCodeNameLimit;
-        private System.Windows.Forms.Label lblEditCodeNameLimit;
+        private System.Windows.Forms.CheckedListBox CheckedListBox_EditTemplateSection;
+        private System.Windows.Forms.ComboBox ComboBox_EditCodeSection;
+        private System.Windows.Forms.Panel Panel_Management;
+        private System.Windows.Forms.Label Label_ManagementStage3;
+        private System.Windows.Forms.PictureBox PictureBox_ManagementStage3;
+        private System.Windows.Forms.Label Label_ManagementStage2;
+        private System.Windows.Forms.PictureBox PictureBox_ManagementStage2;
+        private System.Windows.Forms.Label Label_ManagementStage1;
+        private System.Windows.Forms.PictureBox PictureBox_ManagementStage1;
+        private System.Windows.Forms.PictureBox PictureBox_ManagementLogo;
+        private System.Windows.Forms.Panel Panel_Mode;
+        private System.Windows.Forms.Button Button_ModeCode;
+        private System.Windows.Forms.Button Button_ModeSection;
+        private System.Windows.Forms.Button Button_ModeTemplate;
+        private System.Windows.Forms.Panel Panel_NewTemplate;
+        private System.Windows.Forms.Label Label_NewTemplateTitle;
+        private System.Windows.Forms.Panel Panel_EditTemplate;
+        private System.Windows.Forms.Label Label_EditTemplateTitle;
+        private System.Windows.Forms.Panel Panel_NewActions;
+        private System.Windows.Forms.Label Label_NewActionsTitle;
+        private System.Windows.Forms.Panel Panel_EditActions;
+        private System.Windows.Forms.Label Label_EditActionsTitle;
+        private System.Windows.Forms.Button Button_EditBack;
+        private System.Windows.Forms.Label Label_NewError;
+        private System.Windows.Forms.Label Label_EditTemplateName;
+        private System.Windows.Forms.Label Label_EditTemplateSection;
+        private System.Windows.Forms.Label Label_EditError;
+        private System.Windows.Forms.Label Label_NewSuccess;
+        private System.Windows.Forms.Label Label_EditSuccess;
+        private System.Windows.Forms.Panel Panel_NewSection;
+        private System.Windows.Forms.Label Label_NewSectionTitle;
+        private System.Windows.Forms.Label Label_NewSectionName;
+        private System.Windows.Forms.TextBox TextBox_NewSectionName;
+        private System.Windows.Forms.Label Label_NewSectionTemplate;
+        private System.Windows.Forms.CheckedListBox CheckedListBox_NewSectionExistingTemplate;
+        private System.Windows.Forms.Panel Panel_EditSection;
+        private System.Windows.Forms.Label Label_EditSectionTemplate;
+        private System.Windows.Forms.Label Label_EditSectionName;
+        private System.Windows.Forms.Label Label_EditSectionTitle;
+        private System.Windows.Forms.Label Label_EditSectionChooseExisting;
+        private System.Windows.Forms.ComboBox ComboBox_EditSectionChooseExisting;
+        private System.Windows.Forms.TextBox TextBox_EditSectionName;
+        private System.Windows.Forms.Panel Panel_NewCode;
+        private System.Windows.Forms.Label Label_NewCodeTitle;
+        private System.Windows.Forms.Label Label_NewCodeName;
+        private System.Windows.Forms.TextBox TextBox_NewCodeName;
+        private System.Windows.Forms.Label Label_NewCodeSection;
+        private System.Windows.Forms.Panel Panel_EditCode;
+        private System.Windows.Forms.Label Label_EditCodeSection;
+        private System.Windows.Forms.Label Label_EditCodeName;
+        private System.Windows.Forms.Label Label_EditCodeTitle;
+        private System.Windows.Forms.Label Label_EditCodeChooseExisting;
+        private System.Windows.Forms.ComboBox ComboBox_EditCodeChooseExisting;
+        private System.Windows.Forms.TextBox TextBox_EditCodeName;
+        private System.Windows.Forms.CheckedListBox CheckedListBox_EditSectionTemplate;
+        private System.Windows.Forms.Label Label_EditCodeParagraph;
+        private System.Windows.Forms.Label Label_NewCodeParagraphLimit;
+        private System.Windows.Forms.Label Label_EditCodeParagraphLimit;
+        private System.Windows.Forms.Label Label_NewCodeNameLimit;
+        private System.Windows.Forms.Label Label_EditCodeNameLimit;
     }
 }

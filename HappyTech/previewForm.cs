@@ -126,7 +126,6 @@ namespace HappyTech
             {
                 string feedbackText = "";
                 string commentText = "";
-                //string complete = "";
 
                 using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".rtf"))
                 {
@@ -141,10 +140,6 @@ namespace HappyTech
                     }
                 }
 
-                //complete = feedbackText + commentText;
-
-
-
                 ///// PdfSharp PDF version
                 PdfSharp.Pdf.PdfDocument pdf = new PdfSharp.Pdf.PdfDocument();
                 PdfPage pdfPage = pdf.AddPage();
@@ -156,12 +151,21 @@ namespace HappyTech
                 MemoryStream strm = new MemoryStream();
                 img.Save(strm, System.Drawing.Imaging.ImageFormat.Png);
                 XImage logo = XImage.FromStream(strm);
-                XRect rec = new XRect((pdfPage.Width/2) - (logo.Width/2), pdfPage.Height/16, img.Width, img.Height);
+                XRect rec = new XRect((pdfPage.Width / 2) - (logo.PixelWidth / 2), pdfPage.Height / 16, img.Width, img.Height);
                 graph.DrawImage(logo, rec);
                 
-                                                                                                 //Error here---V
-                tf.DrawString($"Dear {Applicant.applicants[i].AfullName},\n\nRegarding your {Applicant.applicants[i].Atype} for the {Applicant.applicants[i].AJob} role at HappyTech.\n\n" + feedbackText + "\n\nFurther comments:\n\n" + commentText + $"\n\nKind Regards,\n{Recruiter.GetInstance().Name}\nHappyTech Recruiter", font, XBrushes.Black, new XRect(pdfPage.Width / 8, ((pdfPage.Height / 12) + img.Height) + 60, (pdfPage.Width / 8) + (pdfPage.Width / 1.5), pdfPage.Height - (pdfPage.Height / 4)), XStringFormats.TopLeft);
-                
+                tf.DrawString($"Dear {Applicant.applicants[i].AfullName},\n\nRegarding your {Applicant.applicants[i].Atype} for the {Applicant.applicants[i].AJob} role at HappyTech.\n\n"
+                    + feedbackText
+                    + "\n\nFurther comments:\n\n"
+                    + commentText
+                    + $"\n\nKind Regards,\n{Recruiter.GetInstance().Name}\nHappyTech Recruiter",
+                    font,
+                    XBrushes.Black,
+                    new XRect(pdfPage.Width / 8,
+                        ((pdfPage.Height / 12) + img.Height) + 60,
+                        (pdfPage.Width / 8) + (pdfPage.Width / 1.5),
+                        pdfPage.Height - (pdfPage.Height / 4)),
+                    XStringFormats.TopLeft);
                 
                 pdf.Save(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".pdf");
                 Process.Start(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".pdf");

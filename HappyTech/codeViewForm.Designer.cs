@@ -565,15 +565,10 @@
 
         private System.Windows.Forms.ComboBox tagSelectBox;
         private System.Windows.Forms.DataGridView codeDisplay;
-       // private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource tagBindingSource;
-       // private Database1DataSetTableAdapters.TagTableAdapter tagTableAdapter;
-       // private Database1DataSet1 database1DataSet1;
         private System.Windows.Forms.BindingSource codesBindingSource;
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Label selectTagLbl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeShortDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeParagraphDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox templateSelectBox;
         private System.Windows.Forms.Label templateSelectLbl;
         private System.Windows.Forms.Button templateViewBtn;
