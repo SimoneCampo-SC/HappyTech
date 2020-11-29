@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.IO;
-using PdfSharp.Pdf;
-using PdfSharp.Drawing;
-using System.Diagnostics;
+﻿using PdfSharp.Drawing;
 using PdfSharp.Drawing.Layout;
+using PdfSharp.Pdf;
+using System;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace HappyTech
 {
@@ -147,25 +143,9 @@ namespace HappyTech
 
                 //complete = feedbackText + commentText;
 
-                ///// Spire PDF version
-
-                //Spire.Pdf.PdfDocument doc = new Spire.Pdf.PdfDocument();
-                //Spire.Pdf.PdfPageBase page = doc.Pages.Add();
-                //SizeF bounds = page.GetClientSize();
-                //StreamReader reader = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".rtf", Encoding.ASCII);
-                //string text = reader.ReadToEnd();
-                //reader.Close();
-                //PdfMetafile imageMetafile = (PdfMetafile)PdfImage.FromRtf(text, bounds.Width, PdfImageType.Metafile);
-                //PdfMetafileLayoutFormat format = new PdfMetafileLayoutFormat();
-                //format.SplitTextLines = true;
-                //imageMetafile.Draw(page, 0, 0, format);
-                //doc.SaveToFile("TEST.pdf");
-                //doc.Close();
-                //Process.Start("TEST.pdf");
 
 
                 ///// PdfSharp PDF version
-
                 PdfSharp.Pdf.PdfDocument pdf = new PdfSharp.Pdf.PdfDocument();
                 PdfPage pdfPage = pdf.AddPage();
                 XGraphics graph = XGraphics.FromPdfPage(pdfPage);

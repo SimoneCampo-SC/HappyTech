@@ -14,7 +14,7 @@ namespace HappyTech
     /// </summary>
     class Sections
     {
-        public static List<Sections>sectionList = new List<Sections>();
+        public static List<Sections> sectionList = new List<Sections>();
         public static List<Sections> sectionPerTemplate = new List<Sections>(); 
         public int id { get; }
         public string name { get; }

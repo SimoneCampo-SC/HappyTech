@@ -1,224 +1,345 @@
-﻿using System;
+﻿/**
+ * 
+ * File: NewEditDelete.cs
+ * 
+ * Author 1: Hopper, Kean. SID (EMAIL)
+ * Author 2: Osborne, Oliver. 1602819 (OMO123@student.aru.ac.uk)
+ * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * 
+ * Summary:     This file allows the user to create, edit, and delete 
+ *              templates, sections, and codes. These are then saved
+ *              and updated in the database.
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HappyTech
 {
     public partial class NewEditDelete : Form
     {
-        string mode = "template"; //used to determine between code, section and template
+        // Sets the available modes
+
+        public enum Mode
+        {
+            Template,
+            Section,
+            Code
+        }
+
+        // Sets the default form start mode to template.
+
+        private static readonly Mode DEFAULT_MODE = Mode.Template;
+        private Mode currentMode = DEFAULT_MODE;
+
+        /// <summary>
+        /// 
+        ///     Default constructor. Creates all form component
+        ///     objects and sets it up for the default start mode. 
+        /// 
+        /// </summary>
         public NewEditDelete()
         {
             InitializeComponent();
-            LoadTempMode();
 
-        }
-        private void fillNewCodeTagDrop()
-        {
-            newCodeSection.Items.Clear();
-            Sections.sectionList.Clear();
-            //by default, loads all the sections into the sectionsListBox
-            Sections.listSection();
-            for (int i = 0; i < Sections.sectionList.Count(); i++)
+            switch ( DEFAULT_MODE )
             {
-                //Code.codeList[i].GetSectionName().Trim()}:
+                case Mode.Template:
 
-                newCodeSection.Items.Add($"{Sections.sectionList[i].name.Replace(" ", "")}");
+                    LoadModeTemplate();
+
+                    break;
+
+                case Mode.Section:
+
+                    LoadModeSection();
+
+                    break;
+
+                case Mode.Code:
+
+                    LoadModeCode();
+
+                    break;
             }
         }
 
-        private void fillExistBoxWithSections()
+        /// <summary>
+        /// 
+        ///     Alternate start mode constructor. Creates all form
+        ///     component objects and sets it up for the supplied 
+        ///     mode. Not used, intended for future options 
+        ///     functionality.
+        /// 
+        /// </summary>
+        /// <param name="alternateStartMode"> The alternative mode to start the form in. </param>
+        public NewEditDelete( Mode alternateStartMode )
         {
-            addToExistBox.Items.Clear();
-            Sections.sectionList.Clear();
-            //by default, loads all the sections into the sectionsListBox
-            Sections.listSection();
-            for (int i = 0; i < Sections.sectionList.Count(); i++)
-            {
-                //Code.codeList[i].GetSectionName().Trim()}:
+            InitializeComponent();
 
-                addToExistBox.Items.Add($"{Sections.sectionList[i].name.Replace(" ", "")}");
+            switch ( alternateStartMode )
+            {
+                case Mode.Template:
+
+                    LoadModeTemplate();
+
+                    break;
+
+                case Mode.Section:
+
+                    LoadModeSection();
+
+                    break;
+
+                case Mode.Code:
+
+                    LoadModeCode();
+
+                    break;
             }
         }
 
-        private void fillExistingDropDownWithSections()
+        /// <summary>
+        /// 
+        ///     Populates the contents of the existing templates
+        ///     checkbox list for adding the new section to.
+        /// 
+        /// </summary>
+        private void Populate_CheckedListBox_NewSectionExistingTemplates()
         {
-            dropdownExistingSection.Items.Clear();
-            Sections.sectionList.Clear();
-            //by default, loads all the sections into the sectionsListBox
-            Sections.listSection();
-            for (int i = 0; i < Sections.sectionList.Count(); i++)
-            {
-                //Code.codeList[i].GetSectionName().Trim()}:
+            CheckedListBox_NewSectionExistingTemplates.Items.Clear();
 
-                dropdownExistingSection.Items.Add($"{Sections.sectionList[i].name}");
-            }
-        }
+            UpdateList("Template");
 
-        private void fillExistBoxWithTemplates()
-        {
-            checkboxAddExistTemps.Items.Clear();
-            Template.templates.Clear();
-            Template.listTemplates();
             for (int i = 0; i < Template.templates.Count(); i++)
             {
-                //Code.codeList[i].GetSectionName().Trim()}:
-                checkboxAddExistTemps.Items.Add($"{Template.templates[i].TempType}");
+                CheckedListBox_NewSectionExistingTemplates.Items.
+                    Add($"{Template.templates[i].TempType}");
             }
         }
 
-        private void fillExistingDropDownWithTemplates()
+        /// <summary>
+        /// 
+        ///     Populates the contents of the existing templates
+        ///     dropdown list to edit.
+        /// 
+        /// </summary>
+        private void Populate_ComboBox_EditExistingTemplate()
         {
-            dropdownExistingTemplate.Items.Clear();
-            Template.templates.Clear();
-            Template.listTemplates();
+            ComboBox_EditExistingTemplate.Items.Clear();
+
+            UpdateList("Template");
+
             for (int i = 0; i < Template.templates.Count(); i++)
             {
-                //Code.codeList[i].GetSectionName().Trim()}:
-                dropdownExistingTemplate.Items.Add($"{Template.templates[i].TempType}");
+                ComboBox_EditExistingTemplate.Items.
+                    Add($"{Template.templates[i].TempType}");
             }
         }
-        private void fillExistingDropDownWithCodes()
+
+        /// <summary>
+        ///     
+        ///     Populates the contents of the existing sections
+        ///     dropdown list for adding the new code to.   
+        /// 
+        /// </summary>
+        private void Populate_ComboBox_NewCodeSection()
         {
-            dropdownExistingCode.Items.Clear();
-            Code.codeList.Clear();
-            Code.fillCodeList();
+            ComboBox_NewCodeSection.Items.Clear();
+
+            UpdateList( "Section" );
+
+            for (int i = 0; i < Sections.sectionList.Count(); i++)
+            {
+                ComboBox_NewCodeSection.Items.
+                    Add( $"{Sections.sectionList[i].name.Replace( " ", "" )}" );
+            }
+        }
+
+        /// <summary>
+        /// 
+        ///     Populates the contents of the existing sections
+        ///     checkbox list for adding the new template to.
+        /// 
+        /// </summary>
+        private void Populate_CheckedListBox_NewTemplateExistingSection()
+        {
+            CheckedListBox_NewTemplateExistingSection.Items.Clear();
+
+            UpdateList( "Section" );
+
+            for (int i = 0; i < Sections.sectionList.Count(); i++)
+            {
+                CheckedListBox_NewTemplateExistingSection.Items.
+                    Add( $"{Sections.sectionList[i].name.Replace( " ", "" )}" );
+            }
+        }
+
+        /// <summary>
+        /// 
+        ///     Populates the contents of the existing sections
+        ///     dropdown list to edit.
+        /// 
+        /// </summary>
+        private void Populate_ComboBox_EditExistingSections()
+        {
+            ComboBox_EditExistingSections.Items.Clear();
+
+            UpdateList( "Section" );
+
+            for (int i = 0; i < Sections.sectionList.Count(); i++)
+            {
+                ComboBox_EditExistingSections.Items.
+                    Add( $"{Sections.sectionList[i].name.Replace( " ", "" )}" );
+            }
+        }
+
+        /// <summary>
+        /// 
+        ///     Populates the contents of the existing codes
+        ///     dropdown list to edit.
+        /// 
+        /// </summary>
+        private void Populate_ComboBox_EditExistingCode()
+        {
+            ComboBox_EditExistingCode.Items.Clear();
+
+            UpdateList( "Code" );
+
             for (int i = 0; i < Code.codeList.Count(); i++)
             {
-                dropdownExistingCode.Items.Add($"{Code.codeList[i].CodeName}");
+                ComboBox_EditExistingCode.Items.
+                    Add( $"{Code.codeList[i].CodeName.Replace(" ", "")}" );
             }
         }
 
-        private void submitNewBtn_Click(object sender, EventArgs e)
+        private void Button_SaveNew_Click(object sender, EventArgs e)
         {
-           
-            //sanitiseInput();
-            if (mode == "code")
+            switch ( currentMode )
             {
-                if (txtNewCodeName.Text.Length <= 0)
-                {
-                    lblAddError.Text = "Enter a code name";
-                    lblAddError.Show();
-                }
-                else if (txtNewCodeName.Text.Length > 5)
-                {
-                    lblAddError.Text = "Code name limit exceeded";
-                    lblAddError.Show();
-                }
-                else if (newCodeParaBox.Text.Length <= 0)
-                {
-                    lblAddError.Text = "Enter a code paragraph";
-                    lblAddError.Show();
-                }
-                else if (newCodeParaBox.Text.Length > 300)
-                {
-                    lblAddError.Text = "Code paragraph limit exceeded";
-                    lblAddError.Show();
-                }
-                else if (txtNewCodeName.Text.Contains(" "))
-                {
-                    lblAddError.Text = "Remove spaces from code name";
-                    lblAddError.Show();
-                }
-                else if (newCodeSection.SelectedItem == null)
-                {
-                    lblAddError.Text = "Select a section to add to";
-                    lblAddError.Show();
-                }
-                else if (Constants.checkCode(txtNewCodeName.Text))
-                {
-                    lblAddError.Text = "A code with this name already exists";
-                    lblAddError.Show();
-                }
-                else
-                {
-                    lblAddError.Hide();
-                    DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagIdFromName(newCodeSection.Text));
-                    DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
-                    var tagId = dRow.ItemArray.GetValue(0);
-                    string toUse = txtNewCodeName.Text.ToUpper().Replace(" ", "");
-                    string codeParaToUse = newCodeParaBox.Text;
+                case Mode.Template:
 
-                    Connection.GetDbConn().CreateCommand(Constants.insertNewCode(toUse, codeParaToUse, tagId));
+                    if ( txtNewTemplateName.Text.Length <= 0 )
+                    {
+                        DisplayError( "Enter a template name", "NewArea" );
+                    }
+                    else if ( txtNewTemplateName.Text.Length > 25 )
+                    {
+                        DisplayError( "Template name limit exceeded", "NewArea" );
+                    }
+                    else if ( Constants.checkTemplate( txtNewTemplateName.Text ) )
+                    {
+                        DisplayError( "A template with this name already exists", "NewArea" );
+                    }
+                    else
+                    {
+                        HideError( "NewArea" );
 
-                    txtNewCodeName.Clear();
-                    newCodeParaBox.Text = "";
-                    newCodeSection.Text = "";
-                    fillExistingDropDownWithCodes();
+                        string templateName = txtNewTemplateName.Text.Replace( " ", "" );
+                        Template.CreateTemplateWithSelectedSections( templateName,
+                            CheckedListBox_NewTemplateExistingSection );
+                        
+                        ClearTemplateModeFields();
 
-                    lblAddSuccess.Text = "New code saved";
-                    lblAddSuccess.Show();
-                }
-            }
-            else if (mode == "section")
-            {
-                if (txtNewSectionName.Text.Length <= 0)
-                {
-                    lblAddError.Text = "Enter a section name";
-                    lblAddError.Show();
-                }
-                else if (txtNewSectionName.Text.Length > 25)
-                {
-                    lblAddError.Text = "Section name must be 25 characters or less";
-                    lblAddError.Show();
-                }
-                else if (Constants.checkSection(txtNewSectionName.Text))
-                {
-                    lblAddError.Text = "A section with this name already exists";
-                    lblAddError.Show();
-                }
-                else
-                {
-                    lblAddError.Hide();
-                    string sectionName = txtNewSectionName.Text.Replace(" ", "");
-                    Sections.InsertSectionWithSelectedTemplates(sectionName, checkboxAddExistTemps);
-                    ClearSectionModeFields();
-                    lblAddSuccess.Text = "New section saved";
-                    lblAddSuccess.Show();
+                        DisplaySuccess( "New template saved", "NewArea" );
+                    }
 
-                }
-                
-            }
-            else if (mode == "template")
-            {
-                if (txtNewTemplateName.Text.Length <= 0)
-                {
-                    lblAddError.Text = "Enter a template name";
-                    lblAddError.Show();
-                }
-                else if (txtNewTemplateName.Text.Length > 25)
-                {
-                    lblAddError.Text = "Template name must be 25 characters or less";
-                    lblAddError.Show();
-                }
-                else if (Constants.checkTemplate(txtNewTemplateName.Text))
-                {
-                    lblAddError.Text = "A template with this name already exists";
-                    lblAddError.Show();
-                }
-                else
-                {
-                    lblAddError.Hide();
-                    string templateName = txtNewTemplateName.Text.Replace(" ", "");
-                    Template.CreateTemplateWithSelectedSections(templateName, addToExistBox);
-                    ClearTemplateModeFields();
-                    lblAddSuccess.Text = "New template saved";
-                    lblAddSuccess.Show();
-                }
+                    break;
 
-                
+                case Mode.Section:
+
+                    if (txtNewSectionName.Text.Length <= 0)
+                    {
+                        DisplayError( "Enter a section name", "NewArea" );
+                    }
+                    else if (txtNewSectionName.Text.Length > 25)
+                    {
+                        DisplayError( "Section name limit exceeded", "NewArea" );
+                    }
+                    else if (Constants.checkSection(txtNewSectionName.Text))
+                    {
+                        DisplayError( "A section with this name already exists", "NewArea" );
+                    }
+                    else
+                    {
+                        HideError( "NewArea" );
+
+                        string sectionName = txtNewSectionName.Text.Replace(" ", "");
+                        Sections.InsertSectionWithSelectedTemplates(sectionName,
+                            CheckedListBox_NewSectionExistingTemplates);
+                        ClearSectionModeFields();
+                        
+                        DisplaySuccess( "New section saved", "NewArea" );
+
+                    }
+                    break;
+
+                case Mode.Code:
+
+                    if (txtNewCodeName.Text.Length <= 0)
+                    {
+                        DisplayError( "Enter a code name", "NewArea" );
+                    }
+                    else if (txtNewCodeName.Text.Length > 5)
+                    {
+                        DisplayError( "Code name limit exceeded", "NewArea" );
+                    }
+                    else if (newCodeParaBox.Text.Length <= 0)
+                    {
+                        DisplayError( "Enter a code paragraph", "NewArea" );
+                    }
+                    else if (newCodeParaBox.Text.Length > 300)
+                    {
+                        DisplayError( "Code paragraph limit exceeded", "NewArea" );
+                    }
+                    else if (txtNewCodeName.Text.Contains(" "))
+                    {
+                        DisplayError( "Remove spaces from code name", "NewArea" );
+                    }
+                    else if (ComboBox_NewCodeSection.SelectedItem == null)
+                    {
+                        DisplayError( "Select a section to add to", "NewArea" );
+                    }
+                    else if (Constants.checkCode(txtNewCodeName.Text))
+                    {
+                        DisplayError( "A code with this name already exists", "NewArea" );
+                    }
+                    else
+                    {
+                        HideError( "NewArea" );
+
+                        DataSet sectionDB = Connection.GetDbConn().getDataSet(Constants.
+                            getTagIdFromName(ComboBox_NewCodeSection.Text));
+
+                        DataRow sectionValue = sectionDB.Tables[0].Rows[0];
+                        
+                        var sectionId = sectionValue.ItemArray.GetValue(0);
+                        string newCodeName = txtNewCodeName.Text.ToUpper().Replace(" ", "");
+                        string newCodeParagraph = newCodeParaBox.Text;
+
+                        Connection.GetDbConn().CreateCommand(Constants.
+                            insertNewCode(newCodeName, newCodeParagraph, sectionId));
+
+                        txtNewCodeName.Clear();
+                        newCodeParaBox.Text = "";
+                        ComboBox_NewCodeSection.Text = "";
+
+                        Populate_ComboBox_EditExistingCode();
+
+                        DisplaySuccess( "New code saved", "NewArea" );
+                    }
+                    break;
             }
         }
 
-        private void dropdownExistingTemplate_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox_EditExistingTemplate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtEditTemplateName.Text = dropdownExistingTemplate.Text.Replace(" ", "");
+            txtEditTemplateName.Text = ComboBox_EditExistingTemplate.Text.Replace(" ", "");
 
             lblEditSuccess.Hide();
             lblEditError.Hide();
@@ -258,9 +379,9 @@ namespace HappyTech
 
         private void saveChangeBtn_Click(object sender, EventArgs e)
         {
-            if (mode == "code")
+            if (currentMode == Mode.Code)
             {
-                if (dropdownExistingCode.SelectedItem == null)
+                if (ComboBox_EditExistingCode.SelectedItem == null)
                 {
                     lblEditError.Text = "Select a code to edit";
                     lblEditError.Show();
@@ -292,7 +413,7 @@ namespace HappyTech
                 }
                 else if (Constants.checkCode(txtEditCodeName.Text))
                 {
-                    if (txtEditCodeName.Text == dropdownExistingCode.SelectedItem.ToString())
+                    if (txtEditCodeName.Text == ComboBox_EditExistingCode.SelectedItem.ToString())
                     {
                         SaveCodeChange();
                     }
@@ -310,9 +431,9 @@ namespace HappyTech
                 
             }
 
-            if (mode == "section")
+            if (currentMode == Mode.Section)
             {
-                if (dropdownExistingSection.SelectedItem == null)
+                if (ComboBox_EditExistingSections.SelectedItem == null)
                 {
                     lblEditError.Text = "Select a section to edit";
                     lblEditError.Show();
@@ -335,7 +456,7 @@ namespace HappyTech
                 else
                 {
                     lblEditError.Hide();
-                    DataSet ds = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(dropdownExistingSection.Text));
+                    DataSet ds = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(ComboBox_EditExistingSections.Text));
                     DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
                     var sectionId = dRow.ItemArray.GetValue(0);
                     Connection.GetDbConn().CreateCommand(Constants.editSection(sectionId, txtEditSectionName.Text.Replace(" ", "")));
@@ -349,9 +470,9 @@ namespace HappyTech
                 
             }
 
-            if (mode == "template")
+            if (currentMode == Mode.Template)
             {
-                if (dropdownExistingTemplate.SelectedItem == null)
+                if (ComboBox_EditExistingTemplate.SelectedItem == null)
                 {
                     lblEditError.Text = "Select a template to edit";
                     lblEditError.Show();
@@ -374,7 +495,7 @@ namespace HappyTech
                 else
                 {
                     lblEditError.Hide();
-                    DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(dropdownExistingTemplate.Text.Replace(" ", "")));
+                    DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(ComboBox_EditExistingTemplate.Text.Replace(" ", "")));
                     DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
                     var templateId = dRow.ItemArray.GetValue(0);
                     Connection.GetDbConn().CreateCommand(Constants.editTemplate(templateId, txtEditTemplateName.Text));
@@ -394,12 +515,12 @@ namespace HappyTech
             lblEditError.Hide();
             //get the id of the old code and update the code short with the new one
             //update codepara with the new one
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeId(dropdownExistingCode.Text));
+            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeId(ComboBox_EditExistingCode.Text));
             DataRow dRow = ds.Tables[0].Rows[0]; //gets the tag id with this tag name
             var codeId = dRow.ItemArray.GetValue(0);
             Connection.GetDbConn().CreateCommand(Constants.editCode(codeId, txtEditCodeName.Text.ToUpper().Replace(" ", ""), codeParaEditBox.Text));
             codeParaEditBox.Clear();
-            fillExistingDropDownWithCodes();
+            Populate_ComboBox_EditExistingCode();
             dropDownForEdit.Items.Clear();
             txtEditCodeName.Text = "";
 
@@ -527,18 +648,18 @@ namespace HappyTech
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            if (mode == "template")
+            if (currentMode == Mode.Template)
             {
                 ClearTemplateModeFields();
-                dropdownExistingTemplate.Text = "";
+                ComboBox_EditExistingTemplate.Text = "";
                 
             }
-            else if (mode == "section")
+            else if (currentMode == Mode.Section)
             {
                 ClearSectionModeFields();
-                dropdownExistingSection.Text = "";
+                ComboBox_EditExistingSections.Text = "";
             }
-            else if (mode == "code")
+            else if (currentMode == Mode.Code)
             {
                 ClearCodeModeFields();
                 dropDownForEdit.Text = "";
@@ -547,17 +668,17 @@ namespace HappyTech
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            if (mode == "template")
+            if (currentMode == Mode.Template)
             {
                 // delete template
 
             }
-            else if (mode == "section")
+            else if (currentMode == Mode.Section)
             {
                 // delete section
 
             }
-            else if (mode == "code")
+            else if (currentMode == Mode.Code)
             {
                 // delete code
 
@@ -566,29 +687,29 @@ namespace HappyTech
 
         private void btnModeTemplate_Click(object sender, EventArgs e)
         {
-            mode = "template";
-            LoadTempMode();
-            SetModeButton(mode);
-            SetModePanel(mode);
+            currentMode = Mode.Template;
+            LoadModeTemplate();
+            SetModeButton(currentMode);
+            SetModePanel(currentMode);
             ClearTemplateModeFields();
             
         }
 
         private void btnModeSection_Click(object sender, EventArgs e)
         {
-            mode = "section";
-            LoadSectionMode();
-            SetModeButton(mode);
-            SetModePanel(mode);
+            currentMode = Mode.Section;
+            LoadModeSection();
+            SetModeButton(currentMode);
+            SetModePanel(currentMode);
             ClearSectionModeFields();
         }
 
         private void btnModeCode_Click(object sender, EventArgs e)
         {
-            mode = "code";
-            LoadCodeMode();
-            SetModeButton(mode);
-            SetModePanel(mode);
+            currentMode = Mode.Code;
+            LoadModeCode();
+            SetModeButton(currentMode);
+            SetModePanel(currentMode);
             ClearCodeModeFields();
         }
 
@@ -599,18 +720,18 @@ namespace HappyTech
             cv.Show();
         }
 
-        private void dropdownExistingTemplate_DrawItem(object sender, DrawItemEventArgs e)
+        private void ComboBox_EditExistingTemplate_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
             {
                 e.DrawBackground();
                 e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 6, e.Bounds.Y + 6, 8, 8);
-                e.Graphics.DrawString(dropdownExistingTemplate.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
+                e.Graphics.DrawString(ComboBox_EditExistingTemplate.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
                 e.DrawFocusRectangle();
             }
             catch (Exception)
             {
-
+                Console.WriteLine("{0} can't be drawn because it does not exist.", e.ToString());
             }
         }
 
@@ -620,9 +741,9 @@ namespace HappyTech
             lblAddError.Hide();
         }
 
-        private void SetModeButton(string type)
+        private void SetModeButton(Mode mode)
         {
-            if (type == "template")
+            if (mode == Mode.Template)
             {
                 btnModeTemplate.BackColor = Color.FromArgb(83, 60, 182);
                 btnModeTemplate.ForeColor = Color.White;
@@ -633,7 +754,7 @@ namespace HappyTech
                 btnModeCode.BackColor = Color.White;
                 btnModeCode.ForeColor = Color.FromArgb(83, 60, 182);
             }
-            else if (type == "section")
+            else if (mode == Mode.Section)
             {
                 btnModeSection.BackColor = Color.FromArgb(83, 60, 182);
                 btnModeSection.ForeColor = Color.White;
@@ -644,7 +765,7 @@ namespace HappyTech
                 btnModeCode.BackColor = Color.White;
                 btnModeCode.ForeColor = Color.FromArgb(83, 60, 182);
             }
-            else if (type == "code")
+            else if (mode == Mode.Code)
             {
                 btnModeCode.BackColor = Color.FromArgb(83, 60, 182);
                 btnModeCode.ForeColor = Color.White;
@@ -659,9 +780,9 @@ namespace HappyTech
 
         }
 
-        private void SetModePanel(string type)
+        private void SetModePanel(Mode mode)
         {
-            if (type == "template")
+            if (mode == Mode.Template)
             {
                 panelAddTemplate.Show();
                 panelEditTemplate.Show();
@@ -670,7 +791,7 @@ namespace HappyTech
                 panelAddCode.Hide();
                 panelEditCode.Hide();
             }
-            else if (type == "section")
+            else if (mode == Mode.Section)
             {
                 panelAddTemplate.Hide();
                 panelEditTemplate.Hide();
@@ -680,7 +801,7 @@ namespace HappyTech
                 panelEditCode.Hide();
 
             }
-            else if (type == "code")
+            else if (mode == Mode.Code)
             {
                 panelAddTemplate.Hide();
                 panelEditTemplate.Hide();
@@ -695,8 +816,8 @@ namespace HappyTech
         {
             lblAddError.Hide();
             txtNewTemplateName.Clear();
-            fillExistBoxWithSections();
-            fillExistingDropDownWithTemplates();
+            Populate_CheckedListBox_NewTemplateExistingSection();
+            Populate_ComboBox_EditExistingTemplate();
             txtEditTemplateName.Clear();
             ClearTempEditSectionCheckboxlist();
         }
@@ -705,8 +826,8 @@ namespace HappyTech
         {
             lblAddError.Hide();
             txtNewSectionName.Clear();
-            fillExistBoxWithTemplates();
-            fillExistingDropDownWithSections();
+            Populate_CheckedListBox_NewSectionExistingTemplates();
+            Populate_ComboBox_EditExistingSections();
             txtEditSectionName.Clear();
             ClearSectionEditTempsCheckboxlist();
         }
@@ -716,28 +837,28 @@ namespace HappyTech
             lblAddError.Hide();
             txtNewCodeName.Clear();
             codeParaEditBox.Clear();
-            fillExistingDropDownWithCodes();
+            Populate_ComboBox_EditExistingCode();
             txtEditCodeName.Clear();
             dropDownForEdit.Items.Clear();
         }
 
-        private void LoadSectionMode()
+        private void LoadModeSection()
         {
-            fillExistBoxWithTemplates();
-            fillExistingDropDownWithSections();
+            Populate_CheckedListBox_NewSectionExistingTemplates();
+            Populate_ComboBox_EditExistingSections();
         }
 
-        private void LoadTempMode()
+        private void LoadModeTemplate()
         {
-            fillExistingDropDownWithTemplates();
-            fillExistBoxWithSections();
+            Populate_ComboBox_EditExistingTemplate();
+            Populate_CheckedListBox_NewTemplateExistingSection();
         }
 
-        private void LoadCodeMode()
+        private void LoadModeCode()
         {
-            fillNewCodeTagDrop();
-            fillExistBoxWithSections();
-            fillExistingDropDownWithCodes();
+            Populate_ComboBox_NewCodeSection();
+            Populate_CheckedListBox_NewTemplateExistingSection();
+            Populate_ComboBox_EditExistingCode();
         }
 
         private void txtNewSectionName_TextChanged(object sender, EventArgs e)
@@ -746,24 +867,24 @@ namespace HappyTech
             lblAddError.Hide();
         }
 
-        private void dropdownExistingSection_DrawItem(object sender, DrawItemEventArgs e)
+        private void ComboBox_EditExistingSections_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
             {
                 e.DrawBackground();
                 e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 6, e.Bounds.Y + 6, 8, 8);
-                e.Graphics.DrawString(dropdownExistingSection.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
+                e.Graphics.DrawString(ComboBox_EditExistingSections.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
                 e.DrawFocusRectangle();
             }
             catch (Exception)
             {
-
+                Console.WriteLine("{0} can't be drawn because it does not exist.", e.ToString());
             }
         }
 
-        private void dropdownExistingSection_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox_EditExistingSections_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtEditSectionName.Text = dropdownExistingSection.Text.Replace(" ", "");
+            txtEditSectionName.Text = ComboBox_EditExistingSections.Text.Replace(" ", "");
             //if we're editing sections, we need the checkbox to be populated with templates
             //change check list to display templates checkboxEditExistTemps needs to change if the existingDropDown changes
 
@@ -773,7 +894,7 @@ namespace HappyTech
             checkboxEditExistTemps.Items.Clear(); // clear out old info (if any)
             Template.templates.Clear();
             // we will use the selected section name to get the selected section's's ID
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(dropdownExistingSection.Text.Replace(" ", "")));
+            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(ComboBox_EditExistingSections.Text.Replace(" ", "")));
             DataRow dRow = ds.Tables[0].Rows[0];
             var sectionId = dRow.ItemArray.GetValue(0);
             // we need to populate the sectionsListBox 
@@ -799,9 +920,9 @@ namespace HappyTech
             }
         }
 
-        private void dropdownExistingCode_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox_EditExistingCode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtEditCodeName.Text = dropdownExistingCode.Text.Replace(" ", "");
+            txtEditCodeName.Text = ComboBox_EditExistingCode.Text.Replace(" ", "");
 
             lblEditSuccess.Hide();
             lblEditError.Hide();
@@ -816,24 +937,24 @@ namespace HappyTech
 
                 dropDownForEdit.Items.Add($"{Sections.sectionList[i].name.Replace(" ", "")}");
             }
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeParaFromShort(dropdownExistingCode.Text.Replace(" ", "")));
+            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeParaFromShort(ComboBox_EditExistingCode.Text.Replace(" ", "")));
             DataRow dRow = ds.Tables[0].Rows[0];
-            txtEditCodeName.Text = dropdownExistingCode.Text.Replace(" ", "");
+            txtEditCodeName.Text = ComboBox_EditExistingCode.Text.Replace(" ", "");
             codeParaEditBox.Text = dRow.ItemArray.GetValue(0).ToString();
         }
 
-        private void dropdownExistingCode_DrawItem(object sender, DrawItemEventArgs e)
+        private void ComboBox_EditExistingCode_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
             {
                 e.DrawBackground();
                 e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 6, e.Bounds.Y + 6, 8, 8);
-                e.Graphics.DrawString(dropdownExistingCode.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
+                e.Graphics.DrawString(ComboBox_EditExistingCode.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
                 e.DrawFocusRectangle();
             }
             catch (Exception)
             {
-
+                Console.WriteLine("{0} can't be drawn because it does not exist.", e.ToString());
             }
         }
 
@@ -852,13 +973,13 @@ namespace HappyTech
             }
         }
 
-        private void newCodeSection_DrawItem(object sender, DrawItemEventArgs e)
+        private void ComboBox_NewCodeSection_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
             {
                 e.DrawBackground();
                 e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 6, e.Bounds.Y + 6, 8, 8);
-                e.Graphics.DrawString(newCodeSection.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
+                e.Graphics.DrawString(ComboBox_NewCodeSection.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
                 e.DrawFocusRectangle();
             }
             catch (Exception)
@@ -925,6 +1046,141 @@ namespace HappyTech
             else
             {
                 lblEditCodeNameLimit.ForeColor = Color.FromArgb(119, 119, 136);
+            }
+        }
+
+        /// <summary>
+        /// 
+        ///     Clear the object list and fill it from the database again.
+        /// 
+        /// </summary>
+        /// <param name="type"> Which object list to update: Template, Section, or Code </param>
+        private void UpdateList( string type )
+        {
+            switch ( type )
+            {
+                case "Template":
+
+                    Template.templates.Clear();
+                    Template.listTemplates();
+
+                    break;
+
+                case "Section":
+
+                    Sections.sectionList.Clear();
+                    Sections.listSection();
+
+                    break;
+
+                case "Code":
+
+                    Code.codeList.Clear();
+                    Code.fillCodeList();
+
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 
+        ///     Display an error at the bottom of the specified area.
+        /// 
+        /// </summary>
+        /// <param name="message"> The error message </param>
+        /// <param name="area"> The area to display the error to </param>
+        private void DisplayError( string message, string area)
+        {
+            switch ( area )
+            {
+                case "NewArea":
+
+                    lblAddError.Text = message;
+                    lblAddError.Show();
+
+                    break;
+
+                case "EditArea":
+
+                    lblEditError.Text = message;
+                    lblEditError.Show();
+
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 
+        ///     Hide the error at the bottom of the specified area.
+        /// 
+        /// </summary>
+        /// <param name="area"> The area to hide the error from </param>
+        private void HideError(string area)
+        {
+            switch (area)
+            {
+                case "NewArea":
+
+                    lblAddError.Hide();
+
+                    break;
+
+                case "EditArea":
+
+                    lblEditError.Hide();
+
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 
+        ///     Display a success message at the bottom of the specified area.
+        /// 
+        /// </summary>
+        /// <param name="message"> The success message </param>
+        /// <param name="area"> The area to display the success message to </param>
+        private void DisplaySuccess(string message, string area)
+        {
+            switch (area)
+            {
+                case "NewArea":
+
+                    lblAddSuccess.Text = message;
+                    lblAddSuccess.Show();
+
+                    break;
+
+                case "EditArea":
+
+                    lblEditSuccess.Text = message;
+                    lblEditSuccess.Show();
+
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 
+        ///     Hide the success message at the bottom of the specified area.
+        /// 
+        /// </summary>
+        /// <param name="area"> The area to hide the success message from </param>
+        private void HideSuccess(string area)
+        {
+            switch (area)
+            {
+                case "NewArea":
+
+                    lblAddSuccess.Hide();
+
+                    break;
+
+                case "EditArea":
+
+                    lblEditSuccess.Hide();
+
+                    break;
             }
         }
     }

@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewEditDelete));
             this.txtNewTemplateName = new System.Windows.Forms.TextBox();
-            this.addToExistBox = new System.Windows.Forms.CheckedListBox();
-            this.submitNewBtn = new System.Windows.Forms.Button();
+            this.CheckedListBox_NewTemplateExistingSection = new System.Windows.Forms.CheckedListBox();
+            this.Button_SaveNew = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
-            this.dropdownExistingTemplate = new System.Windows.Forms.ComboBox();
+            this.ComboBox_EditExistingTemplate = new System.Windows.Forms.ComboBox();
             this.txtEditTemplateName = new System.Windows.Forms.TextBox();
             this.codeParaEditBox = new System.Windows.Forms.RichTextBox();
             this.cancelBtn = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             this.lblChooseTemplate = new System.Windows.Forms.Label();
             this.newCodeParaBox = new System.Windows.Forms.RichTextBox();
             this.lblCodeParagraph = new System.Windows.Forms.Label();
-            this.newCodeSection = new System.Windows.Forms.ComboBox();
+            this.ComboBox_NewCodeSection = new System.Windows.Forms.ComboBox();
             this.checkBoxForEdit = new System.Windows.Forms.CheckedListBox();
             this.dropDownForEdit = new System.Windows.Forms.ComboBox();
             this.panelManagement = new System.Windows.Forms.Panel();
@@ -79,32 +79,32 @@
             this.lblNewSectionName = new System.Windows.Forms.Label();
             this.txtNewSectionName = new System.Windows.Forms.TextBox();
             this.lblNewAddTemplates = new System.Windows.Forms.Label();
-            this.checkboxAddExistTemps = new System.Windows.Forms.CheckedListBox();
+            this.CheckedListBox_NewSectionExistingTemplates = new System.Windows.Forms.CheckedListBox();
             this.panelEditSection = new System.Windows.Forms.Panel();
             this.lblEditAddTemps = new System.Windows.Forms.Label();
             this.lblEditSectionName = new System.Windows.Forms.Label();
             this.lblEditExistingSection = new System.Windows.Forms.Label();
             this.lblChooseSection = new System.Windows.Forms.Label();
-            this.dropdownExistingSection = new System.Windows.Forms.ComboBox();
+            this.ComboBox_EditExistingSections = new System.Windows.Forms.ComboBox();
             this.checkboxEditExistTemps = new System.Windows.Forms.CheckedListBox();
             this.txtEditSectionName = new System.Windows.Forms.TextBox();
             this.panelAddCode = new System.Windows.Forms.Panel();
+            this.lblCodeNameLimit = new System.Windows.Forms.Label();
             this.lblCodeParaLimit = new System.Windows.Forms.Label();
             this.lblAddNewCode = new System.Windows.Forms.Label();
             this.lblNewCodeName = new System.Windows.Forms.Label();
             this.txtNewCodeName = new System.Windows.Forms.TextBox();
             this.lblNewAddSectionsCode = new System.Windows.Forms.Label();
             this.panelEditCode = new System.Windows.Forms.Panel();
+            this.lblEditCodeNameLimit = new System.Windows.Forms.Label();
             this.lblEditCodeParaLimit = new System.Windows.Forms.Label();
             this.lblCodeParagraphEdit = new System.Windows.Forms.Label();
             this.lblEditAddSectionsCode = new System.Windows.Forms.Label();
             this.lblEditCodeName = new System.Windows.Forms.Label();
             this.lblEditExistingCode = new System.Windows.Forms.Label();
             this.lblChooseCode = new System.Windows.Forms.Label();
-            this.dropdownExistingCode = new System.Windows.Forms.ComboBox();
+            this.ComboBox_EditExistingCode = new System.Windows.Forms.ComboBox();
             this.txtEditCodeName = new System.Windows.Forms.TextBox();
-            this.lblCodeNameLimit = new System.Windows.Forms.Label();
-            this.lblEditCodeNameLimit = new System.Windows.Forms.Label();
             this.panelManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).BeginInit();
@@ -131,32 +131,32 @@
             this.txtNewTemplateName.TabIndex = 0;
             this.txtNewTemplateName.TextChanged += new System.EventHandler(this.txtNewTemplateName_TextChanged);
             // 
-            // addToExistBox
+            // CheckedListBox_NewTemplateExistingSection
             // 
-            this.addToExistBox.CheckOnClick = true;
-            this.addToExistBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.addToExistBox.ForeColor = System.Drawing.Color.Black;
-            this.addToExistBox.FormattingEnabled = true;
-            this.addToExistBox.Location = new System.Drawing.Point(21, 147);
-            this.addToExistBox.Name = "addToExistBox";
-            this.addToExistBox.Size = new System.Drawing.Size(371, 199);
-            this.addToExistBox.TabIndex = 1;
+            this.CheckedListBox_NewTemplateExistingSection.CheckOnClick = true;
+            this.CheckedListBox_NewTemplateExistingSection.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.CheckedListBox_NewTemplateExistingSection.ForeColor = System.Drawing.Color.Black;
+            this.CheckedListBox_NewTemplateExistingSection.FormattingEnabled = true;
+            this.CheckedListBox_NewTemplateExistingSection.Location = new System.Drawing.Point(21, 147);
+            this.CheckedListBox_NewTemplateExistingSection.Name = "CheckedListBox_NewTemplateExistingSection";
+            this.CheckedListBox_NewTemplateExistingSection.Size = new System.Drawing.Size(371, 199);
+            this.CheckedListBox_NewTemplateExistingSection.TabIndex = 1;
             // 
-            // submitNewBtn
+            // Button_SaveNew
             // 
-            this.submitNewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
-            this.submitNewBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.submitNewBtn.FlatAppearance.BorderSize = 0;
-            this.submitNewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submitNewBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.submitNewBtn.ForeColor = System.Drawing.Color.White;
-            this.submitNewBtn.Location = new System.Drawing.Point(315, 55);
-            this.submitNewBtn.Name = "submitNewBtn";
-            this.submitNewBtn.Size = new System.Drawing.Size(77, 23);
-            this.submitNewBtn.TabIndex = 2;
-            this.submitNewBtn.Text = "Save";
-            this.submitNewBtn.UseVisualStyleBackColor = false;
-            this.submitNewBtn.Click += new System.EventHandler(this.submitNewBtn_Click);
+            this.Button_SaveNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
+            this.Button_SaveNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_SaveNew.FlatAppearance.BorderSize = 0;
+            this.Button_SaveNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_SaveNew.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_SaveNew.ForeColor = System.Drawing.Color.White;
+            this.Button_SaveNew.Location = new System.Drawing.Point(315, 55);
+            this.Button_SaveNew.Name = "Button_SaveNew";
+            this.Button_SaveNew.Size = new System.Drawing.Size(77, 23);
+            this.Button_SaveNew.TabIndex = 2;
+            this.Button_SaveNew.Text = "Save";
+            this.Button_SaveNew.UseVisualStyleBackColor = false;
+            this.Button_SaveNew.Click += new System.EventHandler(this.Button_SaveNew_Click);
             // 
             // backBtn
             // 
@@ -174,22 +174,22 @@
             this.backBtn.UseVisualStyleBackColor = false;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
-            // dropdownExistingTemplate
+            // ComboBox_EditExistingTemplate
             // 
-            this.dropdownExistingTemplate.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.dropdownExistingTemplate.DropDownHeight = 200;
-            this.dropdownExistingTemplate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropdownExistingTemplate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.dropdownExistingTemplate.ForeColor = System.Drawing.Color.Black;
-            this.dropdownExistingTemplate.FormattingEnabled = true;
-            this.dropdownExistingTemplate.IntegralHeight = false;
-            this.dropdownExistingTemplate.ItemHeight = 20;
-            this.dropdownExistingTemplate.Location = new System.Drawing.Point(21, 84);
-            this.dropdownExistingTemplate.Name = "dropdownExistingTemplate";
-            this.dropdownExistingTemplate.Size = new System.Drawing.Size(373, 26);
-            this.dropdownExistingTemplate.TabIndex = 4;
-            this.dropdownExistingTemplate.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.dropdownExistingTemplate_DrawItem);
-            this.dropdownExistingTemplate.SelectedIndexChanged += new System.EventHandler(this.dropdownExistingTemplate_SelectedIndexChanged);
+            this.ComboBox_EditExistingTemplate.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.ComboBox_EditExistingTemplate.DropDownHeight = 200;
+            this.ComboBox_EditExistingTemplate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_EditExistingTemplate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ComboBox_EditExistingTemplate.ForeColor = System.Drawing.Color.Black;
+            this.ComboBox_EditExistingTemplate.FormattingEnabled = true;
+            this.ComboBox_EditExistingTemplate.IntegralHeight = false;
+            this.ComboBox_EditExistingTemplate.ItemHeight = 20;
+            this.ComboBox_EditExistingTemplate.Location = new System.Drawing.Point(21, 84);
+            this.ComboBox_EditExistingTemplate.Name = "ComboBox_EditExistingTemplate";
+            this.ComboBox_EditExistingTemplate.Size = new System.Drawing.Size(373, 26);
+            this.ComboBox_EditExistingTemplate.TabIndex = 4;
+            this.ComboBox_EditExistingTemplate.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBox_EditExistingTemplate_DrawItem);
+            this.ComboBox_EditExistingTemplate.SelectedIndexChanged += new System.EventHandler(this.ComboBox_EditExistingTemplate_SelectedIndexChanged);
             // 
             // txtEditTemplateName
             // 
@@ -312,20 +312,20 @@
             this.lblCodeParagraph.TabIndex = 15;
             this.lblCodeParagraph.Text = "Code paragraph:";
             // 
-            // newCodeSection
+            // ComboBox_NewCodeSection
             // 
-            this.newCodeSection.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.newCodeSection.DropDownHeight = 200;
-            this.newCodeSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.newCodeSection.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.newCodeSection.FormattingEnabled = true;
-            this.newCodeSection.IntegralHeight = false;
-            this.newCodeSection.ItemHeight = 20;
-            this.newCodeSection.Location = new System.Drawing.Point(19, 316);
-            this.newCodeSection.Name = "newCodeSection";
-            this.newCodeSection.Size = new System.Drawing.Size(373, 26);
-            this.newCodeSection.TabIndex = 16;
-            this.newCodeSection.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.newCodeSection_DrawItem);
+            this.ComboBox_NewCodeSection.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.ComboBox_NewCodeSection.DropDownHeight = 200;
+            this.ComboBox_NewCodeSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_NewCodeSection.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ComboBox_NewCodeSection.FormattingEnabled = true;
+            this.ComboBox_NewCodeSection.IntegralHeight = false;
+            this.ComboBox_NewCodeSection.ItemHeight = 20;
+            this.ComboBox_NewCodeSection.Location = new System.Drawing.Point(19, 316);
+            this.ComboBox_NewCodeSection.Name = "ComboBox_NewCodeSection";
+            this.ComboBox_NewCodeSection.Size = new System.Drawing.Size(373, 26);
+            this.ComboBox_NewCodeSection.TabIndex = 16;
+            this.ComboBox_NewCodeSection.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBox_NewCodeSection_DrawItem);
             // 
             // checkBoxForEdit
             // 
@@ -503,7 +503,7 @@
             this.panelAddTemplate.Controls.Add(this.lblNewTemplateName);
             this.panelAddTemplate.Controls.Add(this.txtNewTemplateName);
             this.panelAddTemplate.Controls.Add(this.lblNewAddSections);
-            this.panelAddTemplate.Controls.Add(this.addToExistBox);
+            this.panelAddTemplate.Controls.Add(this.CheckedListBox_NewTemplateExistingSection);
             this.panelAddTemplate.Location = new System.Drawing.Point(118, 75);
             this.panelAddTemplate.Name = "panelAddTemplate";
             this.panelAddTemplate.Size = new System.Drawing.Size(411, 359);
@@ -526,7 +526,7 @@
             this.panelEditTemplate.Controls.Add(this.lblEditTemplateName);
             this.panelEditTemplate.Controls.Add(this.lblEditExistingTemplate);
             this.panelEditTemplate.Controls.Add(this.lblChooseTemplate);
-            this.panelEditTemplate.Controls.Add(this.dropdownExistingTemplate);
+            this.panelEditTemplate.Controls.Add(this.ComboBox_EditExistingTemplate);
             this.panelEditTemplate.Controls.Add(this.checkBoxForEdit);
             this.panelEditTemplate.Controls.Add(this.txtEditTemplateName);
             this.panelEditTemplate.Location = new System.Drawing.Point(549, 75);
@@ -573,7 +573,7 @@
             this.panelSaveNew.Controls.Add(this.lblAddError);
             this.panelSaveNew.Controls.Add(this.lblAddActions);
             this.panelSaveNew.Controls.Add(this.backBtn);
-            this.panelSaveNew.Controls.Add(this.submitNewBtn);
+            this.panelSaveNew.Controls.Add(this.Button_SaveNew);
             this.panelSaveNew.Location = new System.Drawing.Point(118, 450);
             this.panelSaveNew.Name = "panelSaveNew";
             this.panelSaveNew.Size = new System.Drawing.Size(411, 91);
@@ -693,7 +693,7 @@
             this.panelAddSection.Controls.Add(this.lblNewSectionName);
             this.panelAddSection.Controls.Add(this.txtNewSectionName);
             this.panelAddSection.Controls.Add(this.lblNewAddTemplates);
-            this.panelAddSection.Controls.Add(this.checkboxAddExistTemps);
+            this.panelAddSection.Controls.Add(this.CheckedListBox_NewSectionExistingTemplates);
             this.panelAddSection.Location = new System.Drawing.Point(118, 75);
             this.panelAddSection.Name = "panelAddSection";
             this.panelAddSection.Size = new System.Drawing.Size(411, 359);
@@ -742,16 +742,16 @@
             this.lblNewAddTemplates.TabIndex = 11;
             this.lblNewAddTemplates.Text = "Add templates (optional):";
             // 
-            // checkboxAddExistTemps
+            // CheckedListBox_NewSectionExistingTemplates
             // 
-            this.checkboxAddExistTemps.CheckOnClick = true;
-            this.checkboxAddExistTemps.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.checkboxAddExistTemps.ForeColor = System.Drawing.Color.Black;
-            this.checkboxAddExistTemps.FormattingEnabled = true;
-            this.checkboxAddExistTemps.Location = new System.Drawing.Point(21, 147);
-            this.checkboxAddExistTemps.Name = "checkboxAddExistTemps";
-            this.checkboxAddExistTemps.Size = new System.Drawing.Size(371, 199);
-            this.checkboxAddExistTemps.TabIndex = 1;
+            this.CheckedListBox_NewSectionExistingTemplates.CheckOnClick = true;
+            this.CheckedListBox_NewSectionExistingTemplates.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.CheckedListBox_NewSectionExistingTemplates.ForeColor = System.Drawing.Color.Black;
+            this.CheckedListBox_NewSectionExistingTemplates.FormattingEnabled = true;
+            this.CheckedListBox_NewSectionExistingTemplates.Location = new System.Drawing.Point(21, 147);
+            this.CheckedListBox_NewSectionExistingTemplates.Name = "CheckedListBox_NewSectionExistingTemplates";
+            this.CheckedListBox_NewSectionExistingTemplates.Size = new System.Drawing.Size(371, 199);
+            this.CheckedListBox_NewSectionExistingTemplates.TabIndex = 1;
             // 
             // panelEditSection
             // 
@@ -760,7 +760,7 @@
             this.panelEditSection.Controls.Add(this.lblEditSectionName);
             this.panelEditSection.Controls.Add(this.lblEditExistingSection);
             this.panelEditSection.Controls.Add(this.lblChooseSection);
-            this.panelEditSection.Controls.Add(this.dropdownExistingSection);
+            this.panelEditSection.Controls.Add(this.ComboBox_EditExistingSections);
             this.panelEditSection.Controls.Add(this.checkboxEditExistTemps);
             this.panelEditSection.Controls.Add(this.txtEditSectionName);
             this.panelEditSection.Location = new System.Drawing.Point(549, 75);
@@ -812,22 +812,22 @@
             this.lblChooseSection.TabIndex = 12;
             this.lblChooseSection.Text = "Choose section:";
             // 
-            // dropdownExistingSection
+            // ComboBox_EditExistingSections
             // 
-            this.dropdownExistingSection.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.dropdownExistingSection.DropDownHeight = 200;
-            this.dropdownExistingSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropdownExistingSection.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.dropdownExistingSection.ForeColor = System.Drawing.Color.Black;
-            this.dropdownExistingSection.FormattingEnabled = true;
-            this.dropdownExistingSection.IntegralHeight = false;
-            this.dropdownExistingSection.ItemHeight = 20;
-            this.dropdownExistingSection.Location = new System.Drawing.Point(21, 84);
-            this.dropdownExistingSection.Name = "dropdownExistingSection";
-            this.dropdownExistingSection.Size = new System.Drawing.Size(373, 26);
-            this.dropdownExistingSection.TabIndex = 4;
-            this.dropdownExistingSection.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.dropdownExistingSection_DrawItem);
-            this.dropdownExistingSection.SelectedIndexChanged += new System.EventHandler(this.dropdownExistingSection_SelectedIndexChanged);
+            this.ComboBox_EditExistingSections.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.ComboBox_EditExistingSections.DropDownHeight = 200;
+            this.ComboBox_EditExistingSections.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_EditExistingSections.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ComboBox_EditExistingSections.ForeColor = System.Drawing.Color.Black;
+            this.ComboBox_EditExistingSections.FormattingEnabled = true;
+            this.ComboBox_EditExistingSections.IntegralHeight = false;
+            this.ComboBox_EditExistingSections.ItemHeight = 20;
+            this.ComboBox_EditExistingSections.Location = new System.Drawing.Point(21, 84);
+            this.ComboBox_EditExistingSections.Name = "ComboBox_EditExistingSections";
+            this.ComboBox_EditExistingSections.Size = new System.Drawing.Size(373, 26);
+            this.ComboBox_EditExistingSections.TabIndex = 4;
+            this.ComboBox_EditExistingSections.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBox_EditExistingSections_DrawItem);
+            this.ComboBox_EditExistingSections.SelectedIndexChanged += new System.EventHandler(this.ComboBox_EditExistingSections_SelectedIndexChanged);
             // 
             // checkboxEditExistTemps
             // 
@@ -859,7 +859,7 @@
             this.panelAddCode.Controls.Add(this.lblNewCodeName);
             this.panelAddCode.Controls.Add(this.txtNewCodeName);
             this.panelAddCode.Controls.Add(this.lblNewAddSectionsCode);
-            this.panelAddCode.Controls.Add(this.newCodeSection);
+            this.panelAddCode.Controls.Add(this.ComboBox_NewCodeSection);
             this.panelAddCode.Controls.Add(this.lblCodeParagraph);
             this.panelAddCode.Controls.Add(this.newCodeParaBox);
             this.panelAddCode.Location = new System.Drawing.Point(118, 75);
@@ -867,6 +867,17 @@
             this.panelAddCode.Size = new System.Drawing.Size(411, 359);
             this.panelAddCode.TabIndex = 23;
             this.panelAddCode.Visible = false;
+            // 
+            // lblCodeNameLimit
+            // 
+            this.lblCodeNameLimit.AutoSize = true;
+            this.lblCodeNameLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblCodeNameLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblCodeNameLimit.Location = new System.Drawing.Point(97, 64);
+            this.lblCodeNameLimit.Name = "lblCodeNameLimit";
+            this.lblCodeNameLimit.Size = new System.Drawing.Size(36, 14);
+            this.lblCodeNameLimit.TabIndex = 18;
+            this.lblCodeNameLimit.Text = "(0 / 5)";
             // 
             // lblCodeParaLimit
             // 
@@ -931,7 +942,7 @@
             this.panelEditCode.Controls.Add(this.lblEditCodeName);
             this.panelEditCode.Controls.Add(this.lblEditExistingCode);
             this.panelEditCode.Controls.Add(this.lblChooseCode);
-            this.panelEditCode.Controls.Add(this.dropdownExistingCode);
+            this.panelEditCode.Controls.Add(this.ComboBox_EditExistingCode);
             this.panelEditCode.Controls.Add(this.txtEditCodeName);
             this.panelEditCode.Controls.Add(this.dropDownForEdit);
             this.panelEditCode.Controls.Add(this.codeParaEditBox);
@@ -940,6 +951,17 @@
             this.panelEditCode.Size = new System.Drawing.Size(411, 359);
             this.panelEditCode.TabIndex = 24;
             this.panelEditCode.Visible = false;
+            // 
+            // lblEditCodeNameLimit
+            // 
+            this.lblEditCodeNameLimit.AutoSize = true;
+            this.lblEditCodeNameLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblEditCodeNameLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblEditCodeNameLimit.Location = new System.Drawing.Point(97, 124);
+            this.lblEditCodeNameLimit.Name = "lblEditCodeNameLimit";
+            this.lblEditCodeNameLimit.Size = new System.Drawing.Size(36, 14);
+            this.lblEditCodeNameLimit.TabIndex = 19;
+            this.lblEditCodeNameLimit.Text = "(0 / 5)";
             // 
             // lblEditCodeParaLimit
             // 
@@ -1006,22 +1028,22 @@
             this.lblChooseCode.TabIndex = 12;
             this.lblChooseCode.Text = "Choose code:";
             // 
-            // dropdownExistingCode
+            // ComboBox_EditExistingCode
             // 
-            this.dropdownExistingCode.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.dropdownExistingCode.DropDownHeight = 200;
-            this.dropdownExistingCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropdownExistingCode.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.dropdownExistingCode.ForeColor = System.Drawing.Color.Black;
-            this.dropdownExistingCode.FormattingEnabled = true;
-            this.dropdownExistingCode.IntegralHeight = false;
-            this.dropdownExistingCode.ItemHeight = 20;
-            this.dropdownExistingCode.Location = new System.Drawing.Point(21, 84);
-            this.dropdownExistingCode.Name = "dropdownExistingCode";
-            this.dropdownExistingCode.Size = new System.Drawing.Size(373, 26);
-            this.dropdownExistingCode.TabIndex = 4;
-            this.dropdownExistingCode.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.dropdownExistingCode_DrawItem);
-            this.dropdownExistingCode.SelectedIndexChanged += new System.EventHandler(this.dropdownExistingCode_SelectedIndexChanged);
+            this.ComboBox_EditExistingCode.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.ComboBox_EditExistingCode.DropDownHeight = 200;
+            this.ComboBox_EditExistingCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_EditExistingCode.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ComboBox_EditExistingCode.ForeColor = System.Drawing.Color.Black;
+            this.ComboBox_EditExistingCode.FormattingEnabled = true;
+            this.ComboBox_EditExistingCode.IntegralHeight = false;
+            this.ComboBox_EditExistingCode.ItemHeight = 20;
+            this.ComboBox_EditExistingCode.Location = new System.Drawing.Point(21, 84);
+            this.ComboBox_EditExistingCode.Name = "ComboBox_EditExistingCode";
+            this.ComboBox_EditExistingCode.Size = new System.Drawing.Size(373, 26);
+            this.ComboBox_EditExistingCode.TabIndex = 4;
+            this.ComboBox_EditExistingCode.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBox_EditExistingCode_DrawItem);
+            this.ComboBox_EditExistingCode.SelectedIndexChanged += new System.EventHandler(this.ComboBox_EditExistingCode_SelectedIndexChanged);
             // 
             // txtEditCodeName
             // 
@@ -1032,28 +1054,6 @@
             this.txtEditCodeName.Size = new System.Drawing.Size(373, 20);
             this.txtEditCodeName.TabIndex = 5;
             this.txtEditCodeName.TextChanged += new System.EventHandler(this.txtEditCodeName_TextChanged);
-            // 
-            // lblCodeNameLimit
-            // 
-            this.lblCodeNameLimit.AutoSize = true;
-            this.lblCodeNameLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCodeNameLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblCodeNameLimit.Location = new System.Drawing.Point(97, 64);
-            this.lblCodeNameLimit.Name = "lblCodeNameLimit";
-            this.lblCodeNameLimit.Size = new System.Drawing.Size(36, 14);
-            this.lblCodeNameLimit.TabIndex = 18;
-            this.lblCodeNameLimit.Text = "(0 / 5)";
-            // 
-            // lblEditCodeNameLimit
-            // 
-            this.lblEditCodeNameLimit.AutoSize = true;
-            this.lblEditCodeNameLimit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblEditCodeNameLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblEditCodeNameLimit.Location = new System.Drawing.Point(97, 124);
-            this.lblEditCodeNameLimit.Name = "lblEditCodeNameLimit";
-            this.lblEditCodeNameLimit.Size = new System.Drawing.Size(36, 14);
-            this.lblEditCodeNameLimit.TabIndex = 19;
-            this.lblEditCodeNameLimit.Text = "(0 / 5)";
             // 
             // NewEditDelete
             // 
@@ -1109,10 +1109,10 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtNewTemplateName;
-        private System.Windows.Forms.CheckedListBox addToExistBox;
-        private System.Windows.Forms.Button submitNewBtn;
+        private System.Windows.Forms.CheckedListBox CheckedListBox_NewTemplateExistingSection;
+        private System.Windows.Forms.Button Button_SaveNew;
         private System.Windows.Forms.Button backBtn;
-        private System.Windows.Forms.ComboBox dropdownExistingTemplate;
+        private System.Windows.Forms.ComboBox ComboBox_EditExistingTemplate;
         private System.Windows.Forms.TextBox txtEditTemplateName;
         private System.Windows.Forms.RichTextBox codeParaEditBox;
         private System.Windows.Forms.Button cancelBtn;
@@ -1123,7 +1123,7 @@
         private System.Windows.Forms.Label lblChooseTemplate;
         private System.Windows.Forms.RichTextBox newCodeParaBox;
         private System.Windows.Forms.Label lblCodeParagraph;
-        private System.Windows.Forms.ComboBox newCodeSection;
+        private System.Windows.Forms.ComboBox ComboBox_NewCodeSection;
         private System.Windows.Forms.CheckedListBox checkBoxForEdit;
         private System.Windows.Forms.ComboBox dropDownForEdit;
         private System.Windows.Forms.Panel panelManagement;
@@ -1158,13 +1158,13 @@
         private System.Windows.Forms.Label lblNewSectionName;
         private System.Windows.Forms.TextBox txtNewSectionName;
         private System.Windows.Forms.Label lblNewAddTemplates;
-        private System.Windows.Forms.CheckedListBox checkboxAddExistTemps;
+        private System.Windows.Forms.CheckedListBox CheckedListBox_NewSectionExistingTemplates;
         private System.Windows.Forms.Panel panelEditSection;
         private System.Windows.Forms.Label lblEditAddTemps;
         private System.Windows.Forms.Label lblEditSectionName;
         private System.Windows.Forms.Label lblEditExistingSection;
         private System.Windows.Forms.Label lblChooseSection;
-        private System.Windows.Forms.ComboBox dropdownExistingSection;
+        private System.Windows.Forms.ComboBox ComboBox_EditExistingSections;
         private System.Windows.Forms.TextBox txtEditSectionName;
         private System.Windows.Forms.Panel panelAddCode;
         private System.Windows.Forms.Label lblAddNewCode;
@@ -1176,7 +1176,7 @@
         private System.Windows.Forms.Label lblEditCodeName;
         private System.Windows.Forms.Label lblEditExistingCode;
         private System.Windows.Forms.Label lblChooseCode;
-        private System.Windows.Forms.ComboBox dropdownExistingCode;
+        private System.Windows.Forms.ComboBox ComboBox_EditExistingCode;
         private System.Windows.Forms.TextBox txtEditCodeName;
         private System.Windows.Forms.CheckedListBox checkboxEditExistTemps;
         private System.Windows.Forms.Label lblCodeParagraphEdit;
