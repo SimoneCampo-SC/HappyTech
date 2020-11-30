@@ -14,13 +14,17 @@ namespace HappyTech
 {
     public partial class EditorForm : Form
     {
-        int currentPosition; // holds the position of the templates in the list
-        string mode; //this tracks how the editor was generated, either feedback - if form created from dashform
-        //or wasn't the last applicant
-        //mode is "preview" if a document has been selected to edit from the previewForm
-        //used to determine function of back button and is set in the constructors
+        // Holds the position of the templates in the list
+        int currentPosition;
+
+        /* This tracks how the editor was generated, either feedback - if form created from dashform
+         * or wasn't the last applicant 
+         * mode is "preview" if a document has been selected to edit from the previewForm 
+         */
+        string mode;
+
+        // Used to determine function of back button and is set in the constructors
         string previewAppName;
-        
 
         /// <summary>
         ///  Constructor of the current form
@@ -40,22 +44,22 @@ namespace HappyTech
             richTextBox1.Text = "";
 
             // Takes the header of the template in the assigned position in the list
-            //lbHeader.Text = Template.templates[position].Header;
+            // lbHeader.Text = Template.templates[position].Header;
             lblRecruiterVal.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
             lblAppNameVal.Text = Applicant.applicants[position].AfullName;
             lblAppEmailVal.Text = Applicant.applicants[position].Aemail;
             lblAppJobVal.Text = Applicant.applicants[position].AJob;
             lblAppTempVal.Text = Template.templatesForApplicants[position].TempType;
 
+            // 
             if (File.Exists(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + ".rtf"))
             {
                 using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + ".rtf"))
                 {
-
                         richTextBox2.Text = sr.ReadToEnd();
-                    
                 }
             }
+            // 
             if (File.Exists(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + "-comments.rtf"))
             {
                 using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + "-comments.rtf"))
@@ -68,12 +72,20 @@ namespace HappyTech
 
         }
 
-        public EditorForm(string applicantName, string appType, string appEmail, string appJob, int curApp) // takes applicant name + type + email + job from previewForm
-        { //As editorForm usually takes an arguement of the applicant's position in the application list
-            //this wont work if you are editing one applicant's feedback from the previewForm screen
-            //so overloaded constructor is making a specific type of editorform for this purpose
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="applicantName"></param>
+        /// <param name="appType"></param>
+        /// <param name="appEmail"></param>
+        /// <param name="appJob"></param>
+        /// <param name="curApp"></param>
+        public EditorForm(string applicantName, string appType, string appEmail, string appJob, int curApp) 
+        { 
+            // As editorForm usually takes an arguement of the applicant's position in the application list
+            // This wont work if you are editing one applicant's feedback from the previewForm screen
+            // So overloaded constructor is making a specific type of editorform for this purpose
             mode = "preview";
-            //currentPosition = Template.templates.Count - 1; //so that next button will always go to prevForm
             previewAppName = applicantName;
             currentPosition = curApp;
             InitializeComponent();
@@ -81,19 +93,12 @@ namespace HappyTech
             lbApplicants.Text = $"You are in PREVIEW mode";
             richTextBox2.Text = "";
             richTextBox1.Text = "";
-            //lbHeader.Text = Recruiter.GetInstance().Name + Recruiter.GetInstance().Surname +
-            //    applicantName + appType;
 
             lblRecruiterVal.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
             lblAppNameVal.Text = applicantName;
             lblAppEmailVal.Text = appEmail;
             lblAppJobVal.Text = appJob;
             lblAppTempVal.Text = appType;
-            //makes header from recruiter instsnce and passed in applicant details
-            //recruiter, app, type
-            //Template.templates[position].GetHeader();
-            // richTextBox2.Text = read in the text in the saved .rtf filename "recruitername applicantname".rtf
-
 
             try
             {
@@ -114,10 +119,8 @@ namespace HappyTech
             }
             catch (Exception)
             { 
-                // user has the file open
-
+                // User has the file open
             }
-
         }
 
         private void btBack_Click(object sender, EventArgs e)
@@ -145,9 +148,11 @@ namespace HappyTech
                 previewForm pf = new previewForm();
                 pf.Show();
             }
-          
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void btNext2_Click(object sender, EventArgs e)
         {
             if (mode == "feedback")
@@ -155,25 +160,14 @@ namespace HappyTech
                 // save template
                 using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + ".rtf"))
                 {
-
-                    //if (richTextBox2.Text != "")
-                    //{
-                        sw.WriteLine(richTextBox2.Text);
-                    //}
-
+                    sw.WriteLine(richTextBox2.Text);
                 }
 
                 // save comments
                 using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + "-comments.rtf"))
                 {
-
-                    //if (richTextBox1.Text != "")
-                    //{
-                        sw.WriteLine(richTextBox1.Text);
-                    //}
-
+                    sw.WriteLine(richTextBox1.Text);
                 }
-
 
                 if (currentPosition < Template.templatesForApplicants.Count - 1)
                 {
@@ -192,55 +186,41 @@ namespace HappyTech
             {
                 using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + previewAppName + ".rtf"))
                 {
-                    //if (richTextBox2.Text != "")
-                    //{
-                        sw.WriteLine(richTextBox2.Text);
-                    //}
-
+                    sw.WriteLine(richTextBox2.Text);
                 }
 
                 using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + previewAppName + "-comments.rtf"))
                 {
-
-                    //if (!(richTextBox1.Text == ""))
-                    //{
-                        sw.WriteLine(richTextBox1.Text);
-                    //}
-
+                    sw.WriteLine(richTextBox1.Text);
                 }
 
                 this.Hide();
                 previewForm pf = new previewForm();
                 pf.Show();
             }
-            
-
-            
-
-            //saves the feedback doc to debug folder when next button is clicked
-
-           // richTextBox2.SaveFile(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + ".txt");
-
-
-            
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         private void loadListBox()
         {
-            //only populate listbox with codes where
-            //section id is in personalsection with selected template
-            Sections.listSection();
+            // Only populate listbox with codes where
+            // Section id is in personalsection with selected template
+            Sections.FillSectionList();
 
-            //have template id so can get personalSection sections
+            // Have template id so can get personalSection sections
             int tempId = Template.templatesForApplicants[currentPosition].Id;
-            string psSections = $"SELECT section_ID FROM PersonalSection Where '{tempId}' IN (template_ID)";
+
+            // Maybe it is equal to Constants.SelectSectionPerTemplate(tempID) ??
+            string psSections = $"SELECT section_ID FROM PersonalSection Where '{tempId}' IN (template_ID)"; 
 
             DataSet ds1 = Connection.GetDbConn().getDataSet(psSections);
             DataRow dRow1;
 
             for (int i = 0; i < ds1.Tables[0].Rows.Count; i++)
-            {
-               
-                //for each section in personal section, need to add all codes
+            { 
+                // For each section in personal section, need to add all codes
                 dRow1 = ds1.Tables[0].Rows[i];
                 string sectionId = dRow1.ItemArray.GetValue(0).ToString();
                 
@@ -263,15 +243,19 @@ namespace HappyTech
                         }
                         
                     }
-                    catch { }//just in case there is a section that has no codes attached
-                    
+                    catch 
+                    {
+                        // Just in case there is a section that has no codes attached
+                        Exception ex = new Exception("No Codes Attached");
+                        listBox.Items.Add(ex.Message);
+                    } 
                 }
-
-               
             }
-
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void listBox_SelectedValueChanged(object sender, EventArgs e)
         {
             Code.selectedCodes.Clear();
@@ -279,22 +263,20 @@ namespace HappyTech
             richTextBox2.Text = "";
             foreach (string code in listBox.CheckedItems)
             {
-                //get the code short of the selected list item
+                // Get the code short of the selected list item
                 string codeShortLookup = code;
                 codeShortLookup = codeShortLookup.Replace(" ", "");
                 string query = $"SELECT codeParagraph FROM Codes WHERE codeShort = '{codeShortLookup}'";
                 DataSet ds = Connection.GetDbConn().getDataSet(query);
                 DataRow dRow = ds.Tables[0].Rows[0];
-                //goes to the db, returns the first row (the codeparagraph) stores in variable
+                // Goes to the db, returns the first row (the codeparagraph) stores in variable
                 string paragraphToAdd = dRow.ItemArray.GetValue(0).ToString();
                 Code.selectedCodes.Add(paragraphToAdd);
                 Applicant.applicants[currentPosition].selectedAppCodes.Add(code);
             }
-
             foreach (string code in Code.selectedCodes)
             {
                 richTextBox2.AppendText(code + "\n\n");
-
             }
         }
     }

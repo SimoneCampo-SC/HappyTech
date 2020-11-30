@@ -522,7 +522,6 @@
             this.btnAutofill.Text = "Autofill";
             this.btnAutofill.UseVisualStyleBackColor = true;
             this.btnAutofill.Visible = false;
-            this.btnAutofill.Click += new System.EventHandler(this.btnAutofill_Click);
             // 
             // codeViewForm
             // 

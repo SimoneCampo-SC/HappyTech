@@ -16,6 +16,7 @@ namespace HappyTech
     {
         private bool passVis = false;
         private bool debugVis = false;
+
         /// <summary>
         /// Constructor LoginForm
         /// </summary>
@@ -100,14 +101,11 @@ namespace HappyTech
             reg.Show();
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-          //  btnPassVis.Hide();
-        }
-
+        /// <summary>
+        /// Occurs when the user change the text inside the userPassword box
+        /// </summary>
         private void userPassword_TextChanged(object sender, EventArgs e)
         {
-            //if (!(userPassword.Text == ""))
             if (userPassword.Text.Length > 0)
             {
                 btnPassVis.Show();
@@ -118,6 +116,9 @@ namespace HappyTech
             }
         }
 
+        /// <summary>
+        /// Occurs whenever the user clicks the btnPassVis object
+        /// </summary>
         private void btnPassVis_Click(object sender, EventArgs e)
         {
             if (passVis == false)
@@ -147,6 +148,9 @@ namespace HappyTech
             userPassword.Text = dsPassRow.ItemArray.GetValue(0).ToString();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void btnUsers_Click(object sender, EventArgs e)
         {
             //display table data

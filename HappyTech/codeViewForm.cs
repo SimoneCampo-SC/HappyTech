@@ -13,46 +13,31 @@ namespace HappyTech
 {
     public partial class codeViewForm : Form
     {
-        private bool debugVis = false;
+        private bool debugVis = false; //
 
+        /// <summary>
+        /// 
+        /// </summary>
         public codeViewForm()
         {
             InitializeComponent();
-
             loadTemplateDropdown();
-            //load_dropdown(); //load tags from the db into the drop-down menu needs to run when template dropdown
-            //is given a value
+
+            // Load tags from the db into the drop-down menu needs to run when template dropdown is given a value
             loadGrid();
 
-            DataSet dsT = Connection.GetDbConn().getDataSet($"SELECT * FROM Template");
+            DataSet dsT = Connection.GetDbConn().getDataSet(Constants.SelectAllTemplates());
             lblTempTotalVal.Text = dsT.Tables[0].Rows.Count.ToString();
 
-            DataSet dsS = Connection.GetDbConn().getDataSet($"SELECT * FROM Section");
+            DataSet dsS = Connection.GetDbConn().getDataSet(Constants.SelectAllSections());
             lblSectTotalVal.Text = dsS.Tables[0].Rows.Count.ToString();
 
-            DataSet dsC = Connection.GetDbConn().getDataSet($"SELECT * FROM Codes");
+            DataSet dsC = Connection.GetDbConn().getDataSet(Constants.selectCodes());
             lblCodeTotalVal.Text = dsC.Tables[0].Rows.Count.ToString();
-
         }
 
-        /* private void tagSelectBox_SelectedIndexChanged(object sender, EventArgs e)
-         {
-             //when drop down menu has a value selected, fill the dataGridView with the contents of the Codes table where tag = selected value
-
-            // string query = $"SELECT Id FROM Tag WHERE name = '{tagSelectBox.Text}'";
-             DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTagIdFromName(tagSelectBox.Text));
-             DataRow dRow = ds.Tables[0].Rows[0];
-             var tagId = dRow.ItemArray.GetValue(0);
-
-             // DataSet ds2 = Connection.GetDbConn().getDataSet($"SELECT codeShort, codeParagraph FROM Codes WHERE tag_ID = {tagId}");
-             //have to convert to string as tagId is 'object' type
-             DataSet ds2 = Connection.GetDbConn().getDataSet(Constants.getCodeFromTagId(tagId.ToString()));
-             codeDisplay.DataSource = ds2.Tables[0]; //shows first table
-
-         } */
         /// <summary>
-        /// This function runs when the form is loaded, populates the template selection dropdown with
-        /// all the template names in the template menu
+        /// 
         /// </summary>
         private void loadTemplateDropdown()
         {
@@ -65,9 +50,13 @@ namespace HappyTech
                 templateSelectBox.Items.Add(tempToAdd);
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="templateName">        </param>
         private void loadSectionDropdown(string templateName) //passes in the value contained in the template select dropdown
         {
-
             //this takes the template name from the template box and finds sections that are related to that template
             DataSet ds = Connection.GetDbConn().getDataSet(Constants.GetSectionPerTemplate(templateName));
             //populates drop down menu with sections
@@ -113,18 +102,9 @@ namespace HappyTech
             }
         }
 
-
-        /* void fillCombo()
-         {
-             //DataSet ds = Connection.GetDbConn().getDataSet("SELECT * FROM Tag");
-             //codeDisplay.DataSource = ds.Tables[0];
-         } */
-
-        /* private void codeDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
-         {
-
-         } */
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -132,17 +112,26 @@ namespace HappyTech
             df.Show();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void tagSelectBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadGrid();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void templateSelectBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             tagSelectBox.Items.Clear();
             loadSectionDropdown(templateSelectBox.Text);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void templateViewBtn_Click(object sender, EventArgs e)
         {
             /*this.Hide();
@@ -154,6 +143,9 @@ namespace HappyTech
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void deleteDbBtn_Click(object sender, EventArgs e)
         {
             string delCodes = "DELETE FROM Codes";
@@ -172,11 +164,9 @@ namespace HappyTech
 
         }
 
-        private void btnAutofill_Click(object sender, EventArgs e)
-        {
-            // autofill database with some test values
-        }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void btnDebug_Click(object sender, EventArgs e)
         {
             if (debugVis == false)
@@ -194,6 +184,9 @@ namespace HappyTech
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void templateSelectBox_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
@@ -209,6 +202,9 @@ namespace HappyTech
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void tagSelectBox_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
@@ -223,23 +219,5 @@ namespace HappyTech
 
             }
         }
-
-        /// <summary>
-        /// functionally the same as the code to popluate the templates dropdown at the top of this form
-        /// value from this dropdown will be used to determine the template to attach the created section to
-        /// </summary>
-
-
-
-
-        /// <summary>
-        /// when the submit template button is pressed, run the function inside Templates.cs that takes a string and creates a
-        /// new template with that string as its tempType
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-
     }
-    
 }

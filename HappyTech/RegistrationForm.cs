@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HappyTech
@@ -26,44 +19,15 @@ namespace HappyTech
         /// </summary>
         private void registerButton_Click(object sender, EventArgs e)
         {
-            // Checks whether all the textboxes have been filled 
+            // Checks whether at least one of the textboxes is empty
             if ((emailBox.Text.Length == 0) || (nameBox.Text.Length == 0) ||
                 (surnameBox.Text.Length == 0) || (passBox.Text.Length == 0))
             {
                 errorMessage.Visible = true;
                 errorMessage.Text = "Required fields are missing";
             }
-            else if (!(emailBox.Text.Contains("@happytech.com")))
-            {
-                errorMessage.Visible = true;
-                errorMessage.Text = "Email must use @happytech.com";
-            }
-            else if (passBox.Text.Length < 8)
-            {
-                errorMessage.Visible = true;
-                errorMessage.Text = "Password must be at least 8 characters";
-            }
-            else if (passBox.Text.Length > 50)
-            {
-                errorMessage.Visible = true;
-                errorMessage.Text = "Password must be 50 characters or less";
-            }
-            else if (emailBox.Text.Length > 50)
-            {
-                errorMessage.Visible = true;
-                errorMessage.Text = "Email must be 50 characters or less";
-            }
-            else if (nameBox.Text.Length > 50)
-            {
-                errorMessage.Visible = true;
-                errorMessage.Text = "First name must be 50 characters or less";
-            }
-            else if (surnameBox.Text.Length > 50)
-            {
-                errorMessage.Visible = true;
-                errorMessage.Text = "Surname must be 50 characters or less";
-            }
-            else if (Constants.checkRecruiter(emailBox.Text) == true) // Checks whether the credentials inserted doesn't not already exist in the DB
+            // Checks whether the email provided already exists into the DB
+            else if (Constants.checkRecruiter(emailBox.Text) == true) 
             {
                 errorMessage.Visible = true;
                 errorMessage.Text = "An account with this email already exists";
@@ -91,27 +55,29 @@ namespace HappyTech
             f1.Show();
         }
 
+        /// <summary>
+        /// Occurs whenewer the user amends the passBox
+        /// </summary>
         private void passBox_TextChanged(object sender, EventArgs e)
         {
-            if (!(passBox.Text == ""))
+            // Checks whether the passBox is empty
+            if (passBox.Text.Length == 0)
             {
-                btnPassVis.Show();
+                btnPassVis.Hide();
+                errorMessage.Visible = false;
             }
             else
             {
-                btnPassVis.Hide();
+                btnPassVis.Show();
             }
 
-            if (passBox.Text == "")
-            {
-                errorMessage.Visible = false;
-                errorMessage.Text = "";
-            }
-            else if (passBox.Text.Length < 8)
+            // Checks whether the passBox is less than 8 characters in length
+            if (passBox.Text.Length < 8)
             {
                 errorMessage.Visible = true;
                 errorMessage.Text = "Password must be at least 8 characters";
             }
+            // Checks whether the passBox is greater than 8 characters in length
             else if (passBox.Text.Length > 50)
             {
                 errorMessage.Visible = true;
@@ -120,10 +86,12 @@ namespace HappyTech
             else
             {
                 errorMessage.Visible = false;
-                errorMessage.Text = "";
             }
         }
 
+        /// <summary>
+        /// Occurs whenever the user clicks on the btnPassVis
+        /// </summary>
         private void btnPassVis_Click(object sender, EventArgs e)
         {
             if (passVis == false)
@@ -140,19 +108,27 @@ namespace HappyTech
             }
         }
 
+        /// <summary>
+        /// Occurs whenewer the user amends the emailBox
+        /// </summary>
         private void emailBox_TextChanged(object sender, EventArgs e)
         {
-            if (emailBox.Text == "")
+            if (emailBox.Text.Length == 0)
             {
                 errorMessage.Visible = false;
-                errorMessage.Text = "";
             }
+            // Checks whether the email does not contain the correct domain
             else if (!(emailBox.Text.Contains("@happytech.com")))
             {
                 errorMessage.Visible = true;
                 errorMessage.Text = "Email must use @happytech.com";
             }
-            else if (emailBox.Text.Length > 50)
+            else
+            {
+                errorMessage.Visible = false;
+            }
+            // Checks whether the email is greater than 50 charactera in length
+            if (emailBox.Text.Length > 50)
             {
                 errorMessage.Visible = true;
                 errorMessage.Text = "Email must be 50 characters or less";
@@ -160,17 +136,20 @@ namespace HappyTech
             else
             {
                 errorMessage.Visible = false;
-                errorMessage.Text = "";
             }
         }
 
+        /// <summary>
+        /// Occurs whenewer the user amends the nameBox
+        /// </summary>
         private void nameBox_TextChanged(object sender, EventArgs e)
         {
-            if (nameBox.Text == "")
+            // Checks whether the name field is empty
+            if (nameBox.Text.Length == 0)
             {
                 errorMessage.Visible = false;
-                errorMessage.Text = "";
             }
+            // Checks whether the name field is greater than 50 characters in length
             else if (nameBox.Text.Length > 50)
             {
                 errorMessage.Visible = true;
@@ -179,17 +158,20 @@ namespace HappyTech
             else
             {
                 errorMessage.Visible = false;
-                errorMessage.Text = "";
             }
         }
 
+        /// <summary>
+        /// Occurs whenewer the user amends the surnameBox
+        /// </summary>
         private void surnameBox_TextChanged(object sender, EventArgs e)
         {
-            if (surnameBox.Text == "")
+            // Checks whether the surname box is empty
+            if (surnameBox.Text.Length == 0)
             {
                 errorMessage.Visible = false;
-                errorMessage.Text = "";
             }
+            // Checks whether the surnameBox is greater than 50 chars in length
             else if (surnameBox.Text.Length > 50)
             {
                 errorMessage.Visible = true;
@@ -198,7 +180,6 @@ namespace HappyTech
             else
             {
                 errorMessage.Visible = false;
-                errorMessage.Text = "";
             }
         }
     }

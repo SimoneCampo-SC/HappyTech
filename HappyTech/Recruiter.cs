@@ -9,10 +9,10 @@ namespace HappyTech
 {
     class Recruiter
     {
-        // Declaration of the static instance
+        // Definition of the static instance
         private static Recruiter _instance; 
 
-        // Creation of all the properties
+        // Definition of all the properties
         public string Id { get; }
         public string Email { get; }
         public string Name { get; }
@@ -20,7 +20,7 @@ namespace HappyTech
         public string Password { get; }
 
         /// <summary>
-        /// Private constructor of the Recruiter Class
+        /// Private constructor of the Recruiter Class as it cannot be created anywhere in the code
         /// </summary>
         /// <param name="id"> holds the Recriter Id</param>
         /// <param name="name">holds the Recriter Name</param>
@@ -37,7 +37,7 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Creates the instance for just one time
+        /// Creates the instance for just one time as only one recruiter can login into the application at time
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>

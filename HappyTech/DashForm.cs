@@ -14,41 +14,50 @@ namespace HappyTech
     public partial class DashForm : Form
     {
         public string mode;
+
         /// <summary>
-        /// Form Constructor
+        /// Constructor of the DashForm Class
         /// </summary>
+        /// <param name="mode"> either "newApp" or "default"</param>
         public DashForm(string mode)
         {
             this.mode = mode;
             InitializeComponent();
             clearTempFiles();
             // lable gets the name of the recruiter
-            lbName.Text = Recruiter.GetInstance().Name + ".";
-            if (mode == "newApp")
-            {
-                // Checks whether the list of the applicants is not empty
-                if (Applicant.applicants.Count > 0)
-                {
-                    btBack.Visible = true;
-                }
-            }
-            else if (mode == "default")
-            {
-                Applicant.applicants.Clear();
-                Connection.GetDbConn().CreateCommand(Constants.deleteApplicant());
-                Template.templatesForApplicants.Clear();
-            }
+            lbName.Text = $"{Recruiter.GetInstance().Name}.";
 
-            // Checks whether there are applicants inserted so that the back button is displayed
-            if (Applicant.applicants.Count > 0)
-            {
-                btBack.Visible = true;
-            }
+            // Gets all the templates from the database
             DataSet ds = Connection.GetDbConn().getDataSet(Constants.selectTemplateType());
+
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-
+                // Populate the tempTypeBox with the name of the Templates
                 tempTypeBox.Items.Add(ds.Tables[0].Rows[i].ItemArray.GetValue(0));
+            }
+
+            // Switch constructor checks the mode parameter: ToLower() to make it not case sensitive.
+            switch (mode.ToLower())
+            {
+                case "newapp":
+                    // Checks whether the list of the applicants is not empty
+                    if (Applicant.applicants.Count > 0)
+                    {
+                        // Displays the btBack object
+                        btBack.Visible = true;
+                    }
+                    break;
+
+                case "default":
+                    // Deletes all the items in the applicants and templatesForApplicants lists
+                    // Deletes the applicants from the Database
+                    Applicant.applicants.Clear();
+                    Template.templatesForApplicants.Clear();
+                    Connection.GetDbConn().CreateCommand(Constants.deleteApplicant());
+                    break;
+                default:
+                    // Do nothing 
+                    break;
             }
         }
 
@@ -131,6 +140,9 @@ namespace HappyTech
             f3.Show();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void tempTypeBox_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
@@ -146,6 +158,9 @@ namespace HappyTech
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void tbAName_TextChanged(object sender, EventArgs e)
         {
             lblAppNameVal.Text = tbAName.Text;
@@ -158,7 +173,10 @@ namespace HappyTech
                 imgAppName.Image = Properties.Resources.happytech_empty;
             }
         }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
         private void DashForm_Load(object sender, EventArgs e)
         {
             lblRecruiterVal.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
@@ -169,6 +187,9 @@ namespace HappyTech
             lblAppTempVal.Text = "";
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void tbAEmail_TextChanged(object sender, EventArgs e)
         {
             lblAppEmailVal.Text = tbAEmail.Text;
@@ -182,6 +203,9 @@ namespace HappyTech
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void tbAJob_TextChanged(object sender, EventArgs e)
         {
             lblAppJobVal.Text = tbAJob.Text;
@@ -195,6 +219,9 @@ namespace HappyTech
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void tempTypeBox_MouseClick(object sender, MouseEventArgs e)
         {
             if (tempTypeBox.SelectedItem != null)
@@ -211,7 +238,10 @@ namespace HappyTech
                 imgAppTemp.Image = Properties.Resources.happytech_empty;
             }
         }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
         private void clearTempFiles()
         {
             DirectoryInfo di = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);

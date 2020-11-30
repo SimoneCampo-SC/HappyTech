@@ -11,8 +11,10 @@ namespace HappyTech
 {
     class Template
     {
-        // Template list has been created
+        // Contains all the templates selected for the applicants
         public static List<Template> templatesForApplicants = new List<Template>();
+
+        // Contains all the templates stored in the Database
         public static List<Template> templates = new List<Template>();
 
         // List of all the properties 
@@ -29,12 +31,14 @@ namespace HappyTech
         {
             this.Id = id;
             this.TempType = name;
+
+            // Template Header gets the name of the Recruiter, Applicant and its type
             this.Header = $"Recruiter: {Recruiter.GetInstance().Name} {Recruiter.GetInstance().Surname}, " +
                           $"Applicant: {applicant.AfullName} for {TempType}";
         }
 
         /// <summary>
-        /// overloaded constructor for use in addsections.cs, populates the checklist of templates that a user can add sections to
+        /// Overloaded constructor for use in addsections.cs - populates the checklist of templates that a user can add sections to
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
@@ -45,8 +49,10 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// The following method generates template according to the number of applicants into the list.
+        /// Generates templateS according to the number of applicants into the list.
         /// </summary>
+        /// <param name="Applicant">Gets the object of the applicant being reviewed</param>
+        /// <param name="tempType">Gets the type of the template chosen</param>
         public static void GenerateTemplateForApplicant(Applicant Applicant, string tempType)
         {
             // retrieves the Id from the database
@@ -67,7 +73,10 @@ namespace HappyTech
             }
         }
 
-        public static void listTemplates()
+        /// <summary>
+        /// Fill the templates list
+        /// </summary>
+        public static void FillTemplates()
         {
             // retrieves the Id from the database
             DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateNameId());
@@ -86,6 +95,11 @@ namespace HappyTech
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="selectedSections"></param>
         public static void CreateTemplateWithSelectedSections (string input, CheckedListBox selectedSections)
         {
             //when template is submitted, needs to make a new section ID, then needs to make new PersonalSection

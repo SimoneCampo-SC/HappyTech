@@ -76,24 +76,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addCode.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="addCode.Designer.cs">
-      <DependentUpon>addCode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="addSections.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="addSections.Designer.cs">
-      <DependentUpon>addSections.cs</DependentUpon>
-    </Compile>
-    <Compile Include="addTemplate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="addTemplate.Designer.cs">
-      <DependentUpon>addTemplate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Applicant.cs" />
     <Compile Include="Code.cs" />
     <Compile Include="codeViewForm.cs">
@@ -159,15 +141,6 @@
     <Compile Include="Sections.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Template.cs" />
-    <EmbeddedResource Include="addCode.resx">
-      <DependentUpon>addCode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="addSections.resx">
-      <DependentUpon>addSections.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="addTemplate.resx">
-      <DependentUpon>addTemplate.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="codeViewForm.resx">
       <DependentUpon>codeViewForm.cs</DependentUpon>
       <LastGenOutput>codeViewForm1.Designer.cs</LastGenOutput>

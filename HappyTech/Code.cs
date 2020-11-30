@@ -38,11 +38,11 @@ namespace HappyTech
         /// </summary>
         public static void fillCodeList()
         {
-            // retrieves the codes from the database
+            // Retrieves the codes from the database
             DataSet ds = Connection.GetDbConn().getDataSet(Constants.selectCodes());
-
             DataRow dRow;
-            // iterates through the table created
+
+            // Iterates through the table created
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 dRow = ds.Tables[0].Rows[i];
@@ -50,23 +50,12 @@ namespace HappyTech
                 // Creates the instance
                 Code _instance = new Code(
                     Int32.Parse(dRow.ItemArray.GetValue(0).ToString()), // Code ID
-                    dRow.ItemArray.GetValue(1).ToString(), // CodeName
+                    dRow.ItemArray.GetValue(1).ToString(),              // CodeName
                     Int32.Parse(dRow.ItemArray.GetValue(2).ToString()), // SectionNo
-                    dRow.ItemArray.GetValue(3).ToString() // CodeParagraph
+                    dRow.ItemArray.GetValue(3).ToString()               // CodeParagraph
                     );
                 Code.codeList.Add(_instance); // Add the code into the list
             }
-        }
-        /// <summary>
-        /// Retrieves the name of the section given the Section ID
-        /// </summary>
-        /// <returns></returns>
-        public string GetSectionName()
-        {
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.selectSectionName(SectionID));
-            DataRow dRow = ds.Tables[0].Rows[0];
-            string name = dRow.ItemArray.GetValue(0).ToString();
-            return name;
         }
     }
 }

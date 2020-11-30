@@ -42,11 +42,6 @@ namespace HappyTech
             // displays how many applicants have been added so far
             lblRecruiterVal.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
             lblAppTotalVal.Text = Applicant.applicants.Count.ToString();
-
-            //DataGridViewColumn column = dgvApplicant.Columns[0];
-            //column.Width = 60;
-
-
         }
 
         /// <summary>
@@ -67,10 +62,16 @@ namespace HappyTech
         private void btStartFeed_Click(object sender, EventArgs e)
         {
             this.Hide();
-            EditorForm f = EditorClass.NextForm("default", 0); // New EditorForm is created passing by values 2 (Default value) and 0
+
+            // New EditorForm is created passing by values 2 (Default value) and 0
+            EditorForm f = EditorClass.NextForm("default", 0); 
+
             f.Show();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void btCancel_Click(object sender, EventArgs e)
         {
             if (cancelStage == "notClicked")

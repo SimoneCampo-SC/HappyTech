@@ -9,6 +9,11 @@ namespace HappyTech
 {
     class Constants
     {
+        public static string SelectAllTemplates()
+        {
+            string query = $"SELECT * FROM Template";
+            return query;
+        }
         public static string SelectSectionPerTemplate(int tempID)
         {
             string query = $"SELECT DISTINCT section_ID FROM PersonalSection WHERE template_ID = '{tempID}'";
@@ -29,10 +34,14 @@ namespace HappyTech
         static public string selectRecruiter(string userEmail, string userPass)
         {
             string query = $"SELECT * FROM Recruiter WHERE email = '{userEmail}' AND password = '{userPass}'";
-
             return query;
         }
 
+        public static string SelectAllSections()
+        {
+            string query = $"SELECT * FROM Section";
+            return query;
+        }
         static public string getCodeFromSectionId(object tagId)
         {
             string query = $"SELECT codeShort, codeParagraph FROM Codes WHERE SectionNo = {tagId}";
@@ -180,22 +189,10 @@ namespace HappyTech
             }
         }
 
-        public static string insertTemplate(string recruitId, string header) 
-        {
-            string query = $"INSERT INTO Template (Recruiter_ID, tempHeader) VALUES ('{recruitId}', '{header}')";
-            return query;
-        }
-
         public static string insertRecruiter(string email, string name, string surname, string password)
         {
 
             string query = $"INSERT INTO Recruiter (email, name, surname, password) VALUES ('{email}', '{name}', '{surname}', '{password}')";
-            return query;
-        }
-
-        public static string selectRecruiterID(string email)
-        {
-            string query = $"SELECT Id FROM Recruiter WHERE email = '{email}'";
             return query;
         }
 
@@ -217,16 +214,5 @@ namespace HappyTech
             string query = $"DELETE FROM Applicant";
             return query;
         }
-
-        public static string deleteTemplate()
-        {
-            string query = $"DELETE FROM Template";
-            return query;
-        }
-
-
     }
-            
-           
-    
 }

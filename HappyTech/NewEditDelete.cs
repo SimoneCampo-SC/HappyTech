@@ -1588,14 +1588,14 @@ namespace HappyTech
                 case "Template":
 
                     Template.templates.Clear();
-                    Template.listTemplates();
+                    Template.FillTemplates();
 
                     break;
 
                 case "Section":
 
                     Sections.sectionList.Clear();
-                    Sections.listSection();
+                    Sections.FillSectionList();
 
                     break;
 
