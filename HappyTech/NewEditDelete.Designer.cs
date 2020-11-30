@@ -199,6 +199,7 @@
             this.TextBox_EditTemplateName.Name = "TextBox_EditTemplateName";
             this.TextBox_EditTemplateName.Size = new System.Drawing.Size(373, 20);
             this.TextBox_EditTemplateName.TabIndex = 5;
+            this.TextBox_EditTemplateName.TextChanged += new System.EventHandler(this.TextBox_EditTemplateName_TextChanged);
             // 
             // RichTextBox_EditCodeParagraph
             // 
