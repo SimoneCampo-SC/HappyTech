@@ -1079,7 +1079,7 @@
             this.Name = "NewEditDelete";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HappyTech";
+            this.Text = "s";
             this.Panel_Management.ResumeLayout(false);
             this.Panel_Management.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage3)).EndInit();

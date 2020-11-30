@@ -29,326 +29,325 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(previewForm));
-            this.checklistAppPreview = new System.Windows.Forms.CheckedListBox();
-            this.previewBtn = new System.Windows.Forms.Button();
-            this.backBtn = new System.Windows.Forms.Button();
-            this.panelManagement = new System.Windows.Forms.Panel();
-            this.lblStage3 = new System.Windows.Forms.Label();
-            this.imgStage3 = new System.Windows.Forms.PictureBox();
-            this.lblStage2 = new System.Windows.Forms.Label();
-            this.imgStage2 = new System.Windows.Forms.PictureBox();
-            this.lblStage1 = new System.Windows.Forms.Label();
-            this.imgStage1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelPreviewList = new System.Windows.Forms.Panel();
-            this.lblFeedbackList = new System.Windows.Forms.Label();
-            this.lblPreview = new System.Windows.Forms.Label();
-            this.panelPreviewAction = new System.Windows.Forms.Panel();
-            this.lbError = new System.Windows.Forms.Label();
-            this.btnDash = new System.Windows.Forms.Button();
-            this.sendBtn = new System.Windows.Forms.Button();
-            this.panelSubmit = new System.Windows.Forms.Panel();
-            this.lblAppTotalVal = new System.Windows.Forms.Label();
-            this.lblAppTotal = new System.Windows.Forms.Label();
-            this.lblRecruiterVal = new System.Windows.Forms.Label();
-            this.lblRecruiter = new System.Windows.Forms.Label();
-            this.lblSubmit = new System.Windows.Forms.Label();
-            this.panelManagement.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelPreviewList.SuspendLayout();
-            this.panelPreviewAction.SuspendLayout();
-            this.panelSubmit.SuspendLayout();
+            this.CheckedListBox_FeedbackList = new System.Windows.Forms.CheckedListBox();
+            this.Button_Preview = new System.Windows.Forms.Button();
+            this.Button_Cancel = new System.Windows.Forms.Button();
+            this.Panel_Management = new System.Windows.Forms.Panel();
+            this.Label_ManagementStage3 = new System.Windows.Forms.Label();
+            this.PictureBox_ManagementStage3 = new System.Windows.Forms.PictureBox();
+            this.Label_ManagementStage2 = new System.Windows.Forms.Label();
+            this.PictureBox_ManagementStage2 = new System.Windows.Forms.PictureBox();
+            this.Label_ManagementStage1 = new System.Windows.Forms.Label();
+            this.PictureBox_ManagementStage1 = new System.Windows.Forms.PictureBox();
+            this.PictureBox_ManagementLogo = new System.Windows.Forms.PictureBox();
+            this.Panel_FeedbackList = new System.Windows.Forms.Panel();
+            this.Label_FeedbackListTitle = new System.Windows.Forms.Label();
+            this.Label_PreviewTitle = new System.Windows.Forms.Label();
+            this.Panel_Preview = new System.Windows.Forms.Panel();
+            this.Label_Error = new System.Windows.Forms.Label();
+            this.Button_Dashboard = new System.Windows.Forms.Button();
+            this.Button_Send = new System.Windows.Forms.Button();
+            this.Panel_Submit = new System.Windows.Forms.Panel();
+            this.Label_ApplicantTotal = new System.Windows.Forms.Label();
+            this.Label_Applicants = new System.Windows.Forms.Label();
+            this.Label_RecruiterName = new System.Windows.Forms.Label();
+            this.Label_Recruiter = new System.Windows.Forms.Label();
+            this.Label_SubmitTitle = new System.Windows.Forms.Label();
+            this.Panel_Management.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementLogo)).BeginInit();
+            this.Panel_FeedbackList.SuspendLayout();
+            this.Panel_Preview.SuspendLayout();
+            this.Panel_Submit.SuspendLayout();
             this.SuspendLayout();
             // 
-            // checklistAppPreview
+            // CheckedListBox_FeedbackList
             // 
-            this.checklistAppPreview.CheckOnClick = true;
-            this.checklistAppPreview.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checklistAppPreview.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.checklistAppPreview.FormattingEnabled = true;
-            this.checklistAppPreview.Location = new System.Drawing.Point(26, 70);
-            this.checklistAppPreview.Name = "checklistAppPreview";
-            this.checklistAppPreview.Size = new System.Drawing.Size(553, 424);
-            this.checklistAppPreview.TabIndex = 0;
-            this.checklistAppPreview.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checklistAppPreview_ItemCheck);
-            this.checklistAppPreview.SelectedValueChanged += new System.EventHandler(this.checklistAppPreview_SelectedValueChanged);
+            this.CheckedListBox_FeedbackList.CheckOnClick = true;
+            this.CheckedListBox_FeedbackList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CheckedListBox_FeedbackList.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.CheckedListBox_FeedbackList.FormattingEnabled = true;
+            this.CheckedListBox_FeedbackList.Location = new System.Drawing.Point(26, 70);
+            this.CheckedListBox_FeedbackList.Name = "CheckedListBox_FeedbackList";
+            this.CheckedListBox_FeedbackList.Size = new System.Drawing.Size(553, 424);
+            this.CheckedListBox_FeedbackList.TabIndex = 0;
+            this.CheckedListBox_FeedbackList.SelectedValueChanged += new System.EventHandler(this.CheckedListBox_FeedbackList_SelectedValueChanged);
             // 
-            // previewBtn
+            // Button_Preview
             // 
-            this.previewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.previewBtn.FlatAppearance.BorderSize = 0;
-            this.previewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.previewBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.previewBtn.ForeColor = System.Drawing.Color.White;
-            this.previewBtn.Location = new System.Drawing.Point(21, 109);
-            this.previewBtn.Name = "previewBtn";
-            this.previewBtn.Size = new System.Drawing.Size(171, 26);
-            this.previewBtn.TabIndex = 1;
-            this.previewBtn.Text = "Preview";
-            this.previewBtn.UseVisualStyleBackColor = false;
-            this.previewBtn.Click += new System.EventHandler(this.previewBtn_Click);
+            this.Button_Preview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.Button_Preview.FlatAppearance.BorderSize = 0;
+            this.Button_Preview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Preview.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_Preview.ForeColor = System.Drawing.Color.White;
+            this.Button_Preview.Location = new System.Drawing.Point(21, 109);
+            this.Button_Preview.Name = "Button_Preview";
+            this.Button_Preview.Size = new System.Drawing.Size(171, 26);
+            this.Button_Preview.TabIndex = 1;
+            this.Button_Preview.Text = "Preview";
+            this.Button_Preview.UseVisualStyleBackColor = false;
+            this.Button_Preview.Click += new System.EventHandler(this.Button_Preview_Click);
             // 
-            // backBtn
+            // Button_Cancel
             // 
-            this.backBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.backBtn.FlatAppearance.BorderSize = 0;
-            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.backBtn.ForeColor = System.Drawing.Color.White;
-            this.backBtn.Location = new System.Drawing.Point(18, 252);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(171, 26);
-            this.backBtn.TabIndex = 2;
-            this.backBtn.Text = "Cancel";
-            this.backBtn.UseVisualStyleBackColor = false;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            this.Button_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.Button_Cancel.FlatAppearance.BorderSize = 0;
+            this.Button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Cancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_Cancel.ForeColor = System.Drawing.Color.White;
+            this.Button_Cancel.Location = new System.Drawing.Point(18, 252);
+            this.Button_Cancel.Name = "Button_Cancel";
+            this.Button_Cancel.Size = new System.Drawing.Size(171, 26);
+            this.Button_Cancel.TabIndex = 2;
+            this.Button_Cancel.Text = "Cancel";
+            this.Button_Cancel.UseVisualStyleBackColor = false;
+            this.Button_Cancel.Click += new System.EventHandler(this.Button_Cancel_Click);
             // 
-            // panelManagement
+            // Panel_Management
             // 
-            this.panelManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(57)))));
-            this.panelManagement.Controls.Add(this.lblStage3);
-            this.panelManagement.Controls.Add(this.imgStage3);
-            this.panelManagement.Controls.Add(this.lblStage2);
-            this.panelManagement.Controls.Add(this.imgStage2);
-            this.panelManagement.Controls.Add(this.lblStage1);
-            this.panelManagement.Controls.Add(this.imgStage1);
-            this.panelManagement.Controls.Add(this.pictureBox1);
-            this.panelManagement.Location = new System.Drawing.Point(0, 0);
-            this.panelManagement.Name = "panelManagement";
-            this.panelManagement.Size = new System.Drawing.Size(100, 564);
-            this.panelManagement.TabIndex = 11;
+            this.Panel_Management.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(57)))));
+            this.Panel_Management.Controls.Add(this.Label_ManagementStage3);
+            this.Panel_Management.Controls.Add(this.PictureBox_ManagementStage3);
+            this.Panel_Management.Controls.Add(this.Label_ManagementStage2);
+            this.Panel_Management.Controls.Add(this.PictureBox_ManagementStage2);
+            this.Panel_Management.Controls.Add(this.Label_ManagementStage1);
+            this.Panel_Management.Controls.Add(this.PictureBox_ManagementStage1);
+            this.Panel_Management.Controls.Add(this.PictureBox_ManagementLogo);
+            this.Panel_Management.Location = new System.Drawing.Point(0, 0);
+            this.Panel_Management.Name = "Panel_Management";
+            this.Panel_Management.Size = new System.Drawing.Size(100, 564);
+            this.Panel_Management.TabIndex = 11;
             // 
-            // lblStage3
+            // Label_ManagementStage3
             // 
-            this.lblStage3.AutoSize = true;
-            this.lblStage3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblStage3.ForeColor = System.Drawing.Color.White;
-            this.lblStage3.Location = new System.Drawing.Point(24, 370);
-            this.lblStage3.Name = "lblStage3";
-            this.lblStage3.Size = new System.Drawing.Size(52, 14);
-            this.lblStage3.TabIndex = 0;
-            this.lblStage3.Text = "Preview";
+            this.Label_ManagementStage3.AutoSize = true;
+            this.Label_ManagementStage3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_ManagementStage3.ForeColor = System.Drawing.Color.White;
+            this.Label_ManagementStage3.Location = new System.Drawing.Point(24, 370);
+            this.Label_ManagementStage3.Name = "Label_ManagementStage3";
+            this.Label_ManagementStage3.Size = new System.Drawing.Size(52, 14);
+            this.Label_ManagementStage3.TabIndex = 0;
+            this.Label_ManagementStage3.Text = "Preview";
             // 
-            // imgStage3
+            // PictureBox_ManagementStage3
             // 
-            this.imgStage3.Image = global::HappyTech.Properties.Resources.happytech_3;
-            this.imgStage3.Location = new System.Drawing.Point(42, 347);
-            this.imgStage3.Name = "imgStage3";
-            this.imgStage3.Size = new System.Drawing.Size(16, 16);
-            this.imgStage3.TabIndex = 42;
-            this.imgStage3.TabStop = false;
+            this.PictureBox_ManagementStage3.Image = global::HappyTech.Properties.Resources.happytech_3;
+            this.PictureBox_ManagementStage3.Location = new System.Drawing.Point(42, 347);
+            this.PictureBox_ManagementStage3.Name = "PictureBox_ManagementStage3";
+            this.PictureBox_ManagementStage3.Size = new System.Drawing.Size(16, 16);
+            this.PictureBox_ManagementStage3.TabIndex = 42;
+            this.PictureBox_ManagementStage3.TabStop = false;
             // 
-            // lblStage2
+            // Label_ManagementStage2
             // 
-            this.lblStage2.AutoSize = true;
-            this.lblStage2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblStage2.ForeColor = System.Drawing.Color.White;
-            this.lblStage2.Location = new System.Drawing.Point(19, 258);
-            this.lblStage2.Name = "lblStage2";
-            this.lblStage2.Size = new System.Drawing.Size(60, 14);
-            this.lblStage2.TabIndex = 0;
-            this.lblStage2.Text = "Feedback";
+            this.Label_ManagementStage2.AutoSize = true;
+            this.Label_ManagementStage2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_ManagementStage2.ForeColor = System.Drawing.Color.White;
+            this.Label_ManagementStage2.Location = new System.Drawing.Point(19, 258);
+            this.Label_ManagementStage2.Name = "Label_ManagementStage2";
+            this.Label_ManagementStage2.Size = new System.Drawing.Size(60, 14);
+            this.Label_ManagementStage2.TabIndex = 0;
+            this.Label_ManagementStage2.Text = "Feedback";
             // 
-            // imgStage2
+            // PictureBox_ManagementStage2
             // 
-            this.imgStage2.Image = global::HappyTech.Properties.Resources.happytech_tick;
-            this.imgStage2.Location = new System.Drawing.Point(42, 235);
-            this.imgStage2.Name = "imgStage2";
-            this.imgStage2.Size = new System.Drawing.Size(16, 16);
-            this.imgStage2.TabIndex = 40;
-            this.imgStage2.TabStop = false;
+            this.PictureBox_ManagementStage2.Image = global::HappyTech.Properties.Resources.happytech_tick;
+            this.PictureBox_ManagementStage2.Location = new System.Drawing.Point(42, 235);
+            this.PictureBox_ManagementStage2.Name = "PictureBox_ManagementStage2";
+            this.PictureBox_ManagementStage2.Size = new System.Drawing.Size(16, 16);
+            this.PictureBox_ManagementStage2.TabIndex = 40;
+            this.PictureBox_ManagementStage2.TabStop = false;
             // 
-            // lblStage1
+            // Label_ManagementStage1
             // 
-            this.lblStage1.AutoSize = true;
-            this.lblStage1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblStage1.ForeColor = System.Drawing.Color.White;
-            this.lblStage1.Location = new System.Drawing.Point(17, 146);
-            this.lblStage1.Name = "lblStage1";
-            this.lblStage1.Size = new System.Drawing.Size(65, 14);
-            this.lblStage1.TabIndex = 0;
-            this.lblStage1.Text = "Applicants";
+            this.Label_ManagementStage1.AutoSize = true;
+            this.Label_ManagementStage1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_ManagementStage1.ForeColor = System.Drawing.Color.White;
+            this.Label_ManagementStage1.Location = new System.Drawing.Point(17, 146);
+            this.Label_ManagementStage1.Name = "Label_ManagementStage1";
+            this.Label_ManagementStage1.Size = new System.Drawing.Size(65, 14);
+            this.Label_ManagementStage1.TabIndex = 0;
+            this.Label_ManagementStage1.Text = "Applicants";
             // 
-            // imgStage1
+            // PictureBox_ManagementStage1
             // 
-            this.imgStage1.Image = global::HappyTech.Properties.Resources.happytech_tick;
-            this.imgStage1.Location = new System.Drawing.Point(42, 123);
-            this.imgStage1.Name = "imgStage1";
-            this.imgStage1.Size = new System.Drawing.Size(16, 16);
-            this.imgStage1.TabIndex = 37;
-            this.imgStage1.TabStop = false;
+            this.PictureBox_ManagementStage1.Image = global::HappyTech.Properties.Resources.happytech_tick;
+            this.PictureBox_ManagementStage1.Location = new System.Drawing.Point(42, 123);
+            this.PictureBox_ManagementStage1.Name = "PictureBox_ManagementStage1";
+            this.PictureBox_ManagementStage1.Size = new System.Drawing.Size(16, 16);
+            this.PictureBox_ManagementStage1.TabIndex = 37;
+            this.PictureBox_ManagementStage1.TabStop = false;
             // 
-            // pictureBox1
+            // PictureBox_ManagementLogo
             // 
-            this.pictureBox1.Image = global::HappyTech.Properties.Resources.happytech_logo_small;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 38);
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
+            this.PictureBox_ManagementLogo.Image = global::HappyTech.Properties.Resources.happytech_logo_small;
+            this.PictureBox_ManagementLogo.Location = new System.Drawing.Point(25, 25);
+            this.PictureBox_ManagementLogo.Name = "PictureBox_ManagementLogo";
+            this.PictureBox_ManagementLogo.Size = new System.Drawing.Size(45, 38);
+            this.PictureBox_ManagementLogo.TabIndex = 34;
+            this.PictureBox_ManagementLogo.TabStop = false;
             // 
-            // panelPreviewList
+            // Panel_FeedbackList
             // 
-            this.panelPreviewList.BackColor = System.Drawing.Color.White;
-            this.panelPreviewList.Controls.Add(this.lblFeedbackList);
-            this.panelPreviewList.Controls.Add(this.checklistAppPreview);
-            this.panelPreviewList.Location = new System.Drawing.Point(123, 25);
-            this.panelPreviewList.Name = "panelPreviewList";
-            this.panelPreviewList.Size = new System.Drawing.Size(601, 515);
-            this.panelPreviewList.TabIndex = 13;
+            this.Panel_FeedbackList.BackColor = System.Drawing.Color.White;
+            this.Panel_FeedbackList.Controls.Add(this.Label_FeedbackListTitle);
+            this.Panel_FeedbackList.Controls.Add(this.CheckedListBox_FeedbackList);
+            this.Panel_FeedbackList.Location = new System.Drawing.Point(123, 25);
+            this.Panel_FeedbackList.Name = "Panel_FeedbackList";
+            this.Panel_FeedbackList.Size = new System.Drawing.Size(601, 515);
+            this.Panel_FeedbackList.TabIndex = 13;
             // 
-            // lblFeedbackList
+            // Label_FeedbackListTitle
             // 
-            this.lblFeedbackList.AutoSize = true;
-            this.lblFeedbackList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblFeedbackList.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblFeedbackList.Location = new System.Drawing.Point(22, 14);
-            this.lblFeedbackList.Name = "lblFeedbackList";
-            this.lblFeedbackList.Size = new System.Drawing.Size(158, 24);
-            this.lblFeedbackList.TabIndex = 47;
-            this.lblFeedbackList.Text = "Feedback List.";
+            this.Label_FeedbackListTitle.AutoSize = true;
+            this.Label_FeedbackListTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Label_FeedbackListTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Label_FeedbackListTitle.Location = new System.Drawing.Point(22, 14);
+            this.Label_FeedbackListTitle.Name = "Label_FeedbackListTitle";
+            this.Label_FeedbackListTitle.Size = new System.Drawing.Size(158, 24);
+            this.Label_FeedbackListTitle.TabIndex = 47;
+            this.Label_FeedbackListTitle.Text = "Feedback List.";
             // 
-            // lblPreview
+            // Label_PreviewTitle
             // 
-            this.lblPreview.AutoSize = true;
-            this.lblPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPreview.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblPreview.Location = new System.Drawing.Point(17, 14);
-            this.lblPreview.Name = "lblPreview";
-            this.lblPreview.Size = new System.Drawing.Size(94, 24);
-            this.lblPreview.TabIndex = 6;
-            this.lblPreview.Text = "Preview.";
+            this.Label_PreviewTitle.AutoSize = true;
+            this.Label_PreviewTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Label_PreviewTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Label_PreviewTitle.Location = new System.Drawing.Point(17, 14);
+            this.Label_PreviewTitle.Name = "Label_PreviewTitle";
+            this.Label_PreviewTitle.Size = new System.Drawing.Size(94, 24);
+            this.Label_PreviewTitle.TabIndex = 6;
+            this.Label_PreviewTitle.Text = "Preview.";
             // 
-            // panelPreviewAction
+            // Panel_Preview
             // 
-            this.panelPreviewAction.BackColor = System.Drawing.Color.White;
-            this.panelPreviewAction.Controls.Add(this.lblPreview);
-            this.panelPreviewAction.Controls.Add(this.lbError);
-            this.panelPreviewAction.Controls.Add(this.previewBtn);
-            this.panelPreviewAction.Location = new System.Drawing.Point(749, 25);
-            this.panelPreviewAction.Name = "panelPreviewAction";
-            this.panelPreviewAction.Size = new System.Drawing.Size(208, 154);
-            this.panelPreviewAction.TabIndex = 14;
+            this.Panel_Preview.BackColor = System.Drawing.Color.White;
+            this.Panel_Preview.Controls.Add(this.Label_PreviewTitle);
+            this.Panel_Preview.Controls.Add(this.Label_Error);
+            this.Panel_Preview.Controls.Add(this.Button_Preview);
+            this.Panel_Preview.Location = new System.Drawing.Point(749, 25);
+            this.Panel_Preview.Name = "Panel_Preview";
+            this.Panel_Preview.Size = new System.Drawing.Size(208, 154);
+            this.Panel_Preview.TabIndex = 14;
             // 
-            // lbError
+            // Label_Error
             // 
-            this.lbError.AutoSize = true;
-            this.lbError.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lbError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.lbError.Location = new System.Drawing.Point(18, 70);
-            this.lbError.Name = "lbError";
-            this.lbError.Size = new System.Drawing.Size(90, 14);
-            this.lbError.TabIndex = 46;
-            this.lbError.Text = "Error message";
-            this.lbError.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbError.Visible = false;
+            this.Label_Error.AutoSize = true;
+            this.Label_Error.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_Error.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.Label_Error.Location = new System.Drawing.Point(18, 70);
+            this.Label_Error.Name = "Label_Error";
+            this.Label_Error.Size = new System.Drawing.Size(90, 14);
+            this.Label_Error.TabIndex = 46;
+            this.Label_Error.Text = "Error message";
+            this.Label_Error.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Label_Error.Visible = false;
             // 
-            // btnDash
+            // Button_Dashboard
             // 
-            this.btnDash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.btnDash.FlatAppearance.BorderSize = 0;
-            this.btnDash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDash.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnDash.ForeColor = System.Drawing.Color.White;
-            this.btnDash.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDash.Location = new System.Drawing.Point(18, 293);
-            this.btnDash.Name = "btnDash";
-            this.btnDash.Size = new System.Drawing.Size(171, 26);
-            this.btnDash.TabIndex = 45;
-            this.btnDash.Text = "Dashboard";
-            this.btnDash.UseVisualStyleBackColor = false;
-            this.btnDash.Visible = false;
-            this.btnDash.Click += new System.EventHandler(this.btnDash_Click);
+            this.Button_Dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.Button_Dashboard.FlatAppearance.BorderSize = 0;
+            this.Button_Dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Dashboard.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_Dashboard.ForeColor = System.Drawing.Color.White;
+            this.Button_Dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Button_Dashboard.Location = new System.Drawing.Point(18, 293);
+            this.Button_Dashboard.Name = "Button_Dashboard";
+            this.Button_Dashboard.Size = new System.Drawing.Size(171, 26);
+            this.Button_Dashboard.TabIndex = 45;
+            this.Button_Dashboard.Text = "Dashboard";
+            this.Button_Dashboard.UseVisualStyleBackColor = false;
+            this.Button_Dashboard.Visible = false;
+            this.Button_Dashboard.Click += new System.EventHandler(this.Button_Dashboard_Click);
             // 
-            // sendBtn
+            // Button_Send
             // 
-            this.sendBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
-            this.sendBtn.FlatAppearance.BorderSize = 0;
-            this.sendBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sendBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.sendBtn.ForeColor = System.Drawing.Color.White;
-            this.sendBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.sendBtn.Location = new System.Drawing.Point(18, 293);
-            this.sendBtn.Name = "sendBtn";
-            this.sendBtn.Size = new System.Drawing.Size(171, 26);
-            this.sendBtn.TabIndex = 3;
-            this.sendBtn.Text = "Send All";
-            this.sendBtn.UseVisualStyleBackColor = false;
-            this.sendBtn.Click += new System.EventHandler(this.sendBtn_Click);
+            this.Button_Send.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
+            this.Button_Send.FlatAppearance.BorderSize = 0;
+            this.Button_Send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Send.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_Send.ForeColor = System.Drawing.Color.White;
+            this.Button_Send.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Button_Send.Location = new System.Drawing.Point(18, 293);
+            this.Button_Send.Name = "Button_Send";
+            this.Button_Send.Size = new System.Drawing.Size(171, 26);
+            this.Button_Send.TabIndex = 3;
+            this.Button_Send.Text = "Send All";
+            this.Button_Send.UseVisualStyleBackColor = false;
+            this.Button_Send.Click += new System.EventHandler(this.Button_Send_Click);
             // 
-            // panelSubmit
+            // Panel_Submit
             // 
-            this.panelSubmit.BackColor = System.Drawing.Color.White;
-            this.panelSubmit.Controls.Add(this.lblAppTotalVal);
-            this.panelSubmit.Controls.Add(this.lblAppTotal);
-            this.panelSubmit.Controls.Add(this.lblRecruiterVal);
-            this.panelSubmit.Controls.Add(this.lblRecruiter);
-            this.panelSubmit.Controls.Add(this.lblSubmit);
-            this.panelSubmit.Controls.Add(this.btnDash);
-            this.panelSubmit.Controls.Add(this.backBtn);
-            this.panelSubmit.Controls.Add(this.sendBtn);
-            this.panelSubmit.Location = new System.Drawing.Point(749, 200);
-            this.panelSubmit.Name = "panelSubmit";
-            this.panelSubmit.Size = new System.Drawing.Size(208, 340);
-            this.panelSubmit.TabIndex = 47;
+            this.Panel_Submit.BackColor = System.Drawing.Color.White;
+            this.Panel_Submit.Controls.Add(this.Label_ApplicantTotal);
+            this.Panel_Submit.Controls.Add(this.Label_Applicants);
+            this.Panel_Submit.Controls.Add(this.Label_RecruiterName);
+            this.Panel_Submit.Controls.Add(this.Label_Recruiter);
+            this.Panel_Submit.Controls.Add(this.Label_SubmitTitle);
+            this.Panel_Submit.Controls.Add(this.Button_Dashboard);
+            this.Panel_Submit.Controls.Add(this.Button_Cancel);
+            this.Panel_Submit.Controls.Add(this.Button_Send);
+            this.Panel_Submit.Location = new System.Drawing.Point(749, 200);
+            this.Panel_Submit.Name = "Panel_Submit";
+            this.Panel_Submit.Size = new System.Drawing.Size(208, 340);
+            this.Panel_Submit.TabIndex = 47;
             // 
-            // lblAppTotalVal
+            // Label_ApplicantTotal
             // 
-            this.lblAppTotalVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppTotalVal.ForeColor = System.Drawing.Color.Black;
-            this.lblAppTotalVal.Location = new System.Drawing.Point(15, 144);
-            this.lblAppTotalVal.Name = "lblAppTotalVal";
-            this.lblAppTotalVal.Size = new System.Drawing.Size(177, 14);
-            this.lblAppTotalVal.TabIndex = 51;
-            this.lblAppTotalVal.Text = "[applicant_total]";
-            this.lblAppTotalVal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Label_ApplicantTotal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_ApplicantTotal.ForeColor = System.Drawing.Color.Black;
+            this.Label_ApplicantTotal.Location = new System.Drawing.Point(15, 144);
+            this.Label_ApplicantTotal.Name = "Label_ApplicantTotal";
+            this.Label_ApplicantTotal.Size = new System.Drawing.Size(177, 14);
+            this.Label_ApplicantTotal.TabIndex = 51;
+            this.Label_ApplicantTotal.Text = "[applicant_total]";
+            this.Label_ApplicantTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblAppTotal
+            // Label_Applicants
             // 
-            this.lblAppTotal.AutoSize = true;
-            this.lblAppTotal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppTotal.Location = new System.Drawing.Point(15, 120);
-            this.lblAppTotal.Name = "lblAppTotal";
-            this.lblAppTotal.Size = new System.Drawing.Size(68, 14);
-            this.lblAppTotal.TabIndex = 50;
-            this.lblAppTotal.Text = "Applicants:";
+            this.Label_Applicants.AutoSize = true;
+            this.Label_Applicants.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_Applicants.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_Applicants.Location = new System.Drawing.Point(15, 120);
+            this.Label_Applicants.Name = "Label_Applicants";
+            this.Label_Applicants.Size = new System.Drawing.Size(68, 14);
+            this.Label_Applicants.TabIndex = 50;
+            this.Label_Applicants.Text = "Applicants:";
             // 
-            // lblRecruiterVal
+            // Label_RecruiterName
             // 
-            this.lblRecruiterVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblRecruiterVal.ForeColor = System.Drawing.Color.Black;
-            this.lblRecruiterVal.Location = new System.Drawing.Point(15, 84);
-            this.lblRecruiterVal.Name = "lblRecruiterVal";
-            this.lblRecruiterVal.Size = new System.Drawing.Size(177, 14);
-            this.lblRecruiterVal.TabIndex = 49;
-            this.lblRecruiterVal.Text = "[recruiter_name]";
-            this.lblRecruiterVal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Label_RecruiterName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_RecruiterName.ForeColor = System.Drawing.Color.Black;
+            this.Label_RecruiterName.Location = new System.Drawing.Point(15, 84);
+            this.Label_RecruiterName.Name = "Label_RecruiterName";
+            this.Label_RecruiterName.Size = new System.Drawing.Size(177, 14);
+            this.Label_RecruiterName.TabIndex = 49;
+            this.Label_RecruiterName.Text = "[recruiter_name]";
+            this.Label_RecruiterName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblRecruiter
+            // Label_Recruiter
             // 
-            this.lblRecruiter.AutoSize = true;
-            this.lblRecruiter.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblRecruiter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblRecruiter.Location = new System.Drawing.Point(15, 60);
-            this.lblRecruiter.Name = "lblRecruiter";
-            this.lblRecruiter.Size = new System.Drawing.Size(61, 14);
-            this.lblRecruiter.TabIndex = 48;
-            this.lblRecruiter.Text = "Recruiter:";
+            this.Label_Recruiter.AutoSize = true;
+            this.Label_Recruiter.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_Recruiter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_Recruiter.Location = new System.Drawing.Point(15, 60);
+            this.Label_Recruiter.Name = "Label_Recruiter";
+            this.Label_Recruiter.Size = new System.Drawing.Size(61, 14);
+            this.Label_Recruiter.TabIndex = 48;
+            this.Label_Recruiter.Text = "Recruiter:";
             // 
-            // lblSubmit
+            // Label_SubmitTitle
             // 
-            this.lblSubmit.AutoSize = true;
-            this.lblSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblSubmit.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblSubmit.Location = new System.Drawing.Point(17, 14);
-            this.lblSubmit.Name = "lblSubmit";
-            this.lblSubmit.Size = new System.Drawing.Size(87, 24);
-            this.lblSubmit.TabIndex = 6;
-            this.lblSubmit.Text = "Submit.";
+            this.Label_SubmitTitle.AutoSize = true;
+            this.Label_SubmitTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Label_SubmitTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Label_SubmitTitle.Location = new System.Drawing.Point(17, 14);
+            this.Label_SubmitTitle.Name = "Label_SubmitTitle";
+            this.Label_SubmitTitle.Size = new System.Drawing.Size(87, 24);
+            this.Label_SubmitTitle.TabIndex = 6;
+            this.Label_SubmitTitle.Text = "Submit.";
             // 
             // previewForm
             // 
@@ -356,10 +355,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(982, 563);
-            this.Controls.Add(this.panelSubmit);
-            this.Controls.Add(this.panelPreviewAction);
-            this.Controls.Add(this.panelPreviewList);
-            this.Controls.Add(this.panelManagement);
+            this.Controls.Add(this.Panel_Submit);
+            this.Controls.Add(this.Panel_Preview);
+            this.Controls.Add(this.Panel_FeedbackList);
+            this.Controls.Add(this.Panel_Management);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(998, 602);
@@ -367,47 +366,47 @@
             this.Name = "previewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
-            this.panelManagement.ResumeLayout(false);
-            this.panelManagement.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelPreviewList.ResumeLayout(false);
-            this.panelPreviewList.PerformLayout();
-            this.panelPreviewAction.ResumeLayout(false);
-            this.panelPreviewAction.PerformLayout();
-            this.panelSubmit.ResumeLayout(false);
-            this.panelSubmit.PerformLayout();
+            this.Panel_Management.ResumeLayout(false);
+            this.Panel_Management.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementLogo)).EndInit();
+            this.Panel_FeedbackList.ResumeLayout(false);
+            this.Panel_FeedbackList.PerformLayout();
+            this.Panel_Preview.ResumeLayout(false);
+            this.Panel_Preview.PerformLayout();
+            this.Panel_Submit.ResumeLayout(false);
+            this.Panel_Submit.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox checklistAppPreview;
-        private System.Windows.Forms.Button previewBtn;
-        private System.Windows.Forms.Button backBtn;
-        private System.Windows.Forms.Button sendBtn;
-        private System.Windows.Forms.Panel panelManagement;
-        private System.Windows.Forms.Label lblStage3;
-        private System.Windows.Forms.PictureBox imgStage3;
-        private System.Windows.Forms.Label lblStage2;
-        private System.Windows.Forms.PictureBox imgStage2;
-        private System.Windows.Forms.Label lblStage1;
-        private System.Windows.Forms.PictureBox imgStage1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panelPreviewList;
-        private System.Windows.Forms.Label lblPreview;
-        private System.Windows.Forms.Panel panelPreviewAction;
-        private System.Windows.Forms.Button btnDash;
-        private System.Windows.Forms.Label lbError;
-        private System.Windows.Forms.Label lblFeedbackList;
-        private System.Windows.Forms.Panel panelSubmit;
-        private System.Windows.Forms.Label lblSubmit;
-        private System.Windows.Forms.Label lblRecruiterVal;
-        private System.Windows.Forms.Label lblRecruiter;
-        private System.Windows.Forms.Label lblAppTotalVal;
-        private System.Windows.Forms.Label lblAppTotal;
+        private System.Windows.Forms.CheckedListBox CheckedListBox_FeedbackList;
+        private System.Windows.Forms.Button Button_Preview;
+        private System.Windows.Forms.Button Button_Cancel;
+        private System.Windows.Forms.Button Button_Send;
+        private System.Windows.Forms.Panel Panel_Management;
+        private System.Windows.Forms.Label Label_ManagementStage3;
+        private System.Windows.Forms.PictureBox PictureBox_ManagementStage3;
+        private System.Windows.Forms.Label Label_ManagementStage2;
+        private System.Windows.Forms.PictureBox PictureBox_ManagementStage2;
+        private System.Windows.Forms.Label Label_ManagementStage1;
+        private System.Windows.Forms.PictureBox PictureBox_ManagementStage1;
+        private System.Windows.Forms.PictureBox PictureBox_ManagementLogo;
+        private System.Windows.Forms.Panel Panel_FeedbackList;
+        private System.Windows.Forms.Label Label_PreviewTitle;
+        private System.Windows.Forms.Panel Panel_Preview;
+        private System.Windows.Forms.Button Button_Dashboard;
+        private System.Windows.Forms.Label Label_Error;
+        private System.Windows.Forms.Label Label_FeedbackListTitle;
+        private System.Windows.Forms.Panel Panel_Submit;
+        private System.Windows.Forms.Label Label_SubmitTitle;
+        private System.Windows.Forms.Label Label_RecruiterName;
+        private System.Windows.Forms.Label Label_Recruiter;
+        private System.Windows.Forms.Label Label_ApplicantTotal;
+        private System.Windows.Forms.Label Label_Applicants;
     }
 }

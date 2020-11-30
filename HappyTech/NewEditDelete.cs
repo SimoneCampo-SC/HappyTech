@@ -807,17 +807,28 @@ namespace HappyTech
         /// </summary>
         private void Button_EditDelete_Click( object sender, EventArgs e )
         {
-            if (currentMode == Mode.Template)
+            switch (currentMode)
             {
-                // delete template
-            }
-            else if (currentMode == Mode.Section)
-            {
-                // delete section
-            }
-            else if (currentMode == Mode.Code)
-            {
-                // delete code
+                case Mode.Template:
+
+                    // Delete template from database
+                    // Connection.GetDbConn().CreateCommand($"");
+
+                    break;
+
+                case Mode.Section:
+
+                    // Delete section from database
+                    // Connection.GetDbConn().CreateCommand($"");
+
+                    break;
+
+                case Mode.Code:
+
+                    // Delete code from database
+                    // Connection.GetDbConn().CreateCommand($"");
+
+                    break;
             }
         }
 
