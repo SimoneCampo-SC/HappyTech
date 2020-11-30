@@ -91,7 +91,7 @@
       <DependentUpon>ConfRegistrForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
-    <Compile Include="Constants.cs" />
+    <Compile Include="SqlConstants.cs" />
     <Compile Include="ConfApplDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>

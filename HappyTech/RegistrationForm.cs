@@ -40,7 +40,7 @@ namespace HappyTech
                 errorMessage.Text = "Required fields are missing";
             }
             // Checks whether the email provided already exists into the DB
-            else if (Constants.checkRecruiter(emailBox.Text) == true) 
+            else if (SqlConstants.checkRecruiter(emailBox.Text) == true) 
             {
                 errorMessage.Visible = true;
                 errorMessage.Text = "An account with this email already exists";
@@ -48,7 +48,7 @@ namespace HappyTech
             else
             {
                 // Add the credentials into the Database
-                string queryString = Constants.insertRecruiter(emailBox.Text, nameBox.Text, surnameBox.Text, passBox.Text);
+                string queryString = SqlConstants.insertRecruiter(emailBox.Text, nameBox.Text, surnameBox.Text, passBox.Text);
                 Connection.GetDbConn().CreateCommand(queryString);
 
                 // Current form is hidden, and the ConfRegistrForm is created and showed 

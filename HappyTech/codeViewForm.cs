@@ -26,13 +26,13 @@ namespace HappyTech
             // Load tags from the db into the drop-down menu needs to run when template dropdown is given a value
             loadGrid();
 
-            DataSet dsT = Connection.GetDbConn().getDataSet(Constants.SelectAllTemplates());
+            DataSet dsT = Connection.GetDbConn().getDataSet(SqlConstants.SelectAllTemplates());
             lblTempTotalVal.Text = dsT.Tables[0].Rows.Count.ToString();
 
-            DataSet dsS = Connection.GetDbConn().getDataSet(Constants.SelectAllSections());
+            DataSet dsS = Connection.GetDbConn().getDataSet(SqlConstants.SelectAllSections());
             lblSectTotalVal.Text = dsS.Tables[0].Rows.Count.ToString();
 
-            DataSet dsC = Connection.GetDbConn().getDataSet(Constants.selectCodes());
+            DataSet dsC = Connection.GetDbConn().getDataSet(SqlConstants.selectCodes());
             lblCodeTotalVal.Text = dsC.Tables[0].Rows.Count.ToString();
         }
 
@@ -41,7 +41,7 @@ namespace HappyTech
         /// </summary>
         private void loadTemplateDropdown()
         {
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateName());
+            DataSet ds = Connection.GetDbConn().getDataSet(SqlConstants.getTemplateName());
             //populates drop down menu with sections
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
@@ -58,7 +58,7 @@ namespace HappyTech
         private void loadSectionDropdown(string templateName) //passes in the value contained in the template select dropdown
         {
             //this takes the template name from the template box and finds sections that are related to that template
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.GetSectionPerTemplate(templateName));
+            DataSet ds = Connection.GetDbConn().getDataSet(SqlConstants.GetSectionPerTemplate(templateName));
             //populates drop down menu with sections
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
@@ -80,10 +80,10 @@ namespace HappyTech
             try
             {
                 tagSelectBox.Text.Replace(" ", "");
-                DataSet ds1 = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(tagSelectBox.Text));
+                DataSet ds1 = Connection.GetDbConn().getDataSet(SqlConstants.getSectionIdFromName(tagSelectBox.Text));
                 DataRow dRow1 = ds1.Tables[0].Rows[0];
                 var sectionId = dRow1.ItemArray.GetValue(0);
-                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getCodeFromSectionId(sectionId));
+                DataSet ds = Connection.GetDbConn().getDataSet(SqlConstants.getCodeFromSectionId(sectionId));
                 codeDisplay.DataSource = ds.Tables[0];
             }
             catch

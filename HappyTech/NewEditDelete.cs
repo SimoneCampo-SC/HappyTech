@@ -265,7 +265,7 @@ namespace HappyTech
                     {
                         DisplayError( "Template name limit exceeded", "NewArea" );
                     }
-                    else if ( Constants.checkTemplate( TextBox_NewTemplateName.Text ) )
+                    else if ( SqlConstants.checkTemplate( TextBox_NewTemplateName.Text ) )
                     {
                         DisplayError( "This template name already exists", "NewArea" );
                     }
@@ -304,7 +304,7 @@ namespace HappyTech
                     {
                         DisplayError( "Section name limit exceeded", "NewArea" );
                     }
-                    else if ( Constants.checkSection( TextBox_NewSectionName.Text ) )
+                    else if ( SqlConstants.checkSection( TextBox_NewSectionName.Text ) )
                     {
                         DisplayError( "This section name already exists", "NewArea" );
                     }
@@ -362,7 +362,7 @@ namespace HappyTech
                     {
                         DisplayError( "Select a section to add to", "NewArea" );
                     }
-                    else if ( Constants.checkCode( TextBox_NewCodeName.Text ) )
+                    else if ( SqlConstants.checkCode( TextBox_NewCodeName.Text ) )
                     {
                         DisplayError( "This code name already exists", "NewArea" );
                     }
@@ -373,7 +373,7 @@ namespace HappyTech
 
                     else
                     {
-                        DataSet sectionDB       = Connection.GetDbConn().getDataSet( Constants.
+                        DataSet sectionDB       = Connection.GetDbConn().getDataSet( SqlConstants.
                                                     getTagIdFromName( ComboBox_NewCodeSection.Text ) );
 
                         DataRow sectionDBValue  = sectionDB.Tables[0].Rows[0];
@@ -382,7 +382,7 @@ namespace HappyTech
                         string newCodeName      = TextBox_NewCodeName.Text.ToUpper().Replace( " ", "" );
                         string newCodeParagraph = RichTextBox_NewCodeParagraph.Text;
 
-                        Connection.GetDbConn().CreateCommand( Constants.
+                        Connection.GetDbConn().CreateCommand( SqlConstants.
                             insertNewCode( newCodeName, newCodeParagraph, sectionId ) );
 
                         ClearCodeModeFields();
@@ -427,7 +427,7 @@ namespace HappyTech
                     {
                         DisplayError( "Template name limit exceeded", "EditArea" );
                     }
-                    else if ( Constants.checkTemplate( TextBox_EditTemplateName.Text ) )
+                    else if ( SqlConstants.checkTemplate( TextBox_EditTemplateName.Text ) )
                     {
                         DisplayError( "This template name already exists", "EditArea" );
                     }
@@ -438,13 +438,13 @@ namespace HappyTech
 
                     else
                     {
-                        DataSet templateDB      = Connection.GetDbConn().getDataSet( Constants.
+                        DataSet templateDB      = Connection.GetDbConn().getDataSet( SqlConstants.
                                                     getTemplateIdFromName( ComboBox_EditTemplateChooseExisting.Text.Replace( " ", "" ) ) );
 
                         DataRow templateDBValue = templateDB.Tables[0].Rows[0];
                         var templateId          = templateDBValue.ItemArray.GetValue(0);
 
-                        Connection.GetDbConn().CreateCommand( Constants.editTemplate( templateId,
+                        Connection.GetDbConn().CreateCommand( SqlConstants.editTemplate( templateId,
                             TextBox_EditTemplateName.Text ) );
 
                         UpdatePersonalSectionsForTemplate( templateId );
@@ -478,7 +478,7 @@ namespace HappyTech
                     {
                         DisplayError( "Section name limit exceeded", "EditArea" );
                     }
-                    else if ( Constants.checkSection( TextBox_EditSectionName.Text ) )
+                    else if ( SqlConstants.checkSection( TextBox_EditSectionName.Text ) )
                     {
                         DisplayError( "This section name already exists", "EditArea" );
                     }
@@ -489,13 +489,13 @@ namespace HappyTech
 
                     else
                     {
-                        DataSet sectionDB       = Connection.GetDbConn().getDataSet( Constants.
+                        DataSet sectionDB       = Connection.GetDbConn().getDataSet( SqlConstants.
                                                     getSectionIdFromName( ComboBox_EditSectionChooseExisting.Text ) );
 
                         DataRow sectionDBValue  = sectionDB.Tables[0].Rows[0];
                         var sectionId           = sectionDBValue.ItemArray.GetValue(0);
 
-                        Connection.GetDbConn().CreateCommand( Constants.
+                        Connection.GetDbConn().CreateCommand( SqlConstants.
                             editSection( sectionId, TextBox_EditSectionName.Text.Replace( " ", "" ) ) );
 
                         UpdatePersonalSectionsForSection( sectionId );
@@ -544,7 +544,7 @@ namespace HappyTech
                     {
                         DisplayError( "Remove spaces from code name", "EditArea" );
                     }
-                    else if ( Constants.checkCode( TextBox_EditCodeName.Text ) )
+                    else if ( SqlConstants.checkCode( TextBox_EditCodeName.Text ) )
                     {
                         /* 
                          * This checks if the code name is still the same
@@ -579,13 +579,13 @@ namespace HappyTech
         /// </summary>
         private void SaveCodeChange()
         {
-            DataSet codeDB = Connection.GetDbConn().getDataSet(Constants.
+            DataSet codeDB = Connection.GetDbConn().getDataSet(SqlConstants.
                                             getCodeId(ComboBox_EditCodeChooseExisting.Text));
 
             DataRow codeDBValue = codeDB.Tables[0].Rows[0];
             var codeId = codeDBValue.ItemArray.GetValue(0);
 
-            Connection.GetDbConn().CreateCommand(Constants.
+            Connection.GetDbConn().CreateCommand(SqlConstants.
                 editCode(codeId, TextBox_EditCodeName.Text.ToUpper().Replace(" ", ""),
                 RichTextBox_EditCodeParagraph.Text));
 
@@ -651,7 +651,7 @@ namespace HappyTech
             {
                 string sectionName      = CheckedListBox_EditTemplateSection.Items[i].ToString();
                 DataSet sectionDB       = Connection.GetDbConn().
-                                            getDataSet( Constants.
+                                            getDataSet( SqlConstants.
                                                 getSectionIdFromName( sectionName ) );
                 DataRow sectionDBValue  = sectionDB.Tables[0].Rows[0];
                 var sectionId           = sectionDBValue.ItemArray.GetValue( 0 );
@@ -716,7 +716,7 @@ namespace HappyTech
             {
                 string templateName     = CheckedListBox_EditSectionTemplate.Items[i].ToString();
                 DataSet templateDB      = Connection.GetDbConn().
-                                            getDataSet( Constants.
+                                            getDataSet( SqlConstants.
                                                 getTemplateIdFromName( templateName ) );
                 DataRow templateDBValue = templateDB.Tables[0].Rows[0];
                 var templateId          = templateDBValue.ItemArray.GetValue( 0 );
@@ -817,13 +817,13 @@ namespace HappyTech
                     string templateName = ComboBox_EditTemplateChooseExisting.Text;
                     Console.WriteLine(ComboBox_EditTemplateChooseExisting);
                     DataSet templateDB = Connection.GetDbConn().
-                                                getDataSet(Constants.
+                                                getDataSet(SqlConstants.
                                                     getTemplateIdFromName(templateName));
                     DataRow templateDBValue = templateDB.Tables[0].Rows[0];
                     var templateId = templateDBValue.ItemArray.GetValue(0); 
-                    Connection.GetDbConn().CreateCommand(Constants.deleteTemplateFromId(templateId));
+                    Connection.GetDbConn().CreateCommand(SqlConstants.deleteTemplateFromId(templateId));
                     //need to delete the personalSection objects attached to this
-                    Connection.GetDbConn().CreateCommand(Constants.deletePersonalSectionUsingTemplateId(templateId));
+                    Connection.GetDbConn().CreateCommand(SqlConstants.deletePersonalSectionUsingTemplateId(templateId));
                     //reload combobox, clear edit text box, clear check grid
                     CheckedListBox_EditTemplateSection.Items.Clear();
                     //Populate_CheckedListBox_NewTemplateExistingSection();
@@ -837,12 +837,12 @@ namespace HappyTech
                     string sectionName = ComboBox_EditSectionChooseExisting.Text;
                     Console.WriteLine(ComboBox_EditSectionChooseExisting.Text);
                     DataSet sectionDB = Connection.GetDbConn().
-                                                getDataSet(Constants.
+                                                getDataSet(SqlConstants.
                                                     getSectionIdFromName(sectionName));
                     DataRow sectionDBValue = sectionDB.Tables[0].Rows[0];
                     var sectionId = sectionDBValue.ItemArray.GetValue(0);
-                    Connection.GetDbConn().CreateCommand(Constants.deleteSectionFromId(sectionId));
-                    Connection.GetDbConn().CreateCommand(Constants.deletePersonalSectionUsingSectionId(sectionId));
+                    Connection.GetDbConn().CreateCommand(SqlConstants.deleteSectionFromId(sectionId));
+                    Connection.GetDbConn().CreateCommand(SqlConstants.deletePersonalSectionUsingSectionId(sectionId));
                     //Populate_CheckedListBox_NewSectionExistingTemplates();
                     CheckedListBox_EditSectionTemplate.Items.Clear();
                     Populate_ComboBox_EditExistingSections();
@@ -856,11 +856,11 @@ namespace HappyTech
                     string codeName = ComboBox_EditCodeChooseExisting.Text;
                     Console.WriteLine(ComboBox_EditCodeChooseExisting.Text);
                     DataSet codeDB = Connection.GetDbConn().
-                                                getDataSet(Constants.
+                                                getDataSet(SqlConstants.
                                                     getCodeIdFromName(codeName));
                     DataRow codeDBValue = codeDB.Tables[0].Rows[0];
                     var codeId = codeDBValue.ItemArray.GetValue(0);
-                    Connection.GetDbConn().CreateCommand(Constants.deleteCodeFromId(codeId));
+                    Connection.GetDbConn().CreateCommand(SqlConstants.deleteCodeFromId(codeId));
                     RichTextBox_EditCodeParagraph.Clear();
                     ComboBox_EditCodeSection.Items.Clear();
                     //Populate_ComboBox_EditExistingCode();
@@ -1340,7 +1340,7 @@ namespace HappyTech
             UpdateList( "Section" );
 
             DataSet templateDB      = Connection.GetDbConn().
-                                        getDataSet( Constants.
+                                        getDataSet( SqlConstants.
                                             getTemplateIdFromName( TextBox_EditTemplateName.Text.Replace( " ", "" ) ) );
 
             DataRow templateDBValue = templateDB.Tables[0].Rows[0];
@@ -1402,7 +1402,7 @@ namespace HappyTech
             UpdateList( "Template" );
 
             DataSet sectionDB       = Connection.GetDbConn().
-                                        getDataSet( Constants.
+                                        getDataSet( SqlConstants.
                                             getSectionIdFromName( ComboBox_EditSectionChooseExisting.Text.Replace( " ", "" ) ) );
 
             DataRow sectionDBValue  = sectionDB.Tables[0].Rows[0];
@@ -1466,7 +1466,7 @@ namespace HappyTech
             }
 
             DataSet codeDB      = Connection.GetDbConn().
-                                    getDataSet( Constants.
+                                    getDataSet( SqlConstants.
                                         getCodeParaFromShort( ComboBox_EditCodeChooseExisting.Text.Replace( " ", "" ) ) );
 
             DataRow codeDBValue = codeDB.Tables[0].Rows[0];

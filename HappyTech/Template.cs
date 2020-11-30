@@ -1,4 +1,16 @@
-﻿using System;
+﻿/*
+ * 
+ * File: ConfRegistrForm.cs
+ * 
+ * Author 1: Campo, Simone. 1911840
+ * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * 
+ * Summary:     This file contains all the properties relating to the Templates.
+ *              It has two constructor as the first one uniquely creates an instance 
+ *              with the data stored into the database. The second one is used to create 
+ *              the templates for applicants, which include additional information such as the header
+ */
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -56,7 +68,7 @@ namespace HappyTech
         public static void GenerateTemplateForApplicant(Applicant Applicant, string tempType)
         {
             // retrieves the Id from the database
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(tempType));
+            DataSet ds = Connection.GetDbConn().getDataSet(SqlConstants.getTemplateIdFromName(tempType));
             DataRow dRow;
 
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -79,7 +91,7 @@ namespace HappyTech
         public static void FillTemplates()
         {
             // retrieves the Id from the database
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateNameId());
+            DataSet ds = Connection.GetDbConn().getDataSet(SqlConstants.getTemplateNameId());
             DataRow dRow;
 
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -115,18 +127,18 @@ namespace HappyTech
             if (stringOk == true)
             {
                 //has to create the section object first so we have a section ID to work with
-                string queryString = Constants.insertNewTemplate(input);
+                string queryString = SqlConstants.insertNewTemplate(input);
                 Connection.GetDbConn().CreateCommand(queryString);
                 //template object has now been created
                 //we will get the id of this new template first instead of getting it in each iteration of the loop
-                DataSet ds = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(input));
+                DataSet ds = Connection.GetDbConn().getDataSet(SqlConstants.getTemplateIdFromName(input));
                 DataRow dRow = ds.Tables[0].Rows[0];
                 var templateId = dRow.ItemArray.GetValue(0);
                 foreach (string section in selectedSections.CheckedItems)
                 {
                     //for each template selected, we have to add a template id and section id to PersonalSection
                     //so we will get the template id from the template name
-                    DataSet ds1 = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(section));
+                    DataSet ds1 = Connection.GetDbConn().getDataSet(SqlConstants.getSectionIdFromName(section));
                     DataRow dRow1 = ds1.Tables[0].Rows[0];
                     var sectionId = dRow1.ItemArray.GetValue(0);
                     //now we have the template id and section id

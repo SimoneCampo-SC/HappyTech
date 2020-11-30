@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+ * 
+ * File: ConfRegistrForm.cs
+ * 
+ * Author 1: Campo, Simone. 1911840
+ * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * 
+ * Summary:     This file contains all the properties relating to the Sections.
+ *              It also has a List which contains all the sections created
+ */
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
@@ -28,7 +38,7 @@ namespace HappyTech
         /// </summary>
         public static void FillSectionList ()
         {
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getSectionNameId());
+            DataSet ds = Connection.GetDbConn().getDataSet(SqlConstants.getSectionNameId());
             DataRow dRow;
 
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -53,17 +63,17 @@ namespace HappyTech
         public static void InsertSectionWithSelectedTemplates(string input, CheckedListBox templateCheckBox)
         {
              //has to create the section object first so we have a section ID to work with
-            string queryString = Constants.createNewTag(input);
+            string queryString = SqlConstants.createNewTag(input);
             Connection.GetDbConn().CreateCommand(queryString); //section object has now been created
             //we will get the id of this new section first instead of getting it in each iteration of the loop
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.getSectionIdFromName(input));
+            DataSet ds = Connection.GetDbConn().getDataSet(SqlConstants.getSectionIdFromName(input));
             DataRow dRow = ds.Tables[0].Rows[0];
             var sectionId = dRow.ItemArray.GetValue(0);
              foreach (string template in templateCheckBox.CheckedItems)
              {
                 //for each template selected, we have to add a template id and section id to PersonalSection
                 //so we will get the template id from the template name
-                DataSet ds1 = Connection.GetDbConn().getDataSet(Constants.getTemplateIdFromName(template));
+                DataSet ds1 = Connection.GetDbConn().getDataSet(SqlConstants.getTemplateIdFromName(template));
                 DataRow dRow1 = ds1.Tables[0].Rows[0];
                 var templateId = dRow1.ItemArray.GetValue(0);
                 //now we have the template id and section id

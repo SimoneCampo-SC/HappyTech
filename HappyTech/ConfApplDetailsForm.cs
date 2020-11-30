@@ -43,7 +43,7 @@ namespace HappyTech
             }
 
             // Load the Applicants added into the Database
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.SelectApplicant());
+            DataSet ds = Connection.GetDbConn().getDataSet(SqlConstants.SelectApplicant());
             dgvApplicant.DataSource = ds.Tables[0]; //shows first table
             for (int i = 0; i < dgvApplicant.Columns.Count; i++)
             {

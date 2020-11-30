@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+ * 
+ * File: ConfRegistrForm.cs
+ * 
+ * Author 1: Campo, Simone. 1911840
+ * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * 
+ * Summary:     This file allows the user to fill write feedback for the applicants previously added. 
+ *              In more details, the user can add comments and select codes belonging to the Template chosen.
+ *              They can also iterate at any time to all the other templates and the details will be saved.
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
