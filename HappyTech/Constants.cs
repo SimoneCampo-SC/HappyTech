@@ -78,15 +78,21 @@ namespace HappyTech
             string query = $"INSERT INTO Template (tempType) VALUES ('{templateName}')";
             return query;
         }
-        public static string createNewTag(string newTagName)
+        public static string createNewTag(string newSectionName)
         {
-            string query = $"INSERT INTO Section (name) VALUES ('{newTagName}')";
+            string query = $"INSERT INTO Section (name) VALUES ('{newSectionName}')";
             return query;
         }
 
         public static string insertNewCode(string codeShort, string codePara, object tag)
         {
             string query = $"INSERT INTO Codes (codeShort, codeParagraph , SectionNo) VALUES ('{codeShort}', '{codePara}', {tag})";
+            return query;
+        }
+
+        public static string getCodeIdFromName (string codeName)
+        {
+            string query = $"SELECT Id FROM Codes WHERE codeShort = '{codeName}'";
             return query;
         }
         public static string selectSectionName(int secID)
@@ -212,6 +218,36 @@ namespace HappyTech
         public static string deleteApplicant()
         {
             string query = $"DELETE FROM Applicant";
+            return query;
+        }
+
+        /* These are delete statements used in neweditdelete
+         * deletion of PersonalSection objects are required for this
+         * */
+        public static string deleteCodeFromId(object codeId)
+        {
+            string query = $"DELETE FROM Codes WHERE Id = '{codeId}'";
+                return query;
+        }
+        public static string deleteSectionFromId(object sectionId)
+        {
+            string query = $"DELETE FROM Section WHERE Id = '{sectionId}'";
+                return query;
+        }
+        public static string deleteTemplateFromId(object templateId)
+        {
+            string query = $"DELETE FROM Template WHERE Id = '{templateId}'"; 
+                return query;
+        }
+
+        public static string deletePersonalSectionUsingSectionId (object sectionId)
+        {
+            string query = $"DELETE FROM PersonalSection WHERE section_ID = '{sectionId}'";
+            return query;
+        }
+        public static string deletePersonalSectionUsingTemplateId(object templateId)
+        {
+            string query = $"DELETE FROM PersonalSection WHERE template_ID = '{templateId}'";
             return query;
         }
     }

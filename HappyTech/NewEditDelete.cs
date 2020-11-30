@@ -803,28 +803,68 @@ namespace HappyTech
         ///     Click trigger function for the edit area
         ///     delete button. This will delete the template,
         ///     section, or code from the database.
-        /// 
+        /// TODO: NEEDS TO DELETE THE CODE/ SECTION/ TEMPLATE
+        /// COMBOBOX_EDITCODECHOOSEEXISTING
+        /// have to delete all persionalsections for templates / sections
+        /// make sure that codes aren't deleteing when section is deleted
         /// </summary>
         private void Button_EditDelete_Click( object sender, EventArgs e )
         {
             switch (currentMode)
             {
                 case Mode.Template:
-
-                    // Delete template from database
-                    // Connection.GetDbConn().CreateCommand($"");
+                    //gets the value in the dropdown box, we need to make this an id
+                    string templateName = ComboBox_EditTemplateChooseExisting.Text;
+                    Console.WriteLine(ComboBox_EditTemplateChooseExisting);
+                    DataSet templateDB = Connection.GetDbConn().
+                                                getDataSet(Constants.
+                                                    getTemplateIdFromName(templateName));
+                    DataRow templateDBValue = templateDB.Tables[0].Rows[0];
+                    var templateId = templateDBValue.ItemArray.GetValue(0); 
+                    Connection.GetDbConn().CreateCommand(Constants.deleteTemplateFromId(templateId));
+                    //need to delete the personalSection objects attached to this
+                    Connection.GetDbConn().CreateCommand(Constants.deletePersonalSectionUsingTemplateId(templateId));
+                    //reload combobox, clear edit text box, clear check grid
+                    CheckedListBox_EditTemplateSection.Items.Clear();
+                    //Populate_CheckedListBox_NewTemplateExistingSection();
+                    Populate_ComboBox_EditExistingTemplate();
+                    TextBox_EditTemplateName.Clear();
+                    
 
                     break;
 
                 case Mode.Section:
-
+                    string sectionName = ComboBox_EditSectionChooseExisting.Text;
+                    Console.WriteLine(ComboBox_EditSectionChooseExisting.Text);
+                    DataSet sectionDB = Connection.GetDbConn().
+                                                getDataSet(Constants.
+                                                    getSectionIdFromName(sectionName));
+                    DataRow sectionDBValue = sectionDB.Tables[0].Rows[0];
+                    var sectionId = sectionDBValue.ItemArray.GetValue(0);
+                    Connection.GetDbConn().CreateCommand(Constants.deleteSectionFromId(sectionId));
+                    Connection.GetDbConn().CreateCommand(Constants.deletePersonalSectionUsingSectionId(sectionId));
+                    //Populate_CheckedListBox_NewSectionExistingTemplates();
+                    CheckedListBox_EditSectionTemplate.Items.Clear();
+                    Populate_ComboBox_EditExistingSections();
+                    TextBox_EditSectionName.Clear();
                     // Delete section from database
                     // Connection.GetDbConn().CreateCommand($"");
 
                     break;
 
                 case Mode.Code:
-
+                    string codeName = ComboBox_EditCodeChooseExisting.Text;
+                    Console.WriteLine(ComboBox_EditCodeChooseExisting.Text);
+                    DataSet codeDB = Connection.GetDbConn().
+                                                getDataSet(Constants.
+                                                    getCodeIdFromName(codeName));
+                    DataRow codeDBValue = codeDB.Tables[0].Rows[0];
+                    var codeId = codeDBValue.ItemArray.GetValue(0);
+                    Connection.GetDbConn().CreateCommand(Constants.deleteCodeFromId(codeId));
+                    RichTextBox_EditCodeParagraph.Clear();
+                    ComboBox_EditCodeSection.Items.Clear();
+                    //Populate_ComboBox_EditExistingCode();
+                    TextBox_EditCodeName.Clear();
                     // Delete code from database
                     // Connection.GetDbConn().CreateCommand($"");
 
