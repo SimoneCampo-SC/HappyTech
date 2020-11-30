@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+ * 
+ * File: ConfRegistrForm.cs
+ * 
+ * Author 1: Campo, Simone. 1911840
+ * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * 
+ * Summary:     This file allows the user to fill the applicant details into the application
+ *              and to select one of the available template types. It also allows the user to
+ *              logout from the system and to move to the codeViewForm.
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -256,6 +267,11 @@ namespace HappyTech
                 }
                 catch { }
             }
+        }
+
+        private void lbDocType_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+ * 
+ * File: ConfApplDetailsForm.cs
+ * 
+ * Author 1: Campo, Simone. 1911840
+ * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * 
+ * Summary:     This file displays all the applicants added by the Recruiter.
+ *              It also allows the user to delete all the applicants, to add
+ *              a newer one and to add writing feedback.
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

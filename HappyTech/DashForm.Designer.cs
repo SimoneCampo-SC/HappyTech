@@ -133,6 +133,7 @@
             this.lbDocType.Size = new System.Drawing.Size(171, 24);
             this.lbDocType.TabIndex = 0;
             this.lbDocType.Text = "Select template.";
+            this.lbDocType.Click += new System.EventHandler(this.lbDocType_Click);
             // 
             // tbAName
             // 
