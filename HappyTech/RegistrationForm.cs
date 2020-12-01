@@ -3,7 +3,7 @@
  * File: RegistrationForm.cs
  * 
  * Author 1: Campo, Simone. 1911840
- * Author 2: Hopper, Kean. SID
+ * Author 2: Hopper, Kean. 1911956
  * Author 3: Osborne, Oliver. 1602819
  * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 

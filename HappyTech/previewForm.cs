@@ -3,7 +3,7 @@
  * File: previewForm.cs
  * 
  * Author 1: Osborne, Oliver. 1602819
- * Author 2: Hopper, Kean. SID (EMAIL)
+ * Author 2: Hopper, Kean. SID
  * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
  * Summary:     This file allows the user to preview applicant feedback

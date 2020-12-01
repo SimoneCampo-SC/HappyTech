@@ -4,7 +4,7 @@
  * 
  * Author 1: Campo, Simone. 1911840
  * Author 2: Osborne, Oliver. 1602819
- * Author 3: Hopper, Kean. SID
+ * Author 3: Hopper, Kean. 1911956
  * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
  * Summary:     This file allows the user to select feedback for

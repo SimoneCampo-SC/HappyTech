@@ -2,7 +2,7 @@
  * 
  * File: NewEditDelete.cs
  * 
- * Author 1: Hopper, Kean. SID (EMAIL)
+ * Author 1: Hopper, Kean. 1911956
  * Author 2: Osborne, Oliver. 1602819
  * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
