@@ -1,4 +1,17 @@
-﻿using System;
+﻿/*
+ * 
+ * File: RegistrationForm.cs
+ * 
+ * Author 1: Campo, Simone. 1911840
+ * Author 2: Hopper, Kean. SID (EMAIL)
+ * Author 3: Osborne, Oliver. 1602819 (OMO123@student.aru.ac.uk)
+ * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * 
+ * Summary:     This file allows the users to create their own account filling
+ *              their name, surname, email and passoword. These Data are then saved
+ *              in the database.
+ */
+using System;
 using System.Windows.Forms;
 
 namespace HappyTech
@@ -27,7 +40,7 @@ namespace HappyTech
                 errorMessage.Text = "Required fields are missing";
             }
             // Checks whether the email provided already exists into the DB
-            else if (Constants.checkRecruiter(emailBox.Text) == true) 
+            else if (SqlConstants.checkRecruiter(emailBox.Text) == true) 
             {
                 errorMessage.Visible = true;
                 errorMessage.Text = "An account with this email already exists";
@@ -35,7 +48,7 @@ namespace HappyTech
             else
             {
                 // Add the credentials into the Database
-                string queryString = Constants.insertRecruiter(emailBox.Text, nameBox.Text, surnameBox.Text, passBox.Text);
+                string queryString = SqlConstants.insertRecruiter(emailBox.Text, nameBox.Text, surnameBox.Text, passBox.Text);
                 Connection.GetDbConn().CreateCommand(queryString);
 
                 // Current form is hidden, and the ConfRegistrForm is created and showed 

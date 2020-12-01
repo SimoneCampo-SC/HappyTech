@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+ * 
+ * File: ConfRegistrForm.cs
+ * 
+ * Author 1: Campo, Simone. 1911840
+ * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * 
+ * Summary:     This file allows the user to fill the applicant details into the application
+ *              and to select one of the available template types. It also allows the user to
+ *              logout from the system and to move to the codeViewForm.
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +39,7 @@ namespace HappyTech
             lbName.Text = $"{Recruiter.GetInstance().Name}.";
 
             // Gets all the templates from the database
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.selectTemplateType());
+            DataSet ds = Connection.GetDbConn().getDataSet(SqlConstants.selectTemplateType());
 
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
@@ -53,7 +64,7 @@ namespace HappyTech
                     // Deletes the applicants from the Database
                     Applicant.applicants.Clear();
                     Template.templatesForApplicants.Clear();
-                    Connection.GetDbConn().CreateCommand(Constants.deleteApplicant());
+                    Connection.GetDbConn().CreateCommand(SqlConstants.deleteApplicant());
                     break;
                 default:
                     // Do nothing 
@@ -72,7 +83,7 @@ namespace HappyTech
                 Recruiter.DestroyRecruiInstance(); // Recruiter instance is destroied
                 Applicant.applicants.Clear(); // Applicants list is cleared
                 Template.templatesForApplicants.Clear();
-                Connection.GetDbConn().CreateCommand(Constants.deleteApplicant()); // Applicants are deleted from the database
+                Connection.GetDbConn().CreateCommand(SqlConstants.deleteApplicant()); // Applicants are deleted from the database
                 LoginForm f1 = new LoginForm(); // Returns to the login form
                 f1.Show();
             }
@@ -96,10 +107,13 @@ namespace HappyTech
                 if ((tbAName.Text.Length <= 50) && (tbAJob.Text.Length <= 50) && (tbAEmail.Text.Length <= 50))
                 {
                     // Insert applicant details into the database
-                    Connection.GetDbConn().CreateCommand(Constants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, Recruiter.GetInstance().Id));
+                    Connection.GetDbConn().CreateCommand(SqlConstants.insertApplicant(tbAName.Text, tbAEmail.Text, 
+                                                         tbAJob.Text, Recruiter.GetInstance().Id));
 
                     // Crearte a new instance of the applicant class
-                    Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, Recruiter.GetInstance().Id, tempTypeBox.SelectedItem.ToString()); ;
+                    Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, 
+                                                        Recruiter.GetInstance().Id, tempTypeBox.SelectedItem.ToString()); 
+
                     // Add the instance into the applicant list
                     Applicant.applicants.Add(applicant);
 

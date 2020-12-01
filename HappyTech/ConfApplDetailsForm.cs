@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+ * 
+ * File: ConfApplDetailsForm.cs
+ * 
+ * Author 1: Campo, Simone. 1911840
+ * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * 
+ * Summary:     This file displays all the applicants added by the Recruiter.
+ *              It also allows the user to delete all the applicants, to add
+ *              a newer one and to add writing feedback.
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +43,7 @@ namespace HappyTech
             }
 
             // Load the Applicants added into the Database
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.SelectApplicant());
+            DataSet ds = Connection.GetDbConn().getDataSet(SqlConstants.SelectApplicant());
             dgvApplicant.DataSource = ds.Tables[0]; //shows first table
             for (int i = 0; i < dgvApplicant.Columns.Count; i++)
             {

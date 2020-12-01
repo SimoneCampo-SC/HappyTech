@@ -1,4 +1,16 @@
-﻿using System;
+﻿/*
+ * 
+ * File: LoginForm.cs
+ * 
+ * Author 1: Campo, Simone. 1911840
+ * Author 2: Hopper, Kean. SID (EMAIL)
+ * Author 3: Osborne, Oliver. 1602819 (OMO123@student.aru.ac.uk)
+ * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * 
+ * Summary:     This file allows the user to login into the system using
+ *              their own credentials.
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,7 +68,7 @@ namespace HappyTech
         private void loginButt_Click(object sender, EventArgs e)
         {
             // create a string query to ask the database for
-            string login = Constants.selectRecruiter(userEmail.Text, userPassword.Text);
+            string login = SqlConstants.selectRecruiter(userEmail.Text, userPassword.Text);
 
             // open the connection with the DB and ask the query to the database
             DataSet ds = Connection.GetDbConn().getDataSet(login);

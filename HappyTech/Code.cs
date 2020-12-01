@@ -1,4 +1,16 @@
-﻿using System;
+﻿/*
+ * 
+ * File: ConfRegistrForm.cs
+ * 
+ * Author 1: Campo, Simone. 1911840
+ * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * 
+ * Summary:     This class contains all the properties related to a Code. 
+ *              The instances of this class will be created and added 
+ *              into the codeList. 
+ *              Then, a secon List will store all the codes selected for each feedback
+ */
+using System;
 using System.Collections.Generic;
 using System.Data;
 
@@ -39,7 +51,7 @@ namespace HappyTech
         public static void fillCodeList()
         {
             // Retrieves the codes from the database
-            DataSet ds = Connection.GetDbConn().getDataSet(Constants.selectCodes());
+            DataSet ds = Connection.GetDbConn().getDataSet(SqlConstants.selectCodes());
             DataRow dRow;
 
             // Iterates through the table created
