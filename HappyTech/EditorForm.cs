@@ -168,43 +168,56 @@ namespace HappyTech
             if (mode == "feedback")
             {
                 // save template
-                using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + ".rtf"))
+                if (richTextBox2.Text.Length > 0)
                 {
-                    sw.WriteLine(richTextBox2.Text);
+                    using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + ".rtf"))
+                    {
+                        sw.WriteLine(richTextBox2.Text);
+                    }
                 }
 
+
                 // save comments
-                using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + "-comments.rtf"))
+                if (richTextBox1.Text.Length > 0)
                 {
-                    sw.WriteLine(richTextBox1.Text);
+                    using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + "-comments.rtf"))
+                    {
+                        sw.WriteLine(richTextBox1.Text);
+                    }
                 }
 
                 if (currentPosition < Template.templatesForApplicants.Count - 1)
                 {
-                    this.Hide();
+                    Hide();
                     EditorForm f = EditorClass.NextForm("forward", currentPosition);
                     f.Show();
                 }
                 else if (currentPosition >= Template.templatesForApplicants.Count - 1)
                 {
-                    this.Hide();
+                    Hide();
                     previewForm pf = new previewForm();
                     pf.Show();
                 }
             }
             else if (mode == "preview")
             {
-                using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + previewAppName + ".rtf"))
+                if (richTextBox2.Text.Length > 0)
                 {
-                    sw.WriteLine(richTextBox2.Text);
+                    using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + previewAppName + ".rtf"))
+                    {
+                        sw.WriteLine(richTextBox2.Text);
+                    }
                 }
 
-                using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + previewAppName + "-comments.rtf"))
+                if (richTextBox1.Text.Length > 0)
                 {
-                    sw.WriteLine(richTextBox1.Text);
+                    using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + previewAppName + "-comments.rtf"))
+                    {
+                        sw.WriteLine(richTextBox1.Text);
+                    }
                 }
 
-                this.Hide();
+                Hide();
                 previewForm pf = new previewForm();
                 pf.Show();
             }

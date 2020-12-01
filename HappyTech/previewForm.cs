@@ -3,7 +3,7 @@
  * File: previewForm.cs
  * 
  * Author 1: Osborne, Oliver. 1602819
- * Author 2: Hopper, Kean. SID
+ * Author 2: Hopper, Kean. 1911956
  * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
  * Summary:     This file allows the user to preview applicant feedback
@@ -185,9 +185,12 @@ namespace HappyTech
                 string recruiter    = Recruiter.GetInstance().Name;
 
 
-                using (StreamReader feedbackFile = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".rtf"))
+                if (File.Exists(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".rtf"))
                 {
-                    feedbackText = feedbackFile.ReadToEnd();
+                    using (StreamReader feedbackFile = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".rtf"))
+                    {
+                        feedbackText = feedbackFile.ReadToEnd();
+                    }
                 }
 
                 if (File.Exists(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + "-comments.rtf"))
