@@ -78,27 +78,27 @@
   <ItemGroup>
     <Compile Include="Applicant.cs" />
     <Compile Include="Code.cs" />
-    <Compile Include="codeViewForm.cs">
+    <Compile Include="CodeViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="codeViewForm.Designer.cs">
-      <DependentUpon>codeViewForm.cs</DependentUpon>
+    <Compile Include="CodeViewForm.Designer.cs">
+      <DependentUpon>CodeViewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConfRegistrForm.cs">
+    <Compile Include="ConfirmRegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConfRegistrForm.Designer.cs">
-      <DependentUpon>ConfRegistrForm.cs</DependentUpon>
+    <Compile Include="ConfirmRegisterForm.Designer.cs">
+      <DependentUpon>ConfirmRegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
-    <Compile Include="SqlConstants.cs" />
-    <Compile Include="ConfApplDetailsForm.cs">
+    <Compile Include="SqlQueries.cs" />
+    <Compile Include="ConfirmApplicantForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConfApplDetailsForm.Designer.cs">
-      <DependentUpon>ConfApplDetailsForm.cs</DependentUpon>
+    <Compile Include="ConfirmApplicantForm.Designer.cs">
+      <DependentUpon>ConfirmApplicantForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditorClass.cs" />
+    <Compile Include="FeedbackClass.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,23 +111,23 @@
     <Compile Include="DashForm.Designer.cs">
       <DependentUpon>DashForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FeedbackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeedbackForm.Designer.cs">
+      <DependentUpon>FeedbackForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditorForm.Designer.cs">
       <DependentUpon>EditorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewEditDelete.cs">
+    <Compile Include="PreviewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewEditDelete.Designer.cs">
-      <DependentUpon>NewEditDelete.cs</DependentUpon>
-    </Compile>
-    <Compile Include="previewForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="previewForm.Designer.cs">
-      <DependentUpon>previewForm.cs</DependentUpon>
+    <Compile Include="PreviewForm.Designer.cs">
+      <DependentUpon>PreviewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,18 +138,18 @@
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sections.cs" />
+    <Compile Include="Section.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Template.cs" />
-    <EmbeddedResource Include="codeViewForm.resx">
-      <DependentUpon>codeViewForm.cs</DependentUpon>
+    <EmbeddedResource Include="CodeViewForm.resx">
+      <DependentUpon>CodeViewForm.cs</DependentUpon>
       <LastGenOutput>codeViewForm1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConfApplDetailsForm.resx">
-      <DependentUpon>ConfApplDetailsForm.cs</DependentUpon>
+    <EmbeddedResource Include="ConfirmApplicantForm.resx">
+      <DependentUpon>ConfirmApplicantForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConfRegistrForm.resx">
-      <DependentUpon>ConfRegistrForm.cs</DependentUpon>
+    <EmbeddedResource Include="ConfirmRegisterForm.resx">
+      <DependentUpon>ConfirmRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -157,14 +157,14 @@
     <EmbeddedResource Include="DashForm.resx">
       <DependentUpon>DashForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FeedbackForm.resx">
+      <DependentUpon>FeedbackForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditorForm.resx">
       <DependentUpon>EditorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewEditDelete.resx">
-      <DependentUpon>NewEditDelete.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="previewForm.resx">
-      <DependentUpon>previewForm.cs</DependentUpon>
+    <EmbeddedResource Include="PreviewForm.resx">
+      <DependentUpon>PreviewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

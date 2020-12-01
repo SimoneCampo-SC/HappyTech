@@ -53,7 +53,7 @@ namespace HappyTech
         public static void fillCodeList()
         {
             // Retrieves the codes from the database
-            DataSet ds = Connection.GetDbConn().getDataSet(SqlConstants.selectCodes());
+            DataSet ds = Connection.GetDbConn().getDataSet(SqlQueries.selectCodes());
             DataRow dRow;
 
             // Iterates through the table created

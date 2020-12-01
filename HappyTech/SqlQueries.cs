@@ -1,6 +1,6 @@
 ﻿/**
  * 
- * File: SqlConstants.cs
+ * File: SqlQueries.cs
  * 
  * Author 1: Campo, Simone. 1911840
  * Author 2: Hopper, Kean 1911956
@@ -16,7 +16,7 @@ using System.Data;
 
 namespace HappyTech
 {
-    class SqlConstants
+    class SqlQueries
     {
         public static string SelectAllTemplates()
         {
@@ -29,18 +29,18 @@ namespace HappyTech
             return query;
         }
 
-        public static string getTagIdFromName(string input)
+        public static string GetTagIdFromName(string input)
         {
             string query = $"SELECT Id from Section where name = '{input}'";
             return query;
         }
-        public static string selectTemplateType()
+        public static string SelectTemplateType()
         {
             string query = $"SELECT tempType FROM Template";
             return query;
         }
 
-        static public string selectRecruiter(string userEmail, string userPass)
+        static public string SelectRecruiter(string userEmail, string userPass)
         {
             string query = $"SELECT * FROM Recruiter WHERE email = '{userEmail}' AND password = '{userPass}'";
             return query;
@@ -51,12 +51,12 @@ namespace HappyTech
             string query = $"SELECT * FROM Section";
             return query;
         }
-        static public string getCodeFromSectionId(object tagId)
+        static public string GetCodeFromSectionId(object tagId)
         {
             string query = $"SELECT codeShort, codeParagraph FROM Codes WHERE SectionNo = {tagId}";
             return query;
         }
-        static public string getCodeParaFromShort(string codeShort)
+        static public string GetCodeParaFromShort(string codeShort)
         {
             string query = $"SELECT codeParagraph FROM Codes WHERE codeShort = '{codeShort}'";
             return query;
@@ -67,33 +67,33 @@ namespace HappyTech
             string query = $"select name from Section where Id IN (select section_ID from PersonalSection where template_ID = (select Id from Template where tempType = '{templateName}'))";
             return query;
         }
-        static public string getTemplateName()
+        static public string GetTemplateName()
         {
             string query = "SELECT tempType FROM Template";
             return query;
         }
-        static public string getTemplateNameId() //gets name NAD id, used in addsection.cs for populating template check box
+        static public string GetTemplateNameId() //gets name NAD id, used in addsection.cs for populating template check box
         {
             string query = "SELECT Id, tempType FROM Template";
             return query;
         }
-        static public string getTemplateIdFromName(string tempName)
+        static public string GetTemplateIdFromName(string tempName)
         {
             string query = $"SELECT Id FROM Template WHERE tempType = '{tempName}'";
             return query;
         }
-        static public string insertNewTemplate(string templateName)
+        static public string InsertNewTemplate(string templateName)
         {
             string query = $"INSERT INTO Template (tempType) VALUES ('{templateName}')";
             return query;
         }
-        public static string createNewTag(string newSectionName)
+        public static string CreateNewTag(string newSectionName)
         {
             string query = $"INSERT INTO Section (name) VALUES ('{newSectionName}')";
             return query;
         }
 
-        public static string insertNewCode(string codeShort, string codePara, object tag)
+        public static string InsertNewCode(string codeShort, string codePara, object tag)
         {
             string query = $"INSERT INTO Codes (codeShort, codeParagraph , SectionNo) VALUES ('{codeShort}', '{codePara}', {tag})";
             return query;

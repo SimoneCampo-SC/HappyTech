@@ -1,6 +1,6 @@
 ﻿namespace HappyTech
 {
-    partial class ConfRegistrForm
+    partial class ConfirmRegisterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfRegistrForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfirmRegisterForm));
             this.lbSuccessful = new System.Windows.Forms.Label();
             this.btLogin = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();

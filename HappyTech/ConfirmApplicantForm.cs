@@ -1,6 +1,6 @@
 ﻿/**
  * 
- * File: ConfApplDetailsForm.cs
+ * File: ConfirmApplicantForm.cs
  * 
  * Author 1: Campo, Simone. 1911840
  * Author 2: Osborne, Oliver. 1602819
@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace HappyTech
 {
-    public partial class ConfApplDetailsForm : Form
+    public partial class ConfirmApplicantForm : Form
     {
         string cancelStage;
 
@@ -26,7 +26,7 @@ namespace HappyTech
         /// Constructor of the current Form
         /// </summary>
         /// <param name="value">holds the value which says whether the recruiter added a new applicant</param>
-        public ConfApplDetailsForm(bool value)
+        public ConfirmApplicantForm(bool value)
         {
             InitializeComponent();
 
@@ -40,7 +40,7 @@ namespace HappyTech
             }
 
             // Load the Applicants added into the Database
-            DataSet ds = Connection.GetDbConn().getDataSet(SqlConstants.SelectApplicant());
+            DataSet ds = Connection.GetDbConn().getDataSet(SqlQueries.SelectApplicant());
             dgvApplicant.DataSource = ds.Tables[0]; //shows first table
             for (int i = 0; i < dgvApplicant.Columns.Count; i++)
             {
@@ -72,7 +72,7 @@ namespace HappyTech
             this.Hide();
 
             // New EditorForm is created passing by values 2 (Default value) and 0
-            EditorForm f = EditorClass.NextForm("default", 0); 
+            FeedbackForm f = FeedbackClass.NextForm("default", 0); 
 
             f.Show();
         }

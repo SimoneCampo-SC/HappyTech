@@ -1,6 +1,6 @@
 ﻿/**
  * 
- * File: ConfRegistrForm.cs
+ * File: ConfirmRegisterForm.cs
  * 
  * Author 1: Campo, Simone. 1911840
  * Author 2: Hopper, Kean. 1911956
@@ -17,12 +17,12 @@ using System.Windows.Forms;
 
 namespace HappyTech
 {
-    public partial class ConfRegistrForm : Form
+    public partial class ConfirmRegisterForm : Form
     {
         /// <summary>
         /// Constructor ConfRegistrForm
         /// </summary>
-        public ConfRegistrForm()
+        public ConfirmRegisterForm()
         {
             InitializeComponent();
         }

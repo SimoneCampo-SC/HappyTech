@@ -1,6 +1,6 @@
 ﻿namespace HappyTech
 {
-    partial class ConfApplDetailsForm
+    partial class ConfirmApplicantForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfApplDetailsForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfirmApplicantForm));
             this.lbSuccess = new System.Windows.Forms.Label();
             this.lbApplicantNo = new System.Windows.Forms.Label();
             this.btNewApp = new System.Windows.Forms.Button();

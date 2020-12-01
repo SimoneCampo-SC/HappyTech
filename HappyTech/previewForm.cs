@@ -1,6 +1,6 @@
 ﻿/**
  * 
- * File: previewForm.cs
+ * File: PreviewForm.cs
  * 
  * Author 1: Osborne, Oliver. 1602819
  * Author 2: Hopper, Kean. 1911956
@@ -28,7 +28,7 @@ using PdfSharp.Pdf;
 
 namespace HappyTech
 {
-    public partial class previewForm : Form
+    public partial class PreviewForm : Form
     {
         // 
         private enum CancelStage
@@ -47,7 +47,7 @@ namespace HappyTech
         ///     Cleaned, needs commenting
         /// 
         /// </summary>
-        public previewForm()
+        public PreviewForm()
         {
             InitializeComponent();
 
@@ -108,7 +108,7 @@ namespace HappyTech
             //                                    applicantDetails[4]);       // type
             
             Hide();
-            EditorForm instance_EditorForm = new EditorForm(applicantDetails[2], applicantDetails[0], applicantDetails[3], applicantDetails[1], currentApplicant);
+            FeedbackForm instance_EditorForm = new FeedbackForm(applicantDetails[2], applicantDetails[0], applicantDetails[3], applicantDetails[1], currentApplicant);
             instance_EditorForm.Show();
         }
 

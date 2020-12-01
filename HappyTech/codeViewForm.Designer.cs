@@ -1,6 +1,6 @@
 ﻿namespace HappyTech
 {
-    partial class codeViewForm
+    partial class CodeViewForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(codeViewForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CodeViewForm));
             this.tagSelectBox = new System.Windows.Forms.ComboBox();
             this.tagBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codeDisplay = new System.Windows.Forms.DataGridView();

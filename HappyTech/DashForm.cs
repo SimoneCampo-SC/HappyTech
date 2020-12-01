@@ -39,7 +39,7 @@ namespace HappyTech
             lbName.Text = $"{Recruiter.GetInstance().Name}.";
 
             // Gets all the templates from the database
-            DataSet ds = Connection.GetDbConn().getDataSet(SqlConstants.selectTemplateType());
+            DataSet ds = Connection.GetDbConn().getDataSet(SqlQueries.SelectTemplateType());
 
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
@@ -64,7 +64,7 @@ namespace HappyTech
                     // Deletes the applicants from the Database
                     Applicant.applicants.Clear();
                     Template.templatesForApplicants.Clear();
-                    Connection.GetDbConn().CreateCommand(SqlConstants.deleteApplicant());
+                    Connection.GetDbConn().CreateCommand(SqlQueries.deleteApplicant());
                     break;
                 default:
                     // Do nothing 
@@ -83,7 +83,7 @@ namespace HappyTech
                 Recruiter.DestroyRecruiInstance(); // Recruiter instance is destroied
                 Applicant.applicants.Clear(); // Applicants list is cleared
                 Template.templatesForApplicants.Clear();
-                Connection.GetDbConn().CreateCommand(SqlConstants.deleteApplicant()); // Applicants are deleted from the database
+                Connection.GetDbConn().CreateCommand(SqlQueries.deleteApplicant()); // Applicants are deleted from the database
                 LoginForm f1 = new LoginForm(); // Returns to the login form
                 f1.Show();
             }
@@ -107,7 +107,7 @@ namespace HappyTech
                 if ((tbAName.Text.Length <= 50) && (tbAJob.Text.Length <= 50) && (tbAEmail.Text.Length <= 50))
                 {
                     // Insert applicant details into the database
-                    Connection.GetDbConn().CreateCommand(SqlConstants.insertApplicant(tbAName.Text, tbAEmail.Text, 
+                    Connection.GetDbConn().CreateCommand(SqlQueries.insertApplicant(tbAName.Text, tbAEmail.Text, 
                                                          tbAJob.Text, Recruiter.GetInstance().Id));
 
                     // Crearte a new instance of the applicant class
@@ -121,7 +121,7 @@ namespace HappyTech
 
                     this.Hide();
                     // Create a new ConfApplDetails form passing the value false
-                    ConfApplDetailsForm f3 = new ConfApplDetailsForm(true);
+                    ConfirmApplicantForm f3 = new ConfirmApplicantForm(true);
                     f3.Show();
                 }
                 else
@@ -144,13 +144,13 @@ namespace HappyTech
         private void btBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ConfApplDetailsForm f3 = new ConfApplDetailsForm(false);
+            ConfirmApplicantForm f3 = new ConfirmApplicantForm(false);
             f3.Show();
         }
         private void codeViewBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            codeViewForm f3 = new codeViewForm();
+            CodeViewForm f3 = new CodeViewForm();
             f3.Show();
         }
 

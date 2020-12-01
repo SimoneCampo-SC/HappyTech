@@ -1,6 +1,6 @@
 ﻿namespace HappyTech
 {
-    partial class previewForm
+    partial class PreviewForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(previewForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreviewForm));
             this.CheckedListBox_FeedbackList = new System.Windows.Forms.CheckedListBox();
             this.Button_Preview = new System.Windows.Forms.Button();
             this.Button_Cancel = new System.Windows.Forms.Button();

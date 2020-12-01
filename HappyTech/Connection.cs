@@ -2,7 +2,7 @@
  * 
  * File: Connections.cs
  * 
- * Author 1: Campo, Simone. 1911840
+ * Author 1: Hopper, Kean. 1911956
  * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
  * Summary:     This file creates the connections to the database

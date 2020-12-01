@@ -63,7 +63,7 @@ namespace HappyTech
         private void loginButt_Click(object sender, EventArgs e)
         {
             // create a string query to ask the database for
-            string login = SqlConstants.selectRecruiter(userEmail.Text, userPassword.Text);
+            string login = SqlQueries.SelectRecruiter(userEmail.Text, userPassword.Text);
 
             // open the connection with the DB and ask the query to the database
             DataSet ds = Connection.GetDbConn().getDataSet(login);
