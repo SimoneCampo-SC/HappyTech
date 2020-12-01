@@ -54,19 +54,19 @@
             this.imgStage1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelApplicants = new System.Windows.Forms.Panel();
+            this.btnAutofill = new System.Windows.Forms.Button();
+            this.btnDebug = new System.Windows.Forms.Button();
             this.lblCodeList = new System.Windows.Forms.Label();
             this.panelActions = new System.Windows.Forms.Panel();
             this.lblEditTemplates = new System.Windows.Forms.Label();
             this.panelDetails = new System.Windows.Forms.Panel();
+            this.lblCodeTotalVal = new System.Windows.Forms.Label();
+            this.lblCodeTotal = new System.Windows.Forms.Label();
+            this.lblSectTotalVal = new System.Windows.Forms.Label();
+            this.lblSectTotal = new System.Windows.Forms.Label();
             this.lblTempTotalVal = new System.Windows.Forms.Label();
             this.lblTempTotal = new System.Windows.Forms.Label();
             this.lblDetails = new System.Windows.Forms.Label();
-            this.lblSectTotalVal = new System.Windows.Forms.Label();
-            this.lblSectTotal = new System.Windows.Forms.Label();
-            this.lblCodeTotalVal = new System.Windows.Forms.Label();
-            this.lblCodeTotal = new System.Windows.Forms.Label();
-            this.btnDebug = new System.Windows.Forms.Button();
-            this.btnAutofill = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codeDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codesBindingSource)).BeginInit();
@@ -362,6 +362,36 @@
             this.panelApplicants.Size = new System.Drawing.Size(601, 515);
             this.panelApplicants.TabIndex = 15;
             // 
+            // btnAutofill
+            // 
+            this.btnAutofill.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAutofill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAutofill.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAutofill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAutofill.Location = new System.Drawing.Point(357, 7);
+            this.btnAutofill.Name = "btnAutofill";
+            this.btnAutofill.Size = new System.Drawing.Size(75, 23);
+            this.btnAutofill.TabIndex = 13;
+            this.btnAutofill.Text = "Autofill";
+            this.btnAutofill.UseVisualStyleBackColor = true;
+            this.btnAutofill.Visible = false;
+            // 
+            // btnDebug
+            // 
+            this.btnDebug.BackColor = System.Drawing.Color.White;
+            this.btnDebug.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDebug.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnDebug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDebug.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDebug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnDebug.Location = new System.Drawing.Point(519, 7);
+            this.btnDebug.Name = "btnDebug";
+            this.btnDebug.Size = new System.Drawing.Size(75, 23);
+            this.btnDebug.TabIndex = 12;
+            this.btnDebug.Text = "Debug";
+            this.btnDebug.UseVisualStyleBackColor = false;
+            this.btnDebug.Click += new System.EventHandler(this.btnDebug_Click);
+            // 
             // lblCodeList
             // 
             this.lblCodeList.AutoSize = true;
@@ -413,6 +443,52 @@
             this.panelDetails.Size = new System.Drawing.Size(211, 387);
             this.panelDetails.TabIndex = 49;
             // 
+            // lblCodeTotalVal
+            // 
+            this.lblCodeTotalVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblCodeTotalVal.ForeColor = System.Drawing.Color.Black;
+            this.lblCodeTotalVal.Location = new System.Drawing.Point(18, 310);
+            this.lblCodeTotalVal.Name = "lblCodeTotalVal";
+            this.lblCodeTotalVal.Size = new System.Drawing.Size(177, 14);
+            this.lblCodeTotalVal.TabIndex = 55;
+            this.lblCodeTotalVal.Text = "[code_total]";
+            this.lblCodeTotalVal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCodeTotal
+            // 
+            this.lblCodeTotal.AutoSize = true;
+            this.lblCodeTotal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblCodeTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblCodeTotal.Location = new System.Drawing.Point(18, 286);
+            this.lblCodeTotal.Name = "lblCodeTotal";
+            this.lblCodeTotal.Size = new System.Drawing.Size(46, 14);
+            this.lblCodeTotal.TabIndex = 54;
+            this.lblCodeTotal.Text = "Codes:";
+            this.lblCodeTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblSectTotalVal
+            // 
+            this.lblSectTotalVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblSectTotalVal.ForeColor = System.Drawing.Color.Black;
+            this.lblSectTotalVal.Location = new System.Drawing.Point(18, 249);
+            this.lblSectTotalVal.Name = "lblSectTotalVal";
+            this.lblSectTotalVal.Size = new System.Drawing.Size(177, 14);
+            this.lblSectTotalVal.TabIndex = 53;
+            this.lblSectTotalVal.Text = "[section_total]";
+            this.lblSectTotalVal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblSectTotal
+            // 
+            this.lblSectTotal.AutoSize = true;
+            this.lblSectTotal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblSectTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.lblSectTotal.Location = new System.Drawing.Point(18, 225);
+            this.lblSectTotal.Name = "lblSectTotal";
+            this.lblSectTotal.Size = new System.Drawing.Size(58, 14);
+            this.lblSectTotal.TabIndex = 52;
+            this.lblSectTotal.Text = "Sections:";
+            this.lblSectTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // lblTempTotalVal
             // 
             this.lblTempTotalVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
@@ -447,82 +523,6 @@
             this.lblDetails.TabIndex = 6;
             this.lblDetails.Text = "Details.";
             // 
-            // lblSectTotalVal
-            // 
-            this.lblSectTotalVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblSectTotalVal.ForeColor = System.Drawing.Color.Black;
-            this.lblSectTotalVal.Location = new System.Drawing.Point(18, 249);
-            this.lblSectTotalVal.Name = "lblSectTotalVal";
-            this.lblSectTotalVal.Size = new System.Drawing.Size(177, 14);
-            this.lblSectTotalVal.TabIndex = 53;
-            this.lblSectTotalVal.Text = "[section_total]";
-            this.lblSectTotalVal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblSectTotal
-            // 
-            this.lblSectTotal.AutoSize = true;
-            this.lblSectTotal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblSectTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblSectTotal.Location = new System.Drawing.Point(18, 225);
-            this.lblSectTotal.Name = "lblSectTotal";
-            this.lblSectTotal.Size = new System.Drawing.Size(58, 14);
-            this.lblSectTotal.TabIndex = 52;
-            this.lblSectTotal.Text = "Sections:";
-            this.lblSectTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblCodeTotalVal
-            // 
-            this.lblCodeTotalVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCodeTotalVal.ForeColor = System.Drawing.Color.Black;
-            this.lblCodeTotalVal.Location = new System.Drawing.Point(18, 310);
-            this.lblCodeTotalVal.Name = "lblCodeTotalVal";
-            this.lblCodeTotalVal.Size = new System.Drawing.Size(177, 14);
-            this.lblCodeTotalVal.TabIndex = 55;
-            this.lblCodeTotalVal.Text = "[code_total]";
-            this.lblCodeTotalVal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblCodeTotal
-            // 
-            this.lblCodeTotal.AutoSize = true;
-            this.lblCodeTotal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCodeTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblCodeTotal.Location = new System.Drawing.Point(18, 286);
-            this.lblCodeTotal.Name = "lblCodeTotal";
-            this.lblCodeTotal.Size = new System.Drawing.Size(46, 14);
-            this.lblCodeTotal.TabIndex = 54;
-            this.lblCodeTotal.Text = "Codes:";
-            this.lblCodeTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnDebug
-            // 
-            this.btnDebug.BackColor = System.Drawing.Color.White;
-            this.btnDebug.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDebug.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnDebug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDebug.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDebug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnDebug.Location = new System.Drawing.Point(519, 7);
-            this.btnDebug.Name = "btnDebug";
-            this.btnDebug.Size = new System.Drawing.Size(75, 23);
-            this.btnDebug.TabIndex = 12;
-            this.btnDebug.Text = "Debug";
-            this.btnDebug.UseVisualStyleBackColor = false;
-            this.btnDebug.Click += new System.EventHandler(this.btnDebug_Click);
-            // 
-            // btnAutofill
-            // 
-            this.btnAutofill.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAutofill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutofill.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnAutofill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAutofill.Location = new System.Drawing.Point(357, 7);
-            this.btnAutofill.Name = "btnAutofill";
-            this.btnAutofill.Size = new System.Drawing.Size(75, 23);
-            this.btnAutofill.TabIndex = 13;
-            this.btnAutofill.Text = "Autofill";
-            this.btnAutofill.UseVisualStyleBackColor = true;
-            this.btnAutofill.Visible = false;
-            // 
             // codeViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -538,7 +538,6 @@
             this.MaximumSize = new System.Drawing.Size(998, 602);
             this.MinimumSize = new System.Drawing.Size(998, 602);
             this.Name = "codeViewForm";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
             ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).EndInit();

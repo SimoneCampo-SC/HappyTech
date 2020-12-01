@@ -1077,9 +1077,8 @@
             this.MaximumSize = new System.Drawing.Size(998, 602);
             this.MinimumSize = new System.Drawing.Size(998, 602);
             this.Name = "NewEditDelete";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "s";
+            this.Text = "HappyTech";
             this.Panel_Management.ResumeLayout(false);
             this.Panel_Management.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage3)).EndInit();

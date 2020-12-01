@@ -101,11 +101,11 @@ namespace HappyTech
 
             TestFilesNotInUse();
 
-            Applicant applicant = new Applicant(applicantDetails[2],        // name
-                                                applicantDetails[3],        // email
-                                                applicantDetails[1],        // job
-                                                Recruiter.GetInstance().Id, // recruiter id
-                                                applicantDetails[4]);       // type
+            //Applicant applicant = new Applicant(applicantDetails[2],        // name
+            //                                    applicantDetails[3],        // email
+            //                                    applicantDetails[1],        // job
+            //                                    Recruiter.GetInstance().Id, // recruiter id
+            //                                    applicantDetails[4]);       // type
             
             Hide();
             EditorForm instance_EditorForm = new EditorForm(applicantDetails[2], applicantDetails[0], applicantDetails[3], applicantDetails[1], currentApplicant);

@@ -429,29 +429,24 @@ namespace HappyTech
                     }
                     else if ( SqlConstants.checkTemplate( TextBox_EditTemplateName.Text ) )
                     {
-                        DisplayError( "This template name already exists", "EditArea" );
+                        /* 
+                         * This checks if the template name is still the same
+                         * so that the user can only edit the section if
+                         * they want without being forced to change the name.
+                         */
+
+                        if (TextBox_EditTemplateName.Text == ComboBox_EditTemplateChooseExisting.SelectedItem.ToString())
+                        {
+                            SaveTemplateChange();
+                        }
+                        else
+                        {
+                            DisplayError("This template name already exists", "EditArea");
+                        }
                     }
-
-                    /* 
-                     * Find existing template, update template in database, reset fields, display success.
-                     */
-
                     else
                     {
-                        DataSet templateDB      = Connection.GetDbConn().getDataSet( SqlConstants.
-                                                    getTemplateIdFromName( ComboBox_EditTemplateChooseExisting.Text.Replace( " ", "" ) ) );
-
-                        DataRow templateDBValue = templateDB.Tables[0].Rows[0];
-                        var templateId          = templateDBValue.ItemArray.GetValue(0);
-
-                        Connection.GetDbConn().CreateCommand( SqlConstants.editTemplate( templateId,
-                            TextBox_EditTemplateName.Text ) );
-
-                        UpdatePersonalSectionsForTemplate( templateId );
-
-                        ClearTemplateModeFields();
-
-                        DisplaySuccess( "Template edit saved", "EditArea" );
+                        SaveTemplateChange();
                     }
 
                     break;
@@ -480,29 +475,24 @@ namespace HappyTech
                     }
                     else if ( SqlConstants.checkSection( TextBox_EditSectionName.Text ) )
                     {
-                        DisplayError( "This section name already exists", "EditArea" );
+                        /* 
+                         * This checks if the section name is still the same
+                         * so that the user can only edit the template if
+                         * they want without being forced to change the name.
+                         */
+
+                        if (TextBox_EditSectionName.Text == ComboBox_EditSectionChooseExisting.SelectedItem.ToString())
+                        {
+                            SaveSectionChange();
+                        }
+                        else
+                        {
+                            DisplayError("This section name already exists", "EditArea");
+                        }
                     }
-
-                    /* 
-                     * Find existing section, update section in database, reset fields, display success.
-                     */
-
                     else
                     {
-                        DataSet sectionDB       = Connection.GetDbConn().getDataSet( SqlConstants.
-                                                    getSectionIdFromName( ComboBox_EditSectionChooseExisting.Text ) );
-
-                        DataRow sectionDBValue  = sectionDB.Tables[0].Rows[0];
-                        var sectionId           = sectionDBValue.ItemArray.GetValue(0);
-
-                        Connection.GetDbConn().CreateCommand( SqlConstants.
-                            editSection( sectionId, TextBox_EditSectionName.Text.Replace( " ", "" ) ) );
-
-                        UpdatePersonalSectionsForSection( sectionId );
-                        
-                        ClearSectionModeFields();
-
-                        DisplaySuccess( "Section edit saved", "EditArea" );
+                        SaveSectionChange();
                     }
 
                     break;
@@ -558,7 +548,7 @@ namespace HappyTech
                         }
                         else
                         {
-                            DisplayError( "A code with this name already exists", "EditArea" );
+                            DisplayError("This code name already exists", "EditArea" );
                         }
                     }
                     else
@@ -568,6 +558,54 @@ namespace HappyTech
 
                     break;
             }
+        }
+
+        /// <summary>
+        /// 
+        ///     Find existing template, update template name
+        ///     in database, reset fields, display success.
+        /// 
+        /// </summary>
+        private void SaveTemplateChange()
+        {
+            DataSet templateDB = Connection.GetDbConn().getDataSet(SqlConstants.
+                                                    getTemplateIdFromName(ComboBox_EditTemplateChooseExisting.Text.Replace(" ", "")));
+
+            DataRow templateDBValue = templateDB.Tables[0].Rows[0];
+            var templateId = templateDBValue.ItemArray.GetValue(0);
+
+            Connection.GetDbConn().CreateCommand(SqlConstants.editTemplate(templateId,
+                TextBox_EditTemplateName.Text));
+
+            UpdatePersonalSectionsForTemplate(templateId);
+
+            ClearTemplateModeFields();
+
+            DisplaySuccess("Template edit saved", "EditArea");
+        }
+
+        /// <summary>
+        /// 
+        ///     Find existing section, update section name
+        ///     in database, reset fields, display success.
+        /// 
+        /// </summary>
+        private void SaveSectionChange()
+        {
+            DataSet sectionDB = Connection.GetDbConn().getDataSet(SqlConstants.
+                                                    getSectionIdFromName(ComboBox_EditSectionChooseExisting.Text));
+
+            DataRow sectionDBValue = sectionDB.Tables[0].Rows[0];
+            var sectionId = sectionDBValue.ItemArray.GetValue(0);
+
+            Connection.GetDbConn().CreateCommand(SqlConstants.
+                editSection(sectionId, TextBox_EditSectionName.Text.Replace(" ", "")));
+
+            UpdatePersonalSectionsForSection(sectionId);
+
+            ClearSectionModeFields();
+
+            DisplaySuccess("Section edit saved", "EditArea");
         }
 
         /// <summary>
@@ -816,69 +854,72 @@ namespace HappyTech
                         DisplayError("Select a template to edit", "EditArea");
                         break;
                     }
-                    //gets the value in the dropdown box, we need to make this an id
+
                     string templateName = ComboBox_EditTemplateChooseExisting.Text;
-                    Console.WriteLine(ComboBox_EditTemplateChooseExisting);
                     DataSet templateDB = Connection.GetDbConn().
                                                 getDataSet(SqlConstants.
                                                     getTemplateIdFromName(templateName));
+
                     DataRow templateDBValue = templateDB.Tables[0].Rows[0];
-                    var templateId = templateDBValue.ItemArray.GetValue(0); 
-                    Connection.GetDbConn().CreateCommand(SqlConstants.deleteTemplateFromId(templateId));
-                    //need to delete the personalSection objects attached to this
-                    Connection.GetDbConn().CreateCommand(SqlConstants.deletePersonalSectionUsingTemplateId(templateId));
-                    //reload combobox, clear edit text box, clear check grid
-                    CheckedListBox_EditTemplateSection.Items.Clear();
-                    //Populate_CheckedListBox_NewTemplateExistingSection();
-                    Populate_ComboBox_EditExistingTemplate();
-                    TextBox_EditTemplateName.Clear();
+                    object templateId = templateDBValue.ItemArray.GetValue(0); 
+
+                    Connection.GetDbConn().CreateCommand(SqlConstants.
+                        deleteTemplateFromId(templateId));
+
+                    Connection.GetDbConn().CreateCommand(SqlConstants.
+                        deletePersonalSectionUsingTemplateId(templateId));
+
+                    ClearTemplateModeFields();
 
                     DisplaySuccess( "Template deleted", "EditArea" );
 
                     break;
 
                 case Mode.Section:
-                    if (ComboBox_EditTemplateChooseExisting.SelectedItem == null)
+                    if (ComboBox_EditSectionChooseExisting.SelectedItem == null)
                     {
-                        DisplayError("Select a template to edit", "EditArea");
+                        DisplayError("Select a section to edit", "EditArea");
                         break;
                     }
                     string sectionName = ComboBox_EditSectionChooseExisting.Text;
-                    Console.WriteLine(ComboBox_EditSectionChooseExisting.Text);
+
                     DataSet sectionDB = Connection.GetDbConn().
                                                 getDataSet(SqlConstants.
                                                     getSectionIdFromName(sectionName));
+
                     DataRow sectionDBValue = sectionDB.Tables[0].Rows[0];
                     var sectionId = sectionDBValue.ItemArray.GetValue(0);
-                    Connection.GetDbConn().CreateCommand(SqlConstants.deleteSectionFromId(sectionId));
-                    Connection.GetDbConn().CreateCommand(SqlConstants.deletePersonalSectionUsingSectionId(sectionId));
-                    //Populate_CheckedListBox_NewSectionExistingTemplates();
-                    CheckedListBox_EditSectionTemplate.Items.Clear();
-                    Populate_ComboBox_EditExistingSections();
-                    TextBox_EditSectionName.Clear();
+
+                    Connection.GetDbConn().CreateCommand(SqlConstants.
+                        deleteSectionFromId(sectionId));
+                    Connection.GetDbConn().CreateCommand(SqlConstants.
+                        deletePersonalSectionUsingSectionId(sectionId));
+
+                    ClearSectionModeFields();
 
                     DisplaySuccess( "Section deleted", "EditArea" );
 
                     break;
 
                 case Mode.Code:
-                    if (ComboBox_EditTemplateChooseExisting.SelectedItem == null)
+                    if (ComboBox_EditCodeChooseExisting.SelectedItem == null)
                     {
                         DisplayError("Select a code to edit", "EditArea");
                         break; 
                     }
                     string codeName = ComboBox_EditCodeChooseExisting.Text;
-                    Console.WriteLine(ComboBox_EditCodeChooseExisting.Text);
+
                     DataSet codeDB = Connection.GetDbConn().
                                                 getDataSet(SqlConstants.
                                                     getCodeIdFromName(codeName));
+
                     DataRow codeDBValue = codeDB.Tables[0].Rows[0];
                     var codeId = codeDBValue.ItemArray.GetValue(0);
-                    Connection.GetDbConn().CreateCommand(SqlConstants.deleteCodeFromId(codeId));
-                    RichTextBox_EditCodeParagraph.Clear();
-                    ComboBox_EditCodeSection.Items.Clear();
-                    //Populate_ComboBox_EditExistingCode();
-                    TextBox_EditCodeName.Clear();
+
+                    Connection.GetDbConn().CreateCommand(SqlConstants.
+                        deleteCodeFromId(codeId));
+
+                    ClearCodeModeFields();
 
                     DisplaySuccess( "Code deleted", "EditArea" );
 
