@@ -813,6 +813,12 @@ namespace HappyTech
             switch (currentMode)
             {
                 case Mode.Template:
+
+                    if (ComboBox_EditTemplateChooseExisting.SelectedItem == null)
+                    {
+                        DisplayError("Select a template to edit", "EditArea");
+                        break;
+                    }
                     //gets the value in the dropdown box, we need to make this an id
                     string templateName = ComboBox_EditTemplateChooseExisting.Text;
                     Console.WriteLine(ComboBox_EditTemplateChooseExisting);
@@ -834,6 +840,11 @@ namespace HappyTech
                     break;
 
                 case Mode.Section:
+                    if (ComboBox_EditTemplateChooseExisting.SelectedItem == null)
+                    {
+                        DisplayError("Select a template to edit", "EditArea");
+                        break;
+                    }
                     string sectionName = ComboBox_EditSectionChooseExisting.Text;
                     Console.WriteLine(ComboBox_EditSectionChooseExisting.Text);
                     DataSet sectionDB = Connection.GetDbConn().
@@ -853,6 +864,11 @@ namespace HappyTech
                     break;
 
                 case Mode.Code:
+                    if (ComboBox_EditTemplateChooseExisting.SelectedItem == null)
+                    {
+                        DisplayError("Select a code to edit", "EditArea");
+                        break; 
+                    }
                     string codeName = ComboBox_EditCodeChooseExisting.Text;
                     Console.WriteLine(ComboBox_EditCodeChooseExisting.Text);
                     DataSet codeDB = Connection.GetDbConn().
