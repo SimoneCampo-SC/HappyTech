@@ -107,10 +107,13 @@ namespace HappyTech
                 if ((tbAName.Text.Length <= 50) && (tbAJob.Text.Length <= 50) && (tbAEmail.Text.Length <= 50))
                 {
                     // Insert applicant details into the database
-                    Connection.GetDbConn().CreateCommand(SqlConstants.insertApplicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, Recruiter.GetInstance().Id));
+                    Connection.GetDbConn().CreateCommand(SqlConstants.insertApplicant(tbAName.Text, tbAEmail.Text, 
+                                                         tbAJob.Text, Recruiter.GetInstance().Id));
 
                     // Crearte a new instance of the applicant class
-                    Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, Recruiter.GetInstance().Id, tempTypeBox.SelectedItem.ToString()); ;
+                    Applicant applicant = new Applicant(tbAName.Text, tbAEmail.Text, tbAJob.Text, 
+                                                        Recruiter.GetInstance().Id, tempTypeBox.SelectedItem.ToString()); 
+
                     // Add the instance into the applicant list
                     Applicant.applicants.Add(applicant);
 
@@ -267,11 +270,6 @@ namespace HappyTech
                 }
                 catch { }
             }
-        }
-
-        private void lbDocType_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

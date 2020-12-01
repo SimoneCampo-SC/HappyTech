@@ -257,8 +257,6 @@ namespace HappyTech
                     catch 
                     {
                         // Just in case there is a section that has no codes attached
-                        Exception ex = new Exception("No Codes Attached");
-                        listBox.Items.Add(ex.Message);
                     } 
                 }
             }
