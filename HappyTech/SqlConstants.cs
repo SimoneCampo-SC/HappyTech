@@ -1,17 +1,17 @@
-﻿/*
+﻿/**
  * 
  * File: SqlConstants.cs
  * 
  * Author 1: Campo, Simone. 1911840
- * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * Author 2: Hopper, Kean SID
+ * Author 3: Osborne, Oliver 1602819
+ * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
- * Summary:     This file contains all the SQL Queries used whithin the program
+ * Summary:     This file contains all the SQL queries used in the
+ *              program.
+ * 
  */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Data;
 
 namespace HappyTech
@@ -165,43 +165,31 @@ namespace HappyTech
         public static bool checkTemplate(string template)
         {
             string query = $"SELECT * FROM Template WHERE tempType = '{template}'";
-            DataSet ds = Connection.GetDbConn().getDataSet(query);
-            if (ds.Tables[0].Rows.Count != 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
+            DataSet templateDB = Connection.GetDbConn().getDataSet(query);
+
+            if (templateDB.Tables[0].Rows.Count != 0) return true;
+            else return false;
         }
 
         public static bool checkSection(string section)
         {
             string query = $"SELECT * FROM Section WHERE name = '{section}'";
-            DataSet ds = Connection.GetDbConn().getDataSet(query);
-            if (ds.Tables[0].Rows.Count != 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
+            DataSet sectionDB = Connection.GetDbConn().getDataSet(query);
+
+            if (sectionDB.Tables[0].Rows.Count != 0) return true;
+            else return false;
         }
 
         public static bool checkCode(string code)
         {
             string query = $"SELECT * FROM Codes WHERE codeShort = '{code}'";
-            DataSet ds = Connection.GetDbConn().getDataSet(query);
-            if (ds.Tables[0].Rows.Count != 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
+            DataSet codeDB = Connection.GetDbConn().getDataSet(query);
+
+            if (codeDB.Tables[0].Rows.Count != 0) return true;
+            else return false;
         }
 
         public static string insertRecruiter(string email, string name, string surname, string password)

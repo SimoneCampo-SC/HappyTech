@@ -1,25 +1,24 @@
-﻿/*
+﻿/**
  * 
- * File: ConfRegistrForm.cs
+ * File: EditorForm.cs
  * 
  * Author 1: Campo, Simone. 1911840
- * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * Author 2: Osborne, Oliver. 1602819
+ * Author 3: Hopper, Kean. SID
+ * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
- * Summary:     This file allows the user to fill write feedback for the applicants previously added. 
- *              In more details, the user can add comments and select codes belonging to the Template chosen.
- *              They can also iterate at any time to all the other templates and the details will be saved.
+ * Summary:     This file allows the user to select feedback for
+ *              applicants. Furthermore, the user can add comments
+ *              and select codes belonging to the template chosen.
+ *              They can also iterate at any time to all the other
+ *              templates and the details will be saved.
+ *              
  */
+
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace HappyTech
 {

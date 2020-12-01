@@ -1,22 +1,19 @@
-﻿/*
+﻿/**
  * 
  * File: ConfApplDetailsForm.cs
  * 
  * Author 1: Campo, Simone. 1911840
- * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * Author 2: Osborne, Oliver. 1602819
+ * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
- * Summary:     This file displays all the applicants added by the Recruiter.
- *              It also allows the user to delete all the applicants, to add
- *              a newer one and to add writing feedback.
+ * Summary:     This file displays all applicants added by the user.
+ *              It allows the user to delete all applicants, to add
+ *              more, and to begin feedback.
+ *              
  */
+
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HappyTech

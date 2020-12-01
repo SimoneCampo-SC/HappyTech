@@ -1,8 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/**
+ * 
+ * File: Connections.cs
+ * 
+ * Author 1: Campo, Simone. 1911840
+ * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
+ * 
+ * Summary:     This file creates the connections to the database
+ *              used throughout the program.
+ *              
+ */
+
 using System.Data;
 using System.Data.SqlClient;
 

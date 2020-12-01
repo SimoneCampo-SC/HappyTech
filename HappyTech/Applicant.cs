@@ -1,19 +1,18 @@
-﻿/*
+﻿/**
  * 
  * File: Applicant.cs
  * 
  * Author 1: Campo, Simone. 1911840
- * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
- * Summary:     This class contains all the properties related to an Applicant. 
+ * Summary:     This class contains all the properties related to an applicant. 
  *              The instances of this class will be added into the database and 
  *              into the list.
+ *              
  */
+
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HappyTech
 {

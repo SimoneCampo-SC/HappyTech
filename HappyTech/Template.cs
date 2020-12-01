@@ -1,22 +1,21 @@
-﻿/*
+﻿/**
  * 
- * File: ConfRegistrForm.cs
+ * File: Template.cs
  * 
  * Author 1: Campo, Simone. 1911840
- * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
- * Summary:     This file contains all the properties relating to the Templates.
- *              It has two constructor as the first one uniquely creates an instance 
- *              with the data stored into the database. The second one is used to create 
- *              the templates for applicants, which include additional information such as the header
+ * Summary:     This file contains all the properties relating to the
+ *              templates. It has two constructors, the first creates 
+ *              an instance with the data stored into the database. The
+ *              second is used to create the templates for applicants,
+ *              which include additional information such as the header.
+ *              
  */
+
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HappyTech

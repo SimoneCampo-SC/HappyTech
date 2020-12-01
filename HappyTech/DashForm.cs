@@ -1,24 +1,24 @@
-﻿/*
+﻿/**
  * 
- * File: ConfRegistrForm.cs
+ * File: DashForm.cs
  * 
  * Author 1: Campo, Simone. 1911840
- * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * Author 2: Osborne, Oliver. 1602819
+ * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
- * Summary:     This file allows the user to fill the applicant details into the application
- *              and to select one of the available template types. It also allows the user to
- *              logout from the system and to move to the codeViewForm.
+ * Summary:     This file allows the user to fill applicant details into
+ *              the application and to select one of the available template
+ *              types. It also allows the user to logout from the system and
+ *              to move to the codeViewForm.
+ *              
  */
+
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace HappyTech
 {

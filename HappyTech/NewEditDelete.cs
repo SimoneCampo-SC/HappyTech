@@ -1,10 +1,10 @@
-﻿/*
+﻿/**
  * 
  * File: NewEditDelete.cs
  * 
  * Author 1: Hopper, Kean. SID (EMAIL)
- * Author 2: Osborne, Oliver. 1602819 (OMO123@student.aru.ac.uk)
- * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * Author 2: Osborne, Oliver. 1602819
+ * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
  * Summary:     This file allows the user to create, edit, and delete 
  *              templates, sections, and codes. These are then saved
@@ -803,10 +803,7 @@ namespace HappyTech
         ///     Click trigger function for the edit area
         ///     delete button. This will delete the template,
         ///     section, or code from the database.
-        /// TODO: NEEDS TO DELETE THE CODE/ SECTION/ TEMPLATE
-        /// COMBOBOX_EDITCODECHOOSEEXISTING
-        /// have to delete all persionalsections for templates / sections
-        /// make sure that codes aren't deleteing when section is deleted
+        ///     
         /// </summary>
         private void Button_EditDelete_Click( object sender, EventArgs e )
         {
@@ -835,7 +832,8 @@ namespace HappyTech
                     //Populate_CheckedListBox_NewTemplateExistingSection();
                     Populate_ComboBox_EditExistingTemplate();
                     TextBox_EditTemplateName.Clear();
-                    
+
+                    DisplaySuccess( "Template deleted", "EditArea" );
 
                     break;
 
@@ -858,8 +856,8 @@ namespace HappyTech
                     CheckedListBox_EditSectionTemplate.Items.Clear();
                     Populate_ComboBox_EditExistingSections();
                     TextBox_EditSectionName.Clear();
-                    // Delete section from database
-                    // Connection.GetDbConn().CreateCommand($"");
+
+                    DisplaySuccess( "Section deleted", "EditArea" );
 
                     break;
 
@@ -881,8 +879,8 @@ namespace HappyTech
                     ComboBox_EditCodeSection.Items.Clear();
                     //Populate_ComboBox_EditExistingCode();
                     TextBox_EditCodeName.Clear();
-                    // Delete code from database
-                    // Connection.GetDbConn().CreateCommand($"");
+
+                    DisplaySuccess( "Code deleted", "EditArea" );
 
                     break;
             }

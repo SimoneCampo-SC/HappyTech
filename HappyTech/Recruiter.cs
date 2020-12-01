@@ -1,18 +1,14 @@
-﻿/*
+﻿/**
  * 
- * File: ConfRegistrForm.cs
+ * File: Recruiter.cs
  * 
  * Author 1: Campo, Simone. 1911840
- * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
- * Summary:     This file contains all the properties that belong to the Recruiter instance
+ * Summary:     This file contains all the properties that belong to the
+ *              recruiter instance.
+ *              
  */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.InteropServices;
 
 namespace HappyTech
 {

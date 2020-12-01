@@ -2,13 +2,13 @@
  * 
  * File: previewForm.cs
  * 
- * Author 1: Osborne, Oliver. 1602819 (OMO123@student.aru.ac.uk)
+ * Author 1: Osborne, Oliver. 1602819
  * Author 2: Hopper, Kean. SID (EMAIL)
- * Course: BEng (Hons) Computer Science, Year 2 Timester 1
+ * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
  * Summary:     This file allows the user to preview applicant feedback
- *              before submitting it. The user can then submit which will
- *              save the all feedback as a PDF (to theoretically send bulk emails).
+ *              before submitting it. The user can then submit, which will
+ *              save all the feedback as PDFs.
  * 
  */
 
@@ -136,14 +136,11 @@ namespace HappyTech
         ///     //
         /// 
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Button_Send_Click(object sender, EventArgs e)
         {
             Button_Send.Image = Properties.Resources.happytech_submit;
             Button_Send.Text = "Sending...";
 
-            // Turn rtf files into pdf files here
             ConvertToPDF();
 
             ClearTemporaryFiles();
@@ -177,10 +174,16 @@ namespace HappyTech
         /// </summary>
         private void ConvertToPDF()
         {
-            for (int i = 0; i < Applicant.applicants.Count; i++)
+            for ( int i = 0; i < Applicant.applicants.Count; i++ )
             {
-                string feedbackText = "";
-                string commentText = "";
+                string feedbackText = "No Feedback given.";
+                string commentText  = "No comments made.";
+
+                string name         = Applicant.applicants[i].AfullName;
+                string type         = Applicant.applicants[i].Atype;
+                string job          = Applicant.applicants[i].AJob;
+                string recruiter    = Recruiter.GetInstance().Name;
+
 
                 using (StreamReader feedbackFile = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".rtf"))
                 {
@@ -196,34 +199,61 @@ namespace HappyTech
                 }
 
                 ///// PdfSharp PDF version
-                PdfSharp.Pdf.PdfDocument pdf = new PdfSharp.Pdf.PdfDocument();
-                PdfPage pdfPage = pdf.AddPage();
-                XGraphics graph = XGraphics.FromPdfPage(pdfPage);
-                XTextFormatter tf = new XTextFormatter(graph);
-                
-                XFont font = new XFont("Arial", 8.25, XFontStyle.Bold);
-                Image img = Properties.Resources.happytech_logo_med;
-                MemoryStream strm = new MemoryStream();
-                img.Save(strm, System.Drawing.Imaging.ImageFormat.Png);
-                XImage logo = XImage.FromStream(strm);
-                XRect rec = new XRect((pdfPage.Width / 2) - (logo.PixelWidth / 2), pdfPage.Height / 16, img.Width, img.Height);
-                graph.DrawImage(logo, rec);
-                
-                tf.DrawString($"Dear {Applicant.applicants[i].AfullName},\n\nRegarding your {Applicant.applicants[i].Atype} for the {Applicant.applicants[i].AJob} role at HappyTech.\n\n"
-                    + feedbackText
-                    + "\n\nFurther comments:\n\n"
-                    + commentText
-                    + $"\n\nKind Regards,\n{Recruiter.GetInstance().Name}\nHappyTech Recruiter",
-                    font,
-                    XBrushes.Black,
-                    new XRect(pdfPage.Width / 8,
-                        ((pdfPage.Height / 12) + img.Height) + 60,
-                        (pdfPage.Width / 8) + (pdfPage.Width / 1.5),
-                        pdfPage.Height - (pdfPage.Height / 4)),
-                    XStringFormats.TopLeft);
-                
-                pdf.Save(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".pdf");
-                Process.Start(Recruiter.GetInstance().Name + Applicant.applicants[i].AfullName + ".pdf");
+                PdfDocument document                    = new PdfDocument();
+                PdfPage documentPage                    = document.AddPage();
+                XGraphics documentGraphics              = XGraphics.FromPdfPage(documentPage);
+                XTextFormatter documentTextFormatter    = new XTextFormatter(documentGraphics);
+
+                XFont documentFont                      = new XFont("Arial", 8.25, XFontStyle.Bold);
+                Image documentImage                     = Properties.Resources.happytech_logo_med;
+                MemoryStream documentStream             = new MemoryStream();
+                XBrush documentBrush                    = XBrushes.Black;
+                XStringFormat documentStringFormat      = XStringFormats.TopLeft;
+
+                documentImage.Save(documentStream, System.Drawing.Imaging.ImageFormat.Png);
+
+                XImage documentLogo                     = XImage.FromStream(documentStream);
+
+                XRect documentEditRectangle             = new XRect(documentPage.Width / 8,
+                                                                  ((documentPage.Height / 12) + documentImage.Height) + 60,
+                                                                   (documentPage.Width / 8) + (documentPage.Width / 1.5),
+                                                                    documentPage.Height - (documentPage.Height / 4));
+
+                XRect documentLogoRectangle             = new XRect((documentPage.Width / 2) - (documentLogo.PixelWidth / 2),
+                                                                     documentPage.Height / 16,
+                                                                     documentImage.Width,
+                                                                     documentImage.Height);
+
+                // Begin drawing the PDF document
+
+                // Logo
+                documentGraphics.
+                    DrawImage(documentLogo,
+                              documentLogoRectangle);
+
+                // Feedback
+                documentTextFormatter.
+                    DrawString($"Dear {name},\n\n" +
+
+                               $"Regarding your {type} for the {job} role at HappyTech.\n\n" +
+
+                                 feedbackText + "\n\n" +
+
+                                "Further comments:\n\n" +
+
+                                 commentText + $"\n\n" +
+
+                               $"Kind Regards,\n" +
+                               $"{recruiter}\n" +
+                               $"HappyTech Recruiter",
+
+                                documentFont,
+                                documentBrush,
+                                documentEditRectangle,
+                                documentStringFormat);
+
+                document.Save(recruiter + name + ".pdf");
+                Process.Start(recruiter + name + ".pdf");
 
             }
         }
@@ -267,8 +297,9 @@ namespace HappyTech
         /// </summary>
         private void ClearTemporaryFiles()
         {
-            DirectoryInfo di = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
-            FileInfo[] files = di.GetFiles("*.rtf").Where(p => p.Extension == ".rtf").ToArray();
+            DirectoryInfo directoryInfo = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
+            FileInfo[] files = directoryInfo.
+                                GetFiles("*.rtf").Where(p => p.Extension == ".rtf").ToArray();
 
             foreach (FileInfo file in files)
             {

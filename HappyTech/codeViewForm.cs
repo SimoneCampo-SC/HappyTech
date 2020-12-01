@@ -1,13 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿/**
+ * 
+ * File: codeViewForm.cs
+ * 
+ * Author 2: Hopper, Kean. SID
+ * Author 3: Osborne, Oliver. 1602819
+ * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
+ * 
+ * Summary:     This file allows the user to view templates, sections,
+ *              and codes in a table. They can access the template editor
+ *              from here.
+ *              
+ */
+
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace HappyTech
 {
