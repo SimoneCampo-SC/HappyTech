@@ -128,6 +128,16 @@ namespace HappyTech
             }
         }
 
+        /// <summary>
+        /// 
+        ///     Click trigger function for back button.
+        ///     This will return to the previous applicant
+        ///     feedback, or if at the start of the list,
+        ///     return back to the total applicant list.
+        ///     If in preview mode, this will bring the user
+        ///     back to the preview form.
+        /// 
+        /// </summary>
         private void Button_Back_Click(object sender, EventArgs e)
         {
             
@@ -155,6 +165,13 @@ namespace HappyTech
         }
 
         /// <summary>
+        /// 
+        ///     Click trigger function for the next button.
+        ///     This will save the feedback and comments, then
+        ///     go to the next applicant in the list or if at
+        ///     the end of the list, will go to the preview form.
+        ///     If in preview mode, this will save the feedback
+        ///     and return to the preview form.
         /// 
         /// </summary>
         private void Button_Next_Click(object sender, EventArgs e)
@@ -219,6 +236,10 @@ namespace HappyTech
 
         /// <summary>
         /// 
+        ///     This will load the list of codes for
+        ///     the feedback. Filling them from the
+        ///     database.
+        /// 
         /// </summary>
         private void Load_CodeList()
         {
@@ -276,6 +297,13 @@ namespace HappyTech
         }
 
         /// <summary>
+        /// 
+        ///     Select item trigger function for code list.
+        ///     This will clear the feedback and refill it with
+        ///     the code paragraphs of the selected codes.
+        ///     This will also add the code to the applicant's
+        ///     selected codes so they can be used later on.
+        ///     
         /// 
         /// </summary>
         private void ListBox_CodesList_SelectedValueChanged( object sender, EventArgs e )

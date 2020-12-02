@@ -78,6 +78,9 @@
             this.Label_Recruiter = new System.Windows.Forms.Label();
             this.Label_AddTitle = new System.Windows.Forms.Label();
             this.Button_Save = new System.Windows.Forms.Button();
+            this.Label_NoTemplates = new System.Windows.Forms.Label();
+            this.Label_CreateTemplate = new System.Windows.Forms.Label();
+            this.Button_NewEditor = new System.Windows.Forms.Button();
             this.Panel_Management.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage2)).BeginInit();
@@ -458,6 +461,9 @@
             // Panel_Template
             // 
             this.Panel_Template.BackColor = System.Drawing.Color.White;
+            this.Panel_Template.Controls.Add(this.Button_NewEditor);
+            this.Panel_Template.Controls.Add(this.Label_CreateTemplate);
+            this.Panel_Template.Controls.Add(this.Label_NoTemplates);
             this.Panel_Template.Controls.Add(this.ListBox_TemplateList);
             this.Panel_Template.Controls.Add(this.Label_TemplateTitle);
             this.Panel_Template.Location = new System.Drawing.Point(412, 78);
@@ -674,6 +680,47 @@
             this.Button_Save.UseVisualStyleBackColor = false;
             this.Button_Save.Click += new System.EventHandler(this.Button_Save_Click);
             // 
+            // Label_NoTemplates
+            // 
+            this.Label_NoTemplates.AutoSize = true;
+            this.Label_NoTemplates.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_NoTemplates.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_NoTemplates.Location = new System.Drawing.Point(21, 193);
+            this.Label_NoTemplates.Name = "Label_NoTemplates";
+            this.Label_NoTemplates.Size = new System.Drawing.Size(161, 14);
+            this.Label_NoTemplates.TabIndex = 54;
+            this.Label_NoTemplates.Text = "We can\'t find any templates.";
+            this.Label_NoTemplates.Visible = false;
+            // 
+            // Label_CreateTemplate
+            // 
+            this.Label_CreateTemplate.AutoSize = true;
+            this.Label_CreateTemplate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_CreateTemplate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_CreateTemplate.Location = new System.Drawing.Point(21, 207);
+            this.Label_CreateTemplate.Name = "Label_CreateTemplate";
+            this.Label_CreateTemplate.Size = new System.Drawing.Size(182, 14);
+            this.Label_CreateTemplate.TabIndex = 55;
+            this.Label_CreateTemplate.Text = "You can create a template in the";
+            this.Label_CreateTemplate.Visible = false;
+            // 
+            // Button_NewEditor
+            // 
+            this.Button_NewEditor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_NewEditor.FlatAppearance.BorderSize = 0;
+            this.Button_NewEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_NewEditor.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_NewEditor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.Button_NewEditor.Location = new System.Drawing.Point(199, 203);
+            this.Button_NewEditor.Margin = new System.Windows.Forms.Padding(0);
+            this.Button_NewEditor.Name = "Button_NewEditor";
+            this.Button_NewEditor.Size = new System.Drawing.Size(47, 23);
+            this.Button_NewEditor.TabIndex = 56;
+            this.Button_NewEditor.Text = "Editor";
+            this.Button_NewEditor.UseVisualStyleBackColor = true;
+            this.Button_NewEditor.Visible = false;
+            this.Button_NewEditor.Click += new System.EventHandler(this.Button_NewEditor_Click);
+            // 
             // DashForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -770,5 +817,8 @@
         private System.Windows.Forms.Label Label_ApplicantTemplate;
         private System.Windows.Forms.Label Label_Template;
         private System.Windows.Forms.PictureBox PictureBox_Template;
+        private System.Windows.Forms.Label Label_CreateTemplate;
+        private System.Windows.Forms.Label Label_NoTemplates;
+        private System.Windows.Forms.Button Button_NewEditor;
     }
 }

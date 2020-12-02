@@ -26,6 +26,8 @@ namespace HappyTech
 
         /// <summary>
         /// 
+        ///     Default constructor.
+        /// 
         /// </summary>
         public CodeViewForm()
         {
@@ -47,6 +49,8 @@ namespace HappyTech
 
         /// <summary>
         /// 
+        ///     Populate the items in the template dropdown.
+        /// 
         /// </summary>
         private void LoadTemplateDropdown()
         {
@@ -62,8 +66,11 @@ namespace HappyTech
 
         /// <summary>
         /// 
+        ///     Populate the items in the section dropdown
+        ///     from a template name.
+        /// 
         /// </summary>
-        /// <param name="templateName">        </param>
+        /// <param name="templateName"> Use a template name to identify which sections to show: Any existing templates. </param>
         private void LoadSectionDropdown(string templateName) //passes in the value contained in the template select dropdown
         {
             //this takes the template name from the template box and finds sections that are related to that template
@@ -78,6 +85,12 @@ namespace HappyTech
                 //unreadable on the dropdown. the replace() method replaces spaces with no space.
             }
         }
+
+        /// <summary>
+        /// 
+        ///     Display the contents of code lists in the data grid.
+        /// 
+        /// </summary>
         private void Load_DataGrid_CodeList()
         {
             //uses the text in the tagSelectBox to query the DB for the ID related to the section name
@@ -126,6 +139,9 @@ namespace HappyTech
 
         /// <summary>
         /// 
+        ///     Select item trigger function for section dropdown.
+        ///     Updates the data grid.
+        /// 
         /// </summary>
         private void ComboBox_SelectSection_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -133,6 +149,9 @@ namespace HappyTech
         }
 
         /// <summary>
+        /// 
+        ///     Select item trigger function for template dropdown.
+        ///     Clears and updates the section dropdown.
         /// 
         /// </summary>
         private void ComboBox_SelectTemplate_SelectedIndexChanged(object sender, EventArgs e)
@@ -142,6 +161,9 @@ namespace HappyTech
         }
 
         /// <summary>
+        /// 
+        ///     Click trigger function for edit template button.
+        ///     This will take the user to the editor form.
         /// 
         /// </summary>
         private void Button_EditTemplate_Click(object sender, EventArgs e)
@@ -153,6 +175,8 @@ namespace HappyTech
         }
 
         /// <summary>
+        /// 
+        ///     DEBUG DELETE THIS
         /// 
         /// </summary>
         private void Button_Reset_Click(object sender, EventArgs e)
@@ -175,6 +199,8 @@ namespace HappyTech
 
         /// <summary>
         /// 
+        ///     DEBUG DELETE THIS
+        /// 
         /// </summary>
         private void Button_Debug_Click(object sender, EventArgs e)
         {
@@ -195,6 +221,10 @@ namespace HappyTech
 
         /// <summary>
         /// 
+        ///     Draws items in the template dropdown.
+        ///     Prefixed with an icon and draws each
+        ///     item to align correctly.
+        /// 
         /// </summary>
         private void ComboBox_SelectTemplate_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -212,6 +242,10 @@ namespace HappyTech
         }
 
         /// <summary>
+        /// 
+        ///     Draws items in the section dropdown.
+        ///     Prefixed with an icon and draws each
+        ///     item to align correctly.
         /// 
         /// </summary>
         private void ComboBox_SelectSection_DrawItem(object sender, DrawItemEventArgs e)

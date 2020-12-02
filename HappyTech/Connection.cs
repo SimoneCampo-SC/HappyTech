@@ -40,8 +40,10 @@ namespace HappyTech
 
         /// <summary>
         /// 
+        ///     COMMENT A SUMMARY HERE @KEAN
+        /// 
         /// </summary>
-        /// <param name="sqlQuery">    </param>
+        /// <param name="sqlQuery"> WHAT IS SQLQUERY </param>
         /// <returns></returns>
         public DataSet GetDataSet(string sqlQuery)
         {
@@ -60,8 +62,10 @@ namespace HappyTech
 
         /// <summary>
         /// 
+        ///     COMMENT A SUMMARY HERE @KEAN
+        /// 
         /// </summary>
-        /// <param name="queryString"></param>
+        /// <param name="queryString"> WHAT IS QUERYSTRING </param>
         public void CreateCommand(string queryString)
         { 
             using (connToDb = new SqlConnection(connStr))

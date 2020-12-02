@@ -111,9 +111,11 @@ namespace HappyTech
 
         /// <summary>
         /// 
+        ///     PUT YOUR SUMMARY HERE @KEAN
+        /// 
         /// </summary>
-        /// <param name="input"></param>
-        /// <param name="selectedSections"></param>
+        /// <param name="input"> WHAT IS INPUT </param>
+        /// <param name="selectedSections"> WHAT IS SELECTED SECTIONS </param>
         public static void CreateTemplateWithSelectedSections (string input, CheckedListBox selectedSections)
         {
             //when template is submitted, needs to make a new section ID, then needs to make new PersonalSection

@@ -41,6 +41,8 @@ namespace HappyTech
         {
             InitializeComponent();
 
+            CheckTemplateExists();
+
             currentMode = mode;
 
             Clear_TemporaryFiles();
@@ -325,6 +327,37 @@ namespace HappyTech
                 }
                 catch { }
             }
+        }
+
+        /// <summary>
+        /// 
+        ///     Let the user know they need to create a template first.
+        /// 
+        /// </summary>
+        private void CheckTemplateExists()
+        {
+            if (Template.templates.Count == 0)
+            {
+                ListBox_TemplateList.Hide();
+                Label_NoTemplates.Show();
+                Label_CreateTemplate.Show();
+                Button_NewEditor.Show();
+            }
+        }
+
+        /// <summary>
+        /// 
+        ///     Click trigger function for the new editor button.
+        ///     This will take the user to the editor form.
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_NewEditor_Click(object sender, EventArgs e)
+        {
+            Hide();
+            EditorForm instance_EditorForm = new EditorForm();
+            instance_EditorForm.Show();
         }
     }
 }
