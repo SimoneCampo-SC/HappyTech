@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationForm));
             this.Panel_Account = new System.Windows.Forms.Panel();
-            this.lbPassReq = new System.Windows.Forms.Label();
-            this.lbEmailReq = new System.Windows.Forms.Label();
-            this.lbLastNameReq = new System.Windows.Forms.Label();
-            this.lbFirstNameReq = new System.Windows.Forms.Label();
+            this.Label_PasswordRequired = new System.Windows.Forms.Label();
+            this.Label_EmailRequired = new System.Windows.Forms.Label();
+            this.Label_LastNameRequired = new System.Windows.Forms.Label();
+            this.Label_FirstNameRequired = new System.Windows.Forms.Label();
             this.Button_PasswordVisibility = new System.Windows.Forms.Button();
             this.Label_HaveAccount = new System.Windows.Forms.Label();
             this.Label_AccountTitle = new System.Windows.Forms.Label();
@@ -56,10 +56,10 @@
             // Panel_Account
             // 
             this.Panel_Account.BackColor = System.Drawing.Color.White;
-            this.Panel_Account.Controls.Add(this.lbPassReq);
-            this.Panel_Account.Controls.Add(this.lbEmailReq);
-            this.Panel_Account.Controls.Add(this.lbLastNameReq);
-            this.Panel_Account.Controls.Add(this.lbFirstNameReq);
+            this.Panel_Account.Controls.Add(this.Label_PasswordRequired);
+            this.Panel_Account.Controls.Add(this.Label_EmailRequired);
+            this.Panel_Account.Controls.Add(this.Label_LastNameRequired);
+            this.Panel_Account.Controls.Add(this.Label_FirstNameRequired);
             this.Panel_Account.Controls.Add(this.Button_PasswordVisibility);
             this.Panel_Account.Controls.Add(this.Label_HaveAccount);
             this.Panel_Account.Controls.Add(this.Label_AccountTitle);
@@ -80,45 +80,45 @@
             this.Panel_Account.Size = new System.Drawing.Size(327, 469);
             this.Panel_Account.TabIndex = 0;
             // 
-            // lbPassReq
+            // Label_PasswordRequired
             // 
-            this.lbPassReq.AutoSize = true;
-            this.lbPassReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.lbPassReq.Location = new System.Drawing.Point(93, 297);
-            this.lbPassReq.Name = "lbPassReq";
-            this.lbPassReq.Size = new System.Drawing.Size(11, 14);
-            this.lbPassReq.TabIndex = 0;
-            this.lbPassReq.Text = "*";
+            this.Label_PasswordRequired.AutoSize = true;
+            this.Label_PasswordRequired.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.Label_PasswordRequired.Location = new System.Drawing.Point(93, 297);
+            this.Label_PasswordRequired.Name = "Label_PasswordRequired";
+            this.Label_PasswordRequired.Size = new System.Drawing.Size(11, 14);
+            this.Label_PasswordRequired.TabIndex = 0;
+            this.Label_PasswordRequired.Text = "*";
             // 
-            // lbEmailReq
+            // Label_EmailRequired
             // 
-            this.lbEmailReq.AutoSize = true;
-            this.lbEmailReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.lbEmailReq.Location = new System.Drawing.Point(66, 229);
-            this.lbEmailReq.Name = "lbEmailReq";
-            this.lbEmailReq.Size = new System.Drawing.Size(11, 14);
-            this.lbEmailReq.TabIndex = 0;
-            this.lbEmailReq.Text = "*";
+            this.Label_EmailRequired.AutoSize = true;
+            this.Label_EmailRequired.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.Label_EmailRequired.Location = new System.Drawing.Point(66, 229);
+            this.Label_EmailRequired.Name = "Label_EmailRequired";
+            this.Label_EmailRequired.Size = new System.Drawing.Size(11, 14);
+            this.Label_EmailRequired.TabIndex = 0;
+            this.Label_EmailRequired.Text = "*";
             // 
-            // lbLastNameReq
+            // Label_LastNameRequired
             // 
-            this.lbLastNameReq.AutoSize = true;
-            this.lbLastNameReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.lbLastNameReq.Location = new System.Drawing.Point(95, 160);
-            this.lbLastNameReq.Name = "lbLastNameReq";
-            this.lbLastNameReq.Size = new System.Drawing.Size(11, 14);
-            this.lbLastNameReq.TabIndex = 0;
-            this.lbLastNameReq.Text = "*";
+            this.Label_LastNameRequired.AutoSize = true;
+            this.Label_LastNameRequired.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.Label_LastNameRequired.Location = new System.Drawing.Point(95, 160);
+            this.Label_LastNameRequired.Name = "Label_LastNameRequired";
+            this.Label_LastNameRequired.Size = new System.Drawing.Size(11, 14);
+            this.Label_LastNameRequired.TabIndex = 0;
+            this.Label_LastNameRequired.Text = "*";
             // 
-            // lbFirstNameReq
+            // Label_FirstNameRequired
             // 
-            this.lbFirstNameReq.AutoSize = true;
-            this.lbFirstNameReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.lbFirstNameReq.Location = new System.Drawing.Point(96, 90);
-            this.lbFirstNameReq.Name = "lbFirstNameReq";
-            this.lbFirstNameReq.Size = new System.Drawing.Size(11, 14);
-            this.lbFirstNameReq.TabIndex = 0;
-            this.lbFirstNameReq.Text = "*";
+            this.Label_FirstNameRequired.AutoSize = true;
+            this.Label_FirstNameRequired.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.Label_FirstNameRequired.Location = new System.Drawing.Point(96, 90);
+            this.Label_FirstNameRequired.Name = "Label_FirstNameRequired";
+            this.Label_FirstNameRequired.Size = new System.Drawing.Size(11, 14);
+            this.Label_FirstNameRequired.TabIndex = 0;
+            this.Label_FirstNameRequired.Text = "*";
             // 
             // Button_PasswordVisibility
             // 
@@ -313,10 +313,10 @@
         #endregion
 
         private System.Windows.Forms.Panel Panel_Account;
-        private System.Windows.Forms.Label lbPassReq;
-        private System.Windows.Forms.Label lbEmailReq;
-        private System.Windows.Forms.Label lbLastNameReq;
-        private System.Windows.Forms.Label lbFirstNameReq;
+        private System.Windows.Forms.Label Label_PasswordRequired;
+        private System.Windows.Forms.Label Label_EmailRequired;
+        private System.Windows.Forms.Label Label_LastNameRequired;
+        private System.Windows.Forms.Label Label_FirstNameRequired;
         private System.Windows.Forms.Button Button_PasswordVisibility;
         private System.Windows.Forms.Label Label_HaveAccount;
         private System.Windows.Forms.Label Label_AccountTitle;
