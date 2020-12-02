@@ -111,11 +111,16 @@ namespace HappyTech
 
         /// <summary>
         /// 
-        ///     PUT YOUR SUMMARY HERE @KEAN
-        /// 
+        ///     This method inserts a new template into the Template table in the db.
+        ///     This function also takes the selected sections from the checklist box and
+        ///     generates PersonalSection objects that link the template and section.
+        ///     This is important because the codeList box in the feedbackForm uses the chosen
+        ///     template id and populates the code list based on the codes that are related to the
+        ///     section IDs found in PersonalSection where that section ID is linked with the TemplateID
+       
         /// </summary>
-        /// <param name="input"> WHAT IS INPUT </param>
-        /// <param name="selectedSections"> WHAT IS SELECTED SECTIONS </param>
+        /// <param name="input"> new template's tempType </param>
+        /// <param name="selectedSections"> The checkedlistbox where user can check the sections to relate to the new template </param>
         public static void CreateTemplateWithSelectedSections (string input, CheckedListBox selectedSections)
         {
             //when template is submitted, needs to make a new section ID, then needs to make new PersonalSection
@@ -146,8 +151,7 @@ namespace HappyTech
                     DataRow dRow1 = ds1.Tables[0].Rows[0];
                     var sectionId = dRow1.ItemArray.GetValue(0);
                     //now we have the template id and section id
-                    string createPersonalSection = $"insert into PersonalSection (template_ID, section_ID) VALUES ('{templateId}', '{sectionId}')";
-                    Connection.GetDbConn().CreateCommand(createPersonalSection);
+                    Connection.GetDbConn().CreateCommand(SqlQueries.InsertNewPersonalSection(templateId, sectionId));
                     //now a PersonalSection object has been created
                 }
             }

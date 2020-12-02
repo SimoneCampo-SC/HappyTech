@@ -23,13 +23,19 @@ namespace HappyTech
         private string connStr;
         private SqlConnection connToDb;
 
+        /// <summary>
+        /// default constructor
+        /// </summary>
         private Connection()
         {
             // Assigned in properties, points to db location
             connStr = Properties.Settings.Default.database; 
         }
 
-        // Use this method whenever a connection to the db is required
+        /// <summary>
+        /// creates a connection with the DB, needs to be used before other methods
+        /// </summary>
+        /// <returns>returns a connection to the DB</returns>        
         public static Connection GetDbConn()
         {
             if (_instance == null)
@@ -40,11 +46,11 @@ namespace HappyTech
 
         /// <summary>
         /// 
-        ///     COMMENT A SUMMARY HERE @KEAN
+        ///    This method opens a connection to the database, takes a sqlquery and returns the results of this query
         /// 
         /// </summary>
-        /// <param name="sqlQuery"> WHAT IS SQLQUERY </param>
-        /// <returns></returns>
+        /// <param name="sqlQuery">SQL code to be used. code will be from SqlQueries.cs </param>
+        /// <returns>Returns the result of the sql query</returns>
         public DataSet GetDataSet(string sqlQuery)
         {
             DataSet dataSet = new DataSet(); // Create empty dataset
@@ -62,10 +68,10 @@ namespace HappyTech
 
         /// <summary>
         /// 
-        ///     COMMENT A SUMMARY HERE @KEAN
+        ///   executes code on the DB and doesn't return anything
         /// 
         /// </summary>
-        /// <param name="queryString"> WHAT IS QUERYSTRING </param>
+        /// <param name="queryString"> sql query to be executed on the DB. </param>
         public void CreateCommand(string queryString)
         { 
             using (connToDb = new SqlConnection(connStr))

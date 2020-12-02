@@ -29,6 +29,11 @@ namespace HappyTech
             return query;
         }
 
+        public static string InsertNewPersonalSection (object templateId, object sectionId)
+        {
+            string query = $"insert into PersonalSection (template_ID, section_ID) VALUES ('{templateId}', '{sectionId}')";
+            return query;
+        }
         public static string GetTagIdFromName(string input)
         {
             string query = $"SELECT Id from Section where name = '{input}'";
