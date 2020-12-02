@@ -16,6 +16,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using static HappyTech.DashForm;
 
 namespace HappyTech
 {
@@ -29,33 +30,33 @@ namespace HappyTech
         public CodeViewForm()
         {
             InitializeComponent();
-            loadTemplateDropdown();
+            LoadTemplateDropdown();
 
             // Load tags from the db into the drop-down menu needs to run when template dropdown is given a value
-            loadGrid();
+            Load_DataGrid_CodeList();
 
-            DataSet dsT = Connection.GetDbConn().getDataSet(SqlQueries.SelectAllTemplates());
-            lblTempTotalVal.Text = dsT.Tables[0].Rows.Count.ToString();
+            DataSet dsT = Connection.GetDbConn().GetDataSet(SqlQueries.SelectAllTemplates());
+            Label_TemplatesTotal.Text = dsT.Tables[0].Rows.Count.ToString();
 
-            DataSet dsS = Connection.GetDbConn().getDataSet(SqlQueries.SelectAllSections());
-            lblSectTotalVal.Text = dsS.Tables[0].Rows.Count.ToString();
+            DataSet dsS = Connection.GetDbConn().GetDataSet(SqlQueries.SelectAllSections());
+            Label_SectionsTotal.Text = dsS.Tables[0].Rows.Count.ToString();
 
-            DataSet dsC = Connection.GetDbConn().getDataSet(SqlQueries.selectCodes());
-            lblCodeTotalVal.Text = dsC.Tables[0].Rows.Count.ToString();
+            DataSet dsC = Connection.GetDbConn().GetDataSet(SqlQueries.SelectCodes());
+            Label_CodesTotal.Text = dsC.Tables[0].Rows.Count.ToString();
         }
 
         /// <summary>
         /// 
         /// </summary>
-        private void loadTemplateDropdown()
+        private void LoadTemplateDropdown()
         {
-            DataSet ds = Connection.GetDbConn().getDataSet(SqlQueries.GetTemplateName());
+            DataSet ds = Connection.GetDbConn().GetDataSet(SqlQueries.GetTemplateName());
             //populates drop down menu with sections
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 var tempToAdd = ds.Tables[0].Rows[i].ItemArray.GetValue(0).ToString();
                 tempToAdd.Replace(" ", "");
-                templateSelectBox.Items.Add(tempToAdd);
+                ComboBox_SelectTemplate.Items.Add(tempToAdd);
             }
         }
 
@@ -63,21 +64,21 @@ namespace HappyTech
         /// 
         /// </summary>
         /// <param name="templateName">        </param>
-        private void loadSectionDropdown(string templateName) //passes in the value contained in the template select dropdown
+        private void LoadSectionDropdown(string templateName) //passes in the value contained in the template select dropdown
         {
             //this takes the template name from the template box and finds sections that are related to that template
-            DataSet ds = Connection.GetDbConn().getDataSet(SqlQueries.GetSectionPerTemplate(templateName));
+            DataSet ds = Connection.GetDbConn().GetDataSet(SqlQueries.GetSectionPerTemplate(templateName));
             //populates drop down menu with sections
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 var codeToAdd = ds.Tables[0].Rows[i].ItemArray.GetValue(0).ToString();
                 codeToAdd.Replace(" ", "");
-                tagSelectBox.Items.Add(codeToAdd.Replace(" ", ""));
+                ComboBox_SelectSection.Items.Add(codeToAdd.Replace(" ", ""));
                 //When adding codes to the drop down box, lots of whitespace was being added, leaving the code 
                 //unreadable on the dropdown. the replace() method replaces spaces with no space.
             }
         }
-        private void loadGrid()
+        private void Load_DataGrid_CodeList()
         {
             //uses the text in the tagSelectBox to query the DB for the ID related to the section name
             //try - catch is used because when the form is first loaded, no section will be selected
@@ -87,12 +88,12 @@ namespace HappyTech
 
             try
             {
-                tagSelectBox.Text.Replace(" ", "");
-                DataSet ds1 = Connection.GetDbConn().getDataSet(SqlQueries.getSectionIdFromName(tagSelectBox.Text));
+                ComboBox_SelectSection.Text.Replace(" ", "");
+                DataSet ds1 = Connection.GetDbConn().GetDataSet(SqlQueries.GetSectionIdFromName(ComboBox_SelectSection.Text));
                 DataRow dRow1 = ds1.Tables[0].Rows[0];
                 var sectionId = dRow1.ItemArray.GetValue(0);
-                DataSet ds = Connection.GetDbConn().getDataSet(SqlQueries.GetCodeFromSectionId(sectionId));
-                codeDisplay.DataSource = ds.Tables[0];
+                DataSet ds = Connection.GetDbConn().GetDataSet(SqlQueries.GetCodeFromSectionId(sectionId));
+                DataGrid_CodeList.DataSource = ds.Tables[0];
             }
             catch
             {
@@ -101,60 +102,60 @@ namespace HappyTech
             }
             //if no section name selected, show all the sections (remove code in catch if you want nothing to be displayed)
 
-            if (codeDisplay.Columns.Count > 0)
+            if (DataGrid_CodeList.Columns.Count > 0)
             {
-                codeDisplay.Columns[0].Width = 90;
-                codeDisplay.Columns[1].Width = 457;
-                codeDisplay.Columns[0].HeaderText = "Code";
-                codeDisplay.Columns[1].HeaderText = "Paragraph";
+                DataGrid_CodeList.Columns[0].Width = 90;
+                DataGrid_CodeList.Columns[1].Width = 457;
+                DataGrid_CodeList.Columns[0].HeaderText = "Code";
+                DataGrid_CodeList.Columns[1].HeaderText = "Paragraph";
             }
         }
 
         /// <summary>
         /// 
+        ///     Click trigger function for the back button.
+        ///     This will return the user back the the dashboard.
+        /// 
         /// </summary>
-        private void backBtn_Click(object sender, EventArgs e)
+        private void Button_Back_Click( object sender, EventArgs e )
         {
-            this.Hide();
-            DashForm df = new DashForm("newApp");
-            df.Show();
+            Hide();
+            DashForm instance_DashForm = new DashForm( Mode.Applicant );
+            instance_DashForm.Show();
         }
 
         /// <summary>
         /// 
         /// </summary>
-        private void tagSelectBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox_SelectSection_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadGrid();
+            Load_DataGrid_CodeList();
         }
 
         /// <summary>
         /// 
         /// </summary>
-        private void templateSelectBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox_SelectTemplate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tagSelectBox.Items.Clear();
-            loadSectionDropdown(templateSelectBox.Text);
+            ComboBox_SelectSection.Items.Clear();
+            LoadSectionDropdown(ComboBox_SelectTemplate.Text);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        private void templateViewBtn_Click(object sender, EventArgs e)
+        private void Button_EditTemplate_Click(object sender, EventArgs e)
         {
-            /*this.Hide();
-            addTemplate addTemp = new addTemplate();
-            addTemp.Show(); */
-            this.Hide();
-            EditorForm ned = new EditorForm();
-            ned.Show();
+            Hide();
+            EditorForm instance_EditorForm = new EditorForm();
+            instance_EditorForm.Show();
 
         }
 
         /// <summary>
         /// 
         /// </summary>
-        private void deleteDbBtn_Click(object sender, EventArgs e)
+        private void Button_Reset_Click(object sender, EventArgs e)
         {
             string delCodes = "DELETE FROM Codes";
             Connection.GetDbConn().CreateCommand(delCodes);
@@ -175,33 +176,33 @@ namespace HappyTech
         /// <summary>
         /// 
         /// </summary>
-        private void btnDebug_Click(object sender, EventArgs e)
+        private void Button_Debug_Click(object sender, EventArgs e)
         {
             if (debugVis == false)
             {
                 debugVis = true;
-                deleteDbBtn.Show();
-                btnAutofill.Show();
+                Button_Reset.Show();
+                Button_Autofill.Show();
 
             }
             else if (debugVis == true)
             {
                 debugVis = false;
-                deleteDbBtn.Hide();
-                btnAutofill.Hide();
+                Button_Reset.Hide();
+                Button_Autofill.Hide();
             }
         }
 
         /// <summary>
         /// 
         /// </summary>
-        private void templateSelectBox_DrawItem(object sender, DrawItemEventArgs e)
+        private void ComboBox_SelectTemplate_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
             {
                 e.DrawBackground();
                 e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 6, e.Bounds.Y + 6, 8, 8);
-                e.Graphics.DrawString(templateSelectBox.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
+                e.Graphics.DrawString(ComboBox_SelectTemplate.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
                 e.DrawFocusRectangle();
             }
             catch (Exception)
@@ -213,13 +214,13 @@ namespace HappyTech
         /// <summary>
         /// 
         /// </summary>
-        private void tagSelectBox_DrawItem(object sender, DrawItemEventArgs e)
+        private void ComboBox_SelectSection_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
             {
                 e.DrawBackground();
                 e.Graphics.DrawImage(Properties.Resources.happytech_circle, e.Bounds.X + 6, e.Bounds.Y + 6, 8, 8);
-                e.Graphics.DrawString(tagSelectBox.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
+                e.Graphics.DrawString(ComboBox_SelectSection.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X + 20, e.Bounds.Y + 3);
                 e.DrawFocusRectangle();
             }
             catch (Exception)

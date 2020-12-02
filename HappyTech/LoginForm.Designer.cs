@@ -34,106 +34,106 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.userEmail = new System.Windows.Forms.TextBox();
-            this.userPassword = new System.Windows.Forms.TextBox();
-            this.loginButt = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbPass = new System.Windows.Forms.Label();
-            this.lbEmail = new System.Windows.Forms.Label();
-            this.dataViewRecruiter = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btRegister = new System.Windows.Forms.Button();
-            this.error = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelLogin = new System.Windows.Forms.Panel();
-            this.btAutofill = new System.Windows.Forms.Button();
-            this.btnPassVis = new System.Windows.Forms.Button();
+            this.TextBox_Email = new System.Windows.Forms.TextBox();
+            this.TextBox_Password = new System.Windows.Forms.TextBox();
+            this.Button_Login = new System.Windows.Forms.Button();
+            this.Label_LoginTitle = new System.Windows.Forms.Label();
+            this.Label_Password = new System.Windows.Forms.Label();
+            this.Label_Email = new System.Windows.Forms.Label();
+            this.DataGrid_Users = new System.Windows.Forms.DataGridView();
+            this.Button_Debug = new System.Windows.Forms.Button();
+            this.Button_Create = new System.Windows.Forms.Button();
+            this.Label_Error = new System.Windows.Forms.Label();
+            this.Label_FirstTime = new System.Windows.Forms.Label();
+            this.Panel_Login = new System.Windows.Forms.Panel();
+            this.Button_Users = new System.Windows.Forms.Button();
+            this.Button_Autofill = new System.Windows.Forms.Button();
+            this.Button_PasswordVisibility = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnUsers = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataViewRecruiter)).BeginInit();
-            this.panelLogin.SuspendLayout();
+            this.PictureBox_Logo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Users)).BeginInit();
+            this.Panel_Login.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // userEmail
+            // TextBox_Email
             // 
-            this.userEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userEmail.ForeColor = System.Drawing.Color.Black;
-            this.userEmail.Location = new System.Drawing.Point(90, 192);
-            this.userEmail.Name = "userEmail";
-            this.userEmail.Size = new System.Drawing.Size(303, 20);
-            this.userEmail.TabIndex = 0;
+            this.TextBox_Email.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_Email.ForeColor = System.Drawing.Color.Black;
+            this.TextBox_Email.Location = new System.Drawing.Point(90, 192);
+            this.TextBox_Email.Name = "TextBox_Email";
+            this.TextBox_Email.Size = new System.Drawing.Size(303, 20);
+            this.TextBox_Email.TabIndex = 0;
             // 
-            // userPassword
+            // TextBox_Password
             // 
-            this.userPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userPassword.ForeColor = System.Drawing.Color.Black;
-            this.userPassword.Location = new System.Drawing.Point(90, 257);
-            this.userPassword.Name = "userPassword";
-            this.userPassword.Size = new System.Drawing.Size(303, 20);
-            this.userPassword.TabIndex = 1;
-            this.userPassword.UseSystemPasswordChar = true;
-            this.userPassword.TextChanged += new System.EventHandler(this.userPassword_TextChanged);
+            this.TextBox_Password.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_Password.ForeColor = System.Drawing.Color.Black;
+            this.TextBox_Password.Location = new System.Drawing.Point(90, 257);
+            this.TextBox_Password.Name = "TextBox_Password";
+            this.TextBox_Password.Size = new System.Drawing.Size(303, 20);
+            this.TextBox_Password.TabIndex = 1;
+            this.TextBox_Password.UseSystemPasswordChar = true;
+            this.TextBox_Password.TextChanged += new System.EventHandler(this.TextBox_Password_TextChanged);
             // 
-            // loginButt
+            // Button_Login
             // 
-            this.loginButt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loginButt.AutoSize = true;
-            this.loginButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.loginButt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.loginButt.FlatAppearance.BorderSize = 0;
-            this.loginButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginButt.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButt.ForeColor = System.Drawing.Color.White;
-            this.loginButt.Location = new System.Drawing.Point(90, 328);
-            this.loginButt.Name = "loginButt";
-            this.loginButt.Size = new System.Drawing.Size(303, 26);
-            this.loginButt.TabIndex = 3;
-            this.loginButt.Text = "Login";
-            this.loginButt.UseVisualStyleBackColor = false;
-            this.loginButt.Click += new System.EventHandler(this.loginButt_Click);
+            this.Button_Login.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Button_Login.AutoSize = true;
+            this.Button_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.Button_Login.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_Login.FlatAppearance.BorderSize = 0;
+            this.Button_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Login.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Login.ForeColor = System.Drawing.Color.White;
+            this.Button_Login.Location = new System.Drawing.Point(90, 328);
+            this.Button_Login.Name = "Button_Login";
+            this.Button_Login.Size = new System.Drawing.Size(303, 26);
+            this.Button_Login.TabIndex = 3;
+            this.Button_Login.Text = "Login";
+            this.Button_Login.UseVisualStyleBackColor = false;
+            this.Button_Login.Click += new System.EventHandler(this.Button_Login_Click);
             // 
-            // label1
+            // Label_LoginTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(85, 135);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome.";
+            this.Label_LoginTitle.AutoSize = true;
+            this.Label_LoginTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_LoginTitle.ForeColor = System.Drawing.Color.Black;
+            this.Label_LoginTitle.Location = new System.Drawing.Point(85, 135);
+            this.Label_LoginTitle.Name = "Label_LoginTitle";
+            this.Label_LoginTitle.Size = new System.Drawing.Size(110, 24);
+            this.Label_LoginTitle.TabIndex = 0;
+            this.Label_LoginTitle.Text = "Welcome.";
             // 
-            // lbPass
+            // Label_Password
             // 
-            this.lbPass.AutoSize = true;
-            this.lbPass.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lbPass.Location = new System.Drawing.Point(87, 236);
-            this.lbPass.Name = "lbPass";
-            this.lbPass.Size = new System.Drawing.Size(63, 14);
-            this.lbPass.TabIndex = 0;
-            this.lbPass.Text = "Password";
+            this.Label_Password.AutoSize = true;
+            this.Label_Password.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_Password.Location = new System.Drawing.Point(87, 236);
+            this.Label_Password.Name = "Label_Password";
+            this.Label_Password.Size = new System.Drawing.Size(63, 14);
+            this.Label_Password.TabIndex = 0;
+            this.Label_Password.Text = "Password";
             // 
-            // lbEmail
+            // Label_Email
             // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lbEmail.Location = new System.Drawing.Point(87, 175);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(36, 14);
-            this.lbEmail.TabIndex = 0;
-            this.lbEmail.Text = "Email";
+            this.Label_Email.AutoSize = true;
+            this.Label_Email.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_Email.Location = new System.Drawing.Point(87, 175);
+            this.Label_Email.Name = "Label_Email";
+            this.Label_Email.Size = new System.Drawing.Size(36, 14);
+            this.Label_Email.TabIndex = 0;
+            this.Label_Email.Text = "Email";
             // 
-            // dataViewRecruiter
+            // DataGrid_Users
             // 
-            this.dataViewRecruiter.AllowUserToAddRows = false;
-            this.dataViewRecruiter.AllowUserToDeleteRows = false;
-            this.dataViewRecruiter.AllowUserToResizeColumns = false;
-            this.dataViewRecruiter.AllowUserToResizeRows = false;
+            this.DataGrid_Users.AllowUserToAddRows = false;
+            this.DataGrid_Users.AllowUserToDeleteRows = false;
+            this.DataGrid_Users.AllowUserToResizeColumns = false;
+            this.DataGrid_Users.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
@@ -141,11 +141,11 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataViewRecruiter.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataViewRecruiter.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataViewRecruiter.BackgroundColor = System.Drawing.Color.White;
-            this.dataViewRecruiter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataViewRecruiter.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.DataGrid_Users.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGrid_Users.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DataGrid_Users.BackgroundColor = System.Drawing.Color.White;
+            this.DataGrid_Users.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DataGrid_Users.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
@@ -153,9 +153,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(57)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataViewRecruiter.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataViewRecruiter.ColumnHeadersHeight = 26;
-            this.dataViewRecruiter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DataGrid_Users.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGrid_Users.ColumnHeadersHeight = 26;
+            this.DataGrid_Users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
@@ -163,11 +163,11 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataViewRecruiter.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataViewRecruiter.GridColor = System.Drawing.Color.White;
-            this.dataViewRecruiter.Location = new System.Drawing.Point(11, 411);
-            this.dataViewRecruiter.Name = "dataViewRecruiter";
-            this.dataViewRecruiter.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DataGrid_Users.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGrid_Users.GridColor = System.Drawing.Color.White;
+            this.DataGrid_Users.Location = new System.Drawing.Point(11, 411);
+            this.DataGrid_Users.Name = "DataGrid_Users";
+            this.DataGrid_Users.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
@@ -175,8 +175,8 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataViewRecruiter.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataViewRecruiter.RowHeadersVisible = false;
+            this.DataGrid_Users.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.DataGrid_Users.RowHeadersVisible = false;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
@@ -184,158 +184,158 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataViewRecruiter.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataViewRecruiter.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataViewRecruiter.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dataViewRecruiter.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.dataViewRecruiter.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dataViewRecruiter.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.dataViewRecruiter.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataViewRecruiter.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataViewRecruiter.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataViewRecruiter.Size = new System.Drawing.Size(461, 140);
-            this.dataViewRecruiter.TabIndex = 5;
-            this.dataViewRecruiter.Visible = false;
+            this.DataGrid_Users.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.DataGrid_Users.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.DataGrid_Users.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.DataGrid_Users.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.DataGrid_Users.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.DataGrid_Users.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.DataGrid_Users.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DataGrid_Users.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid_Users.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DataGrid_Users.Size = new System.Drawing.Size(461, 140);
+            this.DataGrid_Users.TabIndex = 5;
+            this.DataGrid_Users.Visible = false;
             // 
-            // button1
+            // Button_Debug
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.Location = new System.Drawing.Point(397, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Debug";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Button_Debug.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_Debug.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Button_Debug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Debug.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Debug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Button_Debug.Location = new System.Drawing.Point(397, 12);
+            this.Button_Debug.Name = "Button_Debug";
+            this.Button_Debug.Size = new System.Drawing.Size(75, 23);
+            this.Button_Debug.TabIndex = 6;
+            this.Button_Debug.Text = "Debug";
+            this.Button_Debug.UseVisualStyleBackColor = true;
+            this.Button_Debug.Click += new System.EventHandler(this.Button_Debug_Click);
             // 
-            // btRegister
+            // Button_Create
             // 
-            this.btRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btRegister.FlatAppearance.BorderSize = 0;
-            this.btRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btRegister.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.btRegister.Location = new System.Drawing.Point(150, 375);
-            this.btRegister.Margin = new System.Windows.Forms.Padding(0);
-            this.btRegister.Name = "btRegister";
-            this.btRegister.Size = new System.Drawing.Size(98, 23);
-            this.btRegister.TabIndex = 4;
-            this.btRegister.Text = "Create account";
-            this.btRegister.UseVisualStyleBackColor = true;
-            this.btRegister.Click += new System.EventHandler(this.registerButt_Click);
+            this.Button_Create.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_Create.FlatAppearance.BorderSize = 0;
+            this.Button_Create.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Create.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Create.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
+            this.Button_Create.Location = new System.Drawing.Point(150, 375);
+            this.Button_Create.Margin = new System.Windows.Forms.Padding(0);
+            this.Button_Create.Name = "Button_Create";
+            this.Button_Create.Size = new System.Drawing.Size(98, 23);
+            this.Button_Create.TabIndex = 4;
+            this.Button_Create.Text = "Create account";
+            this.Button_Create.UseVisualStyleBackColor = true;
+            this.Button_Create.Click += new System.EventHandler(this.Button_Create_Click);
             // 
-            // error
+            // Label_Error
             // 
-            this.error.AutoSize = true;
-            this.error.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.error.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.error.Location = new System.Drawing.Point(87, 296);
-            this.error.Name = "error";
-            this.error.Size = new System.Drawing.Size(89, 14);
-            this.error.TabIndex = 0;
-            this.error.Text = "Error Message";
-            this.error.Visible = false;
+            this.Label_Error.AutoSize = true;
+            this.Label_Error.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Error.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.Label_Error.Location = new System.Drawing.Point(87, 296);
+            this.Label_Error.Name = "Label_Error";
+            this.Label_Error.Size = new System.Drawing.Size(89, 14);
+            this.Label_Error.TabIndex = 0;
+            this.Label_Error.Text = "Error Message";
+            this.Label_Error.Visible = false;
             // 
-            // label2
+            // Label_FirstTime
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.label2.Location = new System.Drawing.Point(87, 379);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 14);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "First time?";
+            this.Label_FirstTime.AutoSize = true;
+            this.Label_FirstTime.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_FirstTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_FirstTime.Location = new System.Drawing.Point(87, 379);
+            this.Label_FirstTime.Name = "Label_FirstTime";
+            this.Label_FirstTime.Size = new System.Drawing.Size(67, 14);
+            this.Label_FirstTime.TabIndex = 0;
+            this.Label_FirstTime.Text = "First time?";
             // 
-            // panelLogin
+            // Panel_Login
             // 
-            this.panelLogin.Controls.Add(this.btnUsers);
-            this.panelLogin.Controls.Add(this.btAutofill);
-            this.panelLogin.Controls.Add(this.dataViewRecruiter);
-            this.panelLogin.Controls.Add(this.btnPassVis);
-            this.panelLogin.Controls.Add(this.loginButt);
-            this.panelLogin.Controls.Add(this.userPassword);
-            this.panelLogin.Controls.Add(this.button1);
-            this.panelLogin.Controls.Add(this.btRegister);
-            this.panelLogin.Controls.Add(this.label2);
-            this.panelLogin.Controls.Add(this.lbPass);
-            this.panelLogin.Controls.Add(this.error);
-            this.panelLogin.Controls.Add(this.lbEmail);
-            this.panelLogin.Controls.Add(this.userEmail);
-            this.panelLogin.Controls.Add(this.label1);
-            this.panelLogin.Location = new System.Drawing.Point(498, 0);
-            this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(485, 565);
-            this.panelLogin.TabIndex = 0;
+            this.Panel_Login.Controls.Add(this.Button_Users);
+            this.Panel_Login.Controls.Add(this.Button_Autofill);
+            this.Panel_Login.Controls.Add(this.DataGrid_Users);
+            this.Panel_Login.Controls.Add(this.Button_PasswordVisibility);
+            this.Panel_Login.Controls.Add(this.Button_Login);
+            this.Panel_Login.Controls.Add(this.TextBox_Password);
+            this.Panel_Login.Controls.Add(this.Button_Debug);
+            this.Panel_Login.Controls.Add(this.Button_Create);
+            this.Panel_Login.Controls.Add(this.Label_FirstTime);
+            this.Panel_Login.Controls.Add(this.Label_Password);
+            this.Panel_Login.Controls.Add(this.Label_Error);
+            this.Panel_Login.Controls.Add(this.Label_Email);
+            this.Panel_Login.Controls.Add(this.TextBox_Email);
+            this.Panel_Login.Controls.Add(this.Label_LoginTitle);
+            this.Panel_Login.Location = new System.Drawing.Point(498, 0);
+            this.Panel_Login.Name = "Panel_Login";
+            this.Panel_Login.Size = new System.Drawing.Size(485, 565);
+            this.Panel_Login.TabIndex = 0;
             // 
-            // btAutofill
+            // Button_Users
             // 
-            this.btAutofill.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btAutofill.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btAutofill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAutofill.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAutofill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btAutofill.Location = new System.Drawing.Point(315, 12);
-            this.btAutofill.Name = "btAutofill";
-            this.btAutofill.Size = new System.Drawing.Size(75, 23);
-            this.btAutofill.TabIndex = 7;
-            this.btAutofill.Text = "Autofill";
-            this.btAutofill.UseVisualStyleBackColor = true;
-            this.btAutofill.Visible = false;
-            this.btAutofill.Click += new System.EventHandler(this.btAutofill_Click);
+            this.Button_Users.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_Users.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Button_Users.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Users.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Users.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Button_Users.Location = new System.Drawing.Point(234, 12);
+            this.Button_Users.Name = "Button_Users";
+            this.Button_Users.Size = new System.Drawing.Size(75, 23);
+            this.Button_Users.TabIndex = 8;
+            this.Button_Users.Text = "Users";
+            this.Button_Users.UseVisualStyleBackColor = true;
+            this.Button_Users.Visible = false;
+            this.Button_Users.Click += new System.EventHandler(this.Button_Users_Click);
             // 
-            // btnPassVis
+            // Button_Autofill
             // 
-            this.btnPassVis.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPassVis.FlatAppearance.BorderSize = 0;
-            this.btnPassVis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPassVis.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPassVis.Image = global::HappyTech.Properties.Resources.showPass;
-            this.btnPassVis.Location = new System.Drawing.Point(364, 258);
-            this.btnPassVis.Name = "btnPassVis";
-            this.btnPassVis.Size = new System.Drawing.Size(26, 17);
-            this.btnPassVis.TabIndex = 2;
-            this.btnPassVis.UseVisualStyleBackColor = false;
-            this.btnPassVis.Visible = false;
-            this.btnPassVis.Click += new System.EventHandler(this.btnPassVis_Click);
+            this.Button_Autofill.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_Autofill.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Button_Autofill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Autofill.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Autofill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Button_Autofill.Location = new System.Drawing.Point(315, 12);
+            this.Button_Autofill.Name = "Button_Autofill";
+            this.Button_Autofill.Size = new System.Drawing.Size(75, 23);
+            this.Button_Autofill.TabIndex = 7;
+            this.Button_Autofill.Text = "Autofill";
+            this.Button_Autofill.UseVisualStyleBackColor = true;
+            this.Button_Autofill.Visible = false;
+            this.Button_Autofill.Click += new System.EventHandler(this.Button_Autofill_Click);
+            // 
+            // Button_PasswordVisibility
+            // 
+            this.Button_PasswordVisibility.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_PasswordVisibility.FlatAppearance.BorderSize = 0;
+            this.Button_PasswordVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_PasswordVisibility.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_PasswordVisibility.Image = global::HappyTech.Properties.Resources.showPass;
+            this.Button_PasswordVisibility.Location = new System.Drawing.Point(364, 258);
+            this.Button_PasswordVisibility.Name = "Button_PasswordVisibility";
+            this.Button_PasswordVisibility.Size = new System.Drawing.Size(26, 17);
+            this.Button_PasswordVisibility.TabIndex = 2;
+            this.Button_PasswordVisibility.UseVisualStyleBackColor = false;
+            this.Button_PasswordVisibility.Visible = false;
+            this.Button_PasswordVisibility.Click += new System.EventHandler(this.Button_PasswordVisibility_Click);
             // 
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Controls.Add(this.PictureBox_Logo);
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(499, 565);
             this.panelLogo.TabIndex = 0;
             // 
-            // pictureBox1
+            // PictureBox_Logo
             // 
-            this.pictureBox1.Image = global::HappyTech.Properties.Resources.happytech_login;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(499, 565);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnUsers
-            // 
-            this.btnUsers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUsers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsers.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnUsers.Location = new System.Drawing.Point(234, 12);
-            this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(75, 23);
-            this.btnUsers.TabIndex = 8;
-            this.btnUsers.Text = "Users";
-            this.btnUsers.UseVisualStyleBackColor = true;
-            this.btnUsers.Visible = false;
-            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
+            this.PictureBox_Logo.Image = global::HappyTech.Properties.Resources.happytech_login;
+            this.PictureBox_Logo.Location = new System.Drawing.Point(0, 0);
+            this.PictureBox_Logo.Name = "PictureBox_Logo";
+            this.PictureBox_Logo.Size = new System.Drawing.Size(499, 565);
+            this.PictureBox_Logo.TabIndex = 0;
+            this.PictureBox_Logo.TabStop = false;
             // 
             // LoginForm
             // 
@@ -343,7 +343,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(982, 563);
-            this.Controls.Add(this.panelLogin);
+            this.Controls.Add(this.Panel_Login);
             this.Controls.Add(this.panelLogo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -352,34 +352,34 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
-            ((System.ComponentModel.ISupportInitialize)(this.dataViewRecruiter)).EndInit();
-            this.panelLogin.ResumeLayout(false);
-            this.panelLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Users)).EndInit();
+            this.Panel_Login.ResumeLayout(false);
+            this.Panel_Login.PerformLayout();
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Logo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox userEmail;
-        private System.Windows.Forms.TextBox userPassword;
-        private System.Windows.Forms.Button loginButt;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataViewRecruiter;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btRegister;
-        private System.Windows.Forms.Label error;
-        private System.Windows.Forms.Label lbPass;
-        private System.Windows.Forms.Label lbEmail;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TextBox_Email;
+        private System.Windows.Forms.TextBox TextBox_Password;
+        private System.Windows.Forms.Button Button_Login;
+        private System.Windows.Forms.Label Label_LoginTitle;
+        private System.Windows.Forms.DataGridView DataGrid_Users;
+        private System.Windows.Forms.Button Button_Debug;
+        private System.Windows.Forms.Button Button_Create;
+        private System.Windows.Forms.Label Label_Error;
+        private System.Windows.Forms.Label Label_Password;
+        private System.Windows.Forms.Label Label_Email;
+        private System.Windows.Forms.Label Label_FirstTime;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Panel panelLogin;
-        private System.Windows.Forms.Button btnPassVis;
-        private System.Windows.Forms.Button btAutofill;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnUsers;
+        private System.Windows.Forms.Panel Panel_Login;
+        private System.Windows.Forms.Button Button_PasswordVisibility;
+        private System.Windows.Forms.Button Button_Autofill;
+        private System.Windows.Forms.PictureBox PictureBox_Logo;
+        private System.Windows.Forms.Button Button_Users;
     }
 }
 

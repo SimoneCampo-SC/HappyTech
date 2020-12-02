@@ -28,13 +28,16 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Let's the user to go to the Login Page 
+        /// 
+        ///     Click trigger function for the login button.
+        ///     This will send the user back to the login form.
+        /// 
         /// </summary>
-        private void btLogin_Click(object sender, EventArgs e)
+        private void Button_Login_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            LoginForm f1 = new LoginForm();
-            f1.Show();
+            Hide();
+            LoginForm instance_LoginForm = new LoginForm();
+            instance_LoginForm.Show();
         }
     }
 }

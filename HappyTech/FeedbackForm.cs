@@ -19,64 +19,62 @@ using System;
 using System.Data;
 using System.IO;
 using System.Windows.Forms;
+using static HappyTech.FeedbackClass;
 
 namespace HappyTech
 {
     public partial class FeedbackForm : Form
     {
-        // Holds the position of the templates in the list
+        // Sets the available modes
+        public enum Mode
+        {
+            Feedback,
+            Preview,
+        }
+
         int currentPosition;
+        private Mode currentMode;
 
-        /* This tracks how the editor was generated, either feedback - if form created from dashform
-         * or wasn't the last applicant 
-         * mode is "preview" if a document has been selected to edit from the previewForm 
-         */
-        string mode;
-
-        // Used to determine function of back button and is set in the constructors
-        string previewAppName;
+        string PreviewModeApplicantName;
 
         /// <summary>
-        ///  Constructor of the current form
+        ///  
+        ///     Feedback mode constructor. 
+        /// 
         /// </summary>
-        /// <param name="position">holds the current position of the template being showed</param>
-        public FeedbackForm(int position)
+        /// <param name="position"> The position of the template in the list: Integer </param>
+        public FeedbackForm( int position )
         {
-            mode = "feedback";
-            currentPosition = position; // update the currentPosition
             InitializeComponent();
-            loadListBox();
 
-            /* Displays the applicant selected out of all the applicants
-             * position + 1 as the iterator starts from 0 to n-1 */
-            lbApplicants.Text = $"Applicant {position + 1} of {Applicant.applicants.Count}";
-            richTextBox2.Text = "";
-            richTextBox1.Text = "";
+            currentMode = Mode.Feedback;
+            currentPosition = position;
 
-            // Takes the header of the template in the assigned position in the list
-            // lbHeader.Text = Template.templates[position].Header;
-            lblRecruiterVal.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
-            lblAppNameVal.Text = Applicant.applicants[position].AfullName;
-            lblAppEmailVal.Text = Applicant.applicants[position].Aemail;
-            lblAppJobVal.Text = Applicant.applicants[position].AJob;
-            lblAppTempVal.Text = Template.templatesForApplicants[position].TempType;
+            Load_CodeList();
 
-            // 
+            Label_ListPosition.Text = $"Applicant {position + 1} of {Applicant.applicants.Count}";
+
+            Label_RecruiterName.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
+            Label_ApplicantName.Text = Applicant.applicants[position].AfullName;
+            Label_ApplicantEmail.Text = Applicant.applicants[position].Aemail;
+            Label_ApplicantJob.Text = Applicant.applicants[position].AJob;
+            Label_ApplicantTemplate.Text = Template.templatesForApplicants[position].Type;
+
+            // Get the feedback if it exists.
             if (File.Exists(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + ".rtf"))
             {
-                using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + ".rtf"))
+                using (StreamReader feedbackFile = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + ".rtf"))
                 {
-                        richTextBox2.Text = sr.ReadToEnd();
+                    RichTextBox_Feedback.Text = feedbackFile.ReadToEnd();
                 }
             }
-            // 
+
+            // Get the comments if it exists.
             if (File.Exists(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + "-comments.rtf"))
             {
-                using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + "-comments.rtf"))
+                using (StreamReader commentsFile = new StreamReader(Recruiter.GetInstance().Name + Applicant.applicants[position].AfullName + "-comments.rtf"))
                 {
-
-                        richTextBox1.Text = sr.ReadToEnd();
-
+                    RichTextBox_Comments.Text = commentsFile.ReadToEnd();
                 }
             }
 
@@ -92,183 +90,186 @@ namespace HappyTech
         /// <param name="curApp"></param>
         public FeedbackForm(string applicantName, string appType, string appEmail, string appJob, int curApp) 
         { 
-            // As editorForm usually takes an arguement of the applicant's position in the application list
+            // As FeedbackForm usually takes an arguement of the applicant's position in the application list
             // This wont work if you are editing one applicant's feedback from the previewForm screen
-            // So overloaded constructor is making a specific type of editorform for this purpose
-            mode = "preview";
-            previewAppName = applicantName;
-            currentPosition = curApp;
+            // So overloaded constructor is making a specific type of FeedbackForm for this purpose
+            
             InitializeComponent();
-            loadListBox();
-            lbApplicants.Text = $"You are in PREVIEW mode";
-            richTextBox2.Text = "";
-            richTextBox1.Text = "";
 
-            lblRecruiterVal.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
-            lblAppNameVal.Text = applicantName;
-            lblAppEmailVal.Text = appEmail;
-            lblAppJobVal.Text = appJob;
-            lblAppTempVal.Text = appType;
+            currentMode = Mode.Preview;
+            PreviewModeApplicantName = applicantName;
+            currentPosition = curApp;
+
+            Load_CodeList();
+
+            Label_ListPosition.Text = "You are in PREVIEW mode";
+
+            Label_RecruiterName.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
+            Label_ApplicantName.Text = applicantName;
+            Label_ApplicantEmail.Text = appEmail;
+            Label_ApplicantJob.Text = appJob;
+            Label_ApplicantTemplate.Text = appType;
 
             try
             {
-                using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + applicantName + ".rtf"))
+                using (StreamReader feedbackFile = new StreamReader(Recruiter.GetInstance().Name + applicantName + ".rtf"))
                 {
-                    //this is supposed to find the saved feedback file and prefill richTextBox2 with the feedback
-                    //however, this shows formatting code which is not ideal. formatting does not show if file opened in 
-                    //word
-
-                        richTextBox2.Text = sr.ReadToEnd();
-
+                    RichTextBox_Feedback.Text = feedbackFile.ReadToEnd();
                 }
 
-                using (StreamReader sr = new StreamReader(Recruiter.GetInstance().Name + applicantName + "-comments.rtf"))
+                using (StreamReader commentsFile = new StreamReader(Recruiter.GetInstance().Name + applicantName + "-comments.rtf"))
                 {
-                        richTextBox1.Text = sr.ReadToEnd();
+                    RichTextBox_Comments.Text = commentsFile.ReadToEnd();
                 }
             }
             catch (Exception)
-            { 
-                // User has the file open
+            {
+                Console.WriteLine( "Can not load feedback or comments as the user has the file open." );
             }
         }
 
-        private void btBack_Click(object sender, EventArgs e)
+        private void Button_Back_Click(object sender, EventArgs e)
         {
             
-            if (mode == "feedback")
+            if (currentMode == Mode.Feedback)
             {
                 if (currentPosition > 0)
                 {
-                    this.Hide();
-                    FeedbackForm f = FeedbackClass.NextForm("backward", currentPosition);
-                    f.Show();
+                    Hide();
+                    FeedbackForm instance_FeedbackForm = NextForm( Direction.Backward, currentPosition );
+                    instance_FeedbackForm.Show();
                 }
                 else if (currentPosition == 0)
                 {
-                   //  Template.templatesForApplicants.Clear();
-                    this.Hide();
-                    ConfirmApplicantForm cadf = new ConfirmApplicantForm(false);
-                    cadf.Show();
+                    Hide();
+                    ConfirmApplicantForm instance_ConfirmApplicantForm = new ConfirmApplicantForm( false );
+                    instance_ConfirmApplicantForm.Show();
                 }
             }
-            else if (mode == "preview")
+            else if (currentMode == Mode.Preview)
             {
-                this.Hide();
-                PreviewForm pf = new PreviewForm();
-                pf.Show();
+                Hide();
+                PreviewForm instance_PreviewForm = new PreviewForm();
+                instance_PreviewForm.Show();
             }
         }
 
         /// <summary>
         /// 
         /// </summary>
-        private void btNext2_Click(object sender, EventArgs e)
+        private void Button_Next_Click(object sender, EventArgs e)
         {
-            if (mode == "feedback")
+            if (currentMode == Mode.Feedback)
             {
                 // save template
-                if (richTextBox2.Text.Length > 0)
+                if (RichTextBox_Feedback.Text.Length > 0)
                 {
-                    using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + ".rtf"))
+                    using (StreamWriter feedbackFile = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + ".rtf"))
                     {
-                        sw.WriteLine(richTextBox2.Text);
+                        feedbackFile.WriteLine(RichTextBox_Feedback.Text);
                     }
                 }
 
 
                 // save comments
-                if (richTextBox1.Text.Length > 0)
+                if (RichTextBox_Comments.Text.Length > 0)
                 {
-                    using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + "-comments.rtf"))
+                    using (StreamWriter commentsFile = new StreamWriter(Recruiter.GetInstance().Name + Applicant.applicants[currentPosition].AfullName + "-comments.rtf"))
                     {
-                        sw.WriteLine(richTextBox1.Text);
+                        commentsFile.WriteLine(RichTextBox_Comments.Text);
                     }
                 }
 
                 if (currentPosition < Template.templatesForApplicants.Count - 1)
                 {
                     Hide();
-                    FeedbackForm f = FeedbackClass.NextForm("forward", currentPosition);
-                    f.Show();
+                    FeedbackForm instance_FeedbackForm = NextForm( Direction.Forward, currentPosition);
+                    instance_FeedbackForm.Show();
                 }
                 else if (currentPosition >= Template.templatesForApplicants.Count - 1)
                 {
                     Hide();
-                    PreviewForm pf = new PreviewForm();
-                    pf.Show();
+                    PreviewForm instance_PreviewForm = new PreviewForm();
+                    instance_PreviewForm.Show();
                 }
             }
-            else if (mode == "preview")
+            else if (currentMode == Mode.Preview)
             {
-                if (richTextBox2.Text.Length > 0)
+                if (RichTextBox_Feedback.Text.Length > 0)
                 {
-                    using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + previewAppName + ".rtf"))
+                    using (StreamWriter feedbackFile = new StreamWriter(Recruiter.GetInstance().Name + PreviewModeApplicantName + ".rtf"))
                     {
-                        sw.WriteLine(richTextBox2.Text);
+                        feedbackFile.WriteLine(RichTextBox_Feedback.Text);
                     }
                 }
 
-                if (richTextBox1.Text.Length > 0)
+                if (RichTextBox_Comments.Text.Length > 0)
                 {
-                    using (StreamWriter sw = new StreamWriter(Recruiter.GetInstance().Name + previewAppName + "-comments.rtf"))
+                    using (StreamWriter commentsFile = new StreamWriter(Recruiter.GetInstance().Name + PreviewModeApplicantName + "-comments.rtf"))
                     {
-                        sw.WriteLine(richTextBox1.Text);
+                        commentsFile.WriteLine(RichTextBox_Comments.Text);
                     }
                 }
 
                 Hide();
-                PreviewForm pf = new PreviewForm();
-                pf.Show();
+                PreviewForm instance_PreviewForm = new PreviewForm();
+                instance_PreviewForm.Show();
             }
         }
 
         /// <summary>
         /// 
         /// </summary>
-        private void loadListBox()
+        private void Load_CodeList()
         {
             // Only populate listbox with codes where
             // Section id is in personalsection with selected template
             Section.FillSectionList();
 
             // Have template id so can get personalSection sections
-            int tempId = Template.templatesForApplicants[currentPosition].Id;
+            int templateId = Template.templatesForApplicants[currentPosition].Id;
 
             // Maybe it is equal to Constants.SelectSectionPerTemplate(tempID) ??
-            string psSections = $"SELECT section_ID FROM PersonalSection Where '{tempId}' IN (template_ID)"; 
+            string psSections = $"SELECT section_ID FROM PersonalSection Where '{templateId}' IN (template_ID)"; 
 
-            DataSet ds1 = Connection.GetDbConn().getDataSet(psSections);
-            DataRow dRow1;
+            DataSet personalSectionDB = Connection.GetDbConn().
+                                            GetDataSet(psSections);
+            DataRow personalSectionDBValue;
 
-            for (int i = 0; i < ds1.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < personalSectionDB.Tables[0].Rows.Count; i++)
             { 
                 // For each section in personal section, need to add all codes
-                dRow1 = ds1.Tables[0].Rows[i];
-                string sectionId = dRow1.ItemArray.GetValue(0).ToString();
+                personalSectionDBValue = personalSectionDB.Tables[0].Rows[i];
+                string sectionId = personalSectionDBValue.ItemArray.GetValue(0).ToString();
                 
                 string getCodes = $"SELECT codeShort FROM Codes WHERE sectionNo = '{sectionId}'";
-                DataSet ds2 = Connection.GetDbConn().getDataSet(getCodes);
-                DataRow dRow2;
-                for (int j = 0; j <ds2.Tables[0].Rows.Count; j++)
+
+                DataSet codeDB = Connection.GetDbConn().
+                                    GetDataSet( getCodes );
+                DataRow codeDBValue;
+
+                for (int j = 0; j < codeDB.Tables[0].Rows.Count; j++)
                 {
                     try
                     {
-                        dRow2 = ds2.Tables[0].Rows[j];
-                        Console.WriteLine(dRow2.ItemArray.GetValue(0).ToString());
-                        listBox.Items.Add(dRow2.ItemArray.GetValue(0).ToString());
-                        foreach (string code in Applicant.applicants[currentPosition].selectedAppCodes)
+                        codeDBValue = codeDB.Tables[0].Rows[j];
+
+                        ListBox_CodesList.Items.
+                            Add( codeDBValue.ItemArray.GetValue(0).ToString() );
+
+                        foreach ( string code in Applicant.applicants[currentPosition].selectedAppCodes )
                         {
-                            if (dRow2.ItemArray.GetValue(0).ToString() == code)
+                            if ( codeDBValue.ItemArray.GetValue(0).ToString() == code )
                             {
-                                listBox.SetItemChecked(listBox.Items.Count - 1, true);
+                                ListBox_CodesList.
+                                    SetItemChecked( ListBox_CodesList.Items.Count - 1, true );
                             }
                         }
                         
                     }
                     catch 
                     {
-                        // Just in case there is a section that has no codes attached
+                        Console.WriteLine( "Section has no code attached." );
                     } 
                 }
             }
@@ -277,27 +278,39 @@ namespace HappyTech
         /// <summary>
         /// 
         /// </summary>
-        private void listBox_SelectedValueChanged(object sender, EventArgs e)
+        private void ListBox_CodesList_SelectedValueChanged( object sender, EventArgs e )
         {
             Code.selectedCodes.Clear();
             Applicant.applicants[currentPosition].selectedAppCodes.Clear();
-            richTextBox2.Text = "";
-            foreach (string code in listBox.CheckedItems)
+
+            RichTextBox_Feedback.Text = "";
+
+            foreach (string code in ListBox_CodesList.CheckedItems)
             {
                 // Get the code short of the selected list item
                 string codeShortLookup = code;
+
                 codeShortLookup = codeShortLookup.Replace(" ", "");
                 string query = $"SELECT codeParagraph FROM Codes WHERE codeShort = '{codeShortLookup}'";
-                DataSet ds = Connection.GetDbConn().getDataSet(query);
-                DataRow dRow = ds.Tables[0].Rows[0];
+
+                DataSet codeDB = Connection.GetDbConn().
+                                    GetDataSet( query );
+
+                DataRow codeDBValue = codeDB.Tables[0].Rows[0];
+
                 // Goes to the db, returns the first row (the codeparagraph) stores in variable
-                string paragraphToAdd = dRow.ItemArray.GetValue(0).ToString();
-                Code.selectedCodes.Add(paragraphToAdd);
-                Applicant.applicants[currentPosition].selectedAppCodes.Add(code);
+                string codeParagraph = codeDBValue.ItemArray.GetValue(0).ToString();
+
+                Code.selectedCodes.
+                    Add( codeParagraph );
+
+                Applicant.applicants[currentPosition].selectedAppCodes.
+                    Add( code );
             }
             foreach (string code in Code.selectedCodes)
             {
-                richTextBox2.AppendText(code + "\n\n");
+                RichTextBox_Feedback.
+                    AppendText(code + "\n\n");
             }
         }
     }

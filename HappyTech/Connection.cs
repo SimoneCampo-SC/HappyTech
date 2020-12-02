@@ -43,7 +43,7 @@ namespace HappyTech
         /// </summary>
         /// <param name="sqlQuery">    </param>
         /// <returns></returns>
-        public DataSet getDataSet(string sqlQuery)
+        public DataSet GetDataSet(string sqlQuery)
         {
             DataSet dataSet = new DataSet(); // Create empty dataset
             using (connToDb = new SqlConnection(connStr))

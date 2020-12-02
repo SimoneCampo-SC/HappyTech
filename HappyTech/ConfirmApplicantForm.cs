@@ -15,83 +15,99 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
+using static HappyTech.DashForm;
+using static HappyTech.FeedbackClass;
 
 namespace HappyTech
 {
     public partial class ConfirmApplicantForm : Form
     {
-        string cancelStage;
+        // Sets available cancel stage options.
+        private enum Stage
+        {
+            NotClicked,
+            Clicked
+        }
+
+        // Sets the default cancel stage.
+        Stage cancel = Stage.NotClicked;
 
         /// <summary>
-        /// Constructor of the current Form
+        /// 
+        ///     Constructor. Displays success message if applicant added.
+        ///     Gets applicants from database and lists them.
+        /// 
         /// </summary>
-        /// <param name="value">holds the value which says whether the recruiter added a new applicant</param>
-        public ConfirmApplicantForm(bool value)
+        /// <param name="applicantAdded"> If a new applicant has been added: True, and False </param>
+        public ConfirmApplicantForm( bool applicantAdded )
         {
             InitializeComponent();
 
-            cancelStage = "notClicked";
+            if (applicantAdded) Label_Success.Visible = true;
 
-            // Checks whether the value is false
-            if (value == false)
+            DataSet applicantDB = Connection.GetDbConn().
+                                    GetDataSet( SqlQueries.SelectApplicant() );
+
+            DataGrid_ApplicantList.DataSource = applicantDB.Tables[0];
+
+            for ( int i = 0; i < DataGrid_ApplicantList.Columns.Count; i++ )
             {
-                // successfull message is not displayed
-                lbSuccess.Visible = false;
+                DataGrid_ApplicantList.Columns[i].Width = 181;
             }
 
-            // Load the Applicants added into the Database
-            DataSet ds = Connection.GetDbConn().getDataSet(SqlQueries.SelectApplicant());
-            dgvApplicant.DataSource = ds.Tables[0]; //shows first table
-            for (int i = 0; i < dgvApplicant.Columns.Count; i++)
-            {
-                dgvApplicant.Columns[i].Width = 181;
-            }
-
-            // displays how many applicants have been added so far
-            lblRecruiterVal.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
-            lblAppTotalVal.Text = Applicant.applicants.Count.ToString();
-        }
-
-        /// <summary>
-        /// Occurs when the recruiter clicks the new button
-        /// </summary>
-        private void btNewApp_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            // Dashform displayed again
-            DashForm f2 = new DashForm("newApp");
-            f2.Show();
-        }
-
-        /// <summary>
-        /// Occurs when the recruiter clics the Next button
-        /// </summary>
-        private void btStartFeed_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            // New EditorForm is created passing by values 2 (Default value) and 0
-            FeedbackForm f = FeedbackClass.NextForm("default", 0); 
-
-            f.Show();
+            Label_RecruiterName.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
+            Label_ApplicantTotal.Text = Applicant.applicants.Count.ToString();
         }
 
         /// <summary>
         /// 
+        ///     Click trigger function for the add button.
+        ///     This will create a new DashForm.cs instance
+        ///     so that the user can enter the details of a
+        ///     new applicant to add to the list.
+        /// 
         /// </summary>
-        private void btCancel_Click(object sender, EventArgs e)
+        private void Button_Add_Click( object sender, EventArgs e )
         {
-            if (cancelStage == "notClicked")
+            Hide();
+            DashForm instance_DashForm = new DashForm( Mode.Applicant );
+            instance_DashForm.Show();
+        }
+
+        /// <summary>
+        /// 
+        ///     Click trigger function for the begin button.
+        ///     This will create a new FeedbackForm.cs instance
+        ///     from the starting position of 0.
+        ///     
+        /// </summary>
+        private void Button_Begin_Click( object sender, EventArgs e )
+        {
+            Hide();
+            FeedbackForm instance_FeedbackForm = NextForm( Direction.Current, 0 );
+            instance_FeedbackForm.Show();
+        }
+
+        /// <summary>
+        /// 
+        ///     Click trigger function for the cancel button.
+        ///     This will double check if the user wants to
+        ///     cancel as they will be losing all the progress
+        ///     made.
+        /// 
+        /// </summary>
+        private void Button_Cancel_Click( object sender, EventArgs e )
+        {
+            if ( cancel == Stage.NotClicked )
             {
-                btCancel.Text = "Are you sure?";
-                cancelStage = "clicked";
+                Button_Cancel.Text = "Are you sure?";
+                cancel = Stage.Clicked;
             }
-            else if (cancelStage == "clicked")
+            else if ( cancel == Stage.Clicked )
             {
-                this.Hide();
-                DashForm f2 = new DashForm("default");
-                f2.Show();
+                Hide();
+                DashForm instance_DashForm = new DashForm( Mode.Default );
+                instance_DashForm.Show();
             }
         }
     }

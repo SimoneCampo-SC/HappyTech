@@ -27,14 +27,14 @@ namespace HappyTech
         // Contains all the sections stored into the Database
         public static List<Section> sectionList = new List<Section>();
 
-        public int id { get; }
-        public string name { get; }
+        public int Id { get; }
+        public string Name { get; }
 
         // Private constructor
         private Section(int id, string name)
         {
-            this.id = id;
-            this.name = name;
+            Id = id;
+            Name = name;
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace HappyTech
         /// </summary>
         public static void FillSectionList ()
         {
-            DataSet ds = Connection.GetDbConn().getDataSet(SqlQueries.getSectionNameId());
+            DataSet ds = Connection.GetDbConn().GetDataSet(SqlQueries.GetSectionNameId());
             DataRow dRow;
 
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -70,14 +70,14 @@ namespace HappyTech
             string queryString = SqlQueries.CreateNewTag(input);
             Connection.GetDbConn().CreateCommand(queryString); //section object has now been created
             //we will get the id of this new section first instead of getting it in each iteration of the loop
-            DataSet ds = Connection.GetDbConn().getDataSet(SqlQueries.getSectionIdFromName(input));
+            DataSet ds = Connection.GetDbConn().GetDataSet(SqlQueries.GetSectionIdFromName(input));
             DataRow dRow = ds.Tables[0].Rows[0];
             var sectionId = dRow.ItemArray.GetValue(0);
              foreach (string template in templateCheckBox.CheckedItems)
              {
                 //for each template selected, we have to add a template id and section id to PersonalSection
                 //so we will get the template id from the template name
-                DataSet ds1 = Connection.GetDbConn().getDataSet(SqlQueries.GetTemplateIdFromName(template));
+                DataSet ds1 = Connection.GetDbConn().GetDataSet(SqlQueries.GetTemplateIdFromName(template));
                 DataRow dRow1 = ds1.Tables[0].Rows[0];
                 var templateId = dRow1.ItemArray.GetValue(0);
                 //now we have the template id and section id

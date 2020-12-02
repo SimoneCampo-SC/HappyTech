@@ -31,55 +31,60 @@ namespace HappyTech
 
         // List of all the properties 
         public string Header { get; }
-        public string TempType { get; }
+        public string Type { get; }
         public int Id { get; }
 
         /// <summary>
-        /// Constructor of the template class
+        /// 
+        ///     Header constructor.
+        /// 
         /// </summary>
-        /// <param name="applicant">holds the applicant object</param>
-        /// <param name="tempType">holds the type chosen</param>
-        private Template (int id, string name, Applicant applicant)
+        /// <param name="templateId"></param>
+        /// <param name="name"></param>
+        /// <param name="applicant"></param>
+        private Template ( int templateId, string name, Applicant applicant )
         {
-            this.Id = id;
-            this.TempType = name;
+            Id = templateId;
+            Type = name;
 
             // Template Header gets the name of the Recruiter, Applicant and its type
-            this.Header = $"Recruiter: {Recruiter.GetInstance().Name} {Recruiter.GetInstance().Surname}, " +
-                          $"Applicant: {applicant.AfullName} for {TempType}";
+            Header = $"Recruiter: {Recruiter.GetInstance().Name} {Recruiter.GetInstance().Surname}, " +
+                     $"Applicant: {applicant.AfullName} for {Type}";
         }
 
         /// <summary>
         /// Overloaded constructor for use in addsections.cs - populates the checklist of templates that a user can add sections to
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
-        private Template(int id, string name)
+        /// <param name="templateId">   </param>
+        /// <param name="templateType">   </param>
+        private Template( int templateId, string templateType )
         {
-            this.Id = id;
-            this.TempType = name;
+            Id = templateId;
+            Type = templateType;
         }
 
         /// <summary>
         /// Generates templateS according to the number of applicants into the list.
         /// </summary>
-        /// <param name="Applicant">Gets the object of the applicant being reviewed</param>
-        /// <param name="tempType">Gets the type of the template chosen</param>
-        public static void GenerateTemplateForApplicant(Applicant Applicant, string tempType)
+        /// <param name="applicant">Gets the object of the applicant being reviewed</param>
+        /// <param name="templateType">Gets the type of the template chosen</param>
+        public static void GenerateTemplateForApplicant( Applicant applicant, string templateType )
         {
             // retrieves the Id from the database
-            DataSet ds = Connection.GetDbConn().getDataSet(SqlQueries.GetTemplateIdFromName(tempType));
-            DataRow dRow;
+            DataSet templateDB = Connection.GetDbConn().
+                                    GetDataSet( SqlQueries.GetTemplateIdFromName( templateType ) );
 
-            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            DataRow templateDBValue;
+
+            for ( int i = 0; i < templateDB.Tables[0].Rows.Count; i++ )
             {
-                dRow = ds.Tables[0].Rows[i];
+                templateDBValue = templateDB.Tables[0].Rows[i];
 
                 // Creates the instance
                 Template _instance = new Template(
-                    Int32.Parse(dRow.ItemArray.GetValue(0).ToString()), // template ID
-                    tempType, // template's tempType
-                    Applicant
+                    Int32.Parse(templateDBValue.ItemArray.GetValue(0).ToString()), // template ID
+                    templateType, // template's tempType
+                    applicant
                     );
                 Template.templatesForApplicants.Add(_instance); // Add the code into the list
             }
@@ -91,7 +96,7 @@ namespace HappyTech
         public static void FillTemplates()
         {
             // retrieves the Id from the database
-            DataSet ds = Connection.GetDbConn().getDataSet(SqlQueries.GetTemplateNameId());
+            DataSet ds = Connection.GetDbConn().GetDataSet(SqlQueries.GetTemplateNameId());
             DataRow dRow;
 
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -131,14 +136,14 @@ namespace HappyTech
                 Connection.GetDbConn().CreateCommand(queryString);
                 //template object has now been created
                 //we will get the id of this new template first instead of getting it in each iteration of the loop
-                DataSet ds = Connection.GetDbConn().getDataSet(SqlQueries.GetTemplateIdFromName(input));
+                DataSet ds = Connection.GetDbConn().GetDataSet(SqlQueries.GetTemplateIdFromName(input));
                 DataRow dRow = ds.Tables[0].Rows[0];
                 var templateId = dRow.ItemArray.GetValue(0);
                 foreach (string section in selectedSections.CheckedItems)
                 {
                     //for each template selected, we have to add a template id and section id to PersonalSection
                     //so we will get the template id from the template name
-                    DataSet ds1 = Connection.GetDbConn().getDataSet(SqlQueries.getSectionIdFromName(section));
+                    DataSet ds1 = Connection.GetDbConn().GetDataSet(SqlQueries.GetSectionIdFromName(section));
                     DataRow dRow1 = ds1.Tables[0].Rows[0];
                     var sectionId = dRow1.ItemArray.GetValue(0);
                     //now we have the template id and section id

@@ -99,59 +99,59 @@ namespace HappyTech
             return query;
         }
 
-        public static string getCodeIdFromName (string codeName)
+        public static string GetCodeIdFromName (string codeName)
         {
             string query = $"SELECT Id FROM Codes WHERE codeShort = '{codeName}'";
             return query;
         }
-        public static string selectSectionName(int secID)
+        public static string SelectSectionName(int secID)
         {
             string query = $"SELECT name FROM Section WHERE Id = '{secID}'";
             return query;
         }
-        public static string getSectionIdFromName(string name)
+        public static string GetSectionIdFromName(string name)
         {
             string query = $"SELECT Id FROM Section WHERE name = '{name}'";
             return query;
         }
-        static public string getSectionNameId() //gets name and id, used in sections for populating sections check box in addcode
+        static public string GetSectionNameId() //gets name and id, used in sections for populating sections check box in addcode
         {
             string query = "SELECT Id, name FROM Section";
             return query;
         }
 
-        public static string selectCodes()
+        public static string SelectCodes()
         {
             string query = "SELECT * FROM Codes";
             return query;
         }
 
-        public static string editCode (object codeId, string codeName, string codePara)
+        public static string EditCode (object codeId, string codeName, string codePara)
         {
             string query = $"UPDATE Codes SET codeShort = '{codeName}', codeParagraph = '{codePara}' WHERE Id = '{codeId}'";
             return query;
         }
-        public static string editSection(object sectionId, string sectionName)
+        public static string EditSection(object sectionId, string sectionName)
         {
             string query = $"UPDATE Section SET name = '{sectionName}' WHERE Id = '{sectionId}'";
             return query;
         }
 
-        public static string editTemplate(object tempId, string templateName)
+        public static string EditTemplate(object tempId, string templateName)
         {
             string query = $"UPDATE Template SET tempType = '{templateName}' WHERE Id = '{tempId}'";
             return query;
         }
-        public static string getCodeId(string codeName)
+        public static string GetCodeId(string codeName)
         {
             string query = $"SELECT Id from Codes WHERE codeShort = '{codeName}'";
             return query;
         }
 
-        public static bool checkRecruiter(string email)
+        public static bool CheckRecruiter(string email)
         {
             string query = $"SELECT * FROM Recruiter WHERE email = '{email}'";
-            DataSet ds = Connection.GetDbConn().getDataSet(query);
+            DataSet ds = Connection.GetDbConn().GetDataSet(query);
             if (ds.Tables[0].Rows.Count != 0)
             {
                 return true;
@@ -162,44 +162,44 @@ namespace HappyTech
             }
         }
 
-        public static bool checkTemplate(string template)
+        public static bool CheckTemplate(string template)
         {
             string query = $"SELECT * FROM Template WHERE tempType = '{template}'";
 
-            DataSet templateDB = Connection.GetDbConn().getDataSet(query);
+            DataSet templateDB = Connection.GetDbConn().GetDataSet(query);
 
             if (templateDB.Tables[0].Rows.Count != 0) return true;
             else return false;
         }
 
-        public static bool checkSection(string section)
+        public static bool CheckSection(string section)
         {
             string query = $"SELECT * FROM Section WHERE name = '{section}'";
 
-            DataSet sectionDB = Connection.GetDbConn().getDataSet(query);
+            DataSet sectionDB = Connection.GetDbConn().GetDataSet(query);
 
             if (sectionDB.Tables[0].Rows.Count != 0) return true;
             else return false;
         }
 
-        public static bool checkCode(string code)
+        public static bool CheckCode(string code)
         {
             string query = $"SELECT * FROM Codes WHERE codeShort = '{code}'";
 
-            DataSet codeDB = Connection.GetDbConn().getDataSet(query);
+            DataSet codeDB = Connection.GetDbConn().GetDataSet(query);
 
             if (codeDB.Tables[0].Rows.Count != 0) return true;
             else return false;
         }
 
-        public static string insertRecruiter(string email, string name, string surname, string password)
+        public static string InsertRecruiter(string email, string name, string surname, string password)
         {
 
             string query = $"INSERT INTO Recruiter (email, name, surname, password) VALUES ('{email}', '{name}', '{surname}', '{password}')";
             return query;
         }
 
-        public static string insertApplicant(string name, string email, string job, string id)
+        public static string InsertApplicant(string name, string email, string job, string id)
         {
             string query = $"INSERT INTO Applicant (Applicant_Name, Applicant_Email, job_Position, Recruiter_ID) VALUES ('{name}', '{email}', '{job}', '{id}')";
             return query;
@@ -212,37 +212,37 @@ namespace HappyTech
             return query;
         }
 
-        public static string deleteApplicant()
+        public static string DeleteApplicant()
         {
             string query = $"DELETE FROM Applicant";
             return query;
         }
 
-        /* These are delete statements used in neweditdelete
+        /* These are delete statements used in EditorForm
          * deletion of PersonalSection objects are required for this
          * */
-        public static string deleteCodeFromId(object codeId)
+        public static string DeleteCodeFromId(object codeId)
         {
             string query = $"DELETE FROM Codes WHERE Id = '{codeId}'";
                 return query;
         }
-        public static string deleteSectionFromId(object sectionId)
+        public static string DeleteSectionFromId(object sectionId)
         {
             string query = $"DELETE FROM Section WHERE Id = '{sectionId}'";
                 return query;
         }
-        public static string deleteTemplateFromId(object templateId)
+        public static string DeleteTemplateFromId(object templateId)
         {
             string query = $"DELETE FROM Template WHERE Id = '{templateId}'"; 
                 return query;
         }
 
-        public static string deletePersonalSectionUsingSectionId (object sectionId)
+        public static string DeletePersonalSectionUsingSectionId (object sectionId)
         {
             string query = $"DELETE FROM PersonalSection WHERE section_ID = '{sectionId}'";
             return query;
         }
-        public static string deletePersonalSectionUsingTemplateId(object templateId)
+        public static string DeletePersonalSectionUsingTemplateId(object templateId)
         {
             string query = $"DELETE FROM PersonalSection WHERE template_ID = '{templateId}'";
             return query;

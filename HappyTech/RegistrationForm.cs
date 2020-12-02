@@ -20,7 +20,7 @@ namespace HappyTech
 {
     public partial class RegistrationForm : Form
     {
-        private bool passVis = false;
+        private bool passwordVisible = false;
         /// <summary>
         /// Constructor RegistrationForm
         /// </summary>
@@ -32,169 +32,191 @@ namespace HappyTech
         /// <summary>
         /// Executed when the User Click the SignIn button
         /// </summary>
-        private void registerButton_Click(object sender, EventArgs e)
+        private void Button_Create_Click(object sender, EventArgs e)
         {
-            // Checks whether at least one of the textboxes is empty
-            if ((emailBox.Text.Length == 0) || (nameBox.Text.Length == 0) ||
-                (surnameBox.Text.Length == 0) || (passBox.Text.Length == 0))
+            if ((TextBox_Email.Text.Length == 0) || (TextBox_FirstName.Text.Length == 0) ||
+                (TextBox_LastName.Text.Length == 0) || (TextBox_Password.Text.Length == 0))
             {
-                errorMessage.Visible = true;
-                errorMessage.Text = "Required fields are missing";
+                Label_Error.Visible = true;
+                Label_Error.Text = "Required fields are missing";
             }
-            // Checks whether the email provided already exists into the DB
-            else if (SqlQueries.checkRecruiter(emailBox.Text) == true) 
+            else if (TextBox_FirstName.Text.Length > 50)
             {
-                errorMessage.Visible = true;
-                errorMessage.Text = "An account with this email already exists";
+                Label_Error.Visible = true;
+                Label_Error.Text = "First name must be 50 characters or less";
+            }
+            else if (TextBox_LastName.Text.Length > 50)
+            {
+                Label_Error.Visible = true;
+                Label_Error.Text = "Surname must be 50 characters or less";
+            }
+            else if (!TextBox_Email.Text.Contains("@happytech.com"))
+            {
+                Label_Error.Text = "Email must use: @happytech.com";
+                Label_Error.Visible = true;
+            }
+            else if (TextBox_Email.Text.Length > 50)
+            {
+                Label_Error.Text = "Email must be 50 characters or less";
+                Label_Error.Visible = true;
+            }
+            else if (TextBox_Password.Text.Length < 8)
+            {
+                Label_Error.Visible = true;
+                Label_Error.Text = "Password must be at least 8 characters";
+            }
+            else if (TextBox_Password.Text.Length > 50)
+            {
+                Label_Error.Visible = true;
+                Label_Error.Text = "Password must be 50 characters or less";
+            }
+            else if (SqlQueries.CheckRecruiter(TextBox_Email.Text) == true) 
+            {
+                Label_Error.Visible = true;
+                Label_Error.Text = "An account with this email already exists";
             }
             else
             {
                 // Add the credentials into the Database
-                string queryString = SqlQueries.insertRecruiter(emailBox.Text, nameBox.Text, surnameBox.Text, passBox.Text);
+                string queryString = SqlQueries.InsertRecruiter(TextBox_Email.Text, TextBox_FirstName.Text, TextBox_LastName.Text, TextBox_Password.Text);
                 Connection.GetDbConn().CreateCommand(queryString);
 
                 // Current form is hidden, and the ConfRegistrForm is created and showed 
-                this.Hide();
-                ConfirmRegisterForm crf = new ConfirmRegisterForm();
-                crf.Show();
+                Hide();
+                ConfirmRegisterForm instance_ConfirmRegisterForm = new ConfirmRegisterForm();
+                instance_ConfirmRegisterForm.Show();
             }
         }
         /// <summary>
         /// Executed when the User Click Back button
         /// </summary>
-        private void backBtn_Click(object sender, EventArgs e)
+        private void Button_Login_Click(object sender, EventArgs e)
         {
             // Current form is hidden, and the LoginForm is created and showed 
-            this.Hide();
-            LoginForm f1 = new LoginForm();
-            f1.Show();
+            Hide();
+            LoginForm instance_LoginForm = new LoginForm();
+            instance_LoginForm.Show();
         }
 
         /// <summary>
         /// Occurs whenewer the user amends the passBox
         /// </summary>
-        private void passBox_TextChanged(object sender, EventArgs e)
+        private void TextBox_Password_TextChanged(object sender, EventArgs e)
         {
             // Checks whether the passBox is empty
-            if (passBox.Text.Length == 0)
+            if (TextBox_Password.Text.Length == 0)
             {
-                btnPassVis.Hide();
-                errorMessage.Visible = false;
+                Button_PasswordVisibility.Hide();
+                Label_Error.Visible = false;
             }
             else
             {
-                btnPassVis.Show();
+                Button_PasswordVisibility.Show();
             }
 
             // Checks whether the passBox is less than 8 characters in length
-            if (passBox.Text.Length < 8)
+            if (TextBox_Password.Text.Length < 8)
             {
-                errorMessage.Visible = true;
-                errorMessage.Text = "Password must be at least 8 characters";
+                Label_Error.Visible = true;
+                Label_Error.Text = "Password must be at least 8 characters";
             }
             // Checks whether the passBox is greater than 8 characters in length
-            else if (passBox.Text.Length > 50)
+            else if (TextBox_Password.Text.Length > 50)
             {
-                errorMessage.Visible = true;
-                errorMessage.Text = "Password must be 50 characters or less";
+                Label_Error.Visible = true;
+                Label_Error.Text = "Password must be 50 characters or less";
             }
             else
             {
-                errorMessage.Visible = false;
+                Label_Error.Visible = false;
             }
         }
 
         /// <summary>
         /// Occurs whenever the user clicks on the btnPassVis
         /// </summary>
-        private void btnPassVis_Click(object sender, EventArgs e)
+        private void Button_PasswordVisibility_Click(object sender, EventArgs e)
         {
-            if (passVis == false)
+            if (passwordVisible == false)
             {
-                passVis = true;
-                btnPassVis.Image = Properties.Resources.hidePass;
-                passBox.UseSystemPasswordChar = false;
+                passwordVisible = true;
+                Button_PasswordVisibility.Image = Properties.Resources.hidePass;
+                TextBox_Password.UseSystemPasswordChar = false;
             }
-            else if (passVis == true)
+            else if (passwordVisible == true)
             {
-                passVis = false;
-                btnPassVis.Image = Properties.Resources.showPass;
-                passBox.UseSystemPasswordChar = true;
+                passwordVisible = false;
+                Button_PasswordVisibility.Image = Properties.Resources.showPass;
+                TextBox_Password.UseSystemPasswordChar = true;
             }
         }
 
         /// <summary>
         /// Occurs whenewer the user amends the emailBox
         /// </summary>
-        private void emailBox_TextChanged(object sender, EventArgs e)
+        private void TextBox_Email_TextChanged(object sender, EventArgs e)
         {
-            if (emailBox.Text.Length == 0)
+            if (TextBox_Email.Text.Length == 0)
             {
-                errorMessage.Visible = false;
+                Label_Error.Visible = false;
             }
-            // Checks whether the email does not contain the correct domain
-            else if (!(emailBox.Text.Contains("@happytech.com")))
+            else if (!TextBox_Email.Text.Contains("@happytech.com"))
             {
-                errorMessage.Visible = true;
-                errorMessage.Text = "Email must use @happytech.com";
+                Label_Error.Text = "Email must use: @happytech.com";
+                Label_Error.Visible = true;
             }
-            else
+            else if (TextBox_Email.Text.Length > 50)
             {
-                errorMessage.Visible = false;
-            }
-            // Checks whether the email is greater than 50 charactera in length
-            if (emailBox.Text.Length > 50)
-            {
-                errorMessage.Visible = true;
-                errorMessage.Text = "Email must be 50 characters or less";
+                Label_Error.Text = "Email must be 50 characters or less";
+                Label_Error.Visible = true;
             }
             else
             {
-                errorMessage.Visible = false;
+                Label_Error.Visible = false;
             }
         }
 
         /// <summary>
         /// Occurs whenewer the user amends the nameBox
         /// </summary>
-        private void nameBox_TextChanged(object sender, EventArgs e)
+        private void TextBox_FirstName_TextChanged(object sender, EventArgs e)
         {
             // Checks whether the name field is empty
-            if (nameBox.Text.Length == 0)
+            if (TextBox_FirstName.Text.Length == 0)
             {
-                errorMessage.Visible = false;
+                Label_Error.Visible = false;
             }
             // Checks whether the name field is greater than 50 characters in length
-            else if (nameBox.Text.Length > 50)
+            else if (TextBox_FirstName.Text.Length > 50)
             {
-                errorMessage.Visible = true;
-                errorMessage.Text = "First name must be 50 characters or less";
+                Label_Error.Visible = true;
+                Label_Error.Text = "First name must be 50 characters or less";
             }
             else
             {
-                errorMessage.Visible = false;
+                Label_Error.Visible = false;
             }
         }
 
         /// <summary>
         /// Occurs whenewer the user amends the surnameBox
         /// </summary>
-        private void surnameBox_TextChanged(object sender, EventArgs e)
+        private void TextBox_LastName_TextChanged(object sender, EventArgs e)
         {
             // Checks whether the surname box is empty
-            if (surnameBox.Text.Length == 0)
+            if (TextBox_LastName.Text.Length == 0)
             {
-                errorMessage.Visible = false;
+                Label_Error.Visible = false;
             }
             // Checks whether the surnameBox is greater than 50 chars in length
-            else if (surnameBox.Text.Length > 50)
+            else if (TextBox_LastName.Text.Length > 50)
             {
-                errorMessage.Visible = true;
-                errorMessage.Text = "Surname must be 50 characters or less";
+                Label_Error.Visible = true;
+                Label_Error.Text = "Surname must be 50 characters or less";
             }
             else
             {
-                errorMessage.Visible = false;
+                Label_Error.Visible = false;
             }
         }
     }

@@ -15,14 +15,15 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
+using static HappyTech.DashForm;
 
 
 namespace HappyTech
 {
     public partial class LoginForm : Form
     {
-        private bool passVis = false;
-        private bool debugVis = false;
+        private bool passwordVisible = false;
+        private bool debugVisible = false;
 
         /// <summary>
         /// Constructor LoginForm
@@ -37,22 +38,22 @@ namespace HappyTech
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
+        private void Button_Debug_Click(object sender, EventArgs e)
         {
-            if (debugVis == false)
+            if (debugVisible == false)
             {
-                debugVis = true;
-                btAutofill.Show();
-                btnUsers.Show();
+                debugVisible = true;
+                Button_Autofill.Show();
+                Button_Users.Show();
                 
             }
-            else if (debugVis == true)
+            else if (debugVisible == true)
             {
-                debugVis = false;
-                dataViewRecruiter.Hide();
-                dataViewRecruiter.DataSource = null;
-                btAutofill.Hide();
-                btnUsers.Hide();
+                debugVisible = false;
+                DataGrid_Users.Hide();
+                DataGrid_Users.DataSource = null;
+                Button_Autofill.Hide();
+                Button_Users.Hide();
             }
             
         }
@@ -60,120 +61,124 @@ namespace HappyTech
         /// <summary>
         /// Executed when the User Click the Login button
         /// </summary>>
-        private void loginButt_Click(object sender, EventArgs e)
+        private void Button_Login_Click(object sender, EventArgs e)
         {
             // create a string query to ask the database for
-            string login = SqlQueries.SelectRecruiter(userEmail.Text, userPassword.Text);
+            string login = SqlQueries.SelectRecruiter(TextBox_Email.Text, TextBox_Password.Text);
 
             // open the connection with the DB and ask the query to the database
-            DataSet ds = Connection.GetDbConn().getDataSet(login);
+            DataSet recruiterDB = Connection.GetDbConn().GetDataSet(login);
            // Console.WriteLine(ds.ToString());
             
             // checks whether the Database has a record of the information inserted
-            if (ds.Tables[0].Rows.Count != 0)
+            if (recruiterDB.Tables[0].Rows.Count != 0)
             {
                 // Points to the Row[0] of the table retrieved from the DB
-                DataRow dRow = ds.Tables[0].Rows[0];
+                DataRow recruiterDBValue = recruiterDB.Tables[0].Rows[0];
 
                 // Call the method which creates the instance 
-                Recruiter.createInstance
+                Recruiter.CreateInstance
                     (
-                    dRow.ItemArray.GetValue(0).ToString(), // Retrieve the recruiter ID [DB: column 0]
-                    dRow.ItemArray.GetValue(1).ToString(), // Retrieve the recruiter Name [DB: column 1]
-                    dRow.ItemArray.GetValue(2).ToString(), // Retrieve the recruiter Surname [DB: column 2]
-                    dRow.ItemArray.GetValue(3).ToString(), // Retrieve the recruiter Email [DB: column 3]
-                    dRow.ItemArray.GetValue(4).ToString()  // Retrieve the recruiter Password [DB: column 4]
+                    recruiterDBValue.ItemArray.GetValue(0).ToString(), // Retrieve the recruiter ID [DB: column 0]
+                    recruiterDBValue.ItemArray.GetValue(1).ToString(), // Retrieve the recruiter Name [DB: column 1]
+                    recruiterDBValue.ItemArray.GetValue(2).ToString(), // Retrieve the recruiter Surname [DB: column 2]
+                    recruiterDBValue.ItemArray.GetValue(3).ToString(), // Retrieve the recruiter Email [DB: column 3]
+                    recruiterDBValue.ItemArray.GetValue(4).ToString()  // Retrieve the recruiter Password [DB: column 4]
                     );
 
-                // Current form is hidden, and the DashForm is created and showed
-                this.Hide(); 
-                DashForm f2 = new DashForm("default");  
-                f2.Show();
+                Hide(); 
+                DashForm instance_DashForm = new DashForm( Mode.Default );  
+                instance_DashForm.Show();
             }
             else
             {
                 // lable 'error' becomes visible and displays the error message
-                error.Visible = true;
-                error.Text = "Incorrect email or password";
+                Label_Error.Text = "Incorrect email or password";
+                Label_Error.Visible = true;
             }
         }
         /// <summary>
         /// Executed when the User Click the Register button
         /// </summary>
-        private void registerButt_Click(object sender, EventArgs e)
+        private void Button_Create_Click(object sender, EventArgs e)
         {
             // Current form is hidden, and the RegistrationForm is created and showed
-            this.Hide();
-            RegistrationForm reg = new RegistrationForm();
-            reg.Show();
+            Hide();
+            RegistrationForm instance_RegistrationForm = new RegistrationForm();
+            instance_RegistrationForm.Show();
         }
 
         /// <summary>
         /// Occurs when the user change the text inside the userPassword box
         /// </summary>
-        private void userPassword_TextChanged(object sender, EventArgs e)
+        private void TextBox_Password_TextChanged(object sender, EventArgs e)
         {
-            if (userPassword.Text.Length > 0)
+            if (TextBox_Password.Text.Length > 0)
             {
-                btnPassVis.Show();
+                Button_PasswordVisibility.Show();
             }
             else
             {
-                btnPassVis.Hide();
+                Button_PasswordVisibility.Hide();
             }
         }
 
         /// <summary>
         /// Occurs whenever the user clicks the btnPassVis object
         /// </summary>
-        private void btnPassVis_Click(object sender, EventArgs e)
+        private void Button_PasswordVisibility_Click(object sender, EventArgs e)
         {
-            if (passVis == false)
+            if (passwordVisible == false)
             {
-                passVis = true;
-                btnPassVis.Image = Properties.Resources.hidePass;
-                userPassword.UseSystemPasswordChar = false;
+                passwordVisible = true;
+                Button_PasswordVisibility.Image = Properties.Resources.hidePass;
+                TextBox_Password.UseSystemPasswordChar = false;
             }
-            else if (passVis == true)
+            else if (passwordVisible == true)
             {
-                passVis = false;
-                btnPassVis.Image = Properties.Resources.showPass;
-                userPassword.UseSystemPasswordChar = true;
+                passwordVisible = false;
+                Button_PasswordVisibility.Image = Properties.Resources.showPass;
+                TextBox_Password.UseSystemPasswordChar = true;
             }
             
         }
 
         // Debug autofill details, for testing purposes
-        private void btAutofill_Click(object sender, EventArgs e)
+        private void Button_Autofill_Click(object sender, EventArgs e)
         {
-            DataSet dsEmail = Connection.GetDbConn().getDataSet("SELECT email FROM Recruiter");
-            DataRow dsEmailRow = dsEmail.Tables[0].Rows[0];
-            userEmail.Text = dsEmailRow.ItemArray.GetValue(0).ToString();
+            DataSet dsEmail = Connection.GetDbConn().
+                                GetDataSet("SELECT email FROM Recruiter");
 
-            DataSet dsPass = Connection.GetDbConn().getDataSet("SELECT password FROM Recruiter");
+            DataRow dsEmailRow = dsEmail.Tables[0].Rows[0];
+            TextBox_Email.Text = dsEmailRow.ItemArray.GetValue(0).ToString();
+
+            DataSet dsPass = Connection.GetDbConn().
+                                GetDataSet("SELECT password FROM Recruiter");
+
             DataRow dsPassRow = dsPass.Tables[0].Rows[0];
-            userPassword.Text = dsPassRow.ItemArray.GetValue(0).ToString();
+            TextBox_Password.Text = dsPassRow.ItemArray.GetValue(0).ToString();
         }
 
         /// <summary>
         /// 
         /// </summary>
-        private void btnUsers_Click(object sender, EventArgs e)
+        private void Button_Users_Click(object sender, EventArgs e)
         {
             //display table data
-            DataSet ds = Connection.GetDbConn().getDataSet("SELECT * FROM Recruiter");
-            dataViewRecruiter.DataSource = ds.Tables[0]; //shows first table
-            dataViewRecruiter.Columns[0].Width = 30;
-            dataViewRecruiter.Columns[1].Width = 75;
-            dataViewRecruiter.Columns[2].Width = 75;
-            dataViewRecruiter.Columns[3].Width = 158;
-            dataViewRecruiter.Columns[4].Width = 118;
-            dataViewRecruiter.Columns[0].HeaderText = "ID";
-            dataViewRecruiter.Columns[1].HeaderText = "Name";
-            dataViewRecruiter.Columns[2].HeaderText = "Surname";
-            dataViewRecruiter.Columns[3].HeaderText = "Email";
-            dataViewRecruiter.Columns[4].HeaderText = "Password";
-            dataViewRecruiter.Show();
+            DataSet ds = Connection.GetDbConn().
+                            GetDataSet("SELECT * FROM Recruiter");
+            DataGrid_Users.DataSource = ds.Tables[0]; //shows first table
+            DataGrid_Users.Columns[0].Width = 30;
+            DataGrid_Users.Columns[1].Width = 75;
+            DataGrid_Users.Columns[2].Width = 75;
+            DataGrid_Users.Columns[3].Width = 158;
+            DataGrid_Users.Columns[4].Width = 118;
+            DataGrid_Users.Columns[0].HeaderText = "ID";
+            DataGrid_Users.Columns[1].HeaderText = "Name";
+            DataGrid_Users.Columns[2].HeaderText = "Surname";
+            DataGrid_Users.Columns[3].HeaderText = "Email";
+            DataGrid_Users.Columns[4].HeaderText = "Password";
+            DataGrid_Users.Show();
         }
     }
 }

@@ -50,7 +50,7 @@ namespace HappyTech
         /// <param name="email"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public static Recruiter createInstance(string id, string name, string surname, string email, string password)
+        public static Recruiter CreateInstance(string id, string name, string surname, string email, string password)
         {
             // Runs the constructor only if the instance is equal to null
             if (_instance == null)

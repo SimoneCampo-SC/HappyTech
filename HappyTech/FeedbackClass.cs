@@ -6,7 +6,7 @@
  * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
  * Summary:     This is the back-end class that houses the logic
- *              used in EditorForm.cs.
+ *              used in FeedbackForm.cs.
  *              
  */
 
@@ -14,28 +14,59 @@ namespace HappyTech
 {
     static class FeedbackClass
     {
+
+        public enum Direction
+        { 
+            Forward,
+            Backward,
+            Current
+        }
+
         /// <summary>
-        /// Create the EditorForm at the specific position 
+        /// 
+        ///     Create the next FeedbackForm.cs instance depending
+        ///     on the direction the user is going.
+        /// 
         /// </summary>
-        /// <param name="direction">if it needs to move forward or backward</param>
-        /// <param name="currentPosition">holds the current position</param>
+        /// <param name="direction"> Direction user is travelling in list: Forward, and Backward. </param>
+        /// <param name="currentPosition"> The applicant position in the list: Integer </param>
         /// <returns></returns>
-        public static FeedbackForm NextForm(string direction, int currentPosition)
+        public static FeedbackForm NextForm( Direction direction, int currentPosition )
         {
-            FeedbackForm f;
-            switch (direction)
+            FeedbackForm instance_FeedbackForm;
+
+            switch ( direction )
             {
-                case "forward":
-                    f = new FeedbackForm((currentPosition + 1));
+                case Direction.Forward:
+
+                    // Next position.
+                    instance_FeedbackForm = new FeedbackForm( ( currentPosition + 1 ) );
+
                     break;
-                case "backward":
-                    f = new FeedbackForm((currentPosition - 1));
+
+                case Direction.Backward:
+
+                    // Previous position.
+                    instance_FeedbackForm = new FeedbackForm( ( currentPosition - 1 ) );
+
                     break;
+
+                case Direction.Current:
+
+                    // Remain the same position.
+                    instance_FeedbackForm = new FeedbackForm( ( currentPosition ) );
+
+                    break;
+
                 default:
-                    f = new FeedbackForm((currentPosition));
+
+                    // If none other, start position.
+                    instance_FeedbackForm = new FeedbackForm( 0 );
+
                     break;
             }
-            return f;
+
+            return instance_FeedbackForm;
         }
     }
 }

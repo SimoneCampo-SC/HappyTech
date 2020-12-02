@@ -29,180 +29,180 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashForm));
-            this.lbHello = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
-            this.lbUploadDoc = new System.Windows.Forms.Label();
-            this.lbDocType = new System.Windows.Forms.Label();
-            this.tbAName = new System.Windows.Forms.TextBox();
-            this.lbAName = new System.Windows.Forms.Label();
-            this.lbAJob = new System.Windows.Forms.Label();
-            this.lbAEmail = new System.Windows.Forms.Label();
-            this.tbAJob = new System.Windows.Forms.TextBox();
-            this.tbAEmail = new System.Windows.Forms.TextBox();
+            this.Label_WelcomeTitle = new System.Windows.Forms.Label();
+            this.Label_Username = new System.Windows.Forms.Label();
+            this.Label_DetailsTitle = new System.Windows.Forms.Label();
+            this.Label_TemplateTitle = new System.Windows.Forms.Label();
+            this.TextBox_DetailsFullName = new System.Windows.Forms.TextBox();
+            this.Label_DetailsFullName = new System.Windows.Forms.Label();
+            this.Label_DetailsJobPosition = new System.Windows.Forms.Label();
+            this.Label_DetailsEmail = new System.Windows.Forms.Label();
+            this.TextBox_DetailsJobPosition = new System.Windows.Forms.TextBox();
+            this.TextBox_DetailsEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbError = new System.Windows.Forms.Label();
-            this.btBack = new System.Windows.Forms.Button();
-            this.tempTypeBox = new System.Windows.Forms.ListBox();
-            this.panelManagement = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblStage3 = new System.Windows.Forms.Label();
-            this.imgStage3 = new System.Windows.Forms.PictureBox();
-            this.lblStage2 = new System.Windows.Forms.Label();
-            this.imgStage2 = new System.Windows.Forms.PictureBox();
-            this.lblStage1 = new System.Windows.Forms.Label();
-            this.imgStage1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btLogout = new System.Windows.Forms.Button();
-            this.codeViewBtn = new System.Windows.Forms.Button();
-            this.panelDetails = new System.Windows.Forms.Panel();
-            this.lbJobReq = new System.Windows.Forms.Label();
-            this.lbEmailReq = new System.Windows.Forms.Label();
-            this.lbFullNameReq = new System.Windows.Forms.Label();
-            this.panelTemplate = new System.Windows.Forms.Panel();
-            this.panelAdd = new System.Windows.Forms.Panel();
-            this.lblAppTempVal = new System.Windows.Forms.Label();
-            this.lblAppTemp = new System.Windows.Forms.Label();
-            this.imgAppTemp = new System.Windows.Forms.PictureBox();
-            this.lblAppJobVal = new System.Windows.Forms.Label();
-            this.lblAppEmailVal = new System.Windows.Forms.Label();
-            this.lblAppNameVal = new System.Windows.Forms.Label();
-            this.lblRecruiterVal = new System.Windows.Forms.Label();
-            this.imgAppJob = new System.Windows.Forms.PictureBox();
-            this.imgAppEmail = new System.Windows.Forms.PictureBox();
-            this.imgAppName = new System.Windows.Forms.PictureBox();
-            this.imgRecruiter = new System.Windows.Forms.PictureBox();
-            this.lblAppJob = new System.Windows.Forms.Label();
-            this.lblAppEmail = new System.Windows.Forms.Label();
-            this.lblAppName = new System.Windows.Forms.Label();
-            this.lblRecruiter = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btConfirm = new System.Windows.Forms.Button();
-            this.panelManagement.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelDetails.SuspendLayout();
-            this.panelTemplate.SuspendLayout();
-            this.panelAdd.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppTemp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppJob)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppEmail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgRecruiter)).BeginInit();
+            this.Label_DashboardTitle = new System.Windows.Forms.Label();
+            this.Label_Error = new System.Windows.Forms.Label();
+            this.Button_Cancel = new System.Windows.Forms.Button();
+            this.ListBox_TemplateList = new System.Windows.Forms.ListBox();
+            this.Panel_Management = new System.Windows.Forms.Panel();
+            this.Label_ManagementSeparator = new System.Windows.Forms.Label();
+            this.Label_ManagementStage3 = new System.Windows.Forms.Label();
+            this.PictureBox_ManagementStage3 = new System.Windows.Forms.PictureBox();
+            this.Label_ManagementStage2 = new System.Windows.Forms.Label();
+            this.PictureBox_ManagementStage2 = new System.Windows.Forms.PictureBox();
+            this.Label_ManagementStage1 = new System.Windows.Forms.Label();
+            this.PictureBox_ManagementStage1 = new System.Windows.Forms.PictureBox();
+            this.PictureBox_ManagementLogo = new System.Windows.Forms.PictureBox();
+            this.Button_Logout = new System.Windows.Forms.Button();
+            this.Button_Editor = new System.Windows.Forms.Button();
+            this.Panel_Details = new System.Windows.Forms.Panel();
+            this.Label_DetailsJobPositionRequired = new System.Windows.Forms.Label();
+            this.Label_DetailsEmailRequired = new System.Windows.Forms.Label();
+            this.Label_DetailsFullNameRequired = new System.Windows.Forms.Label();
+            this.Panel_Template = new System.Windows.Forms.Panel();
+            this.Panel_Add = new System.Windows.Forms.Panel();
+            this.Label_ApplicantTemplate = new System.Windows.Forms.Label();
+            this.Label_Template = new System.Windows.Forms.Label();
+            this.PictureBox_Template = new System.Windows.Forms.PictureBox();
+            this.Label_ApplicantJob = new System.Windows.Forms.Label();
+            this.Label_ApplicantEmail = new System.Windows.Forms.Label();
+            this.Label_ApplicantName = new System.Windows.Forms.Label();
+            this.Label_RecruiterName = new System.Windows.Forms.Label();
+            this.PictureBox_Position = new System.Windows.Forms.PictureBox();
+            this.PictureBox_Email = new System.Windows.Forms.PictureBox();
+            this.PictureBox_Applicant = new System.Windows.Forms.PictureBox();
+            this.PictureBox_Recruiter = new System.Windows.Forms.PictureBox();
+            this.Label_Position = new System.Windows.Forms.Label();
+            this.Label_Email = new System.Windows.Forms.Label();
+            this.Label_Applicant = new System.Windows.Forms.Label();
+            this.Label_Recruiter = new System.Windows.Forms.Label();
+            this.Label_AddTitle = new System.Windows.Forms.Label();
+            this.Button_Save = new System.Windows.Forms.Button();
+            this.Panel_Management.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementLogo)).BeginInit();
+            this.Panel_Details.SuspendLayout();
+            this.Panel_Template.SuspendLayout();
+            this.Panel_Add.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Template)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Position)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Email)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Applicant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Recruiter)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbHello
+            // Label_WelcomeTitle
             // 
-            this.lbHello.AutoSize = true;
-            this.lbHello.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lbHello.Location = new System.Drawing.Point(116, 25);
-            this.lbHello.Name = "lbHello";
-            this.lbHello.Size = new System.Drawing.Size(110, 24);
-            this.lbHello.TabIndex = 0;
-            this.lbHello.Text = "Welcome,";
+            this.Label_WelcomeTitle.AutoSize = true;
+            this.Label_WelcomeTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Label_WelcomeTitle.Location = new System.Drawing.Point(116, 25);
+            this.Label_WelcomeTitle.Name = "Label_WelcomeTitle";
+            this.Label_WelcomeTitle.Size = new System.Drawing.Size(110, 24);
+            this.Label_WelcomeTitle.TabIndex = 0;
+            this.Label_WelcomeTitle.Text = "Welcome,";
             // 
-            // lbName
+            // Label_Username
             // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lbName.Location = new System.Drawing.Point(221, 25);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(125, 24);
-            this.lbName.TabIndex = 0;
-            this.lbName.Text = "[username]";
+            this.Label_Username.AutoSize = true;
+            this.Label_Username.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Label_Username.Location = new System.Drawing.Point(221, 25);
+            this.Label_Username.Name = "Label_Username";
+            this.Label_Username.Size = new System.Drawing.Size(125, 24);
+            this.Label_Username.TabIndex = 0;
+            this.Label_Username.Text = "[username]";
             // 
-            // lbUploadDoc
+            // Label_DetailsTitle
             // 
-            this.lbUploadDoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbUploadDoc.AutoSize = true;
-            this.lbUploadDoc.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUploadDoc.Location = new System.Drawing.Point(21, 14);
-            this.lbUploadDoc.Name = "lbUploadDoc";
-            this.lbUploadDoc.Size = new System.Drawing.Size(142, 24);
-            this.lbUploadDoc.TabIndex = 0;
-            this.lbUploadDoc.Text = "Enter details.";
+            this.Label_DetailsTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Label_DetailsTitle.AutoSize = true;
+            this.Label_DetailsTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_DetailsTitle.Location = new System.Drawing.Point(21, 14);
+            this.Label_DetailsTitle.Name = "Label_DetailsTitle";
+            this.Label_DetailsTitle.Size = new System.Drawing.Size(142, 24);
+            this.Label_DetailsTitle.TabIndex = 0;
+            this.Label_DetailsTitle.Text = "Enter details.";
             // 
-            // lbDocType
+            // Label_TemplateTitle
             // 
-            this.lbDocType.AutoSize = true;
-            this.lbDocType.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDocType.Location = new System.Drawing.Point(20, 14);
-            this.lbDocType.Name = "lbDocType";
-            this.lbDocType.Size = new System.Drawing.Size(171, 24);
-            this.lbDocType.TabIndex = 0;
-            this.lbDocType.Text = "Select template.";
+            this.Label_TemplateTitle.AutoSize = true;
+            this.Label_TemplateTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_TemplateTitle.Location = new System.Drawing.Point(20, 14);
+            this.Label_TemplateTitle.Name = "Label_TemplateTitle";
+            this.Label_TemplateTitle.Size = new System.Drawing.Size(171, 24);
+            this.Label_TemplateTitle.TabIndex = 0;
+            this.Label_TemplateTitle.Text = "Select template.";
             // 
-            // tbAName
+            // TextBox_DetailsFullName
             // 
-            this.tbAName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbAName.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.tbAName.ForeColor = System.Drawing.Color.Black;
-            this.tbAName.Location = new System.Drawing.Point(25, 117);
-            this.tbAName.Name = "tbAName";
-            this.tbAName.Size = new System.Drawing.Size(210, 20);
-            this.tbAName.TabIndex = 0;
-            this.tbAName.TextChanged += new System.EventHandler(this.tbAName_TextChanged);
+            this.TextBox_DetailsFullName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TextBox_DetailsFullName.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.TextBox_DetailsFullName.ForeColor = System.Drawing.Color.Black;
+            this.TextBox_DetailsFullName.Location = new System.Drawing.Point(25, 117);
+            this.TextBox_DetailsFullName.Name = "TextBox_DetailsFullName";
+            this.TextBox_DetailsFullName.Size = new System.Drawing.Size(210, 20);
+            this.TextBox_DetailsFullName.TabIndex = 0;
+            this.TextBox_DetailsFullName.TextChanged += new System.EventHandler(this.TextBox_DetailsFullName_TextChanged);
             // 
-            // lbAName
+            // Label_DetailsFullName
             // 
-            this.lbAName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbAName.AutoSize = true;
-            this.lbAName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lbAName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lbAName.Location = new System.Drawing.Point(22, 90);
-            this.lbAName.Name = "lbAName";
-            this.lbAName.Size = new System.Drawing.Size(60, 14);
-            this.lbAName.TabIndex = 0;
-            this.lbAName.Text = "Full Name";
+            this.Label_DetailsFullName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Label_DetailsFullName.AutoSize = true;
+            this.Label_DetailsFullName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_DetailsFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_DetailsFullName.Location = new System.Drawing.Point(22, 90);
+            this.Label_DetailsFullName.Name = "Label_DetailsFullName";
+            this.Label_DetailsFullName.Size = new System.Drawing.Size(60, 14);
+            this.Label_DetailsFullName.TabIndex = 0;
+            this.Label_DetailsFullName.Text = "Full Name";
             // 
-            // lbAJob
+            // Label_DetailsJobPosition
             // 
-            this.lbAJob.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbAJob.AutoSize = true;
-            this.lbAJob.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lbAJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lbAJob.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbAJob.Location = new System.Drawing.Point(22, 239);
-            this.lbAJob.Name = "lbAJob";
-            this.lbAJob.Size = new System.Drawing.Size(75, 14);
-            this.lbAJob.TabIndex = 0;
-            this.lbAJob.Text = "Job Position";
+            this.Label_DetailsJobPosition.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Label_DetailsJobPosition.AutoSize = true;
+            this.Label_DetailsJobPosition.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_DetailsJobPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_DetailsJobPosition.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Label_DetailsJobPosition.Location = new System.Drawing.Point(22, 239);
+            this.Label_DetailsJobPosition.Name = "Label_DetailsJobPosition";
+            this.Label_DetailsJobPosition.Size = new System.Drawing.Size(75, 14);
+            this.Label_DetailsJobPosition.TabIndex = 0;
+            this.Label_DetailsJobPosition.Text = "Job Position";
             // 
-            // lbAEmail
+            // Label_DetailsEmail
             // 
-            this.lbAEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbAEmail.AutoSize = true;
-            this.lbAEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lbAEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lbAEmail.Location = new System.Drawing.Point(22, 166);
-            this.lbAEmail.Name = "lbAEmail";
-            this.lbAEmail.Size = new System.Drawing.Size(36, 14);
-            this.lbAEmail.TabIndex = 0;
-            this.lbAEmail.Text = "Email";
+            this.Label_DetailsEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Label_DetailsEmail.AutoSize = true;
+            this.Label_DetailsEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_DetailsEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_DetailsEmail.Location = new System.Drawing.Point(22, 166);
+            this.Label_DetailsEmail.Name = "Label_DetailsEmail";
+            this.Label_DetailsEmail.Size = new System.Drawing.Size(36, 14);
+            this.Label_DetailsEmail.TabIndex = 0;
+            this.Label_DetailsEmail.Text = "Email";
             // 
-            // tbAJob
+            // TextBox_DetailsJobPosition
             // 
-            this.tbAJob.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbAJob.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.tbAJob.ForeColor = System.Drawing.Color.Black;
-            this.tbAJob.Location = new System.Drawing.Point(25, 267);
-            this.tbAJob.Name = "tbAJob";
-            this.tbAJob.Size = new System.Drawing.Size(210, 20);
-            this.tbAJob.TabIndex = 2;
-            this.tbAJob.TextChanged += new System.EventHandler(this.tbAJob_TextChanged);
+            this.TextBox_DetailsJobPosition.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TextBox_DetailsJobPosition.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.TextBox_DetailsJobPosition.ForeColor = System.Drawing.Color.Black;
+            this.TextBox_DetailsJobPosition.Location = new System.Drawing.Point(25, 267);
+            this.TextBox_DetailsJobPosition.Name = "TextBox_DetailsJobPosition";
+            this.TextBox_DetailsJobPosition.Size = new System.Drawing.Size(210, 20);
+            this.TextBox_DetailsJobPosition.TabIndex = 2;
+            this.TextBox_DetailsJobPosition.TextChanged += new System.EventHandler(this.TextBox_DetailsJobPosition_TextChanged);
             // 
-            // tbAEmail
+            // TextBox_DetailsEmail
             // 
-            this.tbAEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbAEmail.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.tbAEmail.ForeColor = System.Drawing.Color.Black;
-            this.tbAEmail.Location = new System.Drawing.Point(25, 193);
-            this.tbAEmail.Name = "tbAEmail";
-            this.tbAEmail.Size = new System.Drawing.Size(210, 20);
-            this.tbAEmail.TabIndex = 1;
-            this.tbAEmail.TextChanged += new System.EventHandler(this.tbAEmail_TextChanged);
+            this.TextBox_DetailsEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TextBox_DetailsEmail.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.TextBox_DetailsEmail.ForeColor = System.Drawing.Color.Black;
+            this.TextBox_DetailsEmail.Location = new System.Drawing.Point(25, 193);
+            this.TextBox_DetailsEmail.Name = "TextBox_DetailsEmail";
+            this.TextBox_DetailsEmail.Size = new System.Drawing.Size(210, 20);
+            this.TextBox_DetailsEmail.TabIndex = 1;
+            this.TextBox_DetailsEmail.TextChanged += new System.EventHandler(this.TextBox_DetailsEmail_TextChanged);
             // 
             // label1
             // 
@@ -212,467 +212,467 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 23;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(840, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 24);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Dashboard";
-            // 
-            // lbError
-            // 
-            this.lbError.AutoSize = true;
-            this.lbError.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lbError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.lbError.Location = new System.Drawing.Point(23, 334);
-            this.lbError.Name = "lbError";
-            this.lbError.Size = new System.Drawing.Size(89, 14);
-            this.lbError.TabIndex = 0;
-            this.lbError.Text = "Error Message";
-            this.lbError.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbError.Visible = false;
-            // 
-            // btBack
-            // 
-            this.btBack.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.btBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btBack.FlatAppearance.BorderSize = 0;
-            this.btBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btBack.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btBack.ForeColor = System.Drawing.Color.White;
-            this.btBack.Location = new System.Drawing.Point(26, 367);
-            this.btBack.Name = "btBack";
-            this.btBack.Size = new System.Drawing.Size(206, 26);
-            this.btBack.TabIndex = 5;
-            this.btBack.Text = "Cancel";
-            this.btBack.UseVisualStyleBackColor = false;
-            this.btBack.Visible = false;
-            this.btBack.Click += new System.EventHandler(this.btBack_Click);
-            // 
-            // tempTypeBox
-            // 
-            this.tempTypeBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tempTypeBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tempTypeBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.tempTypeBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.tempTypeBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.tempTypeBox.FormattingEnabled = true;
-            this.tempTypeBox.ItemHeight = 32;
-            this.tempTypeBox.Location = new System.Drawing.Point(24, 87);
-            this.tempTypeBox.Name = "tempTypeBox";
-            this.tempTypeBox.Size = new System.Drawing.Size(214, 330);
-            this.tempTypeBox.TabIndex = 3;
-            this.tempTypeBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tempTypeBox_MouseClick);
-            this.tempTypeBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tempTypeBox_DrawItem);
-            // 
-            // panelManagement
-            // 
-            this.panelManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(57)))));
-            this.panelManagement.Controls.Add(this.label3);
-            this.panelManagement.Controls.Add(this.lblStage3);
-            this.panelManagement.Controls.Add(this.imgStage3);
-            this.panelManagement.Controls.Add(this.lblStage2);
-            this.panelManagement.Controls.Add(this.imgStage2);
-            this.panelManagement.Controls.Add(this.lblStage1);
-            this.panelManagement.Controls.Add(this.imgStage1);
-            this.panelManagement.Controls.Add(this.pictureBox1);
-            this.panelManagement.Controls.Add(this.btLogout);
-            this.panelManagement.Controls.Add(this.codeViewBtn);
-            this.panelManagement.Location = new System.Drawing.Point(0, 0);
-            this.panelManagement.Name = "panelManagement";
-            this.panelManagement.Size = new System.Drawing.Size(100, 564);
-            this.panelManagement.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Location = new System.Drawing.Point(10, 459);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 2);
-            this.label3.TabIndex = 37;
-            // 
-            // lblStage3
-            // 
-            this.lblStage3.AutoSize = true;
-            this.lblStage3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblStage3.ForeColor = System.Drawing.Color.White;
-            this.lblStage3.Location = new System.Drawing.Point(24, 370);
-            this.lblStage3.Name = "lblStage3";
-            this.lblStage3.Size = new System.Drawing.Size(52, 14);
-            this.lblStage3.TabIndex = 0;
-            this.lblStage3.Text = "Preview";
-            // 
-            // imgStage3
-            // 
-            this.imgStage3.Image = global::HappyTech.Properties.Resources.happytech_3;
-            this.imgStage3.Location = new System.Drawing.Point(42, 347);
-            this.imgStage3.Name = "imgStage3";
-            this.imgStage3.Size = new System.Drawing.Size(16, 16);
-            this.imgStage3.TabIndex = 42;
-            this.imgStage3.TabStop = false;
-            // 
-            // lblStage2
-            // 
-            this.lblStage2.AutoSize = true;
-            this.lblStage2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblStage2.ForeColor = System.Drawing.Color.White;
-            this.lblStage2.Location = new System.Drawing.Point(19, 258);
-            this.lblStage2.Name = "lblStage2";
-            this.lblStage2.Size = new System.Drawing.Size(60, 14);
-            this.lblStage2.TabIndex = 0;
-            this.lblStage2.Text = "Feedback";
-            // 
-            // imgStage2
-            // 
-            this.imgStage2.Image = global::HappyTech.Properties.Resources.happytech_2;
-            this.imgStage2.Location = new System.Drawing.Point(42, 235);
-            this.imgStage2.Name = "imgStage2";
-            this.imgStage2.Size = new System.Drawing.Size(16, 16);
-            this.imgStage2.TabIndex = 40;
-            this.imgStage2.TabStop = false;
-            // 
-            // lblStage1
-            // 
-            this.lblStage1.AutoSize = true;
-            this.lblStage1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblStage1.ForeColor = System.Drawing.Color.White;
-            this.lblStage1.Location = new System.Drawing.Point(17, 146);
-            this.lblStage1.Name = "lblStage1";
-            this.lblStage1.Size = new System.Drawing.Size(65, 14);
-            this.lblStage1.TabIndex = 0;
-            this.lblStage1.Text = "Applicants";
-            // 
-            // imgStage1
-            // 
-            this.imgStage1.Image = global::HappyTech.Properties.Resources.happytech_1;
-            this.imgStage1.Location = new System.Drawing.Point(42, 123);
-            this.imgStage1.Name = "imgStage1";
-            this.imgStage1.Size = new System.Drawing.Size(16, 16);
-            this.imgStage1.TabIndex = 37;
-            this.imgStage1.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HappyTech.Properties.Resources.happytech_logo_small;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 38);
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btLogout
-            // 
-            this.btLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(57)))));
-            this.btLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btLogout.FlatAppearance.BorderSize = 0;
-            this.btLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btLogout.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btLogout.ForeColor = System.Drawing.Color.White;
-            this.btLogout.Image = global::HappyTech.Properties.Resources.happytech_logout;
-            this.btLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btLogout.Location = new System.Drawing.Point(10, 504);
-            this.btLogout.Name = "btLogout";
-            this.btLogout.Size = new System.Drawing.Size(80, 47);
-            this.btLogout.TabIndex = 7;
-            this.btLogout.Text = "Logout";
-            this.btLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btLogout.UseVisualStyleBackColor = false;
-            this.btLogout.Click += new System.EventHandler(this.backBtn_Click);
-            // 
-            // codeViewBtn
-            // 
-            this.codeViewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(57)))));
-            this.codeViewBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.codeViewBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.codeViewBtn.FlatAppearance.BorderSize = 0;
-            this.codeViewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.codeViewBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.codeViewBtn.ForeColor = System.Drawing.Color.White;
-            this.codeViewBtn.Image = global::HappyTech.Properties.Resources.happytech_edit;
-            this.codeViewBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.codeViewBtn.Location = new System.Drawing.Point(10, 469);
-            this.codeViewBtn.Name = "codeViewBtn";
-            this.codeViewBtn.Size = new System.Drawing.Size(80, 32);
-            this.codeViewBtn.TabIndex = 6;
-            this.codeViewBtn.Text = "Editor";
-            this.codeViewBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.codeViewBtn.UseVisualStyleBackColor = false;
-            this.codeViewBtn.Click += new System.EventHandler(this.codeViewBtn_Click);
-            // 
-            // panelDetails
-            // 
-            this.panelDetails.BackColor = System.Drawing.Color.White;
-            this.panelDetails.Controls.Add(this.lbJobReq);
-            this.panelDetails.Controls.Add(this.lbEmailReq);
-            this.panelDetails.Controls.Add(this.lbFullNameReq);
-            this.panelDetails.Controls.Add(this.lbAName);
-            this.panelDetails.Controls.Add(this.lbUploadDoc);
-            this.panelDetails.Controls.Add(this.tbAJob);
-            this.panelDetails.Controls.Add(this.lbAJob);
-            this.panelDetails.Controls.Add(this.tbAName);
-            this.panelDetails.Controls.Add(this.lbAEmail);
-            this.panelDetails.Controls.Add(this.tbAEmail);
-            this.panelDetails.Location = new System.Drawing.Point(120, 78);
-            this.panelDetails.Name = "panelDetails";
-            this.panelDetails.Size = new System.Drawing.Size(260, 458);
-            this.panelDetails.TabIndex = 0;
-            // 
-            // lbJobReq
-            // 
-            this.lbJobReq.AutoSize = true;
-            this.lbJobReq.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lbJobReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.lbJobReq.Location = new System.Drawing.Point(93, 239);
-            this.lbJobReq.Name = "lbJobReq";
-            this.lbJobReq.Size = new System.Drawing.Size(11, 14);
-            this.lbJobReq.TabIndex = 0;
-            this.lbJobReq.Text = "*";
-            // 
-            // lbEmailReq
-            // 
-            this.lbEmailReq.AutoSize = true;
-            this.lbEmailReq.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lbEmailReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.lbEmailReq.Location = new System.Drawing.Point(54, 166);
-            this.lbEmailReq.Name = "lbEmailReq";
-            this.lbEmailReq.Size = new System.Drawing.Size(11, 14);
-            this.lbEmailReq.TabIndex = 0;
-            this.lbEmailReq.Text = "*";
-            // 
-            // lbFullNameReq
-            // 
-            this.lbFullNameReq.AutoSize = true;
-            this.lbFullNameReq.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lbFullNameReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.lbFullNameReq.Location = new System.Drawing.Point(78, 90);
-            this.lbFullNameReq.Name = "lbFullNameReq";
-            this.lbFullNameReq.Size = new System.Drawing.Size(11, 14);
-            this.lbFullNameReq.TabIndex = 0;
-            this.lbFullNameReq.Text = "*";
-            // 
-            // panelTemplate
-            // 
-            this.panelTemplate.BackColor = System.Drawing.Color.White;
-            this.panelTemplate.Controls.Add(this.tempTypeBox);
-            this.panelTemplate.Controls.Add(this.lbDocType);
-            this.panelTemplate.Location = new System.Drawing.Point(412, 78);
-            this.panelTemplate.Name = "panelTemplate";
-            this.panelTemplate.Size = new System.Drawing.Size(260, 458);
-            this.panelTemplate.TabIndex = 0;
-            // 
-            // panelAdd
-            // 
-            this.panelAdd.BackColor = System.Drawing.Color.White;
-            this.panelAdd.Controls.Add(this.lblAppTempVal);
-            this.panelAdd.Controls.Add(this.lblAppTemp);
-            this.panelAdd.Controls.Add(this.imgAppTemp);
-            this.panelAdd.Controls.Add(this.lblAppJobVal);
-            this.panelAdd.Controls.Add(this.lblAppEmailVal);
-            this.panelAdd.Controls.Add(this.lblAppNameVal);
-            this.panelAdd.Controls.Add(this.lblRecruiterVal);
-            this.panelAdd.Controls.Add(this.imgAppJob);
-            this.panelAdd.Controls.Add(this.imgAppEmail);
-            this.panelAdd.Controls.Add(this.imgAppName);
-            this.panelAdd.Controls.Add(this.imgRecruiter);
-            this.panelAdd.Controls.Add(this.lblAppJob);
-            this.panelAdd.Controls.Add(this.lblAppEmail);
-            this.panelAdd.Controls.Add(this.lblAppName);
-            this.panelAdd.Controls.Add(this.lblRecruiter);
-            this.panelAdd.Controls.Add(this.label2);
-            this.panelAdd.Controls.Add(this.btConfirm);
-            this.panelAdd.Controls.Add(this.btBack);
-            this.panelAdd.Controls.Add(this.lbError);
-            this.panelAdd.Location = new System.Drawing.Point(701, 78);
-            this.panelAdd.Name = "panelAdd";
-            this.panelAdd.Size = new System.Drawing.Size(260, 458);
-            this.panelAdd.TabIndex = 0;
-            // 
-            // lblAppTempVal
-            // 
-            this.lblAppTempVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppTempVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppTempVal.Location = new System.Drawing.Point(104, 288);
-            this.lblAppTempVal.Name = "lblAppTempVal";
-            this.lblAppTempVal.Size = new System.Drawing.Size(128, 14);
-            this.lblAppTempVal.TabIndex = 53;
-            this.lblAppTempVal.Text = "[applicant_temp]";
-            this.lblAppTempVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblAppTemp
-            // 
-            this.lblAppTemp.AutoSize = true;
-            this.lblAppTemp.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppTemp.Location = new System.Drawing.Point(37, 288);
-            this.lblAppTemp.Name = "lblAppTemp";
-            this.lblAppTemp.Size = new System.Drawing.Size(61, 14);
-            this.lblAppTemp.TabIndex = 52;
-            this.lblAppTemp.Text = "Template:";
-            // 
-            // imgAppTemp
-            // 
-            this.imgAppTemp.Image = global::HappyTech.Properties.Resources.happytech_empty;
-            this.imgAppTemp.Location = new System.Drawing.Point(15, 288);
-            this.imgAppTemp.Name = "imgAppTemp";
-            this.imgAppTemp.Size = new System.Drawing.Size(16, 16);
-            this.imgAppTemp.TabIndex = 51;
-            this.imgAppTemp.TabStop = false;
-            // 
-            // lblAppJobVal
-            // 
-            this.lblAppJobVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppJobVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppJobVal.Location = new System.Drawing.Point(104, 239);
-            this.lblAppJobVal.Name = "lblAppJobVal";
-            this.lblAppJobVal.Size = new System.Drawing.Size(128, 14);
-            this.lblAppJobVal.TabIndex = 50;
-            this.lblAppJobVal.Text = "[applicant_job]";
-            this.lblAppJobVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblAppEmailVal
-            // 
-            this.lblAppEmailVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppEmailVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppEmailVal.Location = new System.Drawing.Point(104, 188);
-            this.lblAppEmailVal.Name = "lblAppEmailVal";
-            this.lblAppEmailVal.Size = new System.Drawing.Size(128, 14);
-            this.lblAppEmailVal.TabIndex = 49;
-            this.lblAppEmailVal.Text = "[applicant_email]";
-            this.lblAppEmailVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblAppNameVal
-            // 
-            this.lblAppNameVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppNameVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppNameVal.Location = new System.Drawing.Point(104, 139);
-            this.lblAppNameVal.Name = "lblAppNameVal";
-            this.lblAppNameVal.Size = new System.Drawing.Size(128, 14);
-            this.lblAppNameVal.TabIndex = 48;
-            this.lblAppNameVal.Text = "[applicant_name]";
-            this.lblAppNameVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblRecruiterVal
-            // 
-            this.lblRecruiterVal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblRecruiterVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblRecruiterVal.Location = new System.Drawing.Point(104, 90);
-            this.lblRecruiterVal.Name = "lblRecruiterVal";
-            this.lblRecruiterVal.Size = new System.Drawing.Size(128, 14);
-            this.lblRecruiterVal.TabIndex = 47;
-            this.lblRecruiterVal.Text = "[recruiter_name]";
-            this.lblRecruiterVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // imgAppJob
-            // 
-            this.imgAppJob.Image = global::HappyTech.Properties.Resources.happytech_empty;
-            this.imgAppJob.Location = new System.Drawing.Point(15, 239);
-            this.imgAppJob.Name = "imgAppJob";
-            this.imgAppJob.Size = new System.Drawing.Size(16, 16);
-            this.imgAppJob.TabIndex = 46;
-            this.imgAppJob.TabStop = false;
-            // 
-            // imgAppEmail
-            // 
-            this.imgAppEmail.Image = global::HappyTech.Properties.Resources.happytech_empty;
-            this.imgAppEmail.Location = new System.Drawing.Point(15, 188);
-            this.imgAppEmail.Name = "imgAppEmail";
-            this.imgAppEmail.Size = new System.Drawing.Size(16, 16);
-            this.imgAppEmail.TabIndex = 45;
-            this.imgAppEmail.TabStop = false;
-            // 
-            // imgAppName
-            // 
-            this.imgAppName.Image = global::HappyTech.Properties.Resources.happytech_empty;
-            this.imgAppName.Location = new System.Drawing.Point(15, 139);
-            this.imgAppName.Name = "imgAppName";
-            this.imgAppName.Size = new System.Drawing.Size(16, 16);
-            this.imgAppName.TabIndex = 44;
-            this.imgAppName.TabStop = false;
-            // 
-            // imgRecruiter
-            // 
-            this.imgRecruiter.Image = global::HappyTech.Properties.Resources.happytech_empty;
-            this.imgRecruiter.Location = new System.Drawing.Point(15, 90);
-            this.imgRecruiter.Name = "imgRecruiter";
-            this.imgRecruiter.Size = new System.Drawing.Size(16, 16);
-            this.imgRecruiter.TabIndex = 43;
-            this.imgRecruiter.TabStop = false;
-            // 
-            // lblAppJob
-            // 
-            this.lblAppJob.AutoSize = true;
-            this.lblAppJob.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppJob.Location = new System.Drawing.Point(37, 239);
-            this.lblAppJob.Name = "lblAppJob";
-            this.lblAppJob.Size = new System.Drawing.Size(55, 14);
-            this.lblAppJob.TabIndex = 9;
-            this.lblAppJob.Text = "Position:";
-            // 
-            // lblAppEmail
-            // 
-            this.lblAppEmail.AutoSize = true;
-            this.lblAppEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppEmail.Location = new System.Drawing.Point(37, 188);
-            this.lblAppEmail.Name = "lblAppEmail";
-            this.lblAppEmail.Size = new System.Drawing.Size(39, 14);
-            this.lblAppEmail.TabIndex = 8;
-            this.lblAppEmail.Text = "Email:";
-            // 
-            // lblAppName
-            // 
-            this.lblAppName.AutoSize = true;
-            this.lblAppName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAppName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblAppName.Location = new System.Drawing.Point(37, 139);
-            this.lblAppName.Name = "lblAppName";
-            this.lblAppName.Size = new System.Drawing.Size(61, 14);
-            this.lblAppName.TabIndex = 7;
-            this.lblAppName.Text = "Applicant:";
-            // 
-            // lblRecruiter
-            // 
-            this.lblRecruiter.AutoSize = true;
-            this.lblRecruiter.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblRecruiter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
-            this.lblRecruiter.Location = new System.Drawing.Point(37, 90);
-            this.lblRecruiter.Name = "lblRecruiter";
-            this.lblRecruiter.Size = new System.Drawing.Size(61, 14);
-            this.lblRecruiter.TabIndex = 6;
-            this.lblRecruiter.Text = "Recruiter:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Add applicant.";
-            // 
-            // btConfirm
-            // 
-            this.btConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
-            this.btConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btConfirm.FlatAppearance.BorderSize = 0;
-            this.btConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btConfirm.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btConfirm.ForeColor = System.Drawing.Color.White;
-            this.btConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btConfirm.Location = new System.Drawing.Point(26, 410);
-            this.btConfirm.Name = "btConfirm";
-            this.btConfirm.Size = new System.Drawing.Size(206, 26);
-            this.btConfirm.TabIndex = 4;
-            this.btConfirm.Text = "Save";
-            this.btConfirm.UseVisualStyleBackColor = false;
-            this.btConfirm.Click += new System.EventHandler(this.btConfirm_Click);
+            // Label_DashboardTitle
+            // 
+            this.Label_DashboardTitle.AutoSize = true;
+            this.Label_DashboardTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Label_DashboardTitle.Location = new System.Drawing.Point(840, 25);
+            this.Label_DashboardTitle.Name = "Label_DashboardTitle";
+            this.Label_DashboardTitle.Size = new System.Drawing.Size(121, 24);
+            this.Label_DashboardTitle.TabIndex = 0;
+            this.Label_DashboardTitle.Text = "Dashboard";
+            // 
+            // Label_Error
+            // 
+            this.Label_Error.AutoSize = true;
+            this.Label_Error.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_Error.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.Label_Error.Location = new System.Drawing.Point(23, 334);
+            this.Label_Error.Name = "Label_Error";
+            this.Label_Error.Size = new System.Drawing.Size(89, 14);
+            this.Label_Error.TabIndex = 0;
+            this.Label_Error.Text = "Error Message";
+            this.Label_Error.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Label_Error.Visible = false;
+            // 
+            // Button_Cancel
+            // 
+            this.Button_Cancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Button_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.Button_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_Cancel.FlatAppearance.BorderSize = 0;
+            this.Button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Cancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_Cancel.ForeColor = System.Drawing.Color.White;
+            this.Button_Cancel.Location = new System.Drawing.Point(26, 367);
+            this.Button_Cancel.Name = "Button_Cancel";
+            this.Button_Cancel.Size = new System.Drawing.Size(206, 26);
+            this.Button_Cancel.TabIndex = 5;
+            this.Button_Cancel.Text = "Cancel";
+            this.Button_Cancel.UseVisualStyleBackColor = false;
+            this.Button_Cancel.Visible = false;
+            this.Button_Cancel.Click += new System.EventHandler(this.Button_Cancel_Click);
+            // 
+            // ListBox_TemplateList
+            // 
+            this.ListBox_TemplateList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ListBox_TemplateList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ListBox_TemplateList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.ListBox_TemplateList.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ListBox_TemplateList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.ListBox_TemplateList.FormattingEnabled = true;
+            this.ListBox_TemplateList.ItemHeight = 32;
+            this.ListBox_TemplateList.Location = new System.Drawing.Point(24, 87);
+            this.ListBox_TemplateList.Name = "ListBox_TemplateList";
+            this.ListBox_TemplateList.Size = new System.Drawing.Size(214, 330);
+            this.ListBox_TemplateList.TabIndex = 3;
+            this.ListBox_TemplateList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListBox_TemplateList_MouseClick);
+            this.ListBox_TemplateList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListBox_TemplateList_DrawItem);
+            // 
+            // Panel_Management
+            // 
+            this.Panel_Management.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(57)))));
+            this.Panel_Management.Controls.Add(this.Label_ManagementSeparator);
+            this.Panel_Management.Controls.Add(this.Label_ManagementStage3);
+            this.Panel_Management.Controls.Add(this.PictureBox_ManagementStage3);
+            this.Panel_Management.Controls.Add(this.Label_ManagementStage2);
+            this.Panel_Management.Controls.Add(this.PictureBox_ManagementStage2);
+            this.Panel_Management.Controls.Add(this.Label_ManagementStage1);
+            this.Panel_Management.Controls.Add(this.PictureBox_ManagementStage1);
+            this.Panel_Management.Controls.Add(this.PictureBox_ManagementLogo);
+            this.Panel_Management.Controls.Add(this.Button_Logout);
+            this.Panel_Management.Controls.Add(this.Button_Editor);
+            this.Panel_Management.Location = new System.Drawing.Point(0, 0);
+            this.Panel_Management.Name = "Panel_Management";
+            this.Panel_Management.Size = new System.Drawing.Size(100, 564);
+            this.Panel_Management.TabIndex = 0;
+            // 
+            // Label_ManagementSeparator
+            // 
+            this.Label_ManagementSeparator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Label_ManagementSeparator.Location = new System.Drawing.Point(10, 459);
+            this.Label_ManagementSeparator.Name = "Label_ManagementSeparator";
+            this.Label_ManagementSeparator.Size = new System.Drawing.Size(80, 2);
+            this.Label_ManagementSeparator.TabIndex = 37;
+            // 
+            // Label_ManagementStage3
+            // 
+            this.Label_ManagementStage3.AutoSize = true;
+            this.Label_ManagementStage3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_ManagementStage3.ForeColor = System.Drawing.Color.White;
+            this.Label_ManagementStage3.Location = new System.Drawing.Point(24, 370);
+            this.Label_ManagementStage3.Name = "Label_ManagementStage3";
+            this.Label_ManagementStage3.Size = new System.Drawing.Size(52, 14);
+            this.Label_ManagementStage3.TabIndex = 0;
+            this.Label_ManagementStage3.Text = "Preview";
+            // 
+            // PictureBox_ManagementStage3
+            // 
+            this.PictureBox_ManagementStage3.Image = global::HappyTech.Properties.Resources.happytech_3;
+            this.PictureBox_ManagementStage3.Location = new System.Drawing.Point(42, 347);
+            this.PictureBox_ManagementStage3.Name = "PictureBox_ManagementStage3";
+            this.PictureBox_ManagementStage3.Size = new System.Drawing.Size(16, 16);
+            this.PictureBox_ManagementStage3.TabIndex = 42;
+            this.PictureBox_ManagementStage3.TabStop = false;
+            // 
+            // Label_ManagementStage2
+            // 
+            this.Label_ManagementStage2.AutoSize = true;
+            this.Label_ManagementStage2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_ManagementStage2.ForeColor = System.Drawing.Color.White;
+            this.Label_ManagementStage2.Location = new System.Drawing.Point(19, 258);
+            this.Label_ManagementStage2.Name = "Label_ManagementStage2";
+            this.Label_ManagementStage2.Size = new System.Drawing.Size(60, 14);
+            this.Label_ManagementStage2.TabIndex = 0;
+            this.Label_ManagementStage2.Text = "Feedback";
+            // 
+            // PictureBox_ManagementStage2
+            // 
+            this.PictureBox_ManagementStage2.Image = global::HappyTech.Properties.Resources.happytech_2;
+            this.PictureBox_ManagementStage2.Location = new System.Drawing.Point(42, 235);
+            this.PictureBox_ManagementStage2.Name = "PictureBox_ManagementStage2";
+            this.PictureBox_ManagementStage2.Size = new System.Drawing.Size(16, 16);
+            this.PictureBox_ManagementStage2.TabIndex = 40;
+            this.PictureBox_ManagementStage2.TabStop = false;
+            // 
+            // Label_ManagementStage1
+            // 
+            this.Label_ManagementStage1.AutoSize = true;
+            this.Label_ManagementStage1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_ManagementStage1.ForeColor = System.Drawing.Color.White;
+            this.Label_ManagementStage1.Location = new System.Drawing.Point(17, 146);
+            this.Label_ManagementStage1.Name = "Label_ManagementStage1";
+            this.Label_ManagementStage1.Size = new System.Drawing.Size(65, 14);
+            this.Label_ManagementStage1.TabIndex = 0;
+            this.Label_ManagementStage1.Text = "Applicants";
+            // 
+            // PictureBox_ManagementStage1
+            // 
+            this.PictureBox_ManagementStage1.Image = global::HappyTech.Properties.Resources.happytech_1;
+            this.PictureBox_ManagementStage1.Location = new System.Drawing.Point(42, 123);
+            this.PictureBox_ManagementStage1.Name = "PictureBox_ManagementStage1";
+            this.PictureBox_ManagementStage1.Size = new System.Drawing.Size(16, 16);
+            this.PictureBox_ManagementStage1.TabIndex = 37;
+            this.PictureBox_ManagementStage1.TabStop = false;
+            // 
+            // PictureBox_ManagementLogo
+            // 
+            this.PictureBox_ManagementLogo.Image = global::HappyTech.Properties.Resources.happytech_logo_small;
+            this.PictureBox_ManagementLogo.Location = new System.Drawing.Point(25, 25);
+            this.PictureBox_ManagementLogo.Name = "PictureBox_ManagementLogo";
+            this.PictureBox_ManagementLogo.Size = new System.Drawing.Size(45, 38);
+            this.PictureBox_ManagementLogo.TabIndex = 34;
+            this.PictureBox_ManagementLogo.TabStop = false;
+            // 
+            // Button_Logout
+            // 
+            this.Button_Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(57)))));
+            this.Button_Logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Button_Logout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_Logout.FlatAppearance.BorderSize = 0;
+            this.Button_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Logout.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_Logout.ForeColor = System.Drawing.Color.White;
+            this.Button_Logout.Image = global::HappyTech.Properties.Resources.happytech_logout;
+            this.Button_Logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Button_Logout.Location = new System.Drawing.Point(10, 504);
+            this.Button_Logout.Name = "Button_Logout";
+            this.Button_Logout.Size = new System.Drawing.Size(80, 47);
+            this.Button_Logout.TabIndex = 7;
+            this.Button_Logout.Text = "Logout";
+            this.Button_Logout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Button_Logout.UseVisualStyleBackColor = false;
+            this.Button_Logout.Click += new System.EventHandler(this.Button_Logout_Click);
+            // 
+            // Button_Editor
+            // 
+            this.Button_Editor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(57)))));
+            this.Button_Editor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Button_Editor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_Editor.FlatAppearance.BorderSize = 0;
+            this.Button_Editor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Editor.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_Editor.ForeColor = System.Drawing.Color.White;
+            this.Button_Editor.Image = global::HappyTech.Properties.Resources.happytech_edit;
+            this.Button_Editor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Button_Editor.Location = new System.Drawing.Point(10, 469);
+            this.Button_Editor.Name = "Button_Editor";
+            this.Button_Editor.Size = new System.Drawing.Size(80, 32);
+            this.Button_Editor.TabIndex = 6;
+            this.Button_Editor.Text = "Editor";
+            this.Button_Editor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Button_Editor.UseVisualStyleBackColor = false;
+            this.Button_Editor.Click += new System.EventHandler(this.Button_Editor_Click);
+            // 
+            // Panel_Details
+            // 
+            this.Panel_Details.BackColor = System.Drawing.Color.White;
+            this.Panel_Details.Controls.Add(this.Label_DetailsJobPositionRequired);
+            this.Panel_Details.Controls.Add(this.Label_DetailsEmailRequired);
+            this.Panel_Details.Controls.Add(this.Label_DetailsFullNameRequired);
+            this.Panel_Details.Controls.Add(this.Label_DetailsFullName);
+            this.Panel_Details.Controls.Add(this.Label_DetailsTitle);
+            this.Panel_Details.Controls.Add(this.TextBox_DetailsJobPosition);
+            this.Panel_Details.Controls.Add(this.Label_DetailsJobPosition);
+            this.Panel_Details.Controls.Add(this.TextBox_DetailsFullName);
+            this.Panel_Details.Controls.Add(this.Label_DetailsEmail);
+            this.Panel_Details.Controls.Add(this.TextBox_DetailsEmail);
+            this.Panel_Details.Location = new System.Drawing.Point(120, 78);
+            this.Panel_Details.Name = "Panel_Details";
+            this.Panel_Details.Size = new System.Drawing.Size(260, 458);
+            this.Panel_Details.TabIndex = 0;
+            // 
+            // Label_DetailsJobPositionRequired
+            // 
+            this.Label_DetailsJobPositionRequired.AutoSize = true;
+            this.Label_DetailsJobPositionRequired.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_DetailsJobPositionRequired.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.Label_DetailsJobPositionRequired.Location = new System.Drawing.Point(93, 239);
+            this.Label_DetailsJobPositionRequired.Name = "Label_DetailsJobPositionRequired";
+            this.Label_DetailsJobPositionRequired.Size = new System.Drawing.Size(11, 14);
+            this.Label_DetailsJobPositionRequired.TabIndex = 0;
+            this.Label_DetailsJobPositionRequired.Text = "*";
+            // 
+            // Label_DetailsEmailRequired
+            // 
+            this.Label_DetailsEmailRequired.AutoSize = true;
+            this.Label_DetailsEmailRequired.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_DetailsEmailRequired.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.Label_DetailsEmailRequired.Location = new System.Drawing.Point(54, 166);
+            this.Label_DetailsEmailRequired.Name = "Label_DetailsEmailRequired";
+            this.Label_DetailsEmailRequired.Size = new System.Drawing.Size(11, 14);
+            this.Label_DetailsEmailRequired.TabIndex = 0;
+            this.Label_DetailsEmailRequired.Text = "*";
+            // 
+            // Label_DetailsFullNameRequired
+            // 
+            this.Label_DetailsFullNameRequired.AutoSize = true;
+            this.Label_DetailsFullNameRequired.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_DetailsFullNameRequired.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.Label_DetailsFullNameRequired.Location = new System.Drawing.Point(78, 90);
+            this.Label_DetailsFullNameRequired.Name = "Label_DetailsFullNameRequired";
+            this.Label_DetailsFullNameRequired.Size = new System.Drawing.Size(11, 14);
+            this.Label_DetailsFullNameRequired.TabIndex = 0;
+            this.Label_DetailsFullNameRequired.Text = "*";
+            // 
+            // Panel_Template
+            // 
+            this.Panel_Template.BackColor = System.Drawing.Color.White;
+            this.Panel_Template.Controls.Add(this.ListBox_TemplateList);
+            this.Panel_Template.Controls.Add(this.Label_TemplateTitle);
+            this.Panel_Template.Location = new System.Drawing.Point(412, 78);
+            this.Panel_Template.Name = "Panel_Template";
+            this.Panel_Template.Size = new System.Drawing.Size(260, 458);
+            this.Panel_Template.TabIndex = 0;
+            // 
+            // Panel_Add
+            // 
+            this.Panel_Add.BackColor = System.Drawing.Color.White;
+            this.Panel_Add.Controls.Add(this.Label_ApplicantTemplate);
+            this.Panel_Add.Controls.Add(this.Label_Template);
+            this.Panel_Add.Controls.Add(this.PictureBox_Template);
+            this.Panel_Add.Controls.Add(this.Label_ApplicantJob);
+            this.Panel_Add.Controls.Add(this.Label_ApplicantEmail);
+            this.Panel_Add.Controls.Add(this.Label_ApplicantName);
+            this.Panel_Add.Controls.Add(this.Label_RecruiterName);
+            this.Panel_Add.Controls.Add(this.PictureBox_Position);
+            this.Panel_Add.Controls.Add(this.PictureBox_Email);
+            this.Panel_Add.Controls.Add(this.PictureBox_Applicant);
+            this.Panel_Add.Controls.Add(this.PictureBox_Recruiter);
+            this.Panel_Add.Controls.Add(this.Label_Position);
+            this.Panel_Add.Controls.Add(this.Label_Email);
+            this.Panel_Add.Controls.Add(this.Label_Applicant);
+            this.Panel_Add.Controls.Add(this.Label_Recruiter);
+            this.Panel_Add.Controls.Add(this.Label_AddTitle);
+            this.Panel_Add.Controls.Add(this.Button_Save);
+            this.Panel_Add.Controls.Add(this.Button_Cancel);
+            this.Panel_Add.Controls.Add(this.Label_Error);
+            this.Panel_Add.Location = new System.Drawing.Point(701, 78);
+            this.Panel_Add.Name = "Panel_Add";
+            this.Panel_Add.Size = new System.Drawing.Size(260, 458);
+            this.Panel_Add.TabIndex = 0;
+            // 
+            // Label_ApplicantTemplate
+            // 
+            this.Label_ApplicantTemplate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_ApplicantTemplate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_ApplicantTemplate.Location = new System.Drawing.Point(104, 288);
+            this.Label_ApplicantTemplate.Name = "Label_ApplicantTemplate";
+            this.Label_ApplicantTemplate.Size = new System.Drawing.Size(128, 14);
+            this.Label_ApplicantTemplate.TabIndex = 53;
+            this.Label_ApplicantTemplate.Text = "[applicant_temp]";
+            this.Label_ApplicantTemplate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // Label_Template
+            // 
+            this.Label_Template.AutoSize = true;
+            this.Label_Template.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_Template.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_Template.Location = new System.Drawing.Point(37, 288);
+            this.Label_Template.Name = "Label_Template";
+            this.Label_Template.Size = new System.Drawing.Size(61, 14);
+            this.Label_Template.TabIndex = 52;
+            this.Label_Template.Text = "Template:";
+            // 
+            // PictureBox_Template
+            // 
+            this.PictureBox_Template.Image = global::HappyTech.Properties.Resources.happytech_empty;
+            this.PictureBox_Template.Location = new System.Drawing.Point(15, 288);
+            this.PictureBox_Template.Name = "PictureBox_Template";
+            this.PictureBox_Template.Size = new System.Drawing.Size(16, 16);
+            this.PictureBox_Template.TabIndex = 51;
+            this.PictureBox_Template.TabStop = false;
+            // 
+            // Label_ApplicantJob
+            // 
+            this.Label_ApplicantJob.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_ApplicantJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_ApplicantJob.Location = new System.Drawing.Point(104, 239);
+            this.Label_ApplicantJob.Name = "Label_ApplicantJob";
+            this.Label_ApplicantJob.Size = new System.Drawing.Size(128, 14);
+            this.Label_ApplicantJob.TabIndex = 50;
+            this.Label_ApplicantJob.Text = "[applicant_job]";
+            this.Label_ApplicantJob.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // Label_ApplicantEmail
+            // 
+            this.Label_ApplicantEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_ApplicantEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_ApplicantEmail.Location = new System.Drawing.Point(104, 188);
+            this.Label_ApplicantEmail.Name = "Label_ApplicantEmail";
+            this.Label_ApplicantEmail.Size = new System.Drawing.Size(128, 14);
+            this.Label_ApplicantEmail.TabIndex = 49;
+            this.Label_ApplicantEmail.Text = "[applicant_email]";
+            this.Label_ApplicantEmail.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // Label_ApplicantName
+            // 
+            this.Label_ApplicantName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_ApplicantName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_ApplicantName.Location = new System.Drawing.Point(104, 139);
+            this.Label_ApplicantName.Name = "Label_ApplicantName";
+            this.Label_ApplicantName.Size = new System.Drawing.Size(128, 14);
+            this.Label_ApplicantName.TabIndex = 48;
+            this.Label_ApplicantName.Text = "[applicant_name]";
+            this.Label_ApplicantName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // Label_RecruiterName
+            // 
+            this.Label_RecruiterName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_RecruiterName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_RecruiterName.Location = new System.Drawing.Point(104, 90);
+            this.Label_RecruiterName.Name = "Label_RecruiterName";
+            this.Label_RecruiterName.Size = new System.Drawing.Size(128, 14);
+            this.Label_RecruiterName.TabIndex = 47;
+            this.Label_RecruiterName.Text = "[recruiter_name]";
+            this.Label_RecruiterName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // PictureBox_Position
+            // 
+            this.PictureBox_Position.Image = global::HappyTech.Properties.Resources.happytech_empty;
+            this.PictureBox_Position.Location = new System.Drawing.Point(15, 239);
+            this.PictureBox_Position.Name = "PictureBox_Position";
+            this.PictureBox_Position.Size = new System.Drawing.Size(16, 16);
+            this.PictureBox_Position.TabIndex = 46;
+            this.PictureBox_Position.TabStop = false;
+            // 
+            // PictureBox_Email
+            // 
+            this.PictureBox_Email.Image = global::HappyTech.Properties.Resources.happytech_empty;
+            this.PictureBox_Email.Location = new System.Drawing.Point(15, 188);
+            this.PictureBox_Email.Name = "PictureBox_Email";
+            this.PictureBox_Email.Size = new System.Drawing.Size(16, 16);
+            this.PictureBox_Email.TabIndex = 45;
+            this.PictureBox_Email.TabStop = false;
+            // 
+            // PictureBox_Applicant
+            // 
+            this.PictureBox_Applicant.Image = global::HappyTech.Properties.Resources.happytech_empty;
+            this.PictureBox_Applicant.Location = new System.Drawing.Point(15, 139);
+            this.PictureBox_Applicant.Name = "PictureBox_Applicant";
+            this.PictureBox_Applicant.Size = new System.Drawing.Size(16, 16);
+            this.PictureBox_Applicant.TabIndex = 44;
+            this.PictureBox_Applicant.TabStop = false;
+            // 
+            // PictureBox_Recruiter
+            // 
+            this.PictureBox_Recruiter.Image = global::HappyTech.Properties.Resources.happytech_empty;
+            this.PictureBox_Recruiter.Location = new System.Drawing.Point(15, 90);
+            this.PictureBox_Recruiter.Name = "PictureBox_Recruiter";
+            this.PictureBox_Recruiter.Size = new System.Drawing.Size(16, 16);
+            this.PictureBox_Recruiter.TabIndex = 43;
+            this.PictureBox_Recruiter.TabStop = false;
+            // 
+            // Label_Position
+            // 
+            this.Label_Position.AutoSize = true;
+            this.Label_Position.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_Position.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_Position.Location = new System.Drawing.Point(37, 239);
+            this.Label_Position.Name = "Label_Position";
+            this.Label_Position.Size = new System.Drawing.Size(55, 14);
+            this.Label_Position.TabIndex = 9;
+            this.Label_Position.Text = "Position:";
+            // 
+            // Label_Email
+            // 
+            this.Label_Email.AutoSize = true;
+            this.Label_Email.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_Email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_Email.Location = new System.Drawing.Point(37, 188);
+            this.Label_Email.Name = "Label_Email";
+            this.Label_Email.Size = new System.Drawing.Size(39, 14);
+            this.Label_Email.TabIndex = 8;
+            this.Label_Email.Text = "Email:";
+            // 
+            // Label_Applicant
+            // 
+            this.Label_Applicant.AutoSize = true;
+            this.Label_Applicant.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_Applicant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_Applicant.Location = new System.Drawing.Point(37, 139);
+            this.Label_Applicant.Name = "Label_Applicant";
+            this.Label_Applicant.Size = new System.Drawing.Size(61, 14);
+            this.Label_Applicant.TabIndex = 7;
+            this.Label_Applicant.Text = "Applicant:";
+            // 
+            // Label_Recruiter
+            // 
+            this.Label_Recruiter.AutoSize = true;
+            this.Label_Recruiter.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Label_Recruiter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(136)))));
+            this.Label_Recruiter.Location = new System.Drawing.Point(37, 90);
+            this.Label_Recruiter.Name = "Label_Recruiter";
+            this.Label_Recruiter.Size = new System.Drawing.Size(61, 14);
+            this.Label_Recruiter.TabIndex = 6;
+            this.Label_Recruiter.Text = "Recruiter:";
+            // 
+            // Label_AddTitle
+            // 
+            this.Label_AddTitle.AutoSize = true;
+            this.Label_AddTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_AddTitle.Location = new System.Drawing.Point(22, 14);
+            this.Label_AddTitle.Name = "Label_AddTitle";
+            this.Label_AddTitle.Size = new System.Drawing.Size(155, 24);
+            this.Label_AddTitle.TabIndex = 0;
+            this.Label_AddTitle.Text = "Add applicant.";
+            // 
+            // Button_Save
+            // 
+            this.Button_Save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(174)))), ((int)(((byte)(71)))));
+            this.Button_Save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_Save.FlatAppearance.BorderSize = 0;
+            this.Button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Save.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Button_Save.ForeColor = System.Drawing.Color.White;
+            this.Button_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Button_Save.Location = new System.Drawing.Point(26, 410);
+            this.Button_Save.Name = "Button_Save";
+            this.Button_Save.Size = new System.Drawing.Size(206, 26);
+            this.Button_Save.TabIndex = 4;
+            this.Button_Save.Text = "Save";
+            this.Button_Save.UseVisualStyleBackColor = false;
+            this.Button_Save.Click += new System.EventHandler(this.Button_Save_Click);
             // 
             // DashForm
             // 
@@ -681,13 +681,13 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(982, 563);
-            this.Controls.Add(this.panelAdd);
-            this.Controls.Add(this.panelTemplate);
-            this.Controls.Add(this.panelDetails);
-            this.Controls.Add(this.lbHello);
-            this.Controls.Add(this.lbName);
-            this.Controls.Add(this.panelManagement);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Panel_Add);
+            this.Controls.Add(this.Panel_Template);
+            this.Controls.Add(this.Panel_Details);
+            this.Controls.Add(this.Label_WelcomeTitle);
+            this.Controls.Add(this.Label_Username);
+            this.Controls.Add(this.Panel_Management);
+            this.Controls.Add(this.Label_DashboardTitle);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -697,23 +697,23 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
             this.Load += new System.EventHandler(this.DashForm_Load);
-            this.panelManagement.ResumeLayout(false);
-            this.panelManagement.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStage1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelDetails.ResumeLayout(false);
-            this.panelDetails.PerformLayout();
-            this.panelTemplate.ResumeLayout(false);
-            this.panelTemplate.PerformLayout();
-            this.panelAdd.ResumeLayout(false);
-            this.panelAdd.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppTemp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppJob)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppEmail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAppName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgRecruiter)).EndInit();
+            this.Panel_Management.ResumeLayout(false);
+            this.Panel_Management.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementStage1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_ManagementLogo)).EndInit();
+            this.Panel_Details.ResumeLayout(false);
+            this.Panel_Details.PerformLayout();
+            this.Panel_Template.ResumeLayout(false);
+            this.Panel_Template.PerformLayout();
+            this.Panel_Add.ResumeLayout(false);
+            this.Panel_Add.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Template)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Position)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Email)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Applicant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Recruiter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -721,54 +721,54 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btLogout;
-        private System.Windows.Forms.Button btConfirm;
-        private System.Windows.Forms.Label lbHello;
-        private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.Label lbUploadDoc;
-        private System.Windows.Forms.Label lbDocType;
-        private System.Windows.Forms.TextBox tbAName;
-        private System.Windows.Forms.Label lbAName;
-        private System.Windows.Forms.Label lbAJob;
-        private System.Windows.Forms.Label lbAEmail;
-        private System.Windows.Forms.TextBox tbAJob;
-        private System.Windows.Forms.TextBox tbAEmail;
+        private System.Windows.Forms.Button Button_Logout;
+        private System.Windows.Forms.Button Button_Save;
+        private System.Windows.Forms.Label Label_WelcomeTitle;
+        private System.Windows.Forms.Label Label_Username;
+        private System.Windows.Forms.Label Label_DetailsTitle;
+        private System.Windows.Forms.Label Label_TemplateTitle;
+        private System.Windows.Forms.TextBox TextBox_DetailsFullName;
+        private System.Windows.Forms.Label Label_DetailsFullName;
+        private System.Windows.Forms.Label Label_DetailsJobPosition;
+        private System.Windows.Forms.Label Label_DetailsEmail;
+        private System.Windows.Forms.TextBox TextBox_DetailsJobPosition;
+        private System.Windows.Forms.TextBox TextBox_DetailsEmail;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lbError;
-        private System.Windows.Forms.Button btBack;
-        private System.Windows.Forms.Button codeViewBtn;
-        private System.Windows.Forms.ListBox tempTypeBox;
-        private System.Windows.Forms.Panel panelManagement;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panelDetails;
-        private System.Windows.Forms.Panel panelTemplate;
-        private System.Windows.Forms.Panel panelAdd;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblStage1;
-        private System.Windows.Forms.PictureBox imgStage1;
-        private System.Windows.Forms.Label lblStage3;
-        private System.Windows.Forms.PictureBox imgStage3;
-        private System.Windows.Forms.Label lblStage2;
-        private System.Windows.Forms.PictureBox imgStage2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbFullNameReq;
-        private System.Windows.Forms.Label lbEmailReq;
-        private System.Windows.Forms.Label lbJobReq;
-        private System.Windows.Forms.PictureBox imgRecruiter;
-        private System.Windows.Forms.Label lblAppJob;
-        private System.Windows.Forms.Label lblAppEmail;
-        private System.Windows.Forms.Label lblAppName;
-        private System.Windows.Forms.Label lblRecruiter;
-        private System.Windows.Forms.PictureBox imgAppJob;
-        private System.Windows.Forms.PictureBox imgAppEmail;
-        private System.Windows.Forms.PictureBox imgAppName;
-        private System.Windows.Forms.Label lblAppJobVal;
-        private System.Windows.Forms.Label lblAppEmailVal;
-        private System.Windows.Forms.Label lblAppNameVal;
-        private System.Windows.Forms.Label lblRecruiterVal;
-        private System.Windows.Forms.Label lblAppTempVal;
-        private System.Windows.Forms.Label lblAppTemp;
-        private System.Windows.Forms.PictureBox imgAppTemp;
+        private System.Windows.Forms.Label Label_DashboardTitle;
+        private System.Windows.Forms.Label Label_Error;
+        private System.Windows.Forms.Button Button_Cancel;
+        private System.Windows.Forms.Button Button_Editor;
+        private System.Windows.Forms.ListBox ListBox_TemplateList;
+        private System.Windows.Forms.Panel Panel_Management;
+        private System.Windows.Forms.PictureBox PictureBox_ManagementLogo;
+        private System.Windows.Forms.Panel Panel_Details;
+        private System.Windows.Forms.Panel Panel_Template;
+        private System.Windows.Forms.Panel Panel_Add;
+        private System.Windows.Forms.Label Label_AddTitle;
+        private System.Windows.Forms.Label Label_ManagementStage1;
+        private System.Windows.Forms.PictureBox PictureBox_ManagementStage1;
+        private System.Windows.Forms.Label Label_ManagementStage3;
+        private System.Windows.Forms.PictureBox PictureBox_ManagementStage3;
+        private System.Windows.Forms.Label Label_ManagementStage2;
+        private System.Windows.Forms.PictureBox PictureBox_ManagementStage2;
+        private System.Windows.Forms.Label Label_ManagementSeparator;
+        private System.Windows.Forms.Label Label_DetailsFullNameRequired;
+        private System.Windows.Forms.Label Label_DetailsEmailRequired;
+        private System.Windows.Forms.Label Label_DetailsJobPositionRequired;
+        private System.Windows.Forms.PictureBox PictureBox_Recruiter;
+        private System.Windows.Forms.Label Label_Position;
+        private System.Windows.Forms.Label Label_Email;
+        private System.Windows.Forms.Label Label_Applicant;
+        private System.Windows.Forms.Label Label_Recruiter;
+        private System.Windows.Forms.PictureBox PictureBox_Position;
+        private System.Windows.Forms.PictureBox PictureBox_Email;
+        private System.Windows.Forms.PictureBox PictureBox_Applicant;
+        private System.Windows.Forms.Label Label_ApplicantJob;
+        private System.Windows.Forms.Label Label_ApplicantEmail;
+        private System.Windows.Forms.Label Label_ApplicantName;
+        private System.Windows.Forms.Label Label_RecruiterName;
+        private System.Windows.Forms.Label Label_ApplicantTemplate;
+        private System.Windows.Forms.Label Label_Template;
+        private System.Windows.Forms.PictureBox PictureBox_Template;
     }
 }
