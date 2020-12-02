@@ -1694,7 +1694,7 @@ namespace HappyTech
                 case "Template":
 
                     Template.templates.Clear();
-                    Template.FillTemplates();
+                    Template.GenerateTemplates();
 
                     break;
 

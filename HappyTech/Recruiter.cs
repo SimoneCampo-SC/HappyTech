@@ -5,19 +5,18 @@
  * Author 1: Campo, Simone. 1911840
  * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
- * Summary:     This file contains all the properties that belong to the
- *              recruiter instance.
- *              
+ * Summary:     This class contains all the properties related to the Recruiter. 
+ *              The instances of this class is created once the user will login into the system              
  */
 
 namespace HappyTech
 {
     class Recruiter
     {
-        // Definition of the static instance
+        // Since the recruiter can be only one in the system, a private static instance is created in the class
         private static Recruiter _instance; 
 
-        // Definition of all the properties
+        // Read-Only properties of the Recruiter _instance can be set once in the constructor
         public string Id { get; }
         public string Email { get; }
         public string Name { get; }
@@ -25,7 +24,7 @@ namespace HappyTech
         public string Password { get; }
 
         /// <summary>
-        /// Private constructor of the Recruiter Class as it cannot be created anywhere in the code
+        /// private Constructor, it cannot be called anywhere in the code
         /// </summary>
         /// <param name="id"> holds the Recriter Id</param>
         /// <param name="name">holds the Recriter Name</param>
@@ -42,17 +41,17 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Creates the instance for just one time as only one recruiter can login into the application at time
+        ///  Creates the instance only if it has not been created before. 
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <param name="surname"></param>
-        /// <param name="email"></param>
-        /// <param name="password"></param>
+        /// <param name="id">Holds the recruiter Id</param>
+        /// <param name="name">Holds the recruiter name</param>
+        /// <param name="surname">holds the recruiter surname</param>
+        /// <param name="email">holds the recruiter email</param>
+        /// <param name="password">holds the recruiter password</param>
         /// <returns></returns>
         public static Recruiter CreateInstance(string id, string name, string surname, string email, string password)
         {
-            // Runs the constructor only if the instance is equal to null
+            // Runs the constructor if the instance is equal to null
             if (_instance == null)
             {
                 _instance = new Recruiter(id, name, surname, email, password);
@@ -61,11 +60,12 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Returns the instance if it is not equal to null
+        /// Returns the Recruiter instance
         /// </summary>
         /// <returns></returns>
         public static Recruiter GetInstance()
         {
+            // if the instance exists, it wil be returned 
             if (_instance != null)
             {
                 return _instance;
@@ -78,7 +78,7 @@ namespace HappyTech
         /// <summary>
         /// Destroys the Instance 
         /// </summary>
-        public static void DestroyRecruiInstance()
+        public static void DestroyInstance()
         {
             _instance = null;
         }

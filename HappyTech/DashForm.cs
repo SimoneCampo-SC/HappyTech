@@ -93,7 +93,7 @@ namespace HappyTech
             if (Button_Logout.Text.Equals("Are you sure?"))
             {
                 Hide();
-                Recruiter.DestroyRecruiInstance(); // Recruiter instance is destroied
+                Recruiter.DestroyInstance(); // Recruiter instance is destroied
                 Applicant.applicants.Clear(); // Applicants list is cleared
                 Template.templatesForApplicants.Clear();
                 Connection.GetDbConn().CreateCommand(SqlQueries.DeleteApplicant()); // Applicants are deleted from the database

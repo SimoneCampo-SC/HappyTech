@@ -6,12 +6,10 @@
  * Author 2: Hopper, Kean. 1911956
  * Course: BEng (Hons) Computer Science, Year 2 Trimester 1
  * 
- * Summary:     This file contains all the properties relating to the
- *              sections. It has a list which contains all the sections
- *              created.
+ * Summary:     This back-end class contains all the properties belonging to a
+ *              section.
  *              
  */
-
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,18 +17,23 @@ using System.Windows.Forms;
 
 namespace HappyTech
 {
-    /// <summary>
-    /// to keep my code similar to other classes that use lists (template, applicant etc) i have made a sections class.
-    /// </summary>
     class Section
     {
-        // Contains all the sections stored into the Database
+        // Private instance is defined as it cannot be create anywhere in the system
+        private static Section _instance;
+
+        // Holds all the sections stored into the database
         public static List<Section> sectionList = new List<Section>();
 
+        // Read-Only properties cannot be changed once defined inside the constructor
         public int Id { get; }
         public string Name { get; }
 
-        // Private constructor
+        /// <summary>
+        /// Private Constructor, it cannot be called anywhere in the system.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
         private Section(int id, string name)
         {
             Id = id;
@@ -38,24 +41,30 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Fills the sectionList with all the sections presented into the Database
+        /// Create instances with the information in database and add it into the sectionList
         /// </summary>
         public static void FillSectionList ()
         {
+            // Retrieves all the sections from the database
             DataSet ds = Connection.GetDbConn().GetDataSet(SqlQueries.GetSectionNameId());
             DataRow dRow;
 
-            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            // Iterates through the section table 
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++) 
             {
                 dRow = ds.Tables[0].Rows[i];
 
-                // Creates the instance
-                Section _instance = new Section(
+                // Instance created getting the values from the database 
+                 _instance = new Section(
                     Int32.Parse(dRow.ItemArray.GetValue(0).ToString()), // section ID
                     dRow.ItemArray.GetValue(1).ToString() // section's name
                     );
-               Section.sectionList.Add(_instance); // Add the section into the list
+               // _instance issaved into the list
+               Section.sectionList.Add(_instance); 
             }
+
+            // The instance is destroyed as it doesn't need anymore
+            _instance = null;
         }
 
         /// <summary>

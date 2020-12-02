@@ -18,19 +18,21 @@ namespace HappyTech
 {
     class Applicant
     {
-        // list of Applicant has been created
+        // Holds all the applicants added by the receruiter
         public static List <Applicant> applicants = new List<Applicant>();
+
+        // Holds the codes' name belonging to the single applicant
         public List<String> selectedAppCodes = new List<String>();
 
-        // List of all the read-only properties 
-        public string AfullName { get; }
+        // Read-Only properties can only be created in the constructor 
+        public string AfullName { get; } 
         public string Aemail { get; }
         public string AJob { get; }
         public string RecruiterId { get; }
         public string Atype { get; }
 
         /// <summary>
-        /// Constructor of Applicant class
+        /// public Constructor
         /// </summary>
         /// <param name="name">holds applicant name</param>
         /// <param name="email">holds applicant email</param>

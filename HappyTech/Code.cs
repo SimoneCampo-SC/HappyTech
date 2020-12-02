@@ -11,7 +11,6 @@
  *              selected for each feedback.
  *              
  */
-
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,20 +19,21 @@ namespace HappyTech
 {
     class Code
     {
-        // List of codes has been created
+        // Holds all the codes presented into the Database
         public static List<Code> codeList = new List<Code>();
 
         // List of codes selected in the editor
         public static List<string> selectedCodes = new List<string>();
 
-        // List of current properties
+        // Properties can be retrieved and modified
+        // Id is Read-Only as it holds the index of a code in the database
         public int Id { get; }
         public string CodeName { get; set; }
         public int SectionID { get; set; }
         public string CodePara { get; set; }
 
         /// <summary>
-        /// Constructor Code class
+        /// Constructor of the Code class
         /// </summary>
         /// <param name="id">holds the code Id</param>
         /// <param name="codeName">holds the name of the code</param>
@@ -48,7 +48,7 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Fill the codes into the list 
+        /// Retrieve the codes from the database and add them into a List <Code>
         /// </summary>
         public static void FillCodeList()
         {
@@ -56,19 +56,20 @@ namespace HappyTech
             DataSet ds = Connection.GetDbConn().GetDataSet(SqlQueries.SelectCodes());
             DataRow dRow;
 
-            // Iterates through the table created
+            // Iterates through the table extracted from the database
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 dRow = ds.Tables[0].Rows[i];
 
-                // Creates the instance
+                // Creates a new instance passing the data-fields from the database
                 Code _instance = new Code(
                     Int32.Parse(dRow.ItemArray.GetValue(0).ToString()), // Code ID
                     dRow.ItemArray.GetValue(1).ToString(),              // CodeName
                     Int32.Parse(dRow.ItemArray.GetValue(2).ToString()), // SectionNo
                     dRow.ItemArray.GetValue(3).ToString()               // CodeParagraph
                     );
-                Code.codeList.Add(_instance); // Add the code into the list
+                // the instance is added into the list
+                Code.codeList.Add(_instance); 
             }
         }
     }
