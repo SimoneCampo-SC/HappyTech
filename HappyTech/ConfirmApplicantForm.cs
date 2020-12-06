@@ -39,18 +39,18 @@ namespace HappyTech
         /// 
         /// </summary>
         /// <param name="applicantAdded"> If a new applicant has been added: True, and False </param>
-        public ConfirmApplicantForm( bool applicantAdded )
+        public ConfirmApplicantForm(bool applicantAdded)
         {
             InitializeComponent();
 
             if (applicantAdded) Label_Success.Visible = true;
 
             DataSet applicantDB = Connection.GetDbConn().
-                                    GetDataSet( SqlQueries.SelectApplicant() );
+                                    GetDataSet(SqlQueries.SelectApplicant());
 
             DataGrid_ApplicantList.DataSource = applicantDB.Tables[0];
 
-            for ( int i = 0; i < DataGrid_ApplicantList.Columns.Count; i++ )
+            for (int i = 0; i < DataGrid_ApplicantList.Columns.Count; i++) 
             {
                 DataGrid_ApplicantList.Columns[i].Width = 181;
             }
@@ -67,10 +67,10 @@ namespace HappyTech
         ///     new applicant to add to the list.
         /// 
         /// </summary>
-        private void Button_Add_Click( object sender, EventArgs e )
+        private void Button_Add_Click(object sender, EventArgs e)
         {
             Hide();
-            DashForm instance_DashForm = new DashForm( Mode.Applicant );
+            DashForm instance_DashForm = new DashForm(Mode.Applicant);
             instance_DashForm.Show();
         }
 
