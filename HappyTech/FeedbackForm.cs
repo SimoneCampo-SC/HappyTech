@@ -129,7 +129,6 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// 
         ///     Click trigger function for back button.
         ///     This will return to the previous applicant
         ///     feedback, or if at the start of the list,
@@ -200,7 +199,7 @@ namespace HappyTech
                 if (currentPosition < Template.templatesForApplicants.Count - 1)
                 {
                     Hide();
-                    FeedbackForm instance_FeedbackForm = NextForm( Direction.Forward, currentPosition);
+                    FeedbackForm instance_FeedbackForm = NextForm(Direction.Forward, currentPosition);
                     instance_FeedbackForm.Show();
                 }
                 else if (currentPosition >= Template.templatesForApplicants.Count - 1)

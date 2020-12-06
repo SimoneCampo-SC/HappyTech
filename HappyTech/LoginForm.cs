@@ -59,7 +59,10 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Executed when the User Click the Login button
+        /// Click trigger function for the login button.
+        /// If the credentials exist in the database, the recruiter instance is created
+        /// and the DashForm is showed
+        /// 
         /// </summary>>
         private void Button_Login_Click(object sender, EventArgs e)
         {
@@ -98,7 +101,8 @@ namespace HappyTech
             }
         }
         /// <summary>
-        /// Executed when the User Click the Register button
+        /// Click trigger function for the create button
+        /// Registration form is showed
         /// </summary>
         private void Button_Create_Click(object sender, EventArgs e)
         {
