@@ -59,7 +59,9 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Executed when the User Click the Login button
+        /// Click trigger function for the login button.
+        /// If the credentials exist in the database, the recruiter instance is created
+        /// and the dashform is showed
         /// </summary>>
         private void Button_Login_Click(object sender, EventArgs e)
         {
@@ -68,7 +70,6 @@ namespace HappyTech
 
             // open the connection with the DB and ask the query to the database
             DataSet recruiterDB = Connection.GetDbConn().GetDataSet(login);
-           // Console.WriteLine(ds.ToString());
             
             // checks whether the Database has a record of the information inserted
             if (recruiterDB.Tables[0].Rows.Count != 0)
@@ -86,8 +87,8 @@ namespace HappyTech
                     recruiterDBValue.ItemArray.GetValue(4).ToString()  // Retrieve the recruiter Password [DB: column 4]
                     );
 
-                Hide(); 
-                DashForm instance_DashForm = new DashForm( Mode.Default );  
+                Hide();
+                DashForm instance_DashForm = new DashForm(Mode.Default);
                 instance_DashForm.Show();
             }
             else
@@ -98,7 +99,8 @@ namespace HappyTech
             }
         }
         /// <summary>
-        /// Executed when the User Click the Register button
+        /// Click trigger function fro the create button
+        /// Registration form is showed
         /// </summary>
         private void Button_Create_Click(object sender, EventArgs e)
         {

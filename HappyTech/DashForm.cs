@@ -167,7 +167,7 @@ namespace HappyTech
         private void Button_Cancel_Click(object sender, EventArgs e)
         {
             Hide();
-            ConfirmApplicantForm instance_ConfirmApplicantForm = new ConfirmApplicantForm( false );
+            ConfirmApplicantForm instance_ConfirmApplicantForm = new ConfirmApplicantForm(false);
             instance_ConfirmApplicantForm.Show();
         }
 

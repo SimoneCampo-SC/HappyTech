@@ -30,7 +30,11 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Executed when the User Click the SignIn button
+        /// Creates an account if:
+        ///  - Fields are not missing;
+        ///  - Fields are less than 50 characters;
+        ///  - Email contains the right domain;
+        ///  - Paasword is greater than 8 characters;
         /// </summary>
         private void Button_Create_Click(object sender, EventArgs e)
         {
@@ -133,7 +137,8 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Occurs whenever the user clicks on the btnPassVis
+        /// Whenever the user amends the TextBox, it manages the
+        /// PasswordVisibility and the error messages
         /// </summary>
         private void Button_PasswordVisibility_Click(object sender, EventArgs e)
         {
@@ -152,7 +157,7 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Occurs whenewer the user amends the emailBox
+        /// Shows and hides Email Error Messages
         /// </summary>
         private void TextBox_Email_TextChanged(object sender, EventArgs e)
         {
@@ -177,7 +182,7 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Occurs whenewer the user amends the nameBox
+        /// Shows and hides first name error messages
         /// </summary>
         private void TextBox_FirstName_TextChanged(object sender, EventArgs e)
         {
@@ -199,7 +204,7 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Occurs whenewer the user amends the surnameBox
+        /// Shows and hides last name error messages
         /// </summary>
         private void TextBox_LastName_TextChanged(object sender, EventArgs e)
         {

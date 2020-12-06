@@ -43,7 +43,7 @@ namespace HappyTech
         /// 
         /// </summary>
         /// <param name="position"> The position of the template in the list: Integer </param>
-        public FeedbackForm( int position )
+        public FeedbackForm(int position)
         {
             InitializeComponent();
 
@@ -146,13 +146,13 @@ namespace HappyTech
                 if (currentPosition > 0)
                 {
                     Hide();
-                    FeedbackForm instance_FeedbackForm = NextForm( Direction.Backward, currentPosition );
+                    FeedbackForm instance_FeedbackForm = NextForm(Direction.Backward, currentPosition);
                     instance_FeedbackForm.Show();
                 }
                 else if (currentPosition == 0)
                 {
                     Hide();
-                    ConfirmApplicantForm instance_ConfirmApplicantForm = new ConfirmApplicantForm( false );
+                    ConfirmApplicantForm instance_ConfirmApplicantForm = new ConfirmApplicantForm(false);
                     instance_ConfirmApplicantForm.Show();
                 }
             }
@@ -276,21 +276,20 @@ namespace HappyTech
                         codeDBValue = codeDB.Tables[0].Rows[j];
 
                         ListBox_CodesList.Items.
-                            Add( codeDBValue.ItemArray.GetValue(0).ToString() );
+                            Add(codeDBValue.ItemArray.GetValue(0).ToString());
 
-                        foreach ( string code in Applicant.applicants[currentPosition].selectedAppCodes )
+                        foreach (string code in Applicant.applicants[currentPosition].selectedAppCodes) 
                         {
-                            if ( codeDBValue.ItemArray.GetValue(0).ToString() == code )
+                            if (codeDBValue.ItemArray.GetValue(0).ToString() == code) 
                             {
                                 ListBox_CodesList.
-                                    SetItemChecked( ListBox_CodesList.Items.Count - 1, true );
+                                    SetItemChecked(ListBox_CodesList.Items.Count - 1, true);
                             }
                         }
-                        
                     }
                     catch 
                     {
-                        Console.WriteLine( "Section has no code attached." );
+                        Console.WriteLine("Section has no code attached.");
                     } 
                 }
             }
