@@ -89,8 +89,8 @@ namespace HappyTech
                     recruiterDBValue.ItemArray.GetValue(4).ToString()  // Retrieve the recruiter Password [DB: column 4]
                     );
 
-                Hide(); 
-                DashForm instance_DashForm = new DashForm( Mode.Default );  
+                Hide();
+                DashForm instance_DashForm = new DashForm(Mode.Default);
                 instance_DashForm.Show();
             }
             else
