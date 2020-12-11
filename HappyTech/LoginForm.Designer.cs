@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.TextBox_Email = new System.Windows.Forms.TextBox();
             this.TextBox_Password = new System.Windows.Forms.TextBox();
@@ -40,18 +35,13 @@
             this.Label_LoginTitle = new System.Windows.Forms.Label();
             this.Label_Password = new System.Windows.Forms.Label();
             this.Label_Email = new System.Windows.Forms.Label();
-            this.DataGrid_Users = new System.Windows.Forms.DataGridView();
-            this.Button_Debug = new System.Windows.Forms.Button();
             this.Button_Create = new System.Windows.Forms.Button();
             this.Label_Error = new System.Windows.Forms.Label();
             this.Label_FirstTime = new System.Windows.Forms.Label();
             this.Panel_Login = new System.Windows.Forms.Panel();
-            this.Button_Users = new System.Windows.Forms.Button();
-            this.Button_Autofill = new System.Windows.Forms.Button();
             this.Button_PasswordVisibility = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.PictureBox_Logo = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Users)).BeginInit();
             this.Panel_Login.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Logo)).BeginInit();
@@ -128,90 +118,6 @@
             this.Label_Email.TabIndex = 0;
             this.Label_Email.Text = "Email";
             // 
-            // DataGrid_Users
-            // 
-            this.DataGrid_Users.AllowUserToAddRows = false;
-            this.DataGrid_Users.AllowUserToDeleteRows = false;
-            this.DataGrid_Users.AllowUserToResizeColumns = false;
-            this.DataGrid_Users.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid_Users.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DataGrid_Users.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DataGrid_Users.BackgroundColor = System.Drawing.Color.White;
-            this.DataGrid_Users.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.DataGrid_Users.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid_Users.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DataGrid_Users.ColumnHeadersHeight = 26;
-            this.DataGrid_Users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid_Users.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DataGrid_Users.GridColor = System.Drawing.Color.White;
-            this.DataGrid_Users.Location = new System.Drawing.Point(11, 411);
-            this.DataGrid_Users.Name = "DataGrid_Users";
-            this.DataGrid_Users.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid_Users.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.DataGrid_Users.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid_Users.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.DataGrid_Users.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.DataGrid_Users.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.DataGrid_Users.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.DataGrid_Users.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.DataGrid_Users.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.DataGrid_Users.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.DataGrid_Users.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid_Users.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DataGrid_Users.Size = new System.Drawing.Size(461, 140);
-            this.DataGrid_Users.TabIndex = 5;
-            this.DataGrid_Users.Visible = false;
-            // 
-            // Button_Debug
-            // 
-            this.Button_Debug.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button_Debug.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Debug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Debug.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Debug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Debug.Location = new System.Drawing.Point(397, 12);
-            this.Button_Debug.Name = "Button_Debug";
-            this.Button_Debug.Size = new System.Drawing.Size(75, 23);
-            this.Button_Debug.TabIndex = 6;
-            this.Button_Debug.Text = "Debug";
-            this.Button_Debug.UseVisualStyleBackColor = true;
-            this.Button_Debug.Click += new System.EventHandler(this.Button_Debug_Click);
-            // 
             // Button_Create
             // 
             this.Button_Create.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -253,13 +159,9 @@
             // 
             // Panel_Login
             // 
-            this.Panel_Login.Controls.Add(this.Button_Users);
-            this.Panel_Login.Controls.Add(this.Button_Autofill);
-            this.Panel_Login.Controls.Add(this.DataGrid_Users);
             this.Panel_Login.Controls.Add(this.Button_PasswordVisibility);
             this.Panel_Login.Controls.Add(this.Button_Login);
             this.Panel_Login.Controls.Add(this.TextBox_Password);
-            this.Panel_Login.Controls.Add(this.Button_Debug);
             this.Panel_Login.Controls.Add(this.Button_Create);
             this.Panel_Login.Controls.Add(this.Label_FirstTime);
             this.Panel_Login.Controls.Add(this.Label_Password);
@@ -271,38 +173,6 @@
             this.Panel_Login.Name = "Panel_Login";
             this.Panel_Login.Size = new System.Drawing.Size(485, 565);
             this.Panel_Login.TabIndex = 0;
-            // 
-            // Button_Users
-            // 
-            this.Button_Users.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button_Users.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Users.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Users.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Users.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Users.Location = new System.Drawing.Point(234, 12);
-            this.Button_Users.Name = "Button_Users";
-            this.Button_Users.Size = new System.Drawing.Size(75, 23);
-            this.Button_Users.TabIndex = 8;
-            this.Button_Users.Text = "Users";
-            this.Button_Users.UseVisualStyleBackColor = true;
-            this.Button_Users.Visible = false;
-            this.Button_Users.Click += new System.EventHandler(this.Button_Users_Click);
-            // 
-            // Button_Autofill
-            // 
-            this.Button_Autofill.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button_Autofill.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Autofill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Autofill.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Autofill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Autofill.Location = new System.Drawing.Point(315, 12);
-            this.Button_Autofill.Name = "Button_Autofill";
-            this.Button_Autofill.Size = new System.Drawing.Size(75, 23);
-            this.Button_Autofill.TabIndex = 7;
-            this.Button_Autofill.Text = "Autofill";
-            this.Button_Autofill.UseVisualStyleBackColor = true;
-            this.Button_Autofill.Visible = false;
-            this.Button_Autofill.Click += new System.EventHandler(this.Button_Autofill_Click);
             // 
             // Button_PasswordVisibility
             // 
@@ -352,7 +222,6 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Users)).EndInit();
             this.Panel_Login.ResumeLayout(false);
             this.Panel_Login.PerformLayout();
             this.panelLogo.ResumeLayout(false);
@@ -367,8 +236,6 @@
         private System.Windows.Forms.TextBox TextBox_Password;
         private System.Windows.Forms.Button Button_Login;
         private System.Windows.Forms.Label Label_LoginTitle;
-        private System.Windows.Forms.DataGridView DataGrid_Users;
-        private System.Windows.Forms.Button Button_Debug;
         private System.Windows.Forms.Button Button_Create;
         private System.Windows.Forms.Label Label_Error;
         private System.Windows.Forms.Label Label_Password;
@@ -377,9 +244,7 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel Panel_Login;
         private System.Windows.Forms.Button Button_PasswordVisibility;
-        private System.Windows.Forms.Button Button_Autofill;
         private System.Windows.Forms.PictureBox PictureBox_Logo;
-        private System.Windows.Forms.Button Button_Users;
     }
 }
 
