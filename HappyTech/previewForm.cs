@@ -136,8 +136,15 @@ namespace HappyTech
         {
             try
             {
-                using ( StreamReader readFeedback = new StreamReader( Recruiter.GetInstance().Name + applicantDetails[2] + ".rtf" ) ) { }
-                using ( StreamReader readComments = new StreamReader( Recruiter.GetInstance().Name + applicantDetails[2] + "-comments.rtf" ) ) { }
+                if ( File.Exists( Recruiter.GetInstance().Name + applicantDetails[2] + ".rtf" ) )
+                {
+                    using ( StreamReader readFeedback = new StreamReader( Recruiter.GetInstance().Name + applicantDetails[2] + ".rtf" ) ) { }
+                }
+
+                if (File.Exists( Recruiter.GetInstance().Name + applicantDetails[2] + "-comments.rtf" ) )
+                {
+                    using ( StreamReader readComments = new StreamReader( Recruiter.GetInstance().Name + applicantDetails[2] + "-comments.rtf" ) ) { }
+                }
             }
             catch (Exception)
             {
