@@ -176,51 +176,6 @@ namespace HappyTech
 
         /// <summary>
         /// 
-        ///     DEBUG DELETE THIS
-        /// 
-        /// </summary>
-        private void Button_Reset_Click(object sender, EventArgs e)
-        {
-            string delCodes = "DELETE FROM Codes";
-            Connection.GetDbConn().CreateCommand(delCodes);
-
-            string delSect = "DELETE FROM Section";
-            Connection.GetDbConn().CreateCommand(delSect);
-
-            string delTemp = "DELETE FROM Template";
-            Connection.GetDbConn().CreateCommand(delTemp);
-
-            string delPS = "DELETE FROM PersonalSection";
-            Connection.GetDbConn().CreateCommand(delPS);
-
-            
-
-        }
-
-        /// <summary>
-        /// 
-        ///     DEBUG DELETE THIS
-        /// 
-        /// </summary>
-        private void Button_Debug_Click(object sender, EventArgs e)
-        {
-            if (debugVis == false)
-            {
-                debugVis = true;
-                Button_Reset.Show();
-                Button_Autofill.Show();
-
-            }
-            else if (debugVis == true)
-            {
-                debugVis = false;
-                Button_Reset.Hide();
-                Button_Autofill.Hide();
-            }
-        }
-
-        /// <summary>
-        /// 
         ///     Draws items in the template dropdown.
         ///     Prefixed with an icon and draws each
         ///     item to align correctly.

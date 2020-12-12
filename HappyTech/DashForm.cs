@@ -41,8 +41,6 @@ namespace HappyTech
         {
             InitializeComponent();
 
-            CheckTemplateExists();
-
             currentMode = mode;
 
             Clear_TemporaryFiles();
@@ -56,6 +54,22 @@ namespace HappyTech
             {
                 // Populate the tempTypeBox with the name of the Templates
                 ListBox_TemplateList.Items.Add(templateDB.Tables[0].Rows[i].ItemArray.GetValue(0));
+            }
+
+            // Check if there are not templates, if so, let the user know to create one
+            if (templateDB.Tables[0].Rows.Count > 0)
+            {
+                ListBox_TemplateList.Show();
+                Label_NoTemplates.Hide();
+                Label_CreateTemplate.Hide();
+                Button_NewEditor.Hide();
+            }
+            else
+            {
+                ListBox_TemplateList.Hide();
+                Label_NoTemplates.Show();
+                Label_CreateTemplate.Show();
+                Button_NewEditor.Show();
             }
 
             // Switch constructor checks the mode parameter: ToLower() to make it not case sensitive.
@@ -326,22 +340,6 @@ namespace HappyTech
                     File.Delete( file.FullName );
                 }
                 catch { }
-            }
-        }
-
-        /// <summary>
-        /// 
-        ///     Let the user know they need to create a template first.
-        /// 
-        /// </summary>
-        private void CheckTemplateExists()
-        {
-            if (Template.templates.Count == 0)
-            {
-                ListBox_TemplateList.Hide();
-                Label_NoTemplates.Show();
-                Label_CreateTemplate.Show();
-                Button_NewEditor.Show();
             }
         }
 

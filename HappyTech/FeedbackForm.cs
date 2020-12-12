@@ -103,7 +103,6 @@ namespace HappyTech
             Load_CodeList();
 
             Label_ListPosition.Text = "You are in PREVIEW mode";
-
             Label_RecruiterName.Text = Recruiter.GetInstance().Name + " " + Recruiter.GetInstance().Surname;
             Label_ApplicantName.Text = applicantName;
             Label_ApplicantEmail.Text = appEmail;

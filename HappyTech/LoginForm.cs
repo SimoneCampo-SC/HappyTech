@@ -34,31 +34,6 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Testing Purposes - Displays Recruiters
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Button_Debug_Click(object sender, EventArgs e)
-        {
-            if (debugVisible == false)
-            {
-                debugVisible = true;
-                Button_Autofill.Show();
-                Button_Users.Show();
-                
-            }
-            else if (debugVisible == true)
-            {
-                debugVisible = false;
-                DataGrid_Users.Hide();
-                DataGrid_Users.DataSource = null;
-                Button_Autofill.Hide();
-                Button_Users.Hide();
-            }
-            
-        }
-
-        /// <summary>
         /// Click trigger function for the login button.
         /// If the credentials exist in the database, the recruiter instance is created
         /// and the dashform is showed
@@ -143,44 +118,6 @@ namespace HappyTech
                 TextBox_Password.UseSystemPasswordChar = true;
             }
             
-        }
-
-        // Debug autofill details, for testing purposes
-        private void Button_Autofill_Click(object sender, EventArgs e)
-        {
-            DataSet dsEmail = Connection.GetDbConn().
-                                GetDataSet("SELECT email FROM Recruiter");
-
-            DataRow dsEmailRow = dsEmail.Tables[0].Rows[0];
-            TextBox_Email.Text = dsEmailRow.ItemArray.GetValue(0).ToString();
-
-            DataSet dsPass = Connection.GetDbConn().
-                                GetDataSet("SELECT password FROM Recruiter");
-
-            DataRow dsPassRow = dsPass.Tables[0].Rows[0];
-            TextBox_Password.Text = dsPassRow.ItemArray.GetValue(0).ToString();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private void Button_Users_Click(object sender, EventArgs e)
-        {
-            //display table data
-            DataSet ds = Connection.GetDbConn().
-                            GetDataSet("SELECT * FROM Recruiter");
-            DataGrid_Users.DataSource = ds.Tables[0]; //shows first table
-            DataGrid_Users.Columns[0].Width = 30;
-            DataGrid_Users.Columns[1].Width = 75;
-            DataGrid_Users.Columns[2].Width = 75;
-            DataGrid_Users.Columns[3].Width = 158;
-            DataGrid_Users.Columns[4].Width = 118;
-            DataGrid_Users.Columns[0].HeaderText = "ID";
-            DataGrid_Users.Columns[1].HeaderText = "Name";
-            DataGrid_Users.Columns[2].HeaderText = "Surname";
-            DataGrid_Users.Columns[3].HeaderText = "Email";
-            DataGrid_Users.Columns[4].HeaderText = "Password";
-            DataGrid_Users.Show();
         }
     }
 }

@@ -67,7 +67,7 @@ namespace HappyTech
             return query;
         }
 
-        static public string GetSectionPerTemplate(string templateName) //takes template name and displays section names for this template
+        static public string GetSectionPerTemplate(string templateName) 
         {
             string query = $"select name from Section where Id IN (select section_ID from PersonalSection where template_ID = (select Id from Template where tempType = '{templateName}'))";
             return query;
@@ -77,7 +77,7 @@ namespace HappyTech
             string query = "SELECT tempType FROM Template";
             return query;
         }
-        static public string GetTemplateNameId() //gets name NAD id, used in addsection.cs for populating template check box
+        static public string GetTemplateNameId() 
         {
             string query = "SELECT Id, tempType FROM Template";
             return query;
@@ -119,7 +119,7 @@ namespace HappyTech
             string query = $"SELECT Id FROM Section WHERE name = '{name}'";
             return query;
         }
-        static public string GetSectionNameId() //gets name and id, used in sections for populating sections check box in addcode
+        static public string GetSectionNameId()
         {
             string query = "SELECT Id, name FROM Section";
             return query;
@@ -212,7 +212,6 @@ namespace HappyTech
 
         public static string SelectApplicant()
         {
-            //string query = "SELECT Applicant_Name AS 'Name', Job_Position AS 'Job Position' FROM Applicant";
             string query = "SELECT Applicant_Name AS 'Name', Applicant_Email AS 'Email', Job_Position AS 'Job Position' FROM Applicant";
             return query;
         }

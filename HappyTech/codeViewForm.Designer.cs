@@ -43,7 +43,6 @@
             this.Label_SelectSection = new System.Windows.Forms.Label();
             this.ComboBox_SelectTemplate = new System.Windows.Forms.ComboBox();
             this.Label_SelectTemplate = new System.Windows.Forms.Label();
-            this.Button_Reset = new System.Windows.Forms.Button();
             this.Button_EditTemplate = new System.Windows.Forms.Button();
             this.Panel_Management = new System.Windows.Forms.Panel();
             this.Label_ManagementStage3 = new System.Windows.Forms.Label();
@@ -54,8 +53,6 @@
             this.PictureBox_ManagementStage1 = new System.Windows.Forms.PictureBox();
             this.PictureBox_ManagementLogo = new System.Windows.Forms.PictureBox();
             this.Panel_CodeList = new System.Windows.Forms.Panel();
-            this.Button_Autofill = new System.Windows.Forms.Button();
-            this.Button_Debug = new System.Windows.Forms.Button();
             this.Label_CodeListTitle = new System.Windows.Forms.Label();
             this.Panel_Edit = new System.Windows.Forms.Panel();
             this.Label_EditTitle = new System.Windows.Forms.Label();
@@ -234,21 +231,6 @@
             this.Label_SelectTemplate.TabIndex = 9;
             this.Label_SelectTemplate.Text = "Select template:";
             // 
-            // Button_Reset
-            // 
-            this.Button_Reset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Reset.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.Button_Reset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Reset.Location = new System.Drawing.Point(438, 7);
-            this.Button_Reset.Name = "Button_Reset";
-            this.Button_Reset.Size = new System.Drawing.Size(75, 23);
-            this.Button_Reset.TabIndex = 11;
-            this.Button_Reset.Text = "Reset";
-            this.Button_Reset.UseVisualStyleBackColor = true;
-            this.Button_Reset.Visible = false;
-            this.Button_Reset.Click += new System.EventHandler(this.Button_Reset_Click);
-            // 
             // Button_EditTemplate
             // 
             this.Button_EditTemplate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(60)))), ((int)(((byte)(182)))));
@@ -352,45 +334,12 @@
             // Panel_CodeList
             // 
             this.Panel_CodeList.BackColor = System.Drawing.Color.White;
-            this.Panel_CodeList.Controls.Add(this.Button_Autofill);
-            this.Panel_CodeList.Controls.Add(this.Button_Debug);
-            this.Panel_CodeList.Controls.Add(this.Button_Reset);
             this.Panel_CodeList.Controls.Add(this.Label_CodeListTitle);
             this.Panel_CodeList.Controls.Add(this.DataGrid_CodeList);
             this.Panel_CodeList.Location = new System.Drawing.Point(126, 25);
             this.Panel_CodeList.Name = "Panel_CodeList";
             this.Panel_CodeList.Size = new System.Drawing.Size(601, 515);
             this.Panel_CodeList.TabIndex = 15;
-            // 
-            // Button_Autofill
-            // 
-            this.Button_Autofill.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Autofill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Autofill.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.Button_Autofill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Autofill.Location = new System.Drawing.Point(357, 7);
-            this.Button_Autofill.Name = "Button_Autofill";
-            this.Button_Autofill.Size = new System.Drawing.Size(75, 23);
-            this.Button_Autofill.TabIndex = 13;
-            this.Button_Autofill.Text = "Autofill";
-            this.Button_Autofill.UseVisualStyleBackColor = true;
-            this.Button_Autofill.Visible = false;
-            // 
-            // Button_Debug
-            // 
-            this.Button_Debug.BackColor = System.Drawing.Color.White;
-            this.Button_Debug.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button_Debug.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Debug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Debug.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Debug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Debug.Location = new System.Drawing.Point(519, 7);
-            this.Button_Debug.Name = "Button_Debug";
-            this.Button_Debug.Size = new System.Drawing.Size(75, 23);
-            this.Button_Debug.TabIndex = 12;
-            this.Button_Debug.Text = "Debug";
-            this.Button_Debug.UseVisualStyleBackColor = false;
-            this.Button_Debug.Click += new System.EventHandler(this.Button_Debug_Click);
             // 
             // Label_CodeListTitle
             // 
@@ -570,7 +519,6 @@
         private System.Windows.Forms.ComboBox ComboBox_SelectTemplate;
         private System.Windows.Forms.Label Label_SelectTemplate;
         private System.Windows.Forms.Button Button_EditTemplate;
-        private System.Windows.Forms.Button Button_Reset;
         private System.Windows.Forms.Panel Panel_Management;
         private System.Windows.Forms.Label Label_ManagementStage3;
         private System.Windows.Forms.PictureBox PictureBox_ManagementStage3;
@@ -591,7 +539,5 @@
         private System.Windows.Forms.Label Label_Codes;
         private System.Windows.Forms.Label Label_SectionsTotal;
         private System.Windows.Forms.Label Label_Sections;
-        private System.Windows.Forms.Button Button_Debug;
-        private System.Windows.Forms.Button Button_Autofill;
     }
 }
