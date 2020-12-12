@@ -1,2 +1,630 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HappyTech.Applicant" Collapsed="true">
+    <Position X="8.25" Y="8.25" Width="2" />
+    <InheritanceLine Type="HappyTech.DashForm" FixedToPoint="true">
+      <Path>
+        <Point X="11.375" Y="9.25" />
+        <Point X="11.375" Y="8.5" />
+        <Point X="10.25" Y="8.5" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="PreviewForm" Type="HappyTech.PreviewForm">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.161" Y="3.65" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="FeedbackForm" Type="HappyTech.FeedbackForm" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.047" Y="8.25" />
+        <Point X="10.047" Y="7.875" />
+        <Point X="10.562" Y="7.875" />
+        <Point X="10.562" Y="5.941" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.744" Y="2.066" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEAQAAAAABAAQAAAgAAIAAABEAAAgAAAAAACAAAAAAA=</HashCode>
+      <FileName>Applicant.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ConfirmApplicantForm" />
+      <Property Name="PreviewForm" />
+      <Property Name="FeedbackForm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HappyTech.Code" Collapsed="true">
+    <Position X="6.25" Y="6.75" Width="1.5" />
+    <InheritanceLine Type="HappyTech.EditorForm" FixedFromPoint="true">
+      <Path>
+        <Point X="3.75" Y="8.25" />
+        <Point X="3.75" Y="7.816" />
+        <Point X="7" Y="7.816" />
+        <Point X="7" Y="7.441" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="CodeViewForm" Type="HappyTech.CodeViewForm">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-2.719" Y="1.112" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="FeedbackForm" Type="HappyTech.FeedbackForm">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="2.94" Y="-1.14" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEACAEAgAAAAAAAAAgAAAAAAAAIAAQAAAABAAAAQAAA=</HashCode>
+      <FileName>Code.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CodeViewForm" />
+      <Property Name="FeedbackForm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HappyTech.CodeViewForm" Collapsed="true">
+    <Position X="1.25" Y="5.5" Width="3.25" />
+    <Members>
+      <Field Name="Button_Autofill" Hidden="true" />
+      <Field Name="Button_Back" Hidden="true" />
+      <Field Name="Button_Debug" Hidden="true" />
+      <Field Name="Button_EditTemplate" Hidden="true" />
+      <Field Name="Button_Reset" Hidden="true" />
+      <Field Name="codesBindingSource" Hidden="true" />
+      <Method Name="ComboBox_SelectSection_DrawItem" Hidden="true" />
+      <Method Name="ComboBox_SelectTemplate_DrawItem" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="debugVis" Hidden="true" />
+      <Field Name="Label_CodeListTitle" Hidden="true" />
+      <Field Name="Label_Codes" Hidden="true" />
+      <Field Name="Label_CodesTotal" Hidden="true" />
+      <Field Name="Label_DetailsTitle" Hidden="true" />
+      <Field Name="Label_EditTitle" Hidden="true" />
+      <Field Name="Label_ManagementStage1" Hidden="true" />
+      <Field Name="Label_ManagementStage2" Hidden="true" />
+      <Field Name="Label_ManagementStage3" Hidden="true" />
+      <Field Name="Label_Sections" Hidden="true" />
+      <Field Name="Label_SectionsTotal" Hidden="true" />
+      <Field Name="Label_SelectSection" Hidden="true" />
+      <Field Name="Label_SelectTemplate" Hidden="true" />
+      <Field Name="Label_Templates" Hidden="true" />
+      <Field Name="Label_TemplatesTotal" Hidden="true" />
+      <Field Name="Panel_CodeList" Hidden="true" />
+      <Field Name="Panel_Details" Hidden="true" />
+      <Field Name="Panel_Edit" Hidden="true" />
+      <Field Name="Panel_Management" Hidden="true" />
+      <Field Name="PictureBox_ManagementLogo" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage1" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage2" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage3" Hidden="true" />
+      <Field Name="tagBindingSource" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AFAAAAQQEKIAIDAAFeCQACAKAARYAgAcBSAAAIgBARQ=</HashCode>
+      <FileName>CodeViewForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HappyTech.ConfirmApplicantForm" Collapsed="true">
+    <Position X="5.25" Y="8.25" Width="2" />
+    <Members>
+      <Field Name="Button_Cancel" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="Label_AddTitle" Hidden="true" />
+      <Field Name="Label_ApplicantListTitle" Hidden="true" />
+      <Field Name="Label_Applicants" Hidden="true" />
+      <Field Name="Label_ApplicantTotal" Hidden="true" />
+      <Field Name="Label_FeedbackTitle" Hidden="true" />
+      <Field Name="Label_ManagementStage1" Hidden="true" />
+      <Field Name="Label_ManagementStage2" Hidden="true" />
+      <Field Name="Label_ManagementStage3" Hidden="true" />
+      <Field Name="Label_Recruiter" Hidden="true" />
+      <Field Name="Label_RecruiterName" Hidden="true" />
+      <Field Name="Label_Success" Hidden="true" />
+      <Field Name="Panel_Add" Hidden="true" />
+      <Field Name="Panel_ApplicantList" Hidden="true" />
+      <Field Name="Panel_Feedback" Hidden="true" />
+      <Field Name="Panel_Management" Hidden="true" />
+      <Field Name="PictureBox_ManagementLogo" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage1" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage2" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage3" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Enum Name="HappyTech.ConfirmApplicantForm.Stage" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ConfirmApplicantForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>gAhEAABAACQAAAAABgKAACKCAAACIAAcJEaAAAAAAhA=</HashCode>
+      <FileName>ConfirmApplicantForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HappyTech.ConfirmRegisterForm" Collapsed="true">
+    <Position X="15" Y="5.75" Width="2.25" />
+    <Members>
+      <Field Name="Button_Login" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="Label_AccountTitle" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="HappyTech.RegistrationForm" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="16.812" Y="8" />
+        <Point X="16.812" Y="7.609" />
+        <Point X="16.803" Y="7.609" />
+        <Point X="16.803" Y="6.816" />
+        <Point X="16.125" Y="6.816" />
+        <Point X="16.125" Y="6.441" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>gAAAAAAgACAAAAAAAACAAAICAAABAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ConfirmRegisterForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HappyTech.Connection">
+    <Position X="30.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAMAAAAAAAAAAAAAAEEACAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Connection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HappyTech.DashForm" Collapsed="true">
+    <Position X="10" Y="9.25" Width="2.75" />
+    <Members>
+      <Field Name="Button_Cancel" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="Label_AddTitle" Hidden="true" />
+      <Field Name="Label_Applicant" Hidden="true" />
+      <Field Name="Label_ApplicantEmail" Hidden="true" />
+      <Field Name="Label_ApplicantJob" Hidden="true" />
+      <Field Name="Label_ApplicantName" Hidden="true" />
+      <Field Name="Label_ApplicantTemplate" Hidden="true" />
+      <Field Name="Label_CreateTemplate" Hidden="true" />
+      <Field Name="Label_DashboardTitle" Hidden="true" />
+      <Field Name="Label_DetailsEmail" Hidden="true" />
+      <Field Name="Label_DetailsEmailRequired" Hidden="true" />
+      <Field Name="Label_DetailsFullName" Hidden="true" />
+      <Field Name="Label_DetailsFullNameRequired" Hidden="true" />
+      <Field Name="Label_DetailsJobPosition" Hidden="true" />
+      <Field Name="Label_DetailsJobPositionRequired" Hidden="true" />
+      <Field Name="Label_DetailsTitle" Hidden="true" />
+      <Field Name="Label_Email" Hidden="true" />
+      <Field Name="Label_Error" Hidden="true" />
+      <Field Name="Label_ManagementSeparator" Hidden="true" />
+      <Field Name="Label_ManagementStage1" Hidden="true" />
+      <Field Name="Label_ManagementStage2" Hidden="true" />
+      <Field Name="Label_ManagementStage3" Hidden="true" />
+      <Field Name="Label_NoTemplates" Hidden="true" />
+      <Field Name="Label_Position" Hidden="true" />
+      <Field Name="Label_Recruiter" Hidden="true" />
+      <Field Name="Label_RecruiterName" Hidden="true" />
+      <Field Name="Label_Template" Hidden="true" />
+      <Field Name="Label_TemplateTitle" Hidden="true" />
+      <Field Name="Label_Username" Hidden="true" />
+      <Field Name="Label_WelcomeTitle" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="Panel_Add" Hidden="true" />
+      <Field Name="Panel_Details" Hidden="true" />
+      <Field Name="Panel_Management" Hidden="true" />
+      <Field Name="Panel_Template" Hidden="true" />
+      <Field Name="PictureBox_Applicant" Hidden="true" />
+      <Field Name="PictureBox_Email" Hidden="true" />
+      <Field Name="PictureBox_ManagementLogo" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage1" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage2" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage3" Hidden="true" />
+      <Field Name="PictureBox_Position" Hidden="true" />
+      <Field Name="PictureBox_Recruiter" Hidden="true" />
+      <Field Name="PictureBox_Template" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Enum Name="HappyTech.DashForm.Mode" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DashForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>YRgAAABAICgElDMERweoAyMKACRCIGAdACYAhKgAAdE=</HashCode>
+      <FileName>DashForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HappyTech.EditorForm" Collapsed="true">
+    <Position X="2" Y="8.25" Width="2.75" />
+    <Members>
+      <Field Name="Button_EditBack" Hidden="true" />
+      <Field Name="Button_EditCancel" Hidden="true" />
+      <Method Name="Button_EditCancel_Click" Hidden="true" />
+      <Field Name="Button_EditDelete" Hidden="true" />
+      <Field Name="Button_EditSave" Hidden="true" />
+      <Field Name="Button_ModeCode" Hidden="true" />
+      <Field Name="Button_ModeSection" Hidden="true" />
+      <Field Name="Button_ModeTemplate" Hidden="true" />
+      <Field Name="Button_NewBack" Hidden="true" />
+      <Field Name="Button_NewSave" Hidden="true" />
+      <Field Name="CheckedListBox_EditSectionTemplate" Hidden="true" />
+      <Field Name="CheckedListBox_EditTemplateSection" Hidden="true" />
+      <Field Name="CheckedListBox_NewSectionExistingTemplate" Hidden="true" />
+      <Field Name="CheckedListBox_NewTemplateExistingSection" Hidden="true" />
+      <Field Name="ComboBox_EditCodeChooseExisting" Hidden="true" />
+      <Method Name="ComboBox_EditCodeChooseExisting_DrawItem" Hidden="true" />
+      <Field Name="ComboBox_EditCodeSection" Hidden="true" />
+      <Method Name="ComboBox_EditCodeSection_DrawItem" Hidden="true" />
+      <Field Name="ComboBox_EditSectionChooseExisting" Hidden="true" />
+      <Method Name="ComboBox_EditSectionChooseExisting_DrawItem" Hidden="true" />
+      <Field Name="ComboBox_EditTemplateChooseExisting" Hidden="true" />
+      <Method Name="ComboBox_EditTemplateChooseExisting_DrawItem" Hidden="true" />
+      <Field Name="ComboBox_NewCodeSection" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="DisplayError" Hidden="true" />
+      <Method Name="DisplaySuccess" Hidden="true" />
+      <Method Name="EditorForm" Hidden="true" />
+      <Method Name="HideError" Hidden="true" />
+      <Method Name="HideSuccess" Hidden="true" />
+      <Field Name="Label_EditActionsTitle" Hidden="true" />
+      <Field Name="Label_EditCodeChooseExisting" Hidden="true" />
+      <Field Name="Label_EditCodeName" Hidden="true" />
+      <Field Name="Label_EditCodeNameLimit" Hidden="true" />
+      <Field Name="Label_EditCodeParagraph" Hidden="true" />
+      <Field Name="Label_EditCodeParagraphLimit" Hidden="true" />
+      <Field Name="Label_EditCodeSection" Hidden="true" />
+      <Field Name="Label_EditCodeTitle" Hidden="true" />
+      <Field Name="Label_EditError" Hidden="true" />
+      <Field Name="Label_EditSectionChooseExisting" Hidden="true" />
+      <Field Name="Label_EditSectionName" Hidden="true" />
+      <Field Name="Label_EditSectionTemplate" Hidden="true" />
+      <Field Name="Label_EditSectionTitle" Hidden="true" />
+      <Field Name="Label_EditSuccess" Hidden="true" />
+      <Field Name="Label_EditTemplateChooseExisting" Hidden="true" />
+      <Field Name="Label_EditTemplateName" Hidden="true" />
+      <Field Name="Label_EditTemplateSection" Hidden="true" />
+      <Field Name="Label_EditTemplateTitle" Hidden="true" />
+      <Field Name="Label_ManagementStage1" Hidden="true" />
+      <Field Name="Label_ManagementStage2" Hidden="true" />
+      <Field Name="Label_ManagementStage3" Hidden="true" />
+      <Field Name="Label_NewActionsTitle" Hidden="true" />
+      <Field Name="Label_NewCodeName" Hidden="true" />
+      <Field Name="Label_NewCodeNameLimit" Hidden="true" />
+      <Field Name="Label_NewCodeParagraph" Hidden="true" />
+      <Field Name="Label_NewCodeParagraphLimit" Hidden="true" />
+      <Field Name="Label_NewCodeSection" Hidden="true" />
+      <Field Name="Label_NewCodeTitle" Hidden="true" />
+      <Field Name="Label_NewError" Hidden="true" />
+      <Field Name="Label_NewSectionName" Hidden="true" />
+      <Field Name="Label_NewSectionTemplate" Hidden="true" />
+      <Field Name="Label_NewSectionTitle" Hidden="true" />
+      <Field Name="Label_NewSuccess" Hidden="true" />
+      <Field Name="Label_NewTemplateName" Hidden="true" />
+      <Field Name="Label_NewTemplateSection" Hidden="true" />
+      <Field Name="Label_NewTemplateTitle" Hidden="true" />
+      <Field Name="Panel_EditActions" Hidden="true" />
+      <Field Name="Panel_EditCode" Hidden="true" />
+      <Field Name="Panel_EditSection" Hidden="true" />
+      <Field Name="Panel_EditTemplate" Hidden="true" />
+      <Field Name="Panel_Management" Hidden="true" />
+      <Field Name="Panel_Mode" Hidden="true" />
+      <Field Name="Panel_NewActions" Hidden="true" />
+      <Field Name="Panel_NewCode" Hidden="true" />
+      <Field Name="Panel_NewSection" Hidden="true" />
+      <Field Name="Panel_NewTemplate" Hidden="true" />
+      <Field Name="PictureBox_ManagementLogo" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage1" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage2" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage3" Hidden="true" />
+      <Field Name="RichTextBox_EditCodeParagraph" Hidden="true" />
+      <Field Name="RichTextBox_NewCodeParagraph" Hidden="true" />
+      <Field Name="TextBox_EditCodeName" Hidden="true" />
+      <Method Name="TextBox_EditCodeName_TextChanged" Hidden="true" />
+      <Field Name="TextBox_EditSectionName" Hidden="true" />
+      <Method Name="TextBox_EditSectionName_TextChanged" Hidden="true" />
+      <Field Name="TextBox_EditTemplateName" Hidden="true" />
+      <Method Name="TextBox_EditTemplateName_TextChanged" Hidden="true" />
+      <Field Name="TextBox_NewCodeName" Hidden="true" />
+      <Method Name="TextBox_NewCodeName_TextChanged" Hidden="true" />
+      <Field Name="TextBox_NewSectionName" Hidden="true" />
+      <Method Name="TextBox_NewSectionName_TextChanged" Hidden="true" />
+      <Field Name="TextBox_NewTemplateName" Hidden="true" />
+      <Method Name="TextBox_NewTemplateName_TextChanged" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Enum Name="HappyTech.EditorForm.Mode" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>EditorForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>hEoCoNqHraEQBQZShj2inqCSPKkQpPlcJFhIRkfLclU=</HashCode>
+      <FileName>EditorForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HappyTech.FeedbackClass" Collapsed="true">
+    <Position X="11.75" Y="3.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="HappyTech.FeedbackClass.Direction" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>FeedbackClass.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <AssociationLine Name="FeedbackForm" Type="HappyTech.FeedbackForm">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.291" Y="0.655" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FeedbackClass.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FeedbackForm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HappyTech.FeedbackForm" Collapsed="true">
+    <Position X="10" Y="5.25" Width="2.75" />
+    <Members>
+      <Field Name="Button_Back" Hidden="true" />
+      <Field Name="Button_Next" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="Label_Applicant" Hidden="true" />
+      <Field Name="Label_ApplicantEmail" Hidden="true" />
+      <Field Name="Label_ApplicantJob" Hidden="true" />
+      <Field Name="Label_ApplicantName" Hidden="true" />
+      <Field Name="Label_ApplicantTemplate" Hidden="true" />
+      <Field Name="Label_CodesTitle" Hidden="true" />
+      <Field Name="Label_CommentsTitle" Hidden="true" />
+      <Field Name="Label_DetailsTitle" Hidden="true" />
+      <Field Name="Label_Email" Hidden="true" />
+      <Field Name="Label_ListPosition" Hidden="true" />
+      <Field Name="Label_ManagementStage1" Hidden="true" />
+      <Field Name="Label_ManagementStage2" Hidden="true" />
+      <Field Name="Label_ManagementStage3" Hidden="true" />
+      <Field Name="Label_Position" Hidden="true" />
+      <Field Name="Label_Recruiter" Hidden="true" />
+      <Field Name="Label_RecruiterName" Hidden="true" />
+      <Field Name="Label_Template" Hidden="true" />
+      <Field Name="Label_TemplateTitle" Hidden="true" />
+      <Field Name="Panel_Codes" Hidden="true" />
+      <Field Name="Panel_Comments" Hidden="true" />
+      <Field Name="Panel_Details" Hidden="true" />
+      <Field Name="Panel_Management" Hidden="true" />
+      <Field Name="Panel_Template" Hidden="true" />
+      <Field Name="PictureBox_ManagementLogo" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage1" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage2" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage3" Hidden="true" />
+      <Field Name="printDocument1" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Enum Name="HappyTech.FeedbackForm.Mode" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>FeedbackForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IBgAAAAAICAAqACAVACAACMCAARIICIcAgIMAEBgAdA=</HashCode>
+      <FileName>FeedbackForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HappyTech.LoginForm" Collapsed="true">
+    <Position X="15" Y="9.75" Width="2.5" />
+    <Members>
+      <Field Name="Button_Autofill" Hidden="true" />
+      <Field Name="Button_Debug" Hidden="true" />
+      <Field Name="Button_PasswordVisibility" Hidden="true" />
+      <Field Name="Button_Users" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="debugVisible" Hidden="true" />
+      <Field Name="Label_Email" Hidden="true" />
+      <Field Name="Label_Error" Hidden="true" />
+      <Field Name="Label_FirstTime" Hidden="true" />
+      <Field Name="Label_LoginTitle" Hidden="true" />
+      <Field Name="Label_Password" Hidden="true" />
+      <Field Name="Panel_Login" Hidden="true" />
+      <Field Name="panelLogo" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AACAAARgACAKAAABAACQAAICAEEGJAAABIARAAAEgIM=</HashCode>
+      <FileName>LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HappyTech.PreviewForm" Collapsed="true">
+    <Position X="7.25" Y="3.5" Width="3" />
+    <Members>
+      <Field Name="applicantDetails" Hidden="true" />
+      <Field Name="Button_Cancel" Hidden="true" />
+      <Field Name="Button_Dashboard" Hidden="true" />
+      <Field Name="Button_Preview" Hidden="true" />
+      <Field Name="Button_Send" Hidden="true" />
+      <Field Name="CheckedListBox_FeedbackList" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="Label_Applicants" Hidden="true" />
+      <Field Name="Label_ApplicantTotal" Hidden="true" />
+      <Field Name="Label_Error" Hidden="true" />
+      <Field Name="Label_FeedbackListTitle" Hidden="true" />
+      <Field Name="Label_ManagementStage1" Hidden="true" />
+      <Field Name="Label_ManagementStage2" Hidden="true" />
+      <Field Name="Label_ManagementStage3" Hidden="true" />
+      <Field Name="Label_PreviewTitle" Hidden="true" />
+      <Field Name="Label_Recruiter" Hidden="true" />
+      <Field Name="Label_RecruiterName" Hidden="true" />
+      <Field Name="Label_SubmitTitle" Hidden="true" />
+      <Field Name="Panel_FeedbackList" Hidden="true" />
+      <Field Name="Panel_Management" Hidden="true" />
+      <Field Name="Panel_Preview" Hidden="true" />
+      <Field Name="Panel_Submit" Hidden="true" />
+      <Field Name="PictureBox_ManagementLogo" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage1" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage2" Hidden="true" />
+      <Field Name="PictureBox_ManagementStage3" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Enum Name="HappyTech.PreviewForm.Stage" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>PreviewForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AABAgABAACGBAAlAFEKgACICUAACCAYcQQYEAgAAABA=</HashCode>
+      <FileName>PreviewForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HappyTech.Recruiter" Collapsed="true">
+    <Position X="12.75" Y="6.25" Width="1.5" />
+    <InheritanceLine Type="HappyTech.RegistrationForm" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.312" Y="8" />
+        <Point X="15.312" Y="6.812" />
+        <Point X="14.25" Y="6.812" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="LoginForm" Type="HappyTech.LoginForm">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.482" Y="2.824" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="FeedbackForm" Type="HappyTech.FeedbackForm">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.953" Y="-0.56" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="DashForm" Type="HappyTech.DashForm">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.659" Y="2.366" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEAGBAAAACAAAAAAACAABAQABAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Recruiter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LoginForm" />
+      <Property Name="FeedbackForm" />
+      <Property Name="DashForm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HappyTech.RegistrationForm" Collapsed="true">
+    <Position X="15" Y="8" Width="2.75" />
+    <Members>
+      <Method Name="Button_PasswordVisibility_Click" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="Label_AccountTitle" Hidden="true" />
+      <Field Name="Label_Email" Hidden="true" />
+      <Field Name="Label_EmailRequired" Hidden="true" />
+      <Field Name="Label_Error" Hidden="true" />
+      <Field Name="Label_FirstName" Hidden="true" />
+      <Field Name="Label_FirstNameRequired" Hidden="true" />
+      <Field Name="Label_HaveAccount" Hidden="true" />
+      <Field Name="Label_LastName" Hidden="true" />
+      <Field Name="Label_LastNameRequired" Hidden="true" />
+      <Field Name="Label_Password" Hidden="true" />
+      <Field Name="Label_PasswordRequired" Hidden="true" />
+      <Field Name="Panel_Account" Hidden="true" />
+      <Field Name="Panel_Background" Hidden="true" />
+      <Method Name="TextBox_FirstName_TextChanged" Hidden="true" />
+      <Method Name="TextBox_LastName_TextChanged" Hidden="true" />
+      <Method Name="TextBox_Password_TextChanged" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>RAQggABgACCKBAAABACAAAKSAAEHIAAAAAARAAkEAQI=</HashCode>
+      <FileName>RegistrationForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HappyTech.Section" Collapsed="true">
+    <Position X="5" Y="4.25" Width="2.25" />
+    <InheritanceLine Type="HappyTech.EditorForm" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="2" Y="8.625" />
+        <Point X="2" Y="8.577" />
+        <Point X="1.55" Y="8.577" />
+        <Point X="1.55" Y="5.241" />
+        <Point X="2.095" Y="5.241" Type="JumpStart" />
+        <Point X="2.261" Y="5.241" Type="JumpEnd" />
+        <Point X="5" Y="5.241" />
+        <Point X="5" Y="4.596" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="CodeViewForm" Type="HappyTech.CodeViewForm">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.424" Y="1.548" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="FeedbackForm" Type="HappyTech.FeedbackForm">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="1.508" Y="-1.772" Height="0.182" Width="1.487" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEAGAEAACAAAEAAAAAAAAAQBAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Section.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CodeViewForm" />
+      <Property Name="FeedbackForm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HappyTech.SqlQueries" Collapsed="true">
+    <Position X="13.25" Y="11" Width="3" />
+    <AssociationLine Name="RegistrationForm" Type="HappyTech.RegistrationForm">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.06" Y="2.824" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="EditorForm" Type="HappyTech.EditorForm" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.25" Y="11.375" />
+        <Point X="12.095" Y="11.375" />
+        <Point X="12.095" Y="10.412" />
+        <Point X="3.5" Y="10.412" />
+        <Point X="3.5" Y="8.941" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-9.671" Y="2.614" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>NQMACAAAQiCJKAAICAoAAiCAAAHEBAAAgKgFIQAIOAQ=</HashCode>
+      <FileName>SqlQueries.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LoginForm" />
+      <Property Name="RegistrationForm" />
+      <Property Name="EditorForm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HappyTech.Template" Collapsed="true">
+    <Position X="5.25" Y="5.5" Width="2.75" />
+    <InheritanceLine Type="HappyTech.EditorForm" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.375" Y="8.25" />
+        <Point X="2.375" Y="6.491" />
+        <Point X="3.354" Y="6.491" Type="JumpStart" />
+        <Point X="3.521" Y="6.491" Type="JumpEnd" />
+        <Point X="5.875" Y="6.491" />
+        <Point X="5.875" Y="6.191" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="DashForm" Type="HappyTech.DashForm">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.112" Y="3.252" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BAACAkAAAIAAAABAAAAAhCAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Template.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CodeViewForm" />
+      <Property Name="DashForm" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
