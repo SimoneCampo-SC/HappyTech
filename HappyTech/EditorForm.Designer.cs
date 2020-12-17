@@ -353,6 +353,7 @@
             this.ComboBox_EditCodeSection.Size = new System.Drawing.Size(373, 26);
             this.ComboBox_EditCodeSection.TabIndex = 18;
             this.ComboBox_EditCodeSection.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBox_EditCodeSection_DrawItem);
+            this.ComboBox_EditCodeSection.SelectedIndexChanged += new System.EventHandler(this.ComboBox_EditCodeChooseExisting_SelectedIndexChanged);
             // 
             // Panel_Management
             // 
@@ -1056,7 +1057,7 @@
             this.TextBox_EditCodeName.TabIndex = 5;
             this.TextBox_EditCodeName.TextChanged += new System.EventHandler(this.TextBox_EditCodeName_TextChanged);
             // 
-            // NewEditDelete
+            // EditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1076,7 +1077,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(998, 602);
             this.MinimumSize = new System.Drawing.Size(998, 602);
-            this.Name = "NewEditDelete";
+            this.Name = "EditorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HappyTech";
             this.Panel_Management.ResumeLayout(false);

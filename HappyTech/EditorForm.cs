@@ -113,7 +113,7 @@ namespace HappyTech
         {
             CheckedListBox_NewSectionExistingTemplate.Items.Clear();
 
-            UpdateList( "Template" );
+            EditorFormCommon.UpdateList( "Template" );
 
             for ( int i = 0; i < Template.templates.Count(); i++ )
             {
@@ -132,7 +132,7 @@ namespace HappyTech
         {
             ComboBox_EditTemplateChooseExisting.Items.Clear();
 
-            UpdateList( "Template" );
+            EditorFormCommon.UpdateList( "Template" );
 
             for ( int i = 0; i < Template.templates.Count(); i++ )
             {
@@ -151,7 +151,7 @@ namespace HappyTech
         {
             CheckedListBox_NewTemplateExistingSection.Items.Clear();
 
-            UpdateList( "Section" );
+            EditorFormCommon.UpdateList( "Section" );
 
             for ( int i = 0; i < Section.sectionList.Count(); i++ )
             {
@@ -170,7 +170,7 @@ namespace HappyTech
         {
             ComboBox_EditSectionChooseExisting.Items.Clear();
 
-            UpdateList( "Section" );
+            EditorFormCommon.UpdateList( "Section" );
 
             for ( int i = 0; i < Section.sectionList.Count(); i++ )
             {
@@ -179,62 +179,6 @@ namespace HappyTech
             }
         }
 
-        /// <summary>
-        ///     
-        ///     Populates the contents of the existing sections
-        ///     dropdown list for adding the new code to.   
-        /// 
-        /// </summary>
-        private void Populate_ComboBox_NewCodeSection()
-        {
-            ComboBox_NewCodeSection.Items.Clear();
-
-            UpdateList( "Section" );
-
-            for ( int i = 0; i < Section.sectionList.Count(); i++ )
-            {
-                ComboBox_NewCodeSection.Items.
-                    Add( $"{Section.sectionList[i].Name.Replace( " ", "" )}" );
-            }
-        }
-
-        /// <summary>
-        /// 
-        ///     Populates the contents of the existing codes
-        ///     dropdown list to edit.
-        /// 
-        /// </summary>
-        private void Populate_ComboBox_EditExistingCode()
-        {
-            ComboBox_EditCodeChooseExisting.Items.Clear();
-
-            UpdateList( "Code" );
-
-            for ( int i = 0; i < Code.codeList.Count(); i++ )
-            {
-                ComboBox_EditCodeChooseExisting.Items.
-                    Add( $"{Code.codeList[i].CodeName.Replace( " ", "" )}" );
-            }
-        }
-
-        /// <summary>
-        ///     
-        ///     Populates the contents of the existing sections
-        ///     dropdown list for adding the edited code to.   
-        /// 
-        /// </summary>
-        private void Populate_ComboBox_EditCodeSection()
-        {
-            ComboBox_EditCodeSection.Items.Clear();
-
-            UpdateList( "Section" );
-
-            for ( int i = 0; i < Section.sectionList.Count(); i++ )
-            {
-                ComboBox_EditCodeSection.Items.
-                    Add( $"{Section.sectionList[i].Name.Replace( " ", "" )}" );
-            }
-        }
 
         /// <summary>
         /// 
@@ -326,8 +270,8 @@ namespace HappyTech
                     break;
 
                 case Mode.Code:
-
-                    /* 
+                    
+                     /*
                      * Check code field requirements:
                      *      - Code name
                      *      - Code name less than or at max length: 5
@@ -336,8 +280,9 @@ namespace HappyTech
                      *      - Code name contains no spaces
                      *      - Code attached to a section
                      *      - Code name not already in database
+                     *      not moved into codeClass because this is a GUI element
                      */
-
+                    
                     if ( TextBox_NewCodeName.Text.Length <= 0 )
                     {
                         DisplayError( "Enter a code name", "NewArea" );
@@ -367,28 +312,12 @@ namespace HappyTech
                         DisplayError( "This code name already exists", "NewArea" );
                     }
 
-                    /* 
-                     * Add code to database, reset fields, display success.
-                     */
-
                     else
                     {
-                        DataSet sectionDB       = Connection.GetDbConn().GetDataSet( SqlQueries.
-                                                    GetTagIdFromName( ComboBox_NewCodeSection.Text ) );
-
-                        DataRow sectionDBValue  = sectionDB.Tables[0].Rows[0];
-                        
-                        object sectionId        = sectionDBValue.ItemArray.GetValue( 0 );
-                        string newCodeName      = TextBox_NewCodeName.Text.ToUpper().Replace( " ", "" );
-                        string newCodeParagraph = RichTextBox_NewCodeParagraph.Text;
-
-                        Connection.GetDbConn().CreateCommand( SqlQueries.
-                            InsertNewCode( newCodeName, newCodeParagraph, sectionId ) );
-
-                        ClearCodeModeFields();
-
+                        EditorFormCodeClass.InsertNewCode(TextBox_NewCodeName, RichTextBox_NewCodeParagraph, ComboBox_NewCodeSection);
                         DisplaySuccess( "New code saved", "NewArea" );
                     }
+ 
                     break;
             }
         }
@@ -544,7 +473,10 @@ namespace HappyTech
 
                         if ( TextBox_EditCodeName.Text == ComboBox_EditCodeChooseExisting.SelectedItem.ToString() )
                         {
-                            SaveCodeChange();
+                            EditorFormCodeClass.SaveCodeChange(ComboBox_EditCodeChooseExisting, TextBox_EditCodeName, RichTextBox_EditCodeParagraph);
+                            ClearCodeModeFields();
+
+                            DisplaySuccess("Code edit saved", "EditArea");
                         }
                         else
                         {
@@ -553,7 +485,10 @@ namespace HappyTech
                     }
                     else
                     {
-                        SaveCodeChange();
+                        EditorFormCodeClass.SaveCodeChange(ComboBox_EditCodeChooseExisting, TextBox_EditCodeName, RichTextBox_EditCodeParagraph);
+                        ClearCodeModeFields();
+
+                        DisplaySuccess("Code edit saved", "EditArea");
                     }
 
                     break;
@@ -608,29 +543,7 @@ namespace HappyTech
             DisplaySuccess("Section edit saved", "EditArea");
         }
 
-        /// <summary>
-        /// 
-        ///     Find existing code, update code name
-        ///     and paragraph in database, reset fields,
-        ///     display success.
-        /// 
-        /// </summary>
-        private void SaveCodeChange()
-        {
-            DataSet codeDB = Connection.GetDbConn().GetDataSet(SqlQueries.
-                                            GetCodeId(ComboBox_EditCodeChooseExisting.Text));
-
-            DataRow codeDBValue = codeDB.Tables[0].Rows[0];
-            var codeId = codeDBValue.ItemArray.GetValue(0);
-
-            Connection.GetDbConn().CreateCommand(SqlQueries.
-                EditCode(codeId, TextBox_EditCodeName.Text.ToUpper().Replace(" ", ""),
-                RichTextBox_EditCodeParagraph.Text));
-
-            ClearCodeModeFields();
-
-            DisplaySuccess("Code edit saved", "EditArea");
-        }
+      
 
         /// <summary>
         /// 
@@ -907,22 +820,9 @@ namespace HappyTech
                         DisplayError("Select a code to edit", "EditArea");
                         break; 
                     }
-                    string codeName = ComboBox_EditCodeChooseExisting.Text;
-
-                    DataSet codeDB = Connection.GetDbConn().
-                                                GetDataSet(SqlQueries.
-                                                    GetCodeIdFromName(codeName));
-
-                    DataRow codeDBValue = codeDB.Tables[0].Rows[0];
-                    var codeId = codeDBValue.ItemArray.GetValue(0);
-
-                    Connection.GetDbConn().CreateCommand(SqlQueries.
-                        DeleteCodeFromId(codeId));
-
+                    EditorFormCodeClass.DeleteCode(ComboBox_EditCodeChooseExisting);
                     ClearCodeModeFields();
-
                     DisplaySuccess( "Code deleted", "EditArea" );
-
                     break;
             }
         }
@@ -1117,8 +1017,8 @@ namespace HappyTech
         /// </summary>
         private void ClearTemplateModeFields()
         {
-            HideError( "NewArea" );
             HideError( "EditArea" );
+            HideError( "NewArea" );
             
             Populate_CheckedListBox_NewTemplateExistingSection();
             Populate_ComboBox_EditExistingTemplate();
@@ -1138,9 +1038,10 @@ namespace HappyTech
         /// </summary>
         private void ClearSectionModeFields()
         {
-            HideError( "NewArea" );
-            HideError( "EditArea" );
-            
+
+            HideError("EditArea");
+            HideError("NewArea");
+
             Populate_CheckedListBox_NewSectionExistingTemplates();
             Populate_ComboBox_EditExistingSections();
 
@@ -1159,13 +1060,12 @@ namespace HappyTech
         /// </summary>
         private void ClearCodeModeFields()
         {
-            HideError( "NewArea" );
-            HideError( "EditArea" );
 
-            Populate_ComboBox_NewCodeSection();
-            Populate_ComboBox_EditExistingCode();
-            Populate_ComboBox_EditCodeSection();
-
+            HideError("EditArea");
+            HideError("NewArea");
+            EditorFormCodeClass.Populate_ComboBox_NewCodeSection(ComboBox_NewCodeSection);
+            EditorFormCodeClass.Populate_ComboBox_EditExistingCode(ComboBox_EditCodeChooseExisting);
+            EditorFormCodeClass.Populate_ComboBox_EditCodeSection(ComboBox_EditCodeSection);
             TextBox_NewCodeName.Clear();
             TextBox_EditCodeName.Clear();
             RichTextBox_NewCodeParagraph.Clear();
@@ -1205,9 +1105,9 @@ namespace HappyTech
         /// </summary>
         private void LoadModeCode()
         {
-            Populate_ComboBox_NewCodeSection();
-            Populate_ComboBox_EditExistingCode();
-            Populate_ComboBox_EditCodeSection();
+            EditorFormCodeClass.Populate_ComboBox_NewCodeSection(ComboBox_NewCodeSection);
+            EditorFormCodeClass.Populate_ComboBox_EditExistingCode(ComboBox_EditCodeChooseExisting);
+            EditorFormCodeClass.Populate_ComboBox_EditCodeSection(ComboBox_EditCodeSection);
         }
 
         /// <summary>
@@ -1392,7 +1292,7 @@ namespace HappyTech
 
             CheckedListBox_EditTemplateSection.Items.Clear();
 
-            UpdateList( "Section" );
+            EditorFormCommon.UpdateList( "Section" );
 
             DataSet templateDB      = Connection.GetDbConn().
                                         GetDataSet( SqlQueries.
@@ -1454,7 +1354,7 @@ namespace HappyTech
 
             CheckedListBox_EditSectionTemplate.Items.Clear();
 
-            UpdateList( "Template" );
+            EditorFormCommon.UpdateList( "Template" );
 
             DataSet sectionDB       = Connection.GetDbConn().
                                         GetDataSet( SqlQueries.
@@ -1504,7 +1404,7 @@ namespace HappyTech
         ///         
         /// 
         /// </summary>
-        private void ComboBox_EditCodeChooseExisting_SelectedIndexChanged( object sender, EventArgs e )
+       /* private void ComboBox_EditCodeChooseExisting_SelectedIndexChanged( object sender, EventArgs e )
         {
             TextBox_EditCodeName.Text = ComboBox_EditCodeChooseExisting.Text.Replace( " ", "" );
 
@@ -1528,7 +1428,7 @@ namespace HappyTech
 
             TextBox_EditCodeName.Text = ComboBox_EditCodeChooseExisting.Text.Replace( " ", "" );
             RichTextBox_EditCodeParagraph.Text = codeDBValue.ItemArray.GetValue( 0 ).ToString();
-        }
+        } */
 
         /// <summary>
         /// 
@@ -1687,7 +1587,7 @@ namespace HappyTech
         /// 
         /// </summary>
         /// <param name="type"> Object list to update: Template, Section, or Code </param>
-        private void UpdateList( string type )
+        /* private void UpdateList( string type )
         {
             switch ( type )
             {
@@ -1712,7 +1612,7 @@ namespace HappyTech
 
                     break;
             }
-        }
+        } */
 
         /// <summary>
         /// 
@@ -1721,7 +1621,7 @@ namespace HappyTech
         /// </summary>
         /// <param name="message"> The error message </param>
         /// <param name="area"> The area to display the error to </param>
-        private void DisplayError( string message, string area)
+        private  void DisplayError( string message, string area)
         {
             switch ( area )
             {
@@ -1741,13 +1641,18 @@ namespace HappyTech
             }
         }
 
+        public static void DisplayCodeError (string message, string area)
+        {
+
+        }
+
         /// <summary>
         /// 
         ///     Hide the error at the bottom of the specified area.
         /// 
         /// </summary>
         /// <param name="area"> The area to hide the error from </param>
-        private void HideError( string area )
+        public  void HideError( string area )
         {
             switch ( area )
             {
@@ -1763,7 +1668,7 @@ namespace HappyTech
 
                     break;
             }
-        }
+        } 
 
         /// <summary>
         /// 
@@ -1798,7 +1703,7 @@ namespace HappyTech
         /// 
         /// </summary>
         /// <param name="area"> The area to hide the success message from </param>
-        private void HideSuccess( string area )
+        public void HideSuccess( string area )
         {
             switch ( area )
             {
@@ -1814,6 +1719,14 @@ namespace HappyTech
 
                     break;
             }
+        }
+
+        private void ComboBox_EditCodeChooseExisting_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            HideError("EditArea");
+            HideError("NewArea");
+            EditorFormCodeClass.ChangeSectionAttachedToCode(TextBox_EditCodeName, RichTextBox_EditCodeParagraph, ComboBox_EditCodeChooseExisting, ComboBox_EditCodeSection);
         }
     }
 }

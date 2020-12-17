@@ -91,6 +91,10 @@
       <DependentUpon>ConfirmRegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
+    <Compile Include="EditorFormCodeClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorFormCommon.cs" />
     <Compile Include="SqlQueries.cs" />
     <Compile Include="ConfirmApplicantForm.cs">
       <SubType>Form</SubType>
