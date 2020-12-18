@@ -14,6 +14,13 @@ namespace HappyTech
 {
     class EditorFormCommon
     {
+
+        /// <summary>
+        /// Some boxes are populated from items in a list of their respective class
+        /// this method clears and populates these lists
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
         public static void UpdateList(string type)
         {
             switch (type)
@@ -40,7 +47,5 @@ namespace HappyTech
                     break;
             }
         }
-
-       
     }
 }
