@@ -109,39 +109,11 @@ namespace HappyTech
         ///     checkbox list for adding the new section to.
         /// 
         /// </summary>
-        private void Populate_CheckedListBox_NewSectionExistingTemplates()
-        {
-            CheckedListBox_NewSectionExistingTemplate.Items.Clear();
-
-            EditorFormCommon.UpdateList( "Template" );
-
-            for ( int i = 0; i < Template.templates.Count(); i++ )
-            {
-                CheckedListBox_NewSectionExistingTemplate.Items.
-                    Add( $"{Template.templates[i].Type}" );
-            }
-        }
+       
 
    
 
-        /// <summary>
-        /// 
-        ///     Populates the contents of the existing sections
-        ///     dropdown list to edit.
-        /// 
-        /// </summary>
-        private void Populate_ComboBox_EditExistingSections()
-        {
-            ComboBox_EditSectionChooseExisting.Items.Clear();
-
-            EditorFormCommon.UpdateList( "Section" );
-
-            for ( int i = 0; i < Section.sectionList.Count(); i++ )
-            {
-                ComboBox_EditSectionChooseExisting.Items.
-                    Add( $"{Section.sectionList[i].Name.Replace( " ", "" )}" );
-            }
-        }
+     
 
 
         /// <summary>
@@ -185,8 +157,7 @@ namespace HappyTech
                     else
                     {
                         string templateName = TextBox_NewTemplateName.Text.Replace( " ", "" );
-                        //Template.CreateTemplateWithSelectedSections( templateName,
-                        //CheckedListBox_NewTemplateExistingSection );
+            
                         EditorFormTemplateClass.InsertNewTemplate(templateName, CheckedListBox_NewTemplateExistingSection);
                         
                         ClearTemplateModeFields();
@@ -225,8 +196,8 @@ namespace HappyTech
                     else
                     {
                         string sectionName = TextBox_NewSectionName.Text.Replace( " ", "" );
-                        Section.InsertSectionWithSelectedTemplates( sectionName,
-                            CheckedListBox_NewSectionExistingTemplate );
+                         
+                        EditorFormSectionClass.InsertNewSection(sectionName, CheckedListBox_NewSectionExistingTemplate);
 
                         ClearSectionModeFields();
                         
@@ -383,7 +354,10 @@ namespace HappyTech
 
                         if (TextBox_EditSectionName.Text == ComboBox_EditSectionChooseExisting.SelectedItem.ToString())
                         {
-                            SaveSectionChange();
+                            EditorFormSectionClass.EditSection(ComboBox_EditSectionChooseExisting, TextBox_EditSectionName, CheckedListBox_NewSectionExistingTemplate);
+                            ClearSectionModeFields();
+
+                            DisplaySuccess("Section edit saved", "EditArea");
                         }
                         else
                         {
@@ -392,7 +366,10 @@ namespace HappyTech
                     }
                     else
                     {
-                        SaveSectionChange();
+                        EditorFormSectionClass.EditSection(ComboBox_EditSectionChooseExisting, TextBox_EditSectionName, CheckedListBox_NewSectionExistingTemplate);
+                        ClearSectionModeFields();
+
+                        DisplaySuccess("Section edit saved", "EditArea");
                     }
 
                     break;
@@ -468,29 +445,7 @@ namespace HappyTech
 
         
 
-        /// <summary>
-        /// 
-        ///     Find existing section, update section name
-        ///     in database, reset fields, display success.
-        /// 
-        /// </summary>
-        private void SaveSectionChange()
-        {
-            DataSet sectionDB = Connection.GetDbConn().GetDataSet(SqlQueries.
-                                                    GetSectionIdFromName(ComboBox_EditSectionChooseExisting.Text));
-
-            DataRow sectionDBValue = sectionDB.Tables[0].Rows[0];
-            var sectionId = sectionDBValue.ItemArray.GetValue(0);
-
-            Connection.GetDbConn().CreateCommand(SqlQueries.
-                EditSection(sectionId, TextBox_EditSectionName.Text.Replace(" ", "")));
-
-            UpdatePersonalSectionsForSection(sectionId);
-
-            ClearSectionModeFields();
-
-            DisplaySuccess("Section edit saved", "EditArea");
-        }
+    
 
       
 
@@ -525,71 +480,8 @@ namespace HappyTech
      
         
 
-        /// <summary>
-        /// 
-        ///     Update the PersonalSection foreign keys
-        ///     for a template and section.
-        ///         - Loop through template checkbox item
-        ///             - Get the template ID from the
-        ///               template name
-        ///             - Check if the checkbox is checked
-        ///               - If so, check if a PersonalSection already
-        ///                 exists with forein keys from the template
-        ///                 ID and section ID
-        ///                 - If so, do nothing as it already exists
-        ///                 - If not, create one (because it's checked)
-        ///               - If not, check if a PersonalSection already
-        ///                 exists with the forein keys from template
-        ///                 ID and section ID
-        ///                 - If so, delete it (because it's unchecked)
-        ///                 - If not, do nothing as it doesn't exist
-        ///                   and it wasn't checked
-        /// 
-        /// </summary>
-        /// <param name="sectId"> The section ID to update PersonalSection with </param>
-        private void UpdatePersonalSectionsForSection( object sectId )
-        {
-            for ( int i = 0; i < CheckedListBox_EditSectionTemplate.Items.Count; i++ )
-            {
-                string templateName     = CheckedListBox_EditSectionTemplate.Items[i].ToString();
-                DataSet templateDB      = Connection.GetDbConn().
-                                            GetDataSet( SqlQueries.
-                                                GetTemplateIdFromName( templateName ) );
-                DataRow templateDBValue = templateDB.Tables[0].Rows[0];
-                var templateId          = templateDBValue.ItemArray.GetValue( 0 );
-
-                if ( CheckedListBox_EditSectionTemplate.GetItemCheckState( i ) == CheckState.Checked )
-                {
-                    DataSet personalSectionDB = Connection.GetDbConn().
-                                                GetDataSet( $"SELECT * from PersonalSection WHERE template_ID = '{templateId}' and section_ID = '{sectId}'" );
-
-                    try
-                    {
-                        DataRow personalSectionDBValue = personalSectionDB.Tables[0].Rows[0];
-                    }
-                    catch
-                    {
-                        Connection.GetDbConn().
-                            CreateCommand( $"INSERT INTO PersonalSection (template_Id, section_Id) VALUES ('{templateId}', '{sectId}')" );
-                    }
-                }
-                else if (CheckedListBox_EditSectionTemplate.GetItemCheckState( i ) == CheckState.Unchecked)
-                {
-                    DataSet personalSectionDB2 = Connection.GetDbConn().
-                                                GetDataSet( $"SELECT * FROM PersonalSection WHERE template_ID = '{templateId}' and section_ID = '{sectId}'" );
-
-                    try
-                    {
-                        DataRow personalSectionDB2Value = personalSectionDB2.Tables[0].Rows[0];
-
-                        Connection.GetDbConn().
-                            CreateCommand( $"DELETE FROM PersonalSection WHERE template_Id = '{templateId}' AND section_Id = '{sectId}'" );
-                    }
-                    catch { }
-                }
-            }
-        }
-
+     
+    
         /// <summary>
         /// 
         ///     Click trigger function for the new area
@@ -667,19 +559,7 @@ namespace HappyTech
                         DisplayError("Select a section to edit", "EditArea");
                         break;
                     }
-                    string sectionName = ComboBox_EditSectionChooseExisting.Text;
-
-                    DataSet sectionDB = Connection.GetDbConn().
-                                                GetDataSet(SqlQueries.
-                                                    GetSectionIdFromName(sectionName));
-
-                    DataRow sectionDBValue = sectionDB.Tables[0].Rows[0];
-                    var sectionId = sectionDBValue.ItemArray.GetValue(0);
-
-                    Connection.GetDbConn().CreateCommand(SqlQueries.
-                        DeleteSectionFromId(sectionId));
-                    Connection.GetDbConn().CreateCommand(SqlQueries.
-                        DeletePersonalSectionUsingSectionId(sectionId));
+                    EditorFormSectionClass.DeleteSection(ComboBox_EditSectionChooseExisting);
 
                     ClearSectionModeFields();
 
@@ -914,9 +794,9 @@ namespace HappyTech
 
             HideError("EditArea");
             HideError("NewArea");
-
-            Populate_CheckedListBox_NewSectionExistingTemplates();
-            Populate_ComboBox_EditExistingSections();
+            EditorFormSectionClass.PopulateTemplates(CheckedListBox_NewSectionExistingTemplate);
+            EditorFormSectionClass.PopulateSections(ComboBox_EditCodeChooseExisting);
+            
 
             TextBox_NewSectionName.Clear();
             TextBox_EditSectionName.Clear();
@@ -966,8 +846,8 @@ namespace HappyTech
         /// </summary>
         private void LoadModeSection()
         {
-            Populate_CheckedListBox_NewSectionExistingTemplates();
-            Populate_ComboBox_EditExistingSections();
+            EditorFormSectionClass.PopulateTemplates(CheckedListBox_NewSectionExistingTemplate);
+            EditorFormSectionClass.PopulateSections(ComboBox_EditCodeChooseExisting);
         }
 
         /// <summary>
@@ -1185,47 +1065,13 @@ namespace HappyTech
         /// </summary>
         private void ComboBox_EditSectionChooseExisting_SelectedIndexChanged( object sender, EventArgs e )
         {
-            TextBox_EditSectionName.Text = ComboBox_EditSectionChooseExisting.Text.Replace( " ", "" );
-
+            //TextBox_EditSectionName.Text = ComboBox_EditSectionChooseExisting.Text.Replace( " ", "" );
+            EditorFormSectionClass.LoadInfoForSectionEdit(ComboBox_EditSectionChooseExisting, CheckedListBox_EditSectionTemplate);
             HideSuccess( "EditArea" );
             HideError( "EditArea" );
 
             CheckedListBox_EditSectionTemplate.Items.Clear();
 
-            EditorFormCommon.UpdateList( "Template" );
-
-            DataSet sectionDB       = Connection.GetDbConn().
-                                        GetDataSet( SqlQueries.
-                                            GetSectionIdFromName( ComboBox_EditSectionChooseExisting.Text.Replace( " ", "" ) ) );
-
-            DataRow sectionDBValue  = sectionDB.Tables[0].Rows[0];
-            var sectionId           = sectionDBValue.ItemArray.GetValue( 0 );
-            
-            for ( int i = 0; i < Template.templates.Count(); i++ )
-            {
-                string templateName = Template.templates[i].Type.Replace( " ", "" );
-                int templateID      = Template.templates[i].Id;
-
-                CheckedListBox_EditSectionTemplate.Items.Add( $"{templateName}" );
-
-                DataSet personalSectionDB = Connection.GetDbConn().
-                                                GetDataSet( $"SELECT * FROM PersonalSection WHERE template_ID = '{templateID}' and section_ID = '{sectionId}'" );
-
-                try
-                {
-                    DataRow personalSectionDBValue = personalSectionDB.Tables[0].Rows[0];
-
-                    if ( personalSectionDBValue != null )
-                    {
-                        CheckedListBox_EditSectionTemplate.SetItemChecked( i, true );
-                    }
-                }
-                catch ( Exception )
-                {
-                    Console.WriteLine( "Returned NULL." );
-                }
-
-            }
         }
 
         /// <summary>

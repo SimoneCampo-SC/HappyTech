@@ -67,35 +67,7 @@ namespace HappyTech
             _instance = null;
         }
 
-        /// <summary>
-        /// inserts a new section and iterates over every checked item in a checklist of template names. creates a PersonalSection
-        /// object for each 
-        /// </summary>
-        /// <param name="input"> This is a string from the section textbox. User input.</param>
-        /// <param name="templateCheckBox"> A ChecklistBox object containing template names.</param>
-        public static void InsertSectionWithSelectedTemplates(string input, CheckedListBox templateCheckBox)
-        {
-             //has to create the section object first so we have a section ID to work with
-            string queryString = SqlQueries.CreateNewTag(input);
-            Connection.GetDbConn().CreateCommand(queryString); //section object has now been created
-            //we will get the id of this new section first instead of getting it in each iteration of the loop
-            DataSet ds = Connection.GetDbConn().GetDataSet(SqlQueries.GetSectionIdFromName(input));
-            DataRow dRow = ds.Tables[0].Rows[0];
-            var sectionId = dRow.ItemArray.GetValue(0);
-             foreach (string template in templateCheckBox.CheckedItems)
-             {
-                //for each template selected, we have to add a template id and section id to PersonalSection
-                //so we will get the template id from the template name
-                DataSet ds1 = Connection.GetDbConn().GetDataSet(SqlQueries.GetTemplateIdFromName(template));
-                DataRow dRow1 = ds1.Tables[0].Rows[0];
-                var templateId = dRow1.ItemArray.GetValue(0);
-                //now we have the template id and section id
-                string createPersonalSection = $"insert into PersonalSection (template_ID, section_ID) VALUES ('{templateId}', '{sectionId}')";
-                Connection.GetDbConn().CreateCommand(createPersonalSection);
-                //now a PersonalSection object has been created
-            } 
-  
-        }
+       
 
     }
 }

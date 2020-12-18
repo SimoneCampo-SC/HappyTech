@@ -234,6 +234,7 @@ namespace HappyTech
                 catch (Exception)
                 {
                     Console.WriteLine("Returned NULL.");
+                    
                 }
             }
         }
