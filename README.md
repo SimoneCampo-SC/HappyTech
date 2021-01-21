@@ -1,5 +1,3 @@
-# HappyTech
-
 # Definition of Aims
 The project aims to create a software application for HappyTech that allows an employee to quickly generate feedback for an applicant in a specific format based on their type of application (e.g. CV or interview). 
 The feedback should automatically generate when a code is selected so that the recruiter does not need to type a lot. After this, the feedback should be emailed to the applicant.
